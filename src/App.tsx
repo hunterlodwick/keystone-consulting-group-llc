@@ -127,7 +127,7 @@ const Modal = ({ isOpen, onClose, title, children }: { isOpen: boolean, onClose:
       >
         <div className="flex items-center justify-between p-6 border-b border-white/5">
           <h3 className="text-xl font-serif text-white">{title}</h3>
-          <button id="modal-close-btn" onClick={onClose} className="text-offwhite/50 hover:text-white transition-colors">
+          <button aria-label="Close modal" id="modal-close-btn" onClick={onClose} className="text-offwhite/50 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -442,21 +442,21 @@ export const ContactForm = () => {
     <form className="space-y-4" onSubmit={handleSubmit}>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm text-offwhite/70 mb-1">First Name</label>
-          <input name="firstName" type="text" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
+          <label htmlFor="firstName" className="block text-sm text-offwhite/90 mb-1">First Name</label>
+          <input id="firstName" name="firstName" type="text" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
         </div>
         <div>
-          <label className="block text-sm text-offwhite/70 mb-1">Last Name</label>
-          <input name="lastName" type="text" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
+          <label htmlFor="lastName" className="block text-sm text-offwhite/90 mb-1">Last Name</label>
+          <input id="lastName" name="lastName" type="text" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
         </div>
       </div>
       <div>
-        <label className="block text-sm text-offwhite/70 mb-1">Email</label>
-        <input name="email" type="email" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
+        <label htmlFor="email" className="block text-sm text-offwhite/90 mb-1">Email</label>
+        <input id="email" name="email" type="email" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
       </div>
       <div>
-        <label className="block text-sm text-offwhite/70 mb-1">Phone</label>
-        <input name="phone" type="tel" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
+        <label htmlFor="phone" className="block text-sm text-offwhite/90 mb-1">Phone</label>
+        <input id="phone" name="phone" type="tel" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
       </div>
       <button type="submit" disabled={status === 'loading'} className="w-full bg-teal text-white py-3 rounded-sm mt-4 hover:bg-teal-soft transition-colors font-medium tracking-wide disabled:opacity-50">
         {status === 'loading' ? 'Submitting...' : 'Submit Request'}
@@ -516,14 +516,14 @@ const StatementAnalysisForm = () => {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
-      <p className="text-sm text-offwhite/70 mb-4 leading-relaxed">Request a free statement analysis and we'll show you exactly how much you can save with our rate saving guarantee.</p>
+      <p className="text-sm text-offwhite/90 mb-4 leading-relaxed">Request a free statement analysis and we'll show you exactly how much you can save with our rate saving guarantee.</p>
       <div>
-        <label className="block text-sm text-offwhite/70 mb-1">Business Name</label>
-        <input name="businessName" type="text" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
+        <label htmlFor="businessName" className="block text-sm text-offwhite/90 mb-1">Business Name</label>
+        <input id="businessName" name="businessName" type="text" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
       </div>
       <div>
-        <label className="block text-sm text-offwhite/70 mb-1">Email</label>
-        <input name="email" type="email" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
+        <label htmlFor="analysis-email" className="block text-sm text-offwhite/90 mb-1">Email</label>
+        <input id="analysis-email" name="email" type="email" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
       </div>
       <button type="submit" disabled={status === 'loading'} className="w-full bg-teal text-white py-3 rounded-sm mt-4 hover:bg-teal-soft transition-colors font-medium tracking-wide disabled:opacity-50">
         {status === 'loading' ? 'Submitting...' : 'Request Free Analysis'}
@@ -687,7 +687,8 @@ const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.R
         </div>
 
         <button 
-          className="md:hidden text-white relative z-50"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          className="md:hidden text-white relative z-50 p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
@@ -1384,19 +1385,25 @@ const Testimonials = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-wrap justify-center stagger-children">
-          {/* Video Placeholder */}
-          <div className="animate-on-scroll col-span-1 md:col-span-2 lg:col-span-2 relative bg-slate-dark/40 border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-auto md:h-[400px] flex items-center justify-center group cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.3)]">
-            <div className="absolute inset-0 bg-charcoal/40 group-hover:bg-charcoal/20 transition-colors z-10 duration-500"></div>
+          {/* Featured Customer Story Image */}
+          <div className="animate-on-scroll col-span-1 md:col-span-2 lg:col-span-2 relative bg-slate-dark/40 border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-auto md:h-[400px] flex items-center justify-center group shadow-[0_0_30px_rgba(0,0,0,0.3)]">
+            <div className="absolute inset-0 bg-charcoal/60 group-hover:bg-charcoal/40 transition-colors z-10 duration-500"></div>
             <img 
               src="https://images.unsplash.com/photo-1543165365-07232ed12fad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-              alt="UGC Customer Success Story" 
+              alt="Customer Success Story" 
+              loading="lazy"
+              width="1200"
+              height="800"
               className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
             />
             <div className="relative z-20 flex flex-col items-center">
-              <div className="w-20 h-20 bg-teal/90 rounded-full flex items-center justify-center text-white mb-6 shadow-[0_0_30px_rgba(0,128,128,0.5)] group-hover:scale-110 transition-transform">
-                <Play className="w-8 h-8 ml-1" fill="currentColor" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/20 border border-teal/40 text-teal text-xs font-medium uppercase tracking-widest mb-6 shadow-xl backdrop-blur-md relative overflow-hidden">
+                <Star className="w-4 h-4" fill="currentColor" />
+                Featured Success Story
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl text-white font-medium text-center px-4 md:px-12 leading-tight">See how The Edge Program changed the game for Bella's Cafe</h3>
+              <h3 className="font-serif text-3xl md:text-4xl text-white font-medium text-center px-4 md:px-12 leading-tight max-w-2xl">
+                "The Edge Program completely changed the game for Bella's Cafe. We pay zero fees."
+              </h3>
             </div>
           </div>
 
@@ -1650,6 +1657,7 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
       <>
         {showTopBtn && (
           <button
+            aria-label="Scroll to top"
             onClick={scrollToTop}
             className="fixed bottom-8 right-8 w-12 h-12 bg-teal rounded-full flex items-center justify-center text-white shadow-lg hover:bg-teal-soft transition-colors z-50"
           >

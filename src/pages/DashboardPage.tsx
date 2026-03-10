@@ -26,7 +26,7 @@ export default function DashboardPage({ onNavigate, onOpenModal }: { onNavigate:
               </svg>
               <span className="font-serif text-lg font-medium text-white tracking-wide">Keystone</span>
             </button>
-            <button className="md:hidden text-offwhite/50 hover:text-white" onClick={toggleSidebar}>
+            <button aria-label="Close sidebar" className="md:hidden text-offwhite/50 hover:text-white" onClick={toggleSidebar}>
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -63,18 +63,18 @@ export default function DashboardPage({ onNavigate, onOpenModal }: { onNavigate:
         {/* Top bar */}
         <header className="h-16 bg-charcoal/50 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-6 sticky top-0 z-30">
           <div className="flex items-center gap-4">
-            <button className="md:hidden text-offwhite/60 hover:text-white" onClick={toggleSidebar}>
+            <button aria-label="Open sidebar" className="md:hidden text-offwhite/60 hover:text-white" onClick={toggleSidebar}>
               <Menu className="w-5 h-5" />
             </button>
             <h1 className="font-serif text-xl text-white">Welcome, {businessName}</h1>
           </div>
           <div className="flex items-center gap-4 text-offwhite/60">
-            <button className="hover:text-white transition-colors"><Search className="w-5 h-5" /></button>
-            <button className="hover:text-white transition-colors relative">
+            <button aria-label="Search" className="hover:text-white transition-colors"><Search className="w-5 h-5" /></button>
+            <button aria-label="Notifications" className="hover:text-white transition-colors relative">
               <Bell className="w-5 h-5" />
               <span className="absolute top-0 right-0 w-2 h-2 bg-teal rounded-full"></span>
             </button>
-            <button className="hover:text-white transition-colors"><Settings className="w-5 h-5" /></button>
+            <button aria-label="Settings" className="hover:text-white transition-colors"><Settings className="w-5 h-5" /></button>
             <div className="w-8 h-8 rounded-full bg-slate-dark border border-white/10 flex items-center justify-center text-sm ml-2 text-white font-medium">
               DB
             </div>
