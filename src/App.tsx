@@ -400,6 +400,7 @@ export const ContactForm = () => {
     const formData = new FormData(e.currentTarget);
     const data = {
       access_key: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_KEY",
+      ccemail: "hunter@keystoneconsultingg.com, seth@keystoneconsultingg.com",
       subject: "New Contact Request - Keystone Consulting",
       name: `${formData.get('firstName')} ${formData.get('lastName')}`,
       email: formData.get('email'),
@@ -476,6 +477,7 @@ const StatementAnalysisForm = () => {
     const formData = new FormData(e.currentTarget);
     const data = {
       access_key: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_KEY",
+      ccemail: "hunter@keystoneconsultingg.com, seth@keystoneconsultingg.com",
       subject: "New Statement Analysis Request - Keystone Consulting",
       name: formData.get('businessName'),
       email: formData.get('email'),
@@ -1341,6 +1343,160 @@ const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: 
   );
 };
 
+// Processing Volume Social Proof
+const ProcessingVolume = () => {
+  const [count, setCount] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          
+          if (prefersReducedMotion) {
+            setCount(1000000);
+            setIsFinished(true);
+            observer.disconnect();
+            return;
+          }
+
+          let startTimestamp: number | null = null;
+          const duration = 3000;
+          const end = 1000000;
+
+          const step = (timestamp: number) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            setCount(easeProgress * end);
+            
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            } else {
+              setCount(end);
+              setIsFinished(true);
+            }
+          };
+          window.requestAnimationFrame(step);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section 
+      ref={sectionRef}
+      className="relative py-24 md:py-32 overflow-hidden flex flex-col items-center justify-center"
+      style={{
+        background: 'radial-gradient(circle at center, rgba(0, 128, 128, 0.08) 0%, rgba(20, 24, 28, 1) 100%)',
+        backgroundColor: '#14181cc0' // Base fallback
+      }}
+    >
+      {/* CSS Particles Grid using multiple box-shadows or SVG pattern */}
+      <div className="absolute inset-0 z-0 hidden sm:block opacity-[0.15] pointer-events-none data-particles-bg"></div>
+
+      <style dangerouslySetInnerHTML={{__html: `
+        .data-particles-bg {
+          background-image: radial-gradient(rgba(0, 128, 128, 1) 1px, transparent 1px);
+          background-size: 40px 40px;
+          animation: particle-drift 20s linear infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .data-particles-bg {
+            animation: none;
+          }
+          .pulse-glow {
+            animation: none !important;
+            text-shadow: 0 0 20px rgba(0, 128, 128, 0.5);
+          }
+          .stat-fade {
+            transition: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+          }
+        }
+        @keyframes particle-drift {
+          0% { background-position: 0 0; }
+          100% { background-position: 0 -400px; }
+        }
+        @keyframes pulse-glow-anim {
+          0%, 100% { text-shadow: 0 0 10px rgba(0, 128, 128, 0.2); }
+          50% { text-shadow: 0 0 35px rgba(0, 128, 128, 0.8); }
+        }
+        .pulse-glow {
+          animation: pulse-glow-anim 4s ease-in-out infinite;
+        }
+        .counter-font {
+          font-variant-numeric: tabular-nums;
+          font-feature-settings: "tnum";
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+        .stat-fade {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .stat-fade.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}} />
+
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center">
+        {/* Center Animated Counter */}
+        <div className="mb-20">
+          <div className="flex justify-center items-baseline">
+            <h2 className={`text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight counter-font transition-all duration-1000 ${isFinished ? 'pulse-glow' : ''}`}>
+              $<span className="inline-block">{Math.floor(count).toLocaleString()}</span>+
+            </h2>
+          </div>
+          <p className="mt-6 text-offwhite/50 text-sm md:text-base tracking-widest uppercase font-medium">
+            processed monthly — and growing
+          </p>
+        </div>
+
+        {/* Flanking Stats */}
+        <div className="flex flex-col sm:flex-row gap-6 md:gap-8 w-full max-w-4xl mx-auto">
+          {/* Left: Savings */}
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 backdrop-blur-sm stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '200ms' }}>
+            <span className="text-3xl md:text-4xl text-teal font-medium mb-3 counter-font">30-100%</span>
+            <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Savings Guaranteed</span>
+          </div>
+
+          {/* Center: Uptime (counting up) */}
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 backdrop-blur-sm stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '400ms' }}>
+            <span className="text-3xl md:text-4xl text-white font-medium mb-3 counter-font">
+              {isVisible ? <CountUp end={99.9} duration={2000} decimals={1} suffix="%" /> : '0%'}
+            </span>
+            <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Uptime Reliability</span>
+          </div>
+
+          {/* Right: Fees (static at 0) */}
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 backdrop-blur-sm stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '600ms' }}>
+            <span className="text-3xl md:text-4xl text-white font-medium mb-3 counter-font">$0</span>
+            <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Processing Fees with Edge</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Accent Line */}
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal to-transparent opacity-60"></div>
+    </section>
+  );
+};
+
 // Testimonials
 const Testimonials = () => {
   const testimonials = [
@@ -1683,6 +1839,7 @@ function MainLandingPage({ onOpenModal, onOpenSplash }: { onOpenModal: (title: s
       <Industries onOpenSplash={onOpenSplash} />
       <HowItWorks onOpenModal={onOpenModal} />
       <WhyChooseUs />
+      <ProcessingVolume />
       <Testimonials />
       <IntegrationEcosystem />
       <Team onOpenModal={onOpenModal} />
