@@ -1398,7 +1398,7 @@ const ProcessingVolume = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-24 md:py-32 overflow-hidden flex flex-col items-center justify-center"
+      className="relative py-12 md:py-16 overflow-hidden flex flex-col items-center justify-center border-b border-white/5"
       style={{
         background: 'radial-gradient(circle at center, rgba(0, 128, 128, 0.08) 0%, rgba(20, 24, 28, 1) 100%)',
         backgroundColor: '#14181cc0' // Base fallback
@@ -1730,7 +1730,7 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
               <span className="font-serif text-lg md:text-xl font-medium tracking-wide text-white">Keystone Consulting Group</span>
             </div>
             <p className="text-offwhite/60 text-sm font-light leading-relaxed mb-8">
-              Your Utah local consulting partner for all things payment solutions and hardware for modern businesses.
+              Your local consulting partner for all things payment solutions and hardware for modern businesses.
             </p>
             <ul className="space-y-3 text-sm text-offwhite/60 font-light mt-auto">
               <li>Seth: <a href="tel:801-360-9156" className="hover:text-teal transition-colors">(801) 360-9156</a></li>
@@ -1831,6 +1831,7 @@ function MainLandingPage({ onOpenModal, onOpenSplash }: { onOpenModal: (title: s
   return (
     <>
       <Hero onOpenModal={onOpenModal} />
+      <ProcessingVolume />
       <Pricing onOpenModal={onOpenModal} />
       <ROICalculator />
       <RateGuarantee onOpenModal={onOpenModal} />
@@ -1839,7 +1840,6 @@ function MainLandingPage({ onOpenModal, onOpenSplash }: { onOpenModal: (title: s
       <Industries onOpenSplash={onOpenSplash} />
       <HowItWorks onOpenModal={onOpenModal} />
       <WhyChooseUs />
-      <ProcessingVolume />
       <Testimonials />
       <IntegrationEcosystem />
       <Team onOpenModal={onOpenModal} />
