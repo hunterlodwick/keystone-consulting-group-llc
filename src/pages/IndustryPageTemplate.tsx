@@ -135,6 +135,32 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
       name: "David M.",
       business: "Boxed Logistics"
     }
+  },
+  'real-estate': {
+    title: 'Real Estate',
+    headline: 'Payment Processing Built for Real Estate Professionals',
+    subheadline: 'From earnest deposits to commission splits and rental collections — streamline every transaction with secure, compliant payment solutions built for agents, brokers, and property managers.',
+    painPoints: ['High Processing Fees on Large Earnest & Commission Payments', 'No Easy Way to Collect Rent or Deposits Online', 'Manual Invoicing Slowing Down Closings'],
+    solutions: ['Interchange Plus Pricing Built for High-Ticket Transactions', 'Online Payment Portals for Rent, Deposits & Fees', 'Virtual Terminal & Email Invoicing for Fast, Remote Closings'],
+    calculatorDefault: 60000,
+    testimonial: {
+      quote: "Keystone set us up with a virtual terminal and online portal. Collecting deposits and commission splits is now completely hands-off.",
+      name: "Jennifer L.",
+      business: "Summit Realty Group"
+    }
+  },
+  'retail': {
+    title: 'Retail',
+    headline: 'Payment Solutions Built for Retail Stores',
+    subheadline: 'Modern POS systems, contactless payments, and zero-fee programs designed to keep your checkout fast and your margins healthy.',
+    painPoints: ['Processing Fees Cutting Into Already-Thin Retail Margins', 'Outdated POS Slowing Down Checkout Lines', 'No Unified View of In-Store & Online Sales'],
+    solutions: ['The Edge Program Can Eliminate Up to 100% of Processing Fees', 'Fast Tap-to-Pay Terminals With Apple Pay & Google Pay', 'Unified POS With Inventory Management & Real-Time Reporting'],
+    calculatorDefault: 35000,
+    testimonial: {
+      quote: "We switched to The Edge Program and our processing cost dropped to zero. The new terminals are faster and our customers love tap-to-pay.",
+      name: "Carlos M.",
+      business: "Westside Home Goods"
+    }
   }
 };
 
@@ -206,26 +232,8 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
 
       {/* Mini Calculator */}
       <section className="py-24 max-w-4xl mx-auto px-6 md:px-12">
-        <div className="bg-slate-dark/40 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 shadow-[0_0_40px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,128,128,0.15)] transition-all duration-500 relative overflow-hidden text-center">
+        <div className="bg-slate-dark/40 border border-white/10 rounded-2xl p-8 md:p-12 shadow-[0_0_40px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,128,128,0.15)] transition-all duration-500 relative overflow-hidden text-center">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.1)_0%,transparent_70%)] opacity-50 hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="relative h-[600px] w-full hidden lg:block animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="absolute w-[500px] h-[500px] bg-teal/20 rounded-full blur-[100px] mix-blend-screen"></div>
-              
-              <div className="relative z-20 w-full max-w-lg aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-dark via-transparent to-transparent z-10"></div>
-                {/* Dynamically load industry-specific stock image */}
-                <img 
-                  src={`https://source.unsplash.com/random/800x800/?${data.id},business`}
-                  alt={`${data.title} Environment`}
-                  loading="lazy"
-                  width="800"
-                  height="800"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-80"
-                />
-              </div>
-            </div>
-          </div>
           <h2 className="font-serif text-3xl text-white mb-8 relative z-10">Calculate Your Savings</h2>
           
           <div className="relative z-10 max-w-lg mx-auto mb-10">

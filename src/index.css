@@ -23,19 +23,22 @@ body {
   overflow-x: hidden;
 }
 
-/* Noise overlay */
+/* Lightweight noise overlay using a tiny repeated PNG pattern instead of heavy SVG feTurbulence filter.
+   The SVG filter version was extremely GPU-intensive, causing scroll jank and layout thrashing on mobile. */
 body::after {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  transform: translateZ(0);
+  opacity: 0.03;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAMqADAAQAAAABAAAAMgAAAABIiTJiAAAB+klEQVRoBe2YQU7DMBCG/w7sYcESsUbcgBNwA46CeoVyA1aci12rtiVXAAlEUpJx/x8nc2L7d+3xjMcACIIgCIIgCIIg+M8kO17H34jrr7WT/aCfjrveIZN89+2hk3x2bLzYj7zVxcf9pJPckqd8+/DYSb44Ns7tx93kkzzgW9w9POXbByflBdkni9g7n3eST44tZIcTv3xh2UguwUMlWabT1+d80e86eeCNv3Cg3k0e5cmCg3xwbifl7kYP1UXe0C1xhcKK9znp5z4+VGn8h3h7OZBb+Yak2rMq9r17+Kb9vqrfPZVXvzzufDntvqLfBtf53X3uJInfkvL43Ed5IpnDdXLSW/LJ2YvTFwq13k0eX8hOvT+zLXjqZN+cG4nHe9yRB3zZqKXb0vGwkz76ts8/7CSv+Rb3D435InnsxZZvHh9ayQNv+5d7qZN8k6dlvxNX/WbcST54Mcxuxye/vHnRSe55uZ3xycHLfifZ5xvffbqeOslea3D9eqquJ7ltFvuBdx/2k07ygpfz7ccL2eY7wSe/Pn/dSXa8K975gCd9y8v5Y8pOsuxzh+rUyXb4NpfXu/Okk+x79ei+XE06yUtebnbvukgnecjLeXsxu0s6yWMvu8fNh9ukk7xc//ThVif5zMtF/3M+HQRBEARBEARBEAT/ACMbOc8MqOuvAAAAAElFTkSuQmCC");
+  background-repeat: repeat;
+  background-size: 50px 50px;
+  will-change: auto;
 }
 
 .text-balance {
@@ -165,4 +168,50 @@ body::after {
   .cta-button-pulse {
     animation: none;
   }
+}
+
+/* ---- ProcessingVolume component CSS (moved from dangerouslySetInnerHTML) ---- */
+.data-particles-bg {
+  background-image: radial-gradient(rgba(0, 128, 128, 1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: particle-drift 20s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .data-particles-bg {
+    animation: none;
+  }
+  .pulse-glow {
+    animation: none !important;
+    text-shadow: 0 0 20px rgba(0, 128, 128, 0.5);
+  }
+  .stat-fade {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+@keyframes particle-drift {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -400px; }
+}
+@keyframes pulse-glow-anim {
+  0%, 100% { text-shadow: 0 0 10px rgba(0, 128, 128, 0.2); }
+  50% { text-shadow: 0 0 35px rgba(0, 128, 128, 0.8); }
+}
+.pulse-glow {
+  animation: pulse-glow-anim 4s ease-in-out infinite;
+}
+.counter-font {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.stat-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.stat-fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -29,8 +29,7 @@ import {
   FileText,
   Shield,
   Mail,
-  Star,
-  Play
+  Star
 } from 'lucide-react';
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
@@ -97,8 +96,17 @@ function CountUp({ end, duration = 2000, prefix = "", suffix = "", decimals = 0 
 
 function useScrollPosition() {
   const [scrollY, setScrollY] = useState(0);
+  const ticking = useRef(false);
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking.current = false;
+        });
+      }
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -121,13 +129,13 @@ const KeystoneLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
 const Modal = ({ isOpen, onClose, title, children }: { isOpen: boolean, onClose: () => void, title: string, children: React.ReactNode }) => {
   if (!isOpen) return null;
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose}></div>
       <div
         className="relative w-full max-w-lg bg-charcoal-dark/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden z-10"
       >
         <div className="flex items-center justify-between p-6 border-b border-white/5">
-          <h3 className="text-xl font-serif text-white">{title}</h3>
+          <h3 id="modal-title" className="text-xl font-serif text-white">{title}</h3>
           <button aria-label="Close modal" id="modal-close-btn" onClick={onClose} className="text-offwhite/50 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
@@ -604,12 +612,12 @@ const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.R
       }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <KeystoneLogo className="w-8 h-8" />
           <span className="font-serif text-lg md:text-xl font-medium tracking-wide text-white">Keystone Consulting Group</span>
         </a>
         
-        <nav className="hidden md:flex items-center gap-8" onMouseLeave={() => setOpenDropdown(null)}>
+        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation" onMouseLeave={() => setOpenDropdown(null)}>
           <div className="relative group">
             <button 
               onClick={() => setOpenDropdown(openDropdown === 'industries' ? null : 'industries')}
@@ -630,7 +638,9 @@ const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.R
                   { name: "Gas Stations", path: "/gas-stations" },
                   { name: "High-Risk", path: "/high-risk" },
                   { name: "Nonprofits", path: "/nonprofits" },
-                  { name: "B2B Services", path: "/b2b" }
+                  { name: "B2B Services", path: "/b2b" },
+                  { name: "Real Estate", path: "/real-estate" },
+                  { name: "Retail", path: "/retail" }
                 ].map((ind, i) => (
                   <a key={i} href={ind.path} className="text-sm text-offwhite/70 hover:text-white transition-colors flex items-center gap-2 group/link relative z-10">
                     <div className="w-1.5 h-1.5 rounded-full bg-teal/30 group-hover/link:bg-teal transition-colors"></div>
@@ -751,7 +761,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
 
   return (
     <section 
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-charcoal/20 backdrop-blur-sm"
+      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 items-center">
@@ -894,7 +904,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
 };// ProductGrid
 const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   return (
-    <section id="services" className="py-32 relative bg-charcoal/30 backdrop-blur-sm">
+    <section id="services" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div
           className="mb-16 animate-on-scroll"
@@ -908,7 +918,7 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
             <div
               key={idx}
               onClick={() => onOpenModal(sol.title, <ServiceDetails service={sol} />)}
-              className={`animate-on-scroll card-hover-effect group relative bg-slate-dark/40 backdrop-blur-md p-8 rounded-xl border border-white/5 flex flex-col justify-between cursor-pointer overflow-hidden ${
+              className={`animate-on-scroll card-hover-effect group relative bg-slate-dark/40 p-8 rounded-xl border border-white/5 flex flex-col justify-between cursor-pointer overflow-hidden ${
                 sol.large ? 'md:col-span-2 lg:col-span-2 row-span-2' : 'row-span-1'
               }`}
             >
@@ -966,7 +976,7 @@ const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: Rea
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden bg-charcoal/40 backdrop-blur-sm border-t border-white/5">
+    <section className="py-32 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24 animate-on-scroll">
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">How It Works</h2>
@@ -1020,7 +1030,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden bg-charcoal-dark/50 backdrop-blur-sm">
+    <section className="py-32 relative overflow-hidden bg-charcoal-dark/50">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.05)_0%,transparent_70%)]"></div>
       
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
@@ -1059,7 +1069,7 @@ const WhyChooseUs = () => {
 // Pricing
 const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   return (
-    <section className="py-32 relative bg-charcoal backdrop-blur-sm border-t border-white/5" id="pricing">
+    <section className="py-32 relative bg-charcoal border-t border-white/5" id="pricing">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20 animate-on-scroll">
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Fair, Transparent Pricing for Every Business</h2>
@@ -1169,7 +1179,7 @@ const ROICalculator = () => {
           </p>
         </div>
 
-        <div className="animate-on-scroll bg-charcoal/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] relative overflow-hidden">
+        <div className="animate-on-scroll bg-charcoal/80 border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-teal/10 to-transparent opacity-20 pointer-events-none"></div>
           
           <div className="relative z-10">
@@ -1219,7 +1229,7 @@ const ROICalculator = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
                 <div className="bg-charcoal-dark/50 p-6 rounded-2xl border border-white/5 flex flex-col items-center sm:items-start text-center sm:text-left">
                   <div className="text-offwhite/50 text-xs sm:text-sm uppercase tracking-widest mb-2 sm:mb-3">Current Est. Fees (2.9%)</div>
-                  <div className="text-2xl sm:text-3xl font-mono text-white/50 line-through">${currentFees.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}<span className="text-sm">/mo</span></div>
+                  <div className="text-2xl sm:text-3xl font-mono text-white/50">${currentFees.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}<span className="text-sm">/mo</span></div>
                 </div>
                 <div className="bg-teal/5 p-6 rounded-2xl border border-teal/20 flex flex-col items-center sm:items-start text-center sm:text-left relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-20 h-20 bg-teal/20 blur-xl"></div>
@@ -1266,10 +1276,12 @@ const Industries = ({ onOpenSplash }: { onOpenSplash: (industryId: string) => vo
     { name: "High-Risk (CBD, Vape)", icon: Gamepad2, id: "high-risk" },
     { name: "Nonprofits & Churches", icon: HeartHandshake, id: "nonprofits" },
     { name: "B2B & Professional", icon: Briefcase, id: "b2b" },
+    { name: "Real Estate", icon: BarChart3, id: "real-estate" },
+    { name: "Retail", icon: ShoppingBag, id: "retail" },
   ];
 
   return (
-    <section className="py-32 relative bg-charcoal/80 backdrop-blur-sm">
+    <section className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Custom Solutions for Every Industry</h2>
@@ -1281,7 +1293,7 @@ const Industries = ({ onOpenSplash }: { onOpenSplash: (industryId: string) => vo
             <a
               key={idx}
               href={`/${ind.id}`}
-              className="animate-on-scroll card-hover-effect flex items-center gap-3 bg-slate-dark/40 backdrop-blur-md border border-white/10 px-6 py-4 rounded-full hover:border-teal/50 hover:bg-slate-dark/60 hover:shadow-[0_0_20px_rgba(0,128,128,0.15)] transition-all duration-300"
+              className="animate-on-scroll card-hover-effect flex items-center gap-3 bg-slate-dark/40 border border-white/10 px-6 py-4 rounded-full hover:border-teal/50 hover:bg-slate-dark/60 hover:shadow-[0_0_20px_rgba(0,128,128,0.15)] transition-all duration-300"
             >
               <ind.icon className="w-5 h-5 text-teal" strokeWidth={1.5} />
               <span className="text-offwhite/90 text-sm font-medium">{ind.name}</span>
@@ -1314,13 +1326,13 @@ const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: 
   ];
 
   return (
-    <section className="py-32 relative bg-charcoal-dark/80 backdrop-blur-sm border-t border-white/5">
+    <section className="py-32 relative bg-charcoal-dark border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 stagger-children">
           {offers.map((offer, idx) => (
             <div
               key={idx}
-              className="animate-on-scroll card-hover-effect bg-slate-dark/30 backdrop-blur-md border border-white/5 p-10 rounded-2xl hover:bg-slate-dark/50 hover:border-teal/30 transition-all duration-300 flex flex-col relative overflow-hidden group"
+              className="animate-on-scroll card-hover-effect bg-slate-dark/30 border border-white/5 p-10 rounded-2xl hover:bg-slate-dark/50 hover:border-teal/30 transition-all duration-300 flex flex-col relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               <div className="relative z-10">
@@ -1405,55 +1417,8 @@ const ProcessingVolume = () => {
         backgroundColor: '#14181cc0' // Base fallback
       }}
     >
-      {/* CSS Particles Grid using multiple box-shadows or SVG pattern */}
+      {/* CSS Particles Grid */}
       <div className="absolute inset-0 z-0 hidden sm:block opacity-[0.15] pointer-events-none data-particles-bg"></div>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        .data-particles-bg {
-          background-image: radial-gradient(rgba(0, 128, 128, 1) 1px, transparent 1px);
-          background-size: 40px 40px;
-          animation: particle-drift 20s linear infinite;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .data-particles-bg {
-            animation: none;
-          }
-          .pulse-glow {
-            animation: none !important;
-            text-shadow: 0 0 20px rgba(0, 128, 128, 0.5);
-          }
-          .stat-fade {
-            transition: none !important;
-            opacity: 1 !important;
-            transform: none !important;
-          }
-        }
-        @keyframes particle-drift {
-          0% { background-position: 0 0; }
-          100% { background-position: 0 -400px; }
-        }
-        @keyframes pulse-glow-anim {
-          0%, 100% { text-shadow: 0 0 10px rgba(0, 128, 128, 0.2); }
-          50% { text-shadow: 0 0 35px rgba(0, 128, 128, 0.8); }
-        }
-        .pulse-glow {
-          animation: pulse-glow-anim 4s ease-in-out infinite;
-        }
-        .counter-font {
-          font-variant-numeric: tabular-nums;
-          font-feature-settings: "tnum";
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        }
-        .stat-fade {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .stat-fade.show {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      `}} />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center">
         {/* Center Animated Counter */}
@@ -1471,13 +1436,13 @@ const ProcessingVolume = () => {
         {/* Flanking Stats */}
         <div className="flex flex-col sm:flex-row gap-6 md:gap-8 w-full max-w-4xl mx-auto">
           {/* Left: Savings */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 backdrop-blur-sm stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '200ms' }}>
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '200ms' }}>
             <span className="text-3xl md:text-4xl text-teal font-medium mb-3 counter-font">30-100%</span>
             <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Savings Guaranteed</span>
           </div>
 
           {/* Center: Uptime (counting up) */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 backdrop-blur-sm stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '400ms' }}>
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '400ms' }}>
             <span className="text-3xl md:text-4xl text-white font-medium mb-3 counter-font">
               {isVisible ? <CountUp end={99.9} duration={2000} decimals={1} suffix="%" /> : '0%'}
             </span>
@@ -1485,7 +1450,7 @@ const ProcessingVolume = () => {
           </div>
 
           {/* Right: Fees (static at 0) */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 backdrop-blur-sm stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '600ms' }}>
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '600ms' }}>
             <span className="text-3xl md:text-4xl text-white font-medium mb-3 counter-font">$0</span>
             <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Processing Fees with Edge</span>
           </div>
@@ -1532,7 +1497,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-32 relative bg-charcoal-dark backdrop-blur-sm border-t border-white/5">
+    <section className="py-32 relative bg-charcoal-dark border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20 animate-on-scroll">
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Don't Just Take Our Word For It</h2>
@@ -1543,16 +1508,8 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-wrap justify-center stagger-children">
           {/* Featured Customer Story Image */}
-          <div className="animate-on-scroll col-span-1 md:col-span-2 lg:col-span-2 relative bg-slate-dark/40 border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-auto md:h-[400px] flex items-center justify-center group shadow-[0_0_30px_rgba(0,0,0,0.3)]">
-            <div className="absolute inset-0 bg-charcoal/60 group-hover:bg-charcoal/40 transition-colors z-10 duration-500"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1543165365-07232ed12fad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-              alt="Customer Success Story" 
-              loading="lazy"
-              width="1200"
-              height="800"
-              className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
-            />
+          <div className="animate-on-scroll col-span-1 md:col-span-2 lg:col-span-2 relative border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-auto md:h-[400px] flex items-center justify-center group shadow-[0_0_30px_rgba(0,0,0,0.3)]" style={{ background: 'linear-gradient(135deg, rgba(0,128,128,0.15) 0%, rgba(45,45,45,0.9) 50%, rgba(30,30,30,0.95) 100%)' }}>
+            <div className="absolute inset-0 bg-charcoal/40 group-hover:bg-charcoal/20 transition-colors z-10 duration-500"></div>
             <div className="relative z-20 flex flex-col items-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/20 border border-teal/40 text-teal text-xs font-medium uppercase tracking-widest mb-6 shadow-xl backdrop-blur-md relative overflow-hidden">
                 <Star className="w-4 h-4" fill="currentColor" />
@@ -1601,7 +1558,7 @@ const IntegrationEcosystem = () => {
   ];
   
   return (
-    <section className="py-24 border-y border-teal/10 bg-charcoal-dark/30 backdrop-blur-sm overflow-hidden relative">
+    <section className="py-24 border-y border-teal/10 bg-charcoal-dark/30 overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-charcoal-dark/10 to-transparent pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center relative z-10 animate-on-scroll">
         <h3 className="font-serif text-2xl text-white mb-2">Seamless Integrations</h3>
@@ -1626,7 +1583,7 @@ const IntegrationEcosystem = () => {
 // Team Section
 const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden bg-charcoal/40 backdrop-blur-sm">
+    <section id="about" className="py-32 relative overflow-hidden">
       {/* Background Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 rotate-12 pointer-events-none">
         <KeystoneLogo className="w-full h-full text-teal" />
@@ -1640,7 +1597,7 @@ const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 stagger-children">
           {/* Seth */}
-          <div className="animate-on-scroll card-hover-effect w-full max-w-sm bg-slate-dark/40 backdrop-blur-xl border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+          <div className="animate-on-scroll card-hover-effect w-full max-w-sm bg-slate-dark/40 border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             <div className="w-24 h-24 rounded-full bg-charcoal-dark/80 border border-white/10 mb-6 flex items-center justify-center shadow-inner relative z-10">
               <span className="font-serif text-3xl text-teal">SR</span>
@@ -1661,7 +1618,7 @@ const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
           </div>
 
           {/* Hunter */}
-          <div className="animate-on-scroll card-hover-effect w-full max-w-sm bg-slate-dark/40 backdrop-blur-xl border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+          <div className="animate-on-scroll card-hover-effect w-full max-w-sm bg-slate-dark/40 border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             <div className="w-24 h-24 rounded-full bg-charcoal-dark/80 border border-white/10 mb-6 flex items-center justify-center shadow-inner relative z-10">
               <span className="font-serif text-3xl text-teal">HL</span>
@@ -1689,7 +1646,7 @@ const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
 // Rate Guarantee
 const RateGuarantee = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   return (
-    <section className="py-24 bg-teal/10 backdrop-blur-md border-y border-teal/20 relative overflow-hidden shadow-[0_0_50px_rgba(0,128,128,0.1)]">
+    <section className="py-24 bg-teal/10 border-y border-teal/20 relative overflow-hidden shadow-[0_0_50px_rgba(0,128,128,0.1)]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-center">
         <div className="animate-on-scroll">
@@ -1721,7 +1678,7 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
   };
 
   return (
-    <footer id="contact" className="bg-charcoal-dark/90 backdrop-blur-md pt-24 pb-8 relative">
+    <footer id="contact" className="bg-charcoal-dark pt-24 pb-8 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-20">
           
@@ -1933,7 +1890,7 @@ export default function App() {
   const industryRoutes = [
     '/restaurants', '/grocery', '/healthcare', '/ecommerce', 
     '/salons', '/auto-repair', '/gas-stations', '/high-risk', 
-    '/nonprofits', '/b2b'
+    '/nonprofits', '/b2b', '/real-estate', '/retail'
   ];
 
   if (currentPath === '/dashboard') {
