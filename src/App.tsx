@@ -969,7 +969,7 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
 // How It Works
 const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   const steps = [
-    { num: "01", title: "Upload Your Statement", desc: "Send us your current processing statement — takes 30 seconds." },
+    { num: "01", title: "Upload Your Statement", desc: "Send us your current processing statement." },
     { num: "02", title: "Free Analysis", desc: "We break down your rates line by line and find every hidden fee." },
     { num: "03", title: "Custom Proposal", desc: "Receive a side-by-side comparison showing your exact savings." },
     { num: "04", title: "Seamless Setup", desc: "We handle everything — equipment, integration, and training. Zero downtime." },
@@ -1009,7 +1009,7 @@ const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: Rea
             onClick={() => onOpenModal("Get a Free Statement Analysis", <StatementAnalysisForm />)}
             className="inline-flex items-center justify-center px-10 py-5 bg-teal text-white text-lg font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)] mb-4"
           >
-            Start Your Free Analysis — It Takes 30 Seconds →
+            Start Your Free Analysis →
           </button>
           <p className="text-xs text-offwhite/40 font-light">
             No contracts. No obligations. If we can't save you money, we'll tell you.
@@ -1149,26 +1149,52 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
   );
 };
 
-// Mobile-Optimized ROI Calculator
+// Mobile-Optimized ROI Calculator — DOM-driven slider (no React re-render on drag)
 const ROICalculator = () => {
-  const [volume, setVolume] = useState(50000);
-  const currentRate = 0.029; // 2.9%
-  const keystoneRate = 0.00; // The Edge Program = 0%
-  
-  const currentFees = volume * currentRate;
-  const keystoneFees = volume * keystoneRate;
-  
-  const monthlySavings = currentFees - keystoneFees;
-  const annualSavings = monthlySavings * 12;
+  const MIN = 10000, MAX = 500000;
+  const RATE = 0.029;
+  const initialVolume = 50000;
 
-  // Touch tracking for better mobile slider
-  const handleTouchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setVolume(Number(e.target.value));
+  // Refs for DOM nodes we update directly
+  const volumeDisplayRef = useRef<HTMLDivElement>(null);
+  const trackFillRef = useRef<HTMLDivElement>(null);
+  const thumbRef = useRef<HTMLDivElement>(null);
+  const currentFeesRef = useRef<HTMLDivElement>(null);
+  const annualSavingsRef = useRef<HTMLDivElement>(null);
+
+  // Committed React state — only updates on pointer-up so renders are rare
+  const [committed, setCommitted] = useState(initialVolume);
+
+  const pct = (v: number) => ((v - MIN) / (MAX - MIN)) * 100;
+
+  const updateDOM = (v: number) => {
+    const p = pct(v);
+    if (volumeDisplayRef.current) volumeDisplayRef.current.textContent = '$' + v.toLocaleString();
+    if (trackFillRef.current) trackFillRef.current.style.width = p + '%';
+    if (thumbRef.current) thumbRef.current.style.left = `calc(${p}% - ${p / 100 * 32}px)`;
+    const fees = v * RATE;
+    if (currentFeesRef.current) currentFeesRef.current.textContent = '$' + fees.toLocaleString(undefined, { maximumFractionDigits: 0 }) + '/mo';
+    const annual = fees * 12;
+    if (annualSavingsRef.current) annualSavingsRef.current.textContent = '$' + annual.toLocaleString(undefined, { maximumFractionDigits: 0 });
   };
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateDOM(Number(e.target.value));
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const v = Number(e.target.value);
+    updateDOM(v);
+    setCommitted(v); // triggers React re-render ONCE on release
+  };
+
+  // Derive display values for initial render from committed state
+  const initPct = pct(committed);
+  const initFees = committed * RATE;
+  const initAnnual = initFees * 12;
 
   return (
     <section className="py-24 bg-charcoal-dark border-t border-white/5 relative overflow-hidden" id="calculator">
-      {/* Background glow behind calculator */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-teal/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
@@ -1181,43 +1207,44 @@ const ROICalculator = () => {
 
         <div className="animate-on-scroll bg-charcoal/80 border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-teal/10 to-transparent opacity-20 pointer-events-none"></div>
-          
+
           <div className="relative z-10">
             {/* Slider Section */}
             <div className="mb-12 sm:mb-16 bg-slate-dark/30 rounded-2xl p-5 sm:p-8 border border-white/5">
               <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end mb-8 gap-4 sm:gap-0">
                 <label className="text-offwhite/80 font-medium text-sm sm:text-base uppercase tracking-wider">Monthly Processing Volume</label>
-                <div className="text-4xl sm:text-5xl font-mono text-white savings-number">${volume.toLocaleString()}</div>
+                <div ref={volumeDisplayRef} className="text-4xl sm:text-5xl font-mono text-white">${committed.toLocaleString()}</div>
               </div>
-              
+
               <div className="relative h-16 flex items-center mb-2">
-                <input 
-                  type="range" 
-                  min="10000" 
-                  max="500000" 
-                  step="5000" 
-                  value={volume} 
-                  onChange={handleTouchChange}
+                <input
+                  type="range"
+                  min={MIN}
+                  max={MAX}
+                  step="5000"
+                  defaultValue={committed}
+                  onInput={handleInput as any}
+                  onChange={handleChange}
                   className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
                 />
-                
-                {/* Custom giant slider track */}
+                {/* Track */}
                 <div className="w-full h-3 sm:h-4 bg-charcoal-dark rounded-full relative overflow-hidden border border-white/10 pointer-events-none">
-                  <div 
+                  <div
+                    ref={trackFillRef}
                     className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-soft to-teal"
-                    style={{ width: `${((volume - 10000) / 490000) * 100}%` }}
+                    style={{ width: `${initPct}%` }}
                   ></div>
                 </div>
-                
-                {/* Custom Slider Thumb (Visual) */}
-                <div 
-                  className="absolute top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-[0_0_15px_rgba(0,128,128,0.5)] border-4 border-teal pointer-events-none flex items-center justify-center transition-transform"
-                  style={{ left: `calc(${((volume - 10000) / 490000) * 100}% - ${(((volume - 10000) / 490000) * 1) * 32}px)` }} // Approximate centering
+                {/* Thumb */}
+                <div
+                  ref={thumbRef}
+                  className="absolute top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-[0_0_15px_rgba(0,128,128,0.5)] border-4 border-teal pointer-events-none flex items-center justify-center"
+                  style={{ left: `calc(${initPct}% - ${initPct / 100 * 32}px)` }}
                 >
                   <div className="w-2 h-2 rounded-full bg-teal"></div>
                 </div>
               </div>
-              
+
               <div className="flex justify-between text-xs sm:text-sm text-offwhite/40 font-mono">
                 <span>$10k</span>
                 <span>$500k+</span>
@@ -1229,7 +1256,7 @@ const ROICalculator = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
                 <div className="bg-charcoal-dark/50 p-6 rounded-2xl border border-white/5 flex flex-col items-center sm:items-start text-center sm:text-left">
                   <div className="text-offwhite/50 text-xs sm:text-sm uppercase tracking-widest mb-2 sm:mb-3">Current Est. Fees (2.9%)</div>
-                  <div className="text-2xl sm:text-3xl font-mono text-white/50">${currentFees.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}<span className="text-sm">/mo</span></div>
+                  <div ref={currentFeesRef} className="text-2xl sm:text-3xl font-mono text-white/50">${initFees.toLocaleString(undefined, { maximumFractionDigits: 0 })}/mo</div>
                 </div>
                 <div className="bg-teal/5 p-6 rounded-2xl border border-teal/20 flex flex-col items-center sm:items-start text-center sm:text-left relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-20 h-20 bg-teal/20 blur-xl"></div>
@@ -1239,18 +1266,18 @@ const ROICalculator = () => {
                   </div>
                 </div>
               </div>
-              
-              <div className="bg-charcoal-dark rounded-3xl p-8 sm:p-12 border border-teal/30 text-center relative shadow-[0_0_50px_rgba(0,128,128,0.15)] glow-container mt-4">
+
+              <div className="bg-charcoal-dark rounded-3xl p-8 sm:p-12 border border-teal/30 text-center relative shadow-[0_0_50px_rgba(0,128,128,0.15)] mt-4">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.1)_0%,transparent_60%)]"></div>
                 <div className="relative z-10">
                   <div className="text-offwhite/80 text-sm sm:text-base font-medium uppercase tracking-[0.2em] mb-4 sm:mb-6">Estimated Annual Savings</div>
-                  <div className="text-5xl sm:text-7xl md:text-8xl font-mono text-white font-bold leading-none tracking-tighter savings-number drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                    ${annualSavings.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}
+                  <div ref={annualSavingsRef} className="text-5xl sm:text-7xl md:text-8xl font-mono text-white font-bold leading-none tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                    ${initAnnual.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-8 sm:mt-10 text-center px-4">
               <p className="text-xs sm:text-sm text-offwhite/40 leading-relaxed max-w-2xl mx-auto">
                 *Estimates based on industry average blended rate of 2.9%. Activating The Edge Program eliminates all processing volume fees, capping your cost at $0/mo for processing.
@@ -1262,6 +1289,7 @@ const ROICalculator = () => {
     </section>
   );
 };
+
 
 // Industries
 const Industries = ({ onOpenSplash }: { onOpenSplash: (industryId: string) => void }) => {

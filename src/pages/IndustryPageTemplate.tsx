@@ -251,7 +251,7 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10 mb-8">
             <div className="p-6 bg-charcoal/50 rounded-xl border border-white/5">
               <div className="text-sm text-offwhite/50 mb-2">Current Fees</div>
-              <div className="text-xl font-mono text-white/50 line-through">${currentFees.toLocaleString(undefined, {maximumFractionDigits:0})}</div>
+              <div className="text-xl font-mono text-white/50">${currentFees.toLocaleString(undefined, {maximumFractionDigits:0})}</div>
             </div>
             <div className="p-6 bg-teal/10 rounded-xl border border-teal/30">
               <div className="text-sm text-teal mb-2">Keystone Edge Program</div>
