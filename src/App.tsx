@@ -34,7 +34,7 @@ import {
 } from 'lucide-react';
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
-import VideoHero from './components/VideoHero';
+
 
 // Custom Hooks for Animations
 function useScrollAnimation() {
@@ -1831,7 +1831,7 @@ function MainLandingPage({ onOpenModal, onOpenSplash }: { onOpenModal: (title: s
 
   return (
     <>
-      <VideoHero onOpenModal={onOpenModal} StatementAnalysisForm={StatementAnalysisForm} />
+
       <Hero onOpenModal={onOpenModal} />
       <ProcessingVolume />
       <Pricing onOpenModal={onOpenModal} />
