@@ -55,6 +55,10 @@ async function startServer() {
   } else {
     // Serve static files in production
     app.use(express.static('dist'));
+    // SPA fallback: serve index.html for all non-API routes
+    app.get('*', (_req, res) => {
+      res.sendFile('index.html', { root: 'dist' });
+    });
   }
 
   app.listen(PORT, '0.0.0.0', () => {

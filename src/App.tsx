@@ -1149,49 +1149,45 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
   );
 };
 
-// Mobile-Optimized ROI Calculator — DOM-driven slider (no React re-render on drag)
+// Mobile-Optimized ROI Calculator — fully native slider, zero React renders during drag
 const ROICalculator = () => {
   const MIN = 10000, MAX = 500000;
   const RATE = 0.029;
   const initialVolume = 50000;
 
-  // Refs for DOM nodes we update directly
+  const inputRef = useRef<HTMLInputElement>(null);
   const volumeDisplayRef = useRef<HTMLDivElement>(null);
   const trackFillRef = useRef<HTMLDivElement>(null);
   const thumbRef = useRef<HTMLDivElement>(null);
   const currentFeesRef = useRef<HTMLDivElement>(null);
   const annualSavingsRef = useRef<HTMLDivElement>(null);
 
-  // Committed React state — only updates on pointer-up so renders are rare
-  const [committed, setCommitted] = useState(initialVolume);
-
   const pct = (v: number) => ((v - MIN) / (MAX - MIN)) * 100;
 
-  const updateDOM = (v: number) => {
+  const refreshDOM = (v: number) => {
     const p = pct(v);
-    if (volumeDisplayRef.current) volumeDisplayRef.current.textContent = '$' + v.toLocaleString();
-    if (trackFillRef.current) trackFillRef.current.style.width = p + '%';
-    if (thumbRef.current) thumbRef.current.style.left = `calc(${p}% - ${p / 100 * 32}px)`;
     const fees = v * RATE;
-    if (currentFeesRef.current) currentFeesRef.current.textContent = '$' + fees.toLocaleString(undefined, { maximumFractionDigits: 0 }) + '/mo';
     const annual = fees * 12;
-    if (annualSavingsRef.current) annualSavingsRef.current.textContent = '$' + annual.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    if (volumeDisplayRef.current)  volumeDisplayRef.current.textContent  = '$' + v.toLocaleString();
+    if (trackFillRef.current)      trackFillRef.current.style.width      = p + '%';
+    if (thumbRef.current)          thumbRef.current.style.left           = `calc(${p}% - ${p / 100 * 32}px)`;
+    if (currentFeesRef.current)    currentFeesRef.current.textContent    = '$' + fees.toLocaleString(undefined, { maximumFractionDigits: 0 }) + '/mo';
+    if (annualSavingsRef.current)  annualSavingsRef.current.textContent  = '$' + annual.toLocaleString(undefined, { maximumFractionDigits: 0 });
   };
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    updateDOM(Number(e.target.value));
-  };
+  useEffect(() => {
+    const el = inputRef.current;
+    if (!el) return;
+    el.value = String(initialVolume);
+    refreshDOM(initialVolume);
+    const onInput = () => refreshDOM(Number(el.value));
+    el.addEventListener('input', onInput, { passive: true });
+    return () => el.removeEventListener('input', onInput);
+  }, []); // run once on mount
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const v = Number(e.target.value);
-    updateDOM(v);
-    setCommitted(v); // triggers React re-render ONCE on release
-  };
-
-  // Derive display values for initial render from committed state
-  const initPct = pct(committed);
-  const initFees = committed * RATE;
-  const initAnnual = initFees * 12;
+  const initPct  = pct(initialVolume);
+  const initFees = initialVolume * RATE;
+  const initAnn  = initFees * 12;
 
   return (
     <section className="py-24 bg-charcoal-dark border-t border-white/5 relative overflow-hidden" id="calculator">
@@ -1209,31 +1205,27 @@ const ROICalculator = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-teal/10 to-transparent opacity-20 pointer-events-none"></div>
 
           <div className="relative z-10">
-            {/* Slider Section */}
+            {/* Slider */}
             <div className="mb-12 sm:mb-16 bg-slate-dark/30 rounded-2xl p-5 sm:p-8 border border-white/5">
               <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end mb-8 gap-4 sm:gap-0">
-                <label className="text-offwhite/80 font-medium text-sm sm:text-base uppercase tracking-wider">Monthly Processing Volume</label>
-                <div ref={volumeDisplayRef} className="text-4xl sm:text-5xl font-mono text-white">${committed.toLocaleString()}</div>
+                <span className="text-offwhite/80 font-medium text-sm sm:text-base uppercase tracking-wider">Monthly Processing Volume</span>
+                <div ref={volumeDisplayRef} className="text-4xl sm:text-5xl font-mono text-white">${initialVolume.toLocaleString()}</div>
               </div>
 
               <div className="relative h-16 flex items-center mb-2">
+                {/* Native input — React never touches this after mount */}
                 <input
+                  ref={inputRef}
                   type="range"
                   min={MIN}
                   max={MAX}
-                  step="5000"
-                  defaultValue={committed}
-                  onInput={handleInput as any}
-                  onChange={handleChange}
-                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
+                  step={5000}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20 touch-none"
+                  readOnly
                 />
                 {/* Track */}
                 <div className="w-full h-3 sm:h-4 bg-charcoal-dark rounded-full relative overflow-hidden border border-white/10 pointer-events-none">
-                  <div
-                    ref={trackFillRef}
-                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-soft to-teal"
-                    style={{ width: `${initPct}%` }}
-                  ></div>
+                  <div ref={trackFillRef} className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-soft to-teal" style={{ width: `${initPct}%` }}></div>
                 </div>
                 {/* Thumb */}
                 <div
@@ -1251,7 +1243,7 @@ const ROICalculator = () => {
               </div>
             </div>
 
-            {/* Results Section */}
+            {/* Results */}
             <div className="flex flex-col gap-6 sm:gap-8 border-t border-white/10 pt-8 sm:pt-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
                 <div className="bg-charcoal-dark/50 p-6 rounded-2xl border border-white/5 flex flex-col items-center sm:items-start text-center sm:text-left">
@@ -1272,7 +1264,7 @@ const ROICalculator = () => {
                 <div className="relative z-10">
                   <div className="text-offwhite/80 text-sm sm:text-base font-medium uppercase tracking-[0.2em] mb-4 sm:mb-6">Estimated Annual Savings</div>
                   <div ref={annualSavingsRef} className="text-5xl sm:text-7xl md:text-8xl font-mono text-white font-bold leading-none tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                    ${initAnnual.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                    ${initAnn.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                   </div>
                 </div>
               </div>
@@ -1461,28 +1453,38 @@ const ProcessingVolume = () => {
           </p>
         </div>
 
-        {/* Flanking Stats */}
+        {/* Stat Cards */}
         <div className="flex flex-col sm:flex-row gap-6 md:gap-8 w-full max-w-4xl mx-auto">
-          {/* Left: Savings */}
+          {/* Savings Guaranteed */}
           <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '200ms' }}>
             <span className="text-3xl md:text-4xl text-teal font-medium mb-3 counter-font">30-100%</span>
             <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Savings Guaranteed</span>
           </div>
 
-          {/* Center: Uptime (counting up) */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '400ms' }}>
+          {/* Fees Eliminated (3.2% of $1M) */}
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-teal/[0.06] rounded-2xl border border-teal/20 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '350ms' }}>
+            <span className="text-3xl md:text-4xl text-teal font-medium mb-3 counter-font">
+              {isVisible ? <CountUp end={32000} duration={2000} prefix="$" /> : '$0'}
+            </span>
+            <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Avg Fees Eliminated/mo*</span>
+          </div>
+
+          {/* Uptime */}
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '500ms' }}>
             <span className="text-3xl md:text-4xl text-white font-medium mb-3 counter-font">
               {isVisible ? <CountUp end={99.9} duration={2000} decimals={1} suffix="%" /> : '0%'}
             </span>
             <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Uptime Reliability</span>
           </div>
 
-          {/* Right: Fees (static at 0) */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '600ms' }}>
+          {/* $0 Fees */}
+          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '650ms' }}>
             <span className="text-3xl md:text-4xl text-white font-medium mb-3 counter-font">$0</span>
             <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Processing Fees with Edge</span>
           </div>
         </div>
+
+        <p className="mt-6 text-offwhite/30 text-xs text-center">*Based on $1M monthly volume at industry avg 3.2% rate before switching to Edge</p>
       </div>
 
       {/* Bottom Accent Line */}
