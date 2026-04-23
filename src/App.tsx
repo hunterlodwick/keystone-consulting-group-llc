@@ -29,10 +29,16 @@ import {
   FileText,
   Shield,
   Mail,
-  Star
+  Star,
+  Code,
+  LayoutDashboard,
+  Zap,
+  Compass,
+  Target
 } from 'lucide-react';
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
+import ServicesPage from './pages/ServicesPage';
 
 
 // Custom Hooks for Animations
@@ -196,53 +202,49 @@ const INDUSTRY_DATA = [
 
 const SOLUTIONS_DATA = [
   { 
-    id: "smart-terminals",
-    title: "Smart Terminals", 
-    icon: CreditCard, 
-    desc: "Fast, secure, and reliable processing for all major cards.",
-    longDesc: "Our credit card processing solutions are designed to be fast, secure, and incredibly reliable. We support all major credit cards and offer next-day funding to keep your cash flow healthy.",
-    features: ["Next-day funding available", "PCI compliant security", "Transparent interchange-plus pricing", "24/7 dedicated support"]
+    id: "web-design",
+    title: "Custom Web Design", 
+    icon: Code, 
+    desc: "3D animated sites, AI-powered talking websites, and high-conversion landing pages.",
+    longDesc: "We build immersive, high-performance websites — from 3D animated experiences to AI voice chatbots that schedule appointments and convert visitors while you sleep.",
+    features: ["3D animated websites", "AI voice chatbot integration", "High-conversion landing pages", "Mobile-first responsive design"],
+    linkTo: "/services#web-design"
   },
   { 
-    id: "pos-systems",
-    title: "POS Systems", 
-    icon: MonitorSmartphone, 
-    desc: "State-of-the-art point of sale hardware tailored to your business.",
-    longDesc: "Upgrade your checkout experience with our modern POS systems. Whether you run a restaurant, retail store, or service business, we have hardware that fits your specific needs.",
-    features: ["Inventory management", "Employee tracking", "Customer loyalty programs", "Sleek, modern hardware"]
+    id: "crm",
+    title: "CRM Systems", 
+    icon: LayoutDashboard, 
+    desc: "Custom-built or expertly configured CRMs tailored to your workflow.",
+    longDesc: "Whether you need a CRM built from scratch or want to get more out of HubSpot or Go High Level, we design systems around how your team actually works.",
+    features: ["Custom CRM development", "HubSpot & GHL configuration", "Pipeline & deal tracking", "Automated follow-up sequences"],
+    linkTo: "/services#crm"
   },
   { 
-    id: "mobile-payments",
-    title: "Mobile Payments", 
-    icon: Smartphone, 
-    desc: "Take your business anywhere with our mobile solutions.",
-    longDesc: "Never miss a sale. Our mobile payment solutions allow you to accept payments securely from your smartphone or tablet, perfect for food trucks, pop-up shops, and home services.",
-    features: ["iOS and Android compatible", "Bluetooth card readers", "Digital receipts", "Offline mode support"]
+    id: "automations",
+    title: "AI & Automations", 
+    icon: Zap, 
+    desc: "AI agents, workflow automation, and intelligent system buildouts.",
+    longDesc: "We build AI agents for lead qualification, customer service, and internal operations — plus workflow automations that connect your tools and eliminate manual processes.",
+    features: ["AI lead qualification agents", "Customer service chatbots", "Workflow automation buildouts", "System integrations & APIs"],
+    linkTo: "/services#automations"
   },
   { 
-    id: "ecommerce",
-    title: "E-Commerce", 
-    icon: Globe, 
-    desc: "Seamless e-commerce integration for your digital storefront.",
-    longDesc: "Expand your business online with our secure e-commerce gateways. We integrate seamlessly with popular platforms like Shopify, WooCommerce, and Magento.",
-    features: ["Fraud protection suite", "Recurring billing options", "Developer-friendly APIs", "Hosted payment pages"]
+    id: "consulting",
+    title: "Business Consulting", 
+    icon: Compass, 
+    desc: "Strategic advisory to identify waste, fix inefficiencies, and drive growth.",
+    longDesc: "We audit your operations, identify where money is leaking, eliminate waste, and build a roadmap to reinvest savings into growth. Think of us as your fractional COO.",
+    features: ["Operational efficiency audits", "Revenue leak identification", "Growth strategy & roadmapping", "Fractional COO advisory"],
+    linkTo: "/services#consulting"
   },
   { 
-    id: "cash-discount",
-    title: "The Edge Program", 
-    icon: Percent, 
-    desc: "Offset your processing fees and keep more of your revenue.",
-    large: true,
-    longDesc: "Keep 100% of your hard-earned revenue. Our fully compliant The Edge Program programs pass the cost of processing to customers who choose to pay with credit cards.",
-    features: ["Fully compliant with card brand rules", "Automated terminal programming", "Free signage provided", "Save up to 100% on fees"]
-  },
-  { 
-    id: "gift-loyalty",
-    title: "Gift & Loyalty", 
-    icon: Gift, 
-    desc: "Keep customers coming back with custom gift cards and rewards.",
-    longDesc: "Boost customer retention and increase average ticket sizes with our integrated gift card and loyalty programs. Easy to set up and manage directly from your POS.",
-    features: ["Custom branded physical cards", "Digital e-gift cards", "Points-based loyalty", "Automated reward tracking"]
+    id: "prep-to-sell",
+    title: "Prep-to-Sell", 
+    icon: Target, 
+    desc: "Position your business for a successful exit or acquisition.",
+    longDesc: "We help you systematize operations, clean up financials, and maximize valuation — so when the time comes to sell, you're ready to command top dollar.",
+    features: ["Exit strategy planning", "Financial cleanup & optimization", "Operational systematization", "Valuation maximization"],
+    linkTo: "/services#prep-to-sell"
   },
 ];
 
@@ -658,21 +660,28 @@ const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.R
               Services <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 w-[500px] ${openDropdown === 'services' ? 'opacity-100 visible' : 'opacity-0 invisible md:group-hover:opacity-100 md:group-hover:visible'}`}>
-              <div className="bg-charcoal-dark border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-4 grid grid-cols-2 gap-2 relative overflow-hidden backdrop-blur-xl">
+              <div className="bg-charcoal-dark border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-4 relative overflow-hidden backdrop-blur-xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
-                {SOLUTIONS_DATA.map((sol, i) => (
-                  <button 
-                    key={i} 
-                    onClick={() => onOpenModal(sol.title, <ServiceDetails service={sol} onOpenModal={onOpenModal} />)} 
-                    className="text-left group/link relative z-10 p-3 rounded-lg hover:bg-white/5 transition-colors flex items-start gap-3"
-                  >
-                    <div className="p-2 bg-teal/10 rounded-lg text-teal flex-shrink-0"><sol.icon className="w-5 h-5" /></div>
-                    <div>
-                      <div className="text-sm font-medium text-white mb-0.5 group-hover/link:text-teal transition-colors">{sol.title}</div>
-                      <div className="text-xs text-offwhite/50 line-clamp-2">{sol.longDesc}</div>
-                    </div>
-                  </button>
-                ))}
+                <div className="grid grid-cols-2 gap-2">
+                  {SOLUTIONS_DATA.map((sol, i) => (
+                    <a 
+                      key={i} 
+                      href={`/services#${sol.id}`}
+                      className="text-left group/link relative z-10 p-3 rounded-lg hover:bg-white/5 transition-colors flex items-start gap-3"
+                    >
+                      <div className="p-2 bg-teal/10 rounded-lg text-teal flex-shrink-0"><sol.icon className="w-5 h-5" /></div>
+                      <div>
+                        <div className="text-sm font-medium text-white mb-0.5 group-hover/link:text-teal transition-colors">{sol.title}</div>
+                        <div className="text-xs text-offwhite/50 line-clamp-2">{sol.desc}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+                <div className="relative z-10 border-t border-white/5 mt-3 pt-3">
+                  <a href="/services" className="flex items-center justify-center gap-2 text-teal text-sm font-medium hover:text-teal-soft transition-colors py-1">
+                    View All Services <ArrowUp className="w-3.5 h-3.5 rotate-90" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -714,7 +723,14 @@ const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.R
           <div
             className="absolute top-full left-0 right-0 bg-charcoal-dark/95 backdrop-blur-xl border-b border-white/10 shadow-2xl md:hidden flex flex-col p-6 gap-6"
           >
-            {['Services', 'About', 'Contact'].map((item) => (
+            <a 
+              href="/services"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-offwhite/90 hover:text-white font-medium text-lg tracking-wide"
+            >
+              Services
+            </a>
+            {['About', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`/#${item.toLowerCase()}`}
@@ -913,53 +929,35 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
           <p className="text-offwhite/70 text-lg font-light max-w-2xl">Once we uncover savings, we help you reinvest it into the exact systems your business needs to grow.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[200px] stagger-children">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
           {SOLUTIONS_DATA.map((sol, idx) => (
-            <div
+            <a
               key={idx}
-              onClick={() => onOpenModal(sol.title, <ServiceDetails service={sol} />)}
-              className={`animate-on-scroll card-hover-effect group relative bg-slate-dark/40 p-8 rounded-xl border border-white/5 flex flex-col justify-between cursor-pointer overflow-hidden ${
-                sol.large ? 'md:col-span-2 lg:col-span-2 row-span-2' : 'row-span-1'
-              }`}
+              href={(sol as any).linkTo || `/services#${sol.id}`}
+              className="animate-on-scroll card-hover-effect group relative bg-slate-dark/40 p-8 rounded-xl border border-white/5 flex flex-col justify-between cursor-pointer overflow-hidden min-h-[200px]"
             >
               {/* Subtle inner glow for glass effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               
               <div className="flex justify-between items-start relative z-10">
                 <sol.icon className="w-8 h-8 text-teal transition-transform duration-300 ease-custom group-hover:rotate-3" strokeWidth={1} />
-                
-                {sol.id === 'cash-discount' && (
-                  <div className="absolute right-0 top-0 flex flex-col items-end opacity-40 md:opacity-80 group-hover:opacity-100 transition-all duration-500 transform group-hover:-translate-y-2 scale-75 md:scale-100 origin-top-right">
-                    <div className="bg-charcoal-dark/90 backdrop-blur-md border border-white/10 rounded-xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform rotate-2 w-56 relative overflow-hidden">
-                      {/* Receipt jagged edge effect */}
-                      <div className="absolute top-0 left-0 right-0 h-1.5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjQiPjxwb2x5Z29uIHBvaW50cz0iMCwwIDQsNCA4LDAiIGZpbGw9IiMxRTElRTEiLz48L3N2Zz4=')] opacity-50"></div>
-                      
-                      <div className="text-xs text-white/50 uppercase mb-4 text-center tracking-widest border-b border-white/5 pb-3">Customer Receipt</div>
-                      <div className="space-y-3 mb-4">
-                        <div className="flex justify-between gap-4 text-sm">
-                          <span className="text-white/70">Subtotal</span>
-                          <span className="font-mono text-white/90">$100.00</span>
-                        </div>
-                        <div className="flex justify-between gap-4 text-sm bg-teal/10 -mx-3 px-3 py-1.5 rounded border border-teal/20">
-                          <span className="text-teal font-medium">The Edge Program</span>
-                          <span className="font-mono text-teal font-medium">-$3.99</span>
-                        </div>
-                      </div>
-                      <div className="h-[1px] bg-white/10 w-full mb-3 border-dashed border-b border-white/20"></div>
-                      <div className="flex justify-between gap-4 text-base font-medium mt-3">
-                        <span className="text-white">Total</span>
-                        <span className="font-mono text-white">$96.01</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
               <div className="relative z-10 mt-8">
-                <h3 className={`font-medium text-white mb-2 ${sol.large ? 'text-2xl' : 'text-xl'}`}>{sol.title}</h3>
+                <h3 className="font-medium text-white mb-2 text-xl">{sol.title}</h3>
                 <p className="text-offwhite/60 text-sm font-light leading-relaxed">{sol.desc}</p>
               </div>
-            </div>
+            </a>
           ))}
+        </div>
+
+        <div className="mt-10 text-center animate-on-scroll">
+          <a 
+            href="/services" 
+            className="inline-flex items-center gap-2 text-teal text-sm font-medium hover:text-teal-soft transition-colors group"
+          >
+            View All Services in Detail 
+            <ArrowUp className="w-4 h-4 rotate-90 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
       </div>
     </section>
@@ -1731,13 +1729,13 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-6">Solutions</h4>
+            <h4 className="text-white font-medium mb-6">Services</h4>
             <ul className="space-y-3 text-sm text-offwhite/60 font-light">
               {SOLUTIONS_DATA.map(sol => (
                 <li key={sol.id}>
-                  <button onClick={() => onOpenModal(sol.title, <ServiceDetails service={sol} onOpenModal={onOpenModal} />)} className="hover:text-teal transition-colors text-left">
+                  <a href={`/services#${sol.id}`} className="hover:text-teal transition-colors">
                     {sol.title}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -1942,7 +1940,16 @@ export default function App() {
       <Header onOpenModal={handleOpenModal} />
       
       <main>
-        {industryRoutes.includes(currentPath) ? (
+        {currentPath === '/services' ? (
+          <ServicesPage 
+            onOpenModal={handleOpenModal}
+            onNavigate={(path) => {
+              window.history.pushState({}, '', path);
+              setCurrentPath(path);
+              window.scrollTo(0, 0);
+            }}
+          />
+        ) : industryRoutes.includes(currentPath) ? (
           <IndustryPageTemplate 
             industryPath={currentPath.substring(1)} 
             onNavigate={(path) => {
