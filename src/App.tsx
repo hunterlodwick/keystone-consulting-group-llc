@@ -294,8 +294,8 @@ const RESOURCES_DATA = [
     id: "about-us",
     title: "About Us",
     icon: Users,
-    longDesc: "Keystone Consulting Group is your local Utah partner for modern payment solutions. We believe in transparency, local support, and helping businesses thrive. Our team of experts is dedicated to finding the perfect fit for your unique business needs.",
-    features: ["Local Utah support team", "Years of industry experience", "Client-first approach", "Innovative hardware solutions"],
+    longDesc: "Keystone Consulting Group is your local Utah partner for uncovering hidden profit and turning it into growth. We audit your costs, eliminate unnecessary fees, and reinvest the savings into systems that scale your business. Our team deals with you directly — no phone trees, no runarounds.",
+    features: ["Local Utah support team", "Proven Identify → Fix → Grow process", "Client-first approach", "Innovative payment & growth solutions"],
     hideButton: true
   },
   {
@@ -387,10 +387,10 @@ const IndustrySplash = ({ industry, onOpenModal, onClose }: { industry: any, onO
       <div className="py-24 text-center px-6">
         <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Ready to upgrade your {industry.name.toLowerCase()} payments?</h2>
         <button 
-          onClick={() => onOpenModal("Get a Free Statement Analysis", <StatementAnalysisForm />)}
+          onClick={() => onOpenModal("Get a Free Profit Leak Analysis", <StatementAnalysisForm />)}
           className="inline-flex items-center justify-center px-8 py-4 bg-white text-charcoal font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
         >
-          Get a Free Statement Analysis
+          Get a Free Profit Leak Analysis
         </button>
       </div>
     </div>
@@ -487,7 +487,7 @@ const StatementAnalysisForm = () => {
     const data = {
       access_key: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_KEY",
       ccemail: "hunter@keystoneconsultingg.com, seth@keystoneconsultingg.com",
-      subject: "New Statement Analysis Request - Keystone Consulting",
+      subject: "New Profit Leak Analysis Request - Keystone Consulting",
       name: formData.get('businessName'),
       email: formData.get('email'),
       phone: formData.get('phone') || 'Not provided',
@@ -527,7 +527,7 @@ const StatementAnalysisForm = () => {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
-      <p className="text-sm text-offwhite/90 mb-4 leading-relaxed">Request a free statement analysis and we'll show you exactly how much you can save with our rate saving guarantee.</p>
+      <p className="text-sm text-offwhite/90 mb-4 leading-relaxed">We audit your business, identify where money is leaking, show exact savings opportunities, and give you a reinvestment plan — all for free.</p>
       <div>
         <label htmlFor="businessName" className="block text-sm text-offwhite/90 mb-1">Business Name</label>
         <input id="businessName" name="businessName" type="text" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
@@ -537,7 +537,7 @@ const StatementAnalysisForm = () => {
         <input id="analysis-email" name="email" type="email" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
       </div>
       <button type="submit" disabled={status === 'loading'} className="w-full bg-teal text-white py-3 rounded-sm mt-4 hover:bg-teal-soft transition-colors font-medium tracking-wide disabled:opacity-50">
-        {status === 'loading' ? 'Submitting...' : 'Request Free Analysis'}
+        {status === 'loading' ? 'Submitting...' : 'Request Free Profit Leak Analysis'}
       </button>
       {status === 'error' && <p className="text-red-400 text-sm mt-2">There was an error submitting your request. Please try again.</p>}
     </form>
@@ -771,44 +771,44 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
           {/* Subtle badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-offwhite/80 text-xs font-medium mb-6">
             <Shield className="w-3.5 h-3.5 text-teal" />
-            No contracts. If we don't earn your business, we don't keep you.
+            Most businesses are significantly overpaying in processing fees.
           </div>
           
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white mb-6">
-            One Partner.<br/>
-            <span className="block mt-2">Every Payment Solution.</span>
+            We Find Hidden Profit<br/>
+            <span className="block mt-2">in Your Business.</span>
           </h1>
           <p className="text-offwhite/80 text-lg md:text-xl font-light max-w-xl mb-10 leading-relaxed">
-            From countertop terminals to full POS systems and business intelligence — Keystone has you covered.
+            Reduce unnecessary costs, eliminate payment fees, and reinvest the savings into systems that scale your business.
           </p>
           
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-10 w-full sm:w-auto">
             <button 
-              onClick={() => onOpenModal("Book a Call", <ContactForm />)}
+              onClick={() => onOpenModal("Get a Free Profit Leak Analysis", <StatementAnalysisForm />)}
               className="w-full sm:w-auto cta-button-pulse group relative inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:tracking-[0.5px]">
-              Book a Call
+              Get a Free Profit Leak Analysis
             </button>
             <button 
-              onClick={() => onOpenModal("Get a Free Statement Analysis", <StatementAnalysisForm />)}
+              onClick={() => onOpenModal("Book a Call", <ContactForm />)}
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:bg-white/5 hover:border-white/40 hover:scale-[1.02]">
-              Get a Free Statement Analysis
+              Book a Call
             </button>
           </div>
           
           {/* Trust bar */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-offwhite/70 font-light">
             <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-teal" /> We Find the Leaks
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-teal" /> We Fix the Waste
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-teal" /> We Help You Grow
+            </div>
+            <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-teal" /> No Contracts
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> Free Equipment
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> 24/7 Support
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> 30-100% Savings Guaranteed
             </div>
           </div>
         </div>
@@ -909,8 +909,8 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
         <div
           className="mb-16 animate-on-scroll"
         >
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Custom Solutions.</h2>
-          <p className="text-offwhite/70 text-lg font-light max-w-2xl">Everything you need to accept payments, run your business, and grow your bottom line.</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Your Growth Toolkit.</h2>
+          <p className="text-offwhite/70 text-lg font-light max-w-2xl">Once we uncover savings, we help you reinvest it into the exact systems your business needs to grow.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[200px] stagger-children">
@@ -969,19 +969,19 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
 // How It Works
 const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   const steps = [
-    { num: "01", title: "Upload Your Statement", desc: "Send us your current processing statement." },
-    { num: "02", title: "Free Analysis", desc: "We break down your rates line by line and find every hidden fee." },
-    { num: "03", title: "Custom Proposal", desc: "Receive a side-by-side comparison showing your exact savings." },
-    { num: "04", title: "Seamless Setup", desc: "We handle everything — equipment, integration, and training. Zero downtime." },
+    { num: "01", title: "We Audit Your Business", desc: "Send us your current processing statement. We identify where money is leaking." },
+    { num: "02", title: "We Show Exact Savings", desc: "We break down your fees line by line and present a clear savings opportunity with a reinvestment plan." },
+    { num: "03", title: "We Fix It Fast", desc: "Payment processing is the fastest way to put money back in your pocket. We fix that first." },
+    { num: "04", title: "We Help You Grow", desc: "With savings secured, we reinvest into the systems your business needs — POS, CRM, websites, and more." },
   ];
 
   return (
     <section className="py-32 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">How It Works</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">One System. Three Steps.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">
-            Start saving on your payment processing in four simple steps. We've streamlined the switch to be completely painless.
+            We don't hand you a menu of services. We run a proven process: Identify. Fix. Grow.
           </p>
         </div>
 
@@ -1006,10 +1006,10 @@ const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: Rea
         
         <div className="text-center animate-on-scroll flex flex-col items-center">
           <button 
-            onClick={() => onOpenModal("Get a Free Statement Analysis", <StatementAnalysisForm />)}
+            onClick={() => onOpenModal("Get a Free Profit Leak Analysis", <StatementAnalysisForm />)}
             className="inline-flex items-center justify-center px-10 py-5 bg-teal text-white text-lg font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)] mb-4"
           >
-            Start Your Free Analysis →
+            Start Your Free Profit Leak Analysis →
           </button>
           <p className="text-xs text-offwhite/40 font-light">
             No contracts. No obligations. If we can't save you money, we'll tell you.
@@ -1023,10 +1023,10 @@ const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: Rea
 // Why Choose Keystone
 const WhyChooseUs = () => {
   const reasons = [
-    { num: "01", title: "Zero Contracts", desc: "If we don't earn your business, we don't keep you. It's that simple." },
-    { num: "02", title: "No Hidden Fees", desc: "Transparent pricing models so you always know what you're paying." },
-    { num: "03", title: "Free Equipment Programs", desc: "Get the hardware you need without the upfront capital investment." },
-    { num: "04", title: "Dedicated Support", desc: "Real humans, ready to help you 24/7. No endless phone trees." },
+    { num: "01", title: "We Find the Money First", desc: "Payment processing is your fastest win. Most businesses are significantly overpaying — we fix that first, then build from there." },
+    { num: "02", title: "It's a System, Not a Menu", desc: "Everything we do — audits, fee elimination, automation, growth tools — is part of one unified process, not disconnected services." },
+    { num: "03", title: "Zero Contracts, Zero Risk", desc: "If we don't earn your business, we don't keep you. No hidden fees, no lock-ins." },
+    { num: "04", title: "Savings That Compound", desc: "If we save you $2,000/month in fees, that's $24,000/year — money you can reinvest into growth instead of losing quietly." },
   ];
 
   return (
@@ -1035,7 +1035,7 @@ const WhyChooseUs = () => {
       
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-20 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white">Why Choose Keystone</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white">Why Keystone</h2>
         </div>
 
         <div className="relative">
@@ -1072,9 +1072,9 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
     <section className="py-32 relative bg-charcoal border-t border-white/5" id="pricing">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Fair, Transparent Pricing for Every Business</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Transparent Pricing. Maximum Savings.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">
-            Choose the model that fits your business. No hidden fees, no long-term contracts.
+            Choose the model that fits your business. We fix your processing fees first — then help you reinvest the savings.
           </p>
         </div>
 
@@ -1195,9 +1195,9 @@ const ROICalculator = () => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-12 sm:mb-16 animate-on-scroll">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4">Calculate Your Edge</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4">See Your Hidden Savings</h2>
           <p className="text-offwhite/70 text-base sm:text-lg font-light max-w-xl mx-auto">
-            Drag the slider to your monthly processing volume and instantly see how much revenue The Edge Program returns to your bottom line.
+            Drag the slider to your monthly processing volume and instantly see how much profit you're losing to unnecessary fees.
           </p>
         </div>
 
@@ -1304,8 +1304,8 @@ const Industries = ({ onOpenSplash }: { onOpenSplash: (industryId: string) => vo
     <section className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Custom Solutions for Every Industry</h2>
-          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">No matter your business type, we have the hardware, software, and expertise to streamline your payments.</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Trusted Across Every Industry</h2>
+          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">No matter your business type, we have the expertise to find your hidden profit and help you scale.</p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 stagger-children">
@@ -1530,9 +1530,9 @@ const Testimonials = () => {
     <section className="py-32 relative bg-charcoal-dark border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Don't Just Take Our Word For It</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Real Results. Real Savings.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">
-            Hundreds of businesses trust Keystone Consulting Group to manage their payment processing. Here's what they have to say.
+            Hundreds of businesses trust Keystone to uncover savings and reinvest for growth. Here's what they have to say.
           </p>
         </div>
 
@@ -1621,8 +1621,8 @@ const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">The Team Behind the Tech.</h2>
-          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">A boutique approach means you deal directly with the owners.</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">A Boutique Team. A Strategic Approach.</h2>
+          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">You deal directly with the owners. We find your hidden profit, fix the waste, and help you grow.</p>
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 stagger-children">
@@ -1680,17 +1680,20 @@ const RateGuarantee = ({ onOpenModal }: { onOpenModal: (title: string, content: 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-center">
         <div className="animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Rate Savings Guarantee</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">The Fastest Way to Put Money Back in Your Pocket</h2>
           <p className="text-xl text-offwhite/90 font-light mb-4">
             We save businesses <span className="text-teal font-medium">30% to 100%</span> of their current processing fees.
           </p>
-          <p className="text-offwhite/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Stop overpaying for credit card processing. Let us prove it to you with a side-by-side comparison of your current rates versus what you could be paying with Keystone.
+          <p className="text-offwhite/70 max-w-2xl mx-auto mb-4 leading-relaxed">
+            Payment processing is where we start — because it's the fastest win. We fix that first, then we build from there.
+          </p>
+          <p className="text-offwhite/50 max-w-xl mx-auto mb-10 leading-relaxed text-sm">
+            If we save you $2,000/month in fees, that's $24,000/year — money you can reinvest into growth instead of losing quietly.
           </p>
           <button 
-            onClick={() => onOpenModal('Free Statement Analysis', <StatementAnalysisForm />)}
+            onClick={() => onOpenModal('Free Profit Leak Analysis', <StatementAnalysisForm />)}
             className="cta-button-pulse inline-flex items-center justify-center px-8 py-4 bg-white text-charcoal font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02]">
-            Get a Free Statement Analysis
+            Get a Free Profit Leak Analysis
           </button>
         </div>
       </div>
@@ -1718,7 +1721,7 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
               <span className="font-serif text-lg md:text-xl font-medium tracking-wide text-white">Keystone Consulting Group</span>
             </div>
             <p className="text-offwhite/60 text-sm font-light leading-relaxed mb-8">
-              Your local consulting partner for all things payment solutions and hardware for modern businesses.
+              We find hidden profit in your business and turn it into growth. Your local partner for payment optimization, business systems, and scaling smart.
             </p>
             <ul className="space-y-3 text-sm text-offwhite/60 font-light mt-auto">
               <li>Seth: <a href="tel:801-360-9156" className="hover:text-teal transition-colors">(801) 360-9156</a></li>
@@ -1821,13 +1824,13 @@ function MainLandingPage({ onOpenModal, onOpenSplash }: { onOpenModal: (title: s
 
       <Hero onOpenModal={onOpenModal} />
       <ProcessingVolume />
+      <HowItWorks onOpenModal={onOpenModal} />
+      <RateGuarantee onOpenModal={onOpenModal} />
       <Pricing onOpenModal={onOpenModal} />
       <ROICalculator />
-      <RateGuarantee onOpenModal={onOpenModal} />
-      <FreePlacement onOpenModal={onOpenModal} />
       <ProductGrid onOpenModal={onOpenModal} />
+      <FreePlacement onOpenModal={onOpenModal} />
       <Industries onOpenSplash={onOpenSplash} />
-      <HowItWorks onOpenModal={onOpenModal} />
       <WhyChooseUs />
       <Testimonials />
       <IntegrationEcosystem />
