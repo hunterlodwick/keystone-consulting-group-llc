@@ -587,3 +587,125 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
 }
 
 export { SERVICES_DETAIL };
+
+// Single-service standalone page (for individual routes like /services/web-design)
+export function SingleServicePage({ serviceId, onOpenModal, onNavigate }: { serviceId: string, onOpenModal: (title: string, content: React.ReactNode) => void, onNavigate: (path: string) => void }) {
+  useScrollAnimation();
+  const service = SERVICES_DETAIL.find(s => s.id === serviceId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [serviceId]);
+
+  if (!service) {
+    return <div className="min-h-screen flex items-center justify-center text-white">Service not found.</div>;
+  }
+
+  const idx = SERVICES_DETAIL.indexOf(service);
+
+  return (
+    <div className="pt-24">
+      {/* Hero */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="max-w-5xl mx-auto px-6 md:px-12 text-center relative z-10">
+          <div className="animate-on-scroll">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-medium uppercase tracking-wider mb-8">
+              <service.icon className="w-3.5 h-3.5" />
+              {service.title}
+            </div>
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1]">
+              {service.title}
+            </h1>
+            <p className="text-teal text-lg md:text-xl font-medium mb-4">{service.tagline}</p>
+            <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+              {service.heroDesc}
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button 
+                onClick={() => onOpenModal(`Get Started with ${service.title}`, <ContactForm />)}
+                className="cta-button-pulse inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]"
+              >
+                Get Started <ArrowRight className="w-4 h-4" />
+              </button>
+              <a 
+                href="/services"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+              >
+                ← All Services
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Capability Cards */}
+      <section className="py-20 md:py-28 bg-charcoal-dark/40 border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-16 animate-on-scroll">
+            <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">What We Deliver</h2>
+            <p className="text-offwhite/60 text-lg font-light max-w-xl mx-auto">Deep expertise across every aspect of {service.title.toLowerCase()}.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
+            {service.sections.map((sub: any, si: number) => (
+              <div 
+                key={si}
+                className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl p-8 hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <sub.icon className="w-6 h-6 text-teal" />
+                </div>
+                <h3 className="text-xl text-white font-medium mb-3 group-hover:text-teal transition-colors">{sub.title}</h3>
+                <p className="text-offwhite/60 font-light leading-relaxed">{sub.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature List */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <div className="animate-on-scroll bg-charcoal-dark/60 border border-white/5 rounded-2xl p-8 md:p-10">
+            <h3 className="text-lg font-medium text-white mb-6">What's Included</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {service.features.map((feat: string, fi: number) => (
+                <div key={fi} className="flex items-start gap-3 text-sm text-offwhite/70">
+                  <CheckCircle className="w-4 h-4 text-teal flex-shrink-0 mt-0.5" />
+                  {feat}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 md:py-32 relative overflow-hidden bg-teal/10 border-t border-teal/20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
+        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+          <div className="animate-on-scroll">
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Ready to Get Started?</h2>
+            <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+              Book a call and let's talk about how {service.title.toLowerCase()} can transform your business.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button 
+                onClick={() => onOpenModal(`Get Started with ${service.title}`, <ContactForm />)}
+                className="cta-button-pulse inline-flex items-center justify-center px-8 py-4 bg-white text-charcoal font-medium rounded-sm transition-all duration-300 hover:scale-[1.02]"
+              >
+                Book a Call
+              </button>
+              <a 
+                href="/"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+              >
+                Back to Home
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

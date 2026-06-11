@@ -47,7 +47,7 @@ import {
 } from 'lucide-react';
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
-import ServicesPage from './pages/ServicesPage';
+import ServicesPage, { SingleServicePage } from './pages/ServicesPage';
 
 
 // Custom Hooks for Animations
@@ -601,26 +601,26 @@ const NAV_DROPDOWNS = {
     label: 'Financial Services',
     items: [
       { name: 'Low Rate Payment Processing', icon: CreditCard, desc: 'Interchange-plus & zero-fee Edge Program', href: '/#pricing' },
-      { name: 'Consumer Financing', icon: Banknote, desc: 'Let customers pay over time — you get paid now', href: '/services#consumer-financing' },
-      { name: 'Business Loans', icon: TrendingUp, desc: 'Fast capital for growth, equipment & working cash', href: '/services#business-loans' },
-      { name: 'POS Placement', icon: MonitorSmartphone, desc: 'Free smart terminals & POS hardware placement', href: '/services#pos-placement' },
+      { name: 'Consumer Financing', icon: Banknote, desc: 'Let customers pay over time — you get paid now', href: '/services/consumer-financing' },
+      { name: 'Business Loans', icon: TrendingUp, desc: 'Fast capital for growth, equipment & working cash', href: '/services/business-loans' },
+      { name: 'POS Placement', icon: MonitorSmartphone, desc: 'Free smart terminals & POS hardware placement', href: '/services/pos-placement' },
     ]
   },
   marketing: {
     label: 'Marketing Services',
     items: [
-      { name: 'Website Creation', icon: Code, desc: 'Custom 3D animated & AI-powered websites', href: '/services#web-design' },
-      { name: 'Google My Business Profile', icon: Search, desc: 'Optimize your local search presence & reviews', href: '/services#google-business' },
-      { name: 'SEO Services', icon: Globe, desc: 'Rank higher & drive organic traffic to your site', href: '/services#seo' },
-      { name: 'BPO Services', icon: Headphones, desc: 'Hands-off lead generation & appointment setting', href: '/services#bpo' },
+      { name: 'Website Creation', icon: Code, desc: 'Custom 3D animated & AI-powered websites', href: '/services/web-design' },
+      { name: 'Google My Business Profile', icon: Search, desc: 'Optimize your local search presence & reviews', href: '/services/google-business' },
+      { name: 'SEO Services', icon: Globe, desc: 'Rank higher & drive organic traffic to your site', href: '/services/seo' },
+      { name: 'BPO Services', icon: Headphones, desc: 'Hands-off lead generation & appointment setting', href: '/services/bpo' },
     ]
   },
   operating: {
     label: 'Operating Systems',
     items: [
-      { name: 'Custom CRM', icon: LayoutDashboard, desc: 'CRMs built around your unique workflow', href: '/services#crm' },
-      { name: 'AI Automations', icon: Bot, desc: 'AI agents, chatbots & workflow automation', href: '/services#automations' },
-      { name: 'Consulting Services', icon: Compass, desc: 'Strategic advisory to eliminate waste & grow', href: '/services#consulting' },
+      { name: 'Custom CRM', icon: LayoutDashboard, desc: 'CRMs built around your unique workflow', href: '/services/crm' },
+      { name: 'AI Automations', icon: Bot, desc: 'AI agents, chatbots & workflow automation', href: '/services/automations' },
+      { name: 'Consulting Services', icon: Compass, desc: 'Strategic advisory to eliminate waste & grow', href: '/services/consulting' },
     ]
   }
 };
@@ -678,7 +678,7 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between">
         <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
           <KeystoneLogo className="w-7 h-7" />
-          <span className="font-serif text-[15px] md:text-base font-medium tracking-wide text-white hidden sm:inline">Keystone Consulting Group</span>
+          <span className="font-serif text-[11px] sm:text-[13px] md:text-base font-medium tracking-wide text-white">Keystone Consulting Group</span>
         </a>
         
         <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation" onMouseLeave={() => setOpenDropdown(null)}>
@@ -2086,7 +2086,17 @@ export default function App() {
       <Header onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
       
       <main>
-        {currentPath === '/services' ? (
+        {currentPath.startsWith('/services/') ? (
+          <SingleServicePage 
+            serviceId={currentPath.replace('/services/', '')}
+            onOpenModal={handleOpenModal}
+            onNavigate={(path) => {
+              window.history.pushState({}, '', path);
+              setCurrentPath(path);
+              window.scrollTo(0, 0);
+            }}
+          />
+        ) : currentPath === '/services' ? (
           <ServicesPage 
             onOpenModal={handleOpenModal}
             onNavigate={(path) => {
