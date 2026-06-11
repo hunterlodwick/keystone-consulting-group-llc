@@ -215,3 +215,241 @@ body::after {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ---- Light Mode Theme ---- */
+[data-theme="light"] {
+  --color-charcoal: #F7F7F5;
+  --color-charcoal-dark: #EEEEEB;
+  --color-teal: #007A7A;
+  --color-teal-soft: #4DA8A8;
+  --color-offwhite: #1A1A1A;
+  --color-slate: #C8C8C8;
+  --color-slate-dark: #D8D8D5;
+}
+
+[data-theme="light"] body {
+  background-color: #F7F7F5;
+  color: #1A1A1A;
+}
+
+/* Fix noise overlay in light mode */
+[data-theme="light"] body::after {
+  opacity: 0.015;
+}
+
+/* Fix text colors that use white directly */
+[data-theme="light"] .text-white {
+  color: #1A1A1A !important;
+}
+
+/* Fix white with opacity */
+[data-theme="light"] .text-white\/80,
+[data-theme="light"] .text-white\/50,
+[data-theme="light"] .text-white\/60 {
+  color: rgba(26, 26, 26, 0.7) !important;
+}
+
+/* Fix border colors */
+[data-theme="light"] .border-white\/5,
+[data-theme="light"] .border-white\/10,
+[data-theme="light"] .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Fix background overlays */
+[data-theme="light"] .bg-white\/5,
+[data-theme="light"] .bg-white\/\[0\.03\] {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Fix backdrop elements */
+[data-theme="light"] .bg-charcoal-dark\/90,
+[data-theme="light"] .bg-charcoal-dark\/95,
+[data-theme="light"] .bg-charcoal\/80,
+[data-theme="light"] .bg-charcoal\/90 {
+  background-color: rgba(238, 238, 235, 0.95) !important;
+}
+
+[data-theme="light"] .bg-charcoal\/60,
+[data-theme="light"] .bg-charcoal\/40 {
+  background-color: rgba(238, 238, 235, 0.7) !important;
+}
+
+[data-theme="light"] .bg-slate-dark\/40,
+[data-theme="light"] .bg-slate-dark\/30 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Fix the hero gradient bg on the main app container */
+[data-theme="light"] .bg-\[radial-gradient\(ellipse_at_top\,_var\(--tw-gradient-stops\)\)\] {
+  background-image: none !important;
+  background-color: #F7F7F5 !important;
+}
+
+/* Fix POS mockup and savings calculator in hero */
+[data-theme="light"] .bg-slate-dark\/80 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Fix pricing cards */
+[data-theme="light"] .bg-charcoal-dark {
+  background-color: #EEEEEB !important;
+}
+
+/* Fix modal */
+[data-theme="light"] .bg-charcoal-dark\/90.backdrop-blur-xl {
+  background-color: rgba(247, 247, 245, 0.95) !important;
+}
+
+/* Fix teal backgrounds to be slightly more visible in light */
+[data-theme="light"] .bg-teal\/10,
+[data-theme="light"] .bg-teal\/5 {
+  background-color: rgba(0, 122, 122, 0.08) !important;
+}
+
+[data-theme="light"] .bg-teal\/\[0\.06\] {
+  background-color: rgba(0, 122, 122, 0.06) !important;
+}
+
+/* Fix text that references offwhite with opacities */
+[data-theme="light"] .text-offwhite\/90,
+[data-theme="light"] .text-offwhite\/80,
+[data-theme="light"] .text-offwhite\/70 {
+  color: rgba(26, 26, 26, 0.75) !important;
+}
+
+[data-theme="light"] .text-offwhite\/60,
+[data-theme="light"] .text-offwhite\/50 {
+  color: rgba(26, 26, 26, 0.55) !important;
+}
+
+[data-theme="light"] .text-offwhite\/40,
+[data-theme="light"] .text-offwhite\/30 {
+  color: rgba(26, 26, 26, 0.4) !important;
+}
+
+/* Fix shadows */
+[data-theme="light"] .shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.5\)\],
+[data-theme="light"] .shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.6\)\],
+[data-theme="light"] .shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.3\)\],
+[data-theme="light"] .shadow-\[0_30px_60px_-15px_rgba\(0\,0\,0\,0\.6\)\] {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Fix CTA buttons - keep teal buttons white text */
+[data-theme="light"] .bg-teal .text-white,
+[data-theme="light"] .bg-teal.text-white {
+  color: #FFFFFF !important;
+}
+
+/* Fix buttons with white text on teal bg */
+[data-theme="light"] button.bg-teal,
+[data-theme="light"] a.bg-teal,
+[data-theme="light"] div.bg-teal {
+  color: #FFFFFF !important;
+}
+
+/* Fix the white CTA button */
+[data-theme="light"] .bg-white.text-charcoal,
+[data-theme="light"] button.bg-white {
+  background-color: #1A1A1A !important;
+  color: #FFFFFF !important;
+}
+
+/* Fix data particles bg */
+[data-theme="light"] .data-particles-bg {
+  opacity: 0.05 !important;
+}
+
+/* Counter font in light */
+[data-theme="light"] .counter-font {
+  color: #1A1A1A;
+}
+
+/* Fix the testimonial stars */
+[data-theme="light"] .text-yellow-400 {
+  color: #D4A017 !important;
+}
+
+/* Fix input fields */
+[data-theme="light"] input.bg-charcoal,
+[data-theme="light"] input[class*="bg-charcoal"] {
+  background-color: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: #1A1A1A !important;
+}
+
+/* Fix the header scroll state background */
+[data-theme="light"] header {
+  --header-bg-scrolled: rgba(247, 247, 245, 0.85);
+}
+
+/* Fix dropdown menus in light mode */
+[data-theme="light"] .bg-charcoal-dark.border.border-white\/10 {
+  background-color: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Fix marquee text */
+[data-theme="light"] .marquee-content > div {
+  color: rgba(0, 0, 0, 0.25) !important;
+}
+[data-theme="light"] .marquee-content > div:hover {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ---- Theme Toggle Button ---- */
+.theme-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-knob {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-knob svg {
+  width: 11px;
+  height: 11px;
+}
+
+[data-theme="light"] .theme-toggle-knob {
+  transform: translateX(20px);
+  background: #1A1A1A;
+}
+
+[data-theme="light"] .theme-toggle-knob svg {
+  color: #FFFFFF;
+}

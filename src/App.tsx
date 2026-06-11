@@ -34,7 +34,16 @@ import {
   LayoutDashboard,
   Zap,
   Compass,
-  Target
+  Target,
+  Sun,
+  Moon,
+  ChevronDown,
+  Search,
+  Megaphone,
+  Settings,
+  Bot,
+  Headphones,
+  TrendingUp
 } from 'lucide-react';
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
@@ -586,19 +595,72 @@ const ServiceDetails = ({ service, onOpenModal }: { service: any, onOpenModal?: 
 );
 
 
+// Navigation Dropdown Data
+const NAV_DROPDOWNS = {
+  financial: {
+    label: 'Financial Services',
+    items: [
+      { name: 'Low Rate Payment Processing', icon: CreditCard, desc: 'Interchange-plus & zero-fee Edge Program', href: '/#pricing' },
+      { name: 'Consumer Financing', icon: Banknote, desc: 'Let customers pay over time — you get paid now', href: '/services#consumer-financing' },
+      { name: 'Business Loans', icon: TrendingUp, desc: 'Fast capital for growth, equipment & working cash', href: '/services#business-loans' },
+      { name: 'POS Placement', icon: MonitorSmartphone, desc: 'Free smart terminals & POS hardware placement', href: '/services#pos-placement' },
+    ]
+  },
+  marketing: {
+    label: 'Marketing Services',
+    items: [
+      { name: 'Website Creation', icon: Code, desc: 'Custom 3D animated & AI-powered websites', href: '/services#web-design' },
+      { name: 'Google My Business Profile', icon: Search, desc: 'Optimize your local search presence & reviews', href: '/services#google-business' },
+      { name: 'SEO Services', icon: Globe, desc: 'Rank higher & drive organic traffic to your site', href: '/services#seo' },
+      { name: 'BPO Services', icon: Headphones, desc: 'Hands-off lead generation & appointment setting', href: '/services#bpo' },
+    ]
+  },
+  operating: {
+    label: 'Operating Systems',
+    items: [
+      { name: 'Custom CRM', icon: LayoutDashboard, desc: 'CRMs built around your unique workflow', href: '/services#crm' },
+      { name: 'AI Automations', icon: Bot, desc: 'AI agents, chatbots & workflow automation', href: '/services#automations' },
+      { name: 'Consulting Services', icon: Compass, desc: 'Strategic advisory to eliminate waste & grow', href: '/services#consulting' },
+    ]
+  }
+};
+
+const INDUSTRY_NAV_ITEMS = [
+  { name: "Restaurants", path: "/restaurants" },
+  { name: "Grocery", path: "/grocery" },
+  { name: "Healthcare", path: "/healthcare" },
+  { name: "E-Commerce", path: "/ecommerce" },
+  { name: "Salons & Spas", path: "/salons" },
+  { name: "Auto Repair", path: "/auto-repair" },
+  { name: "Gas Stations", path: "/gas-stations" },
+  { name: "High-Risk", path: "/high-risk" },
+  { name: "Nonprofits", path: "/nonprofits" },
+  { name: "B2B Services", path: "/b2b" },
+  { name: "Real Estate", path: "/real-estate" },
+  { name: "Retail", path: "/retail" }
+];
+
 // Header
-const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
+const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: string, content: React.ReactNode) => void, theme: string, onToggleTheme: () => void }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const scrollY = useScrollPosition();
 
   const isScrolled = scrollY > 80;
+  const isLight = theme === 'light';
   
-  const backgroundColor = isScrolled ? 'rgba(45, 45, 45, 0.8)' : 'rgba(45, 45, 45, 0)';
+  const backgroundColor = isScrolled 
+    ? (isLight ? 'rgba(247, 247, 245, 0.85)' : 'rgba(45, 45, 45, 0.8)') 
+    : (isLight ? 'rgba(247, 247, 245, 0)' : 'rgba(45, 45, 45, 0)');
   const backdropFilter = isScrolled ? 'blur(12px)' : 'blur(0px)';
-  const paddingY = isScrolled ? '1rem' : '1.5rem';
-  const boxShadow = isScrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none';
-  const borderColor = isScrolled ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0)';
+  const paddingY = isScrolled ? '0.75rem' : '1.25rem';
+  const boxShadow = isScrolled 
+    ? (isLight ? '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)') 
+    : 'none';
+  const borderColor = isScrolled 
+    ? (isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.05)') 
+    : (isLight ? 'rgba(0,0,0,0)' : 'rgba(255,255,255,0)');
 
   return (
     <header 
@@ -613,38 +675,60 @@ const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.R
         borderColor
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <KeystoneLogo className="w-8 h-8" />
-          <span className="font-serif text-lg md:text-xl font-medium tracking-wide text-white">Keystone Consulting Group</span>
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between">
+        <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
+          <KeystoneLogo className="w-7 h-7" />
+          <span className="font-serif text-[15px] md:text-base font-medium tracking-wide text-white hidden sm:inline">Keystone Consulting Group</span>
         </a>
         
-        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation" onMouseLeave={() => setOpenDropdown(null)}>
+        <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation" onMouseLeave={() => setOpenDropdown(null)}>
+          {/* Service Category Dropdowns */}
+          {Object.entries(NAV_DROPDOWNS).map(([key, dropdown]) => (
+            <div key={key} className="relative group">
+              <button 
+                onMouseEnter={() => setOpenDropdown(key)}
+                onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
+                className="text-offwhite/90 group-hover:text-white font-medium text-[13px] tracking-wide flex items-center gap-1 py-2 px-3 transition-colors"
+              >
+                {dropdown.label} <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${openDropdown === key ? 'rotate-180' : ''}`} />
+              </button>
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 w-[320px] ${openDropdown === key ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'}`}>
+                <div className="bg-charcoal-dark border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-2 relative overflow-hidden backdrop-blur-xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+                  {dropdown.items.map((item, i) => (
+                    <a 
+                      key={i} 
+                      href={item.href}
+                      className="text-left group/link relative z-10 p-2.5 rounded-lg hover:bg-white/5 transition-colors flex items-start gap-3"
+                    >
+                      <div className="p-1.5 bg-teal/10 rounded-lg text-teal flex-shrink-0">
+                        <item.icon className="w-4 h-4" strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <div className="text-[13px] font-medium text-white mb-0.5 group-hover/link:text-teal transition-colors">{item.name}</div>
+                        <div className="text-[11px] text-offwhite/50 leading-relaxed">{item.desc}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Industries Dropdown */}
           <div className="relative group">
             <button 
+              onMouseEnter={() => setOpenDropdown('industries')}
               onClick={() => setOpenDropdown(openDropdown === 'industries' ? null : 'industries')}
-              className="text-offwhite/90 group-hover:text-white font-medium text-sm tracking-wide flex items-center gap-1 py-2"
+              className="text-offwhite/90 group-hover:text-white font-medium text-[13px] tracking-wide flex items-center gap-1 py-2 px-3 transition-colors"
             >
-              Industries <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              Industries <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${openDropdown === 'industries' ? 'rotate-180' : ''}`} />
             </button>
-            <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 w-[400px] ${openDropdown === 'industries' ? 'opacity-100 visible' : 'opacity-0 invisible md:group-hover:opacity-100 md:group-hover:visible'}`}>
-              <div className="bg-charcoal-dark border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-6 grid grid-cols-2 gap-x-6 gap-y-4 relative overflow-hidden backdrop-blur-xl">
+            <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 w-[380px] ${openDropdown === 'industries' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'}`}>
+              <div className="bg-charcoal-dark border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-5 grid grid-cols-2 gap-x-6 gap-y-3 relative overflow-hidden backdrop-blur-xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
-                {[
-                  { name: "Restaurants", path: "/restaurants" },
-                  { name: "Grocery", path: "/grocery" },
-                  { name: "Healthcare", path: "/healthcare" },
-                  { name: "E-Commerce", path: "/ecommerce" },
-                  { name: "Salons & Spas", path: "/salons" },
-                  { name: "Auto Repair", path: "/auto-repair" },
-                  { name: "Gas Stations", path: "/gas-stations" },
-                  { name: "High-Risk", path: "/high-risk" },
-                  { name: "Nonprofits", path: "/nonprofits" },
-                  { name: "B2B Services", path: "/b2b" },
-                  { name: "Real Estate", path: "/real-estate" },
-                  { name: "Retail", path: "/retail" }
-                ].map((ind, i) => (
-                  <a key={i} href={ind.path} className="text-sm text-offwhite/70 hover:text-white transition-colors flex items-center gap-2 group/link relative z-10">
+                {INDUSTRY_NAV_ITEMS.map((ind, i) => (
+                  <a key={i} href={ind.path} className="text-[13px] text-offwhite/70 hover:text-white transition-colors flex items-center gap-2 group/link relative z-10">
                     <div className="w-1.5 h-1.5 rounded-full bg-teal/30 group-hover/link:bg-teal transition-colors"></div>
                     {ind.name}
                   </a>
@@ -652,96 +736,137 @@ const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.R
               </div>
             </div>
           </div>
-          <div className="relative group">
-            <button 
-              onClick={() => setOpenDropdown(openDropdown === 'services' ? null : 'services')}
-              className="text-offwhite/90 group-hover:text-white font-medium text-sm tracking-wide flex items-center gap-1 py-2"
-            >
-              Services <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-            </button>
-            <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 w-[500px] ${openDropdown === 'services' ? 'opacity-100 visible' : 'opacity-0 invisible md:group-hover:opacity-100 md:group-hover:visible'}`}>
-              <div className="bg-charcoal-dark border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-4 relative overflow-hidden backdrop-blur-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
-                <div className="grid grid-cols-2 gap-2">
-                  {SOLUTIONS_DATA.map((sol, i) => (
-                    <a 
-                      key={i} 
-                      href={`/services#${sol.id}`}
-                      className="text-left group/link relative z-10 p-3 rounded-lg hover:bg-white/5 transition-colors flex items-start gap-3"
-                    >
-                      <div className="p-2 bg-teal/10 rounded-lg text-teal flex-shrink-0"><sol.icon className="w-5 h-5" /></div>
-                      <div>
-                        <div className="text-sm font-medium text-white mb-0.5 group-hover/link:text-teal transition-colors">{sol.title}</div>
-                        <div className="text-xs text-offwhite/50 line-clamp-2">{sol.desc}</div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-                <div className="relative z-10 border-t border-white/5 mt-3 pt-3">
-                  <a href="/services" className="flex items-center justify-center gap-2 text-teal text-sm font-medium hover:text-teal-soft transition-colors py-1">
-                    View All Services <ArrowUp className="w-3.5 h-3.5 rotate-90" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+
+          {/* Static Links */}
           {['About', 'Contact'].map((item) => (
             <a 
               key={item} 
               href={`/#${item.toLowerCase()}`}
-              className="relative text-offwhite/90 hover:text-white font-medium text-sm tracking-wide group py-2"
+              className="relative text-offwhite/90 hover:text-white font-medium text-[13px] tracking-wide group py-2 px-3"
             >
               {item}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-teal transition-all duration-300 ease-custom group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-3 right-3 h-[2px] bg-teal scale-x-0 transition-transform duration-300 ease-custom group-hover:scale-x-100 origin-left"></span>
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-6">
-          <a href="tel:801-360-9156" className="text-teal font-medium text-sm tracking-wide hover:text-teal-soft transition-colors flex items-center gap-2">
+        <div className="hidden xl:flex items-center gap-3">
+          {/* Theme Toggle */}
+          <button 
+            onClick={onToggleTheme}
+            className="theme-toggle"
+            aria-label={`Switch to ${isLight ? 'dark' : 'light'} mode`}
+            title={`Switch to ${isLight ? 'dark' : 'light'} mode`}
+          >
+            <div className="theme-toggle-knob">
+              {isLight ? <Sun className="w-3 h-3" /> : <Moon className="w-3 h-3 text-charcoal-dark" />}
+            </div>
+          </button>
+
+          <a href="tel:801-360-9156" className="text-teal font-medium text-[13px] tracking-wide hover:text-teal-soft transition-colors">
             (801) 360-9156
           </a>
           <button 
             onClick={() => onOpenModal("Book a Call", <ContactForm />)}
-            className="inline-flex items-center justify-center px-6 py-2.5 bg-teal text-white text-sm font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:tracking-[0.5px] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]">
+            className="inline-flex items-center justify-center px-5 py-2 bg-teal text-white text-[13px] font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]">
             Book a Call
           </button>
         </div>
 
-        <button 
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          className="md:hidden text-white relative z-50 p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        <div className="flex xl:hidden items-center gap-3">
+          {/* Mobile Theme Toggle */}
+          <button 
+            onClick={onToggleTheme}
+            className="theme-toggle"
+            aria-label={`Switch to ${isLight ? 'dark' : 'light'} mode`}
+          >
+            <div className="theme-toggle-knob">
+              {isLight ? <Sun className="w-3 h-3" /> : <Moon className="w-3 h-3 text-charcoal-dark" />}
+            </div>
+          </button>
+          <button 
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            className="text-white relative z-50 p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <>
         {mobileMenuOpen && (
           <div
-            className="absolute top-full left-0 right-0 bg-charcoal-dark/95 backdrop-blur-xl border-b border-white/10 shadow-2xl md:hidden flex flex-col p-6 gap-6"
+            className="absolute top-full left-0 right-0 bg-charcoal-dark/95 backdrop-blur-xl border-b border-white/10 shadow-2xl xl:hidden flex flex-col p-6 gap-1 max-h-[80vh] overflow-y-auto"
           >
-            <a 
-              href="/services"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-offwhite/90 hover:text-white font-medium text-lg tracking-wide"
-            >
-              Services
-            </a>
+            {/* Service Category Accordions */}
+            {Object.entries(NAV_DROPDOWNS).map(([key, dropdown]) => (
+              <div key={key}>
+                <button
+                  onClick={() => setMobileExpanded(mobileExpanded === key ? null : key)}
+                  className="w-full flex items-center justify-between py-3 text-offwhite/90 hover:text-white font-medium text-base tracking-wide transition-colors"
+                >
+                  {dropdown.label}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === key ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileExpanded === key && (
+                  <div className="pl-4 pb-3 space-y-1">
+                    {dropdown.items.map((item, i) => (
+                      <a 
+                        key={i} 
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center gap-3 py-2 text-offwhite/70 hover:text-white transition-colors"
+                      >
+                        <item.icon className="w-4 h-4 text-teal" strokeWidth={1.5} />
+                        <span className="text-sm">{item.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {/* Industries Accordion */}
+            <div>
+              <button
+                onClick={() => setMobileExpanded(mobileExpanded === 'industries' ? null : 'industries')}
+                className="w-full flex items-center justify-between py-3 text-offwhite/90 hover:text-white font-medium text-base tracking-wide transition-colors"
+              >
+                Industries
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === 'industries' ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileExpanded === 'industries' && (
+                <div className="pl-4 pb-3 grid grid-cols-2 gap-x-4 gap-y-1">
+                  {INDUSTRY_NAV_ITEMS.map((ind, i) => (
+                    <a 
+                      key={i} 
+                      href={ind.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-2 py-2 text-offwhite/70 hover:text-white transition-colors text-sm"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-teal/40"></div>
+                      {ind.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="h-px bg-white/10 w-full my-2"></div>
             {['About', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`/#${item.toLowerCase()}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-offwhite/90 hover:text-white font-medium text-lg tracking-wide"
+                className="text-offwhite/90 hover:text-white font-medium text-base tracking-wide py-2"
               >
                 {item}
               </a>
             ))}
             <div className="h-px bg-white/10 w-full my-2"></div>
-            <a href="tel:801-360-9156" className="text-teal font-medium text-lg tracking-wide hover:text-teal-soft transition-colors flex items-center gap-2">
+            <a href="tel:801-360-9156" className="text-teal font-medium text-base tracking-wide hover:text-teal-soft transition-colors flex items-center gap-2">
               (801) 360-9156
             </a>
             <button 
@@ -749,7 +874,7 @@ const Header = ({ onOpenModal }: { onOpenModal: (title: string, content: React.R
                 setMobileMenuOpen(false);
                 onOpenModal("Book a Call", <ContactForm />);
               }}
-              className="w-full inline-flex items-center justify-center px-6 py-3 bg-teal text-white text-base font-medium rounded-sm transition-all duration-300">
+              className="w-full inline-flex items-center justify-center px-6 py-3 bg-teal text-white text-base font-medium rounded-sm transition-all duration-300 mt-2">
               Book a Call
             </button>
           </div>
@@ -1375,7 +1500,7 @@ const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: 
 };
 
 // Processing Volume Social Proof
-const ProcessingVolume = () => {
+const ProcessingVolume = ({ theme }: { theme?: string }) => {
   const [count, setCount] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -1426,13 +1551,19 @@ const ProcessingVolume = () => {
     return () => observer.disconnect();
   }, []);
 
+  const isLight = theme === 'light';
+  const sectionBg = isLight
+    ? 'radial-gradient(circle at center, rgba(0, 122, 122, 0.06) 0%, rgba(238, 238, 235, 1) 100%)'
+    : 'radial-gradient(circle at center, rgba(0, 128, 128, 0.08) 0%, rgba(20, 24, 28, 1) 100%)';
+  const sectionBgColor = isLight ? '#EEEEEB' : '#14181cc0';
+
   return (
     <section 
       ref={sectionRef}
       className="relative py-12 md:py-16 overflow-hidden flex flex-col items-center justify-center border-b border-white/5"
       style={{
-        background: 'radial-gradient(circle at center, rgba(0, 128, 128, 0.08) 0%, rgba(20, 24, 28, 1) 100%)',
-        backgroundColor: '#14181cc0' // Base fallback
+        background: sectionBg,
+        backgroundColor: sectionBgColor
       }}
     >
       {/* CSS Particles Grid */}
@@ -1814,14 +1945,14 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
   );
 };
 
-function MainLandingPage({ onOpenModal, onOpenSplash }: { onOpenModal: (title: string, content: React.ReactNode) => void, onOpenSplash: (industryId: string) => void }) {
+function MainLandingPage({ onOpenModal, onOpenSplash, theme }: { onOpenModal: (title: string, content: React.ReactNode) => void, onOpenSplash: (industryId: string) => void, theme: string }) {
   useScrollAnimation();
 
   return (
     <>
 
       <Hero onOpenModal={onOpenModal} />
-      <ProcessingVolume />
+      <ProcessingVolume theme={theme} />
       <HowItWorks onOpenModal={onOpenModal} />
       <RateGuarantee onOpenModal={onOpenModal} />
       <Pricing onOpenModal={onOpenModal} />
@@ -1841,6 +1972,21 @@ function MainLandingPage({ onOpenModal, onOpenSplash }: { onOpenModal: (title: s
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  // Theme state - persisted to localStorage
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('kcg-theme');
+    return saved || 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('kcg-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   const [modalState, setModalState] = useState<{ isOpen: boolean, title: string, content: React.ReactNode | null }>({
     isOpen: false,
@@ -1937,7 +2083,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-charcoal bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-charcoal-dark via-charcoal to-charcoal-dark text-offwhite font-sans selection:bg-teal selection:text-white">
-      <Header onOpenModal={handleOpenModal} />
+      <Header onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
       
       <main>
         {currentPath === '/services' ? (
@@ -1960,7 +2106,7 @@ export default function App() {
             onOpenModal={handleOpenModal} 
           />
         ) : (
-          <MainLandingPage onOpenModal={handleOpenModal} onOpenSplash={handleOpenSplash} />
+          <MainLandingPage onOpenModal={handleOpenModal} onOpenSplash={handleOpenSplash} theme={theme} />
         )}
       </main>
 

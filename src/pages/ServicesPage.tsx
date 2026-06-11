@@ -18,7 +18,21 @@ import {
   MessageSquare,
   Rocket,
   TrendingUp,
-  Shield
+  Shield,
+  Search,
+  CreditCard,
+  MonitorSmartphone,
+  Headphones,
+  DollarSign,
+  Banknote,
+  Store,
+  Users,
+  Star,
+  BarChart3,
+  FileText,
+  Settings,
+  MapPin,
+  Phone
 } from 'lucide-react';
 import { ContactForm } from '../App';
 
@@ -194,6 +208,186 @@ const SERVICES_DETAIL = [
       }
     ],
     features: ["Exit strategy & timeline", "Financial cleanup & normalization", "SOP documentation", "Process systematization", "Recurring revenue optimization", "Customer retention strategy", "Owner-independence planning", "Valuation modeling"]
+  },
+  {
+    id: "seo",
+    title: "SEO Services",
+    icon: Search,
+    tagline: "Get found by the customers already searching for you.",
+    heroDesc: "Search engine optimization isn't a luxury — it's the foundation of sustainable growth. We help businesses rank on the first page of Google for the terms their customers are actually searching, driving organic traffic that converts without paying for every click.",
+    sections: [
+      {
+        title: "Local SEO & Map Pack",
+        icon: MapPin,
+        desc: "Dominate the local 3-pack in Google Maps. We optimize your Google Business Profile, build local citations, manage reviews, and ensure your business shows up when people search 'near me' in your area."
+      },
+      {
+        title: "On-Page Optimization",
+        icon: Code,
+        desc: "Title tags, meta descriptions, header structure, schema markup, internal linking, and content optimization — we fine-tune every page on your site to signal relevance and authority to search engines."
+      },
+      {
+        title: "Content Strategy & Blogging",
+        icon: PenTool,
+        desc: "We research the keywords your customers are typing into Google and create high-quality, SEO-optimized content that ranks. Blog posts, service pages, and landing pages that drive traffic month after month."
+      },
+      {
+        title: "Technical SEO & Site Speed",
+        icon: Zap,
+        desc: "Core Web Vitals, page speed, mobile usability, crawlability, indexing issues — we audit and fix the technical foundation of your site so Google can find, crawl, and rank every page."
+      }
+    ],
+    features: ["Google first-page ranking strategy", "Local SEO & Google Maps optimization", "Keyword research & targeting", "On-page optimization", "Technical SEO audits", "Monthly content creation", "Backlink building", "Monthly ranking reports"]
+  },
+  {
+    id: "google-business",
+    title: "Google My Business",
+    icon: MapPin,
+    tagline: "Own your local search presence.",
+    heroDesc: "Your Google Business Profile is often the first thing potential customers see. We optimize every aspect of your profile — photos, categories, posts, reviews, Q&A — so you show up in the map pack and convert searchers into customers before they even visit your website.",
+    sections: [
+      {
+        title: "Profile Optimization",
+        icon: Settings,
+        desc: "We fully build out your Google Business Profile with the right categories, attributes, service descriptions, and business info. A complete, optimized profile ranks higher and converts better than a half-filled one."
+      },
+      {
+        title: "Review Management",
+        icon: Star,
+        desc: "Reviews are the #1 local ranking factor. We set up automated review request systems, help you respond to reviews professionally, and build a strategy to consistently grow your 5-star count."
+      },
+      {
+        title: "Google Posts & Updates",
+        icon: MessageSquare,
+        desc: "Weekly Google Posts keep your profile active and signal to Google that your business is engaged. We create and schedule posts featuring offers, events, updates, and product highlights."
+      },
+      {
+        title: "Local Citation Building",
+        icon: Globe,
+        desc: "Your business name, address, and phone number need to be consistent across 50+ directories. We build and clean up citations on Yelp, Apple Maps, Bing, Facebook, and industry-specific directories."
+      }
+    ],
+    features: ["Full profile optimization", "Review request automation", "Professional review responses", "Weekly Google Posts", "Photo & video optimization", "Q&A management", "Citation building (50+ directories)", "Monthly performance reports"]
+  },
+  {
+    id: "bpo",
+    title: "BPO — Lead Generation",
+    icon: Headphones,
+    tagline: "Leads delivered. Appointments booked. Hands off.",
+    heroDesc: "Our BPO lead generation service does the prospecting for you. We build targeted outbound campaigns, qualify leads through multi-touch sequences, and book appointments directly on your calendar — so your sales team only talks to people who are ready to buy.",
+    sections: [
+      {
+        title: "Outbound Prospecting",
+        icon: Target,
+        desc: "We build targeted prospect lists based on your ideal customer profile and run multi-channel outreach — cold email, LinkedIn, and phone — to generate interest and start conversations on your behalf."
+      },
+      {
+        title: "Appointment Setting",
+        icon: LayoutDashboard,
+        desc: "Qualified prospects are booked directly onto your sales team's calendar. We handle the back-and-forth, confirm the meeting, and send a brief on the prospect so your closer walks in prepared."
+      },
+      {
+        title: "Lead Nurturing Sequences",
+        icon: MessageSquare,
+        desc: "Not every lead is ready today. We build automated nurture sequences that keep your brand top-of-mind with warm prospects until they're ready to have the conversation — then we book the call."
+      },
+      {
+        title: "Campaign Reporting & Optimization",
+        icon: BarChart3,
+        desc: "Full transparency on every campaign. Open rates, reply rates, appointments booked, pipeline generated. We continuously optimize messaging, targeting, and timing to improve results month over month."
+      }
+    ],
+    features: ["Targeted prospect list building", "Multi-channel outreach (email, LinkedIn, phone)", "Qualified appointment setting", "Automated lead nurturing sequences", "CRM integration & lead handoff", "Monthly campaign performance reports", "A/B tested messaging", "Dedicated campaign manager"]
+  },
+  {
+    id: "consumer-financing",
+    title: "Consumer Financing",
+    icon: Banknote,
+    tagline: "Your customers pay over time. You get paid now.",
+    heroDesc: "Consumer financing removes the biggest objection in sales: price. By offering flexible payment plans at the point of sale, you close more deals, increase average ticket sizes, and never chase a payment — because you get funded in full upfront.",
+    sections: [
+      {
+        title: "Point-of-Sale Financing",
+        icon: CreditCard,
+        desc: "Offer 3, 6, or 12-month payment plans right at checkout. The customer applies in under 2 minutes, gets approved instantly, and you receive the full payment within 1-2 business days."
+      },
+      {
+        title: "Increase Average Ticket Size",
+        icon: TrendingUp,
+        desc: "When customers can pay $125/month instead of $1,500 upfront, they say yes to the premium option. Our merchants see 30-50% increases in average transaction value after adding financing."
+      },
+      {
+        title: "Zero Risk to Your Business",
+        icon: Shield,
+        desc: "You get paid in full — the financing company assumes all the risk. No chargebacks, no collections, no bad debt. If the customer defaults, that's between them and the lender."
+      },
+      {
+        title: "Multi-Industry Support",
+        icon: Store,
+        desc: "Financing for auto repair, healthcare, home services, salons, retail, and more. We match you with the right lending partners for your industry and average ticket size."
+      }
+    ],
+    features: ["Instant customer approval (2 min)", "Full upfront funding to you", "3, 6, and 12-month terms", "No risk or collections for you", "Competitive interest rates", "In-store & online financing", "Multi-lender marketplace", "Integration with your POS"]
+  },
+  {
+    id: "business-loans",
+    title: "Business Loans & Capital",
+    icon: DollarSign,
+    tagline: "Fast capital when you need it.",
+    heroDesc: "Whether you need working capital, equipment financing, or growth funding — we connect you with lending partners who fund in days, not months. No jumping through hoops, no waiting 6 weeks for an SBA decision. Fast, flexible capital for businesses that can't afford to wait.",
+    sections: [
+      {
+        title: "Working Capital Loans",
+        icon: Banknote,
+        desc: "Short-term capital to cover payroll, inventory, marketing, or seasonal dips. Approvals in 24 hours, funding in 1-3 days. Flexible repayment terms based on your daily or weekly revenue."
+      },
+      {
+        title: "Equipment Financing",
+        icon: Settings,
+        desc: "Finance POS systems, kitchen equipment, vehicles, medical devices, or any business equipment. Keep your cash reserves intact while getting the tools you need to grow."
+      },
+      {
+        title: "Revenue-Based Financing",
+        icon: BarChart3,
+        desc: "Repay as a small percentage of daily sales — when business is slow, your payments are lower. No fixed monthly payments that strain your cash flow during off-seasons."
+      },
+      {
+        title: "SBA & Term Loans",
+        icon: FileText,
+        desc: "For larger, longer-term needs, we connect you with SBA lenders and traditional term loan providers. Lower rates, longer terms, and the structure for major investments."
+      }
+    ],
+    features: ["24-hour approval decisions", "Funding in 1-3 business days", "$5K - $500K+ available", "Working capital & lines of credit", "Equipment financing", "Revenue-based repayment", "SBA loan connections", "No upfront fees"]
+  },
+  {
+    id: "pos-placement",
+    title: "POS Placement",
+    icon: MonitorSmartphone,
+    tagline: "Free hardware. Zero upfront cost.",
+    heroDesc: "We place modern, smart POS terminals and payment hardware at your business at no cost. Free equipment, free installation, free training. You just process with us and the hardware is yours to use — from countertop terminals to full restaurant POS systems with kitchen displays.",
+    sections: [
+      {
+        title: "Smart Terminals",
+        icon: CreditCard,
+        desc: "Sleek, countertop-ready terminals with tap-to-pay, chip, swipe, and mobile wallet support. Process in under 2 seconds. Dual screens for customer-facing tip prompts and receipts."
+      },
+      {
+        title: "Full POS Systems",
+        icon: LayoutDashboard,
+        desc: "Complete point-of-sale systems with touchscreen registers, barcode scanners, receipt printers, and cash drawers. Pre-configured for your industry — restaurant, retail, salon, or service."
+      },
+      {
+        title: "Kitchen Display Systems",
+        icon: Layers,
+        desc: "For restaurants: digital kitchen displays that replace paper tickets. Orders route automatically from the POS to the kitchen, with bump functionality, timers, and order prioritization."
+      },
+      {
+        title: "Mobile & Wireless Readers",
+        icon: Globe,
+        desc: "Take payments anywhere — tableside, at events, on the job site, or at the door. Compact wireless readers that connect via Bluetooth or WiFi and process just as fast as countertop terminals."
+      }
+    ],
+    features: ["Free terminal placement", "Free installation & setup", "Free staff training", "Tap, chip, swipe & mobile pay", "Customer-facing tip screens", "Full POS system options", "Kitchen display integration", "Same-day deposit available"]
   }
 ];
 
