@@ -48,6 +48,7 @@ import {
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
 import ServicesPage, { SingleServicePage } from './pages/ServicesPage';
+import WorkPage from './pages/WorkPage';
 
 
 // Custom Hooks for Animations
@@ -640,6 +641,12 @@ const INDUSTRY_NAV_ITEMS = [
   { name: "Retail", path: "/retail" }
 ];
 
+const STATIC_NAV_ITEMS = [
+  { name: "Work", href: "/work" },
+  { name: "About", href: "/#about" },
+  { name: "Contact", href: "/#contact" }
+];
+
 // Header
 const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: string, content: React.ReactNode) => void, theme: string, onToggleTheme: () => void }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -738,13 +745,13 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
           </div>
 
           {/* Static Links */}
-          {['About', 'Contact'].map((item) => (
+          {STATIC_NAV_ITEMS.map((item) => (
             <a 
-              key={item} 
-              href={`/#${item.toLowerCase()}`}
+              key={item.name} 
+              href={item.href}
               className="relative text-offwhite/90 hover:text-white font-medium text-[13px] tracking-wide group py-2 px-3"
             >
-              {item}
+              {item.name}
               <span className="absolute -bottom-1 left-3 right-3 h-[2px] bg-teal scale-x-0 transition-transform duration-300 ease-custom group-hover:scale-x-100 origin-left"></span>
             </a>
           ))}
@@ -855,14 +862,14 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
             </div>
 
             <div className="h-px bg-white/10 w-full my-2"></div>
-            {['About', 'Contact'].map((item) => (
+            {STATIC_NAV_ITEMS.map((item) => (
               <a 
-                key={item} 
-                href={`/#${item.toLowerCase()}`}
+                key={item.name} 
+                href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-offwhite/90 hover:text-white font-medium text-base tracking-wide py-2"
               >
-                {item}
+                {item.name}
               </a>
             ))}
             <div className="h-px bg-white/10 w-full my-2"></div>
@@ -2098,6 +2105,15 @@ export default function App() {
           />
         ) : currentPath === '/services' ? (
           <ServicesPage 
+            onOpenModal={handleOpenModal}
+            onNavigate={(path) => {
+              window.history.pushState({}, '', path);
+              setCurrentPath(path);
+              window.scrollTo(0, 0);
+            }}
+          />
+        ) : currentPath === '/work' ? (
+          <WorkPage 
             onOpenModal={handleOpenModal}
             onNavigate={(path) => {
               window.history.pushState({}, '', path);
