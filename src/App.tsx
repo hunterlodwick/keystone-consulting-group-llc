@@ -1765,8 +1765,8 @@ const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
           {/* Seth */}
           <div className="animate-on-scroll card-hover-effect w-full max-w-sm bg-slate-dark/40 border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="w-24 h-24 rounded-full bg-charcoal-dark/80 border border-white/10 mb-6 flex items-center justify-center shadow-inner relative z-10">
-              <span className="font-serif text-3xl text-teal">SR</span>
+            <div className="w-32 h-44 rounded-xl overflow-hidden border border-white/10 mb-6 shadow-inner relative z-10 bg-charcoal-dark">
+              <img src="/team/seth.jpg" alt="Seth Redford" className="w-full h-full object-cover" loading="lazy" />
             </div>
             <h3 className="text-2xl text-white font-serif mb-1">Seth Redford</h3>
             <p className="text-teal-soft text-sm uppercase tracking-widest mb-6">Owner</p>
@@ -1786,8 +1786,8 @@ const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
           {/* Hunter */}
           <div className="animate-on-scroll card-hover-effect w-full max-w-sm bg-slate-dark/40 border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="w-24 h-24 rounded-full bg-charcoal-dark/80 border border-white/10 mb-6 flex items-center justify-center shadow-inner relative z-10">
-              <span className="font-serif text-3xl text-teal">HL</span>
+            <div className="w-32 h-44 rounded-xl overflow-hidden border border-white/10 mb-6 shadow-inner relative z-10 bg-charcoal-dark">
+              <img src="/team/hunter.jpg" alt="Hunter Lodwick" className="w-full h-full object-cover" loading="lazy" />
             </div>
             <h3 className="text-2xl text-white font-serif mb-1">Hunter Lodwick</h3>
             <p className="text-teal-soft text-sm uppercase tracking-widest mb-6">Owner</p>
