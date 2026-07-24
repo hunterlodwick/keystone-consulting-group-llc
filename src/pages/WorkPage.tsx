@@ -45,7 +45,7 @@ const PROJECTS = [
     url: "https://www.ensignpropertiesmanagement.com",
     domain: "ensignpropertiesmanagement.com",
     screenshot: "ensign-properties",
-    desc: "Full property management listing website with searchable rental inventory.",
+    desc: "Rentals fill faster when tenants can browse, filter, and apply online. No phone tag, no empty units sitting on the market for weeks while the phone never rings.",
     tags: ["Property Management", "Listings", "Search"],
     icon: Building2,
     isConfidential: false
@@ -56,7 +56,7 @@ const PROJECTS = [
     url: "https://www.tetonreach.com",
     domain: "tetonreach.com",
     screenshot: "teton-reach",
-    desc: "Professional services website built for credibility and clean lead capture.",
+    desc: "When referrals aren't enough, this site makes cold prospects feel like they already know you. Clean design that earns trust before the first conversation ever happens.",
     tags: ["Professional Services", "Web Design"],
     icon: Mountain,
     isConfidential: false
@@ -67,7 +67,7 @@ const PROJECTS = [
     url: "https://keystone-os-dashboard.vercel.app",
     domain: "keystone-os-dashboard.vercel.app",
     screenshot: "keystone-os",
-    desc: "Custom internal operations dashboard with Kanban board, project tracking, and Firestore integration.",
+    desc: "Every project, client, and deadline in one place. We built this to run our own agency. Now we can build one shaped around how your team actually works.",
     tags: ["Custom CRM", "Kanban", "Internal Tools"],
     icon: LayoutDashboard,
     isConfidential: true
@@ -78,7 +78,7 @@ const PROJECTS = [
     url: "https://benitz-appliance.vercel.app",
     domain: "benitz-appliance.vercel.app",
     screenshot: "benitz-appliance",
-    desc: "Enterprise-level appliance dealer site with a 631-product catalog, AI-powered RAG chat assistant, live search, and North Payments checkout.",
+    desc: "631 products searchable in seconds. An AI assistant that answers stock and pricing questions at 2 AM so the owner sells appliances instead of answering the phone all day.",
     tags: ["E-commerce", "AI Assistant", "631 Products", "Payments"],
     icon: ShoppingCart,
     isConfidential: false
@@ -89,7 +89,7 @@ const PROJECTS = [
     url: "https://www.attfiber-internet.com",
     domain: "attfiber-internet.com",
     screenshot: "att-fiber",
-    desc: "Super SEO and AEO-driven dealer site with 33 pages of optimized content.",
+    desc: "33 pages built to rank. When someone searches \"AT&T fiber near me,\" this site shows up. Organic leads from Google, not paid ad spend.",
     tags: ["SEO", "AEO", "33 Pages", "Content Strategy"],
     icon: Wifi,
     isConfidential: false
@@ -100,7 +100,7 @@ const PROJECTS = [
     url: "https://avada-pest-control.vercel.app",
     domain: "avada-pest-control.vercel.app",
     screenshot: "avada-pest",
-    desc: "SEO-driven pest control site with 80+ pages of optimized local content.",
+    desc: "80+ pages, each targeting a different pest, a different city, a different question homeowners actually type into Google. The phone rings before the competition shows up in the results.",
     tags: ["SEO", "80+ Pages", "Local Search", "Pest Control"],
     icon: Bug,
     isConfidential: false
@@ -111,7 +111,7 @@ const PROJECTS = [
     url: "https://www.mexpressoutah.com",
     domain: "mexpressoutah.com",
     screenshot: "mexpresso",
-    desc: "Food truck website with a custom admin panel letting the owner update daily locations without a developer.",
+    desc: "The owner updates today's location from their phone. No developer, no email, no \"where are you parked?\" texts. Customers check the site and show up.",
     tags: ["Food Truck", "Custom CMS", "Location Updates"],
     icon: Truck,
     isConfidential: false
@@ -122,7 +122,7 @@ const PROJECTS = [
     url: "https://www.segoflooringswfl.com",
     domain: "segoflooringswfl.com",
     screenshot: "sego-flooring",
-    desc: "3D animated flooring company website with high-conversion appointment booking tactics.",
+    desc: "3D animations that make a flooring showroom feel like walking the room. Every page built to move the visitor toward booking, not browsing. The form fills, the calendar fills.",
     tags: ["3D Animation", "Flooring", "Appointment Booking", "High Conversion"],
     icon: Layers,
     isConfidential: false
@@ -132,22 +132,22 @@ const PROJECTS = [
 const CUSTOM_BUILDS = [
   {
     title: "AI Chat Assistants",
-    desc: "Retrieval-based assistants trained on your catalog, pricing, and policies so customers get real answers instead of a contact form.",
+    desc: "Answer stock, pricing, and policy questions in real time so customers get what they need and you stop playing phone tag for hours every day.",
     icon: Bot
   },
   {
     title: "Operations Dashboards",
-    desc: "Internal tools that replace the spreadsheet stack — job tracking, pipeline boards, and live reporting your team actually opens.",
+    desc: "Replace the spreadsheet stack with a tool your team actually opens. Job tracking, pipelines, and live reporting in one place.",
     icon: LayoutDashboard
   },
   {
     title: "CRM Systems",
-    desc: "Custom pipelines and customer records shaped around how your business sells, not how a SaaS vendor decided you should.",
+    desc: "Pipelines and customer records built around how your business sells, not how a software vendor decided you should.",
     icon: Database
   },
   {
     title: "Automated Workflows",
-    desc: "Integrations between your site, CRM, invoicing, and scheduling tools so data moves without anyone copying and pasting it.",
+    desc: "Connect your site, CRM, invoicing, and scheduling so data moves on its own. No one copies and pastes anything.",
     icon: Workflow
   }
 ];
@@ -178,7 +178,7 @@ export default function WorkPage({ onOpenModal, onNavigate }: WorkPageProps) {
               Selected Work
             </h1>
             <p className="text-offwhite/70 text-lg md:text-xl font-light leading-relaxed">
-              Websites, custom software, and AI-powered systems built for small businesses across the US.
+              Websites and custom software that make the phone ring, fill the calendar, and keep customers finding you on Google. Built for small businesses that can't afford to wait.
             </p>
           </div>
         </div>
@@ -278,8 +278,7 @@ export default function WorkPage({ onOpenModal, onNavigate }: WorkPageProps) {
           <div className="animate-on-scroll max-w-3xl mb-14">
             <h2 className="font-serif text-3xl md:text-4xl text-white mb-5">Custom Software Builds</h2>
             <p className="text-offwhite/70 text-lg font-light leading-relaxed">
-              Beyond marketing websites, we build custom software: AI-powered chat assistants, operations dashboards,
-              CRM systems, and automated workflows. Ask about a scoped build for your business.
+              The website is the front door. The software behind it is the engine. We build AI assistants that answer customers at 2 AM, dashboards that replace the spreadsheet stack, CRMs shaped around how your team actually sells, and automations that move data so nobody has to copy and paste it.
             </p>
           </div>
 
