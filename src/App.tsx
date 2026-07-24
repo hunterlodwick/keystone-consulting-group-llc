@@ -227,7 +227,9 @@ const SOLUTIONS_DATA = [
     desc: "CRMs your team actually opens. Built around how you sell, not how a software vendor thinks you should.",
     longDesc: "Whether you need a CRM built from scratch or want to get more out of HubSpot or Go High Level, we design systems around how your team actually works.",
     features: ["Custom CRM development", "HubSpot & GHL configuration", "Pipeline & deal tracking", "Automated follow-up sequences"],
-    linkTo: "/services#crm"
+    linkTo: "/services#crm",
+    image: "/images/analytics-dashboard.jpg",
+    imageAlt: "Dark analytics CRM dashboard with teal charts",
   },
   { 
     id: "automations",
@@ -236,7 +238,9 @@ const SOLUTIONS_DATA = [
     desc: "AI agents that qualify leads, answer customers, and run your back office while you sleep.",
     longDesc: "We build AI agents for lead qualification, customer service, and internal operations, plus workflow automations that connect your tools and eliminate manual processes.",
     features: ["AI lead qualification agents", "Customer service chatbots", "Workflow automation buildouts", "System integrations & APIs"],
-    linkTo: "/services#automations"
+    linkTo: "/services#automations",
+    image: "/images/ai-chat.jpg",
+    imageAlt: "Dark AI chat interface on laptop and phone",
   },
   { 
     id: "consulting",
@@ -1066,17 +1070,31 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
             <a
               key={idx}
               href={(sol as any).linkTo || `/services#${sol.id}`}
-              className="animate-on-scroll card-hover-effect group relative bg-slate-dark/40 p-8 rounded-xl border border-white/5 flex flex-col justify-between cursor-pointer overflow-hidden min-h-[200px]"
+              className="animate-on-scroll card-hover-effect group relative bg-slate-dark/40 rounded-xl border border-white/5 flex flex-col justify-between cursor-pointer overflow-hidden min-h-[200px]"
             >
-              {/* Subtle inner glow for glass effect */}
+              {(sol as any).image && (
+                <div className="relative h-36 overflow-hidden border-b border-white/5">
+                  <img
+                    src={(sol as any).image}
+                    alt={(sol as any).imageAlt || sol.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    loading="lazy"
+                    width={800}
+                    height={450}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/80 to-transparent pointer-events-none" />
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               
-              <div className="flex justify-between items-start relative z-10">
-                <sol.icon className="w-8 h-8 text-teal transition-transform duration-300 ease-custom group-hover:rotate-3" strokeWidth={1} />
-              </div>
-              <div className="relative z-10 mt-8">
-                <h3 className="font-medium text-white mb-2 text-xl">{sol.title}</h3>
-                <p className="text-offwhite/60 text-sm font-light leading-relaxed">{sol.desc}</p>
+              <div className={`relative z-10 p-8 flex flex-col flex-1 ${(sol as any).image ? 'pt-6' : ''}`}>
+                <div className="flex justify-between items-start">
+                  <sol.icon className="w-8 h-8 text-teal transition-transform duration-300 ease-custom group-hover:rotate-3" strokeWidth={1} />
+                </div>
+                <div className="mt-8">
+                  <h3 className="font-medium text-white mb-2 text-xl">{sol.title}</h3>
+                  <p className="text-offwhite/60 text-sm font-light leading-relaxed">{sol.desc}</p>
+                </div>
               </div>
             </a>
           ))}
@@ -1108,11 +1126,24 @@ const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: Rea
   return (
     <section className="py-32 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-24 animate-on-scroll">
+        <div className="text-center mb-16 md:mb-20 animate-on-scroll">
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Find the Money. Fix the Leak. Grow.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">
             We don't hand you a menu of services and walk away. We find the money you're losing, fix it, and reinvest the savings into growth.
           </p>
+        </div>
+
+        <div className="mb-16 md:mb-20 animate-on-scroll max-w-4xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video">
+            <img
+              src="/images/statement-analysis.jpg"
+              alt="Processing statement analysis with highlighted fees"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width={1200}
+              height={675}
+            />
+          </div>
         </div>
 
         <div className="relative mb-20 animate-on-scroll">
@@ -1164,8 +1195,21 @@ const WhyChooseUs = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.05)_0%,transparent_70%)]"></div>
       
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-20 animate-on-scroll">
+        <div className="text-center mb-12 md:mb-16 animate-on-scroll">
           <h2 className="font-serif text-4xl md:text-5xl text-white">Why Keystone</h2>
+        </div>
+
+        <div className="mb-16 md:mb-20 animate-on-scroll">
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video">
+            <img
+              src="/images/analytics-dashboard.jpg"
+              alt="Analytics dashboard showing savings and revenue growth"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width={1200}
+              height={675}
+            />
+          </div>
         </div>
 
         <div className="relative">
@@ -1210,10 +1254,21 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* The Edge Program Card */}
-          <div className="relative bg-charcoal-dark border border-teal/40 rounded-2xl p-10 shadow-[0_0_30px_rgba(0,128,128,0.15)] flex flex-col transform transition-transform duration-300 hover:-translate-y-2">
-            <div className="absolute top-0 right-10 translate-y-[-50%] bg-teal text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full">
+          <div className="relative bg-charcoal-dark border border-teal/40 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(0,128,128,0.15)] flex flex-col transform transition-transform duration-300 hover:-translate-y-2">
+            <div className="absolute top-0 right-10 translate-y-[-50%] bg-teal text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full z-20">
               Most Popular
             </div>
+            <div className="relative h-48 md:h-56 overflow-hidden border-b border-teal/20">
+              <img
+                src="/images/pos-zero-fees.jpg"
+                alt="POS terminal displaying zero processing fees"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                width={800}
+                height={600}
+              />
+            </div>
+            <div className="p-10 flex flex-col flex-1">
             <div className="mb-8">
               <h3 className="text-3xl font-serif text-white mb-3">The Edge Program</h3>
               <p className="text-offwhite/60 font-light h-12">Your customers pay the fee. You keep every dollar.</p>
@@ -1241,10 +1296,22 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
             >
               See if you qualify
             </button>
+            </div>
           </div>
 
           {/* Interchange Plus Card */}
-          <div className="bg-slate-dark/40 border border-white/10 rounded-2xl p-10 flex flex-col transform transition-transform duration-300 hover:-translate-y-2">
+          <div className="bg-slate-dark/40 border border-white/10 rounded-2xl overflow-hidden flex flex-col transform transition-transform duration-300 hover:-translate-y-2">
+            <div className="relative h-48 md:h-56 overflow-hidden border-b border-white/10">
+              <img
+                src="/images/billing-statement.jpg"
+                alt="Clean interchange plus billing statement"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                width={800}
+                height={600}
+              />
+            </div>
+            <div className="p-10 flex flex-col flex-1">
             <div className="mb-8">
               <h3 className="text-3xl font-serif text-white mb-3">Interchange Plus</h3>
               <p className="text-offwhite/60 font-light h-12">Pay exact wholesale. No markup games.</p>
@@ -1272,6 +1339,7 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
             >
               Get a Custom Quote
             </button>
+            </div>
           </div>
         </div>
       </div>
@@ -1461,17 +1529,23 @@ const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: 
     {
       title: "Free Bluetooth Card Readers",
       icon: Bluetooth,
-      desc: "Take payments anywhere with a free Bluetooth reader. No upfront cost, no hardware to buy. Perfect for mobile pros and on-the-go businesses."
+      desc: "Take payments anywhere with a free Bluetooth reader. No upfront cost, no hardware to buy. Perfect for mobile pros and on-the-go businesses.",
+      image: "/images/bluetooth-reader.jpg",
+      imageAlt: "White Bluetooth card reader on dark surface",
     },
     {
       title: "Free POS Systems & Hardware Credits",
       icon: Gift,
-      desc: "Upgrade your counter with a free POS system, or get up to $7,500 in hardware credits. No catch, no fine print. Your terminal, paid for."
+      desc: "Upgrade your counter with a free POS system, or get up to $7,500 in hardware credits. No catch, no fine print. Your terminal, paid for.",
+      image: "/images/pos-kitchen.jpg",
+      imageAlt: "Restaurant POS terminal with kitchen display",
     },
     {
       title: "Grow With an ATM Machine",
       icon: Banknote,
-      desc: "We place, install, and maintain the ATM. You keep 100% of the surcharge fees and watch the foot traffic grow. Zero work on your end."
+      desc: "We place, install, and maintain the ATM. You keep 100% of the surcharge fees and watch the foot traffic grow. Zero work on your end.",
+      image: "/images/atm-machine.jpg",
+      imageAlt: "Modern ATM in a dark commercial lobby",
     }
   ];
 
@@ -1482,10 +1556,20 @@ const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: 
           {offers.map((offer, idx) => (
             <div
               key={idx}
-              className="animate-on-scroll card-hover-effect bg-slate-dark/30 border border-white/5 p-10 rounded-2xl hover:bg-slate-dark/50 hover:border-teal/30 transition-all duration-300 flex flex-col relative overflow-hidden group"
+              className="animate-on-scroll card-hover-effect bg-slate-dark/30 border border-white/5 rounded-2xl hover:bg-slate-dark/50 hover:border-teal/30 transition-all duration-300 flex flex-col relative overflow-hidden group"
             >
+              <div className="relative h-52 overflow-hidden border-b border-white/5">
+                <img
+                  src={offer.image}
+                  alt={offer.imageAlt}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  loading="lazy"
+                  width={800}
+                  height={800}
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              <div className="relative z-10">
+              <div className="relative z-10 p-10 flex flex-col flex-1">
                 <div className="w-14 h-14 rounded-full bg-teal/10 flex items-center justify-center mb-6 border border-teal/20 group-hover:scale-110 transition-transform duration-500">
                   <offer.icon className="w-7 h-7 text-teal" strokeWidth={1.5} />
                 </div>
@@ -1674,8 +1758,16 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-wrap justify-center stagger-children">
           {/* Featured Customer Story Image */}
-          <div className="animate-on-scroll col-span-1 md:col-span-2 lg:col-span-2 relative border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-auto md:h-[400px] flex items-center justify-center group shadow-[0_0_30px_rgba(0,0,0,0.3)]" style={{ background: 'linear-gradient(135deg, rgba(0,128,128,0.15) 0%, rgba(45,45,45,0.9) 50%, rgba(30,30,30,0.95) 100%)' }}>
-            <div className="absolute inset-0 bg-charcoal/40 group-hover:bg-charcoal/20 transition-colors z-10 duration-500"></div>
+          <div className="animate-on-scroll col-span-1 md:col-span-2 lg:col-span-2 relative border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-auto md:h-[400px] flex items-center justify-center group shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+            <img
+              src="/images/cafe-success.jpg"
+              alt="Cafe counter with POS terminal"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              loading="lazy"
+              width={1200}
+              height={675}
+            />
+            <div className="absolute inset-0 bg-charcoal/60 group-hover:bg-charcoal/50 transition-colors z-10 duration-500"></div>
             <div className="relative z-20 flex flex-col items-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/20 border border-teal/40 text-teal text-xs font-medium uppercase tracking-widest mb-6 shadow-xl backdrop-blur-md relative overflow-hidden">
                 <Star className="w-4 h-4" fill="currentColor" />
