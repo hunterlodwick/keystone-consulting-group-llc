@@ -215,8 +215,8 @@ const SOLUTIONS_DATA = [
     id: "web-design",
     title: "Custom Web Design", 
     icon: Code, 
-    desc: "3D animated sites, AI-powered talking websites, and high-conversion landing pages.",
-    longDesc: "We build immersive, high-performance websites — from 3D animated experiences to AI voice chatbots that schedule appointments and convert visitors while you sleep.",
+    desc: "Websites that make the phone ring, not just look pretty. 3D animated, AI-powered, and built to convert visitors into customers.",
+    longDesc: "We build immersive, high-performance websites. From 3D animated experiences to AI voice chatbots that schedule appointments and convert visitors while you sleep.",
     features: ["3D animated websites", "AI voice chatbot integration", "High-conversion landing pages", "Mobile-first responsive design"],
     linkTo: "/services#web-design"
   },
@@ -224,7 +224,7 @@ const SOLUTIONS_DATA = [
     id: "crm",
     title: "CRM Systems", 
     icon: LayoutDashboard, 
-    desc: "Custom-built or expertly configured CRMs tailored to your workflow.",
+    desc: "CRMs your team actually opens. Built around how you sell, not how a software vendor thinks you should.",
     longDesc: "Whether you need a CRM built from scratch or want to get more out of HubSpot or Go High Level, we design systems around how your team actually works.",
     features: ["Custom CRM development", "HubSpot & GHL configuration", "Pipeline & deal tracking", "Automated follow-up sequences"],
     linkTo: "/services#crm"
@@ -233,8 +233,8 @@ const SOLUTIONS_DATA = [
     id: "automations",
     title: "AI & Automations", 
     icon: Zap, 
-    desc: "AI agents, workflow automation, and intelligent system buildouts.",
-    longDesc: "We build AI agents for lead qualification, customer service, and internal operations — plus workflow automations that connect your tools and eliminate manual processes.",
+    desc: "AI agents that qualify leads, answer customers, and run your back office while you sleep.",
+    longDesc: "We build AI agents for lead qualification, customer service, and internal operations, plus workflow automations that connect your tools and eliminate manual processes.",
     features: ["AI lead qualification agents", "Customer service chatbots", "Workflow automation buildouts", "System integrations & APIs"],
     linkTo: "/services#automations"
   },
@@ -242,7 +242,7 @@ const SOLUTIONS_DATA = [
     id: "consulting",
     title: "Business Consulting", 
     icon: Compass, 
-    desc: "Strategic advisory to identify waste, fix inefficiencies, and drive growth.",
+    desc: "We find the waste, kill it, and hand you a growth roadmap. Think of us as your fractional COO.",
     longDesc: "We audit your operations, identify where money is leaking, eliminate waste, and build a roadmap to reinvest savings into growth. Think of us as your fractional COO.",
     features: ["Operational efficiency audits", "Revenue leak identification", "Growth strategy & roadmapping", "Fractional COO advisory"],
     linkTo: "/services#consulting"
@@ -251,8 +251,8 @@ const SOLUTIONS_DATA = [
     id: "prep-to-sell",
     title: "Prep-to-Sell", 
     icon: Target, 
-    desc: "Position your business for a successful exit or acquisition.",
-    longDesc: "We help you systematize operations, clean up financials, and maximize valuation — so when the time comes to sell, you're ready to command top dollar.",
+    desc: "Get your business ready to sell for top dollar. Systems clean, financials tight, valuation maximized.",
+    longDesc: "We help you systematize operations, clean up financials, and maximize valuation, so when the time comes to sell, you're ready to command top dollar.",
     features: ["Exit strategy planning", "Financial cleanup & optimization", "Operational systematization", "Valuation maximization"],
     linkTo: "/services#prep-to-sell"
   },
@@ -539,7 +539,7 @@ const StatementAnalysisForm = () => {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
-      <p className="text-sm text-offwhite/90 mb-4 leading-relaxed">We audit your business, identify where money is leaking, show exact savings opportunities, and give you a reinvestment plan — all for free.</p>
+      <p className="text-sm text-offwhite/90 mb-4 leading-relaxed">Send us your processing statement. We'll find every fee you shouldn't be paying, show you the exact savings, and hand you a reinvestment plan. All for free.</p>
       <div>
         <label htmlFor="businessName" className="block text-sm text-offwhite/90 mb-1">Business Name</label>
         <input id="businessName" name="businessName" type="text" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
@@ -919,15 +919,15 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
           {/* Subtle badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-offwhite/80 text-xs font-medium mb-6">
             <Shield className="w-3.5 h-3.5 text-teal" />
-            Most businesses are significantly overpaying in processing fees.
+            Most businesses are overpaying in processing fees and don't know it.
           </div>
           
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white mb-6">
-            We Find Hidden Profit<br/>
-            <span className="block mt-2">in Your Business.</span>
+            Stop Losing Money<br/>
+            <span className="block mt-2">to Hidden Fees.</span>
           </h1>
           <p className="text-offwhite/80 text-lg md:text-xl font-light max-w-xl mb-10 leading-relaxed">
-            Reduce unnecessary costs, eliminate payment fees, and reinvest the savings into systems that scale your business.
+            We audit your processing statements, show you exactly where the money is leaking, and fix it. Then we reinvest those savings into websites, tools, and systems that make the phone ring.
           </p>
           
           {/* CTAs */}
@@ -947,16 +947,16 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
           {/* Trust bar */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-offwhite/70 font-light">
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> We Find the Leaks
+              <CheckCircle className="w-4 h-4 text-teal" /> Free audit, no obligation
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> We Fix the Waste
+              <CheckCircle className="w-4 h-4 text-teal" /> No contracts, ever
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> We Help You Grow
+              <CheckCircle className="w-4 h-4 text-teal" /> Savings in 30 days or we tell you
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> No Contracts
+              <CheckCircle className="w-4 h-4 text-teal" /> Real people, no phone trees
             </div>
           </div>
         </div>
@@ -1057,8 +1057,8 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
         <div
           className="mb-16 animate-on-scroll"
         >
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Your Growth Toolkit.</h2>
-          <p className="text-offwhite/70 text-lg font-light max-w-2xl">Once we uncover savings, we help you reinvest it into the exact systems your business needs to grow.</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Where the Savings Go.</h2>
+          <p className="text-offwhite/70 text-lg font-light max-w-2xl">We reinvest the money we saved you into the tools that actually grow your business. Websites that rank. AI assistants that answer customers at 2 AM. CRMs your team actually uses.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
@@ -1099,19 +1099,19 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
 // How It Works
 const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   const steps = [
-    { num: "01", title: "We Audit Your Business", desc: "Send us your current processing statement. We identify where money is leaking." },
-    { num: "02", title: "We Show Exact Savings", desc: "We break down your fees line by line and present a clear savings opportunity with a reinvestment plan." },
-    { num: "03", title: "We Fix It Fast", desc: "Payment processing is the fastest way to put money back in your pocket. We fix that first." },
-    { num: "04", title: "We Help You Grow", desc: "With savings secured, we reinvest into the systems your business needs — POS, CRM, websites, and more." },
+    { num: "01", title: "Send Us Your Statement", desc: "Upload one processing statement. We find every fee you shouldn't be paying, line by line." },
+    { num: "02", title: "See Exactly What You're Losing", desc: "We break down your fees, show you the savings, and hand you a plan to reinvest that money into growth." },
+    { num: "03", title: "We Fix It Fast", desc: "Most businesses see savings within 30 days. No downtime, no disruption, just a lower monthly cost." },
+    { num: "04", title: "We Help You Grow", desc: "With the savings secured, we build the systems that actually grow your business: websites, CRMs, AI tools, and more." },
   ];
 
   return (
     <section className="py-32 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">One System. Three Steps.</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Find the Money. Fix the Leak. Grow.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">
-            We don't hand you a menu of services. We run a proven process: Identify. Fix. Grow.
+            We don't hand you a menu of services and walk away. We find the money you're losing, fix it, and reinvest the savings into growth.
           </p>
         </div>
 
@@ -1153,10 +1153,10 @@ const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: Rea
 // Why Choose Keystone
 const WhyChooseUs = () => {
   const reasons = [
-    { num: "01", title: "We Find the Money First", desc: "Payment processing is your fastest win. Most businesses are significantly overpaying — we fix that first, then build from there." },
-    { num: "02", title: "It's a System, Not a Menu", desc: "Everything we do — audits, fee elimination, automation, growth tools — is part of one unified process, not disconnected services." },
-    { num: "03", title: "Zero Contracts, Zero Risk", desc: "If we don't earn your business, we don't keep you. No hidden fees, no lock-ins." },
-    { num: "04", title: "Savings That Compound", desc: "If we save you $2,000/month in fees, that's $24,000/year — money you can reinvest into growth instead of losing quietly." },
+    { num: "01", title: "We Find the Money First", desc: "Most processors raise your rates every six months and hope you don't notice. We audit your statement for free and show you exactly what they're doing." },
+    { num: "02", title: "One Process, Not a Buffet", desc: "Auditing, fee elimination, websites, CRMs, AI tools. It's all one process. We find the money, fix the leak, then reinvest the savings into growth." },
+    { num: "03", title: "Zero Contracts, Zero Risk", desc: "If we don't earn your business every month, we don't keep you. No hidden fees, no lock-ins, no fine print." },
+    { num: "04", title: "Savings That Compound", desc: "Save $2,000 a month in fees and that's $24,000 a year back in your pocket. Money you were losing quietly, now working for you." },
   ];
 
   return (
@@ -1202,9 +1202,9 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
     <section className="py-32 relative bg-charcoal border-t border-white/5" id="pricing">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Transparent Pricing. Maximum Savings.</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Stop Paying to Get Paid.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">
-            Choose the model that fits your business. We fix your processing fees first — then help you reinvest the savings.
+            Pick the model that fits. The Edge Program eliminates your processing fees entirely. Interchange Plus gives you true wholesale pricing. Both come with no contracts.
           </p>
         </div>
 
@@ -1216,7 +1216,7 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
             </div>
             <div className="mb-8">
               <h3 className="text-3xl font-serif text-white mb-3">The Edge Program</h3>
-              <p className="text-offwhite/60 font-light h-12">Eliminate your processing fees entirely.</p>
+              <p className="text-offwhite/60 font-light h-12">Your customers pay the fee. You keep every dollar.</p>
             </div>
             <div className="mb-8 flex items-end gap-3">
               <div className="text-5xl font-mono text-teal font-medium">$0<span className="text-2xl text-offwhite/40">/mo</span></div>
@@ -1247,7 +1247,7 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
           <div className="bg-slate-dark/40 border border-white/10 rounded-2xl p-10 flex flex-col transform transition-transform duration-300 hover:-translate-y-2">
             <div className="mb-8">
               <h3 className="text-3xl font-serif text-white mb-3">Interchange Plus</h3>
-              <p className="text-offwhite/60 font-light h-12">True wholesale rates for high-volume merchants.</p>
+              <p className="text-offwhite/60 font-light h-12">Pay exact wholesale. No markup games.</p>
             </div>
             <div className="mb-8 flex flex-col gap-1">
               <div className="text-4xl font-mono text-white">Direct Cost</div>
@@ -1325,9 +1325,9 @@ const ROICalculator = () => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-12 sm:mb-16 animate-on-scroll">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4">See Your Hidden Savings</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4">How Much Are You Losing?</h2>
           <p className="text-offwhite/70 text-base sm:text-lg font-light max-w-xl mx-auto">
-            Drag the slider to your monthly processing volume and instantly see how much profit you're losing to unnecessary fees.
+            Drag the slider to your monthly volume. That number below is what you're handing to your processor every year. The Edge Program puts it back in your pocket.
           </p>
         </div>
 
@@ -1434,8 +1434,8 @@ const Industries = ({ onOpenSplash }: { onOpenSplash: (industryId: string) => vo
     <section className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Trusted Across Every Industry</h2>
-          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">No matter your business type, we have the expertise to find your hidden profit and help you scale.</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Built for Your Industry</h2>
+          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">We know the fees, the tools, and the quirks of your industry. Pick yours to see how we help businesses like yours stop overpaying.</p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 stagger-children">
@@ -1461,17 +1461,17 @@ const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: 
     {
       title: "Free Bluetooth Card Readers",
       icon: Bluetooth,
-      desc: "Accept payments on the go with our free Bluetooth card readers. Perfect for mobile professionals, offering NFC contactless payments with zero upfront hardware costs."
+      desc: "Take payments anywhere with a free Bluetooth reader. No upfront cost, no hardware to buy. Perfect for mobile pros and on-the-go businesses."
     },
     {
       title: "Free POS Systems & Hardware Credits",
       icon: Gift,
-      desc: "Upgrade your business with secure, intuitive POS systems and receive up to $7,500 in hardware credits. Ideal for retail shops, grocery stores, and restaurants."
+      desc: "Upgrade your counter with a free POS system, or get up to $7,500 in hardware credits. No catch, no fine print. Your terminal, paid for."
     },
     {
       title: "Grow With an ATM Machine",
       icon: Banknote,
-      desc: "Drive foot traffic and keep 100% of surcharge fees. We handle placement, installation, maintenance, and processing for a hassle-free revenue boost."
+      desc: "We place, install, and maintain the ATM. You keep 100% of the surcharge fees and watch the foot traffic grow. Zero work on your end."
     }
   ];
 
@@ -1585,7 +1585,7 @@ const ProcessingVolume = ({ theme }: { theme?: string }) => {
             </h2>
           </div>
           <p className="mt-6 text-offwhite/50 text-sm md:text-base tracking-widest uppercase font-medium">
-            processed monthly — and growing
+            processed monthly by our clients
           </p>
         </div>
 
@@ -1666,9 +1666,9 @@ const Testimonials = () => {
     <section className="py-32 relative bg-charcoal-dark border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Real Results. Real Savings.</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">They Stopped Overpaying. Here's What Changed.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">
-            Hundreds of businesses trust Keystone to uncover savings and reinvest for growth. Here's what they have to say.
+            Real businesses, real statements, real savings. Not testimonials, outcomes.
           </p>
         </div>
 
@@ -1727,8 +1727,8 @@ const IntegrationEcosystem = () => {
     <section className="py-24 border-y border-teal/10 bg-charcoal-dark/30 overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-charcoal-dark/10 to-transparent pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center relative z-10 animate-on-scroll">
-        <h3 className="font-serif text-2xl text-white mb-2">Seamless Integrations</h3>
-        <p className="text-offwhite/60 text-sm font-light">Working with the tools and platforms you already trust.</p>
+        <h3 className="font-serif text-2xl text-white mb-2">Works With What You Already Have</h3>
+        <p className="text-offwhite/60 text-sm font-light">Your POS, your gateway, your hardware. We integrate with the tools you're already using.</p>
       </div>
       <div className="marquee-container">
         <div className="marquee-content">
@@ -1757,8 +1757,8 @@ const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">A Boutique Team. A Strategic Approach.</h2>
-          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">You deal directly with the owners. We find your hidden profit, fix the waste, and help you grow.</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">You Talk to the Owners. Every Time.</h2>
+          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">No account managers, no phone trees, no runaround. Seth and Hunter answer the phone, run your audit, and build your systems. Directly.</p>
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 stagger-children">
@@ -1816,15 +1816,15 @@ const RateGuarantee = ({ onOpenModal }: { onOpenModal: (title: string, content: 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-center">
         <div className="animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">The Fastest Way to Put Money Back in Your Pocket</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">The Fastest Money You'll Ever Save</h2>
           <p className="text-xl text-offwhite/90 font-light mb-4">
-            We save businesses <span className="text-teal font-medium">30% to 100%</span> of their current processing fees.
+            We save businesses <span className="text-teal font-medium">30% to 100%</span> of their current processing fees. Most see it within 30 days.
           </p>
           <p className="text-offwhite/70 max-w-2xl mx-auto mb-4 leading-relaxed">
-            Payment processing is where we start — because it's the fastest win. We fix that first, then we build from there.
+            Payment processing is where we start because it's the fastest win. We fix that first, then we build from there.
           </p>
           <p className="text-offwhite/50 max-w-xl mx-auto mb-10 leading-relaxed text-sm">
-            If we save you $2,000/month in fees, that's $24,000/year — money you can reinvest into growth instead of losing quietly.
+            Save $2,000 a month and that's $24,000 a year back in your pocket. Money you were losing quietly, now working for you.
           </p>
           <button 
             onClick={() => onOpenModal('Free Profit Leak Analysis', <StatementAnalysisForm />)}
@@ -1857,7 +1857,7 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
               <span className="font-serif text-lg md:text-xl font-medium tracking-wide text-white">Keystone Consulting Group</span>
             </div>
             <p className="text-offwhite/60 text-sm font-light leading-relaxed mb-8">
-              We find hidden profit in your business and turn it into growth. Your local partner for payment optimization, business systems, and scaling smart.
+              We find the money you're losing to processing fees, fix it, and reinvest the savings into websites, CRMs, and AI tools that grow your business. Your local partner for payment optimization and scaling smart.
             </p>
             <ul className="space-y-3 text-sm text-offwhite/60 font-light mt-auto">
               <li>Seth: <a href="tel:801-360-9156" className="hover:text-teal transition-colors">(801) 360-9156</a></li>
