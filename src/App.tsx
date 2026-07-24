@@ -647,8 +647,7 @@ const INDUSTRY_NAV_ITEMS = [
 
 const STATIC_NAV_ITEMS = [
   { name: "Work", href: "/work" },
-  { name: "About", href: "/#about" },
-  { name: "Contact", href: "/#contact" }
+  { name: "About", href: "/#about" }
 ];
 
 // Header
