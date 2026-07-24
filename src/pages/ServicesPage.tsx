@@ -63,91 +63,91 @@ const SERVICES_DETAIL = [
     id: "web-design",
     title: "Custom Web Design",
     icon: Code,
-    tagline: "Websites that work as hard as you do.",
-    heroDesc: "We don't build templates. We build immersive, high-performance digital experiences — from 3D animated sites to AI-powered talking websites that schedule appointments, answer questions, and convert visitors into customers while you sleep.",
+    tagline: "Your website should be your best salesperson.",
+    heroDesc: "Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.",
     sections: [
       {
         title: "3D Animated Websites",
         icon: Layers,
-        desc: "Stand out from every competitor in your industry with cinematic, scroll-driven animations, parallax effects, and interactive 3D elements that make visitors stop scrolling and start engaging."
+        desc: "You get about three seconds before a visitor bounces. Animations that move as they scroll buy you the next thirty. By then they've stopped comparing you to the other three tabs they have open."
       },
       {
         title: "AI Voice Chatbots",
         icon: Mic,
-        desc: "Your website talks back. We embed intelligent AI voice agents that greet visitors, answer FAQs, schedule appointments, fill out intake forms, and qualify leads — all without you lifting a finger."
+        desc: "Your website answers the phone now. It greets people, handles the same five questions you answer every day, and books the appointment. At 2 AM. On a Sunday. While you sleep."
       },
       {
         title: "High-Conversion Landing Pages",
         icon: TrendingUp,
-        desc: "Every pixel is intentional. We design conversion-optimized pages with strategic CTAs, trust signals, and persuasive copy frameworks that turn traffic into revenue."
+        desc: "Traffic that doesn't convert is just a bigger hosting bill. Every headline, button, and proof point on the page exists to move one visitor one step closer to calling you."
       },
       {
         title: "Mobile-First & Lightning Fast",
         icon: Globe,
-        desc: "Built for speed on every device. Our sites score 90+ on Google PageSpeed, are fully responsive, and optimized for SEO so you rank higher and load faster than the competition."
+        desc: "Over half your visitors are standing in a parking lot on their phone, and they leave if it takes more than three seconds. Ours load in under two, and Google pushes you up the rankings for it."
       }
     ],
-    features: ["3D scroll-driven animations", "AI voice chatbot integration", "Appointment scheduling built in", "Conversion-optimized design", "Mobile-first responsive", "SEO-optimized architecture", "Custom branding & identity", "Analytics & tracking setup"]
+    features: ["Animations that stop the scroll", "A site that answers at 2 AM", "Appointments booked while you sleep", "Every page built to make the phone ring", "Fast on the phone in their hand", "Found on Google without paying per click", "A brand that looks bigger than you are", "You see exactly where leads come from"]
   },
   {
     id: "crm",
     title: "CRM Systems",
     icon: LayoutDashboard,
-    tagline: "Your business, your workflow, your CRM.",
-    heroDesc: "Whether you need a CRM built from scratch or want to squeeze more value out of HubSpot, Go High Level, or Salesforce — we design systems around how your team actually works. No more fighting your tools.",
+    tagline: "A CRM your team actually opens.",
+    heroDesc: "Most CRMs get bought, half set up, then quietly abandoned. We build yours around the way your team already sells, so deals stop living in someone's head and a notebook in a truck.",
     sections: [
       {
         title: "Custom-Built Platforms",
         icon: Database,
-        desc: "When off-the-shelf doesn't cut it, we build your CRM from the ground up. Custom pipelines, dashboards, reporting, and automations designed specifically for your sales process and team structure."
+        desc: "If your software makes your team work backwards, you bought the wrong software. We build the pipeline, the dashboard, and the reports around how you already sell. Nothing to work around."
       },
       {
         title: "Platform Configuration",
         icon: Workflow,
-        desc: "Already using HubSpot, GHL, or Salesforce? We optimize what you have — cleaning up messy pipelines, building custom automations, and configuring it so your team actually uses it instead of working around it."
+        desc: "You're already paying for HubSpot, Go High Level, or Salesforce, and using maybe a quarter of it. We clean up the mess and turn the thing you pay for into the thing you actually use."
       },
       {
         title: "Pipeline & Deal Tracking",
         icon: LineChart,
-        desc: "See every deal, every lead, every dollar in your pipeline at a glance. We build visual dashboards that give you real-time visibility into your revenue without digging through spreadsheets."
+        desc: "Open one screen and see every deal, who owns it, and what it's worth. No Monday meeting just to find out where things stand. No spreadsheet somebody forgot to update on Thursday."
       },
       {
         title: "Automated Follow-Ups",
         icon: MessageSquare,
-        desc: "Never let a lead go cold. We set up intelligent follow-up sequences — email, SMS, tasks — that trigger automatically based on lead behavior and pipeline stage."
+        desc: "Most leads go cold in 48 hours, and the business that follows up first usually wins. Texts, emails, and reminders fire the second a lead moves. Nobody has to remember anything."
       }
     ],
-    features: ["Custom CRM development", "HubSpot & GHL optimization", "Salesforce configuration", "Visual pipeline dashboards", "Automated lead nurturing", "Email & SMS sequences", "Team activity tracking", "Revenue forecasting"]
+    features: ["A CRM shaped around how you sell", "Real value from the HubSpot you pay for", "Salesforce that finally makes sense", "Every deal on one screen", "No lead goes cold again", "Follow-up texts and emails on autopilot", "Know who is actually closing", "Know your month before it ends"]
   },
   {
     id: "automations",
     title: "AI & Automations",
     icon: Zap,
-    tagline: "Stop doing manually what a machine can do better.",
-    heroDesc: "We build AI agents and workflow automations that handle lead qualification, customer service, internal operations, and everything in between. Your team focuses on high-value work while the systems handle the rest.",
+    tagline: "Stop paying people to do what software does for free.",
+    heroDesc: "Every hour someone spends copying data between tools is an hour nobody spent selling. We hand the busywork to AI agents so your people can do the things only people can do.",
     sections: [
       {
         title: "AI Lead Qualification",
         icon: Bot,
-        desc: "Not all leads are created equal. Our AI agents score, qualify, and route leads automatically — so your sales team only talks to people who are ready to buy, not tire-kickers."
+        desc: "Your closers burn half their day on people who were never going to buy. AI scores and routes every lead the second it lands, so the only calls on the calendar are with people who have a budget and a deadline."
       },
       {
         title: "Customer Service Agents",
         icon: MessageSquare,
-        desc: "24/7 intelligent support without the payroll. AI agents that handle common questions, troubleshoot issues, process requests, and escalate to humans only when it matters."
+        desc: "The same eight questions, all day, every day. An AI agent handles them at midnight on a holiday, solves what it can, and passes you only the ones that need a human. No new hire, no payroll."
       },
       {
         title: "Workflow Automation",
         icon: Workflow,
-        desc: "Connect your tools and eliminate manual handoffs. We build automations between your CRM, email, invoicing, scheduling, and any other platform — so data flows and tasks complete themselves."
+        desc: "Nobody should be retyping the same customer into four different tools. We connect your CRM, invoicing, email, and calendar so the handoffs just happen. Three hours of daily busywork drops to zero."
       },
       {
         title: "System Integrations",
         icon: Layers,
-        desc: "Your tech stack should talk to itself. We build custom API integrations, webhook automations, and data sync pipelines that connect every tool in your business into one seamless ecosystem."
+        desc: "You bought good tools that refuse to speak to each other. We wire them together so one number lives in one place, and you stop wondering which report is telling the truth."
       }
     ],
-    features: ["AI lead scoring & routing", "Intelligent chatbots", "Workflow automation", "API integrations", "Data sync pipelines", "Internal ops automation", "Smart notifications & alerts", "Custom AI agent buildouts"]
+    features: ["Your team only talks to real buyers", "Customers get answers at midnight", "Hours of data entry gone every week", "Your tools finally talk to each other", "One set of numbers you can trust", "Busywork handled before you ask", "Alerts the moment something needs you", "AI built for your business, not generic"]
   },
   {
     id: "consulting",
