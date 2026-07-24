@@ -1748,61 +1748,69 @@ const IntegrationEcosystem = () => {
 
 // Team Section
 const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
+  const members = [
+    {
+      name: "Seth Redford",
+      title: "Owner",
+      phone: "(801) 360-9156",
+      email: "Seth@keystoneconsultingg.com",
+      photo: "/team/seth.jpg",
+      alt: "Seth Redford",
+    },
+    {
+      name: "Hunter Lodwick",
+      title: "Owner",
+      phone: "(505) 506-6563",
+      email: "hunter@keystoneconsultingg.com",
+      photo: "/team/hunter.jpg",
+      alt: "Hunter Lodwick",
+    },
+  ];
+
   return (
     <section id="about" className="py-32 relative overflow-hidden">
-      {/* Background Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 rotate-12 pointer-events-none">
         <KeystoneLogo className="w-full h-full text-teal" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-24 animate-on-scroll">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="text-center mb-16 md:mb-20 animate-on-scroll">
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">You Talk to the Owners. Every Time.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">No account managers, no phone trees, no runaround. Seth and Hunter answer the phone, run your audit, and build your systems. Directly.</p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 stagger-children">
-          {/* Seth */}
-          <div className="animate-on-scroll card-hover-effect w-full max-w-sm bg-slate-dark/40 border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="w-32 h-44 rounded-xl overflow-hidden border border-white/10 mb-6 shadow-inner relative z-10 bg-charcoal-dark">
-              <img src="/team/seth.jpg" alt="Seth Redford" className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <h3 className="text-2xl text-white font-serif mb-1">Seth Redford</h3>
-            <p className="text-teal-soft text-sm uppercase tracking-widest mb-6">Owner</p>
-            
-            <div className="space-y-2 mb-8 text-offwhite/80 font-light">
-              <p>(801) 360-9156</p>
-              <p className="text-sm">Seth@keystoneconsultingg.com</p>
-            </div>
-            
-            <button 
-              onClick={() => onOpenModal("Book a Call with Seth", <ContactForm />)}
-              className="mt-auto px-6 py-2 border border-teal text-teal hover:bg-teal hover:text-white transition-colors duration-300 rounded-sm text-sm tracking-wide">
-              Book a Call
-            </button>
-          </div>
-
-          {/* Hunter */}
-          <div className="animate-on-scroll card-hover-effect w-full max-w-sm bg-slate-dark/40 border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="w-32 h-44 rounded-xl overflow-hidden border border-white/10 mb-6 shadow-inner relative z-10 bg-charcoal-dark">
-              <img src="/team/hunter.jpg" alt="Hunter Lodwick" className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <h3 className="text-2xl text-white font-serif mb-1">Hunter Lodwick</h3>
-            <p className="text-teal-soft text-sm uppercase tracking-widest mb-6">Owner</p>
-            
-            <div className="space-y-2 mb-8 text-offwhite/80 font-light">
-              <p>(505) 506-6563</p>
-              <p className="text-sm">hunter@keystoneconsultingg.com</p>
-            </div>
-            
-            <button 
-              onClick={() => onOpenModal("Book a Call with Hunter", <ContactForm />)}
-              className="mt-auto px-6 py-2 border border-teal text-teal hover:bg-teal hover:text-white transition-colors duration-300 rounded-sm text-sm tracking-wide">
-              Book a Call
-            </button>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 stagger-children">
+          {members.map((member) => (
+            <article
+              key={member.name}
+              className="animate-on-scroll group flex flex-col bg-slate-dark/40 border border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+            >
+              <div className="relative aspect-[3/4] overflow-hidden bg-charcoal-dark">
+                <img
+                  src={member.photo}
+                  alt={member.alt}
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                  width={800}
+                  height={1200}
+                />
+              </div>
+              <div className="flex flex-col flex-1 px-6 py-7 md:px-8 md:py-8 text-center border-t border-white/10">
+                <h3 className="text-2xl md:text-3xl text-white font-serif mb-1">{member.name}</h3>
+                <p className="text-teal-soft text-xs uppercase tracking-[0.2em] mb-5">{member.title}</p>
+                <div className="space-y-1.5 mb-7 text-offwhite/75 font-light">
+                  <p className="text-base">{member.phone}</p>
+                  <p className="text-sm break-all">{member.email}</p>
+                </div>
+                <button
+                  onClick={() => onOpenModal(`Book a Call with ${member.name.split(" ")[0]}`, <ContactForm />)}
+                  className="mt-auto mx-auto px-7 py-2.5 border border-teal text-teal hover:bg-teal hover:text-white transition-colors duration-300 rounded-sm text-sm tracking-wide"
+                >
+                  Book a Call
+                </button>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
