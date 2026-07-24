@@ -10,6 +10,7 @@ import {
   Bug,
   Truck,
   Layers,
+  Lock,
   Bot,
   Database,
   Workflow,
@@ -43,72 +44,88 @@ const PROJECTS = [
     label: "Ensign Properties",
     url: "https://www.ensignpropertiesmanagement.com",
     domain: "ensignpropertiesmanagement.com",
+    screenshot: "ensign-properties",
     desc: "Full property management listing website with searchable rental inventory.",
     tags: ["Property Management", "Listings", "Search"],
-    icon: Building2
+    icon: Building2,
+    isConfidential: false
   },
   {
     name: "Teton Reach",
     label: "Teton Reach",
     url: "https://www.tetonreach.com",
     domain: "tetonreach.com",
+    screenshot: "teton-reach",
     desc: "Professional services website built for credibility and clean lead capture.",
     tags: ["Professional Services", "Web Design"],
-    icon: Mountain
+    icon: Mountain,
+    isConfidential: false
   },
   {
     name: "Keystone OS Dashboard",
     label: "Keystone OS",
     url: "https://keystone-os-dashboard.vercel.app",
     domain: "keystone-os-dashboard.vercel.app",
+    screenshot: "keystone-os",
     desc: "Custom internal operations dashboard with Kanban board, project tracking, and Firestore integration.",
     tags: ["Custom CRM", "Kanban", "Internal Tools"],
-    icon: LayoutDashboard
+    icon: LayoutDashboard,
+    isConfidential: true
   },
   {
     name: "Benitz Appliance",
     label: "Benitz Appliance",
     url: "https://benitz-appliance.vercel.app",
     domain: "benitz-appliance.vercel.app",
+    screenshot: "benitz-appliance",
     desc: "Enterprise-level appliance dealer site with a 631-product catalog, AI-powered RAG chat assistant, live search, and North Payments checkout.",
     tags: ["E-commerce", "AI Assistant", "631 Products", "Payments"],
-    icon: ShoppingCart
+    icon: ShoppingCart,
+    isConfidential: false
   },
   {
     name: "AT&T Fiber Internet",
     label: "AT&T Fiber",
     url: "https://www.attfiber-internet.com",
     domain: "attfiber-internet.com",
+    screenshot: "att-fiber",
     desc: "Super SEO and AEO-driven dealer site with 33 pages of optimized content.",
     tags: ["SEO", "AEO", "33 Pages", "Content Strategy"],
-    icon: Wifi
+    icon: Wifi,
+    isConfidential: false
   },
   {
     name: "Avada Pest Control",
     label: "Avada Pest",
     url: "https://avada-pest-control.vercel.app",
     domain: "avada-pest-control.vercel.app",
+    screenshot: "avada-pest",
     desc: "SEO-driven pest control site with 80+ pages of optimized local content.",
     tags: ["SEO", "80+ Pages", "Local Search", "Pest Control"],
-    icon: Bug
+    icon: Bug,
+    isConfidential: false
   },
   {
     name: "Mexpresso Utah",
     label: "Mexpresso Utah",
     url: "https://www.mexpressoutah.com",
     domain: "mexpressoutah.com",
+    screenshot: "mexpresso",
     desc: "Food truck website with a custom admin panel letting the owner update daily locations without a developer.",
     tags: ["Food Truck", "Custom CMS", "Location Updates"],
-    icon: Truck
+    icon: Truck,
+    isConfidential: false
   },
   {
     name: "Sego Flooring SWFL",
     label: "Sego Flooring",
     url: "https://www.segoflooringswfl.com",
     domain: "segoflooringswfl.com",
+    screenshot: "sego-flooring",
     desc: "3D animated flooring company website with high-conversion appointment booking tactics.",
     tags: ["3D Animation", "Flooring", "Appointment Booking", "High Conversion"],
-    icon: Layers
+    icon: Layers,
+    isConfidential: false
   }
 ];
 
@@ -172,61 +189,84 @@ export default function WorkPage({ onOpenModal, onNavigate }: WorkPageProps) {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {PROJECTS.map((project, i) => (
-              <article
-                key={project.url}
-                className="animate-on-scroll flex flex-col bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-teal/30"
+              <div
+                key={project.screenshot}
+                className="animate-on-scroll"
                 style={{ transitionDelay: `${Math.min(i, 5) * 60}ms` }}
               >
-                {/* Visual */}
-                <div className="bg-charcoal-dark border-b border-white/5">
-                  <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5">
-                    <span className="w-2 h-2 rounded-full bg-white/10"></span>
-                    <span className="w-2 h-2 rounded-full bg-white/10"></span>
-                    <span className="w-2 h-2 rounded-full bg-white/10"></span>
-                    <div className="ml-2 min-w-0 flex-1 rounded-sm bg-white/5 px-2.5 py-1">
-                      <span className="block truncate font-mono text-[10px] text-offwhite/50">{project.domain}</span>
+                <article className="group flex h-full flex-col bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-teal/30">
+                  {/* Preview */}
+                  <div className="bg-charcoal-dark border-b border-white/5">
+                    <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 transition-colors duration-300 group-hover:border-teal/40">
+                      <span className="w-2 h-2 rounded-full bg-white/10 transition-colors duration-300 group-hover:bg-teal/50"></span>
+                      <span className="w-2 h-2 rounded-full bg-white/10 transition-colors duration-300 group-hover:bg-teal/30"></span>
+                      <span className="w-2 h-2 rounded-full bg-white/10 transition-colors duration-300 group-hover:bg-teal/20"></span>
+                      <div className="ml-2 min-w-0 flex-1 rounded-sm bg-white/5 px-2.5 py-1">
+                        <span className="block truncate font-mono text-[10px] text-offwhite/50">
+                          {project.isConfidential ? 'internal · not publicly hosted' : project.domain}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="aspect-[800/515] overflow-hidden">
+                      <img
+                        src={`/screenshots/previews/${project.screenshot}.jpg`}
+                        alt={`${project.name} website preview`}
+                        width="800"
+                        height="515"
+                        loading={i < 3 ? 'eager' : 'lazy'}
+                        decoding="async"
+                        className="h-full w-full object-cover object-top transition-transform duration-[400ms] ease-out motion-safe:group-hover:scale-[1.03]"
+                      />
                     </div>
                   </div>
-                  <div className="flex items-center justify-between gap-4 px-6 h-32">
-                    <div className="min-w-0">
-                      <div className="font-mono text-[10px] text-teal tracking-[0.2em] mb-2">
+
+                  {/* Detail */}
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono text-[10px] text-teal tracking-[0.2em]">
                         {String(i + 1).padStart(2, '0')}
-                      </div>
-                      <div className="font-serif text-2xl text-white leading-tight truncate">
-                        {project.label}
-                      </div>
-                    </div>
-                    <project.icon className="w-10 h-10 flex-shrink-0 text-teal/40" strokeWidth={1} />
-                  </div>
-                </div>
-
-                {/* Detail */}
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-lg text-white font-medium mb-3 leading-snug">{project.name}</h3>
-                  <p className="text-offwhite/60 text-sm font-light leading-relaxed mb-6">{project.desc}</p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-offwhite/60 text-[11px] font-medium"
-                      >
-                        {tag}
                       </span>
-                    ))}
-                  </div>
+                      <span className="font-serif text-xl text-white leading-tight truncate">
+                        {project.label}
+                      </span>
+                      <project.icon className="ml-auto w-4 h-4 flex-shrink-0 text-teal/40" strokeWidth={1.5} />
+                    </div>
 
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-sm transition-colors duration-300 hover:bg-white/5 hover:border-teal/40"
-                    aria-label={`Visit ${project.name} (opens in a new tab)`}
-                  >
-                    Visit Site <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </article>
+                    <div className="my-4 h-px bg-white/5"></div>
+
+                    <h3 className="text-lg text-white font-medium mb-3 leading-snug">{project.name}</h3>
+                    <p className="text-offwhite/60 text-sm font-light leading-relaxed mb-6">{project.desc}</p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-offwhite/60 text-[11px] font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {project.isConfidential ? (
+                      <p className="mt-auto flex items-center justify-center gap-2 w-full px-5 py-3 border border-white/10 text-offwhite/40 text-xs font-medium rounded-sm text-center">
+                        <Lock className="w-3.5 h-3.5 flex-shrink-0" />
+                        Internal Tool — Available as a Custom Build
+                      </p>
+                    ) : (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-sm transition-colors duration-300 hover:bg-white/5 hover:border-teal/40"
+                        aria-label={`Visit ${project.name} (opens in a new tab)`}
+                      >
+                        Visit Site <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
+                </article>
+              </div>
             ))}
           </div>
         </div>
