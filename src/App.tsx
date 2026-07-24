@@ -306,7 +306,7 @@ const RESOURCES_DATA = [
     id: "about-us",
     title: "About Us",
     icon: Users,
-    longDesc: "Keystone Consulting Group is your local Utah partner for uncovering hidden profit and turning it into growth. We audit your costs, eliminate unnecessary fees, and reinvest the savings into systems that scale your business. Our team deals with you directly — no phone trees, no runarounds.",
+    longDesc: "Keystone Consulting Group is your local Utah partner for uncovering hidden profit and turning it into growth. We audit your costs, eliminate unnecessary fees, and reinvest the savings into systems that scale your business. Our team deals with you directly. No phone trees, no runarounds.",
     features: ["Local Utah support team", "Proven Identify → Fix → Grow process", "Client-first approach", "Innovative payment & growth solutions"],
     hideButton: true
   },
@@ -602,7 +602,7 @@ const NAV_DROPDOWNS = {
     label: 'Financial Services',
     items: [
       { name: 'Low Rate Payment Processing', icon: CreditCard, desc: 'Interchange-plus & zero-fee Edge Program', href: '/#pricing' },
-      { name: 'Consumer Financing', icon: Banknote, desc: 'Let customers pay over time — you get paid now', href: '/services/consumer-financing' },
+      { name: 'Consumer Financing', icon: Banknote, desc: 'Let customers pay over time. You get paid now.', href: '/services/consumer-financing' },
       { name: 'Business Loans', icon: TrendingUp, desc: 'Fast capital for growth, equipment & working cash', href: '/services/business-loans' },
       { name: 'POS Placement', icon: MonitorSmartphone, desc: 'Free smart terminals & POS hardware placement', href: '/services/pos-placement' },
     ]

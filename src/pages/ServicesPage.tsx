@@ -153,241 +153,241 @@ const SERVICES_DETAIL = [
     id: "consulting",
     title: "Business Consulting",
     icon: Compass,
-    tagline: "The strategy behind the systems.",
-    heroDesc: "Our consulting is the backbone of everything we do. We embed with your team, audit your operations, identify where money is leaking, eliminate waste, and build a roadmap to reinvest savings into growth. Think of us as your fractional COO.",
+    tagline: "Find every dollar you're leaving on the table.",
+    heroDesc: "You know something's leaking. You just can't see where. We go through the books, the tools, and the day-to-day until the waste is obvious. Then we build a plan to put that money back into growth.",
     sections: [
       {
         title: "Operational Audits",
         icon: Target,
-        desc: "We go line by line through your operations — payment processing, subscriptions, overhead, manual processes, missed revenue opportunities — and find every dollar you're losing unnecessarily."
+        desc: "Most owners are too close to notice the $400/month tool nobody opens, or the process that takes four people when two would do. We find it. Line by line."
       },
       {
         title: "Revenue Leak Identification",
         icon: TrendingUp,
-        desc: "Most businesses don't know where they're bleeding money until someone shows them. We identify hidden costs, redundant tools, inefficient workflows, and pricing gaps that are silently eating your margins."
+        desc: "Hidden fees, redundant subscriptions, pricing that hasn't moved in three years. These don't show up as a crisis. They just quietly shrink every paycheck until someone points them out."
       },
       {
         title: "Growth Strategy",
         icon: Rocket,
-        desc: "Once we've freed up capital, we don't just hand you a report. We build a reinvestment roadmap — where to spend, what to build, and how to scale — so every saved dollar compounds into growth."
+        desc: "Saving money feels good. Putting it somewhere that pays you back feels better. We build the reinvestment plan so every freed-up dollar has a job."
       },
       {
         title: "Fractional Advisory",
         icon: Shield,
-        desc: "Don't need a full-time COO? We act as your strategic partner on an ongoing basis — monthly check-ins, quarterly planning, and on-demand advisory for critical decisions."
+        desc: "You don't need a full-time COO on payroll. You need someone who shows up monthly, looks at the numbers, and tells you what to do next. That's us."
       }
     ],
-    features: ["Profit leak analysis", "Operational efficiency audits", "Revenue optimization", "Growth strategy & roadmapping", "Fractional COO advisory", "Monthly strategic check-ins", "Vendor & tool evaluation", "Process systematization"]
+    features: ["Every profit leak on the table", "Know which tools are wasting money", "A plan for every saved dollar", "Growth roadmap you can actually follow", "Strategic advice without the full-time salary", "Monthly check-ins that keep you honest", "Vendors renegotiated or cut", "Processes that run without you"]
   },
   {
     id: "prep-to-sell",
     title: "Prep-to-Sell",
     icon: Target,
-    tagline: "Build today for the exit you want tomorrow.",
-    heroDesc: "Whether you're selling next year or in ten years, the businesses that command the highest valuations are the ones that prepared early. We help you systematize operations, clean up financials, and position your business as an asset — not just a job.",
+    tagline: "Make your business worth more before you sell it.",
+    heroDesc: "Buyers pay more for businesses that run without the owner. We help you clean the books, document the systems, and build the kind of company that sells for a multiple, not a discount.",
     sections: [
       {
         title: "Exit Strategy Planning",
         icon: Compass,
-        desc: "When do you want to exit? What's your target number? We work backwards from your goals to build a concrete timeline and action plan that maximizes your business's value at sale."
+        desc: "What's your number, and when do you want it? We work backwards from that date and build a timeline that gets the business there, not a binder that sits on a shelf."
       },
       {
         title: "Financial Cleanup",
         icon: LineChart,
-        desc: "Buyers look at your books first. We help you clean up financials, normalize expenses, separate personal from business, and present numbers that make acquirers confident in the opportunity."
+        desc: "Buyers open the books first. Messy personal expenses and unexplained costs kill deals or kill the price. We get the numbers clean so an acquirer sees a business, not a hobby."
       },
       {
         title: "Operational Systematization",
         icon: Workflow,
-        desc: "A business that runs without the owner is worth significantly more than one that doesn't. We document processes, build SOPs, and create systems so the business operates independently."
+        desc: "If the business dies when you take a vacation, it isn't an asset. We document how everything gets done so someone else can run it, and buyers pay for that independence."
       },
       {
         title: "Valuation Maximization",
         icon: Rocket,
-        desc: "Small improvements in recurring revenue, customer retention, and operational efficiency can add multiples to your valuation. We identify the highest-leverage moves and help you execute them."
+        desc: "A few points of recurring revenue or retention can add a full multiple to your sale price. We find the highest-leverage moves and help you hit them before you go to market."
       }
     ],
-    features: ["Exit strategy & timeline", "Financial cleanup & normalization", "SOP documentation", "Process systematization", "Recurring revenue optimization", "Customer retention strategy", "Owner-independence planning", "Valuation modeling"]
+    features: ["A clear exit date and number", "Books that survive a buyer's review", "SOPs so the business runs without you", "Systems that outlive the founder", "Recurring revenue that raises the multiple", "Customers who stick around after you leave", "Owner-independence built in", "A valuation you can defend"]
   },
   {
     id: "seo",
     title: "SEO Services",
     icon: Search,
-    tagline: "Get found by the customers already searching for you.",
-    heroDesc: "Search engine optimization isn't a luxury — it's the foundation of sustainable growth. We help businesses rank on the first page of Google for the terms their customers are actually searching, driving organic traffic that converts without paying for every click.",
+    tagline: "Show up where your customers are already looking.",
+    heroDesc: "People are searching for what you sell right now. If you're not on page one, they're calling your competitor. We get you ranking for the searches that actually turn into appointments, without paying for every click.",
     sections: [
       {
         title: "Local SEO & Map Pack",
         icon: MapPin,
-        desc: "Dominate the local 3-pack in Google Maps. We optimize your Google Business Profile, build local citations, manage reviews, and ensure your business shows up when people search 'near me' in your area."
+        desc: "When someone types \"near me,\" three businesses get the call. Everyone else gets ignored. We get you into that map pack so the phone rings from people who were already ready to buy."
       },
       {
         title: "On-Page Optimization",
         icon: Code,
-        desc: "Title tags, meta descriptions, header structure, schema markup, internal linking, and content optimization — we fine-tune every page on your site to signal relevance and authority to search engines."
+        desc: "Google decides in milliseconds whether your page is the answer. We tune every headline, meta tag, and structure so the engine trusts you enough to put you in front of the people who matter."
       },
       {
         title: "Content Strategy & Blogging",
         icon: PenTool,
-        desc: "We research the keywords your customers are typing into Google and create high-quality, SEO-optimized content that ranks. Blog posts, service pages, and landing pages that drive traffic month after month."
+        desc: "One good article can send you leads for years. We write the pages your customers are already googling, so traffic shows up month after month without another ad spend."
       },
       {
         title: "Technical SEO & Site Speed",
         icon: Zap,
-        desc: "Core Web Vitals, page speed, mobile usability, crawlability, indexing issues — we audit and fix the technical foundation of your site so Google can find, crawl, and rank every page."
+        desc: "If Google can't crawl it or it loads too slow, you don't rank. We fix the invisible stuff under the hood so every page gets a fair shot at showing up."
       }
     ],
-    features: ["Google first-page ranking strategy", "Local SEO & Google Maps optimization", "Keyword research & targeting", "On-page optimization", "Technical SEO audits", "Monthly content creation", "Backlink building", "Monthly ranking reports"]
+    features: ["Found on page one for the searches that convert", "Map pack visibility when they search near you", "Keywords your customers actually type", "Pages built to rank, not just look pretty", "A site Google can crawl and trust", "Content that keeps sending leads", "Backlinks that build real authority", "Monthly reports that show the climb"]
   },
   {
     id: "google-business",
     title: "Google My Business",
     icon: MapPin,
-    tagline: "Own your local search presence.",
-    heroDesc: "Your Google Business Profile is often the first thing potential customers see. We optimize every aspect of your profile — photos, categories, posts, reviews, Q&A — so you show up in the map pack and convert searchers into customers before they even visit your website.",
+    tagline: "Be the first name they see on the map.",
+    heroDesc: "Before anyone hits your website, they check Google. Photos, stars, hours, reviews. We make that first look so strong that half your new customers never bother comparing anyone else.",
     sections: [
       {
         title: "Profile Optimization",
         icon: Settings,
-        desc: "We fully build out your Google Business Profile with the right categories, attributes, service descriptions, and business info. A complete, optimized profile ranks higher and converts better than a half-filled one."
+        desc: "A half-filled profile looks like a half-serious business. We fill every category, photo, and detail so Google ranks you higher and searchers trust you enough to call."
       },
       {
         title: "Review Management",
         icon: Star,
-        desc: "Reviews are the #1 local ranking factor. We set up automated review request systems, help you respond to reviews professionally, and build a strategy to consistently grow your 5-star count."
+        desc: "Five-star reviews close the deal before you ever pick up the phone. We set up automatic requests so happy customers leave them, and we help you respond so the next visitor sees you're paying attention."
       },
       {
         title: "Google Posts & Updates",
         icon: MessageSquare,
-        desc: "Weekly Google Posts keep your profile active and signal to Google that your business is engaged. We create and schedule posts featuring offers, events, updates, and product highlights."
+        desc: "A dead profile tells Google you've gone quiet. Weekly posts keep you active, surface your offers, and give someone scrolling Maps one more reason to choose you today."
       },
       {
         title: "Local Citation Building",
         icon: Globe,
-        desc: "Your business name, address, and phone number need to be consistent across 50+ directories. We build and clean up citations on Yelp, Apple Maps, Bing, Facebook, and industry-specific directories."
+        desc: "Wrong address on one directory, wrong phone on another, and Google gets confused. We clean up your name, address, and phone across 50+ listings so local search finally trusts you."
       }
     ],
-    features: ["Full profile optimization", "Review request automation", "Professional review responses", "Weekly Google Posts", "Photo & video optimization", "Q&A management", "Citation building (50+ directories)", "Monthly performance reports"]
+    features: ["A profile that ranks and converts", "Reviews that show up without you asking", "Responses that build trust fast", "Weekly posts that keep you visible", "Photos that make them stop scrolling", "Q&A answered before they call", "Consistent listings across 50+ directories", "Monthly proof the map pack is moving"]
   },
   {
     id: "bpo",
-    title: "BPO — Lead Generation",
+    title: "BPO - Lead Generation",
     icon: Headphones,
-    tagline: "Leads delivered. Appointments booked. Hands off.",
-    heroDesc: "Our BPO lead generation service does the prospecting for you. We build targeted outbound campaigns, qualify leads through multi-touch sequences, and book appointments directly on your calendar — so your sales team only talks to people who are ready to buy.",
+    tagline: "Your calendar fills up. You just show up and close.",
+    heroDesc: "Prospecting eats the hours your closers should spend selling. We find the right people, warm them up, and put qualified appointments on your calendar. Your team only talks to buyers who are ready.",
     sections: [
       {
         title: "Outbound Prospecting",
         icon: Target,
-        desc: "We build targeted prospect lists based on your ideal customer profile and run multi-channel outreach — cold email, LinkedIn, and phone — to generate interest and start conversations on your behalf."
+        desc: "Cold outreach is a grind most teams abandon by week three. We build the list, write the messages, and run the emails, LinkedIn, and calls so conversations start without your people burning out."
       },
       {
         title: "Appointment Setting",
         icon: LayoutDashboard,
-        desc: "Qualified prospects are booked directly onto your sales team's calendar. We handle the back-and-forth, confirm the meeting, and send a brief on the prospect so your closer walks in prepared."
+        desc: "No more chasing \"let me check my calendar.\" We handle the back-and-forth, lock the meeting, and send a brief so your closer walks in knowing who they're talking to and why."
       },
       {
         title: "Lead Nurturing Sequences",
         icon: MessageSquare,
-        desc: "Not every lead is ready today. We build automated nurture sequences that keep your brand top-of-mind with warm prospects until they're ready to have the conversation — then we book the call."
+        desc: "Not ready today doesn't mean never. Warm prospects stay in a nurture sequence until they are, then we book the call. You stop losing deals that just needed another touch."
       },
       {
         title: "Campaign Reporting & Optimization",
         icon: BarChart3,
-        desc: "Full transparency on every campaign. Open rates, reply rates, appointments booked, pipeline generated. We continuously optimize messaging, targeting, and timing to improve results month over month."
+        desc: "You'll know what got opened, who replied, and which appointments turned into pipeline. We tighten the message every month so next month's results beat this one's."
       }
     ],
-    features: ["Targeted prospect list building", "Multi-channel outreach (email, LinkedIn, phone)", "Qualified appointment setting", "Automated lead nurturing sequences", "CRM integration & lead handoff", "Monthly campaign performance reports", "A/B tested messaging", "Dedicated campaign manager"]
+    features: ["Prospects who match who you sell to", "Outreach that runs while you sell", "Appointments on the calendar, not maybes", "Warm leads that don't go cold", "Handoffs that land in your CRM", "Clear numbers on what's working", "Messaging tested until it converts", "A campaign manager who owns the results"]
   },
   {
     id: "consumer-financing",
     title: "Consumer Financing",
     icon: Banknote,
-    tagline: "Your customers pay over time. You get paid now.",
-    heroDesc: "Consumer financing removes the biggest objection in sales: price. By offering flexible payment plans at the point of sale, you close more deals, increase average ticket sizes, and never chase a payment — because you get funded in full upfront.",
+    tagline: "They say yes to the big ticket. You get paid today.",
+    heroDesc: "Price is the objection that kills most sales. Financing turns a $1,500 no into a $125/month yes. You close more deals, raise the average ticket, and get the full amount upfront. No chasing payments.",
     sections: [
       {
         title: "Point-of-Sale Financing",
         icon: CreditCard,
-        desc: "Offer 3, 6, or 12-month payment plans right at checkout. The customer applies in under 2 minutes, gets approved instantly, and you receive the full payment within 1-2 business days."
+        desc: "The customer applies in under two minutes at checkout. Instant approval, and the full payment hits your account in a day or two. They walk out with the service. You walk out paid."
       },
       {
         title: "Increase Average Ticket Size",
         icon: TrendingUp,
-        desc: "When customers can pay $125/month instead of $1,500 upfront, they say yes to the premium option. Our merchants see 30-50% increases in average transaction value after adding financing."
+        desc: "When $125 a month feels easier than $1,500 today, people pick the premium option. Merchants who add financing typically see average tickets jump 30-50%."
       },
       {
         title: "Zero Risk to Your Business",
         icon: Shield,
-        desc: "You get paid in full — the financing company assumes all the risk. No chargebacks, no collections, no bad debt. If the customer defaults, that's between them and the lender."
+        desc: "You get paid in full. The lender takes the risk. No chargebacks, no collections, no bad debt sitting on your books if someone stops paying."
       },
       {
         title: "Multi-Industry Support",
         icon: Store,
-        desc: "Financing for auto repair, healthcare, home services, salons, retail, and more. We match you with the right lending partners for your industry and average ticket size."
+        desc: "Auto repair, healthcare, home services, salons, retail. We match you with lenders built for your ticket size so approvals actually happen, not just applications."
       }
     ],
-    features: ["Instant customer approval (2 min)", "Full upfront funding to you", "3, 6, and 12-month terms", "No risk or collections for you", "Competitive interest rates", "In-store & online financing", "Multi-lender marketplace", "Integration with your POS"]
+    features: ["Approval in under two minutes", "Full funding to you upfront", "Terms that make big tickets feel small", "No collections or bad debt on you", "Rates customers will actually take", "Works in-store and online", "Multiple lenders for better approval odds", "Tied into the POS you already use"]
   },
   {
     id: "business-loans",
     title: "Business Loans & Capital",
     icon: DollarSign,
-    tagline: "Fast capital when you need it.",
-    heroDesc: "Whether you need working capital, equipment financing, or growth funding — we connect you with lending partners who fund in days, not months. No jumping through hoops, no waiting 6 weeks for an SBA decision. Fast, flexible capital for businesses that can't afford to wait.",
+    tagline: "Cash in days, not weeks of paperwork.",
+    heroDesc: "Payroll doesn't wait for a six-week SBA decision. Neither does a deal that needs inventory tomorrow. We connect you with lenders who fund in days so you can move while the opportunity is still open.",
     sections: [
       {
         title: "Working Capital Loans",
         icon: Banknote,
-        desc: "Short-term capital to cover payroll, inventory, marketing, or seasonal dips. Approvals in 24 hours, funding in 1-3 days. Flexible repayment terms based on your daily or weekly revenue."
+        desc: "Cover payroll, stock the shelves, or ride out a slow month without raiding your personal account. Approvals in 24 hours, money in 1-3 days, paid back against how revenue actually comes in."
       },
       {
         title: "Equipment Financing",
         icon: Settings,
-        desc: "Finance POS systems, kitchen equipment, vehicles, medical devices, or any business equipment. Keep your cash reserves intact while getting the tools you need to grow."
+        desc: "Need a new oven, truck, or POS system? Finance it instead of draining cash reserves. Keep the money for operations while the equipment starts paying for itself."
       },
       {
         title: "Revenue-Based Financing",
         icon: BarChart3,
-        desc: "Repay as a small percentage of daily sales — when business is slow, your payments are lower. No fixed monthly payments that strain your cash flow during off-seasons."
+        desc: "Slow month? Your payment shrinks with sales. Busy month? You pay a bit more. No rigid fixed payment that punches a hole in cash flow when business dips."
       },
       {
         title: "SBA & Term Loans",
         icon: FileText,
-        desc: "For larger, longer-term needs, we connect you with SBA lenders and traditional term loan providers. Lower rates, longer terms, and the structure for major investments."
+        desc: "Bigger moves need longer money. We connect you with SBA and term lenders when you're ready for lower rates and a structure built for a real investment, not a stopgap."
       }
     ],
-    features: ["24-hour approval decisions", "Funding in 1-3 business days", "$5K - $500K+ available", "Working capital & lines of credit", "Equipment financing", "Revenue-based repayment", "SBA loan connections", "No upfront fees"]
+    features: ["A yes or no in 24 hours", "Money in your account in 1-3 days", "From $5K to $500K+ when you need it", "Capital for payroll, inventory, or growth", "Equipment without draining reserves", "Payments that flex with your sales", "SBA options for the bigger bets", "No fees just to apply"]
   },
   {
     id: "pos-placement",
     title: "POS Placement",
     icon: MonitorSmartphone,
-    tagline: "Free hardware. Zero upfront cost.",
-    heroDesc: "We place modern, smart POS terminals and payment hardware at your business at no cost. Free equipment, free installation, free training. You just process with us and the hardware is yours to use — from countertop terminals to full restaurant POS systems with kitchen displays.",
+    tagline: "New hardware. Zero check written.",
+    heroDesc: "That outdated terminal is slowing down your line and embarrassing your brand. We put modern payment hardware in your business free. Free install, free training. You process with us, and the equipment stays.",
     sections: [
       {
         title: "Smart Terminals",
         icon: CreditCard,
-        desc: "Sleek, countertop-ready terminals with tap-to-pay, chip, swipe, and mobile wallet support. Process in under 2 seconds. Dual screens for customer-facing tip prompts and receipts."
+        desc: "Tap, chip, swipe, Apple Pay. Under two seconds. The customer-facing screen handles tips and receipts so your staff isn't fumbling with paper while the next person waits."
       },
       {
         title: "Full POS Systems",
         icon: LayoutDashboard,
-        desc: "Complete point-of-sale systems with touchscreen registers, barcode scanners, receipt printers, and cash drawers. Pre-configured for your industry — restaurant, retail, salon, or service."
+        desc: "Register, scanner, printer, cash drawer. Set up for how your industry actually sells, so your team isn't fighting the software during a rush."
       },
       {
         title: "Kitchen Display Systems",
         icon: Layers,
-        desc: "For restaurants: digital kitchen displays that replace paper tickets. Orders route automatically from the POS to the kitchen, with bump functionality, timers, and order prioritization."
+        desc: "Paper tickets get lost, smeared, and misread. Digital kitchen screens route every order the second it rings up, with timers that keep the line honest."
       },
       {
         title: "Mobile & Wireless Readers",
         icon: Globe,
-        desc: "Take payments anywhere — tableside, at events, on the job site, or at the door. Compact wireless readers that connect via Bluetooth or WiFi and process just as fast as countertop terminals."
+        desc: "Tableside, job site, front door, pop-up event. Take the payment where the customer is standing, just as fast as the terminal on your counter."
       }
     ],
-    features: ["Free terminal placement", "Free installation & setup", "Free staff training", "Tap, chip, swipe & mobile pay", "Customer-facing tip screens", "Full POS system options", "Kitchen display integration", "Same-day deposit available"]
+    features: ["Hardware that costs you nothing upfront", "Installed and ready without your IT guy", "Staff trained before the first rush", "Every way a customer wants to pay", "Tip screens that raise the average", "Full POS when a terminal isn't enough", "Kitchen screens that kill paper tickets", "Deposits that hit the same day"]
   }
 ];
 
@@ -420,14 +420,14 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
           <div className="animate-on-scroll">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-medium uppercase tracking-wider mb-8">
               <Zap className="w-3.5 h-3.5" />
-              The "Grow" Step of Our System
+              Where Your Savings Go to Work
             </div>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1]">
-              Built to Grow.<br/>
-              <span className="text-teal">Engineered to Scale.</span>
+              Turn Savings Into<br/>
+              <span className="text-teal">Something That Pays You Back.</span>
             </h1>
             <p className="text-offwhite/70 text-lg md:text-xl font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-              Once we uncover your savings, these are the systems we help you reinvest into. Every service is part of one unified growth engine — not a disconnected menu.
+              Once we find the money you're overpaying, these are the systems we put it into. One connected growth engine, not a random menu of add-ons.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button 
@@ -542,7 +542,7 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
 
             {/* Feature List */}
             <div className="animate-on-scroll bg-charcoal-dark/60 border border-white/5 rounded-2xl p-8 md:p-10">
-              <h3 className="text-lg font-medium text-white mb-6">What's Included</h3>
+              <h3 className="text-lg font-medium text-white mb-6">What You Walk Away With</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {service.features.map((feat, fi) => (
                   <div key={fi} className="flex items-start gap-3 text-sm text-offwhite/70">
@@ -561,9 +561,9 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
         <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
           <div className="animate-on-scroll">
-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Ready to Reinvest Your Savings Into Growth?</h2>
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">What Would You Do With an Extra $2,000 a Month?</h2>
             <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-              Every dollar we save you on processing fees is a dollar you can put into the systems that scale your business. Let's talk about what that looks like for you.
+              Most owners we talk to put it into the systems that bring in more customers. Book a call and we'll map out what that looks like for your numbers.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button 
@@ -667,7 +667,7 @@ export function SingleServicePage({ serviceId, onOpenModal, onNavigate }: { serv
       <section className="py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <div className="animate-on-scroll bg-charcoal-dark/60 border border-white/5 rounded-2xl p-8 md:p-10">
-            <h3 className="text-lg font-medium text-white mb-6">What's Included</h3>
+            <h3 className="text-lg font-medium text-white mb-6">What You Walk Away With</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {service.features.map((feat: string, fi: number) => (
                 <div key={fi} className="flex items-start gap-3 text-sm text-offwhite/70">
