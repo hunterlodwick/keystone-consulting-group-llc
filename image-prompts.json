@@ -2,1058 +2,907 @@
   {
     "slug": "3d-animated-websites",
     "path": "public/images/services/sub/3d-animated-websites.jpg",
-    "prompt": "Close-up of a sleek ultrawide monitor on a dark desk showing soft abstract 3D geometric shapes floating with teal light trails as if mid-animation, ambient screen glow on the desk surface. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "3D Animated Websites"
+    "prompt": "Close-up of an ultrawide computer monitor on a light oak desk showing a colorful 3D product model rotating with soft parallax motion blur, natural afternoon window light hitting the screen bezel, warm room tones, soft bokeh houseplant in background, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "ai-voice-chatbots",
     "path": "public/images/services/sub/ai-voice-chatbots.jpg",
-    "prompt": "Product photography of a modern black desktop microphone on a stand next to a smartphone with a soft glowing conversation bubble silhouette on screen, dark desk, teal accent light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "AI Voice Chatbots"
+    "prompt": "A modern black USB microphone on a stand beside a smartphone with a soft glowing voice-waveform on screen, sitting on a light walnut desk near a sunny window, warm natural daylight, muted beige wall behind, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "high-conversion-landing-pages",
     "path": "public/images/services/sub/high-conversion-landing-pages.jpg",
-    "prompt": "Product photography of a laptop on a dark desk with a bright teal call-to-action button shape glowing on an otherwise dark blank webpage, finger blurred approaching the trackpad. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "High-Conversion Landing Pages"
+    "prompt": "Over-the-shoulder view of a laptop on a white desk with a bright clean webpage and a single large green button shape on screen, finger hovering above the trackpad, bright modern office daylight, soft white and pale green tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "mobile-first-lightning-fast",
     "path": "public/images/services/sub/mobile-first-lightning-fast.jpg",
-    "prompt": "Product photography of a smartphone held upright on a dark charcoal surface with a nearly blank page loading instantly as a soft teal flash, stopwatch silhouette beside it out of focus. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Mobile-First & Lightning Fast"
+    "prompt": "A hand holding a smartphone outdoors in bright daylight, the screen loads a clean white webpage instantly with soft screen glow on the fingers, parking lot blurred behind, natural sunny color palette, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "custom-built-platforms",
     "path": "public/images/services/sub/custom-built-platforms.jpg",
-    "prompt": "Product photography of a custom-built dark dashboard UI glow on a desktop monitor, teal pipeline dots connected by thin light lines, dark office desk, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Custom-Built Platforms"
+    "prompt": "A desktop monitor on a warm wood office desk showing a custom CRM-style dashboard with soft colored pipeline columns and charts, no readable text, warm brass desk lamp light, professional office wood and cream tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "platform-configuration",
     "path": "public/images/services/sub/platform-configuration.jpg",
-    "prompt": "Product photography of interlocking matte black puzzle pieces being fitted together on a dark slate surface under teal edge light, representing configured software. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Platform Configuration"
+    "prompt": "Close-up of a technician's hands arranging colored sticky notes on a whiteboard beside an open laptop showing settings toggles, bright modern office, soft daylight, clean white and light blue tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "pipeline-deal-tracking",
     "path": "public/images/services/sub/pipeline-deal-tracking.jpg",
-    "prompt": "Product photography of a laptop screen showing a dark kanban-style board of soft glowing teal and charcoal cards in columns, no text, shallow depth of field. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Pipeline & Deal Tracking"
+    "prompt": "A laptop open on a conference table showing a kanban board of soft colored cards in columns, warm wood table, soft afternoon office light through blinds, coffee cup blurred beside it, professional warm tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "automated-follow-ups",
     "path": "public/images/services/sub/automated-follow-ups.jpg",
-    "prompt": "Product photography of a smartphone on a dark wooden desk receiving a soft teal notification glow, next to a small analog clock showing late evening, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Automated Follow-Ups"
+    "prompt": "A smartphone lying on a wooden nightstand receiving a soft notification glow at dusk, warm bedside lamp light, cozy bedroom tones of amber and soft brown, no readable text on the screen, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "ai-lead-qualification",
     "path": "public/images/services/sub/ai-lead-qualification.jpg",
-    "prompt": "Product photography of a funnel-shaped brushed metal object on a dark desk with glowing teal orbs sorted into tiers below it, soft studio lighting. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "AI Lead Qualification"
+    "prompt": "A split-tray sorting desk organizer with business cards being sorted into labeled trays beside a tablet showing a green check and red X icons, bright daylight office, clean white desk, natural color photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "customer-service-agents",
     "path": "public/images/services/sub/customer-service-agents.jpg",
-    "prompt": "Product photography of a professional black headset resting on a dark charcoal desk beside a softly glowing laptop chat window with teal accent bubbles, midnight mood lighting. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Customer Service Agents"
+    "prompt": "A professional black headset resting on a clean white desk next to a softly lit laptop chat window at night, cool blue screen glow mixing with a warm desk lamp, quiet after-hours office mood, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "workflow-automation",
     "path": "public/images/services/sub/workflow-automation.jpg",
-    "prompt": "Product photography of four matte black app-like tiles on a dark desk connected by glowing teal fiber-optic cables between them, representing automated handoffs. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Workflow Automation"
+    "prompt": "Four small desktop devices and a laptop connected by neat cable runs across a light desk, soft motion blur suggesting data flowing between them, bright natural office light, clean white and silver tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "system-integrations",
     "path": "public/images/services/sub/system-integrations.jpg",
-    "prompt": "Product photography of two brushed aluminum connectors plugged together with a thin teal light path between separate matte black device blocks on a dark surface. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "System Integrations"
+    "prompt": "Close-up of interlocking metal puzzle pieces on a brushed steel surface under soft studio light, silver and warm gray tones, representing connected software systems, product photography style, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "operational-audits",
     "path": "public/images/services/sub/operational-audits.jpg",
-    "prompt": "Product photography of a magnifying glass hovering over a printed spreadsheet-like document on a dark wooden desk, warm side light, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Operational Audits"
+    "prompt": "An open ledger binder and calculator on a warm wooden desk with reading glasses, soft golden desk lamp light, professional financial office atmosphere with wood and brass accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "revenue-leak-identification",
     "path": "public/images/services/sub/revenue-leak-identification.jpg",
-    "prompt": "Product photography of a cracked ceramic coin jar with a few coins spilling onto a dark slate surface, teal accent light from the left, representing money leaking. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Revenue Leak Identification"
+    "prompt": "A close-up of water dripping from a cracked ceramic piggy bank onto coins on a wooden table, warm amber side lighting, soft shadows, metaphor for money leaking, warm brown and gold tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "growth-strategy",
     "path": "public/images/services/sub/growth-strategy.jpg",
-    "prompt": "Product photography of a small matte black plant seedling sprouting from a stack of dark coins on charcoal stone, soft upward teal light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Growth Strategy"
+    "prompt": "A small potted plant growing beside stacked coins on a sunlit windowsill, soft morning golden light, warm cream and green tones, clean simple composition, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "fractional-advisory",
     "path": "public/images/services/sub/fractional-advisory.jpg",
-    "prompt": "Product photography of an open leather planner and a fountain pen on a dark executive desk with a calendar page showing monthly markers as soft dots, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Fractional Advisory"
+    "prompt": "Two people reviewing printed charts at a polished wood conference table, only hands and papers visible, warm brass lamp and late-afternoon window light, professional warm office tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "exit-strategy-planning",
     "path": "public/images/services/sub/exit-strategy-planning.jpg",
-    "prompt": "Product photography of a dark road map unrolled on a wooden desk with a teal pin marking an end destination, soft directional lighting, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Exit Strategy Planning"
+    "prompt": "A wall calendar with a circled future date beside a roadmap sketch on cream paper, warm office desk with wood grain, soft natural window light, golden hour tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "financial-cleanup",
     "path": "public/images/services/sub/financial-cleanup.jpg",
-    "prompt": "Product photography of a neat stack of organized ledgers and a matte black calculator on a dark desk, one crumpled receipt being set aside, clean lighting. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Financial Cleanup"
+    "prompt": "Neatly organized stacks of receipts and a clean spreadsheet printout on a white desk with a brass paperweight, soft daylight, tidy professional bookkeeping scene, warm neutral tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "operational-systematization",
     "path": "public/images/services/sub/operational-systematization.jpg",
-    "prompt": "Product photography of a thick binder of printed SOP pages standing open on a dark desk next to a checklist clipboard, teal accent light, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Operational Systematization"
+    "prompt": "An open SOP binder with checklist pages on a clean desk beside a clipboard and pen, bright office daylight, cream paper and soft gray tones, organized business photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "valuation-maximization",
     "path": "public/images/services/sub/valuation-maximization.jpg",
-    "prompt": "Product photography of a gold-toned balance scale on a dark slate surface with one side holding stacked coins rising higher, soft teal rim light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Valuation Maximization"
+    "prompt": "A brass balance scale with coins on one side and a miniature building model on the other, warm walnut desk, golden hour side light, rich wood and brass tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "local-seo-map-pack",
     "path": "public/images/services/sub/local-seo-map-pack.jpg",
-    "prompt": "Product photography of a smartphone on a dark desk showing a soft glowing map with three teal location pins clustered at the top, phone screen as main light source. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Local SEO & Map Pack"
+    "prompt": "A smartphone held outdoors showing a map app with three glowing location pins near a storefront, bright natural daylight, colorful map screen glow, blurred street background, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "on-page-optimization",
     "path": "public/images/services/sub/on-page-optimization.jpg",
-    "prompt": "Product photography of a laptop on a dark desk with HTML-like soft teal code brackets faintly glowing on screen and a pencil resting on the keyboard, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "On-Page Optimization"
+    "prompt": "Close-up of a laptop screen with highlighted webpage headings and structure outlines in soft colors, no readable words, natural desk lamp light, warm wood desk surface, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "content-strategy-blogging",
     "path": "public/images/services/sub/content-strategy-blogging.jpg",
-    "prompt": "Product photography of an open notebook with a fountain pen and a laptop beside it showing a soft blank article layout glow, dark wooden desk, warm side light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Content Strategy & Blogging"
+    "prompt": "A writer typing on a laptop in a sunlit cafe, coffee cup beside, soft bokeh background, warm natural cafe light, cream and amber tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "technical-seo-site-speed",
     "path": "public/images/services/sub/technical-seo-site-speed.jpg",
-    "prompt": "Product photography of a stopwatch next to a laptop with a teal progress bar nearly full on a dark charcoal desk, representing site speed, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Technical SEO & Site Speed"
+    "prompt": "A developer looking at a laptop showing a green speed gauge graphic on screen, bright modern workstation, cool daylight from a window, clean white desk, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "profile-optimization",
     "path": "public/images/services/sub/profile-optimization.jpg",
-    "prompt": "Product photography of a smartphone showing a soft glowing business profile card with teal accent rings and empty photo placeholder shapes, dark background. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Profile Optimization"
+    "prompt": "A smartphone showing a Google Business-style profile card with photo placeholders and star ratings, held in a hand outside a storefront, bright daylight, colorful natural street tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "review-management",
     "path": "public/images/services/sub/review-management.jpg",
-    "prompt": "Product photography of a smartphone on a dark wooden desk showing five gold stars glowing on screen, warm screen glow illuminating the desk, no other text visible. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Review Management"
+    "prompt": "A smartphone on a wooden cafe table showing five gold stars on a clean white screen, warm natural window light, shallow depth of field, no other text visible, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "google-posts-updates",
     "path": "public/images/services/sub/google-posts-updates.jpg",
-    "prompt": "Product photography of a smartphone held at an angle showing a colorful map application with soft location pin glows, dark background, phone screen as only light source. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Google Posts & Updates"
+    "prompt": "A hand holding a smartphone showing a colorful map application with location pins, natural daylight, bright phone screen, soft blurred outdoor cafe background, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "local-citation-building",
     "path": "public/images/services/sub/local-citation-building.jpg",
-    "prompt": "Top-down product photography of a neat stack of blank business cards on a dark slate surface, warm lighting from the right, shallow depth of field, no readable text on cards. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Local Citation Building"
+    "prompt": "A paper business card lying beside a smartphone showing a map pin, on a wooden desk with soft daylight, simple composition representing consistent NAP listings, warm natural tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "outbound-prospecting",
     "path": "public/images/services/sub/outbound-prospecting.jpg",
-    "prompt": "Product photography of a black desk phone handset lifted slightly off the cradle next to a printed contact list with blurred lines, dark office desk, teal accent. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Outbound Prospecting"
+    "prompt": "A sales person at a bright standing desk making a call on a headset while reviewing a laptop contact list with soft colored dots, natural office daylight, energetic warm tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "appointment-setting",
     "path": "public/images/services/sub/appointment-setting.jpg",
-    "prompt": "Product photography of an open desk calendar with a teal-ink circle marking a meeting slot and a pen beside it, dark charcoal surface, soft side light, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Appointment Setting"
+    "prompt": "A wall calendar and open laptop showing a booked time slot highlight, coffee mug beside, warm morning office light through blinds, cream and soft blue tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "lead-nurturing-sequences",
     "path": "public/images/services/sub/lead-nurturing-sequences.jpg",
-    "prompt": "Product photography of a drip coffee carafe pouring into a cup on a dark counter as a metaphor for drip nurture, soft teal rim light, minimal and clean. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Lead Nurturing Sequences"
+    "prompt": "A smartphone showing a soft email thread glow beside a small plant on a windowsill, gentle morning light suggesting patient follow-up over time, warm green and cream tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "campaign-reporting-optimization",
     "path": "public/images/services/sub/campaign-reporting-optimization.jpg",
-    "prompt": "Product photography of a tablet on a dark desk showing soft teal bar chart shapes rising upward, no readable numbers, shallow depth of field. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Campaign Reporting & Optimization"
+    "prompt": "A laptop dashboard with colorful bar charts and trend lines on a glass desk, bright daylight office, soft teal and orange chart colors on white background, modern analytics photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "point-of-sale-financing",
     "path": "public/images/services/sub/point-of-sale-financing.jpg",
-    "prompt": "Product photography of a black POS terminal on a dark counter with a matte black credit card leaning against it and a soft green zero-like glow on the blank screen. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Point-of-Sale Financing"
+    "prompt": "A customer tapping a credit card on a sleek black POS tablet at a retail checkout counter, bright store lighting, clean commercial photography, soft white and silver tones with a green approval glow on screen, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "increase-average-ticket-size",
     "path": "public/images/services/sub/increase-average-ticket-size.jpg",
-    "prompt": "Product photography of a larger premium shopping bag next to a smaller one on a dark retail counter, teal accent light, representing upgraded ticket size. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Increase Average Ticket Size"
+    "prompt": "A retail checkout counter with a premium product box and a financing tablet showing a monthly price graphic, bright boutique lighting, warm wood and cream store tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "zero-risk-to-your-business",
     "path": "public/images/services/sub/zero-risk-to-your-business.jpg",
-    "prompt": "Product photography of a brushed steel shield-shaped paperweight protecting a neat stack of cash on a dark slate desk, soft teal edge light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Zero Risk to Your Business"
+    "prompt": "A protective glass cloche covering a stack of cash and a credit card on a dark walnut desk, soft studio lighting with warm wood tones and subtle teal rim light on the glass, premium product photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "multi-industry-support",
     "path": "public/images/services/sub/multi-industry-support.jpg",
-    "prompt": "Product photography of four small iconic objects in a row on dark slate: a tiny wrench, a stethoscope coil, scissors, and a shopping bag, teal accent lighting. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Multi-Industry Support"
+    "prompt": "Four small industry props arranged in a row on a light surface: a wrench, a medical stethoscope tip, a salon scissors, and a shopping bag, bright soft studio light, clean white background, product photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "working-capital-loans",
     "path": "public/images/services/sub/working-capital-loans.jpg",
-    "prompt": "Product photography of a thick stack of US cash bills bound with a bank strap on a dark wooden desk next to a matte black calculator, warm desk lamp light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Working Capital Loans"
+    "prompt": "Stacks of cash and a brass paperclip holding invoices on a warm wooden desk, soft golden desk lamp light, professional financial photography with wood and brass tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "equipment-financing",
     "path": "public/images/services/sub/equipment-financing.jpg",
-    "prompt": "Product photography of a brand-new stainless commercial kitchen oven door handle in close-up with a small paper key tag hanging from it, dark kitchen background. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Equipment Financing"
+    "prompt": "A brand-new stainless steel commercial oven in a restaurant kitchen with a small financing approval tablet leaning against it, warm kitchen ambient light, stainless and amber tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "revenue-based-financing",
     "path": "public/images/services/sub/revenue-based-financing.jpg",
-    "prompt": "Product photography of a flexible coiled spring scale next to rising and falling soft teal light bars on a dark desk, representing payments that flex with sales. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Revenue-Based Financing"
+    "prompt": "A line graph drawn on cream paper showing payments rising and falling with a sales curve, brass pen beside it on walnut desk, warm professional office light, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "sba-term-loans",
     "path": "public/images/services/sub/sba-term-loans.jpg",
-    "prompt": "Product photography of a thick formal loan folder with a wax seal and a fountain pen on a dark executive desk, soft window light, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "SBA & Term Loans"
+    "prompt": "A thick loan folder with an official-looking seal stamp beside a fountain pen on a mahogany desk, soft window light, warm wood and cream document tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "smart-terminals",
     "path": "public/images/services/sub/smart-terminals.jpg",
-    "prompt": "Product photography of a modern black contactless POS terminal on a dark stone counter with a tap-to-pay card hovering above it mid-air, soft teal glow from the pad. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Smart Terminals"
+    "prompt": "Close-up product photo of a modern matte black POS terminal on a dark charcoal countertop, soft teal edge lighting reflecting on the glossy screen, premium payment hardware photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "full-pos-systems",
     "path": "public/images/services/sub/full-pos-systems.jpg",
-    "prompt": "Product photography of a complete retail POS setup on a dark counter: register screen, barcode scanner, receipt printer, and cash drawer, matte black hardware, no screen text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Full POS Systems"
+    "prompt": "A complete retail POS station with register screen, barcode scanner, receipt printer and cash drawer on a bright white counter, clean commercial store lighting, silver and white tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "kitchen-display-systems",
     "path": "public/images/services/sub/kitchen-display-systems.jpg",
-    "prompt": "Product photography of a wall-mounted kitchen display screen in a dark commercial kitchen showing soft glowing order ticket shapes with teal timers, stainless steel backsplash. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Kitchen Display Systems"
+    "prompt": "A digital kitchen display screen mounted above a stainless steel prep line in a busy restaurant kitchen, warm kitchen lights and steam, order tickets as colored blocks on screen with no readable text, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "mobile-wireless-readers",
     "path": "public/images/services/sub/mobile-wireless-readers.jpg",
-    "prompt": "Product photography of a small white Bluetooth credit card reader clipped to a smartphone on a dark charcoal surface, soft studio lighting, no logos or text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Mobile & Wireless Readers"
-  },
-  {
-    "slug": "zero-fee-payment-processing",
-    "path": "public/images/industries/sub/zero-fee-payment-processing.jpg",
-    "prompt": "Close-up product photography of a black POS terminal on a dark stone restaurant counter, the blank screen shows a soft green zero glow, matte black finish, shot from 45 degrees. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Zero-Fee Payment Processing"
-  },
-  {
-    "slug": "smart-pos-kitchen-displays",
-    "path": "public/images/industries/sub/smart-pos-kitchen-displays.jpg",
-    "prompt": "Product photography of a restaurant POS terminal in the foreground with a glowing kitchen display screen blurred in the background of a dark commercial kitchen. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Smart POS & Kitchen Displays"
-  },
-  {
-    "slug": "online-ordering-delivery",
-    "path": "public/images/industries/sub/online-ordering-delivery.jpg",
-    "prompt": "Product photography of a smartphone on a dark table showing soft food packaging icons and a teal order confirmation glow, next to a closed takeout container. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Online Ordering & Delivery"
-  },
-  {
-    "slug": "consumer-financing",
-    "path": "public/images/industries/sub/consumer-financing.jpg",
-    "prompt": "Product photography of a matte black credit card and a financing tablet application screen with soft teal approval glow on a dark counter, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Consumer Financing"
-  },
-  {
-    "slug": "website-google-presence",
-    "path": "public/images/industries/sub/website-google-presence.jpg",
-    "prompt": "Product photography of a laptop showing a soft restaurant website glow beside a smartphone with a map pin glow, dark charcoal desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Website & Google Presence"
-  },
-  {
-    "slug": "loyalty-marketing",
-    "path": "public/images/industries/sub/loyalty-marketing.jpg",
-    "prompt": "Product photography of a stamped loyalty punch card and a smartphone with a soft teal reward badge glow on a dark cafe table, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Loyalty & Marketing"
-  },
-  {
-    "slug": "tableside-payments-in-under-2-seconds",
-    "path": "public/images/industries/sub/tableside-payments-in-under-2-seconds.jpg",
-    "prompt": "Product photography of a handheld black payment terminal on a white restaurant tablecloth with a guest's card tapping it, soft candlelight bokeh in background, no people faces. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Tableside Payments in Under 2 Seconds"
-  },
-  {
-    "slug": "one-dashboard-for-every-channel",
-    "path": "public/images/industries/sub/one-dashboard-for-every-channel.jpg",
-    "prompt": "Product photography of a single laptop on a dark desk showing four soft glowing channel tiles merging into one teal dashboard glow, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "One Dashboard for Every Channel"
-  },
-  {
-    "slug": "ai-powered-customer-insights",
-    "path": "public/images/industries/sub/ai-powered-customer-insights.jpg",
-    "prompt": "Product photography of a tablet showing soft anonymous customer silhouette cards with teal insight dots, dark restaurant office desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "AI-Powered Customer Insights"
-  },
-  {
-    "slug": "wholesale-interchange-rates",
-    "path": "public/images/industries/sub/wholesale-interchange-rates.jpg",
-    "prompt": "Product photography of a receipt printer spool and a small percentage-symbol shaped metal paperweight on a dark grocery checkout counter, teal accent light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Wholesale Interchange Rates"
-  },
-  {
-    "slug": "high-speed-checkout-terminals",
-    "path": "public/images/industries/sub/high-speed-checkout-terminals.jpg",
-    "prompt": "Product photography of a grocery checkout lane terminal with a barcode scanner beam of soft teal light across a dark conveyor belt, no products with labels. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "High-Speed Checkout Terminals"
-  },
-  {
-    "slug": "integrated-pos-inventory",
-    "path": "public/images/industries/sub/integrated-pos-inventory.jpg",
-    "prompt": "Product photography of a barcode scanner resting on a stack of blank cardboard grocery boxes on a dark warehouse floor, inventory tablet glowing teal nearby. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Integrated POS & Inventory"
-  },
-  {
-    "slug": "self-checkout-integration",
-    "path": "public/images/industries/sub/self-checkout-integration.jpg",
-    "prompt": "Product photography of a modern self-checkout kiosk screen and bagging area in a dark empty grocery store after hours, soft teal screen glow, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Self-Checkout Integration"
-  },
-  {
-    "slug": "ebt-snap-acceptance",
-    "path": "public/images/industries/sub/ebt-snap-acceptance.jpg",
-    "prompt": "Product photography of a payment terminal with a government-benefits-style card (blank matte design, no logos) inserted, dark grocery checkout counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "EBT & SNAP Acceptance"
-  },
-  {
-    "slug": "customer-loyalty-programs",
-    "path": "public/images/industries/sub/customer-loyalty-programs.jpg",
-    "prompt": "Product photography of a grocery loyalty key fob and smartphone with soft teal rewards glow on a dark kitchen counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Customer Loyalty Programs"
-  },
-  {
-    "slug": "process-100k-month-at-wholesale-rates",
-    "path": "public/images/industries/sub/process-100k-month-at-wholesale-rates.jpg",
-    "prompt": "Product photography of a thick stack of cash next to a POS terminal on a dark desk with a soft teal wholesale-rate glow, representing high volume. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Process $100K+/Month at Wholesale Rates"
-  },
-  {
-    "slug": "inventory-sync-across-every-register",
-    "path": "public/images/industries/sub/inventory-sync-across-every-register.jpg",
-    "prompt": "Product photography of three identical barcode scanners lined up on a dark counter with a teal light thread connecting them, representing synced registers. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Inventory Sync Across Every Register"
-  },
-  {
-    "slug": "multi-lane-multi-department-reporting",
-    "path": "public/images/industries/sub/multi-lane-multi-department-reporting.jpg",
-    "prompt": "Product photography of a tablet showing soft multi-colored department pie segments on a dark grocery office desk, no readable labels. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Multi-Lane & Multi-Department Reporting"
-  },
-  {
-    "slug": "pci-compliant-terminals",
-    "path": "public/images/industries/sub/pci-compliant-terminals.jpg",
-    "prompt": "Product photography of a medical-office payment terminal with a small padlock charm resting beside it on a clean white-and-charcoal reception desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "PCI-Compliant Terminals"
-  },
-  {
-    "slug": "patient-financing",
-    "path": "public/images/industries/sub/patient-financing.jpg",
-    "prompt": "Product photography of a clipboard with a blank financing form and a matte black credit card on a medical reception desk, soft clinical lighting, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Patient Financing"
-  },
-  {
-    "slug": "recurring-subscription-billing",
-    "path": "public/images/industries/sub/recurring-subscription-billing.jpg",
-    "prompt": "Product photography of a calendar desk stand with a recurring circular teal arrow overlay of light, next to a payment terminal, dark medical office desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Recurring & Subscription Billing"
-  },
-  {
-    "slug": "online-payment-portal",
-    "path": "public/images/industries/sub/online-payment-portal.jpg",
-    "prompt": "Product photography of a smartphone on a couch armrest showing a soft teal pay-bill button glow, cozy dark living room lighting. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Online Payment Portal"
-  },
-  {
-    "slug": "practice-website-seo",
-    "path": "public/images/industries/sub/practice-website-seo.jpg",
-    "prompt": "Product photography of a laptop showing a soft medical clinic website glow with a map pin on a dark reception desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Practice Website & SEO"
-  },
-  {
-    "slug": "custom-patient-crm",
-    "path": "public/images/industries/sub/custom-patient-crm.jpg",
-    "prompt": "Product photography of a tablet showing soft patient card silhouettes in a pipeline on a dark medical office desk, teal accents, no readable names. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Custom Patient CRM"
-  },
-  {
-    "slug": "zero-touch-patient-payments",
-    "path": "public/images/industries/sub/zero-touch-patient-payments.jpg",
-    "prompt": "Product photography of a patient tapping a smartphone against a contactless reader on a medical check-in counter, soft teal NFC glow, no faces. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Zero-Touch Patient Payments"
-  },
-  {
-    "slug": "integrated-billing-reconciliation",
-    "path": "public/images/industries/sub/integrated-billing-reconciliation.jpg",
-    "prompt": "Product photography of a printed patient ledger stacking neatly beside a laptop with matching teal checkmark glow, dark billing desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Integrated Billing & Reconciliation"
-  },
-  {
-    "slug": "revenue-cycle-optimization",
-    "path": "public/images/industries/sub/revenue-cycle-optimization.jpg",
-    "prompt": "Product photography of a circular arrow-shaped metal sculpture around a stack of coins on a dark desk, representing revenue cycle, teal rim light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Revenue Cycle Optimization"
-  },
-  {
-    "slug": "low-rate-online-processing",
-    "path": "public/images/industries/sub/low-rate-online-processing.jpg",
-    "prompt": "Product photography of a laptop checkout page with a soft teal low-fee glow and a credit card resting on the keyboard, dark desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Low-Rate Online Processing"
-  },
-  {
-    "slug": "gateway-integrations",
-    "path": "public/images/industries/sub/gateway-integrations.jpg",
-    "prompt": "Product photography of interlocking cable connectors linking a laptop to a small payment gateway brick device on a dark desk, teal light path. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Gateway Integrations"
-  },
-  {
-    "slug": "fraud-prevention",
-    "path": "public/images/industries/sub/fraud-prevention.jpg",
-    "prompt": "Product photography of a credit card under a protective glass dome with a soft red-to-teal shield light, dark security-themed desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Fraud Prevention"
-  },
-  {
-    "slug": "subscription-recurring-billing",
-    "path": "public/images/industries/sub/subscription-recurring-billing.jpg",
-    "prompt": "Product photography of a smartphone showing a soft recurring billing cycle ring of teal light next to a subscription box, dark surface. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Subscription & Recurring Billing"
-  },
-  {
-    "slug": "custom-storefront-website",
-    "path": "public/images/industries/sub/custom-storefront-website.jpg",
-    "prompt": "Product photography of a laptop displaying a soft elegant product storefront glow with one hero product silhouette, dark charcoal desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Custom Storefront Website"
-  },
-  {
-    "slug": "unified-omnichannel-dashboard",
-    "path": "public/images/industries/sub/unified-omnichannel-dashboard.jpg",
-    "prompt": "Product photography of a wide monitor showing three soft sales channel panels merging into one teal master dashboard, dark office. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Unified Omnichannel Dashboard"
-  },
-  {
-    "slug": "checkout-conversion-optimization",
-    "path": "public/images/industries/sub/checkout-conversion-optimization.jpg",
-    "prompt": "Product photography of a shopping cart icon shaped paperweight next to a laptop with a glowing one-click checkout button shape, dark desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Checkout Conversion Optimization"
-  },
-  {
-    "slug": "multi-channel-inventory-sync",
-    "path": "public/images/industries/sub/multi-channel-inventory-sync.jpg",
-    "prompt": "Product photography of identical product boxes with soft teal sync arrows of light between a phone, laptop, and store shelf, dark warehouse. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Multi-Channel Inventory Sync"
-  },
-  {
-    "slug": "chargeback-prevention-recovery",
-    "path": "public/images/industries/sub/chargeback-prevention-recovery.jpg",
-    "prompt": "Product photography of a disputed receipt being stamped with a protective seal stamp on a dark desk, teal accent light, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Chargeback Prevention & Recovery"
-  },
-  {
-    "slug": "zero-fee-processing",
-    "path": "public/images/industries/sub/zero-fee-processing.jpg",
-    "prompt": "Product photography of a sleek black salon POS terminal on a marble counter with a soft green zero glow on the blank screen, warm salon lighting. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Zero-Fee Processing"
-  },
-  {
-    "slug": "sleek-smart-terminals",
-    "path": "public/images/industries/sub/sleek-smart-terminals.jpg",
-    "prompt": "Product photography of a slim modern white-and-black payment terminal on a polished salon reception counter, soft warm bokeh mirrors in background. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Sleek Smart Terminals"
-  },
-  {
-    "slug": "gift-cards-memberships",
-    "path": "public/images/industries/sub/gift-cards-memberships.jpg",
-    "prompt": "Product photography of a matte black gift card and a membership card fanned on a dark salon reception desk, soft teal foil edge light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Gift Cards & Memberships"
-  },
-  {
-    "slug": "appointment-based-payments",
-    "path": "public/images/industries/sub/appointment-based-payments.jpg",
-    "prompt": "Product photography of an appointment book open on a salon desk with a deposit receipt slip and a payment terminal beside it, warm lighting. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Appointment-Based Payments"
-  },
-  {
-    "slug": "salon-website-booking",
-    "path": "public/images/industries/sub/salon-website-booking.jpg",
-    "prompt": "Product photography of a smartphone showing a soft online booking calendar glow on a salon vanity with scissors softly blurred behind. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Salon Website & Booking"
-  },
-  {
-    "slug": "client-retention-crm",
-    "path": "public/images/industries/sub/client-retention-crm.jpg",
-    "prompt": "Product photography of a tablet showing soft client preference cards with color swatch dots, dark salon back-office desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Client Retention CRM"
-  },
-  {
-    "slug": "tip-friendly-payment-experience",
-    "path": "public/images/industries/sub/tip-friendly-payment-experience.jpg",
-    "prompt": "Product photography of a customer-facing tip screen on a POS terminal showing three soft glowing tip amount shapes, salon counter, no readable numbers. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Tip-Friendly Payment Experience"
-  },
-  {
-    "slug": "integrated-booking-payment-flow",
-    "path": "public/images/industries/sub/integrated-booking-payment-flow.jpg",
-    "prompt": "Product photography of a smartphone booking confirmation glow flowing via teal light into a nearby payment terminal on a salon desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Integrated Booking & Payment Flow"
-  },
-  {
-    "slug": "retail-product-sales",
-    "path": "public/images/industries/sub/retail-product-sales.jpg",
-    "prompt": "Product photography of hair-care bottles on a salon retail shelf with a barcode scanner hovering, soft warm lighting, labels blurred unreadable. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Retail Product Sales"
-  },
-  {
-    "slug": "zero-fees-on-big-tickets",
-    "path": "public/images/industries/sub/zero-fees-on-big-tickets.jpg",
-    "prompt": "Product photography of a large auto repair invoice clipboard next to a POS terminal with a soft green zero glow, dark shop counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Zero Fees on Big Tickets"
-  },
-  {
-    "slug": "shop-management-integration",
-    "path": "public/images/industries/sub/shop-management-integration.jpg",
-    "prompt": "Product photography of a shop management laptop beside a payment terminal connected by a teal light cable on a dark auto shop desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Shop Management Integration"
-  },
-  {
-    "slug": "text-to-pay-invoicing",
-    "path": "public/images/industries/sub/text-to-pay-invoicing.jpg",
-    "prompt": "Product photography of a smartphone showing a soft teal pay-now message glow next to a car key fob on a dark auto shop counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Text-to-Pay Invoicing"
-  },
-  {
-    "slug": "shop-website-local-seo",
-    "path": "public/images/industries/sub/shop-website-local-seo.jpg",
-    "prompt": "Product photography of a smartphone map with a teal auto-shop pin next to a laptop website glow on a dark garage office desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Shop Website & Local SEO"
-  },
-  {
-    "slug": "fleet-b2b-invoicing",
-    "path": "public/images/industries/sub/fleet-b2b-invoicing.jpg",
-    "prompt": "Product photography of a stack of fleet invoices with a corporate card and a Level-style metal badge on a dark desk, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Fleet & B2B Invoicing"
-  },
-  {
-    "slug": "close-more-big-jobs-with-financing",
-    "path": "public/images/industries/sub/close-more-big-jobs-with-financing.jpg",
-    "prompt": "Product photography of a large engine part on a dark workbench with a financing tablet showing a soft teal monthly-payment glow beside it. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Close More Big Jobs With Financing"
-  },
-  {
-    "slug": "digital-estimates-approval-payment",
-    "path": "public/images/industries/sub/digital-estimates-approval-payment.jpg",
-    "prompt": "Product photography of a tablet showing a soft estimate approval checkmark glow next to a payment terminal on a dark auto shop counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Digital Estimates \u00e2\u0086\u0092 Approval \u00e2\u0086\u0092 Payment"
-  },
-  {
-    "slug": "real-time-shop-performance-tracking",
-    "path": "public/images/industries/sub/real-time-shop-performance-tracking.jpg",
-    "prompt": "Product photography of a wall-mounted shop TV displaying soft teal productivity bars, dark garage office, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Real-Time Shop Performance Tracking"
-  },
-  {
-    "slug": "outdoor-emv-compliance",
-    "path": "public/images/industries/sub/outdoor-emv-compliance.jpg",
-    "prompt": "Product photography of a gas pump card reader with a chip-slot close-up at night, soft canopy lights, wet pavement reflection, no prices or logos. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Outdoor EMV Compliance"
-  },
-  {
-    "slug": "unified-fuel-c-store-pos",
-    "path": "public/images/industries/sub/unified-fuel-c-store-pos.jpg",
-    "prompt": "Product photography of a single POS terminal on a c-store counter with soft fuel pump lights visible through a window behind, dark night mood. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Unified Fuel + C-Store POS"
-  },
-  {
-    "slug": "interchange-plus-fuel-pricing",
-    "path": "public/images/industries/sub/interchange-plus-fuel-pricing.jpg",
-    "prompt": "Product photography of a fuel nozzle handle resting near a thin markup calculator on a dark counter, teal accent light, no readable prices. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Interchange-Plus Fuel Pricing"
-  },
-  {
-    "slug": "loyalty-fuel-rewards",
-    "path": "public/images/industries/sub/loyalty-fuel-rewards.jpg",
-    "prompt": "Product photography of a loyalty key tag and smartphone with soft cents-off glow next to a coffee cup on a dark c-store counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Loyalty & Fuel Rewards"
-  },
-  {
-    "slug": "fleet-card-acceptance",
-    "path": "public/images/industries/sub/fleet-card-acceptance.jpg",
-    "prompt": "Product photography of a blank fleet fuel card being inserted into a pump reader at night, soft teal acceptance glow, no logos. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Fleet Card Acceptance"
-  },
-  {
-    "slug": "station-website-google-profile",
-    "path": "public/images/industries/sub/station-website-google-profile.jpg",
-    "prompt": "Product photography of a smartphone showing a soft map pin at a gas station silhouette, night desk lighting. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Station Website & Google Profile"
-  },
-  {
-    "slug": "pump-to-pos-integration",
-    "path": "public/images/industries/sub/pump-to-pos-integration.jpg",
-    "prompt": "Product photography of a fuel pump hose and a POS cable converging into one teal-lit junction box metaphor on a dark surface. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Pump-to-POS Integration"
-  },
-  {
-    "slug": "fraud-protection-at-the-pump",
-    "path": "public/images/industries/sub/fraud-protection-at-the-pump.jpg",
-    "prompt": "Product photography of a gas pump card reader with a protective metal shroud and soft teal security light, night atmosphere. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Fraud Protection at the Pump"
-  },
-  {
-    "slug": "c-store-inventory-margin-tracking",
-    "path": "public/images/industries/sub/c-store-inventory-margin-tracking.jpg",
-    "prompt": "Product photography of c-store snack shelves after hours with a tablet showing soft margin bars, dark moody lighting, labels blurred. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "C-Store Inventory & Margin Tracking"
-  },
-  {
-    "slug": "stable-merchant-accounts",
-    "path": "public/images/industries/sub/stable-merchant-accounts.jpg",
-    "prompt": "Product photography of a heavy steel bank vault lock mechanism on a dark charcoal background, soft teal edge light, representing stable processing. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Stable Merchant Accounts"
-  },
-  {
-    "slug": "competitive-high-risk-rates",
-    "path": "public/images/industries/sub/competitive-high-risk-rates.jpg",
-    "prompt": "Product photography of a transparent rate card acrylic stand next to a POS terminal on a dark desk, soft teal honesty glow, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Competitive High-Risk Rates"
-  },
-  {
-    "slug": "chargeback-prevention",
-    "path": "public/images/industries/sub/chargeback-prevention.jpg",
-    "prompt": "Product photography of a credit card frozen in a block of clear acrylic on a dark desk, soft protective teal light, representing blocked fraud. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Chargeback Prevention"
-  },
-  {
-    "slug": "dedicated-account-manager",
-    "path": "public/images/industries/sub/dedicated-account-manager.jpg",
-    "prompt": "Product photography of a dedicated desk phone with a nameplate-shaped blank metal plate and a notebook, dark professional office. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Dedicated Account Manager"
-  },
-  {
-    "slug": "compliant-website-seo",
-    "path": "public/images/industries/sub/compliant-website-seo.jpg",
-    "prompt": "Product photography of a laptop showing a soft compliant website layout with a small legal-document stack beside it, dark desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Compliant Website & SEO"
-  },
-  {
-    "slug": "age-verification-id-scanning",
-    "path": "public/images/industries/sub/age-verification-id-scanning.jpg",
-    "prompt": "Product photography of an ID scanner device scanning a blank plastic ID card on a dark retail counter, soft teal scan light, no readable ID text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Age Verification & ID Scanning"
-  },
-  {
-    "slug": "we-specialize-in-hard-to-place-merchants",
-    "path": "public/images/industries/sub/we-specialize-in-hard-to-place-merchants.jpg",
-    "prompt": "Product photography of a key unlocking a heavy padlock on a dark surface, teal accent light, representing hard-to-place approval. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "We Specialize in \"Hard to Place\" Merchants"
-  },
-  {
-    "slug": "chargeback-ratio-management",
-    "path": "public/images/industries/sub/chargeback-ratio-management.jpg",
-    "prompt": "Product photography of a gauge meter needle sitting safely in a teal low zone on a dark desk, representing chargeback ratio under control. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Chargeback Ratio Management"
-  },
-  {
-    "slug": "multi-processor-redundancy",
-    "path": "public/images/industries/sub/multi-processor-redundancy.jpg",
-    "prompt": "Product photography of two parallel payment gateway bricks with a failover switch glowing teal between them on a dark rack shelf. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Multi-Processor Redundancy"
-  },
-  {
-    "slug": "nonprofit-friendly-rates",
-    "path": "public/images/industries/sub/nonprofit-friendly-rates.jpg",
-    "prompt": "Product photography of a donation basket with cash and a small percentage paperweight set low on a dark wooden church table, warm light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Nonprofit-Friendly Rates"
-  },
-  {
-    "slug": "recurring-giving",
-    "path": "public/images/industries/sub/recurring-giving.jpg",
-    "prompt": "Product photography of a calendar with a monthly teal circle highlight next to a smartphone autopay glow on a dark wooden desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Recurring Giving"
-  },
-  {
-    "slug": "tap-to-give-kiosks",
-    "path": "public/images/industries/sub/tap-to-give-kiosks.jpg",
-    "prompt": "Product photography of a freestanding touchscreen donation kiosk in a dark church lobby with soft teal amount-button shapes, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Tap-to-Give Kiosks"
-  },
-  {
-    "slug": "online-donation-pages",
-    "path": "public/images/industries/sub/online-donation-pages.jpg",
-    "prompt": "Product photography of a smartphone showing a soft teal donate button glow on a dark living-room side table. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Online Donation Pages"
-  },
-  {
-    "slug": "organization-website",
-    "path": "public/images/industries/sub/organization-website.jpg",
-    "prompt": "Product photography of a laptop displaying a soft nonprofit website glow with a calendar and donate button shapes, dark desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Organization Website"
-  },
-  {
-    "slug": "donor-crm-reporting",
-    "path": "public/images/industries/sub/donor-crm-reporting.jpg",
-    "prompt": "Product photography of a tablet showing soft donor card silhouettes and teal thank-you envelope icons on a dark nonprofit office desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Donor CRM & Reporting"
-  },
-  {
-    "slug": "maximize-the-impact-of-every-dollar",
-    "path": "public/images/industries/sub/maximize-the-impact-of-every-dollar.jpg",
-    "prompt": "Product photography of a single dollar bill under a magnifying glass with almost none of it fading into shadow, dark wooden table, teal light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Maximize the Impact of Every Dollar"
-  },
-  {
-    "slug": "automatic-tax-receipts-year-end-statements",
-    "path": "public/images/industries/sub/automatic-tax-receipts-year-end-statements.jpg",
-    "prompt": "Product photography of a neatly printed tax receipt envelope stack with a year-end folder on a dark desk, warm lamp light, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Automatic Tax Receipts & Year-End Statements"
-  },
-  {
-    "slug": "event-campaign-fundraising",
-    "path": "public/images/industries/sub/event-campaign-fundraising.jpg",
-    "prompt": "Product photography of a campaign progress thermometer sculpture partially filled with teal liquid light on a dark event table. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Event & Campaign Fundraising"
-  },
-  {
-    "slug": "level-2-3-processing",
-    "path": "public/images/industries/sub/level-2-3-processing.jpg",
-    "prompt": "Product photography of a corporate credit card next to a data-capture POS device sending soft teal data packets, dark B2B desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Level 2/3 Processing"
-  },
-  {
-    "slug": "email-invoice-pay-now-links",
-    "path": "public/images/industries/sub/email-invoice-pay-now-links.jpg",
-    "prompt": "Product photography of a smartphone email with a soft teal pay-now button glow next to a printed invoice on a dark desk, no readable text. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Email Invoice & Pay-Now Links"
-  },
-  {
-    "slug": "ach-bank-transfer",
-    "path": "public/images/industries/sub/ach-bank-transfer.jpg",
-    "prompt": "Product photography of two bank-style metal tokens transferring a soft teal light between them on a dark slate surface, representing ACH. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "ACH & Bank Transfer"
-  },
-  {
-    "slug": "virtual-terminal",
-    "path": "public/images/industries/sub/virtual-terminal.jpg",
-    "prompt": "Product photography of a laptop virtual terminal keypad glow on a dark home-office desk with a credit card beside the keyboard. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Virtual Terminal"
-  },
-  {
-    "slug": "professional-website",
-    "path": "public/images/industries/sub/professional-website.jpg",
-    "prompt": "Product photography of a laptop showing a soft professional services website glow on a dark conference table. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Professional Website"
-  },
-  {
-    "slug": "crm-pipeline-tracking",
-    "path": "public/images/industries/sub/crm-pipeline-tracking.jpg",
-    "prompt": "Product photography of a CRM pipeline board on a monitor with soft teal deal cards advancing, dark B2B office desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "CRM & Pipeline Tracking"
-  },
-  {
-    "slug": "save-big-with-level-2-3-data-capture",
-    "path": "public/images/industries/sub/save-big-with-level-2-3-data-capture.jpg",
-    "prompt": "Product photography of a $5000-looking invoice stack with a savings coin pile growing beside a Level data terminal, dark desk, no readable amounts. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Save Big With Level 2/3 Data Capture"
-  },
-  {
-    "slug": "automated-invoice-reminders",
-    "path": "public/images/industries/sub/automated-invoice-reminders.jpg",
-    "prompt": "Product photography of a smartphone showing a soft polite reminder notification glow next to an aging invoice folder, dark desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Automated Invoice Reminders"
+    "prompt": "A hand holding a small white wireless card reader outdoors at a farmers market stall, natural daylight, colorful produce blurred behind, bright fresh outdoor tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "accounting-software-integration",
     "path": "public/images/industries/sub/accounting-software-integration.jpg",
-    "prompt": "Product photography of a QuickBooks-like ledger book physically linked by a teal cable to a payment terminal on a dark accountant desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Accounting Software Integration"
+    "prompt": "QuickBooks-style bookkeeping screen on a monitor syncing with a payment confirmation on a phone beside it, bright bookkeeper desk, warm wood and cream tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "high-ticket-payment-processing",
-    "path": "public/images/industries/sub/high-ticket-payment-processing.jpg",
-    "prompt": "Product photography of a large earnest-money check envelope and a credit card on a dark real-estate closing table, soft teal accent. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "High-Ticket Payment Processing"
-  },
-  {
-    "slug": "online-payment-portals",
-    "path": "public/images/industries/sub/online-payment-portals.jpg",
-    "prompt": "Product photography of a smartphone tenant portal with a soft teal rent-due glow on a dark kitchen counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Online Payment Portals"
-  },
-  {
-    "slug": "virtual-terminal-invoicing",
-    "path": "public/images/industries/sub/virtual-terminal-invoicing.jpg",
-    "prompt": "Product photography of a laptop sending a soft glowing pay-link envelope of light toward a smartphone on a dark real-estate desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Virtual Terminal & Invoicing"
+    "slug": "ach-bank-transfer",
+    "path": "public/images/industries/sub/ach-bank-transfer.jpg",
+    "prompt": "A bank transfer confirmation on a tablet beside a routing document on a wood desk, warm professional office light, cream and navy tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "ach-rent-collection",
     "path": "public/images/industries/sub/ach-rent-collection.jpg",
-    "prompt": "Product photography of a calendar open to the 1st with an ACH bank token and soft teal auto-debit glow on a dark property desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "ACH Rent Collection"
+    "prompt": "A wall calendar on the 1st beside an ACH bank debit confirmation on a tablet, warm apartment interior daylight, cream and soft green tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "age-verification-id-scanning",
+    "path": "public/images/industries/sub/age-verification-id-scanning.jpg",
+    "prompt": "A clerk scanning a driver's license at a smoke shop counter with an ID scanner, warm interior shop lighting, regulated retail photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "agent-brokerage-website",
     "path": "public/images/industries/sub/agent-brokerage-website.jpg",
-    "prompt": "Product photography of a laptop showing a soft real-estate listings grid glow on a dark brokerage desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Agent & Brokerage Website"
+    "prompt": "A laptop showing a luxury listing website with a home exterior photo, placed on a desk overlooking a neighborhood at golden hour, warm real estate tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "lead-management-crm",
-    "path": "public/images/industries/sub/lead-management-crm.jpg",
-    "prompt": "Product photography of a tablet CRM showing soft buyer/seller lead cards advancing to a closing key icon, dark desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Lead Management CRM"
+    "slug": "ai-powered-customer-insights",
+    "path": "public/images/industries/sub/ai-powered-customer-insights.jpg",
+    "prompt": "A restaurant manager reviewing a tablet with soft customer insight charts at a wooden booth, warm evening restaurant lighting, amber and burgundy tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "collect-deposits-fees-without-the-hassle",
-    "path": "public/images/industries/sub/collect-deposits-fees-without-the-hassle.jpg",
-    "prompt": "Product photography of a smartphone pay-link glow next to house keys and a deposit envelope on a dark closing table. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Collect Deposits & Fees Without the Hassle"
+    "slug": "appointment-based-payments",
+    "path": "public/images/industries/sub/appointment-based-payments.jpg",
+    "prompt": "A salon booking tablet showing a deposit confirmation beside scissors and a cape, warm soft salon lighting, inviting cream and soft rose tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "automated-invoice-reminders",
+    "path": "public/images/industries/sub/automated-invoice-reminders.jpg",
+    "prompt": "A wall clock beside a laptop sending a soft reminder notification at dusk, warm office lamp light, patient collections mood, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "automated-rent-collection",
     "path": "public/images/industries/sub/automated-rent-collection.jpg",
-    "prompt": "Product photography of a stack of apartment keys beside a smartphone showing soft autopay success glow on the 1st, dark property desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Automated Rent Collection"
+    "prompt": "A smartphone autopay confirmation on a nightstand on the first of the month, soft morning bedroom light, calm cream tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "commission-split-tracking",
-    "path": "public/images/industries/sub/commission-split-tracking.jpg",
-    "prompt": "Product photography of a pie-divided coin tray with agent key fobs around it on a dark brokerage desk, teal accent light. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Commission & Split Tracking"
+    "slug": "automatic-tax-receipts-year-end-statements",
+    "path": "public/images/industries/sub/automatic-tax-receipts-year-end-statements.jpg",
+    "prompt": "Printed tax receipt letters in envelopes ready to mail on a wooden desk with a brass stamp, warm December window light, cream paper tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "zero-processing-fees",
-    "path": "public/images/industries/sub/zero-processing-fees.jpg",
-    "prompt": "Product photography of a black retail POS terminal on a dark wood counter with a soft green zero glow on the blank screen. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Zero Processing Fees"
+    "slug": "c-store-inventory-margin-tracking",
+    "path": "public/images/industries/sub/c-store-inventory-margin-tracking.jpg",
+    "prompt": "A convenience store aisle of snacks and drinks with a tablet showing margin charts, warm interior fluorescent light contrasting cool night windows, c-store photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "fast-tap-to-pay-terminals",
-    "path": "public/images/industries/sub/fast-tap-to-pay-terminals.jpg",
-    "prompt": "Product photography of a customer tapping a phone against a sleek retail terminal with soft teal contactless waves, dark boutique counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Fast Tap-to-Pay Terminals"
+    "slug": "chargeback-prevention",
+    "path": "public/images/industries/sub/chargeback-prevention.jpg",
+    "prompt": "A red disputed charge stamp being blocked by a glass shield in front of a card terminal, dark premium studio lighting with cool blue security accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "retail-pos-inventory",
-    "path": "public/images/industries/sub/retail-pos-inventory.jpg",
-    "prompt": "Product photography of a barcode scanner and POS register with a soft inventory count glow on a dark retail counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Retail POS & Inventory"
+    "slug": "chargeback-prevention-recovery",
+    "path": "public/images/industries/sub/chargeback-prevention-recovery.jpg",
+    "prompt": "A stamped disputed-transaction folder being closed beside a laptop fraud alert screen with a soft red-to-green transition, bright office daylight, decisive mood, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "e-commerce-integration",
-    "path": "public/images/industries/sub/e-commerce-integration.jpg",
-    "prompt": "Product photography of a physical product box on a store shelf with a teal sync light connecting to a laptop storefront on a dark desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "E-Commerce Integration"
+    "slug": "chargeback-ratio-management",
+    "path": "public/images/industries/sub/chargeback-ratio-management.jpg",
+    "prompt": "A gauge meter needle staying safely in a green zone on a dark dashboard display, cool blue and green monitoring tones, premium fintech photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
-    "slug": "retail-website",
-    "path": "public/images/industries/sub/retail-website.jpg",
-    "prompt": "Product photography of a laptop showing a soft retail product catalog glow on a dark merchandising desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Retail Website"
-  },
-  {
-    "slug": "customer-loyalty-program",
-    "path": "public/images/industries/sub/customer-loyalty-program.jpg",
-    "prompt": "Product photography of a loyalty points card and VIP metal tag on a dark retail counter with soft teal reward glow. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Customer Loyalty Program"
+    "slug": "checkout-conversion-optimization",
+    "path": "public/images/industries/sub/checkout-conversion-optimization.jpg",
+    "prompt": "A finger one-tap away from completing checkout on a smartphone, shopping bag soft beside it, bright lifestyle product photography, clean white and soft coral accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "checkout-in-under-2-seconds",
     "path": "public/images/industries/sub/checkout-in-under-2-seconds.jpg",
-    "prompt": "Product photography of a stopwatch frozen near two seconds next to a contactless terminal with a completed teal flash, dark retail counter. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Checkout in Under 2 Seconds"
+    "prompt": "Extreme close-up of a contactless card mid-tap on a terminal with a soft green success flash, bright retail counter, clean fast-checkout photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "client-retention-crm",
+    "path": "public/images/industries/sub/client-retention-crm.jpg",
+    "prompt": "A stylist tablet showing a client profile with color formula swatches, warm salon station lighting, soft focus hair tools beside, inviting cream tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "close-more-big-jobs-with-financing",
+    "path": "public/images/industries/sub/close-more-big-jobs-with-financing.jpg",
+    "prompt": "A customer and service advisor reviewing a financing tablet in front of a car on a lift, warm shop lighting, large-ticket repair mood, industrial amber tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "collect-deposits-fees-without-the-hassle",
+    "path": "public/images/industries/sub/collect-deposits-fees-without-the-hassle.jpg",
+    "prompt": "A phone showing a pay link confirmation beside house keys on a sunlit closing table, warm golden real estate photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "commission-split-tracking",
+    "path": "public/images/industries/sub/commission-split-tracking.jpg",
+    "prompt": "A pie chart of commission splits on a tablet beside business cards of agents, warm brokerage office wood desk, golden afternoon light, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "competitive-high-risk-rates",
+    "path": "public/images/industries/sub/competitive-high-risk-rates.jpg",
+    "prompt": "A transparent rate sheet under a magnifying glass on a dark walnut desk, soft desk lamp, premium financial photography with wood and brass, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "compliant-website-seo",
+    "path": "public/images/industries/sub/compliant-website-seo.jpg",
+    "prompt": "A laptop showing a clean product website with disclaimer footer shapes, bright compliance-focused office light, white and soft gray tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "consumer-financing",
+    "path": "public/images/industries/sub/consumer-financing.jpg",
+    "prompt": "A tablet on a service counter showing a financing approval with a green check, warm shop lighting, customer's hand nearby, soft amber and cream tones, works for restaurant catering or auto repair desk, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "crm-pipeline-tracking",
+    "path": "public/images/industries/sub/crm-pipeline-tracking.jpg",
+    "prompt": "A CRM pipeline board on a monitor with soft colored deal stages, warm conference room wood table, brass lamp accent, professional office photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "custom-patient-crm",
+    "path": "public/images/industries/sub/custom-patient-crm.jpg",
+    "prompt": "A medical office laptop showing a soft patient pipeline board with colored status dots, clean white desk, soft blue monitor glow, organized clinic photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "custom-storefront-website",
+    "path": "public/images/industries/sub/custom-storefront-website.jpg",
+    "prompt": "A laptop on a white desk displaying a beautiful product storefront page with soft lifestyle imagery, bright natural window light, clean modern e-commerce aesthetic, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "customer-loyalty-program",
+    "path": "public/images/industries/sub/customer-loyalty-program.jpg",
+    "prompt": "A retail loyalty card and smartphone rewards app on a bright boutique counter, colorful shopping bags soft behind, cheerful commercial tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "customer-loyalty-programs",
+    "path": "public/images/industries/sub/customer-loyalty-programs.jpg",
+    "prompt": "A grocery loyalty key fob and smartphone app glow on a checkout counter next to a reusable shopping bag, bright store lighting, fresh green produce tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "dedicated-account-manager",
+    "path": "public/images/industries/sub/dedicated-account-manager.jpg",
+    "prompt": "A professional desk phone and business card holder on a warm wood desk, soft lamp light suggesting a real person you can call, professional warm office tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "digital-estimates-approval-payment",
+    "path": "public/images/industries/sub/digital-estimates-approval-payment.jpg",
+    "prompt": "A smartphone showing an estimate approval checkmark beside a car key fob on a shop counter, warm garage light, clean digital workflow photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "donor-crm-reporting",
+    "path": "public/images/industries/sub/donor-crm-reporting.jpg",
+    "prompt": "A nonprofit staff laptop showing donor segments as soft colored groups, warm office light, thank-you cards stacked beside, cream and soft rose tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "e-commerce-integration",
+    "path": "public/images/industries/sub/e-commerce-integration.jpg",
+    "prompt": "A product on a store shelf next to a tablet showing the same product online, bright retail lighting, unified inventory concept, clean colorful tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "ebt-snap-acceptance",
+    "path": "public/images/industries/sub/ebt-snap-acceptance.jpg",
+    "prompt": "A grocery checkout terminal with an EBT-style payment card being inserted, bright store lights, fresh produce soft in background, clean accessible retail scene, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "email-invoice-pay-now-links",
+    "path": "public/images/industries/sub/email-invoice-pay-now-links.jpg",
+    "prompt": "A laptop inbox with an invoice email and glowing pay-now button shape, bright professional office daylight, clean white and soft green accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "event-campaign-fundraising",
+    "path": "public/images/industries/sub/event-campaign-fundraising.jpg",
+    "prompt": "A fundraising thermometer graphic display at a community event with warm string lights, people soft in background, celebratory amber tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "fast-tap-to-pay-terminals",
+    "path": "public/images/industries/sub/fast-tap-to-pay-terminals.jpg",
+    "prompt": "A shopper tapping Apple Pay on a sleek retail terminal, bright store lights, fast motion suggestion, clean white and silver commercial photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "fleet-b2b-invoicing",
+    "path": "public/images/industries/sub/fleet-b2b-invoicing.jpg",
+    "prompt": "A row of commercial fleet vans in a shop lot beside a tablet showing a B2B invoice, late afternoon light, practical fleet service photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "fleet-card-acceptance",
+    "path": "public/images/industries/sub/fleet-card-acceptance.jpg",
+    "prompt": "A commercial fleet fuel card being inserted into a pump card reader at night, neon station lights, dark atmospheric photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "fraud-prevention",
+    "path": "public/images/industries/sub/fraud-prevention.jpg",
+    "prompt": "A shield-shaped acrylic object standing in front of a laptop checkout screen, bright studio light with cool blue security tint, clean e-commerce photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "fraud-protection-at-the-pump",
+    "path": "public/images/industries/sub/fraud-protection-at-the-pump.jpg",
+    "prompt": "A close-up of a chip card inserted into a secure gas pump reader at night with a soft protective blue glow, wet pavement reflections, dark neon mood, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "gateway-integrations",
+    "path": "public/images/industries/sub/gateway-integrations.jpg",
+    "prompt": "Colorful shopping platform icons as abstract tiles connecting into a central payment gateway hub on a bright white desk, soft studio light, clean tech product photo, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "gift-cards-memberships",
+    "path": "public/images/industries/sub/gift-cards-memberships.jpg",
+    "prompt": "Elegant physical gift cards fanned on a salon reception desk beside a membership tablet, warm soft lighting, flowers and candles in soft bokeh, cream and gold tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "high-speed-checkout-terminals",
+    "path": "public/images/industries/sub/high-speed-checkout-terminals.jpg",
+    "prompt": "Close-up of a shopper tapping a phone on a fast grocery checkout terminal, bright store lighting, conveyor with groceries blurred, clean white and silver tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "high-ticket-payment-processing",
+    "path": "public/images/industries/sub/high-ticket-payment-processing.jpg",
+    "prompt": "A house key and large earnest-money check on a marble closing table, golden hour light through windows, warm real estate photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "integrated-billing-reconciliation",
+    "path": "public/images/industries/sub/integrated-billing-reconciliation.jpg",
+    "prompt": "Neat stacks of patient billing folders being matched to a laptop ledger on a white medical admin desk, soft daylight, clean clinical tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "integrated-booking-payment-flow",
+    "path": "public/images/industries/sub/integrated-booking-payment-flow.jpg",
+    "prompt": "A seamless scene of a salon chair, booking tablet, and payment terminal in one warm-lit reception area, soft natural light, cream and blush salon palette, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "integrated-pos-inventory",
+    "path": "public/images/industries/sub/integrated-pos-inventory.jpg",
+    "prompt": "A grocery stock clerk scanning a barcode on a shelf of colorful packaged goods, bright aisle lighting, handheld scanner glowing softly, clean retail photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "interchange-plus-fuel-pricing",
+    "path": "public/images/industries/sub/interchange-plus-fuel-pricing.jpg",
+    "prompt": "A glowing gas price totem sign at night with soft neon station lights, dark sky, wet asphalt reflections, moody fuel retail photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "inventory-sync-across-every-register",
+    "path": "public/images/industries/sub/inventory-sync-across-every-register.jpg",
+    "prompt": "Multiple grocery checkout lanes stretching into the distance with synchronized register screens glowing softly, bright store lights, clean wide aisle photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "lead-management-crm",
+    "path": "public/images/industries/sub/lead-management-crm.jpg",
+    "prompt": "A real estate agent laptop showing buyer leads as soft colored pins on a map, warm home office at dusk, golden hour through blinds, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "level-2-3-processing",
+    "path": "public/images/industries/sub/level-2-3-processing.jpg",
+    "prompt": "A corporate credit card and detailed invoice on a walnut conference table, warm brass desk lamp light, professional wood and brass financial tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "low-rate-online-processing",
+    "path": "public/images/industries/sub/low-rate-online-processing.jpg",
+    "prompt": "A credit card resting on a laptop keyboard showing a clean checkout page, bright home-office daylight, soft white desk, subtle green savings accent on screen, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "loyalty-fuel-rewards",
+    "path": "public/images/industries/sub/loyalty-fuel-rewards.jpg",
+    "prompt": "A loyalty app glow on a smartphone at a gas pump nozzle at night, neon canopy lights, dark moody station atmosphere with cyan and amber neon, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "loyalty-marketing",
+    "path": "public/images/industries/sub/loyalty-marketing.jpg",
+    "prompt": "A stamped loyalty card and smartphone with a soft reward badge glow on a cafe table, latte art nearby, warm morning cafe light, cream and caramel tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "maximize-the-impact-of-every-dollar",
+    "path": "public/images/industries/sub/maximize-the-impact-of-every-dollar.jpg",
+    "prompt": "Hands exchanging a donation envelope that becomes warm light reaching a community meal table in soft focus, warm golden documentary photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "multi-channel-inventory-sync",
+    "path": "public/images/industries/sub/multi-channel-inventory-sync.jpg",
+    "prompt": "Warehouse shelves with barcode labels and a tablet showing matching stock counts, bright warehouse daylight, cardboard boxes and clean industrial tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "multi-lane-multi-department-reporting",
+    "path": "public/images/industries/sub/multi-lane-multi-department-reporting.jpg",
+    "prompt": "A store manager tablet showing colorful department pie charts while standing in a bright grocery aisle, fresh produce colors, clean commercial daylight, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "multi-processor-redundancy",
+    "path": "public/images/industries/sub/multi-processor-redundancy.jpg",
+    "prompt": "Two parallel server network paths glowing softly with one as backup, dark data center mood with cool blue lights, redundant infrastructure photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "nonprofit-friendly-rates",
+    "path": "public/images/industries/sub/nonprofit-friendly-rates.jpg",
+    "prompt": "Donation envelopes and a card reader on a wooden church lobby table, warm soft natural light through stained-glass colored glow, inviting community tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "one-dashboard-for-every-channel",
+    "path": "public/images/industries/sub/one-dashboard-for-every-channel.jpg",
+    "prompt": "A tablet on a restaurant host stand showing colorful sales channel tiles, warm dining room lights in soft bokeh behind, evening restaurant ambiance, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "online-donation-pages",
+    "path": "public/images/industries/sub/online-donation-pages.jpg",
+    "prompt": "A smartphone showing a clean branded donation page with a give button shape, held in warm afternoon light, soft cream and soft teal accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "online-ordering-delivery",
+    "path": "public/images/industries/sub/online-ordering-delivery.jpg",
+    "prompt": "A takeout bag and smartphone showing a food ordering interface on a restaurant counter, warm pendant lights, wooden surfaces, appetizing amber restaurant tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "online-payment-portal",
+    "path": "public/images/industries/sub/online-payment-portal.jpg",
+    "prompt": "A patient on a couch at home tapping pay on a smartphone with soft screen glow, warm living room daylight, cozy cream tones contrasting clinical care, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "online-payment-portals",
+    "path": "public/images/industries/sub/online-payment-portals.jpg",
+    "prompt": "A laptop on a kitchen island showing a tenant rent portal, soft morning light in a modern apartment, warm cream and soft blue tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "organization-website",
+    "path": "public/images/industries/sub/organization-website.jpg",
+    "prompt": "A laptop on a community center table showing an organization website with calendar and donate sections, warm natural window light, inviting wood tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "outdoor-emv-compliance",
+    "path": "public/images/industries/sub/outdoor-emv-compliance.jpg",
+    "prompt": "A gas pump at night with a blue EMV card reader, neon station lights reflecting on wet pavement, moody atmospheric photography, dark with neon glow, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "patient-financing",
+    "path": "public/images/industries/sub/patient-financing.jpg",
+    "prompt": "A clean modern medical reception desk with a small card reader and financing tablet, soft natural light from a window, white and pale blue tones, professional medical photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "pci-compliant-terminals",
+    "path": "public/images/industries/sub/pci-compliant-terminals.jpg",
+    "prompt": "A compact encrypted payment terminal on a clean white medical reception desk, soft natural light from a window, pale blue wall accents, clinical but warm medical photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "practice-website-seo",
+    "path": "public/images/industries/sub/practice-website-seo.jpg",
+    "prompt": "A smartphone showing a clean medical practice website with a book-appointment button shape, held outside a modern clinic entrance, soft daylight, white and soft blue, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "process-100k-month-at-wholesale-rates",
+    "path": "public/images/industries/sub/process-100k-month-at-wholesale-rates.jpg",
+    "prompt": "Stacks of receipts beside a modern POS terminal on a grocery service desk, bright commercial lighting suggesting high volume, clean white and silver tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "professional-website",
+    "path": "public/images/industries/sub/professional-website.jpg",
+    "prompt": "A polished agency website on a large monitor in a modern office with warm late afternoon light, wood and glass furniture, professional B2B aesthetic, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "pump-to-pos-integration",
+    "path": "public/images/industries/sub/pump-to-pos-integration.jpg",
+    "prompt": "Cables of light visually connecting outdoor gas pumps to an indoor POS screen at night, neon reflections, moody integrated station photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "real-time-shop-performance-tracking",
+    "path": "public/images/industries/sub/real-time-shop-performance-tracking.jpg",
+    "prompt": "A shop manager reviewing colorful performance charts on a wall-mounted screen in the service bay office, warm industrial lighting, steel and amber tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "recurring-giving",
+    "path": "public/images/industries/sub/recurring-giving.jpg",
+    "prompt": "A smartphone showing a monthly giving calendar toggle beside a coffee cup in a sunlit community space, warm cream and soft gold tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "recurring-subscription-billing",
+    "path": "public/images/industries/sub/recurring-subscription-billing.jpg",
+    "prompt": "A calendar on a medical reception counter beside an automatic billing tablet with a soft recurring icon glow, clean white clinic interior, soft blue accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "retail-pos-inventory",
+    "path": "public/images/industries/sub/retail-pos-inventory.jpg",
+    "prompt": "A retail associate scanning clothing tags at a bright boutique POS, colorful merchandise racks behind, clean commercial retail lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "retail-product-sales",
+    "path": "public/images/industries/sub/retail-product-sales.jpg",
+    "prompt": "Shelves of premium hair care bottles on a salon retail wall with soft spotlighting, warm inviting tones, a stylist hand reaching for a product, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "retail-website",
+    "path": "public/images/industries/sub/retail-website.jpg",
+    "prompt": "A laptop on a bright white desk displaying a stylish retail product catalog website, natural window light, clean modern commerce aesthetic, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "revenue-cycle-optimization",
+    "path": "public/images/industries/sub/revenue-cycle-optimization.jpg",
+    "prompt": "A line chart on a medical office monitor showing days-to-pay shrinking, clean white desk, soft blue chart lines, professional healthcare office light, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "salon-website-booking",
+    "path": "public/images/industries/sub/salon-website-booking.jpg",
+    "prompt": "A smartphone showing a salon booking page with stylist photo placeholders, resting on a vanity with soft ring light glow, warm glamorous salon tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "save-big-with-level-2-3-data-capture",
+    "path": "public/images/industries/sub/save-big-with-level-2-3-data-capture.jpg",
+    "prompt": "A corporate card swipe on a terminal with soft data fields auto-filling as light particles, warm wood desk, professional savings mood with green accent glow, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "self-checkout-integration",
+    "path": "public/images/industries/sub/self-checkout-integration.jpg",
+    "prompt": "A modern grocery self-checkout kiosk with a shopper bagging items, bright clean store lighting, white machines and colorful grocery bags, commercial photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "shop-management-integration",
+    "path": "public/images/industries/sub/shop-management-integration.jpg",
+    "prompt": "A shop computer monitor showing a digital repair order beside a lifted car in the bay, warm industrial garage lighting, grease and steel tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "shop-website-local-seo",
+    "path": "public/images/industries/sub/shop-website-local-seo.jpg",
+    "prompt": "A smartphone showing a map pin on an auto repair shop, held outside an open garage bay, daylight on asphalt, blue sky and industrial shop exterior, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "sleek-smart-terminals",
+    "path": "public/images/industries/sub/sleek-smart-terminals.jpg",
+    "prompt": "A modern rose-gold and white payment terminal on a marble salon desk, soft natural window light, elegant spa interior with warm wood and soft pink accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "smart-inventory-management",
     "path": "public/images/industries/sub/smart-inventory-management.jpg",
-    "prompt": "Product photography of warehouse shelves with a tablet showing soft reorder alert glow on empty shelf space, dark stockroom. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Smart Inventory Management"
+    "prompt": "Warehouse-style backroom shelves with a tablet showing low-stock alerts as soft orange dots, bright practical stockroom lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "smart-pos-kitchen-displays",
+    "path": "public/images/industries/sub/smart-pos-kitchen-displays.jpg",
+    "prompt": "A stainless steel restaurant kitchen with a bright digital order screen above the pass, warm kitchen lighting, chefs blurred in motion, tickets as colorful blocks on the screen with no readable text, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "stable-merchant-accounts",
+    "path": "public/images/industries/sub/stable-merchant-accounts.jpg",
+    "prompt": "A solid steel vault door slightly ajar revealing warm interior light, dark premium photography suggesting stable secure banking, charcoal and gold tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "station-website-google-profile",
+    "path": "public/images/industries/sub/station-website-google-profile.jpg",
+    "prompt": "A smartphone showing a map pin for a gas station at night, glowing canopy lights blurred behind, moody neon color palette, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "subscription-recurring-billing",
+    "path": "public/images/industries/sub/subscription-recurring-billing.jpg",
+    "prompt": "A stack of subscription boxes with a smartphone showing a recurring billing calendar icon, bright packing-table light, colorful packaging, fresh commerce tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "tableside-payments-in-under-2-seconds",
+    "path": "public/images/industries/sub/tableside-payments-in-under-2-seconds.jpg",
+    "prompt": "A waiter holding a small white card reader at a restaurant table, warm restaurant lighting, customer's hand tapping a card, natural photography, amber candle glow, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "tap-to-give-kiosks",
+    "path": "public/images/industries/sub/tap-to-give-kiosks.jpg",
+    "prompt": "A modern touchscreen donation kiosk in a bright church lobby, warm wood and soft natural light, inviting community photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "text-to-pay-invoicing",
+    "path": "public/images/industries/sub/text-to-pay-invoicing.jpg",
+    "prompt": "A customer's hand holding a smartphone with a pay-now message glow in an auto shop waiting area, warm fluorescent and daylight mix, practical garage tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "tip-friendly-payment-experience",
+    "path": "public/images/industries/sub/tip-friendly-payment-experience.jpg",
+    "prompt": "A salon reception counter with a card reader showing a tip screen with soft tip amount bars, warm soft lighting, a vase of flowers blurred in the background, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "unified-fuel-c-store-pos",
+    "path": "public/images/industries/sub/unified-fuel-c-store-pos.jpg",
+    "prompt": "A convenience store counter POS terminal with fuel pump icons on screen, night window view of glowing pumps outside, moody neon and warm interior mix, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   },
   {
     "slug": "unified-in-store-online-sales",
     "path": "public/images/industries/sub/unified-in-store-online-sales.jpg",
-    "prompt": "Product photography of a shopping bag and a smartphone cart icon merging into one teal sales report glow on a dark desk. Dark charcoal environment with subtle teal accent lighting, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, matte finishes, realistic shadows, no readable text, no logos, no watermarks, no UI labels, one clear subject.",
-    "aspect_ratio": "1:1",
-    "title": "Unified In-Store & Online Sales"
+    "prompt": "Split composition feel: a physical store aisle blending into a laptop online cart, bright cohesive retail lighting, one inventory concept, clean commercial tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "unified-omnichannel-dashboard",
+    "path": "public/images/industries/sub/unified-omnichannel-dashboard.jpg",
+    "prompt": "A wide monitor showing sales from web, marketplace, and store as soft colored tiles, bright modern office, clean white and soft pastel chart colors, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "virtual-terminal",
+    "path": "public/images/industries/sub/virtual-terminal.jpg",
+    "prompt": "Hands keying a card number into a laptop virtual terminal at a home office desk, soft daylight, practical remote collection photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "virtual-terminal-invoicing",
+    "path": "public/images/industries/sub/virtual-terminal-invoicing.jpg",
+    "prompt": "An agent sending a payment link from a phone outside a home for sale at golden hour, warm exterior real estate photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "we-specialize-in-hard-to-place-merchants",
+    "path": "public/images/industries/sub/we-specialize-in-hard-to-place-merchants.jpg",
+    "prompt": "A key unlocking a heavy lock on a dark door, warm light spilling from inside, metaphor for hard-to-place approval, dark premium photography with gold accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "website-google-presence",
+    "path": "public/images/industries/sub/website-google-presence.jpg",
+    "prompt": "A smartphone propped on a restaurant table showing a colorful food photo gallery and map pin, warm candlelit dinner ambiance, blurred plated dish in background, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "wholesale-interchange-rates",
+    "path": "public/images/industries/sub/wholesale-interchange-rates.jpg",
+    "prompt": "A grocery checkout lane with a modern card terminal under bright fluorescent store lights, produce and packaged goods soft in background, clean bright commercial retail photography, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "zero-fee-payment-processing",
+    "path": "public/images/industries/sub/zero-fee-payment-processing.jpg",
+    "prompt": "Close-up of a modern black POS terminal on a wooden restaurant table, warm ambient candle light, the screen shows a soft green zero graphic, shot from 45 degrees, shallow depth of field, amber and wood restaurant tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "zero-fee-processing",
+    "path": "public/images/industries/sub/zero-fee-processing.jpg",
+    "prompt": "A sleek white card terminal on a salon reception counter, warm soft lighting, a vase of fresh flowers blurred behind, inviting spa tones of cream and blush, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "zero-fees-on-big-tickets",
+    "path": "public/images/industries/sub/zero-fees-on-big-tickets.jpg",
+    "prompt": "A large auto repair invoice clipboard beside a POS terminal on a shop service counter, warm garage work lights, tool chests soft in background, industrial tones, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "zero-processing-fees",
+    "path": "public/images/industries/sub/zero-processing-fees.jpg",
+    "prompt": "A bright retail checkout with a modern terminal showing a soft green zero fee graphic, clean store lighting, colorful merchandise soft in background, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "slug": "zero-touch-patient-payments",
+    "path": "public/images/industries/sub/zero-touch-patient-payments.jpg",
+    "prompt": "A patient tapping a phone to pay at a sleek medical check-in kiosk, bright clean clinic lobby, white floors and soft blue wall accents, shot on Canon EOS R5 with 50mm lens, shallow depth of field, photorealistic commercial photography, no readable text, no logos, no watermarks, no UI labels, one clear subject",
+    "aspect_ratio": "1:1"
   }
 ]
