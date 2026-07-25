@@ -36,6 +36,8 @@ import {
 } from 'lucide-react';
 import { ContactForm } from '../App';
 
+const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
 // Scroll animation hook
 function useScrollAnimation() {
   useEffect(() => {
@@ -534,13 +536,18 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
               {service.sections.map((sub, si) => (
                 <div 
                   key={si}
-                  className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl p-8 hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
+                  className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <sub.icon className="w-6 h-6 text-teal" />
+                  <div className="aspect-square overflow-hidden border-b border-white/5">
+                    <img src={`/images/services/sub/${slugify(sub.title)}.jpg`} alt={sub.title} className="w-full h-full object-cover" loading="lazy" />
                   </div>
-                  <h3 className="text-xl text-white font-medium mb-3 group-hover:text-teal transition-colors">{sub.title}</h3>
-                  <p className="text-offwhite/60 font-light leading-relaxed">{sub.desc}</p>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <sub.icon className="w-5 h-5 text-teal flex-shrink-0" strokeWidth={1.5} />
+                      <h3 className="text-lg text-white font-medium">{sub.title}</h3>
+                    </div>
+                    <p className="text-offwhite/60 font-light leading-relaxed text-sm">{sub.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -666,13 +673,18 @@ export function SingleServicePage({ serviceId, onOpenModal, onNavigate }: { serv
             {service.sections.map((sub: any, si: number) => (
               <div 
                 key={si}
-                className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl p-8 hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
+                className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <sub.icon className="w-6 h-6 text-teal" />
+                <div className="aspect-square overflow-hidden border-b border-white/5">
+                  <img src={`/images/services/sub/${slugify(sub.title)}.jpg`} alt={sub.title} className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <h3 className="text-xl text-white font-medium mb-3 group-hover:text-teal transition-colors">{sub.title}</h3>
-                <p className="text-offwhite/60 font-light leading-relaxed">{sub.desc}</p>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <sub.icon className="w-5 h-5 text-teal flex-shrink-0" strokeWidth={1.5} />
+                    <h3 className="text-lg text-white font-medium">{sub.title}</h3>
+                  </div>
+                  <p className="text-offwhite/60 font-light leading-relaxed text-sm">{sub.desc}</p>
+                </div>
               </div>
             ))}
           </div>

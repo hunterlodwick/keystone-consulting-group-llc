@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import { ContactForm } from '../App';
 
+const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
 // Scroll animation hook
 function useScrollAnimation() {
   useEffect(() => {
@@ -435,13 +437,18 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
             {data.solutionCards.map((card: any, i: number) => (
               <div 
                 key={i}
-                className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl p-8 hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
+                className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-teal/20 transition-all duration-300">
-                  <card.icon className="w-6 h-6 text-teal" />
+                <div className="aspect-square overflow-hidden border-b border-white/5">
+                  <img src={`/images/industries/sub/${slugify(card.title)}.jpg`} alt={card.title} className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <h3 className="text-lg text-white font-medium mb-3 group-hover:text-teal transition-colors">{card.title}</h3>
-                <p className="text-offwhite/60 font-light leading-relaxed text-sm">{card.desc}</p>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <card.icon className="w-5 h-5 text-teal flex-shrink-0" strokeWidth={1.5} />
+                    <h3 className="text-base text-white font-medium">{card.title}</h3>
+                  </div>
+                  <p className="text-offwhite/60 font-light leading-relaxed text-sm">{card.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -467,9 +474,8 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
               </div>
               {/* Visual */}
               <div className={i % 2 !== 0 ? 'lg:col-start-1' : ''}>
-                <div className="relative h-[280px] md:h-[340px] rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 flex items-center justify-center group shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_0_50px_rgba(0,128,128,0.15)] transition-all duration-500">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.12)_0%,transparent_70%)] opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <feature.icon className="w-20 h-20 text-teal/25 group-hover:text-teal/50 group-hover:scale-110 transition-all duration-700" strokeWidth={0.75} />
+                <div className="relative h-[280px] md:h-[340px] rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 group shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500">
+                  <img src={`/images/industries/sub/${slugify(feature.title)}.jpg`} alt={feature.title} className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
             </div>
