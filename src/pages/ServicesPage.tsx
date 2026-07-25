@@ -63,6 +63,8 @@ const SERVICES_DETAIL = [
     id: "web-design",
     title: "Custom Web Design",
     icon: Code,
+    image: "/images/services/web-design.jpg",
+    imageAlt: "Modern dark monitor displaying a website glow",
     tagline: "Your website should be your best salesperson.",
     heroDesc: "Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.",
     sections: [
@@ -93,6 +95,8 @@ const SERVICES_DETAIL = [
     id: "crm",
     title: "CRM Systems",
     icon: LayoutDashboard,
+    image: "/images/services/crm.jpg",
+    imageAlt: "Laptop with dark CRM screen glow and teal accents",
     tagline: "A CRM your team actually opens.",
     heroDesc: "Most CRMs get bought, half set up, then quietly abandoned. We build yours around the way your team already sells, so deals stop living in someone's head and a notebook in a truck.",
     sections: [
@@ -123,6 +127,8 @@ const SERVICES_DETAIL = [
     id: "automations",
     title: "AI & Automations",
     icon: Zap,
+    image: "/images/services/automations.jpg",
+    imageAlt: "Connected hardware nodes with teal light paths",
     tagline: "Stop paying people to do what software does for free.",
     heroDesc: "Every hour someone spends copying data between tools is an hour nobody spent selling. We hand the busywork to AI agents so your people can do the things only people can do.",
     sections: [
@@ -153,6 +159,8 @@ const SERVICES_DETAIL = [
     id: "consulting",
     title: "Business Consulting",
     icon: Compass,
+    image: "/images/services/consulting.jpg",
+    imageAlt: "Documents and calculator on a dark professional desk",
     tagline: "Find every dollar you're leaving on the table.",
     heroDesc: "You know something's leaking. You just can't see where. We go through the books, the tools, and the day-to-day until the waste is obvious. Then we build a plan to put that money back into growth.",
     sections: [
@@ -183,6 +191,8 @@ const SERVICES_DETAIL = [
     id: "prep-to-sell",
     title: "Prep-to-Sell",
     icon: Target,
+    image: "/images/services/prep-to-sell.jpg",
+    imageAlt: "Abstract upward growth forms on a dark background",
     tagline: "Make your business worth more before you sell it.",
     heroDesc: "Buyers pay more for businesses that run without the owner. We help you clean the books, document the systems, and build the kind of company that sells for a multiple, not a discount.",
     sections: [
@@ -213,6 +223,8 @@ const SERVICES_DETAIL = [
     id: "seo",
     title: "SEO Services",
     icon: Search,
+    image: "/images/services/seo.jpg",
+    imageAlt: "Smartphone with soft search results glow",
     tagline: "Show up where your customers are already looking.",
     heroDesc: "People are searching for what you sell right now. If you're not on page one, they're calling your competitor. We get you ranking for the searches that actually turn into appointments, without paying for every click.",
     sections: [
@@ -243,6 +255,8 @@ const SERVICES_DETAIL = [
     id: "google-business",
     title: "Google My Business",
     icon: MapPin,
+    image: "/images/services/google-business.jpg",
+    imageAlt: "Smartphone with soft map glow in a dark environment",
     tagline: "Be the first name they see on the map.",
     heroDesc: "Before anyone hits your website, they check Google. Photos, stars, hours, reviews. We make that first look so strong that half your new customers never bother comparing anyone else.",
     sections: [
@@ -273,6 +287,8 @@ const SERVICES_DETAIL = [
     id: "bpo",
     title: "BPO - Lead Generation",
     icon: Headphones,
+    image: "/images/services/bpo.jpg",
+    imageAlt: "Professional headset on a dark desk",
     tagline: "Your calendar fills up. You just show up and close.",
     heroDesc: "Prospecting eats the hours your closers should spend selling. We find the right people, warm them up, and put qualified appointments on your calendar. Your team only talks to buyers who are ready.",
     sections: [
@@ -303,6 +319,8 @@ const SERVICES_DETAIL = [
     id: "consumer-financing",
     title: "Consumer Financing",
     icon: Banknote,
+    image: "/images/services/consumer-financing.jpg",
+    imageAlt: "Matte black credit card on a dark surface",
     tagline: "They say yes to the big ticket. You get paid today.",
     heroDesc: "Price is the objection that kills most sales. Financing turns a $1,500 no into a $125/month yes. You close more deals, raise the average ticket, and get the full amount upfront. No chasing payments.",
     sections: [
@@ -333,6 +351,8 @@ const SERVICES_DETAIL = [
     id: "business-loans",
     title: "Business Loans & Capital",
     icon: DollarSign,
+    image: "/images/services/business-loans.jpg",
+    imageAlt: "Currency and calculator on a dark wooden desk",
     tagline: "Cash in days, not weeks of paperwork.",
     heroDesc: "Payroll doesn't wait for a six-week SBA decision. Neither does a deal that needs inventory tomorrow. We connect you with lenders who fund in days so you can move while the opportunity is still open.",
     sections: [
@@ -363,6 +383,8 @@ const SERVICES_DETAIL = [
     id: "pos-placement",
     title: "POS Placement",
     icon: MonitorSmartphone,
+    image: "/images/services/pos-placement.jpg",
+    imageAlt: "Modern black POS terminal on a dark countertop",
     tagline: "New hardware. Zero check written.",
     heroDesc: "That outdated terminal is slowing down your line and embarrassing your brand. We put modern payment hardware in your business free. Free install, free training. You process with us, and the equipment stays.",
     sections: [
@@ -493,33 +515,16 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
 
               {/* Visual */}
               <div className={`animate-on-scroll ${idx % 2 !== 0 ? 'lg:col-start-1' : ''}`} style={{ transitionDelay: '0.2s' }}>
-                <div className="relative h-[350px] md:h-[400px] rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 backdrop-blur-md flex items-center justify-center group shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,128,128,0.15)] transition-all duration-500">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)] opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Icon cluster */}
-                  <div className="relative flex items-center justify-center">
-                    <service.icon className="w-24 h-24 text-teal/30 group-hover:text-teal/50 group-hover:scale-110 transition-all duration-700" strokeWidth={0.75} />
-                    {service.sections.slice(0, 3).map((sub, si) => {
-                      const angles = [-40, 40, 0];
-                      const distances = [100, 100, 120];
-                      const angle = (angles[si] * Math.PI) / 180;
-                      const x = Math.cos(angle) * distances[si];
-                      const y = Math.sin(angle) * distances[si] - 40;
-                      return (
-                        <div 
-                          key={si}
-                          className="absolute w-12 h-12 rounded-xl bg-charcoal-dark/80 border border-white/10 flex items-center justify-center text-teal/60 group-hover:text-teal group-hover:border-teal/30 transition-all duration-500 shadow-lg"
-                          style={{ 
-                            transform: `translate(${x}px, ${y}px)`,
-                            transitionDelay: `${si * 100}ms`
-                          }}
-                        >
-                          <sub.icon className="w-5 h-5" />
-                        </div>
-                      );
-                    })}
-                  </div>
+                <div className="relative h-[350px] md:h-[400px] rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 group shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,128,128,0.15)] transition-all duration-500">
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent pointer-events-none"></div>
                 </div>
               </div>
             </div>
@@ -621,7 +626,7 @@ export function SingleServicePage({ serviceId, onOpenModal, onNavigate }: { serv
             <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
               {service.heroDesc}
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
               <button 
                 onClick={() => onOpenModal(`Get Started with ${service.title}`, <ContactForm />)}
                 className="cta-button-pulse inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]"
@@ -635,6 +640,17 @@ export function SingleServicePage({ serviceId, onOpenModal, onNavigate }: { serv
                 ← All Services
               </a>
             </div>
+            {service.image && (
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video max-w-3xl mx-auto shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+                <img
+                  src={service.image}
+                  alt={service.imageAlt}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  width={800}
+                  height={450}
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -229,7 +229,7 @@ const SOLUTIONS_DATA = [
     features: ["Custom CRM development", "HubSpot & GHL configuration", "Pipeline & deal tracking", "Automated follow-up sequences"],
     linkTo: "/services#crm",
     image: "/images/analytics-dashboard.jpg",
-    imageAlt: "Dark analytics CRM dashboard with teal charts",
+    imageAlt: "Laptop with dark teal screen glow on a desk",
   },
   { 
     id: "automations",
@@ -240,7 +240,7 @@ const SOLUTIONS_DATA = [
     features: ["AI lead qualification agents", "Customer service chatbots", "Workflow automation buildouts", "System integrations & APIs"],
     linkTo: "/services#automations",
     image: "/images/ai-chat.jpg",
-    imageAlt: "Dark AI chat interface on laptop and phone",
+    imageAlt: "Smartphone with soft teal screen glow on a dark desk",
   },
   { 
     id: "consulting",
@@ -1136,7 +1136,7 @@ const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: Rea
           <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video">
             <img
               src="/images/statement-analysis.jpg"
-              alt="Processing statement analysis with highlighted fees"
+              alt="Merchant processing statement on a dark wooden desk"
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
               width={1200}
@@ -1202,7 +1202,7 @@ const WhyChooseUs = () => {
           <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video">
             <img
               src="/images/analytics-dashboard.jpg"
-              alt="Analytics dashboard showing savings and revenue growth"
+              alt="Laptop with abstract dark teal screen glow on a desk"
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
               width={1200}
@@ -1260,7 +1260,7 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
             <div className="relative h-48 md:h-56 overflow-hidden border-b border-teal/20">
               <img
                 src="/images/pos-zero-fees.jpg"
-                alt="POS terminal displaying zero processing fees"
+                alt="Modern black POS terminal on a dark countertop"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
                 width={800}
@@ -1303,7 +1303,7 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
             <div className="relative h-48 md:h-56 overflow-hidden border-b border-white/10">
               <img
                 src="/images/billing-statement.jpg"
-                alt="Clean interchange plus billing statement"
+                alt="Stack of printed invoices on a dark slate surface"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
                 width={800}
@@ -1530,21 +1530,21 @@ const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: 
       icon: Bluetooth,
       desc: "Take payments anywhere with a free Bluetooth reader. No upfront cost, no hardware to buy. Perfect for mobile pros and on-the-go businesses.",
       image: "/images/bluetooth-reader.jpg",
-      imageAlt: "White Bluetooth card reader on dark surface",
+      imageAlt: "White Bluetooth card reader on dark charcoal surface",
     },
     {
       title: "Free POS Systems & Hardware Credits",
       icon: Gift,
       desc: "Upgrade your counter with a free POS system, or get up to $7,500 in hardware credits. No catch, no fine print. Your terminal, paid for.",
       image: "/images/pos-kitchen.jpg",
-      imageAlt: "Restaurant POS terminal with kitchen display",
+      imageAlt: "Restaurant POS terminal on a dark countertop",
     },
     {
       title: "Grow With an ATM Machine",
       icon: Banknote,
       desc: "We place, install, and maintain the ATM. You keep 100% of the surcharge fees and watch the foot traffic grow. Zero work on your end.",
       image: "/images/atm-machine.jpg",
-      imageAlt: "Modern ATM in a dark commercial lobby",
+      imageAlt: "Modern ATM with brushed metal in a dark environment",
     }
   ];
 
@@ -1760,7 +1760,7 @@ const Testimonials = () => {
           <div className="animate-on-scroll col-span-1 md:col-span-2 lg:col-span-2 relative border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-auto md:h-[400px] flex items-center justify-center group shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
             <img
               src="/images/cafe-success.jpg"
-              alt="Cafe counter with POS terminal"
+              alt="Cozy restaurant interior with POS terminal at night"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               loading="lazy"
               width={1200}

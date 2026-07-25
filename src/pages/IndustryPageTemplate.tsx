@@ -38,6 +38,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Keep More of Every Check. Fill More Seats.',
     subheadline: 'Processing fees, third-party commissions, and slow service quietly shrink every night. We cut the waste, speed up the table, and put growth systems behind the kitchen door.',
     badge: 'Restaurant Solutions',
+    heroImage: '/images/industries/restaurants.jpg',
+    heroImageAlt: 'Empty cozy restaurant interior at night',
     solutionCards: [
       { title: 'Zero-Fee Payment Processing', desc: 'On a $50 ticket, 3% is $1.50 walking out the door. Edge brings that to zero. Over a busy month, that\'s thousands that stay in your drawer.', icon: CreditCard },
       { title: 'Smart POS & Kitchen Displays', desc: 'Paper tickets get lost in the rush. Digital screens route every order the second it rings up, so the line moves and the food comes out hot.', icon: MonitorSmartphone },
@@ -63,6 +65,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Protect Every Penny on High-Volume Margins.',
     subheadline: 'Grocery margins leave no room for fat processing fees or slow lanes. We cut you to wholesale rates, speed up checkout, and tighten inventory so shrink stops eating the profit.',
     badge: 'Grocery Solutions',
+    heroImage: '/images/industries/grocery.jpg',
+    heroImageAlt: 'Grocery store aisle with dark moody lighting',
     solutionCards: [
       { title: 'Wholesale Interchange Rates', desc: 'At $100K a month, a fraction of a percent is real money. Interchange-plus means you pay the network rate plus a thin markup, not a bundled surprise.', icon: Percent },
       { title: 'High-Speed Checkout Terminals', desc: 'Slow lanes send shoppers to the next store. Terminals that clear in under two seconds keep the line moving and the carts finishing.', icon: Zap },
@@ -88,6 +92,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Get Paid Faster Without Frustrating Patients.',
     subheadline: 'Billing friction costs you collections and goodwill. Patient-friendly payments, financing for bigger procedures, and systems that sync with your practice so money stops getting stuck.',
     badge: 'Healthcare Solutions',
+    heroImage: '/images/industries/healthcare.jpg',
+    heroImageAlt: 'Clean modern medical reception area',
     solutionCards: [
       { title: 'PCI-Compliant Terminals', desc: 'Patient card data should never sit on your hard drive. Encrypted, tokenized hardware keeps you compliant and keeps that risk off your plate.', icon: Lock },
       { title: 'Patient Financing', desc: 'A $3,000 procedure becomes a no when it\'s due today. 3-12 month plans get them to yes, and you still get paid in full upfront.', icon: Banknote },
@@ -113,6 +119,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Convert More Carts. Keep More Margin.',
     subheadline: 'Online buyers leave in a heartbeat. Smooth checkout, real fraud protection, and honest rates mean more completed orders and less of each sale disappearing into fees and chargebacks.',
     badge: 'E-Commerce Solutions',
+    heroImage: '/images/industries/ecommerce.jpg',
+    heroImageAlt: 'E-commerce shipping boxes on a dark surface',
     solutionCards: [
       { title: 'Low-Rate Online Processing', desc: 'Card-not-present shouldn\'t mean getting gouged. Interchange-plus keeps online rates honest so growth doesn\'t quietly raise your effective cost.', icon: CreditCard },
       { title: 'Gateway Integrations', desc: 'Shopify, WooCommerce, BigCommerce, or custom. Plug in once and stop duct-taping checkout together every time you change tools.', icon: Layers },
@@ -138,6 +146,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Keep Every Dollar From Every Appointment.',
     subheadline: 'A $150 color shouldn\'t lose $4 to fees. Modern terminals, gift cards, deposits, and retention tools that match the experience you already deliver in the chair.',
     badge: 'Salon & Spa Solutions',
+    heroImage: '/images/industries/salons.jpg',
+    heroImageAlt: 'Empty upscale salon interior with warm lighting',
     solutionCards: [
       { title: 'Zero-Fee Processing', desc: 'Edge means you keep 100% of every service. On a $150 color and cut, that\'s $4.35 that used to vanish and now stays yours.', icon: DollarSign },
       { title: 'Sleek Smart Terminals', desc: 'Your space looks intentional. Your checkout should too. Modern tap-and-chip terminals that don\'t clash with the brand you built.', icon: Smartphone },
@@ -163,6 +173,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Close the Big Jobs. Keep Every Dollar.',
     subheadline: 'A $2,000 repair used to lose $60+ to fees, and plenty of customers walked because they couldn\'t pay today. Zero-fee processing and financing change both of those conversations.',
     badge: 'Auto Repair Solutions',
+    heroImage: '/images/industries/auto-repair.jpg',
+    heroImageAlt: 'Auto repair shop bay with dark moody lighting',
     solutionCards: [
       { title: 'Zero Fees on Big Tickets', desc: 'On a $2,000 transmission job, $60+ used to vanish into fees. Edge eliminates that. You keep the whole ticket.', icon: DollarSign },
       { title: 'Consumer Financing', desc: '\"I can\'t pay that today\" becomes \"$125 a month works.\" You get paid in full immediately. They get the repair they need.', icon: Banknote },
@@ -188,6 +200,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Protect Fuel Margins. Speed Up the Store.',
     subheadline: 'Fuel margins are thin enough without fat interchange and split systems. EMV at the pump, one POS for fuel and c-store, and pricing that doesn\'t erase the penny you make per gallon.',
     badge: 'Fuel & C-Store Solutions',
+    heroImage: '/images/industries/gas-stations.jpg',
+    heroImageAlt: 'Gas station at night with atmospheric lighting',
     solutionCards: [
       { title: 'Outdoor EMV Compliance', desc: 'Fraud liability at the pump is a nightmare you don\'t want. EMV-ready outdoor terminals shift that risk off your station.', icon: Shield },
       { title: 'Unified Fuel + C-Store POS', desc: 'Two systems means blind spots. One dashboard for pumps, inventory, lottery, and tobacco so you finally see the whole station.', icon: MonitorSmartphone },
@@ -213,6 +227,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Stay Approved. Keep Processing. Sleep at Night.',
     subheadline: 'CBD, vape, smoke, supplements. You\'ve been dropped before. We place you with banks that understand your vertical, fight chargebacks early, and keep the account stable.',
     badge: 'High-Risk Solutions',
+    heroImage: '/images/industries/high-risk.jpg',
+    heroImageAlt: 'Abstract vault lock representing security and stability',
     solutionCards: [
       { title: 'Stable Merchant Accounts', desc: 'Surprise freezes kill payroll. We work with banks that underwrite high-risk on purpose so you\'re not waiting to see if the account survives the weekend.', icon: Shield },
       { title: 'Competitive High-Risk Rates', desc: 'High-risk doesn\'t have to mean getting robbed. Transparent pricing, negotiated rates, and no junk fees hiding in the fine print.', icon: Percent },
@@ -238,6 +254,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'More of Every Gift Reaches the Mission.',
     subheadline: 'Processing fees shouldn\'t shrink a donation before it does any good. Lower rates, recurring giving, and modern ways to donate so generosity turns into predictable impact.',
     badge: 'Nonprofit Solutions',
+    heroImage: '/images/industries/nonprofits.jpg',
+    heroImageAlt: 'Empty community gathering space with warm lighting',
     solutionCards: [
       { title: 'Nonprofit-Friendly Rates', desc: 'Every basis point you save is ministry, meals, or programs that actually happen. Nonprofit-optimized rates keep more of the gift intact.', icon: Percent },
       { title: 'Recurring Giving', desc: 'One-time gifts are great. Monthly givers change the budget. Set-it-and-forget-it recurring donations make revenue something you can plan on.', icon: Calendar },
@@ -263,6 +281,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Get Paid on Big Invoices Without the Chase.',
     subheadline: 'Large B2B payments shouldn\'t cost 3% or take 60 days. Level 2/3 savings, pay-now invoices, and ACH options that get clients to pay faster with less admin.',
     badge: 'B2B Solutions',
+    heroImage: '/images/industries/b2b.jpg',
+    heroImageAlt: 'Modern empty office conference room at dusk',
     solutionCards: [
       { title: 'Level 2/3 Processing', desc: 'Corporate and government cards cost less when the right data is sent. Automatic Level 2/3 capture typically saves 0.5-1.0% on every one of those payments.', icon: Percent },
       { title: 'Email Invoice & Pay-Now Links', desc: 'Send the invoice. They click and pay by card or ACH. You get notified. Checks in the mail become a story you tell about the old days.', icon: Receipt },
@@ -288,6 +308,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Collect Deposits, Rent, and Fees Without the Chase.',
     subheadline: 'Earnest money, commissions, rent, HOA dues. High-ticket payments and recurring collections that used to mean checks and bank runs now happen from a phone.',
     badge: 'Real Estate Solutions',
+    heroImage: '/images/industries/real-estate.jpg',
+    heroImageAlt: 'Modern house exterior at dusk',
     solutionCards: [
       { title: 'High-Ticket Payment Processing', desc: 'Large deposits and fees deserve honest rates. Interchange-plus keeps the cost of moving big money from eating the deal.', icon: DollarSign },
       { title: 'Online Payment Portals', desc: 'Tenants pay rent, HOA, and fees online with receipts and late-fee tracking built in. You stop being the landlord who texts about checks.', icon: Globe },
@@ -313,6 +335,8 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     headline: 'Faster Checkout. Healthier Margins. Same Shelf.',
     subheadline: 'Retail margins vanish into processing fees and slow lines. Zero-fee programs, tap-to-pay that clears in under two seconds, and inventory that finally matches what\'s on the floor.',
     badge: 'Retail Solutions',
+    heroImage: '/images/industries/retail.jpg',
+    heroImageAlt: 'Empty retail store interior after hours',
     solutionCards: [
       { title: 'Zero Processing Fees', desc: 'Edge can bring card fees to zero. Every dollar the customer pays is a dollar that stays in the business, not the processor\'s.', icon: DollarSign },
       { title: 'Fast Tap-to-Pay Terminals', desc: 'Lines kill impulse buys. Apple Pay, Google Pay, and tap cards cleared in under two seconds keep people moving and buying.', icon: Zap },
@@ -371,7 +395,7 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
             <p className="text-offwhite/70 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed mb-10">
               {data.subheadline}
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
               <button 
                 onClick={() => onOpenModal(`Free ${data.title} Analysis`, <ContactForm />)} 
                 className="cta-button-pulse inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]"
@@ -385,6 +409,17 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
                 Call (801) 360-9156
               </a>
             </div>
+            {data.heroImage && (
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video max-w-4xl mx-auto shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+                <img
+                  src={data.heroImage}
+                  alt={data.heroImageAlt || data.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  width={1200}
+                  height={675}
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
