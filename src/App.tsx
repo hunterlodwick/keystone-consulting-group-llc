@@ -930,7 +930,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
             <span className="block mt-2">to Hidden Fees.</span>
           </h1>
           <p className="text-offwhite/80 text-lg md:text-xl font-light max-w-xl mb-10 leading-relaxed">
-            We audit your processing statements, show you exactly where the money is leaking, and fix it. Then we reinvest those savings into websites, tools, and systems that make the phone ring.
+            We audit your processing statements, show you exactly where the money is leaking, and fix it. Then we reinvest those savings into websites and systems that make the phone ring.
           </p>
           
           {/* CTAs */}
@@ -1053,6 +1053,34 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
     </section>
   );
 };// ProductGrid
+const HOMEPAGE_PRODUCTS = [
+  {
+    id: "processing",
+    title: "Credit Card Processing",
+    icon: CreditCard,
+    desc: "We find the fees you shouldn't be paying and cut them. The Edge Program at $0, or interchange-plus at wholesale. No contracts.",
+    linkTo: "/#pricing",
+    image: "/images/pos-zero-fees.jpg",
+    imageAlt: "Modern black POS terminal on a dark countertop",
+  },
+  {
+    id: "web-design",
+    title: "Website Builds",
+    icon: Code,
+    desc: "Websites that make the phone ring, not just look pretty. 3D animated, AI-powered, and built to convert visitors into customers.",
+    linkTo: "/services/web-design",
+  },
+  {
+    id: "automations",
+    title: "AI Automations",
+    icon: Zap,
+    desc: "AI agents that qualify leads, answer customers, and run your back office while you sleep.",
+    linkTo: "/services/automations",
+    image: "/images/ai-chat.jpg",
+    imageAlt: "Smartphone with soft teal screen glow on a dark desk",
+  },
+];
+
 const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   return (
     <section id="services" className="py-32 relative">
@@ -1065,17 +1093,17 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
-          {SOLUTIONS_DATA.map((sol, idx) => (
+          {HOMEPAGE_PRODUCTS.map((sol, idx) => (
             <a
               key={idx}
-              href={(sol as any).linkTo || `/services#${sol.id}`}
+              href={sol.linkTo}
               className="animate-on-scroll card-hover-effect group relative bg-slate-dark/40 rounded-xl border border-white/5 flex flex-col justify-between cursor-pointer overflow-hidden min-h-[200px]"
             >
-              {(sol as any).image && (
+              {sol.image && (
                 <div className="relative h-36 overflow-hidden border-b border-white/5">
                   <img
-                    src={(sol as any).image}
-                    alt={(sol as any).imageAlt || sol.title}
+                    src={sol.image}
+                    alt={sol.imageAlt || sol.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     loading="lazy"
                     width={800}
@@ -1086,7 +1114,7 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
               )}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               
-              <div className={`relative z-10 p-8 flex flex-col flex-1 ${(sol as any).image ? 'pt-6' : ''}`}>
+              <div className={`relative z-10 p-8 flex flex-col flex-1 ${sol.image ? 'pt-6' : ''}`}>
                 <div className="flex justify-between items-start">
                   <sol.icon className="w-8 h-8 text-teal transition-transform duration-300 ease-custom group-hover:rotate-3" strokeWidth={1} />
                 </div>
@@ -1341,6 +1369,23 @@ const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.
             </div>
           </div>
         </div>
+
+        <div className="mt-12 max-w-5xl mx-auto animate-on-scroll border border-white/10 rounded-2xl p-8 md:p-10 bg-slate-dark/30">
+          <h3 className="text-xl md:text-2xl font-serif text-white mb-3">Consumer Financing</h3>
+          <p className="text-offwhite/70 font-light mb-6">Through Flex Buy, customers pay over time. You get paid in full upfront.</p>
+          <ul className="space-y-3">
+            {[
+              "Customers pay over time while you get paid in full upfront.",
+              "Financing available up to $100K.",
+              "Big tickets close about 30% more often when financing is on the table.",
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+                <span className="text-offwhite/80 font-light">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
@@ -1539,19 +1584,12 @@ const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: 
       image: "/images/pos-kitchen.jpg",
       imageAlt: "Restaurant POS terminal on a dark countertop",
     },
-    {
-      title: "Grow With an ATM Machine",
-      icon: Banknote,
-      desc: "We place, install, and maintain the ATM. You keep 100% of the surcharge fees and watch the foot traffic grow. Zero work on your end.",
-      image: "/images/atm-machine.jpg",
-      imageAlt: "Modern ATM with brushed metal in a dark environment",
-    }
   ];
 
   return (
     <section className="py-32 relative bg-charcoal-dark border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 stagger-children">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger-children">
           {offers.map((offer, idx) => (
             <div
               key={idx}
@@ -2060,14 +2098,12 @@ function MainLandingPage({ onOpenModal, onOpenSplash, theme }: { onOpenModal: (t
       <Hero onOpenModal={onOpenModal} />
       <ProcessingVolume theme={theme} />
       <HowItWorks onOpenModal={onOpenModal} />
-      <RateGuarantee onOpenModal={onOpenModal} />
       <Pricing onOpenModal={onOpenModal} />
       <ROICalculator />
       <ProductGrid onOpenModal={onOpenModal} />
       <FreePlacement onOpenModal={onOpenModal} />
       <Industries onOpenSplash={onOpenSplash} />
       <WhyChooseUs />
-      <Testimonials />
       <IntegrationEcosystem />
       <Team onOpenModal={onOpenModal} />
     </>
@@ -2082,7 +2118,7 @@ export default function App() {
   // Theme state - persisted to localStorage
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('kcg-theme');
-    return saved || 'dark';
+    return saved || 'light';
   });
 
   useEffect(() => {

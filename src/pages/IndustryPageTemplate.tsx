@@ -59,7 +59,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['2.9-3.5% of every ticket disappearing into processing fees', 'An old POS that turns a 90-minute table into two hours', 'Delivery apps taking 15-30% and owning your guests'],
     solutions: ['Edge cuts processing fees to zero so every check stays yours', 'Smart terminals under two seconds and kitchen screens that kill paper tickets', 'Your own online ordering. No commissions. You keep the customer.'],
     calculatorDefault: 45000,
-    testimonial: { quote: "We got $14,000 back in year one. The free POS upgrade alone made kitchen tickets about 40% faster. I keep wondering why we waited.", name: "Maria R.", business: "Bella's Italian Kitchen" }
   },
 
   'grocery': {
@@ -86,7 +85,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['2.5%+ fees chewing through already-thin grocery margins', 'Checkout lines long enough that shoppers bail mid-cart', 'Blind spots in inventory that show up as overstock and shrink'],
     solutions: ['Interchange-plus typically cuts fees 30-50% versus bundled rates', 'EMV and contactless terminals that finish in under two seconds', 'POS that syncs inventory, vendors, and reorder points in real time'],
     calculatorDefault: 120000,
-    testimonial: { quote: "We run over $100K a month. Keystone cut our fees about 40%. The inventory piece alone paid for the switch in the first month.", name: "Tom H.", business: "FreshMart Grocery" }
   },
 
   'healthcare': {
@@ -113,7 +111,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['Processing costs eating into already-thin reimbursements', 'Patients confused or annoyed by how hard it is to pay', 'Old systems that keep you up at night on compliance'],
     solutions: ['Clear interchange-plus pricing with no surprise surcharges', 'Contactless, mobile, and text-to-pay that patients actually use', 'PCI-compliant hardware with encryption and tokenization baked in'],
     calculatorDefault: 35000,
-    testimonial: { quote: "Patients love tap-to-pay, and we love paying zero processing fees with Edge. The online portal cut our billing calls roughly in half.", name: "Dr. Lisa M.", business: "Summit Family Practice" }
   },
 
   'ecommerce': {
@@ -140,7 +137,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['Online rates high enough to erase thin product margins', 'Carts abandoned because checkout feels slow or clunky', 'Fraud and chargebacks quietly draining what you already earned'],
     solutions: ['Interchange-plus with no inflated card-not-present markup', 'Hosted checkout with one-click and saved cards that finish the sale', 'AI fraud filters with AVS, CVV, and velocity checks before the loss'],
     calculatorDefault: 30000,
-    testimonial: { quote: "They plugged into our Shopify store in a day. Checkout conversion jumped about 12%, and chargebacks dropped roughly 60%. That was enough for me.", name: "Rachel W.", business: "ThreadLine Apparel" }
   },
 
   'salons': {
@@ -167,7 +163,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['$800+ a month in fees disappearing from service revenue', 'A terminal that looks cheap next to the space you invested in', 'No clean way to sell gift cards, memberships, or retail'],
     solutions: ['Edge keeps 100% of every service payment in your pocket', 'Sleek smart terminals you\'re not embarrassed to put on the desk', 'Gift cards, memberships, and retail POS with inventory in one place'],
     calculatorDefault: 20000,
-    testimonial: { quote: "We went from about $800 a month in fees to zero with Edge. Clients love the gift cards. We sold $12K of them last holiday season alone.", name: "Sarah K.", business: "Glow Wellness Spa" }
   },
 
   'auto-repair': {
@@ -194,7 +189,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['Losing $60+ in fees on every major repair', 'Customers walking away from big jobs they can\'t pay upfront', 'Paper estimates and payment chase slowing the whole shop'],
     solutions: ['Edge kills fees on every ticket, small and large', 'Financing lets them pay over time while you get paid today', 'Text-to-pay and digital approvals end the paperwork chase'],
     calculatorDefault: 40000,
-    testimonial: { quote: "On a $2,000 transmission, I used to lose $60-plus in fees. Now I keep every dollar. Financing alone bumped our average ticket about 35%.", name: "James T.", business: "Peak Auto Repair" }
   },
 
   'gas-stations': {
@@ -221,7 +215,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['EMV deadlines turning pump fraud into your liability', 'Separate fuel and store systems hiding what\'s really happening', 'Interchange fees wiping out already-thin fuel margins'],
     solutions: ['EMV outdoor terminals that pull fraud liability off your books', 'One POS for fuel and c-store on a single dashboard', 'Interchange-plus pricing that protects every penny per gallon'],
     calculatorDefault: 150000,
-    testimonial: { quote: "Keystone got us EMV compliant at the pump, put fuel and c-store on one system, and cut our indoor fees in half. Best call we made all year.", name: "Mike D.", business: "QuickFuel Express" }
   },
 
   'high-risk': {
@@ -248,7 +241,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['Random freezes, holds, and terminations that stop sales overnight', 'Rates so high \"high-risk\" feels like a penalty, not a category', 'Processors who don\'t understand CBD, vape, or supplements'],
     solutions: ['Stable accounts through banks that specialize in your vertical', 'Competitive, transparent rates without fake risk premiums', 'An account manager who actually knows your product line'],
     calculatorDefault: 25000,
-    testimonial: { quote: "Three processors dropped us before Keystone. Fourteen months later we\'re still processing. Our account manager actually knows CBD. That matters.", name: "Alex P.", business: "Green Leaf CBD" }
   },
 
   'nonprofits': {
@@ -275,7 +267,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['Fees quietly reducing what every donation can do', 'No clean system for recurring monthly givers', 'Old kiosks and forms donors avoid using'],
     solutions: ['Nonprofit rates that leave more of every gift for the mission', 'Online recurring giving pages donors set once and forget', 'Modern kiosks with custom amounts and clear fund choices'],
     calculatorDefault: 15000,
-    testimonial: { quote: "Every dollar matters here. Keystone cut our processing fees about 60%, and the recurring giving page roughly tripled our monthly committed givers.", name: "Pastor David R.", business: "Grace Community Church" }
   },
 
   'b2b': {
@@ -302,7 +293,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['Losing 2.5-3.5% on large invoices paid by credit card', 'Clients slow to pay because paying you is inconvenient', 'Manual invoicing and reconciliation eating admin hours'],
     solutions: ['Level 2/3 processing saves 0.5-1.0% on every corporate card payment', 'Email invoices with pay-now links clients finish in two clicks', 'Accounting sync that ends manual reconciliation'],
     calculatorDefault: 50000,
-    testimonial: { quote: "Our average invoice is $5,000. Level 2/3 through Keystone saves us hundreds a month. QuickBooks syncing was the part that sold my bookkeeper.", name: "David M.", business: "Boxed Logistics" }
   },
 
   'real-estate': {
@@ -329,7 +319,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['Fat fees on large earnest and commission payments', 'Chasing tenants for rent checks every month', 'Manual invoices and payment tracking slowing everything down'],
     solutions: ['Interchange-plus that saves real money on $1,000+ transactions', 'ACH auto-debit rent with late fees handled automatically', 'Email and text pay links for instant remote collection'],
     calculatorDefault: 60000,
-    testimonial: { quote: "Virtual terminal plus the tenant portal made rent and deposits hands-off. Forty units, and I haven\'t written a receipt in months.", name: "Jennifer L.", business: "Summit Realty Group" }
   },
 
   'retail': {
@@ -356,7 +345,6 @@ export const INDUSTRY_LANDING_PAGES: Record<string, any> = {
     painPoints: ['Processing fees cutting into margins that were already thin', 'An old POS that makes checkout feel like 2009', 'No single view of in-store and online inventory'],
     solutions: ['Edge eliminates up to 100% of processing fees', 'Tap-to-pay with Apple Pay and Google Pay that clears in under two seconds', 'Unified POS with inventory synced across every channel'],
     calculatorDefault: 35000,
-    testimonial: { quote: "We switched to Edge and processing dropped to zero. The POS inventory tracking saves us about five hours a week we used to burn on hand counts.", name: "Carlos M.", business: "Westside Home Goods" }
   }
 };
 
@@ -580,27 +568,6 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
         </div>
       </section>
 
-      {/* ─── 7. TESTIMONIAL ──────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center animate-on-scroll">
-          <div className="mb-8">
-            <QuoteIcon className="w-12 h-12 text-teal/20 mx-auto" />
-          </div>
-          <p className="font-serif text-2xl md:text-3xl text-white leading-relaxed mb-8">
-            "{data.testimonial.quote}"
-          </p>
-          <div className="inline-flex items-center gap-4 group">
-            <div className="w-12 h-12 rounded-full bg-teal/20 border border-teal/40 flex items-center justify-center text-teal font-serif text-xl group-hover:bg-teal group-hover:text-white transition-all duration-300">
-              {data.testimonial.name.charAt(0)}
-            </div>
-            <div className="text-left">
-              <div className="text-white font-medium group-hover:text-teal transition-colors">{data.testimonial.name}</div>
-              <div className="text-sm text-offwhite/50 uppercase tracking-widest">{data.testimonial.business}</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ─── 8. BOTTOM CTA ───────────────────────────────────────────────── */}
       <section className="py-24 md:py-32 relative overflow-hidden bg-teal/5 border-t border-teal/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.1)_0%,transparent_70%)]"></div>
@@ -628,9 +595,3 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
     </>
   );
 }
-
-const QuoteIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-  </svg>
-);
