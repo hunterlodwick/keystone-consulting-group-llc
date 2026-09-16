@@ -381,21 +381,25 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "sections": [
           {
               "title": "See every deal and its next action",
+              "image": "/images/services/sub/pipeline-deal-tracking.jpg",
               "icon": LayoutDashboard,
               "desc": "Know which quotes need attention without asking everyone for an update. We map stages to real decisions, give each opportunity an owner, and show the next action with a due date. A stalled quote stays visible until someone resolves it."
           },
           {
               "title": "Get value from the software you own",
+              "image": "/images/services/sub/platform-configuration.jpg",
               "icon": Settings,
               "desc": "Keep a platform that fits and fix the setup around it. We review unused fields, confusing stages and duplicate records in your existing CRM. If your workflow needs a custom system, we explain the maintenance and ownership tradeoffs before recommending a build."
           },
           {
               "title": "Follow up while interest is still there",
+              "image": "/images/services/sub/automated-follow-ups.jpg",
               "icon": MessageSquare,
               "desc": "Give staff a prompt when an enquiry arrives or a quote needs a reply. We configure assignments and agreed messages, with stop rules when someone responds or opts out. An automatic acknowledgement supports the handoff; it does not replace a useful conversation."
           },
           {
               "title": "Run the meeting from reliable numbers",
+              "image": "/images/services/sub/custom-built-platforms.jpg",
               "icon": LineChart,
               "desc": "See open value, ageing opportunities and closed business from the same records your team works in. We agree what each report means before building it. Forecasts remain estimates, and missing data stays visible instead of making the month look healthier than it is."
           }
@@ -653,21 +657,25 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "sections": [
           {
               "title": "Find the cost behind the frustration",
+              "image": "/images/services/sub/operational-audits.jpg",
               "icon": Target,
               "desc": "See which problems deserve attention before spending on a fix. We review recurring costs and follow a sample of work from enquiry to payment. A subscription charge is easy to spot; duplicated effort and quotes left unanswered need a closer look at the process."
           },
           {
               "title": "Choose changes your team can use",
+              "image": "/images/services/sub/revenue-leak-identification.jpg",
               "icon": Compass,
               "desc": "Get a recommendation tied to a specific business need. We compare improving the current process with configuring existing software or building something new. AI is considered where it fits. A basic checklist can be the better answer when judgement and ownership are the missing pieces."
           },
           {
               "title": "Put the work in a sensible order",
+              "image": "/images/services/sub/operational-systematization.jpg",
               "icon": Workflow,
               "desc": "Avoid launching changes that depend on unfinished groundwork. We identify access requirements and staff time, then sequence the work around daily operations. Each recommendation has an owner and a way to judge whether it helped, so the plan can survive a busy week."
           },
           {
               "title": "Keep decisions moving after the meeting",
+              "image": "/images/services/sub/fractional-advisory.jpg",
               "icon": LineChart,
               "desc": "Get regular reviews of what changed and what is still stuck. We challenge assumptions against the agreed baseline and adjust the next action. If implementation is included, its scope is written down; an advisory meeting alone does not mean software or staff training has been delivered."
           }
@@ -794,26 +802,31 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "sections": [
           {
               "title": "Give the team responsibility they can carry",
+              "image": "/images/services/sub/operational-systematization.jpg",
               "icon": Users,
               "desc": "Make routine decisions possible without asking the owner. We identify where work waits for your approval and define who can act, within what limits. A planned absence then tests the arrangement. The point is to find gaps early, while you can still coach the person taking over."
           },
           {
               "title": "Make the financial story easier to verify",
+              "image": "/images/services/sub/financial-cleanup.jpg",
               "icon": LineChart,
               "desc": "Help advisers and prospective buyers follow the numbers back to their records. We organise the operating information and flag unexplained items for your accountant. Separating personal and business costs needs proper accounting treatment; we do not reclassify expenses to manufacture a more attractive earnings figure."
           },
           {
               "title": "Document work people actually perform",
+              "image": "/images/services/sub/exit-strategy-planning.jpg",
               "icon": FileText,
               "desc": "Keep essential knowledge available when someone changes roles. We capture important processes with the staff doing them, including exceptions and decision limits. Someone else then follows the instructions and reports what is missing. A folder of untested procedures does not prove the business can function independently."
           },
           {
               "title": "Keep customer history with the business",
+              "image": "/images/services/sub/valuation-maximization.jpg",
               "icon": Database,
               "desc": "Make outstanding quotes and relationship history visible beyond the owner's phone. We improve CRM records and handoffs so staff can see commitments and next actions. A buyer can inspect the operating history, subject to appropriate access, instead of relying entirely on your recollection of each customer."
           },
           {
               "title": "Show how revenue continues",
+              "image": "/images/services/sub/growth-strategy.jpg",
               "icon": TrendingUp,
               "desc": "Organise evidence of repeat purchasing and genuine recurring agreements. We examine where revenue depends on a single relationship or on work only you can sell. Contract terms and transfer restrictions need adviser review. Repeat customers are valuable, but they should not be presented as contracted recurring revenue."
           }
@@ -937,26 +950,31 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "sections": [
           {
               "title": "Remove technical obstacles to discovery",
+              "image": "/images/services/sub/technical-seo-site-speed.jpg",
               "icon": Code,
               "desc": "Give important pages a fair chance to be found and used. We inspect indexing and internal links alongside redirects and mobile performance, then prioritise faults that affect your service pages. A fast page helps visitors, but a speed score by itself does not earn a ranking."
           },
           {
               "title": "Make each page answer a real search",
+              "image": "/images/services/sub/on-page-optimization.jpg",
               "icon": Search,
               "desc": "Match your pages to the services people actually request. We organise titles and headings around customer intent, clarify the offer, and remove competing or thin pages where appropriate. Someone searching for an emergency repair needs a different answer from someone comparing long-term maintenance options."
           },
           {
               "title": "Build content from customer questions",
+              "image": "/images/services/sub/content-strategy-blogging.jpg",
               "icon": PenTool,
               "desc": "Publish explanations that help people decide whether to contact you. We use search data and questions your team hears to choose topics. You review technical accuracy and service details. The aim is useful coverage of your work, rather than a calendar full of interchangeable articles."
           },
           {
               "title": "Connect local discovery with trust",
+              "image": "/images/services/sub/local-citation-building.jpg",
               "icon": MapPin,
               "desc": "Help nearby searchers recognise the same business across your website and listings. We review service-area information and relevant local signals, including the handoff to your Google Business Profile. Reviews matter to customer choice; consumer review surveys are not experiments proving a specific ranking increase."
           },
           {
               "title": "See whether visibility brings enquiries",
+              "image": "/images/services/sub/local-seo-map-pack.jpg",
               "icon": BarChart3,
               "desc": "Understand which pages attract relevant visits and where people act. We establish a baseline in the agreed analytics tools, track enquiry paths and explain what changed. Traffic from the wrong location or a search unrelated to your services is not a useful win."
           }
@@ -1083,26 +1101,31 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "sections": [
           {
               "title": "Make the first impression accurate",
+              "image": "/images/services/sub/profile-optimization.jpg",
               "icon": Settings,
               "desc": "Help customers reach the right business with the right expectations. We review account access and appropriate categories. Services, opening hours and contact details are checked for accuracy. Service areas reflect where you actually work. Eligibility and verification are checked before setup; Google controls its approval process."
           },
           {
               "title": "Show customers what they will find",
+              "image": "/images/services/sub/google-posts-updates.jpg",
               "icon": Store,
               "desc": "Make your profile useful with current photographs and clear descriptions. We organise images of your actual premises, work or team, using material you have permission to publish. Posts communicate relevant updates and offers. Posting frequently is not a promise of better rankings."
           },
           {
               "title": "Make review requests part of the work",
+              "image": "/images/services/sub/review-management.jpg",
               "icon": Star,
               "desc": "Give customers an easy route to leave honest feedback after a completed visit or job. We agree when to ask and who owns the request. The flow should reach customers consistently, without buying reviews or directing only satisfied people to the public review page."
           },
           {
               "title": "Reply like someone is listening",
+              "image": "/images/services/sub/review-management.jpg",
               "icon": MessageSquare,
               "desc": "Show the next reader how you handle feedback. We establish a response routine and escalation path for complaints, with replies specific to the experience. Private customer details stay out of public responses. A draft can save time, but someone still needs to check what happened."
           },
           {
               "title": "Carry interest through to an enquiry",
+              "image": "/images/services/sub/local-citation-building.jpg",
               "icon": Globe,
               "desc": "Connect profile links to a useful service, booking or contact page. We check that the destination works on a phone and matches the offer. If your website leaves visitors unsure what to do, we can scope Website Design work alongside the profile improvements."
           }
@@ -1236,26 +1259,31 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "sections": [
           {
               "title": "Answer with enough context to help",
+              "image": "/images/services/sub/appointment-setting.jpg",
               "icon": Phone,
               "desc": "Give callers a useful response when your own staff are occupied. We define the questions reception can answer and the details to collect. Coverage hours and escalation contacts are agreed first, so an urgent request does not sit in the same queue as a routine enquiry."
           },
           {
               "title": "Send the right enquiries to your team",
+              "image": "/images/services/sub/outbound-prospecting.jpg",
               "icon": Target,
               "desc": "Spend less time reconstructing why someone called. We use approved qualification questions about the request, location and timing, then record the answers in the agreed system. A qualified lead meets your routing criteria; it is not a guarantee that the customer will buy."
           },
           {
               "title": "Book appointments your staff can deliver",
+              "image": "/images/services/sub/appointment-setting.jpg",
               "icon": LayoutDashboard,
               "desc": "Reduce the back-and-forth around availability. We define appointment types and booking rules, including travel or preparation time where relevant. Your team receives the customer's context before the visit. Requests outside those rules go to a named person instead of being forced into the calendar."
           },
           {
               "title": "Give outstanding quotes a next step",
+              "image": "/images/services/sub/lead-nurturing-sequences.jpg",
               "icon": MessageSquare,
               "desc": "Find out whether a customer needs clarification, wants to proceed or has chosen someone else. Follow-up uses your approved wording and respects a request to stop. Responses update the pipeline, so staff can act on real interest instead of repeatedly calling the same unresolved list."
           },
           {
               "title": "Know what happened to each enquiry",
+              "image": "/images/services/sub/campaign-reporting-optimization.jpg",
               "icon": BarChart3,
               "desc": "See handling activity and outcomes in a report you can inspect. We track agreed measures such as response time and attended appointments, with missed handoffs made visible. Reviewing the records helps distinguish a coverage problem from weak demand or a service your business cannot provide."
           }
@@ -1375,21 +1403,25 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "sections": [
           {
               "title": "Discuss payment options before the sale stalls",
+              "image": "/images/services/sub/point-of-sale-financing.jpg",
               "icon": CreditCard,
               "desc": "Let customers consider an eligible plan while reviewing the quote. We help place the application step where staff can explain it without pressuring the customer. The full purchase price stays clear alongside any monthly illustration and lender-provided terms. A smaller payment does not mean a cheaper purchase."
           },
           {
               "title": "Match the program to what you sell",
+              "image": "/images/services/sub/multi-industry-support.jpg",
               "icon": Store,
               "desc": "Avoid offering a product that does not support your industry or typical job size. We compare available programs against those requirements and review merchant charges. Approval criteria and customer pricing belong to the provider; we do not promise that every applicant will qualify."
           },
           {
               "title": "Know when you can expect payment",
+              "image": "/images/services/sub/zero-risk-to-your-business.jpg",
               "icon": Banknote,
               "desc": "Plan fulfilment around the actual funding conditions. We review when the provider releases funds and whether completion evidence or other steps are required. Staff should distinguish an application, an approval and a funded transaction. The applicable agreement determines settlement timing and merchant responsibilities."
           },
           {
               "title": "Fit the process into your payment setup",
+              "image": "/images/services/sub/increase-average-ticket-size.jpg",
               "icon": Workflow,
               "desc": "Keep applications and invoices from becoming disconnected. We scope the supported checkout, payment link or in-person flow, then define who checks status. Where a direct connection is unavailable, the written handoff tells staff what to verify before recording the sale as paid."
           }
@@ -1513,26 +1545,31 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "sections": [
           {
               "title": "Bridge a defined operating gap",
+              "image": "/images/services/sub/working-capital-loans.jpg",
               "icon": Banknote,
               "desc": "Keep an identified cash shortfall from interrupting work you can deliver profitably. We review when customer payments arrive against upcoming expenses and discuss working-capital options. Borrowing to cover a timing gap is different from borrowing to support continuing losses; the second problem needs a wider operating review."
           },
           {
               "title": "Buy equipment without guessing at affordability",
+              "image": "/images/services/sub/equipment-financing.jpg",
               "icon": Settings,
               "desc": "Assess the cost of adding or replacing equipment alongside its expected use. We help organise the purchase details and compare available funding structures. The repayment period should make sense for the asset and business, with deposits and any security requirements understood before you commit."
           },
           {
               "title": "Fund growth on a realistic schedule",
+              "image": "/images/services/sub/revenue-based-financing.jpg",
               "icon": TrendingUp,
               "desc": "Make an expansion plan account for the wait before new revenue arrives. We review the amount needed and discuss suitable term or other available products. Forecasts include the slower case, because a new location or service can take longer to contribute than the sales plan assumes."
           },
           {
               "title": "Compare offers beyond the headline payment",
+              "image": "/images/services/sub/sba-term-loans.jpg",
               "icon": FileText,
               "desc": "Know what an offer asks of the business. We organise the information needed to compare proceeds received, total repayment and payment frequency, alongside fees and security terms. A factor rate is not an annual percentage rate. We identify unclear terms for the provider to explain in writing."
           },
           {
               "title": "Present a complete funding request",
+              "image": "/images/services/sub/working-capital-loans.jpg",
               "icon": Compass,
               "desc": "Reduce avoidable back-and-forth by preparing the documents the provider requests. We help explain the use of funds and keep missing items visible. Accurate records improve the application process; they do not override underwriting or turn a previous decline into a promised approval."
           }
