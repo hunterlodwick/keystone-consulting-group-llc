@@ -123,7 +123,7 @@ export default function DashboardPage({ onNavigate, onOpenModal }: { onNavigate:
               {/* Chart Activity */}
               <div className="bg-charcoal/40 border border-white/5 rounded-xl p-6 shadow-sm">
                 <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-lg font-medium text-white">Processing Volume — Last 6 Months</h2>
+                  <h2 className="text-lg font-medium text-white">Processing Volume, Last 6 Months</h2>
                   <select className="bg-charcoal border border-white/10 text-offwhite/80 text-sm rounded px-3 py-1 outline-none">
                     <option>Last 6 Months</option>
                     <option>Year to Date</option>

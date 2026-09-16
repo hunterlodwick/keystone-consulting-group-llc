@@ -251,7 +251,7 @@ export default function WorkPage({ onOpenModal, onNavigate }: WorkPageProps) {
                     {project.isConfidential ? (
                       <p className="mt-auto flex items-center justify-center gap-2 w-full px-5 py-3 border border-white/10 text-offwhite/40 text-xs font-medium rounded-sm text-center">
                         <Lock className="w-3.5 h-3.5 flex-shrink-0" />
-                        Internal Tool — Available as a Custom Build
+                        Internal Tool, Available as a Custom Build
                       </p>
                     ) : (
                       <a
