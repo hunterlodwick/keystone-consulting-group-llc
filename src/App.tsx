@@ -603,7 +603,7 @@ const ServiceDetails = ({ service, onOpenModal }: { service: any, onOpenModal?: 
 // Navigation Dropdown Data
 const NAV_DROPDOWNS = {
   financial: {
-    label: 'Financial Services',
+    label: 'Payment Processing',
     items: [
       { name: 'Low Rate Payment Processing', icon: CreditCard, desc: 'Interchange-plus & zero-fee Edge Program', href: '/#pricing' },
       { name: 'Consumer Financing', icon: Banknote, desc: 'Let customers pay over time. You get paid now.', href: '/services/consumer-financing' },
@@ -612,7 +612,7 @@ const NAV_DROPDOWNS = {
     ]
   },
   marketing: {
-    label: 'Marketing Services',
+    label: 'Website Design',
     items: [
       { name: 'Website Creation', icon: Code, desc: 'Custom 3D animated & AI-powered websites', href: '/services/web-design' },
       { name: 'Google My Business Profile', icon: Search, desc: 'Optimize your local search presence & reviews', href: '/services/google-business' },
@@ -621,7 +621,7 @@ const NAV_DROPDOWNS = {
     ]
   },
   operating: {
-    label: 'Operating Systems',
+    label: 'AI Implementations',
     items: [
       { name: 'Custom CRM', icon: LayoutDashboard, desc: 'CRMs built around your unique workflow', href: '/services/crm' },
       { name: 'AI Automations', icon: Bot, desc: 'AI agents, chatbots & workflow automation', href: '/services/automations' },
@@ -1069,6 +1069,7 @@ const HOMEPAGE_PRODUCTS = [
     icon: Code,
     desc: "Websites that make the phone ring, not just look pretty. 3D animated, AI-powered, and built to convert visitors into customers.",
     linkTo: "/services/web-design",
+    detailAnchor: "#websites",
   },
   {
     id: "automations",
@@ -1076,10 +1077,155 @@ const HOMEPAGE_PRODUCTS = [
     icon: Zap,
     desc: "AI agents that qualify leads, answer customers, and run your back office while you sleep.",
     linkTo: "/services/automations",
+    detailAnchor: "#ai",
     image: "/images/ai-chat.jpg",
     imageAlt: "Smartphone with soft teal screen glow on a dark desk",
   },
 ];
+
+// Detailed breakdown of the two build services Hunter wants fleshed out on the homepage
+const BUILD_DETAILS = [
+  {
+    id: "websites",
+    eyebrow: "Website Builds",
+    icon: Code,
+    headline: "A Website That Works While You Work.",
+    intro: "We don't hand you a template. Every site is designed around what your customers actually need to decide, and built so the phone rings.",
+    columns: [
+      {
+        title: "What You Get",
+        items: [
+          "Custom design built around your brand, not a theme",
+          "Mobile-first and tested on real phones",
+          "Loads in under two seconds",
+          "SEO foundations built in from day one",
+          "Google Business Profile set up and connected",
+          "Copy written to convert, not to fill space",
+        ],
+      },
+      {
+        title: "What Makes Ours Different",
+        items: [
+          "Interactive 3D and motion where it earns attention",
+          "AI chat that answers questions and books appointments",
+          "Every page built around one clear action",
+          "You own the site. No platform lock-in, no ransom",
+          "Real analytics so you know what's working",
+          "We build it, then we teach you how to run it",
+        ],
+      },
+    ],
+    outcome: "The result: a site that turns search traffic and referrals into booked jobs, instead of a brochure nobody calls.",
+    linkTo: "/services/web-design",
+    image: "/images/services/web-design.jpg",
+    imageAlt: "Designer working at a studio desk",
+  },
+  {
+    id: "ai",
+    eyebrow: "AI Systems",
+    icon: Zap,
+    headline: "AI That Handles the Work You Keep Doing Twice.",
+    intro: "We build AI systems around your actual workflow: the calls you miss, the leads you chase, the paperwork you re-type. Not a chatbot bolted onto a website.",
+    columns: [
+      {
+        title: "What We Build",
+        items: [
+          "AI agents that answer calls and texts, day or night",
+          "Lead qualification that routes real buyers to you",
+          "Follow-up sequences that run without you remembering",
+          "Appointment booking straight onto your calendar",
+          "Custom CRMs built around how your team actually works",
+          "Back-office automation: invoices, reminders, reporting",
+        ],
+      },
+      {
+        title: "What It Changes",
+        items: [
+          "Missed calls stop being lost revenue",
+          "Leads get answered in seconds, not days",
+          "Your team stops re-typing the same information",
+          "You see every job and every dollar in one place",
+          "The system runs when you're closed, sick, or on a job",
+          "It gets better as it learns your business",
+        ],
+      },
+    ],
+    outcome: "The result: an operation that keeps moving whether or not you're standing at the counter.",
+    linkTo: "/services/automations",
+    image: "/images/services/automations.jpg",
+    imageAlt: "Business owner reviewing an automated workflow",
+  },
+];
+
+const BuildDetails = () => {
+  return (
+    <section className="py-32 relative border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-20">
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-5">What We Actually Build.</h2>
+          <p className="text-offwhite/70 text-lg font-light max-w-3xl mx-auto leading-relaxed">
+            Payments gets your money back. These are the two things we build with it. Here's exactly what that looks like.
+          </p>
+        </div>
+
+        <div className="space-y-24">
+          {BUILD_DETAILS.map((b) => (
+            <div key={b.id} id={b.id} className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-10 lg:gap-14 items-start">
+              {/* Left: image + outcome */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/40">
+                {b.image && (
+                  <img
+                    src={b.image}
+                    alt={b.imageAlt || b.eyebrow}
+                    className="w-full h-64 lg:h-80 object-cover"
+                    loading="lazy"
+                    width={1200}
+                    height={675}
+                  />
+                )}
+                <div className="p-7">
+                  <div className="inline-flex items-center gap-2 mb-4">
+                    <b.icon className="w-5 h-5 text-teal" strokeWidth={1.5} />
+                    <span className="text-teal text-xs font-medium uppercase tracking-widest">{b.eyebrow}</span>
+                  </div>
+                  <h3 className="font-serif text-2xl md:text-3xl text-white mb-4 leading-snug">{b.headline}</h3>
+                  <p className="text-offwhite/70 font-light leading-relaxed mb-5">{b.intro}</p>
+                  <p className="text-offwhite/50 text-sm font-light leading-relaxed border-l-2 border-teal/40 pl-4">{b.outcome}</p>
+                </div>
+              </div>
+
+              {/* Right: the detail columns */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {b.columns.map((col) => (
+                  <div key={col.title} className="bg-slate-dark/30 border border-white/5 rounded-2xl p-7">
+                    <h4 className="text-white font-medium text-lg mb-5">{col.title}</h4>
+                    <ul className="space-y-3.5">
+                      {col.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <CheckCircle className="w-4 h-4 text-teal flex-shrink-0 mt-1" />
+                          <span className="text-offwhite/70 text-sm font-light leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+                <div className="sm:col-span-2 pt-1">
+                  <a
+                    href={b.linkTo}
+                    className="inline-flex items-center gap-2 text-teal text-sm font-medium hover:text-teal-soft transition-colors group min-h-[44px]"
+                  >
+                    See the full {b.eyebrow.toLowerCase()} breakdown
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   return (
@@ -1847,26 +1993,46 @@ const Testimonials = () => {
 
 // Integration Ecosystem
 const IntegrationEcosystem = () => {
+  // name + brand color for each partner
   const integrations = [
-    "HotSauce", "GiveHub", "Ingenico", "Paradise POS", "PayTrace", "mynt", "NMI", "payanywhere", "KwickPOS", "Korona POS",
-    "Visa", "Mastercard", "Clover", "Heartland", "Pax", "Dejavoo"
+    { name: "Visa",       color: "#1A1F71" },
+    { name: "Mastercard", color: "#EB001B" },
+    { name: "Clover",     color: "#2BA84A" },
+    { name: "Ingenico",   color: "#0090D4" },
+    { name: "Heartland",  color: "#C8102E" },
+    { name: "Pax",        color: "#0B4DA2" },
+    { name: "Dejavoo",    color: "#E87722" },
+    { name: "NMI",        color: "#5B2D8E" },
+    { name: "PayTrace",   color: "#0072CE" },
+    { name: "PayAnywhere",color: "#00A0DF" },
+    { name: "KwickPOS",   color: "#D62828" },
+    { name: "Korona POS", color: "#7B2D8E" },
+    { name: "HotSauce",   color: "#E63946" },
+    { name: "GiveHub",    color: "#2A9D8F" },
+    { name: "mynt",       color: "#457B9D" },
+    { name: "Paradise POS", color: "#F4A261" },
   ];
-  
+
   return (
     <section className="py-24 border-y border-teal/10 bg-charcoal-dark/30 overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-charcoal-dark/10 to-transparent pointer-events-none"></div>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center relative z-10 animate-on-scroll">
-        <h3 className="font-serif text-2xl text-white mb-2">Works With What You Already Have</h3>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center relative z-10">
+        <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">Partners That We Work With</h3>
         <p className="text-offwhite/60 text-sm font-light">Your POS, your gateway, your hardware. We integrate with the tools you're already using.</p>
       </div>
       <div className="marquee-container">
         <div className="marquee-content">
-          {[...integrations, ...integrations].map((logo, idx) => (
-            <div 
-              key={idx} 
-              className="text-white/40 hover:text-white/80 transition-colors duration-300 font-serif text-2xl tracking-wider uppercase whitespace-nowrap px-8"
+          {[...integrations, ...integrations].map((p, idx) => (
+            <div
+              key={idx}
+              className="partner-logo whitespace-nowrap px-8 flex items-center"
             >
-              {logo}
+              <span
+                className="font-serif text-2xl tracking-wider uppercase font-semibold"
+                style={{ color: p.color }}
+              >
+                {p.name}
+              </span>
             </div>
           ))}
         </div>
@@ -2098,10 +2264,9 @@ function MainLandingPage({ onOpenModal, onOpenSplash, theme }: { onOpenModal: (t
       <Hero onOpenModal={onOpenModal} />
       <ProcessingVolume theme={theme} />
       <HowItWorks onOpenModal={onOpenModal} />
-      <Pricing onOpenModal={onOpenModal} />
       <ROICalculator />
       <ProductGrid onOpenModal={onOpenModal} />
-      <FreePlacement onOpenModal={onOpenModal} />
+      <BuildDetails />
       <Industries onOpenSplash={onOpenSplash} />
       <WhyChooseUs />
       <IntegrationEcosystem />
