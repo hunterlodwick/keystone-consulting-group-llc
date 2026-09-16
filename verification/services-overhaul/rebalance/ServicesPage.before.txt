@@ -1,0 +1,1133 @@
+import React, { useEffect } from 'react';
+import { 
+  Code, 
+  LayoutDashboard, 
+  Zap, 
+  Compass, 
+  Target,
+  CheckCircle,
+  ArrowRight,
+  Globe,
+  Mic,
+  Bot,
+  Workflow,
+  PenTool,
+  LineChart,
+  Layers,
+  Database,
+  MessageSquare,
+  Rocket,
+  TrendingUp,
+  Shield,
+  Search,
+  CreditCard,
+  MonitorSmartphone,
+  Headphones,
+  DollarSign,
+  Banknote,
+  Store,
+  Users,
+  Star,
+  BarChart3,
+  FileText,
+  Settings,
+  MapPin,
+  Phone
+} from 'lucide-react';
+import { ContactForm } from '../App';
+
+// Contextual CTAs per service - each page's action matches what the visitor came to do.
+// Mirrors the Patterson Homes pattern (home="Find your place", plans="Talk about your plan",
+// move-ins="Join the interest list"): never one generic "Get Started" everywhere.
+type ServiceCta = { hero: string; mid?: { label: string; after: string }; close: string; closeBody: string };
+
+const SERVICE_CTAS: Record<string, ServiceCta> = {
+  "web-design": {
+    hero: "See what your site could be",
+    mid: { label: "Find out how slow your site is", after: "speed" },
+    close: "Talk through your site",
+    closeBody: "Bring the site you have now. We will tell you what is costing you calls and what we would change first.",
+  },
+  automations: {
+    hero: "Find out what we can automate",
+    mid: { label: "Add up your team's hours", after: "hours" },
+    close: "Map your first automation",
+    closeBody: "Walk us through the work your team repeats every day. We will show you what can run itself.",
+  },
+  crm: {
+    hero: "See your pipeline in one place",
+    close: "Talk through your sales process",
+    closeBody: "Show us how your team sells today and we will map it into a CRM they will actually open.",
+  },
+  consulting: {
+    hero: "Find where the money is leaking",
+    close: "Start with an operations review",
+    closeBody: "We will go through the books, the tools, and the day-to-day until the waste is obvious.",
+  },
+  "prep-to-sell": {
+    hero: "See what your business is worth",
+    close: "Talk about your exit",
+    closeBody: "Tell us your timeline and we will show you what raises the multiple before a buyer ever looks.",
+  },
+  seo: {
+    hero: "See where you rank today",
+    close: "Talk through your search visibility",
+    closeBody: "We will show you the terms your customers actually search and where you stand on them.",
+  },
+  "google-business": {
+    hero: "See how you show up locally",
+    close: "Talk through your local presence",
+    closeBody: "We will review your profile, your reviews, and how you compare to the shop down the street.",
+  },
+  bpo: {
+    hero: "See what your pipeline could hold",
+    close: "Talk through your lead flow",
+    closeBody: "Tell us your target and we will show you how the outreach and booking would run.",
+  },
+  "consumer-financing": {
+    hero: "See what financing would do to your close rate",
+    close: "Talk through customer financing",
+    closeBody: "We will show you how pay-over-time changes the size of the jobs you win.",
+  },
+  "business-loans": {
+    hero: "See what you qualify for",
+    close: "Talk through your funding options",
+    closeBody: "Bring the numbers and we will show you what capital is available and what it costs.",
+  },
+  "pos-placement": {
+    hero: "Get your counter set up",
+    close: "Talk through hardware for your counter",
+    closeBody: "Tell us your setup and we will show you what terminals and hardware fit it.",
+  },
+};
+
+const ctaFor = (id: string, fallback: string) => SERVICE_CTAS[id] ?? {
+  hero: "Talk through " + fallback.toLowerCase(),
+  close: "Talk through " + fallback.toLowerCase(),
+  closeBody: "Tell us what you are trying to fix and we will show you what we would do first.",
+};
+
+const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+// Scroll animation hook
+function useScrollAnimation() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+}
+
+type ServiceDetail = {
+  id: string; title: string; icon: typeof Code; image: string; imageAlt: string;
+  tagline: string; heroDesc: string;
+  sections: { title: string; icon: typeof Code; desc: string; replaces?: string; produces?: string; audience?: string }[];
+  features: string[];
+  problem?: string[];
+  heroNote?: string;
+  statistics?: { title: string; value: string; explanation: string; arithmetic?: string; source: string; url: string }[];
+  process?: { title: string; description: string }[];
+  fit?: { yes: string[]; no: string[] };
+  questions?: { question: string; answer: string }[];
+  close?: { title: string; description: string; button: string };
+};
+
+const SERVICES_DETAIL: ServiceDetail[] = [
+  {
+      "id": "web-design",
+      "image": "/images/services/web-design.jpg",
+      "imageAlt": "Modern dark monitor displaying a website glow",
+      "tagline": "Your website should be your best salesperson.",
+      "heroDesc": "Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.",
+      "title": "Website Builds",
+      "problem": [
+          "You send a prospect your website, then explain on the phone what the page should have made clear. Your work has improved. The site still describes the business you used to run.",
+          "On a phone, the contact button is hard to find. A visitor has to pinch the screen to read the service details. Someone interested enough to click still has to work out how to buy.",
+          "You want a site you can be proud to send people to. You also need it to answer practical questions and put an enquiry where your team will see it. A good-looking page that leaves that job unfinished is still unfinished."
+      ],
+      "sections": [
+          {
+              "title": "3D Animated Websites",
+              "icon": Layers,
+              "desc": "We build dimensional visuals and scroll-driven movement around what you sell. A product can be shown from different angles; a service can be explained as the visitor moves down the page. The movement needs a reason to be there.",
+              "replaces": "A static template that makes your business look interchangeable, or decorative effects that get in the way of reading. We start with the story the page needs to tell.",
+              "produces": "A website with motion designed around its content. Visitors can still read and contact you with reduced motion enabled. Heavy visual elements must earn their place against mobile performance.",
+              "audience": "Businesses whose product or process benefits from a visual explanation. If a photograph explains it better, we use the photograph. You do not need animation on every page."
+          },
+          {
+              "title": "AI Voice Chatbots",
+              "icon": Mic,
+              "desc": "We add a voice assistant that answers the questions you approve and guides visitors toward an enquiry or booking. We define what it can say before connecting it to the site.",
+              "replaces": "The gap between someone arriving with a question and your team being available to answer. It also reduces the need to hunt through pages for a straightforward answer.",
+              "produces": "A conversational way to ask about your services, with a clear route to a person when the answer is uncertain. Booking depends on the calendar connection agreed in the scope.",
+              "audience": "Businesses that repeatedly answer the same pre-sale questions. It is a poor fit when every answer requires a private account review or a judgement only your staff can make."
+          },
+          {
+              "title": "High-Conversion Landing Pages",
+              "icon": TrendingUp,
+              "desc": "We build focused pages around a specific offer and the action you want a visitor to take. The message follows the reason they clicked, rather than sending every visitor to a general homepage.",
+              "replaces": "A page crowded with unrelated offers, or a campaign that makes a promise the destination never explains. We remove the steps that make an interested person hesitate.",
+              "produces": "A clear offer with the evidence you can actually provide, followed by a relevant contact or booking path. We check the form handoff so an enquiry reaches the intended person.",
+              "audience": "Businesses promoting a defined service or running a campaign with a clear audience. High-conversion describes the design objective. Your actual conversion rate needs to be measured after launch."
+          },
+          {
+              "title": "Mobile-First & Lightning Fast",
+              "icon": Globe,
+              "desc": "We design the phone experience from the start. Navigation must work with a thumb, text must be readable, and a form must be usable without zooming or sideways scrolling.",
+              "replaces": "A desktop design squeezed into a narrow screen, oversized media that delays reading, and layouts that jump while a visitor tries to tap.",
+              "produces": "Responsive pages with appropriately sized images and performance checks. We use Core Web Vitals as targets and explain any tradeoff between visual complexity and loading speed.",
+              "audience": "Any business whose customers may visit from a phone. We test the important customer path on small screens, including what happens after the contact button is pressed."
+          }
+      ],
+      "statistics": [
+          {
+              "title": "A reason to take mobile loading seriously",
+              "value": "53%",
+              "explanation": "Think with Google reports that this share of mobile visitors leaves a page taking longer than 3 seconds to load. This is historical research, not a measurement of your customers or a KCG result.",
+              "source": "Think with Google, Masters of Mobile report",
+              "url": "https://www.thinkwithgoogle.com/_qs/documents/6522/TwG_AUNZ_Masters_of_Mobile_Report.pdf"
+          },
+          {
+              "title": "Speed has a conversion cost",
+              "value": "20%",
+              "explanation": "The Google report describes a drop in conversions for every second of mobile loading delay. This is a historical research finding, not a universal forecast. Making a page faster does not guarantee an equal increase in sales.",
+              "source": "Think with Google, Masters of Mobile report",
+              "url": "https://www.thinkwithgoogle.com/_qs/documents/6522/TwG_AUNZ_Masters_of_Mobile_Report.pdf",
+              "arithmetic": "Derived illustration: starting conversions × (1 − 20 / 100) = starting conversions × 0.80 after a second of delay. That leaves 80% of the starting total in this illustration."
+          },
+          {
+              "title": "The performance targets we work toward",
+              "value": "2.5 seconds",
+              "explanation": "Google’s good-experience thresholds are LCP within 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. LCP measures loading. INP measures responsiveness, while CLS measures visual stability. These are targets, not a claim that an untested build passes. Good scores alone do not guarantee rankings.",
+              "source": "Google Search Central, Core Web Vitals",
+              "url": "https://developers.google.com/search/docs/appearance/core-web-vitals"
+          }
+      ],
+      "process": [
+          {
+              "title": "Discovery: agree on the customer path",
+              "description": "Show us the current site and explain what a good enquiry looks like. We review the pages you need and the material you already have. Seth and Hunter work directly with you to decide what belongs in the build."
+          },
+          {
+              "title": "Build: review the actual pages",
+              "description": "We turn the agreed scope into pages you can open and read. You check that the offer is accurate. We test the phone layout and any assistant or booking connection included in your project before asking you to approve it."
+          },
+          {
+              "title": "Launch: check the path to your inbox",
+              "description": "We verify the domain setup and submit test enquiries through the finished site. We check the agreed customer paths on mobile and desktop. Any unresolved dependency is made visible before launch."
+          },
+          {
+              "title": "Handover: know what you own",
+              "description": "You own the site, with no platform lock-in. We walk through the agreed editing setup and hand over access. Hosting and any third-party assistant fees are identified separately so you know what continues after the build."
+          }
+      ],
+      "fit": {
+          "yes": [
+              "You need your site to explain the work before a prospect calls.",
+              "You can supply accurate service details and approve the pages with us.",
+              "You want ownership of the site and a build shaped around your actual sales process."
+          ],
+          "no": [
+              "You need a guaranteed ranking or sales figure before anyone has measured your traffic.",
+              "You want animation everywhere even when it makes the site harder to use.",
+              "You need a custom application outside these capabilities without a separate scope."
+          ]
+      },
+      "questions": [
+          {
+              "question": "What does a website cost?",
+              "answer": "We quote after reviewing the pages and connections you need. A focused landing page and a site with a voice assistant involve different work. We identify processing savings first and discuss reinvesting verified savings into the build. Savings are not assumed to cover the whole project."
+          },
+          {
+              "question": "How long will the build take?",
+              "answer": "The schedule depends on the agreed scope and when content or account access is available. We set review points before work begins. We will not attach a stock turnaround promise to a project we have not looked at."
+          },
+          {
+              "question": "What if we already have a website?",
+              "answer": "Send it to us. We review what is useful before recommending a replacement. Existing copy or photographs may carry over if you own them and they still describe the business accurately. We agree what changes before building."
+          },
+          {
+              "question": "Do I own it, and can I move it later?",
+              "answer": "Yes. You own your site and are not locked to a KCG platform. We explain the handover and hosting arrangements in the scope. Third-party subscriptions have their own terms, which we identify before you commit."
+          },
+          {
+              "question": "Can the site work with our current CRM?",
+              "answer": "We check the form destination and the access your CRM allows before promising a connection. The goal is an enquiry arriving where the team already works. If the current system limits that handoff, we explain the options and scope the work."
+          },
+          {
+              "question": "How soon will it bring in customers?",
+              "answer": "The site can accept enquiries once it is live and the contact path is tested. Generating demand is a separate question. We cannot promise a sales date or conversion lift. Your traffic and enquiry baseline give us a starting point for measurement, so any lift we report later is measured against your own numbers rather than a promise made now."
+          },
+          {
+              "question": "What do you need from us?",
+              "answer": "An explanation of your services and access to whoever approves the content. We also need the brand material you have permission to use. For a rebuild, we identify the domain and hosting access needed before the launch date is agreed."
+          }
+      ],
+      "close": {
+          "title": "Show us the site you have outgrown.",
+          "description": "Send your current website and the part of the enquiry process that frustrates you. Seth or Hunter will discuss what needs rebuilding and where processing savings might help fund it.",
+          "button": "Discuss my website"
+      },
+      "icon": Code,
+      "features": [
+          "Built around your actual workflow",
+          "Direct access to Seth and Hunter",
+          "Processing savings considered before the build",
+          "Clear ownership and handover"
+      ]
+  },
+  {
+    id: "crm",
+    title: "CRM Systems",
+    icon: LayoutDashboard,
+    image: "/images/services/crm.jpg",
+    imageAlt: "Laptop with dark CRM screen glow and teal accents",
+    tagline: "A CRM your team actually opens.",
+    heroDesc: "Most CRMs get bought, half set up, then quietly abandoned. We build yours around the way your team already sells, so deals stop living in someone's head and a notebook in a truck.",
+    sections: [
+      {
+        title: "Custom-Built Platforms",
+        icon: Database,
+        desc: "If your software makes your team work backwards, you bought the wrong software. We build the pipeline, the dashboard, and the reports around how you already sell. Nothing to work around."
+      },
+      {
+        title: "Platform Configuration",
+        icon: Workflow,
+        desc: "You're already paying for HubSpot, Go High Level, or Salesforce, and using maybe a quarter of it. We clean up the mess and turn the thing you pay for into the thing you actually use."
+      },
+      {
+        title: "Pipeline & Deal Tracking",
+        icon: LineChart,
+        desc: "Open one screen and see every deal, who owns it, and what it's worth. No Monday meeting just to find out where things stand. No spreadsheet somebody forgot to update on Thursday."
+      },
+      {
+        title: "Automated Follow-Ups",
+        icon: MessageSquare,
+        desc: "Most leads go cold in 48 hours, and the business that follows up first usually wins. Texts, emails, and reminders fire the second a lead moves. Nobody has to remember anything."
+      }
+    ],
+    features: ["A CRM shaped around how you sell", "Real value from the HubSpot you pay for", "Salesforce that finally makes sense", "Every deal on one screen", "No lead goes cold again", "Follow-up texts and emails on autopilot", "Know who is actually closing", "Know your month before it ends"]
+  },
+  {
+      "id": "automations",
+      "image": "/images/services/automations.jpg",
+      "imageAlt": "Connected hardware nodes with teal light paths",
+      "tagline": "Hand the repeat work to software that does not forget.",
+      "heroDesc": "Every hour someone spends copying data between tools is an hour nobody spent selling. We hand the busywork to AI agents so your people can do the things only people can do.",
+      "title": "AI Implementations",
+      "heroNote": "Software can reduce repetitive work, but AI usage and connected tools can carry fees. We include those costs when deciding what is worth automating.",
+      "problem": [
+          "A new enquiry arrives while you are serving a customer. By the time someone replies, the prospect has already called elsewhere. The lead was there. The handoff was missing.",
+          "Your team copies customer details from a message into the CRM, then repeats the entry in another tool. When something changes, someone has to remember every place it was copied.",
+          "You are interested in AI, but you do not need another dashboard to babysit. You need a specific piece of work to stop landing back on your desk, with a way to see when the software needs help."
+      ],
+      "sections": [
+          {
+              "title": "AI Lead Qualification",
+              "icon": Bot,
+              "desc": "We build an agent around the questions your team uses to decide how to handle an enquiry. It collects the relevant details and routes the conversation according to rules you approve.",
+              "replaces": "Manual sorting of enquiries and repeated introductory questions. It gives your team context before a call instead of making the prospect explain the same thing again.",
+              "produces": "A lead record with the information gathered and a clear next action. Incomplete or ambiguous answers can go to a person for review. Qualification is a routing decision, not proof that someone will buy.",
+              "audience": "Businesses with a repeatable enquiry process and a clear definition of a useful lead. If your criteria live only in the owner’s head, we need to make them explicit first."
+          },
+          {
+              "title": "Customer Service Agents",
+              "icon": MessageSquare,
+              "desc": "We configure an agent to answer recurring questions from approved business information. You decide what it may handle and which requests must go straight to your staff.",
+              "replaces": "Repeated replies written from scratch and customers waiting for information that is already documented. Your team keeps the conversations that need judgement or account-specific decisions.",
+              "produces": "Answers grounded in the material you provide, with a handoff when the agent cannot resolve the request. We test uncertain questions as well as easy ones, so an unsupported answer is treated as a failure.",
+              "audience": "Teams receiving recurring service questions whose answers can be kept current. If nobody can own the underlying information, the assistant will not stay useful on its own."
+          },
+          {
+              "title": "Workflow Automation",
+              "icon": Workflow,
+              "desc": "We turn an agreed sequence of routine actions into a workflow. A completed form might create a record and notify its owner. Each action has a defined trigger so you can explain why it happened.",
+              "replaces": "Copying data between screens and relying on someone to remember the next handoff. We start with a process that already makes sense, then remove the repeated manual steps.",
+              "produces": "A workflow with clear inputs and a visible outcome. We agree what happens when information is missing or a connected tool is unavailable. Your team needs a way to catch exceptions rather than assume every run succeeded.",
+              "audience": "Businesses doing the same administrative handoff repeatedly. A process that changes with every case may need human approval at key points instead of automatic execution throughout."
+          },
+          {
+              "title": "System Integrations",
+              "icon": Layers,
+              "desc": "We connect the tools you already use where their supported interfaces allow it. We decide which system owns each piece of information and when changes should reach the other system.",
+              "replaces": "Duplicate entry and conflicting records. A customer update should not become a guessing game about which screen contains the current information.",
+              "produces": "An agreed data handoff between your tools, with field mapping and failure handling checked before use. The scope defines which direction data moves and what must remain under human control.",
+              "audience": "Businesses with useful software that does not currently share the information staff need. We inspect access limits first. Paying for a tool does not necessarily mean it permits every integration you want."
+          }
+      ],
+      "statistics": [
+          {
+              "title": "What enterprise users reported",
+              "value": "40–60 minutes",
+              "explanation": "OpenAI’s enterprise AI report says users reported this much time saved per active day. It is self-reported enterprise experience, not measured savings for KCG clients. It gives us a benchmark to investigate, not an outcome to promise.",
+              "source": "OpenAI, The state of enterprise AI (2025)",
+              "url": "https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf",
+              "arithmetic": "Derived illustration, assuming use on 5 working days: 40–60 minutes × 5 = 200–300 minutes per week. Divide by 60 minutes per hour = 3 hours 20 minutes to 5 hours per week. This assumes the reported daily saving repeats each day; use your measured saving and actual days instead."
+          },
+          {
+              "title": "Customer support research",
+              "value": "14%",
+              "explanation": "McKinsey describes a company with 5,000 support agents where generative AI increased issues resolved per hour by 14%. This concerns support work in that setting. It does not establish the same improvement for your team or mean staff can be removed.",
+              "source": "McKinsey, The promise and the reality of gen AI agents in the enterprise (May 2024)",
+              "url": "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-promise-and-the-reality-of-gen-ai-agents-in-the-enterprise",
+              "arithmetic": "Derived: baseline issues resolved per hour × (1 + 14 / 100) = baseline × 1.14. This expresses the study’s productivity change; it is not a 14% reduction in working hours."
+          }
+      ],
+      "process": [
+          {
+              "title": "Discovery: watch the work happen",
+              "description": "Walk Seth and Hunter through a real enquiry or repeated task. We identify where people wait and where information gets copied. We agree a baseline and choose a bounded workflow, including the cases that should stay with a person."
+          },
+          {
+              "title": "Build: test the rules against real cases",
+              "description": "We configure the agent or workflow around your approved process. You review its answers and routing decisions. We test missing information and failed connections as well as the expected path before giving it a live responsibility."
+          },
+          {
+              "title": "Launch: introduce it with oversight",
+              "description": "We agree what can run automatically and what needs approval. Your team checks early results against the original task. A fast reply that sends a lead to the wrong place is a defect, even if the automation ran successfully."
+          },
+          {
+              "title": "Handover: give someone ownership",
+              "description": "We train the people who will use the workflow and agree who maintains its business information. You see how to handle exceptions and when to pause it. Any ongoing support arrangement and software fees are specified in the scope."
+          }
+      ],
+      "fit": {
+          "yes": [
+              "You can point to recurring work and show how the team handles it today.",
+              "Someone can approve the answers and own changes to the process.",
+              "Your existing tools permit the access needed for the agreed workflow."
+          ],
+          "no": [
+              "You want AI to make every judgement without anyone reviewing exceptions.",
+              "Your process changes constantly and nobody can define a reliable handoff.",
+              "You expect a guaranteed headcount reduction or savings figure before measuring the work."
+          ]
+      },
+      "questions": [
+          {
+              "question": "What does an AI implementation cost?",
+              "answer": "The quote depends on the workflow and the systems it touches. We separate build work from recurring software or usage fees. KCG looks for processing savings first, then discusses reinvesting verified savings. We do not assume those savings will pay for everything."
+          },
+          {
+              "question": "How long until it works?",
+              "answer": "We agree a schedule after checking access and the process itself. A workflow is ready when it handles the agreed cases and exceptions reliably enough for its role. Measurable value takes actual use and a comparison with the baseline, not a launch announcement."
+          },
+          {
+              "question": "Do we need to replace our CRM or website?",
+              "answer": "Usually the first step is to inspect what you already have. We build around your actual workflow and check what your tools allow. If a connection is unavailable or would require a different subscription, we explain that before including it in the scope."
+          },
+          {
+              "question": "What happens when the AI gets something wrong?",
+              "answer": "We define where it must ask for help and how staff review its output. An agent should not invent an answer because the business information is missing. The launch checks include unclear requests, and your team needs a clear way to take over."
+          },
+          {
+              "question": "Do we own the implementation?",
+              "answer": "Ownership and access are written into the scope for the work we build. Third-party models and tools retain their own licenses and fees. If a website is part of the project, you own that site with no platform lock-in. We explain dependencies before you commit."
+          },
+          {
+              "question": "How much time will we actually get back?",
+              "answer": "We measure the task before and after, including the time spent correcting output or handling exceptions. That gives you a daily figure measured against your own baseline, not a projection. Recovered time can create room for other work; it is not automatically money removed from payroll."
+          },
+          {
+              "question": "What do you need from our team?",
+              "answer": "Examples of the work and an owner who can say what a correct result looks like. We identify the account access required for the agreed connections. You approve the information an agent may use and the actions it may take before it handles live work."
+          }
+      ],
+      "close": {
+          "title": "Show us the task you keep repeating.",
+          "description": "Describe the handoff that keeps coming back to your desk and the tools involved. Seth or Hunter will review where automation fits and what needs to stay with your people.",
+          "button": "Discuss my workflow"
+      },
+      "icon": Zap,
+      "features": [
+          "Built around your actual workflow",
+          "Direct access to Seth and Hunter",
+          "Processing savings considered before the build",
+          "Clear ownership and handover"
+      ]
+  },
+  {
+    id: "consulting",
+    title: "Business Consulting",
+    icon: Compass,
+    image: "/images/services/consulting.jpg",
+    imageAlt: "Documents and calculator on a dark professional desk",
+    tagline: "Find every dollar you're leaving on the table.",
+    heroDesc: "You know something's leaking. You just can't see where. We go through the books, the tools, and the day-to-day until the waste is obvious. Then we build a plan to put that money back into growth.",
+    sections: [
+      {
+        title: "Operational Audits",
+        icon: Target,
+        desc: "Most owners are too close to notice the $400/month tool nobody opens, or the process that takes four people when two would do. We find it. Line by line."
+      },
+      {
+        title: "Revenue Leak Identification",
+        icon: TrendingUp,
+        desc: "Hidden fees, redundant subscriptions, pricing that hasn't moved in three years. These don't show up as a crisis. They just quietly shrink every paycheck until someone points them out."
+      },
+      {
+        title: "Growth Strategy",
+        icon: Rocket,
+        desc: "Saving money feels good. Putting it somewhere that pays you back feels better. We build the reinvestment plan so every freed-up dollar has a job."
+      },
+      {
+        title: "Fractional Advisory",
+        icon: Shield,
+        desc: "You don't need a full-time COO on payroll. You need someone who shows up monthly, looks at the numbers, and tells you what to do next. That's us."
+      }
+    ],
+    features: ["Every profit leak on the table", "Know which tools are wasting money", "A plan for every saved dollar", "Growth roadmap you can actually follow", "Strategic advice without the full-time salary", "Monthly check-ins that keep you honest", "Vendors renegotiated or cut", "Processes that run without you"]
+  },
+  {
+    id: "prep-to-sell",
+    title: "Prep-to-Sell",
+    icon: Target,
+    image: "/images/services/prep-to-sell.jpg",
+    imageAlt: "Abstract upward growth forms on a dark background",
+    tagline: "Make your business worth more before you sell it.",
+    heroDesc: "Buyers pay more for businesses that run without the owner. We help you clean the books, document the systems, and build the kind of company that sells for a multiple, not a discount.",
+    sections: [
+      {
+        title: "Exit Strategy Planning",
+        icon: Compass,
+        desc: "What's your number, and when do you want it? We work backwards from that date and build a timeline that gets the business there, not a binder that sits on a shelf."
+      },
+      {
+        title: "Financial Cleanup",
+        icon: LineChart,
+        desc: "Buyers open the books first. Messy personal expenses and unexplained costs kill deals or kill the price. We get the numbers clean so an acquirer sees a business, not a hobby."
+      },
+      {
+        title: "Operational Systematization",
+        icon: Workflow,
+        desc: "If the business dies when you take a vacation, it isn't an asset. We document how everything gets done so someone else can run it, and buyers pay for that independence."
+      },
+      {
+        title: "Valuation Maximization",
+        icon: Rocket,
+        desc: "A few points of recurring revenue or retention can add a full multiple to your sale price. We find the highest-leverage moves and help you hit them before you go to market."
+      }
+    ],
+    features: ["A clear exit date and number", "Books that survive a buyer's review", "SOPs so the business runs without you", "Systems that outlive the founder", "Recurring revenue that raises the multiple", "Customers who stick around after you leave", "Owner-independence built in", "A valuation you can defend"]
+  },
+  {
+    id: "seo",
+    title: "SEO Services",
+    icon: Search,
+    image: "/images/services/seo.jpg",
+    imageAlt: "Smartphone with soft search results glow",
+    tagline: "Show up where your customers are already looking.",
+    heroDesc: "People are searching for what you sell right now. If you're not on page one, they're calling your competitor. We get you ranking for the searches that actually turn into appointments, without paying for every click.",
+    sections: [
+      {
+        title: "Local SEO & Map Pack",
+        icon: MapPin,
+        desc: "When someone types \"near me,\" three businesses get the call. Everyone else gets ignored. We get you into that map pack so the phone rings from people who were already ready to buy."
+      },
+      {
+        title: "On-Page Optimization",
+        icon: Code,
+        desc: "Google decides in milliseconds whether your page is the answer. We tune every headline, meta tag, and structure so the engine trusts you enough to put you in front of the people who matter."
+      },
+      {
+        title: "Content Strategy & Blogging",
+        icon: PenTool,
+        desc: "One good article can send you leads for years. We write the pages your customers are already googling, so traffic shows up month after month without another ad spend."
+      },
+      {
+        title: "Technical SEO & Site Speed",
+        icon: Zap,
+        desc: "If Google can't crawl it or it loads too slow, you don't rank. We fix the invisible stuff under the hood so every page gets a fair shot at showing up."
+      }
+    ],
+    features: ["Found on page one for the searches that convert", "Map pack visibility when they search near you", "Keywords your customers actually type", "Pages built to rank, not just look pretty", "A site Google can crawl and trust", "Content that keeps sending leads", "Backlinks that build real authority", "Monthly reports that show the climb"]
+  },
+  {
+    id: "google-business",
+    title: "Google My Business",
+    icon: MapPin,
+    image: "/images/services/google-business.jpg",
+    imageAlt: "Smartphone with soft map glow in a dark environment",
+    tagline: "Be the first name they see on the map.",
+    heroDesc: "Before anyone hits your website, they check Google. Photos, stars, hours, reviews. We make that first look so strong that half your new customers never bother comparing anyone else.",
+    sections: [
+      {
+        title: "Profile Optimization",
+        icon: Settings,
+        desc: "A half-filled profile looks like a half-serious business. We fill every category, photo, and detail so Google ranks you higher and searchers trust you enough to call."
+      },
+      {
+        title: "Review Management",
+        icon: Star,
+        desc: "Five-star reviews close the deal before you ever pick up the phone. We set up automatic requests so happy customers leave them, and we help you respond so the next visitor sees you're paying attention."
+      },
+      {
+        title: "Google Posts & Updates",
+        icon: MessageSquare,
+        desc: "A dead profile tells Google you've gone quiet. Weekly posts keep you active, surface your offers, and give someone scrolling Maps one more reason to choose you today."
+      },
+      {
+        title: "Local Citation Building",
+        icon: Globe,
+        desc: "Wrong address on one directory, wrong phone on another, and Google gets confused. We clean up your name, address, and phone across 50+ listings so local search finally trusts you."
+      }
+    ],
+    features: ["A profile that ranks and converts", "Reviews that show up without you asking", "Responses that build trust fast", "Weekly posts that keep you visible", "Photos that make them stop scrolling", "Q&A answered before they call", "Consistent listings across 50+ directories", "Monthly proof the map pack is moving"]
+  },
+  {
+    id: "bpo",
+    title: "BPO - Lead Generation",
+    icon: Headphones,
+    image: "/images/services/bpo.jpg",
+    imageAlt: "Professional headset on a dark desk",
+    tagline: "Your calendar fills up. You just show up and close.",
+    heroDesc: "Prospecting eats the hours your closers should spend selling. We find the right people, warm them up, and put qualified appointments on your calendar. Your team only talks to buyers who are ready.",
+    sections: [
+      {
+        title: "Outbound Prospecting",
+        icon: Target,
+        desc: "Cold outreach is a grind most teams abandon by week three. We build the list, write the messages, and run the emails, LinkedIn, and calls so conversations start without your people burning out."
+      },
+      {
+        title: "Appointment Setting",
+        icon: LayoutDashboard,
+        desc: "No more chasing \"let me check my calendar.\" We handle the back-and-forth, lock the meeting, and send a brief so your closer walks in knowing who they're talking to and why."
+      },
+      {
+        title: "Lead Nurturing Sequences",
+        icon: MessageSquare,
+        desc: "Not ready today doesn't mean never. Warm prospects stay in a nurture sequence until they are, then we book the call. You stop losing deals that just needed another touch."
+      },
+      {
+        title: "Campaign Reporting & Optimization",
+        icon: BarChart3,
+        desc: "You'll know what got opened, who replied, and which appointments turned into pipeline. We tighten the message every month so next month's results beat this one's."
+      }
+    ],
+    features: ["Prospects who match who you sell to", "Outreach that runs while you sell", "Appointments on the calendar, not maybes", "Warm leads that don't go cold", "Handoffs that land in your CRM", "Clear numbers on what's working", "Messaging tested until it converts", "A campaign manager who owns the results"]
+  },
+  {
+    id: "consumer-financing",
+    title: "Consumer Financing",
+    icon: Banknote,
+    image: "/images/services/consumer-financing.jpg",
+    imageAlt: "Matte black credit card on a dark surface",
+    tagline: "They say yes to the big ticket. You get paid today.",
+    heroDesc: "Price is the objection that kills most sales. Financing turns a $1,500 no into a $125/month yes. You close more deals, raise the average ticket, and get the full amount upfront. No chasing payments.",
+    sections: [
+      {
+        title: "Point-of-Sale Financing",
+        icon: CreditCard,
+        desc: "The customer applies in under two minutes at checkout. Instant approval, and the full payment hits your account in a day or two. They walk out with the service. You walk out paid."
+      },
+      {
+        title: "Increase Average Ticket Size",
+        icon: TrendingUp,
+        desc: "When $125 a month feels easier than $1,500 today, people pick the premium option. Merchants who add financing typically see average tickets jump 30-50%."
+      },
+      {
+        title: "Zero Risk to Your Business",
+        icon: Shield,
+        desc: "You get paid in full. The lender takes the risk. No chargebacks, no collections, no bad debt sitting on your books if someone stops paying."
+      },
+      {
+        title: "Multi-Industry Support",
+        icon: Store,
+        desc: "Auto repair, healthcare, home services, salons, retail. We match you with lenders built for your ticket size so approvals actually happen, not just applications."
+      }
+    ],
+    features: ["Approval in under two minutes", "Full funding to you upfront", "Terms that make big tickets feel small", "No collections or bad debt on you", "Rates customers will actually take", "Works in-store and online", "Multiple lenders for better approval odds", "Tied into the POS you already use"]
+  },
+  {
+    id: "business-loans",
+    title: "Business Loans & Capital",
+    icon: DollarSign,
+    image: "/images/services/business-loans.jpg",
+    imageAlt: "Currency and calculator on a dark wooden desk",
+    tagline: "Cash in days, not weeks of paperwork.",
+    heroDesc: "Payroll doesn't wait for a six-week SBA decision. Neither does a deal that needs inventory tomorrow. We connect you with lenders who fund in days so you can move while the opportunity is still open.",
+    sections: [
+      {
+        title: "Working Capital Loans",
+        icon: Banknote,
+        desc: "Cover payroll, stock the shelves, or ride out a slow month without raiding your personal account. Approvals in 24 hours, money in 1-3 days, paid back against how revenue actually comes in."
+      },
+      {
+        title: "Equipment Financing",
+        icon: Settings,
+        desc: "Need a new oven, truck, or POS system? Finance it instead of draining cash reserves. Keep the money for operations while the equipment starts paying for itself."
+      },
+      {
+        title: "Revenue-Based Financing",
+        icon: BarChart3,
+        desc: "Slow month? Your payment shrinks with sales. Busy month? You pay a bit more. No rigid fixed payment that punches a hole in cash flow when business dips."
+      },
+      {
+        title: "SBA & Term Loans",
+        icon: FileText,
+        desc: "Bigger moves need longer money. We connect you with SBA and term lenders when you're ready for lower rates and a structure built for a real investment, not a stopgap."
+      }
+    ],
+    features: ["A yes or no in 24 hours", "Money in your account in 1-3 days", "From $5K to $500K+ when you need it", "Capital for payroll, inventory, or growth", "Equipment without draining reserves", "Payments that flex with your sales", "SBA options for the bigger bets", "No fees just to apply"]
+  },
+  {
+    id: "pos-placement",
+    title: "POS Placement",
+    icon: MonitorSmartphone,
+    image: "/images/services/pos-placement.jpg",
+    imageAlt: "Modern black POS terminal on a dark countertop",
+    tagline: "New hardware. Zero check written.",
+    heroDesc: "That outdated terminal is slowing down your line and embarrassing your brand. We put modern payment hardware in your business free. Free install, free training. You process with us, and the equipment stays.",
+    sections: [
+      {
+        title: "Smart Terminals",
+        icon: CreditCard,
+        desc: "Tap, chip, swipe, Apple Pay. Under two seconds. The customer-facing screen handles tips and receipts so your staff isn't fumbling with paper while the next person waits."
+      },
+      {
+        title: "Full POS Systems",
+        icon: LayoutDashboard,
+        desc: "Register, scanner, printer, cash drawer. Set up for how your industry actually sells, so your team isn't fighting the software during a rush."
+      },
+      {
+        title: "Kitchen Display Systems",
+        icon: Layers,
+        desc: "Paper tickets get lost, smeared, and misread. Digital kitchen screens route every order the second it rings up, with timers that keep the line honest."
+      },
+      {
+        title: "Mobile & Wireless Readers",
+        icon: Globe,
+        desc: "Tableside, job site, front door, pop-up event. Take the payment where the customer is standing, just as fast as the terminal on your counter."
+      }
+    ],
+    features: ["Hardware that costs you nothing upfront", "Installed and ready without your IT guy", "Staff trained before the first rush", "Every way a customer wants to pay", "Tip screens that raise the average", "Full POS when a terminal isn't enough", "Kitchen screens that kill paper tickets", "Deposits that hit the same day"]
+  }
+];
+
+interface ServicesPageProps {
+  onOpenModal: (title: string, content: React.ReactNode) => void;
+  onNavigate: (path: string) => void;
+}
+
+export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPageProps) {
+  useScrollAnimation();
+
+  // Handle hash scrolling on mount
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  }, []);
+
+  return (
+    <div className="pt-24">
+      {/* Hero */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div className="max-w-5xl mx-auto px-6 md:px-12 text-center relative z-10">
+          <div className="animate-on-scroll">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-medium uppercase tracking-wider mb-8">
+              <Zap className="w-3.5 h-3.5" />
+              Where Your Savings Go to Work
+            </div>
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1]">
+              Turn Savings Into<br/>
+              <span className="text-teal">Something That Pays You Back.</span>
+            </h1>
+            <p className="text-offwhite/70 text-lg md:text-xl font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+              Once we find the money you're overpaying, these are the systems we put it into. One connected growth engine, not a random menu of add-ons.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button 
+                onClick={() => onOpenModal("Book a Call", <ContactForm />)}
+                className="inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]"
+              >
+                Book a Call
+              </button>
+              <a 
+                href="/"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+              >
+                ← Back to Home
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Nav */}
+      <section className="border-y border-white/5 bg-charcoal-dark/50 sticky top-[72px] z-40 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex items-center gap-2 overflow-x-auto py-4 scrollbar-hide">
+            {SERVICES_DETAIL.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-offwhite/70 text-sm font-medium hover:bg-teal/10 hover:border-teal/30 hover:text-teal transition-all duration-300"
+              >
+                <s.icon className="w-4 h-4" />
+                {s.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Sections */}
+      {SERVICES_DETAIL.map((service, idx) => {
+        const cta = ctaFor(service.id, service.title);
+        return (
+        <section 
+          key={service.id} 
+          id={service.id}
+          className={`py-24 md:py-32 relative overflow-hidden ${idx % 2 === 0 ? 'bg-charcoal' : 'bg-charcoal-dark/50'} border-b border-white/5`}
+        >
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            {/* Section Header */}
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20 ${idx % 2 !== 0 ? 'lg:grid-flow-dense' : ''}`}>
+              <div className={`animate-on-scroll ${idx % 2 !== 0 ? 'lg:col-start-2' : ''}`}>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-medium uppercase tracking-wider mb-6">
+                  <service.icon className="w-4 h-4" />
+                  {`0${idx + 1}`}
+                </div>
+                <h2 className="font-serif text-4xl md:text-5xl text-white mb-4 leading-tight">{service.title}</h2>
+                <p className="text-teal text-lg font-medium mb-4">{service.tagline}</p>
+                <p className="text-offwhite/70 text-lg font-light leading-relaxed mb-8">{service.heroDesc}</p>
+                <button 
+                  onClick={() => onOpenModal(cta.close, <ContactForm />)}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-teal text-white font-medium rounded-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]"
+                >
+                  {cta.close} <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Visual */}
+              <div className={`animate-on-scroll ${idx % 2 !== 0 ? 'lg:col-start-1' : ''}`} style={{ transitionDelay: '0.2s' }}>
+                <div className="relative h-[350px] md:h-[400px] rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 group shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,128,128,0.15)] transition-all duration-500">
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Capability Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 stagger-children">
+              {service.sections.map((sub, si) => (
+                <div 
+                  key={si}
+                  className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
+                >
+                  <div className="aspect-square overflow-hidden border-b border-white/5">
+                    <img src={`/images/services/sub/${slugify(sub.title)}.jpg`} alt={sub.title} className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <sub.icon className="w-5 h-5 text-teal flex-shrink-0" strokeWidth={1.5} />
+                      <h3 className="text-lg text-white font-medium">{sub.title}</h3>
+                    </div>
+                    <p className="text-offwhite/60 font-light leading-relaxed text-sm">{sub.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Feature List */}
+            <div className="animate-on-scroll bg-charcoal-dark/60 border border-white/5 rounded-2xl p-8 md:p-10">
+              <h3 className="text-lg font-medium text-white mb-6">What You Walk Away With</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {service.features.map((feat, fi) => (
+                  <div key={fi} className="flex items-start gap-3 text-sm text-offwhite/70">
+                    <CheckCircle className="w-4 h-4 text-teal flex-shrink-0 mt-0.5" />
+                    {feat}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        );
+      })}
+
+      {/* Final CTA */}
+      <section className="py-24 md:py-32 relative overflow-hidden bg-teal/10 border-t border-teal/20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
+        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+          <div className="animate-on-scroll">
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Tell Us What You Need Built.</h2>
+            <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+              Payments gets your money back. Websites and AI put it to work. Walk us through what your business actually needs and we will tell you what we would build first.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button 
+                onClick={() => onOpenModal("Book a Call", <ContactForm />)}
+                className="cta-button-pulse inline-flex items-center justify-center px-8 py-4 bg-white text-charcoal font-medium rounded-sm transition-all duration-300 hover:scale-[1.02]"
+              >
+                Book a Call
+              </button>
+              <a 
+                href="/"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+              >
+                Back to Home
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export { SERVICES_DETAIL };
+
+// Deep content is opt-in; the original renderer below remains the fallback.
+function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; onOpenModal: (title: string, content: React.ReactNode) => void }) {
+  const heading = 'font-serif text-3xl md:text-4xl text-white leading-tight';
+  const prose = 'text-offwhite/80 leading-relaxed';
+  return (
+    <article data-deep-service={service.id} className="pt-32 md:pt-40 pb-20">
+      <style>{`[data-theme="dark"] [data-deep-service] .text-teal { color: #66B2B2; }`}</style>
+      <header className="max-w-6xl mx-auto px-6 md:px-12">
+        <a href="/services" className="inline-flex items-center min-h-11 text-teal underline underline-offset-4 mb-6">All services</a>
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl text-white leading-tight mb-6 break-words">{service.title}</h1>
+        <p className="text-teal text-xl md:text-2xl mb-5">{service.tagline}</p>
+        <p className={`${prose} text-lg max-w-3xl`}>{service.heroDesc}</p>
+        {service.heroNote && <p className="text-offwhite/70 max-w-3xl mt-4 text-sm leading-relaxed">{service.heroNote}</p>}
+        <nav aria-label="On this page" className="flex flex-wrap gap-x-6 gap-y-1 border-y border-white/10 py-3 mt-9 mb-10 text-sm">
+          <a href="#what-we-build" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">What we build</a>
+          <a href="#the-value" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">The numbers</a>
+          <a href="#the-process" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">The build process</a>
+          <a href="#questions" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">Common questions</a>
+        </nav>
+        <img src={service.image} alt={service.imageAlt} width={1200} height={480} className="w-full h-52 md:h-80 object-cover rounded-2xl" />
+      </header>
+
+      {service.problem && <section className="max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-24 grid md:grid-cols-[1fr_1.5fr] gap-8 md:gap-16">
+        <h2 className={heading}>{service.id === 'web-design' ? 'The site is there. The enquiries are another matter.' : 'The work keeps landing back on your desk.'}</h2>
+        <div className="space-y-5">{service.problem.map(p => <p key={p} className={prose}>{p}</p>)}</div>
+      </section>}
+
+      <section id="what-we-build" className="scroll-mt-28 bg-charcoal-dark border-y border-white/10 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <h2 className={`${heading} mb-12`}>What we build</h2>
+          <div className="space-y-14 md:space-y-20">
+            {service.sections.map(sub => <section key={sub.title} className="grid md:grid-cols-[0.8fr_1.5fr] gap-6 md:gap-12 border-t border-white/10 pt-8">
+              <div>
+                <h3 className="font-serif text-2xl md:text-3xl text-white mb-5">{sub.title}</h3>
+                <img src={`/images/services/sub/${slugify(sub.title)}.jpg`} alt="" loading="lazy" width={480} height={320} className="w-full h-40 md:h-60 object-cover rounded-xl" />
+              </div>
+              <div className="space-y-5">
+                <p className={prose}>{sub.desc}</p>
+                <dl className="space-y-5">
+                  {[["What it replaces",sub.replaces],["What you get",sub.produces],["Who it is for",sub.audience]].map(([label,text]) => text && <div key={label}>
+                    <dt className="text-white font-medium mb-1">{label}</dt><dd className={prose}>{text}</dd>
+                  </div>)}
+                </dl>
+              </div>
+            </section>)}
+          </div>
+        </div>
+      </section>
+
+      {service.statistics && <section id="the-value" className="scroll-mt-28 max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-24">
+        <h2 className={`${heading} mb-5`}>{service.id === 'web-design' ? 'Why speed belongs in the budget' : 'Put a number on the time bought back'}</h2>
+        <p className={`${prose} max-w-3xl mb-10`}>Published research gives us a reason to measure. Your own results determine what the work is worth.</p>
+        <div className="space-y-6">{service.statistics.map(stat => <figure data-stat key={stat.title} className="bg-charcoal-dark border border-white/10 rounded-2xl p-6 md:p-9">
+          <div className="grid md:grid-cols-[0.65fr_1.5fr] gap-6 md:gap-12">
+            <div><p className="font-serif text-4xl md:text-5xl text-teal mb-3">{stat.value}</p><h3 className="text-white text-lg font-medium">{stat.title}</h3></div>
+            <div><p className={prose}>{stat.explanation}</p>{stat.arithmetic && <p className={`${prose} border-l-2 border-teal pl-5 mt-5`}>{stat.arithmetic}</p>}</div>
+          </div>
+          <figcaption className="border-t border-white/10 pt-5 mt-6 text-sm text-offwhite/70">Sources: <a className="text-teal underline underline-offset-4 break-words" href={stat.url} target="_blank" rel="noopener noreferrer">{stat.source}</a></figcaption>
+        </figure>)}</div>
+      </section>}
+
+      {service.process && <section id="the-process" className="scroll-mt-28 bg-charcoal-dark border-y border-white/10 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <h2 className={`${heading} mb-10`}>What the build actually looks like</h2>
+          <div className="grid md:grid-cols-2 gap-x-14 gap-y-10">{service.process.map(step => <div key={step.title} className="border-t border-teal/30 pt-5"><h3 className="text-white text-xl font-medium mb-3">{step.title}</h3><p className={prose}>{step.description}</p></div>)}</div>
+        </div>
+      </section>}
+
+      {service.fit && <section className="max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16">
+        {[["A good fit",service.fit.yes],["Not a good fit",service.fit.no]].map(([label,items]) => <div key={label as string}><h2 className={`${heading} mb-6`}>{label}</h2><ul className="space-y-5">{(items as string[]).map(item => <li className={`${prose} border-t border-white/10 pt-4`} key={item}>{item}</li>)}</ul></div>)}
+      </section>}
+
+      {service.questions && <section id="questions" className="scroll-mt-28 max-w-6xl mx-auto px-6 md:px-12 pb-16 md:pb-24">
+        <h2 className={`${heading} mb-10`}>Common questions</h2>
+        <div className="divide-y divide-white/10">{service.questions.map(item => <section key={item.question} className="grid md:grid-cols-[0.8fr_1.5fr] gap-3 md:gap-12 py-7"><h3 className="text-white text-xl font-medium">{item.question}</h3><p className={prose}>{item.answer}</p></section>)}</div>
+      </section>}
+
+      {service.close && <section className="max-w-6xl mx-auto px-6 md:px-12 border-t border-teal/30 pt-12">
+        <h2 className={`${heading} mb-5`}>{service.close.title}</h2>
+        <p className={`${prose} max-w-2xl mb-7`}>{service.close.description}</p>
+        <button onClick={() => onOpenModal(service.close!.button, <ContactForm />)} className="inline-flex items-center gap-3 px-6 py-4 bg-teal text-white font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal">{service.close.button}<ArrowRight aria-hidden="true" className="w-4 h-4" /></button>
+      </section>}
+    </article>
+  );
+}
+
+// Single-service standalone page (for individual routes like /services/web-design)
+export function SingleServicePage({ serviceId, onOpenModal, onNavigate }: { serviceId: string, onOpenModal: (title: string, content: React.ReactNode) => void, onNavigate: (path: string) => void }) {
+  useScrollAnimation();
+  const service = SERVICES_DETAIL.find(s => s.id === serviceId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [serviceId]);
+
+  if (!service) {
+    return <div className="min-h-screen flex items-center justify-center text-white">Service not found.</div>;
+  }
+
+  if (service.problem) return <DeepServiceContent service={service} onOpenModal={onOpenModal} />;
+
+  const idx = SERVICES_DETAIL.indexOf(service);
+  const cta = ctaFor(service.id, service.title);
+
+  return (
+    <div className="pt-24">
+      {/* Hero */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="max-w-5xl mx-auto px-6 md:px-12 text-center relative z-10">
+          <div className="animate-on-scroll">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-medium uppercase tracking-wider mb-8">
+              <service.icon className="w-3.5 h-3.5" />
+              {service.title}
+            </div>
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1]">
+              {service.title}
+            </h1>
+            <p className="text-teal text-lg md:text-xl font-medium mb-4">{service.tagline}</p>
+            <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+              {service.heroDesc}
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+              <button 
+                onClick={() => onOpenModal(cta.hero, <ContactForm />)}
+                className="cta-button-pulse inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]"
+              >
+                {cta.hero} <ArrowRight className="w-4 h-4" />
+              </button>
+              <a 
+                href="/services"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+              >
+                ← All Services
+              </a>
+            </div>
+            {service.image && (
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video max-w-3xl mx-auto shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+                <img
+                  src={service.image}
+                  alt={service.imageAlt}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  width={800}
+                  height={450}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Capability Cards */}
+      <section className="py-20 md:py-28 bg-charcoal-dark/40 border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-16 animate-on-scroll">
+            <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">What We Deliver</h2>
+            <p className="text-offwhite/60 text-lg font-light max-w-xl mx-auto">Deep expertise across every aspect of {service.title.toLowerCase()}.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
+            {service.sections.map((sub: any, si: number) => (
+              <div 
+                key={si}
+                className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
+              >
+                <div className="aspect-square overflow-hidden border-b border-white/5">
+                  <img src={`/images/services/sub/${slugify(sub.title)}.jpg`} alt={sub.title} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <sub.icon className="w-5 h-5 text-teal flex-shrink-0" strokeWidth={1.5} />
+                    <h3 className="text-lg text-white font-medium">{sub.title}</h3>
+                  </div>
+                  <p className="text-offwhite/60 font-light leading-relaxed text-sm">{sub.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature List */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <div className="animate-on-scroll bg-charcoal-dark/60 border border-white/5 rounded-2xl p-8 md:p-10">
+            <h3 className="text-lg font-medium text-white mb-6">What You Walk Away With</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {service.features.map((feat: string, fi: number) => (
+                <div key={fi} className="flex items-start gap-3 text-sm text-offwhite/70">
+                  <CheckCircle className="w-4 h-4 text-teal flex-shrink-0 mt-0.5" />
+                  {feat}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 md:py-32 relative overflow-hidden bg-teal/10 border-t border-teal/20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
+        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+          <div className="animate-on-scroll">
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">{cta.close}</h2>
+            <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+              {cta.closeBody}
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button 
+                onClick={() => onOpenModal(cta.close, <ContactForm />)}
+                className="cta-button-pulse inline-flex items-center justify-center px-8 py-4 bg-white text-charcoal font-medium rounded-sm transition-all duration-300 hover:scale-[1.02]"
+              >
+                {cta.close}
+              </button>
+              <a 
+                href="/"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40"
+              >
+                Back to Home
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

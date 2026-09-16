@@ -1,0 +1,191 @@
+{
+  "rows": [
+    {
+      "id": "crm",
+      "before": 268,
+      "measuredBefore": 227,
+      "after": 877,
+      "statistics": [
+        {
+          "value": "$3.10",
+          "source": "Nucleus Research, CRM benefit areas with the greatest ROI impact (2024)",
+          "url": "https://nucleusresearch.com/research/single/crm-benefit-areas-with-the-greatest-roi-impact/"
+        },
+        {
+          "value": "21x",
+          "source": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+          "url": "https://resources.insidesales.com/blog/infographic-2/"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "id": "consulting",
+      "before": 256,
+      "measuredBefore": 211,
+      "after": 903,
+      "statistics": [
+        {
+          "value": "46% + 15%",
+          "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+          "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+        },
+        {
+          "value": "54%",
+          "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+          "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+        },
+        {
+          "value": "37%",
+          "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+          "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "id": "seo",
+      "before": 277,
+      "measuredBefore": 242,
+      "after": 926,
+      "statistics": [
+        {
+          "value": "97%",
+          "source": "BrightLocal, Local Consumer Review Survey (2026)",
+          "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+        },
+        {
+          "value": "68%",
+          "source": "BrightLocal, Local Consumer Review Survey (2026)",
+          "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+        },
+        {
+          "value": "2.5 seconds",
+          "source": "Google Search Central, Core Web Vitals",
+          "url": "https://developers.google.com/search/docs/appearance/core-web-vitals"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "id": "google-business",
+      "before": 262,
+      "measuredBefore": 219,
+      "after": 998,
+      "statistics": [
+        {
+          "value": "47%",
+          "source": "BrightLocal, Local Consumer Review Survey (2026)",
+          "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+        },
+        {
+          "value": "68%",
+          "source": "BrightLocal, Local Consumer Review Survey (2026)",
+          "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+        },
+        {
+          "value": "89%",
+          "source": "BrightLocal, Local Consumer Review Survey (2026)",
+          "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+        },
+        {
+          "value": "54%",
+          "source": "BrightLocal, Local Consumer Review Survey (2026)",
+          "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "id": "bpo",
+      "before": 263,
+      "measuredBefore": 226,
+      "after": 941,
+      "statistics": [
+        {
+          "value": "21x",
+          "source": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+          "url": "https://resources.insidesales.com/blog/infographic-2/"
+        },
+        {
+          "value": "56%",
+          "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+          "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "id": "consumer-financing",
+      "before": 253,
+      "measuredBefore": 212,
+      "after": 929,
+      "statistics": [
+        {
+          "value": "93%",
+          "source": "BrightLocal, Local Consumer Review Survey (2026)",
+          "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+        },
+        {
+          "value": "27%",
+          "source": "BrightLocal, Local Consumer Review Survey (2026)",
+          "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "id": "business-loans",
+      "before": 260,
+      "measuredBefore": 223,
+      "after": 974,
+      "statistics": [
+        {
+          "value": "42% / 36% / 22%",
+          "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+          "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+        },
+        {
+          "value": "60%",
+          "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+          "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+        },
+        {
+          "value": "57%",
+          "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+          "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "id": "prep-to-sell",
+      "before": 270,
+      "measuredBefore": 223,
+      "after": 991,
+      "statistics": [
+        {
+          "value": "73%",
+          "source": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+          "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+        },
+        {
+          "value": "$14 trillion",
+          "source": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+          "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+        }
+      ],
+      "blocker": null
+    }
+  ],
+  "outsideEntriesUnchanged": true,
+  "imagesUnchanged": true,
+  "schema": "Existing ServiceDetail and renderer contract",
+  "forbiddenCounts": {
+    "emDashes": 0,
+    "needsNumber": 0,
+    "staleCrmFigure": 0,
+    "threeD": 0
+  },
+  "copyLint": "All eight 5/5"
+}

@@ -1,0 +1,147 @@
+{
+  "fresh-theme-light": {
+    "pass": true,
+    "detail": "data-theme=light"
+  },
+  "section-order": {
+    "pass": true,
+    "detail": {
+      "filteredH2s": [
+        "Find the Money. Fix the Leak. Grow.",
+        "Stop Paying to Get Paid.",
+        "How Much Are You Losing?",
+        "Where the Savings Go.",
+        "Built for Your Industry",
+        "Why Keystone",
+        "You Talk to the Owners. Every Time."
+      ],
+      "allH2s": [
+        "$0+",
+        "Find the Money. Fix the Leak. Grow.",
+        "Stop Paying to Get Paid.",
+        "How Much Are You Losing?",
+        "Where the Savings Go.",
+        "Built for Your Industry",
+        "Why Keystone",
+        "You Talk to the Owners. Every Time."
+      ]
+    }
+  },
+  "no-atm": {
+    "pass": true,
+    "detail": {
+      "hasATM": false,
+      "hasATMCard": false
+    }
+  },
+  "team-photos": {
+    "pass": true,
+    "detail": {
+      "seth": true,
+      "hunter": true
+    }
+  },
+  "hero-pos-float": {
+    "pass": true,
+    "detail": true
+  },
+  "productgrid-3": {
+    "pass": true,
+    "detail": [
+      "Credit Card Processing",
+      "Website Builds",
+      "AI Automations"
+    ]
+  },
+  "header-work-link": {
+    "pass": true,
+    "detail": true
+  },
+  "cut-rate-guarantee": {
+    "pass": true,
+    "detail": false
+  },
+  "cut-testimonials": {
+    "pass": true,
+    "detail": false
+  },
+  "pricing-financing": {
+    "pass": true,
+    "detail": true
+  },
+  "freeplacement-2": {
+    "pass": true,
+    "detail": {
+      "bluetooth": true,
+      "pos": true,
+      "atm": false
+    }
+  },
+  "hero-slider": {
+    "pass": true,
+    "detail": {
+      "beforeVal": "50000",
+      "afterVal": "80000"
+    }
+  },
+  "toggle-persists-dark": {
+    "pass": true,
+    "detail": {
+      "attr": "dark",
+      "stored": "dark"
+    }
+  },
+  "home-console": {
+    "pass": true,
+    "detail": []
+  },
+  "saved-dark-respected": {
+    "pass": true,
+    "detail": "dark"
+  },
+  "no-testimonial-restaurants": {
+    "pass": true,
+    "detail": {
+      "quoteBlock": false,
+      "namedBiz": false,
+      "hasTestimonialHeading": false
+    }
+  },
+  "console-restaurants": {
+    "pass": true,
+    "detail": []
+  },
+  "no-testimonial-high-risk": {
+    "pass": true,
+    "detail": {
+      "quoteBlock": false,
+      "namedBiz": false,
+      "hasTestimonialHeading": false
+    }
+  },
+  "console-high-risk": {
+    "pass": true,
+    "detail": []
+  },
+  "work-8-projects": {
+    "pass": true,
+    "detail": {
+      "names": [
+        "Ensign Properties Management",
+        "Teton Reach",
+        "Keystone OS Dashboard",
+        "Benitz Appliance",
+        "AT&T Fiber Internet",
+        "Avada Pest Control",
+        "Mexpresso Utah",
+        "Sego Flooring SWFL"
+      ],
+      "count": 8,
+      "workLink": true
+    }
+  },
+  "work-header-link": {
+    "pass": true,
+    "detail": true
+  }
+}

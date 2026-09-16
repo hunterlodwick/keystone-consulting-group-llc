@@ -1,0 +1,2055 @@
+{
+  "capturedAt": "2026-09-15T06:11:05.933Z",
+  "previewBase": "http://localhost:4173",
+  "baselinePreview": "http://127.0.0.1:4174",
+  "baselineCommit": "9667046",
+  "baseline": {
+    "home-390-dark": {
+      "scrollHeight": 18198,
+      "scrollWidth": 390,
+      "clientWidth": 390
+    },
+    "home-1440-dark": {
+      "scrollHeight": 11426,
+      "scrollWidth": 1440,
+      "clientWidth": 1440
+    }
+  },
+  "after": {
+    "home-390-dark": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "reducedMotion": false,
+      "disableObserver": false,
+      "fontLoad": {
+        "status": "loaded",
+        "ready": true,
+        "count": 24,
+        "families": [
+          "DM Sans",
+          "JetBrains Mono",
+          "Playfair Display"
+        ]
+      },
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "scrollHeight": 6270,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "fontsStatus": "loaded",
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 204.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 124.171875,
+        "inFirstViewport": true
+      },
+      "copyBox": {
+        "top": 224.171875,
+        "bottom": 341.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 117,
+        "inFirstViewport": true
+      },
+      "ctaBox": {
+        "top": 373.171875,
+        "bottom": 429.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 477.171875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false,
+      "percentReduction": 65.55
+    },
+    "home-1440-dark": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "reducedMotion": false,
+      "disableObserver": false,
+      "fontLoad": {
+        "status": "loaded",
+        "ready": true,
+        "count": 24,
+        "families": [
+          "DM Sans",
+          "JetBrains Mono",
+          "Playfair Display"
+        ]
+      },
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollHeight": 3812,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "fontsStatus": "loaded",
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 411.1875,
+        "left": 128,
+        "right": 779.1875,
+        "width": 651.1875,
+        "height": 331.1875,
+        "inFirstViewport": true
+      },
+      "copyBox": {
+        "top": 431.1875,
+        "bottom": 528.6875,
+        "left": 128,
+        "right": 704,
+        "width": 576,
+        "height": 97.5,
+        "inFirstViewport": true
+      },
+      "ctaBox": {
+        "top": 560.6875,
+        "bottom": 616.6875,
+        "left": 128,
+        "right": 274.578125,
+        "width": 146.578125,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 680.6875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false,
+      "percentReduction": 66.64
+    },
+    "home-390-light": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "reducedMotion": false,
+      "disableObserver": false,
+      "fontLoad": {
+        "status": "loaded",
+        "ready": true,
+        "count": 24,
+        "families": [
+          "DM Sans",
+          "JetBrains Mono",
+          "Playfair Display"
+        ]
+      },
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "scrollHeight": 6270,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "fontsStatus": "loaded",
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 204.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 124.171875,
+        "inFirstViewport": true
+      },
+      "copyBox": {
+        "top": 224.171875,
+        "bottom": 341.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 117,
+        "inFirstViewport": true
+      },
+      "ctaBox": {
+        "top": 373.171875,
+        "bottom": 429.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 477.171875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false
+    },
+    "home-1440-light": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "light",
+      "reducedMotion": false,
+      "disableObserver": false,
+      "fontLoad": {
+        "status": "loaded",
+        "ready": true,
+        "count": 24,
+        "families": [
+          "DM Sans",
+          "JetBrains Mono",
+          "Playfair Display"
+        ]
+      },
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollHeight": 3812,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "fontsStatus": "loaded",
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 411.1875,
+        "left": 128,
+        "right": 779.1875,
+        "width": 651.1875,
+        "height": 331.1875,
+        "inFirstViewport": true
+      },
+      "copyBox": {
+        "top": 431.1875,
+        "bottom": 528.6875,
+        "left": 128,
+        "right": 704,
+        "width": 576,
+        "height": 97.5,
+        "inFirstViewport": true
+      },
+      "ctaBox": {
+        "top": 560.6875,
+        "bottom": 616.6875,
+        "left": 128,
+        "right": 274.578125,
+        "width": 146.578125,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 680.6875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false
+    },
+    "home-390-reduced-motion": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "reducedMotion": true,
+      "disableObserver": false,
+      "fontLoad": {
+        "status": "loaded",
+        "ready": true,
+        "count": 24,
+        "families": [
+          "DM Sans",
+          "JetBrains Mono",
+          "Playfair Display"
+        ]
+      },
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "scrollHeight": 6270,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "fontsStatus": "loaded",
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 204.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 124.171875,
+        "inFirstViewport": true
+      },
+      "copyBox": {
+        "top": 224.171875,
+        "bottom": 341.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 117,
+        "inFirstViewport": true
+      },
+      "ctaBox": {
+        "top": 373.171875,
+        "bottom": 429.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 477.171875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false
+    },
+    "home-observer-disabled": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "reducedMotion": false,
+      "disableObserver": true,
+      "fontLoad": {
+        "status": "loaded",
+        "ready": true,
+        "count": 24,
+        "families": [
+          "DM Sans",
+          "JetBrains Mono",
+          "Playfair Display"
+        ]
+      },
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollHeight": 3812,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "fontsStatus": "loaded",
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 411.1875,
+        "left": 128,
+        "right": 779.1875,
+        "width": 651.1875,
+        "height": 331.1875,
+        "inFirstViewport": true
+      },
+      "copyBox": {
+        "top": 431.1875,
+        "bottom": 528.6875,
+        "left": 128,
+        "right": 704,
+        "width": 576,
+        "height": 97.5,
+        "inFirstViewport": true
+      },
+      "ctaBox": {
+        "top": 560.6875,
+        "bottom": 616.6875,
+        "left": 128,
+        "right": 274.578125,
+        "width": 146.578125,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 680.6875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false
+    }
+  },
+  "keyboard": {
+    "desktopHeroContact": {
+      "before": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Book a Call",
+        "isBody": false,
+        "inDialog": false
+      },
+      "afterOpen": {
+        "tag": "BUTTON",
+        "id": "modal-close-btn",
+        "role": null,
+        "ariaLabel": "Close modal",
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterTab": {
+        "tag": "INPUT",
+        "id": "firstName",
+        "role": null,
+        "ariaLabel": null,
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterClose": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Book a Call",
+        "isBody": false,
+        "inDialog": false
+      },
+      "dialogGone": true
+    },
+    "desktopHeaderContact": {
+      "before": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Book a Call",
+        "isBody": false,
+        "inDialog": false
+      },
+      "afterOpen": {
+        "tag": "BUTTON",
+        "id": "modal-close-btn",
+        "role": null,
+        "ariaLabel": "Close modal",
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterTab": {
+        "tag": "INPUT",
+        "id": "firstName",
+        "role": null,
+        "ariaLabel": null,
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterClose": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Book a Call",
+        "isBody": false,
+        "inDialog": false
+      },
+      "dialogGone": true
+    },
+    "desktopStatement": {
+      "before": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Get a Free Statement Analysis",
+        "isBody": false,
+        "inDialog": false
+      },
+      "afterOpen": {
+        "tag": "BUTTON",
+        "id": "modal-close-btn",
+        "role": null,
+        "ariaLabel": "Close modal",
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterTab": {
+        "tag": "INPUT",
+        "id": "businessName",
+        "role": null,
+        "ariaLabel": null,
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterClose": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Get a Free Statement Analysis",
+        "isBody": false,
+        "inDialog": false
+      },
+      "dialogGone": true
+    },
+    "mobileMenuContact": {
+      "before": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Book a Call",
+        "isBody": false,
+        "inDialog": false
+      },
+      "afterOpen": {
+        "tag": "BUTTON",
+        "id": "modal-close-btn",
+        "role": null,
+        "ariaLabel": "Close modal",
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterTab": {
+        "tag": "INPUT",
+        "id": "firstName",
+        "role": null,
+        "ariaLabel": null,
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterClose": {
+        "tag": "BUTTON",
+        "id": "mobile-menu-toggle",
+        "role": null,
+        "ariaLabel": "Open menu",
+        "text": "",
+        "isBody": false,
+        "inDialog": false
+      },
+      "dialogGone": true,
+      "menuOpenFocus": {
+        "tag": "BUTTON",
+        "id": "mobile-menu-toggle",
+        "role": null,
+        "ariaLabel": "Close menu",
+        "text": "",
+        "isBody": false,
+        "inDialog": false
+      }
+    },
+    "mobileStatement": {
+      "before": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Get a Free Statement Analysis",
+        "isBody": false,
+        "inDialog": false
+      },
+      "afterOpen": {
+        "tag": "BUTTON",
+        "id": "modal-close-btn",
+        "role": null,
+        "ariaLabel": "Close modal",
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterTab": {
+        "tag": "INPUT",
+        "id": "businessName",
+        "role": null,
+        "ariaLabel": null,
+        "text": "",
+        "isBody": false,
+        "inDialog": true
+      },
+      "afterClose": {
+        "tag": "BUTTON",
+        "id": null,
+        "role": null,
+        "ariaLabel": null,
+        "text": "Get a Free Statement Analysis",
+        "isBody": false,
+        "inDialog": false
+      },
+      "dialogGone": true
+    },
+    "mobileHashMenuClose": {
+      "afterAbout": {
+        "url": "http://localhost:4173/#about",
+        "menuClosed": true,
+        "aboutVisible": true
+      },
+      "afterProcessing": {
+        "url": "http://localhost:4173/#pricing",
+        "menuClosed": true,
+        "pricingVisible": true
+      }
+    }
+  },
+  "hoverShadows": {
+    "hero": "none",
+    "pricing": "none",
+    "team": "none",
+    "headerDesktop": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+  },
+  "headerCompare": {
+    "currentWebNav": [
+      "Financial Services",
+      "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+      "Consumer FinancingLet customers pay over time — you get paid now",
+      "Business LoansFast capital for growth, equipment & working cash",
+      "POS PlacementFree smart terminals & POS hardware placement",
+      "Marketing Services",
+      "Website CreationCustom 3D animated & AI-powered websites",
+      "Google My Business ProfileOptimize your local search presence & reviews",
+      "SEO ServicesRank higher & drive organic traffic to your site",
+      "BPO ServicesHands-off lead generation & appointment setting",
+      "Operating Systems",
+      "Custom CRMCRMs built around your unique workflow",
+      "AI AutomationsAI agents, chatbots & workflow automation",
+      "Consulting ServicesStrategic advisory to eliminate waste & grow",
+      "Industries",
+      "Restaurants",
+      "Grocery",
+      "Healthcare",
+      "E-Commerce",
+      "Salons & Spas",
+      "Auto Repair",
+      "Gas Stations",
+      "High-Risk",
+      "Nonprofits",
+      "B2B Services",
+      "Real Estate",
+      "Retail",
+      "About",
+      "Contact"
+    ],
+    "baselineWebNav": [
+      "Financial Services",
+      "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+      "Consumer FinancingLet customers pay over time — you get paid now",
+      "Business LoansFast capital for growth, equipment & working cash",
+      "POS PlacementFree smart terminals & POS hardware placement",
+      "Marketing Services",
+      "Website CreationCustom 3D animated & AI-powered websites",
+      "Google My Business ProfileOptimize your local search presence & reviews",
+      "SEO ServicesRank higher & drive organic traffic to your site",
+      "BPO ServicesHands-off lead generation & appointment setting",
+      "Operating Systems",
+      "Custom CRMCRMs built around your unique workflow",
+      "AI AutomationsAI agents, chatbots & workflow automation",
+      "Consulting ServicesStrategic advisory to eliminate waste & grow",
+      "Industries",
+      "Restaurants",
+      "Grocery",
+      "Healthcare",
+      "E-Commerce",
+      "Salons & Spas",
+      "Auto Repair",
+      "Gas Stations",
+      "High-Risk",
+      "Nonprofits",
+      "B2B Services",
+      "Real Estate",
+      "Retail",
+      "About",
+      "Contact"
+    ],
+    "navEqual": true,
+    "currentDropdown": {
+      "navLabels": [
+        "Financial Services",
+        "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+        "Consumer FinancingLet customers pay over time — you get paid now",
+        "Business LoansFast capital for growth, equipment & working cash",
+        "POS PlacementFree smart terminals & POS hardware placement",
+        "Marketing Services",
+        "Website CreationCustom 3D animated & AI-powered websites",
+        "Google My Business ProfileOptimize your local search presence & reviews",
+        "SEO ServicesRank higher & drive organic traffic to your site",
+        "BPO ServicesHands-off lead generation & appointment setting",
+        "Operating Systems",
+        "Custom CRMCRMs built around your unique workflow",
+        "AI AutomationsAI agents, chatbots & workflow automation",
+        "Consulting ServicesStrategic advisory to eliminate waste & grow",
+        "Industries",
+        "Restaurants",
+        "Grocery",
+        "Healthcare",
+        "E-Commerce",
+        "Salons & Spas",
+        "Auto Repair",
+        "Gas Stations",
+        "High-Risk",
+        "Nonprofits",
+        "B2B Services",
+        "Real Estate",
+        "Retail",
+        "About",
+        "Contact"
+      ],
+      "financialOpen": true,
+      "industriesOpen": true,
+      "mobileAccordion": true
+    },
+    "baselineDropdown": {
+      "navLabels": [
+        "Financial Services",
+        "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+        "Consumer FinancingLet customers pay over time — you get paid now",
+        "Business LoansFast capital for growth, equipment & working cash",
+        "POS PlacementFree smart terminals & POS hardware placement",
+        "Marketing Services",
+        "Website CreationCustom 3D animated & AI-powered websites",
+        "Google My Business ProfileOptimize your local search presence & reviews",
+        "SEO ServicesRank higher & drive organic traffic to your site",
+        "BPO ServicesHands-off lead generation & appointment setting",
+        "Operating Systems",
+        "Custom CRMCRMs built around your unique workflow",
+        "AI AutomationsAI agents, chatbots & workflow automation",
+        "Consulting ServicesStrategic advisory to eliminate waste & grow",
+        "Industries",
+        "Restaurants",
+        "Grocery",
+        "Healthcare",
+        "E-Commerce",
+        "Salons & Spas",
+        "Auto Repair",
+        "Gas Stations",
+        "High-Risk",
+        "Nonprofits",
+        "B2B Services",
+        "Real Estate",
+        "Retail",
+        "About",
+        "Contact"
+      ],
+      "financialOpen": true,
+      "industriesOpen": true,
+      "mobileAccordion": true
+    },
+    "currentRestaurantsNav": [
+      "Financial Services",
+      "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+      "Consumer FinancingLet customers pay over time — you get paid now",
+      "Business LoansFast capital for growth, equipment & working cash",
+      "POS PlacementFree smart terminals & POS hardware placement",
+      "Marketing Services",
+      "Website CreationCustom 3D animated & AI-powered websites",
+      "Google My Business ProfileOptimize your local search presence & reviews",
+      "SEO ServicesRank higher & drive organic traffic to your site",
+      "BPO ServicesHands-off lead generation & appointment setting",
+      "Operating Systems",
+      "Custom CRMCRMs built around your unique workflow",
+      "AI AutomationsAI agents, chatbots & workflow automation",
+      "Consulting ServicesStrategic advisory to eliminate waste & grow",
+      "Industries",
+      "Restaurants",
+      "Grocery",
+      "Healthcare",
+      "E-Commerce",
+      "Salons & Spas",
+      "Auto Repair",
+      "Gas Stations",
+      "High-Risk",
+      "Nonprofits",
+      "B2B Services",
+      "Real Estate",
+      "Retail",
+      "About",
+      "Contact"
+    ],
+    "baselineRestaurantsNav": [
+      "Financial Services",
+      "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+      "Consumer FinancingLet customers pay over time — you get paid now",
+      "Business LoansFast capital for growth, equipment & working cash",
+      "POS PlacementFree smart terminals & POS hardware placement",
+      "Marketing Services",
+      "Website CreationCustom 3D animated & AI-powered websites",
+      "Google My Business ProfileOptimize your local search presence & reviews",
+      "SEO ServicesRank higher & drive organic traffic to your site",
+      "BPO ServicesHands-off lead generation & appointment setting",
+      "Operating Systems",
+      "Custom CRMCRMs built around your unique workflow",
+      "AI AutomationsAI agents, chatbots & workflow automation",
+      "Consulting ServicesStrategic advisory to eliminate waste & grow",
+      "Industries",
+      "Restaurants",
+      "Grocery",
+      "Healthcare",
+      "E-Commerce",
+      "Salons & Spas",
+      "Auto Repair",
+      "Gas Stations",
+      "High-Risk",
+      "Nonprofits",
+      "B2B Services",
+      "Real Estate",
+      "Retail",
+      "About",
+      "Contact"
+    ]
+  },
+  "fontLoad": {
+    "home-390-dark": {
+      "status": "loaded",
+      "ready": true,
+      "count": 24,
+      "families": [
+        "DM Sans",
+        "JetBrains Mono",
+        "Playfair Display"
+      ]
+    },
+    "home-1440-dark": {
+      "status": "loaded",
+      "ready": true,
+      "count": 24,
+      "families": [
+        "DM Sans",
+        "JetBrains Mono",
+        "Playfair Display"
+      ]
+    },
+    "home-390-light": {
+      "status": "loaded",
+      "ready": true,
+      "count": 24,
+      "families": [
+        "DM Sans",
+        "JetBrains Mono",
+        "Playfair Display"
+      ]
+    },
+    "home-1440-light": {
+      "status": "loaded",
+      "ready": true,
+      "count": 24,
+      "families": [
+        "DM Sans",
+        "JetBrains Mono",
+        "Playfair Display"
+      ]
+    },
+    "home-390-reduced-motion": {
+      "status": "loaded",
+      "ready": true,
+      "count": 24,
+      "families": [
+        "DM Sans",
+        "JetBrains Mono",
+        "Playfair Display"
+      ]
+    },
+    "home-observer-disabled": {
+      "status": "loaded",
+      "ready": true,
+      "count": 24,
+      "families": [
+        "DM Sans",
+        "JetBrains Mono",
+        "Playfair Display"
+      ]
+    }
+  },
+  "anchorClearance": {
+    "w390": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pricing": {
+        "headerBottom": 69,
+        "headingTop": 160.921875,
+        "headingClearsHeader": true,
+        "scrollY": 1444
+      },
+      "about": {
+        "headerBottom": 69,
+        "headingTop": 159.671875,
+        "headingClearsHeader": true,
+        "scrollY": 3597
+      }
+    },
+    "w1440": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pricing": {
+        "headerBottom": 69,
+        "headingTop": 176.9375,
+        "headingClearsHeader": true,
+        "scrollY": 1119
+      },
+      "about": {
+        "headerBottom": 69,
+        "headingTop": 176.4375,
+        "headingClearsHeader": true,
+        "scrollY": 2444
+      }
+    }
+  },
+  "clickNav": {
+    "homeLogo": {
+      "label": "logo-home",
+      "startPath": "/services/web-design",
+      "direct": {
+        "url": "http://localhost:4173/services/web-design",
+        "h1": "Custom Web Design",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "clicked": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "hashState": {
+        "hash": "",
+        "pricingHeadingTop": 1295.9375,
+        "aboutHeadingTop": 2620.4375,
+        "headerBottom": 85
+      },
+      "back": {
+        "url": "http://localhost:4173/services/web-design",
+        "h1": "Custom Web Design",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "forward": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      }
+    },
+    "pricing": {
+      "label": "processing-pricing",
+      "startPath": "/",
+      "direct": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "clicked": {
+        "url": "http://localhost:4173/#pricing",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "hashState": {
+        "hash": "#pricing",
+        "pricingHeadingTop": 176.9375,
+        "aboutHeadingTop": 1501.4375,
+        "headerBottom": 69
+      },
+      "back": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "forward": {
+        "url": "http://localhost:4173/#pricing",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      }
+    },
+    "about": {
+      "label": "about",
+      "startPath": "/",
+      "direct": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "clicked": {
+        "url": "http://localhost:4173/#about",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "hashState": {
+        "hash": "#about",
+        "pricingHeadingTop": -1148.0625,
+        "aboutHeadingTop": 176.4375,
+        "headerBottom": 69
+      },
+      "back": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "forward": {
+        "url": "http://localhost:4173/#about",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      }
+    },
+    "webDesign": {
+      "label": "websites",
+      "startPath": "/",
+      "direct": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "clicked": {
+        "url": "http://localhost:4173/services/web-design",
+        "h1": "Custom Web Design",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "hashState": {
+        "hash": "",
+        "pricingHeadingTop": null,
+        "aboutHeadingTop": null,
+        "headerBottom": 76.5
+      },
+      "back": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "forward": {
+        "url": "http://localhost:4173/services/web-design",
+        "h1": "Custom Web Design",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      }
+    },
+    "automations": {
+      "label": "automations",
+      "startPath": "/",
+      "direct": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "clicked": {
+        "url": "http://localhost:4173/services/automations",
+        "h1": "AI & Automations",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "hashState": {
+        "hash": "",
+        "pricingHeadingTop": null,
+        "aboutHeadingTop": null,
+        "headerBottom": 76.5
+      },
+      "back": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "forward": {
+        "url": "http://localhost:4173/services/automations",
+        "h1": "AI & Automations",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      }
+    },
+    "services": {
+      "label": "footer-services",
+      "startPath": "/",
+      "direct": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "clicked": {
+        "url": "http://localhost:4173/services#web-design",
+        "h1": "Built to Grow.Engineered to Scale.",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "hashState": {
+        "hash": "#web-design",
+        "pricingHeadingTop": null,
+        "aboutHeadingTop": null,
+        "headerBottom": 60.5
+      },
+      "back": {
+        "url": "http://localhost:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+        "nav": [
+          "Processing",
+          "Websites",
+          "AI Automations",
+          "About"
+        ]
+      },
+      "forward": {
+        "url": "http://localhost:4173/services#web-design",
+        "h1": "Built to Grow.Engineered to Scale.",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      }
+    },
+    "consumerFinancing": {
+      "label": "consumer-financing",
+      "startPath": "/services/web-design",
+      "direct": {
+        "url": "http://localhost:4173/services/web-design",
+        "h1": "Custom Web Design",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "clicked": {
+        "url": "http://localhost:4173/services/consumer-financing",
+        "h1": "Consumer Financing",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "hashState": {
+        "hash": "",
+        "pricingHeadingTop": null,
+        "aboutHeadingTop": null,
+        "headerBottom": 76.5
+      },
+      "back": {
+        "url": "http://localhost:4173/services/web-design",
+        "h1": "Custom Web Design",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "forward": {
+        "url": "http://localhost:4173/services/consumer-financing",
+        "h1": "Consumer Financing",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      }
+    },
+    "restaurants": {
+      "label": "restaurants",
+      "startPath": "/services/web-design",
+      "direct": {
+        "url": "http://localhost:4173/services/web-design",
+        "h1": "Custom Web Design",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "clicked": {
+        "url": "http://localhost:4173/restaurants",
+        "h1": "The All-in-One Growth System for Restaurants",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "hashState": {
+        "hash": "",
+        "pricingHeadingTop": null,
+        "aboutHeadingTop": null,
+        "headerBottom": 76.5
+      },
+      "back": {
+        "url": "http://localhost:4173/services/web-design",
+        "h1": "Custom Web Design",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      },
+      "forward": {
+        "url": "http://localhost:4173/restaurants",
+        "h1": "The All-in-One Growth System for Restaurants",
+        "nav": [
+          "Financial Services",
+          "Low Rate Payment ProcessingInterchange-plus & zero-fee Edge Program",
+          "Consumer FinancingLet customers pay over time — you get paid now",
+          "Business LoansFast capital for growth, equipment & working cash",
+          "POS PlacementFree smart terminals & POS hardware placement",
+          "Marketing Services",
+          "Website CreationCustom 3D animated & AI-powered websites",
+          "Google My Business ProfileOptimize your local search presence & reviews",
+          "SEO ServicesRank higher & drive organic traffic to your site",
+          "BPO ServicesHands-off lead generation & appointment setting",
+          "Operating Systems",
+          "Custom CRMCRMs built around your unique workflow",
+          "AI AutomationsAI agents, chatbots & workflow automation",
+          "Consulting ServicesStrategic advisory to eliminate waste & grow",
+          "Industries",
+          "Restaurants",
+          "Grocery",
+          "Healthcare",
+          "E-Commerce",
+          "Salons & Spas",
+          "Auto Repair",
+          "Gas Stations",
+          "High-Risk",
+          "Nonprofits",
+          "B2B Services",
+          "Real Estate",
+          "Retail",
+          "About",
+          "Contact"
+        ]
+      }
+    }
+  }
+}

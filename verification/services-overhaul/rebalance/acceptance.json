@@ -1,0 +1,219 @@
+{
+  "wordsBefore": 1560,
+  "wordsAfter": 2193,
+  "otherServiceRenderComparisons": [
+    {
+      "id": "automations",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "automations",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "automations",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "automations",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "crm",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "crm",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "crm",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "crm",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "consulting",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "consulting",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "consulting",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "consulting",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "prep-to-sell",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "prep-to-sell",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "prep-to-sell",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "prep-to-sell",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "seo",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "seo",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "seo",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "seo",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "google-business",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "google-business",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "google-business",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "google-business",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "bpo",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "bpo",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "bpo",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "bpo",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "consumer-financing",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "consumer-financing",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "consumer-financing",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "consumer-financing",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "business-loans",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "business-loans",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "business-loans",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "business-loans",
+      "width": 390,
+      "theme": "dark"
+    },
+    {
+      "id": "pos-placement",
+      "width": 1440,
+      "theme": "light"
+    },
+    {
+      "id": "pos-placement",
+      "width": 1440,
+      "theme": "dark"
+    },
+    {
+      "id": "pos-placement",
+      "width": 390,
+      "theme": "light"
+    },
+    {
+      "id": "pos-placement",
+      "width": 390,
+      "theme": "dark"
+    }
+  ],
+  "browserCells": 44,
+  "consoleErrors": 0,
+  "overflow": 0,
+  "brokenImages": 0,
+  "capabilities": [
+    "Turn visits into calls with a custom business website",
+    "Turn a campaign click into a lead",
+    "Let customers browse, buy and pay online",
+    "Capture the job while the customer is ready",
+    "Answer the next customer after closing time",
+    "Help buyers inspect the details before they decide"
+  ],
+  "needsNumber": []
+}

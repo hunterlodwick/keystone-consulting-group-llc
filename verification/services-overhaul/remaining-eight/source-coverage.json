@@ -1,0 +1,275 @@
+{
+  "factsheet": ".plan/FACTSHEET-services.md",
+  "factsheetSha256": "886cbd70759bcf9c9dbb2ad32dfe0f4c125dc686ca15114efa08d4b0ed5b338a",
+  "allStatisticsInFactsheet": true,
+  "checks": [
+    {
+      "page": "crm",
+      "value": "$3.10",
+      "source": "Nucleus Research, CRM benefit areas with the greatest ROI impact (2024)",
+      "url": "https://nucleusresearch.com/research/single/crm-benefit-areas-with-the-greatest-roi-impact/",
+      "factsheetSection": 4,
+      "factsheetTokens": [
+        "$3.10",
+        "37%"
+      ],
+      "confirmed": true,
+      "qualification": "2024 Nucleus publication; preceding decade, not a new 2026 measurement. Cause of decline is not established."
+    },
+    {
+      "page": "crm",
+      "value": "21x",
+      "source": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+      "url": "https://resources.insidesales.com/blog/infographic-2/",
+      "factsheetSection": 6,
+      "factsheetTokens": [
+        "21"
+      ],
+      "confirmed": true,
+      "qualification": "Primary publisher recap specifies odds of qualifying a web lead: five versus thirty minutes. Historical MIT/InsideSales study, not sales conversion."
+    },
+    {
+      "page": "consulting",
+      "value": "46% + 15%",
+      "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+      "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms",
+      "factsheetSection": 5,
+      "factsheetTokens": [
+        "46%",
+        "15%"
+      ],
+      "confirmed": true,
+      "qualification": "Employer-firm AI adoption and plans."
+    },
+    {
+      "page": "consulting",
+      "value": "54%",
+      "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+      "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms",
+      "factsheetSection": 5,
+      "factsheetTokens": [
+        "54%"
+      ],
+      "confirmed": true,
+      "qualification": "Denominator is planned AI adopters."
+    },
+    {
+      "page": "consulting",
+      "value": "37%",
+      "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+      "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms",
+      "factsheetSection": 5,
+      "factsheetTokens": [
+        "37%"
+      ],
+      "confirmed": true,
+      "qualification": "Denominator is planned AI adopters."
+    },
+    {
+      "page": "seo",
+      "value": "97%",
+      "source": "BrightLocal, Local Consumer Review Survey (2026)",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "factsheetSection": 1,
+      "factsheetTokens": [
+        "97%"
+      ],
+      "confirmed": true,
+      "qualification": "Review use, not ranking causation."
+    },
+    {
+      "page": "seo",
+      "value": "68%",
+      "source": "BrightLocal, Local Consumer Review Survey (2026)",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "factsheetSection": 1,
+      "factsheetTokens": [
+        "68%",
+        "4+"
+      ],
+      "confirmed": true,
+      "qualification": "Stated minimum star preference."
+    },
+    {
+      "page": "seo",
+      "value": "2.5 seconds",
+      "source": "Google Search Central, Core Web Vitals",
+      "url": "https://developers.google.com/search/docs/appearance/core-web-vitals",
+      "factsheetSection": 2,
+      "factsheetTokens": [
+        "2.5"
+      ],
+      "confirmed": true,
+      "qualification": "LCP experience target, not ranking guarantee."
+    },
+    {
+      "page": "google-business",
+      "value": "47%",
+      "source": "BrightLocal, Local Consumer Review Survey (2026)",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "factsheetSection": 1,
+      "factsheetTokens": [
+        "47%",
+        "20 reviews",
+        "97%"
+      ],
+      "confirmed": true,
+      "qualification": "Review threshold and review readership."
+    },
+    {
+      "page": "google-business",
+      "value": "68%",
+      "source": "BrightLocal, Local Consumer Review Survey (2026)",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "factsheetSection": 1,
+      "factsheetTokens": [
+        "68%",
+        "4+",
+        "55%"
+      ],
+      "confirmed": true,
+      "qualification": "2026 threshold and previous-year comparison."
+    },
+    {
+      "page": "google-business",
+      "value": "89%",
+      "source": "BrightLocal, Local Consumer Review Survey (2026)",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "factsheetSection": 1,
+      "factsheetTokens": [
+        "89%",
+        "81%"
+      ],
+      "confirmed": true,
+      "qualification": "Review response expectation and within-week expectation."
+    },
+    {
+      "page": "google-business",
+      "value": "54%",
+      "source": "BrightLocal, Local Consumer Review Survey (2026)",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "factsheetSection": 1,
+      "factsheetTokens": [
+        "54%"
+      ],
+      "confirmed": true,
+      "qualification": "Website visits after positive reviews."
+    },
+    {
+      "page": "bpo",
+      "value": "21x",
+      "source": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+      "url": "https://resources.insidesales.com/blog/infographic-2/",
+      "factsheetSection": 6,
+      "factsheetTokens": [
+        "21"
+      ],
+      "confirmed": true,
+      "qualification": "Five versus thirty minutes; qualification odds for web leads, not unanswered call rate."
+    },
+    {
+      "page": "bpo",
+      "value": "56%",
+      "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+      "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms",
+      "factsheetSection": 7,
+      "factsheetTokens": [
+        "60%",
+        "56%"
+      ],
+      "confirmed": true,
+      "qualification": "All employer firms for application share; financing seekers for operating-expense reason."
+    },
+    {
+      "page": "consumer-financing",
+      "value": "93%",
+      "source": "BrightLocal, Local Consumer Review Survey (2026)",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "factsheetSection": 1,
+      "factsheetTokens": [
+        "93%"
+      ],
+      "confirmed": true,
+      "qualification": "Purchase after reviews, no claim of financing effect."
+    },
+    {
+      "page": "consumer-financing",
+      "value": "27%",
+      "source": "BrightLocal, Local Consumer Review Survey (2026)",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "factsheetSection": 1,
+      "factsheetTokens": [
+        "27%",
+        "$1,000"
+      ],
+      "confirmed": true,
+      "qualification": "Purchase size after reviews, no claim of financing effect."
+    },
+    {
+      "page": "business-loans",
+      "value": "42% / 36% / 22%",
+      "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+      "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms",
+      "factsheetSection": 7,
+      "factsheetTokens": [
+        "42%",
+        "36%",
+        "22%"
+      ],
+      "confirmed": true,
+      "qualification": "Financing applicants: full, some/most, none."
+    },
+    {
+      "page": "business-loans",
+      "value": "60%",
+      "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+      "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms",
+      "factsheetSection": 7,
+      "factsheetTokens": [
+        "60%",
+        "56%",
+        "46%"
+      ],
+      "confirmed": true,
+      "qualification": "Application share; expense/expansion reasons among financing seekers."
+    },
+    {
+      "page": "business-loans",
+      "value": "57%",
+      "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+      "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms",
+      "factsheetSection": 7,
+      "factsheetTokens": [
+        "57%"
+      ],
+      "confirmed": true,
+      "qualification": "Small-bank applicants fully approved; not individual approval probability."
+    },
+    {
+      "page": "prep-to-sell",
+      "value": "73%",
+      "source": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+      "url": "https://blog.exit-planning-institute.org/a-decade-of-development",
+      "factsheetSection": 9,
+      "factsheetTokens": [
+        "73%",
+        "10 years"
+      ],
+      "confirmed": true,
+      "qualification": "2023 SOOR horizon verified in EPI primary publisher summary dated March 12, 2024."
+    },
+    {
+      "page": "prep-to-sell",
+      "value": "$14 trillion",
+      "source": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+      "url": "https://blog.exit-planning-institute.org/a-decade-of-development",
+      "factsheetSection": 9,
+      "factsheetTokens": [
+        "$14",
+        "trillion"
+      ],
+      "confirmed": true,
+      "qualification": "2023 estimated transition opportunity, not completed sale value."
+    }
+  ]
+}

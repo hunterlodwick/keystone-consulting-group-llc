@@ -1,0 +1,3 @@
+{
+  "error": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-promise-and-the-reality-of-gen-ai-agents-in-the-enterprise\nCall log:\n\u001b[2m  - navigating to \"https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-promise-and-the-reality-of-gen-ai-agents-in-the-enterprise\", waiting until \"domcontentloaded\"\u001b[22m\n"
+}

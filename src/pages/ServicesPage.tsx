@@ -1683,36 +1683,129 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       ]
   },
   {
-    id: "pos-placement",
-    title: "POS Placement",
-    icon: MonitorSmartphone,
-    image: "/images/services/pos-placement.jpg",
-    imageAlt: "Modern black POS terminal on a dark countertop",
-    tagline: "New hardware. Zero check written.",
-    heroDesc: "That outdated terminal is slowing down your line and embarrassing your brand. We put modern payment hardware in your business free. Free install, free training. You process with us, and the equipment stays.",
-    sections: [
-      {
-        title: "Smart Terminals",
-        icon: CreditCard,
-        desc: "Tap, chip, swipe, Apple Pay. Under two seconds. The customer-facing screen handles tips and receipts so your staff isn't fumbling with paper while the next person waits."
+      "id": "pos-placement",
+      "title": "POS Placement",
+      "icon": MonitorSmartphone,
+      "image": "/images/services/pos-placement.jpg",
+      "imageAlt": "Modern black POS terminal on a dark countertop",
+      "tagline": "New hardware. Zero check written.",
+      "heroDesc": "Replace the outdated terminal slowing your line without writing a check for hardware. We put modern payment equipment in your business at no upfront cost. Free install, free training. You process with KCG, and the equipment stays. We explain the processing commitment before you decide.",
+      "problem": [
+          "The terminal is the last thing a customer touches, and often the oldest technology in the building. If it embarrasses your brand, holds up the lunch rush or came with a hardware quote you cannot justify, replacement deserves a look. The equipment is paid for through processing, so no upfront hardware payment does not mean free card processing.",
+          "The time cost is arithmetic, not a study result: extra seconds per transaction multiplied by transactions equals time spent waiting on the terminal. Measure your own counter before comparing equipment. New hardware cannot fix every delay, especially when the problem is the connection or how orders are entered."
+      ],
+      "sections": [
+          {
+              "title": "Smart Terminals",
+              "image": "/images/services/sub/smart-terminals.jpg",
+              "icon": CreditCard,
+              "desc": "Let customers tap, insert a chip or use a supported mobile wallet such as Apple Pay. Customer-facing prompts handle tips and receipts so staff can finish the sale without fumbling with paper. We check the payment methods and receipt options on the proposed device before placement."
+          },
+          {
+              "title": "Full POS Systems",
+              "image": "/images/services/sub/full-pos-systems.jpg",
+              "icon": LayoutDashboard,
+              "desc": "Put the register, scanner, printer and cash drawer around how your business sells. Your team should not have to fight the software during a rush. We confirm which components are included and whether your inventory, menu or reporting needs require separate software before you switch."
+          },
+          {
+              "title": "Kitchen Display Systems",
+              "image": "/images/services/sub/kitchen-display-systems.jpg",
+              "icon": Layers,
+              "desc": "Keep orders readable when paper tickets get lost, smeared or misread. Kitchen screens can route orders from a compatible POS and show preparation timers. We check station routing and order changes with your staff so the kitchen receives the information it needs."
+          },
+          {
+              "title": "Mobile & Wireless Readers",
+              "image": "/images/services/sub/mobile-wireless-readers.jpg",
+              "icon": Globe,
+              "desc": "Take payment tableside or at the front door when your counter also serves customers elsewhere. Wireless readers let staff bring checkout to the customer. We check coverage, charging and compatibility with the main register; a portable device still needs a suitable connection."
+          }
+      ],
+      "statistics": [
+          {
+              "title": "Financing competes with everyday needs",
+              "value": "60%",
+              "explanation": "The Federal Reserve found that 60% of surveyed employer firms applied for financing in the prior twelve months. This covers business financing broadly, not terminal purchases. For an owner weighing equipment against other expenses, placement removes the upfront hardware bill from that decision.",
+              "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+              "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+          },
+          {
+              "title": "Applying does not guarantee funding",
+              "value": "22%",
+              "explanation": "The same Federal Reserve survey found that 22% of financing applicants received none of the amount sought. This is not an equipment-loan rejection rate. It explains why relying on borrowed money can leave a purchase waiting; placement offers a different way to pay for hardware through processing.",
+              "source": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+              "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+          }
+      ],
+      "process": [
+          {
+              "title": "Review: watch the counter work",
+              "description": "We review your terminal, busy periods, processing statement and existing agreements. You show us where checkout stalls and which functions staff depend on."
+          },
+          {
+              "title": "Select: agree the equipment and terms",
+              "description": "We match hardware to the counter and confirm compatibility. You review processing rates, fees, commitment and equipment terms before approving the placement."
+          },
+          {
+              "title": "Install: test before the rush",
+              "description": "Installation is free. We agree a changeover window and test payments, receipts and the included connections before staff rely on the new setup."
+          },
+          {
+              "title": "Train: make daily tasks familiar",
+              "description": "Training is free. Staff practise taking payments and handling refunds. We explain settlement timing and who to contact when a device or transaction needs attention."
+          }
+      ],
+      "fit": {
+          "yes": [
+              "Your business takes card payments at a counter and the old terminal slows busy periods or looks out of place.",
+              "You were quoted a large hardware bill and are willing to process with KCG to replace it."
+          ],
+          "no": [
+              "You do not take card payments at a counter.",
+              "You are locked into a hardware lease you cannot exit.",
+              "You expect free hardware with no processing commitment."
+          ]
       },
-      {
-        title: "Full POS Systems",
-        icon: LayoutDashboard,
-        desc: "Register, scanner, printer, cash drawer. Set up for how your industry actually sells, so your team isn't fighting the software during a rush."
+      "questions": [
+          {
+              "question": "What is the catch with free hardware?",
+              "answer": "You process payments with KCG. Hardware has no upfront cost because processing pays for it. Compare the full rates, fees and commitment with your current bill before deciding."
+          },
+          {
+              "question": "Can I keep my current processor?",
+              "answer": "Not for this placement offer. The equipment comes with processing through KCG. If keeping your processor is essential, this arrangement is not a fit."
+          },
+          {
+              "question": "What if I already lease a terminal?",
+              "answer": "Bring the lease before agreeing to a change. Placement does not cancel an existing obligation. If you cannot exit that lease, we should not add another commitment."
+          },
+          {
+              "question": "Will it work with our register software?",
+              "answer": "We check the exact software and hardware combination first. A new terminal is not automatically compatible with your inventory, kitchen screens or reporting."
+          },
+          {
+              "question": "Will installation interrupt trading?",
+              "answer": "We plan the changeover around your opening hours and train staff before they depend on it. Timing depends on the setup; we do not promise zero interruption."
+          },
+          {
+              "question": "What happens to the equipment if we leave?",
+              "answer": "The equipment stays with your business under the placement arrangement. Before you sign, we explain how the agreement handles ending processing, including any remaining obligations."
+          }
+      ],
+      "close": {
+          "title": "Talk through hardware for your counter",
+          "description": "Tell us your setup and bring a processing statement or hardware quote. Seth or Hunter will review which terminals fit, what is included and the processing commitment.",
+          "button": "Talk through hardware for your counter"
       },
-      {
-        title: "Kitchen Display Systems",
-        icon: Layers,
-        desc: "Paper tickets get lost, smeared, and misread. Digital kitchen screens route every order the second it rings up, with timers that keep the line honest."
-      },
-      {
-        title: "Mobile & Wireless Readers",
-        icon: Globe,
-        desc: "Tableside, job site, front door, pop-up event. Take the payment where the customer is standing, just as fast as the terminal on your counter."
-      }
-    ],
-    features: ["Hardware that costs you nothing upfront", "Installed and ready without your IT guy", "Staff trained before the first rush", "Every way a customer wants to pay", "Tip screens that raise the average", "Full POS when a terminal isn't enough", "Kitchen screens that kill paper tickets", "Deposits that hit the same day"]
+      "features": [
+          "Hardware with no upfront cost",
+          "Free installation",
+          "Free staff training",
+          "Payment methods checked before placement",
+          "Full POS options",
+          "Compatible kitchen screens",
+          "Wireless reader options",
+          "Processing terms reviewed before switching"
+      ]
   }
 ];
 

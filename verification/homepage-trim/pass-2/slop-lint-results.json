@@ -1,0 +1,152 @@
+[
+  {
+    "route": "/",
+    "exit": 0,
+    "score": "5/5",
+    "output": "392 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services",
+    "exit": 0,
+    "score": "5/5",
+    "output": "2494 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/web-design",
+    "exit": 0,
+    "score": "5/5",
+    "output": "345 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/crm",
+    "exit": 0,
+    "score": "5/5",
+    "output": "344 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/automations",
+    "exit": 0,
+    "score": "5/5",
+    "output": "343 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/consulting",
+    "exit": 0,
+    "score": "5/5",
+    "output": "346 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/consumer-financing",
+    "exit": 0,
+    "score": "5/5",
+    "output": "367 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/business-loans",
+    "exit": 0,
+    "score": "5/5",
+    "output": "358 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/pos-placement",
+    "exit": 0,
+    "score": "5/5",
+    "output": "350 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/google-business",
+    "exit": 0,
+    "score": "5/5",
+    "output": "363 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/seo",
+    "exit": 0,
+    "score": "5/5",
+    "output": "369 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/bpo",
+    "exit": 0,
+    "score": "5/5",
+    "output": "366 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/services/prep-to-sell",
+    "exit": 0,
+    "score": "5/5",
+    "output": "348 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/restaurants",
+    "exit": 0,
+    "score": "5/5",
+    "output": "652 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/grocery",
+    "exit": 0,
+    "score": "5/5",
+    "output": "615 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/healthcare",
+    "exit": 0,
+    "score": "5/5",
+    "output": "601 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/ecommerce",
+    "exit": 0,
+    "score": "5/5",
+    "output": "594 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/salons",
+    "exit": 0,
+    "score": "5/5",
+    "output": "649 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/auto-repair",
+    "exit": 0,
+    "score": "5/5",
+    "output": "676 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/gas-stations",
+    "exit": 0,
+    "score": "5/5",
+    "output": "643 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/high-risk",
+    "exit": 0,
+    "score": "5/5",
+    "output": "655 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/nonprofits",
+    "exit": 0,
+    "score": "5/5",
+    "output": "630 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/b2b",
+    "exit": 0,
+    "score": "5/5",
+    "output": "665 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/real-estate",
+    "exit": 0,
+    "score": "5/5",
+    "output": "647 words of visible copy\n\n\n  score 5/5  CLEAN"
+  },
+  {
+    "route": "/retail",
+    "exit": 0,
+    "score": "5/5",
+    "output": "645 words of visible copy\n\n\n  score 5/5  CLEAN"
+  }
+]

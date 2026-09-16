@@ -1,0 +1,144 @@
+All services
+AI Implementations
+
+Hand the repeat work to software that does not forget.
+
+Every hour someone spends copying data between tools is an hour nobody spent selling. We hand the busywork to AI agents so your people can do the things only people can do.
+
+Software can reduce repetitive work, but AI usage and connected tools can carry fees. We include those costs when deciding what is worth automating.
+
+What we build
+The numbers
+The build process
+Common questions
+The work keeps landing back on your desk.
+
+A new enquiry arrives while you are serving a customer. By the time someone replies, the prospect has already called elsewhere. The lead was there. The handoff was missing.
+
+Your team copies customer details from a message into the CRM, then repeats the entry in another tool. When something changes, someone has to remember every place it was copied.
+
+You are interested in AI, but you do not need another dashboard to babysit. You need a specific piece of work to stop landing back on your desk, with a way to see when the software needs help.
+
+What we build
+AI Lead Qualification
+
+We build an agent around the questions your team uses to decide how to handle an enquiry. It collects the relevant details and routes the conversation according to rules you approve.
+
+What it replaces
+Manual sorting of enquiries and repeated introductory questions. It gives your team context before a call instead of making the prospect explain the same thing again.
+What you get
+A lead record with the information gathered and a clear next action. Incomplete or ambiguous answers can go to a person for review. Qualification is a routing decision, not proof that someone will buy.
+Who it is for
+Businesses with a repeatable enquiry process and a clear definition of a useful lead. If your criteria live only in the owner’s head, we need to make them explicit first.
+Customer Service Agents
+
+We configure an agent to answer recurring questions from approved business information. You decide what it may handle and which requests must go straight to your staff.
+
+What it replaces
+Repeated replies written from scratch and customers waiting for information that is already documented. Your team keeps the conversations that need judgement or account-specific decisions.
+What you get
+Answers grounded in the material you provide, with a handoff when the agent cannot resolve the request. We test uncertain questions as well as easy ones, so an unsupported answer is treated as a failure.
+Who it is for
+Teams receiving recurring service questions whose answers can be kept current. If nobody can own the underlying information, the assistant will not stay useful on its own.
+Workflow Automation
+
+We turn an agreed sequence of routine actions into a workflow. A completed form might create a record and notify its owner. Each action has a defined trigger so you can explain why it happened.
+
+What it replaces
+Copying data between screens and relying on someone to remember the next handoff. We start with a process that already makes sense, then remove the repeated manual steps.
+What you get
+A workflow with clear inputs and a visible outcome. We agree what happens when information is missing or a connected tool is unavailable. Your team needs a way to catch exceptions rather than assume every run succeeded.
+Who it is for
+Businesses doing the same administrative handoff repeatedly. A process that changes with every case may need human approval at key points instead of automatic execution throughout.
+System Integrations
+
+We connect the tools you already use where their supported interfaces allow it. We decide which system owns each piece of information and when changes should reach the other system.
+
+What it replaces
+Duplicate entry and conflicting records. A customer update should not become a guessing game about which screen contains the current information.
+What you get
+An agreed data handoff between your tools, with field mapping and failure handling checked before use. The scope defines which direction data moves and what must remain under human control.
+Who it is for
+Businesses with useful software that does not currently share the information staff need. We inspect access limits first. Paying for a tool does not necessarily mean it permits every integration you want.
+Put a number on the time bought back
+
+Published research gives us a reason to measure. Your own results determine what the work is worth.
+
+40–60 minutes
+
+What enterprise users reported
+
+OpenAI’s enterprise AI report says users reported this much time saved per active day. It is self-reported enterprise experience, not measured savings for KCG clients. It gives us a benchmark to investigate, not an outcome to promise.
+
+Derived illustration, assuming use on 5 working days: 40–60 minutes × 5 = 200–300 minutes per week. Divide by 60 minutes per hour = 3 hours 20 minutes to 5 hours per week. This assumes the reported daily saving repeats each day; use your measured saving and actual days instead.
+
+Sources: OpenAI, The state of enterprise AI (2025)
+
+14%
+
+Customer support research
+
+McKinsey describes a company with 5,000 support agents where generative AI increased issues resolved per hour by 14%. This concerns support work in that setting. It does not establish the same improvement for your team or mean staff can be removed.
+
+Derived: baseline issues resolved per hour × (1 + 14 / 100) = baseline × 1.14. This expresses the study’s productivity change; it is not a 14% reduction in working hours.
+
+Sources: McKinsey, The promise and the reality of gen AI agents in the enterprise (May 2024)
+What the build actually looks like
+Discovery: watch the work happen
+
+Walk Seth and Hunter through a real enquiry or repeated task. We identify where people wait and where information gets copied. We agree a baseline and choose a bounded workflow, including the cases that should stay with a person.
+
+Build: test the rules against real cases
+
+We configure the agent or workflow around your approved process. You review its answers and routing decisions. We test missing information and failed connections as well as the expected path before giving it a live responsibility.
+
+Launch: introduce it with oversight
+
+We agree what can run automatically and what needs approval. Your team checks early results against the original task. A fast reply that sends a lead to the wrong place is a defect, even if the automation ran successfully.
+
+Handover: give someone ownership
+
+We train the people who will use the workflow and agree who maintains its business information. You see how to handle exceptions and when to pause it. Any ongoing support arrangement and software fees are specified in the scope.
+
+A good fit
+You can point to recurring work and show how the team handles it today.
+Someone can approve the answers and own changes to the process.
+Your existing tools permit the access needed for the agreed workflow.
+Not a good fit
+You want AI to make every judgement without anyone reviewing exceptions.
+Your process changes constantly and nobody can define a reliable handoff.
+You expect a guaranteed headcount reduction or savings figure before measuring the work.
+Common questions
+What does an AI implementation cost?
+
+The quote depends on the workflow and the systems it touches. We separate build work from recurring software or usage fees. KCG looks for processing savings first, then discusses reinvesting verified savings. We do not assume those savings will pay for everything.
+
+How long until it works?
+
+We agree a schedule after checking access and the process itself. A workflow is ready when it handles the agreed cases and exceptions reliably enough for its role. Measurable value takes actual use and a comparison with the baseline, not a launch announcement.
+
+Do we need to replace our CRM or website?
+
+Usually the first step is to inspect what you already have. We build around your actual workflow and check what your tools allow. If a connection is unavailable or would require a different subscription, we explain that before including it in the scope.
+
+What happens when the AI gets something wrong?
+
+We define where it must ask for help and how staff review its output. An agent should not invent an answer because the business information is missing. The launch checks include unclear requests, and your team needs a clear way to take over.
+
+Do we own the implementation?
+
+Ownership and access are written into the scope for the work we build. Third-party models and tools retain their own licenses and fees. If a website is part of the project, you own that site with no platform lock-in. We explain dependencies before you commit.
+
+How much time will we actually get back?
+
+We measure the task before and after, including the time spent correcting output or handling exceptions. That gives you a daily figure measured against your own baseline, not a projection. Recovered time can create room for other work; it is not automatically money removed from payroll.
+
+What do you need from our team?
+
+Examples of the work and an owner who can say what a correct result looks like. We identify the account access required for the agreed connections. You approve the information an agent may use and the actions it may take before it handles live work.
+
+Show us the task you keep repeating.
+
+Describe the handoff that keeps coming back to your desk and the tools involved. Seth or Hunter will review where automation fits and what needs to stay with your people.
+
+Discuss my workflow

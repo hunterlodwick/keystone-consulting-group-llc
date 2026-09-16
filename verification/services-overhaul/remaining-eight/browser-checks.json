@@ -1,0 +1,946 @@
+[
+  {
+    "id": "crm",
+    "width": 390,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Nucleus Research, CRM benefit areas with the greatest ROI impact (2024)",
+        "url": "https://nucleusresearch.com/research/single/crm-benefit-areas-with-the-greatest-roi-impact/"
+      },
+      {
+        "text": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+        "url": "https://resources.insidesales.com/blog/infographic-2/"
+      }
+    ],
+    "words": 931,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "crm",
+    "width": 390,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Nucleus Research, CRM benefit areas with the greatest ROI impact (2024)",
+        "url": "https://nucleusresearch.com/research/single/crm-benefit-areas-with-the-greatest-roi-impact/"
+      },
+      {
+        "text": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+        "url": "https://resources.insidesales.com/blog/infographic-2/"
+      }
+    ],
+    "words": 931,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "crm",
+    "width": 1440,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Nucleus Research, CRM benefit areas with the greatest ROI impact (2024)",
+        "url": "https://nucleusresearch.com/research/single/crm-benefit-areas-with-the-greatest-roi-impact/"
+      },
+      {
+        "text": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+        "url": "https://resources.insidesales.com/blog/infographic-2/"
+      }
+    ],
+    "words": 931,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "crm",
+    "width": 1440,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Nucleus Research, CRM benefit areas with the greatest ROI impact (2024)",
+        "url": "https://nucleusresearch.com/research/single/crm-benefit-areas-with-the-greatest-roi-impact/"
+      },
+      {
+        "text": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+        "url": "https://resources.insidesales.com/blog/infographic-2/"
+      }
+    ],
+    "words": 931,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "consulting",
+    "width": 390,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 961,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "consulting",
+    "width": 390,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 961,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "consulting",
+    "width": 1440,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 961,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "consulting",
+    "width": 1440,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 961,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "seo",
+    "width": 390,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "Google Search Central, Core Web Vitals",
+        "url": "https://developers.google.com/search/docs/appearance/core-web-vitals"
+      }
+    ],
+    "words": 986,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "seo",
+    "width": 390,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "Google Search Central, Core Web Vitals",
+        "url": "https://developers.google.com/search/docs/appearance/core-web-vitals"
+      }
+    ],
+    "words": 986,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "seo",
+    "width": 1440,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "Google Search Central, Core Web Vitals",
+        "url": "https://developers.google.com/search/docs/appearance/core-web-vitals"
+      }
+    ],
+    "words": 986,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "seo",
+    "width": 1440,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "Google Search Central, Core Web Vitals",
+        "url": "https://developers.google.com/search/docs/appearance/core-web-vitals"
+      }
+    ],
+    "words": 986,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "google-business",
+    "width": 390,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 4,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      }
+    ],
+    "words": 1051,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "google-business",
+    "width": 390,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 4,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      }
+    ],
+    "words": 1051,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "google-business",
+    "width": 1440,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 4,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      }
+    ],
+    "words": 1051,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "google-business",
+    "width": 1440,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 4,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      }
+    ],
+    "words": 1051,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "bpo",
+    "width": 390,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+        "url": "https://resources.insidesales.com/blog/infographic-2/"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 998,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "bpo",
+    "width": 390,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+        "url": "https://resources.insidesales.com/blog/infographic-2/"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 998,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "bpo",
+    "width": 1440,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+        "url": "https://resources.insidesales.com/blog/infographic-2/"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 998,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "bpo",
+    "width": 1440,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)",
+        "url": "https://resources.insidesales.com/blog/infographic-2/"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 998,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "consumer-financing",
+    "width": 390,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 6,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      }
+    ],
+    "words": 984,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "consumer-financing",
+    "width": 390,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 6,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      }
+    ],
+    "words": 984,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "consumer-financing",
+    "width": 1440,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 6,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      }
+    ],
+    "words": 984,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "consumer-financing",
+    "width": 1440,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 4,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 6,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      },
+      {
+        "text": "BrightLocal, Local Consumer Review Survey (2026)",
+        "url": "https://www.brightlocal.com/research/local-consumer-review-survey/"
+      }
+    ],
+    "words": 984,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "business-loans",
+    "width": 390,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 1032,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "business-loans",
+    "width": 390,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 1032,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "business-loans",
+    "width": 1440,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 1032,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "business-loans",
+    "width": 1440,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 3,
+    "process": 4,
+    "questions": 5,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      },
+      {
+        "text": "Federal Reserve, 2026 Report on Employer Firms (2025 survey)",
+        "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms"
+      }
+    ],
+    "words": 1032,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "prep-to-sell",
+    "width": 390,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 6,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+        "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+      },
+      {
+        "text": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+        "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+      }
+    ],
+    "words": 1046,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "prep-to-sell",
+    "width": 390,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 6,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+        "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+      },
+      {
+        "text": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+        "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+      }
+    ],
+    "words": 1046,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "prep-to-sell",
+    "width": 1440,
+    "theme": "light",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 6,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+        "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+      },
+      {
+        "text": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+        "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+      }
+    ],
+    "words": 1046,
+    "cta": true,
+    "errors": []
+  },
+  {
+    "id": "prep-to-sell",
+    "width": 1440,
+    "theme": "dark",
+    "pass": true,
+    "overflow": false,
+    "sections": 5,
+    "includes": 4,
+    "stats": 2,
+    "process": 4,
+    "questions": 6,
+    "hidden": 0,
+    "forbidden": false,
+    "statLinks": [
+      {
+        "text": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+        "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+      },
+      {
+        "text": "Exit Planning Institute, 2023 State of Owner Readiness findings (published 2024)",
+        "url": "https://blog.exit-planning-institute.org/a-decade-of-development"
+      }
+    ],
+    "words": 1046,
+    "cta": true,
+    "errors": []
+  }
+]

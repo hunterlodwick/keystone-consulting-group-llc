@@ -1,0 +1,51 @@
+POS Placement verification
+
+Word count before: 258 rendered words in local main (brief estimated ~376).
+Word count after: 940 rendered words in main/article, measured with Playwright innerText split on whitespace.
+
+Only the pos-placement entry changed in ServicesPage.tsx; other entries and renderer unchanged.
+Preserved hero image/imageAlt and four hardware section titles; explicit existing images on all four.
+Actual reference shapes retained: process {title, description}, fit {yes, no}, close {title, description, button}.
+Added problem to activate existing DeepServiceContent renderer.
+
+Statistics (factsheet and primary source verified):
+60% of surveyed employer firms applied for financing in the prior twelve months.
+22% of financing applicants received none of the amount sought.
+Source for both: Federal Reserve, 2026 Report on Employer Firms (2025 survey).
+https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms
+These are business financing figures, not terminal-specific outcomes; visible caveats included.
+Counter-time calculation explicitly labeled arithmetic, not a study result.
+
+User-provided image-check script output:
+checked
+Zero missing images.
+
+npm run build: PASS, exit 0
+
+> react-example@0.0.0 build
+> vite build
+
+vite v6.4.1 building for production...
+transforming...
+✓ 1677 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                         1.78 kB │ gzip:   0.72 kB
+dist/assets/index-BuojrPBQ.css         78.99 kB │ gzip:  13.17 kB
+dist/assets/vendor-react-1jf2xJTu.js    3.90 kB │ gzip:   1.52 kB
+dist/assets/vendor-icons-CLxqWkL9.js   38.20 kB │ gzip:  10.02 kB
+dist/assets/index-DLjQ-Mq7.js         443.23 kB │ gzip: 130.88 kB
+✓ built in 5.22s
+
+npm run lint: PASS, exit 0
+
+> react-example@0.0.0 lint
+> tsc --noEmit
+
+
+Browser checks at 390px and 1440px: PASS.
+Both: 940 words, 2 statistics, 4 stages, 6 questions, 0 broken images, no horizontal overflow, no page errors.
+Contextual CTA opens contact form at both widths.
+Zero em-dashes; zero [needs number] in entry and rendered article.
+SlopMonster: 940 words of visible copy; score 5/5 CLEAN; exit 0.
+

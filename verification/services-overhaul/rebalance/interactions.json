@@ -1,0 +1,254 @@
+[
+  {
+    "width": 1440,
+    "theme": "light",
+    "overflow": false,
+    "hidden": 0,
+    "textOverPhotos": 0,
+    "capabilities": [
+      "Turn visits into calls with a custom business website",
+      "Turn a campaign click into a lead",
+      "Let customers browse, buy and pay online",
+      "Capture the job while the customer is ready",
+      "Answer the next customer after closing time",
+      "Help buyers inspect the details before they decide"
+    ],
+    "includes": 8,
+    "process": 4,
+    "faqs": 7,
+    "emDashes": false,
+    "needsNumber": [],
+    "colors": [
+      {
+        "text": "All services",
+        "color": "rgb(0, 122, 122)"
+      },
+      {
+        "text": "Website Builds",
+        "color": "rgb(26, 26, 26)"
+      },
+      {
+        "text": "Your website should be your best salesperson.",
+        "color": "rgb(0, 122, 122)"
+      },
+      {
+        "text": "Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.",
+        "color": "rgba(26, 26, 26, 0.75)"
+      },
+      {
+        "text": "See what your site could be",
+        "color": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "What we build",
+        "color": "rgb(0, 122, 122)"
+      }
+    ],
+    "ctas": [
+      {
+        "label": "See what your site could be",
+        "opensForm": true,
+        "title": "See what your site could be"
+      },
+      {
+        "label": "Find out how slow your site is",
+        "opensForm": true,
+        "title": "Find out how slow your site is"
+      },
+      {
+        "label": "Talk through your site",
+        "opensForm": true,
+        "title": "Talk through your site"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "overflow": false,
+    "hidden": 0,
+    "textOverPhotos": 0,
+    "capabilities": [
+      "Turn visits into calls with a custom business website",
+      "Turn a campaign click into a lead",
+      "Let customers browse, buy and pay online",
+      "Capture the job while the customer is ready",
+      "Answer the next customer after closing time",
+      "Help buyers inspect the details before they decide"
+    ],
+    "includes": 8,
+    "process": 4,
+    "faqs": 7,
+    "emDashes": false,
+    "needsNumber": [],
+    "colors": [
+      {
+        "text": "All services",
+        "color": "rgb(102, 178, 178)"
+      },
+      {
+        "text": "Website Builds",
+        "color": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Your website should be your best salesperson.",
+        "color": "rgb(102, 178, 178)"
+      },
+      {
+        "text": "Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.",
+        "color": "oklab(0.968761 -0.00183606 0.00635779 / 0.8)"
+      },
+      {
+        "text": "See what your site could be",
+        "color": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "What we build",
+        "color": "rgb(102, 178, 178)"
+      }
+    ],
+    "ctas": [
+      {
+        "label": "See what your site could be",
+        "opensForm": true,
+        "title": "See what your site could be"
+      },
+      {
+        "label": "Find out how slow your site is",
+        "opensForm": true,
+        "title": "Find out how slow your site is"
+      },
+      {
+        "label": "Talk through your site",
+        "opensForm": true,
+        "title": "Talk through your site"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "overflow": false,
+    "hidden": 0,
+    "textOverPhotos": 0,
+    "capabilities": [
+      "Turn visits into calls with a custom business website",
+      "Turn a campaign click into a lead",
+      "Let customers browse, buy and pay online",
+      "Capture the job while the customer is ready",
+      "Answer the next customer after closing time",
+      "Help buyers inspect the details before they decide"
+    ],
+    "includes": 8,
+    "process": 4,
+    "faqs": 7,
+    "emDashes": false,
+    "needsNumber": [],
+    "colors": [
+      {
+        "text": "All services",
+        "color": "rgb(0, 122, 122)"
+      },
+      {
+        "text": "Website Builds",
+        "color": "rgb(26, 26, 26)"
+      },
+      {
+        "text": "Your website should be your best salesperson.",
+        "color": "rgb(0, 122, 122)"
+      },
+      {
+        "text": "Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.",
+        "color": "rgba(26, 26, 26, 0.75)"
+      },
+      {
+        "text": "See what your site could be",
+        "color": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "What we build",
+        "color": "rgb(0, 122, 122)"
+      }
+    ],
+    "ctas": [
+      {
+        "label": "See what your site could be",
+        "opensForm": true,
+        "title": "See what your site could be"
+      },
+      {
+        "label": "Find out how slow your site is",
+        "opensForm": true,
+        "title": "Find out how slow your site is"
+      },
+      {
+        "label": "Talk through your site",
+        "opensForm": true,
+        "title": "Talk through your site"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "overflow": false,
+    "hidden": 0,
+    "textOverPhotos": 0,
+    "capabilities": [
+      "Turn visits into calls with a custom business website",
+      "Turn a campaign click into a lead",
+      "Let customers browse, buy and pay online",
+      "Capture the job while the customer is ready",
+      "Answer the next customer after closing time",
+      "Help buyers inspect the details before they decide"
+    ],
+    "includes": 8,
+    "process": 4,
+    "faqs": 7,
+    "emDashes": false,
+    "needsNumber": [],
+    "colors": [
+      {
+        "text": "All services",
+        "color": "rgb(102, 178, 178)"
+      },
+      {
+        "text": "Website Builds",
+        "color": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Your website should be your best salesperson.",
+        "color": "rgb(102, 178, 178)"
+      },
+      {
+        "text": "Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.",
+        "color": "oklab(0.968761 -0.00183606 0.00635779 / 0.8)"
+      },
+      {
+        "text": "See what your site could be",
+        "color": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "What we build",
+        "color": "rgb(102, 178, 178)"
+      }
+    ],
+    "ctas": [
+      {
+        "label": "See what your site could be",
+        "opensForm": true,
+        "title": "See what your site could be"
+      },
+      {
+        "label": "Find out how slow your site is",
+        "opensForm": true,
+        "title": "Find out how slow your site is"
+      },
+      {
+        "label": "Talk through your site",
+        "opensForm": true,
+        "title": "Talk through your site"
+      }
+    ]
+  }
+]

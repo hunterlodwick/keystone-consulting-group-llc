@@ -1,0 +1,127 @@
+[
+  {
+    "route": "/",
+    "words": 392,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/home.txt"
+  },
+  {
+    "route": "/services",
+    "words": 2494,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services.txt"
+  },
+  {
+    "route": "/services/web-design",
+    "words": 345,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_web-design.txt"
+  },
+  {
+    "route": "/services/crm",
+    "words": 344,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_crm.txt"
+  },
+  {
+    "route": "/services/automations",
+    "words": 343,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_automations.txt"
+  },
+  {
+    "route": "/services/consulting",
+    "words": 346,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_consulting.txt"
+  },
+  {
+    "route": "/services/consumer-financing",
+    "words": 367,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_consumer-financing.txt"
+  },
+  {
+    "route": "/services/business-loans",
+    "words": 358,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_business-loans.txt"
+  },
+  {
+    "route": "/services/pos-placement",
+    "words": 350,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_pos-placement.txt"
+  },
+  {
+    "route": "/services/google-business",
+    "words": 363,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_google-business.txt"
+  },
+  {
+    "route": "/services/seo",
+    "words": 369,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_seo.txt"
+  },
+  {
+    "route": "/services/bpo",
+    "words": 366,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_bpo.txt"
+  },
+  {
+    "route": "/services/prep-to-sell",
+    "words": 348,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/services_prep-to-sell.txt"
+  },
+  {
+    "route": "/restaurants",
+    "words": 652,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/restaurants.txt"
+  },
+  {
+    "route": "/grocery",
+    "words": 615,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/grocery.txt"
+  },
+  {
+    "route": "/healthcare",
+    "words": 601,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/healthcare.txt"
+  },
+  {
+    "route": "/ecommerce",
+    "words": 594,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/ecommerce.txt"
+  },
+  {
+    "route": "/salons",
+    "words": 649,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/salons.txt"
+  },
+  {
+    "route": "/auto-repair",
+    "words": 676,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/auto-repair.txt"
+  },
+  {
+    "route": "/gas-stations",
+    "words": 643,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/gas-stations.txt"
+  },
+  {
+    "route": "/high-risk",
+    "words": 655,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/high-risk.txt"
+  },
+  {
+    "route": "/nonprofits",
+    "words": 630,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/nonprofits.txt"
+  },
+  {
+    "route": "/b2b",
+    "words": 665,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/b2b.txt"
+  },
+  {
+    "route": "/real-estate",
+    "words": 647,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/real-estate.txt"
+  },
+  {
+    "route": "/retail",
+    "words": 645,
+    "path": "/Users/hunterlodwick/Downloads/keystone-consulting-group/verification/homepage-trim/pass-1/slop-route-texts/retail.txt"
+  }
+]

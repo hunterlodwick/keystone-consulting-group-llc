@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://fibbl.com/gant-3d-first/",
+    "status": 200,
+    "bytes": 50010,
+    "claims": [
+      "6.3% conversion uplift",
+      "95% significance"
+    ]
+  },
+  {
+    "url": "https://fibbl.com/does-3d-increase-conversion-rate-what-the-footwear-a-b-tests-actually-show/",
+    "status": 200,
+    "bytes": 94511,
+    "claims": [
+      "10.9% add-to-cart uplift",
+      "21% checkout uplift",
+      "99% certainty for both",
+      "Mobile-concentrated signal; desktop inconclusive",
+      "Limited samples, wide confidence intervals, novelty and selection effects",
+      "Simple viewer carries most usage"
+    ]
+  },
+  {
+    "url": "https://www.thinkwithgoogle.com/_qs/documents/6522/TwG_AUNZ_Masters_of_Mobile_Report.pdf",
+    "status": 200,
+    "bytes": 5181655,
+    "claims": [
+      "53% leave after more than 3 seconds",
+      "20% conversion drop per extra second",
+      "Derived 0.80 multiplier / 80% remaining"
+    ]
+  },
+  {
+    "url": "https://developers.google.com/search/docs/appearance/core-web-vitals",
+    "status": 200,
+    "bytes": 173686,
+    "claims": [
+      "LCP 2.5 seconds",
+      "INP 200 milliseconds",
+      "CLS 0.1"
+    ]
+  }
+]

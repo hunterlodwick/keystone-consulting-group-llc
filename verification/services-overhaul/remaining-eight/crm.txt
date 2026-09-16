@@ -1,0 +1,60 @@
+CRM Systems
+Know who needs a call before the deal goes quiet.
+Your team should be able to open the pipeline and know what happens next. We build custom CRMs or configure the HubSpot, Salesforce or GoHighLevel you already pay for. The aim is simple: keep customer history and follow-up with the business, instead of scattered across phones and notebooks.
+If two or more people sell or quote, a missed handoff can leave a good prospect waiting. Trades with outstanding estimates feel this every week. So do teams whose Monday meeting exists mainly to find out where deals stand. The follow-up that never happens is money you never get the chance to earn.
+See every deal and its next action
+Know which quotes need attention without asking everyone for an update. We map stages to real decisions, give each opportunity an owner, and show the next action with a due date. A stalled quote stays visible until someone resolves it.
+Get value from the software you own
+Keep a platform that fits and fix the setup around it. We review unused fields, confusing stages and duplicate records in your existing CRM. If your workflow needs a custom system, we explain the maintenance and ownership tradeoffs before recommending a build.
+Follow up while interest is still there
+Give staff a prompt when an enquiry arrives or a quote needs a reply. We configure assignments and agreed messages, with stop rules when someone responds or opts out. An automatic acknowledgement supports the handoff; it does not replace a useful conversation.
+Run the meeting from reliable numbers
+See open value, ageing opportunities and closed business from the same records your team works in. We agree what each report means before building it. Forecasts remain estimates, and missing data stays visible instead of making the month look healthier than it is.
+The scope names the workflow and records included, along with each connection. Training is part of making the system usable.
+A pipeline your team recognises
+Defined stages, required fields and ownership rules, reviewed with the people who actually sell.
+A controlled data move
+An agreed import, duplicate review and spot checks against your old records. Historic notes are included where the source permits export.
+Working follow-up and reporting
+Tested reminders and scoped integrations, plus dashboards with clear definitions and an exception queue.
+Access and handover
+Staff permissions, practical training and written support arrangements. Platform subscriptions and later changes are priced separately.
+Return depends on execution
+$3.10
+Nucleus Research reported this average return per dollar spent in its 2024 analysis, alongside a 37% decline over the preceding ten years. That does not prove why returns fell. Our takeaway: measure workflow improvements instead of assuming a software purchase creates value.
+Nucleus Research, CRM benefit areas with the greatest ROI impact (2024)
+Speed gives follow-up a purpose
+21x
+The MIT/InsideSales lead-response research reported 21 times higher qualification odds for web leads called within five minutes versus thirty. This older finding concerns qualification, not closed sales or a promised return from your CRM.
+MIT/InsideSales, Lead Response Management study (2007); InsideSales recap (2015)
+Discovery: follow a real quote
+We trace an enquiry through your current process and identify where ownership disappears. You choose a staff member to approve the new workflow.
+Configure: keep the useful parts
+We build or configure the agreed stages, import a sample and test the rules. Your team checks that the system reflects the work.
+Launch: work real opportunities
+Staff use the pipeline with oversight. We check assignments and follow-up delivery, including replied-to leads that should leave an automated sequence.
+Handover: keep it current
+We train the process owner and agree how to review overdue work. Ongoing support and software costs are documented before handover.
+You have multiple people selling or quoting and need shared customer history.
+You can name someone to keep stages and records accurate.
+You expect software to fix a sales process nobody will follow.
+You need a guaranteed revenue increase before measuring your current pipeline.
+Do we have to replace our CRM?
+No. We inspect the current setup first. A cleaner pipeline and better handoffs may solve the problem without a migration or another subscription.
+Will my team actually use it?
+We involve the people entering the data and remove fields without a purpose. Adoption still needs an owner who uses the same system and follows up on missing records.
+Can you bring our old data across?
+We check export access and sample records before agreeing the migration. Unsupported attachments or incomplete history are identified before you rely on the new system.
+What does it cost?
+Cost depends on configuration, migration and connections. The quote separates implementation from platform fees and support so you can judge the full commitment.
+Can it text leads automatically?
+Where the platform supports it, yes. We agree permission handling, message content and stop rules. Staff retain control when a customer needs a real answer.
+Show us the quotes nobody has followed up.
+Bring your current pipeline, even if it is a spreadsheet. Seth or Hunter will map the next actions and discuss whether your existing CRM can handle them.
+Discuss my sales process
+Shared deal ownership
+Quote follow-up reminders
+Existing CRM configuration
+Custom pipeline options
+Useful sales dashboards
+Data migration and training

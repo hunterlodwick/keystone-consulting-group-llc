@@ -1,0 +1,255 @@
+Does 3D Increase Conversion Rate? What the Footwear A/B Tests Actually Show - Fibbl
+Book
+          demo
+Experiences
+3D Viewer
+Virtual Try-on
+Augmented Reality
+Product Content
+Packshots
+AI Images
+Dynamic product ads
+Customers
+How It Works
+Categories
+Footwear
+Bags and Luggage
+Headwear
+Gloves
+Accessories
+Not Listed?
+Pricing
+Knowledge
+Sign in
+Get a demo
+Does 3D Increase Conversion Rate? What the Footwear A/B Tests Actually Show
+By
+Johan Bertilsson
+· August 28, 2026
+Search for this question and you will find the same number over and over: 3D content lifts conversion by 94%. It appears on dozens of vendor pages, usually with no test conditions, no sample size, and no link to a primary source. It has been repeated so many times that it now functions as folklore rather than evidence.
+We are a 3D content platform. The 94% figure is good for us. We are not going to use it.
+Instead, here are the split tests our footwear clients have run, with sample sizes, test durations and statistical confidence attached. Some of the results are strong. One of them is essentially a non-result, and we have included it for the same reason we included the rest.
+The short answer
+Across the tests we have data for, adding interactive 3D to footwear product pages produced:
+Conversion up 6.3% at 95% significance, across 274 products and 13 markets (GANT)
+Transactions up 16% (Nubikk, 36 days, 24 products)
+Add to cart up 10.9% at 99% certainty (Nubikk)
+Add to cart up 8% across 30 markets (Rossignol)
+Mobile transactions up 18.7%, desktop up 0.9% (Nubikk)
+That last line is worth pausing on, and we come back to it below.
+Test 1:
+Nubikk
+, 3D viewer on the product page
+Nubikk is a Dutch footwear brand. Michael Slagman, their E-commerce Manager, ran a split test on 24 products over 36 days, comparing product pages with an interactive 3D viewer against the standard image gallery.
+Metric
+Change
+Statistical certainty
+Transactions
++16%
+91.9%
+Transactions, mobile
++18.7%
+91%
+Transactions, desktop
++0.9%
+52%
+Add to cart
++10.9%
+99%
+Visitors reaching checkout
++21%
+99%
+Read the certainty column before the percentage column.
+The add to cart and checkout numbers are solid. At 99% certainty, those are real effects, not noise. The overall transaction figure at 91.9% sits just below the 95% threshold most teams use as their bar, which means it is suggestive rather than conclusive. Run it longer or on more products and it would likely firm up, but we are reporting what the test returned, not what we expect it would return.
+The desktop figure needs reading carefully. A 0.9% change at 52% certainty is not evidence that desktop performs worse. It is the absence of evidence in either direction. Desktop was the smaller share of traffic in a 36 day test on 24 products, so that segment never had the volume to detect a change of the size mobile showed. Treat it as unmeasured rather than flat.
+What that means practically.
+The clearest signal came from mobile, which is also where most footwear traffic now sits. That is not surprising once you think about the interaction: on a phone, dragging a product around with your thumb is a natural gesture, and the alternative is pinching a flat photo. If you are building a business case, the mobile numbers are the ones you can defend today. If desktop is a meaningful share of your mix, give it its own test with enough volume behind it rather than assuming either way.
+Test 2: Nubikk
+, virtual try-on interface redesign
+Michael Slagman, E-commerce Manager at Nubikk, has been open about starting out unconvinced. He initially regarded virtual try-on as
+a fun gimmick
+rather than a commercial tool, and he is still direct about its limits, noting that the technology is not flawless and performs better in socks than in looser jeans.
+Between 8 November and 16 December 2023, a 38 day test with a 50/50 traffic split, Nubikk changed how the virtual try-on feature was presented on the page. Not whether it existed. How visible and inviting the entry point was.
+Purchases: +52%
+Click-through rate to the try-on: +12%
+We want to be precise about what this test does and does not show.
+The variable was discovery, not virtual try-on itself.
+Both groups had access to the same try-on feature. One group found it more easily. A 52% purchase difference on a UI change is a large effect and the sample is a single brand over 38 days, so treat the size of it with some caution.
+The transferable lesson is not “virtual try-on lifts purchases by 52%”. It is that an interactive feature buried below the fold is close to worthless, and the placement decision may matter more than the feature decision. We have watched brands spend months producing 3D assets and then put the entry point somewhere nobody scrolls.
+Test 3: GANT, 3D-first product pages across 13 markets
+GANT
+is the largest test in this set by audience. They ran a 3D-first product page layout across 274 products and 13 markets, in front of more than 400,000 users.
++6.3%
+Conversion rate
+At 95% statistical significance
+Andrej Oblogin, Head of Growth at GANT, ran the test and confirmed “a 6.3% uplift in conversions with 95% statistical significance” using conversion rate as the primary metric. On what he valued in the technology itself, he pointed to being able to give customers a more engaging experience than the usual on their site.
+This is the only test in this set that clears the 95% bar. That matters. It is the threshold most e-commerce teams require before acting on a result, and it is the reason we would lead with this number rather than the larger ones elsewhere on this page.
+What also makes it useful is the product count. Twenty-four products can be explained by a couple of styles that happened to photograph badly in 2D. At 274 products across a full assortment, you are no longer measuring individual products, you are measuring the format.
+A 6.3% conversion lift is also more sober than the headline numbers in this category, and it sits in roughly the same territory as Rossignol’s 8% add to cart figure below. Two independent tests at scale landing in the mid single digits is a more useful planning number than any one result on its own.
+Test 4: Rossignol, 3D and virtual try-on at scale
+Lorenzo Riberto, Head of DTC Program and Digital Product at
+Rossignol
+, tested a 3D-first product page layout combined with virtual try-on across their trail-running launch. On why they started looking at 3D at all, his reasoning was competitive rather than technical: “the brands that are winning are increasingly tech-driven”, and 3D helped position a 115 year old company as contemporary.
+160,000 visitors
+10 products
+30 markets
+Add to cart: +8%
+The value of this one is breadth. A single-brand, single-market test can be explained away by that brand’s particular audience. Thirty markets is harder to dismiss. An 8% add to cart lift is more modest than the Nubikk figure, which is what you would expect as sample size grows and the result regresses toward something realistic.
+Lorenzo was also candid about the implementation, and it is worth repeating rather than hiding. He has said publicly that the initial setup posed challenges, and that the flexibility to customise the experience through CSS was not as simple in practice as his team first expected. Getting 3D onto product pages across 30 markets touches your PIM, your CMS, your front-end templates and whoever owns page speed. The asset production is rarely the hard part. The integration is.
+Test 5: RUMPF, asking customers directly
+RUMPF is a German dance footwear maker founded in 1965. Max Rumpf, their Head of E-commerce, surveyed over 40 newsletter subscribers about the 3D and try-on features rather than running a split test.
+56% scored the 3D view 7 or higher out of 10 for how much it helped their purchase decision
+Average score: 6.1 out of 10
+11.1% said it did not help at all
+Virtual try-on scored lower, 4.8 average, but 44.8% said they were more likely to order because of it
+This is survey data with a sample of 40 and it should carry the least weight of anything on this page. We include it because the pattern is interesting: the plain 3D view rated higher for usefulness than try-on, but try-on had a stronger effect on stated purchase intent. People find the two features useful for different reasons.
+What 72 million interactions tell us
+Beyond individual tests, our platform has recorded 72,577,826 end-consumer interactions between April 2024 and August 2026. That data does not prove causation, but it does show what shoppers actually do when you give them the options.
+Feature
+Share of all interactions
+3D viewer
+89.17%
+Virtual try-on
+2.34%
+Virtual try-on is not enabled on every account, so its share is not directly comparable. Across footwear accounts only, the 3D viewer is 93.3% and try-on 1.6%.
+Nearly nine in ten interactions are the simplest thing on offer: turning the product around.
+3D Viewer
+Images
+Augmented Reality
+Virtual Try-on
+Video
+This runs against how the category is usually sold. Virtual try-on is what gets the demo slot and the press coverage. On any cut of the data it is a low single-digit share of real usage. The plain 3D viewer, the feature nobody builds a launch campaign around, carries almost everything.
+That does not make try-on worthless. It performed well for Nubikk once they made it easy to find, and RUMPF’s customers said it moved their purchase intent even while rating it lower for usefulness. But it is a supporting feature, not the centre of the experience.
+If you are prioritising, the boring one is carrying the volume.
+Where the evidence is weak
+Being useful here means marking the limits.
+Sample sizes are footwear-scale, not Amazon-scale.
+These are real brands running real tests, which means tens of thousands of visitors, not millions. Confidence intervals are wide.
+Novelty may be doing some of the work.
+A feature most competitors do not have attracts attention partly because it is unfamiliar. As 3D becomes standard, some of the lift should decay. We do not yet have long enough data to say how much.
+Not every test
+reports
+certainty.
+The GANT and Nubikk tests include statistical significance. The Rossignol figure does not, so we cannot tell you how much of that 8% is noise. A 160,000 visitor sample makes it unlikely to be much, but unlikely is not the same as measured.
+Selection effects.
+Brands that invest in interactive content also tend to be brands investing in their whole digital experience. Split tests control for this within a brand, but the choice of which brands appear here is not random.
+We have not published a null result from a full 3D rollout.
+The closest thing is the desktop segment above, where the test simply could not tell us either way. We would rather flag that than let the gap pass unnoticed.
+How to test this yourself
+If you are
+evaluating 3D
+, do not take our numbers. Generate your own.
+Test on 50 to 100 products.
+A handful of styles will not reach significance in a reasonable window, and a wider set stops one unusual product from carrying the result.
+Run for at least four weeks.
+Both Nubikk tests ran 36 and 38 days. Anything under two weeks is measuring the weather.
+Segment mobile and desktop from the start, and size each segment properly.
+Blended figures hide where the effect actually sits, and a segment with too little traffic will return an inconclusive result that is easy to misread as a flat one.
+Use
+add
+to cart as your primary metric, not revenue.
+It sits closer to the change you made and reaches significance faster. Revenue is noisy because of basket composition and discounting.
+Test placement as a separate variable.
+Whether the feature exists and whether people find it are two different questions, and Nubikk’s try-on redesign showed the second one can move purchases on its own.
+Decide your certainty threshold before you start
+, then hold to it when the result comes back at 91.9%.
+The answer
+Yes, with qualifications that matter more than the headline.
+Interactive 3D lifts add to cart with high confidence across multiple brands. Transaction-level effects are positive but noisier. The gain concentrates on mobile, where it can be substantial. The simple rotate-and-inspect interaction does almost all of the work, and where you place the entry point may matter as much as the asset itself.
+That is a less exciting claim than 94%. It is one you can take into a meeting and defend.
+Frequently asked questions
+Does 3D increase conversion rate in e-commerce?
+Yes, based on split tests run by footwear brands. GANT recorded a 6.3% conversion uplift at 95% statistical significance across 274 products, 13 markets and more than 400,000 users. Nubikk recorded a 16% increase in transactions at 91.9% certainty over 36 days on 24 products. Effects are consistently positive, and the size varies by brand, device mix and how the experience is implemented.
+How much does 3D increase add to cart?
+Between 8% and 10.9% in the tests we have published. Rossignol recorded an 8% add to cart uplift across 160,000 visitors, 10 products and 30 markets. Nubikk recorded a 10.9% increase at 99% statistical certainty. Add to cart tends to show a clearer effect than revenue because it sits closer to the change being tested and reaches significance faster.
+Does 3D work better on mobile or desktop?
+The measured effect is clearest on mobile. In Nubikk’s test, mobile transactions rose 18.7% at 91% certainty, while desktop returned 0.9% at 52% certainty. That desktop figure is not evidence that 3D performs worse on desktop. It is an inconclusive result from a segment that lacked the traffic volume to detect a change. If desktop is a large share of your traffic, test it separately with enough volume behind it.
+Does virtual try-on increase sales?
+The evidence is weaker than for the standard 3D viewer, and placement appears to matter more than the feature. Nubikk redesigned how their virtual try-on was presented over a 38 day test and recorded a 52% increase in purchases and a 12% increase in click-through, but the variable tested was discoverability, not the try-on itself. In a RUMPF customer survey, try-on scored 4.8 out of 10 for usefulness while 44.8% of respondents said it made them more likely to order.
+Which 3D features do shoppers actually use?
+Across 72,577,826 recorded consumer interactions between April 2024 and August 2026, the plain 3D viewer accounted for 89.17% of all interactions and virtual try-on for 2.34%. Narrowed to footwear accounts only, the 3D viewer is 93.3% and try-on 1.6%. Try-on is not enabled on every account, and eyewear brands supply over half of all recorded try-on interactions, so treat the platform-wide figure as indicative rather than exact. Either way, rotating and inspecting the product is overwhelmingly what shoppers do.
+How long should a 3D A/B test run?
+At least four weeks, on 50 to 100 products. The two cleanest tests in this article ran 36 and 38 days. Shorter windows and smaller product sets rarely accumulate enough traffic to reach statistical significance, which produces inconclusive results that are easily misread as negative ones.
+Is the claim that 3D increases conversion by 94% reliable?
+That figure circulates widely across 3D vendor websites, generally without a stated sample size, test duration, or primary source. The measured results in this article fall between 6.3% and 16% on conversion and transaction metrics. Treat single-digit to mid-teens percentages as the realistic planning range.
+Johan Bertilsson
+Co-founder, Fibbl
+ABOUT THE AUTHOR
+Johan is co-founder of Fibbl, where he leads go-to-market. The team has scanned over 20,000 shoes and bags into interactive 3D, and he works directly with more than 50 footwear and bag brands including GANT, Gola and Samsonite on replacing traditional photography workflows with 3D and AI content production.
+Johan Bertilsson
+Co-founder, Fibbl
+Articles
+Get a demo
+Articles
+Footwear brands using interactive 3D on their product pages: 17 examples and how each one is built
+A hand-picked selection by Johan Bertilsson, co-founder, Fibbl. Last updated: 15 September 2026. I have
+5 Best Studios & Services for High-Volume Ecommerce Shoe Photography in 2026
+Quick Summary High-volume shoe photography becomes costly and difficult as catalogs grow, with repeated shoots,
+E-commerce Footwear Product Photography:A Guide to Shooting Shoes at Scale
+Quick Summary Ecommerce footwear product photography at scale is not about a nice photo. It
+Does 3D Increase Time on Product Pages? What Three Markets of A/B Data Show
+Quick Summary Ask this question online and every answer says yes, with no test behind
+“You don’t start with a 3D scanner.” Inside the pipeline that produces 3D at scale
+Fibbl's Head of Production and CTO on why most in-house 3D projects stall, what a Category Production Manual is, and why the model and the viewer have to be designed by the same people.
+Rickard lönn lindau
+        - chief growth officer
+Johan bertilsson
+        - co founder
+Rickard lönn lindau
+        - chief growth officer
+Johan bertilsson
+        - co founder
+Talk to
+          the team
+We'll help you get started and align your strategy with your business goals to ensure you get the most out
+            of our product.
+Get a demo
+Free product
+            scan
+Experiences
+3D viewer
+Virtual
+                  Try-on
+Augmented reality
+Product content
+Packshots
+AI images
+Dynamic video feed
+Customers
+GANT
+Løci
+Joya
+How it works
+End-to-end
+Product types
+Pipeline output
+Custom pipeline
+Pricing
+Plans
+Compare
+Knowledge
+Inside the shift
+Articles
+Cases
+About
+Sign in
+Integration
+Shopify
+WooCommerce
+Magento
+BigCommerce
++200 more
+Links
+Customer Portal
+Documentation
+Cookies
+Privacy
+Help Center
+Social Media
+Instagram
+LinkedIn
+YouTube
+Contact
+Get a demo
+hello@fibbl.com
++46 898 20 10

@@ -1,0 +1,199 @@
+All services
+Website Builds
+
+Your website should be your best salesperson.
+
+Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.
+
+See what your site could be
+What we build
+What is included
+The numbers
+The build process
+Common questions
+The site is there. The enquiries are another matter.
+
+You send a prospect your website, then explain on the phone what the page should have made clear. Your work has improved. The site still describes the business you used to run.
+
+On a phone, the contact button is hard to find. A visitor has to pinch the screen to read the service details. Someone interested enough to click still has to work out how to buy.
+
+You want a site you can be proud to send people to. You also need it to answer practical questions and put an enquiry where your team will see it. A good-looking page that leaves that job unfinished is still unfinished.
+
+What we build
+Turn visits into calls with a custom business website
+
+Our core offering is a custom business website. We design around how your customer decides: what you do, why they should trust you, and how to get in touch. Most clients need this foundation first.
+
+What it replaces
+An outdated brochure site that leaves you explaining the basics on every call, or a template that buries the contact button.
+What you get
+Pages built to make the phone ring, with clear service details and a direct enquiry path. Mobile-first layouts and fast loading help people act from the screen they have.
+Who it is for
+Local businesses, trades and professional services that need customers to understand the offer and contact the team.
+Turn a campaign click into a lead
+
+Lead-generating landing pages focus on a single offer. The page answers the reason someone clicked your ad, campaign or service link and gives them a clear next step.
+
+What it replaces
+Sending paid traffic to a general homepage, where visitors have to find the offer again.
+What you get
+A focused offer with supporting proof and a relevant enquiry form. We check that submissions reach the intended person and agree how to measure results.
+Who it is for
+Businesses running ads, promoting a specific service or testing an offer with a defined audience. Conversion is the goal, not a promised rate.
+Let customers browse, buy and pay online
+
+E-commerce and online stores give customers a route from product catalogue to checkout. We organise products around how people shop and make the purchase steps clear.
+
+What it replaces
+Taking every order through messages, sending separate payment links, or making customers call to find out what you sell.
+What you get
+Product pages, a cart and checkout, plus an order flow your team can manage. Product options, stock handling, delivery and payment connections are agreed before the build.
+Who it is for
+Retailers and product businesses ready to sell online. Catalogue size and fulfilment needs determine the scope and platform.
+Capture the job while the customer is ready
+
+Bookings, quotes and enquiries turn interest into a request your team can act on. We ask for the details you need to schedule an appointment or price the work.
+
+What it replaces
+Missed calls, vague contact messages and forms that land in an inbox nobody checks.
+What you get
+Booking systems, quote requests or service enquiry flows, with forms routed to the right person. We test confirmations and the handoff into your calendar or CRM where included.
+Who it is for
+Trades, clinics and appointment-based businesses, plus teams that need job details before they can quote.
+Answer the next customer after closing time
+
+AI on the website gives visitors a chat or voice assistant that answers approved questions and captures leads outside business hours. With an agreed calendar connection, it can book appointments.
+
+What it replaces
+Waiting until morning to answer routine questions, or asking visitors to search through pages for a simple answer.
+What you get
+An assistant with defined answers and a clear handoff to your team when it is unsure. We scope the knowledge, booking access and ongoing usage fees before connecting it.
+Who it is for
+Businesses handling repeated pre-sale questions. Private account reviews and decisions requiring staff judgement stay with a person.
+Help buyers inspect the details before they decide
+
+Interactive 3D and motion are specialist options. A customer can rotate a product or explore a space when photographs leave an important question unanswered. Scroll-driven motion can explain a product or process when movement helps.
+
+What it replaces
+Guessing at a product’s shape from a fixed angle, or leaving buyers without a way to explore a space they cannot visit yet.
+What you get
+A product viewer or purposeful motion, with mobile performance checks and a readable reduced-motion experience. A simple rotate-and-look viewer is often enough. Product-viewer research does not establish a return on decorative scroll animation.
+Who it is for
+E-commerce product pages, including furniture, apparel, footwear, jewellery or customisable products; real estate and property; automotive; equipment and machinery; hospitality venues. It is not right for every business. We will tell you when it is not worth the money.
+What the product-viewer tests actually show
+
+Fibbl reports a 6.3% conversion uplift for GANT at 95% statistical significance. Nubikk saw add-to-cart rise 10.9% and visitors reaching checkout rise 21%, both at 99% certainty. These are footwear/apparel brand tests, not KCG results or universal forecasts.
+
+The gains are modest overall and can be stronger on mobile. Nubikk’s desktop transactions showed no measurable effect. Samples are limited and confidence intervals are wide. Novelty may inflate early results; the lift may shrink as 3D becomes standard. Brands investing in 3D often improve the rest of their digital experience too. The simple viewer carries most usage; extra effects need their own business case.
+
+Sources: Fibbl, GANT conversion study; Fibbl, what the footwear A/B tests actually show
+
+What a KCG build includes
+
+Every build starts with a written scope. We agree which work below your project needs, who supplies what, and what costs continue after launch. This is not an unlimited package.
+
+Strategy: give the visitor a clear next step
+We agree who the site is for, what they need to know and the main action they should take. That decision guides the pages we build.
+Design: look like the business customers will meet
+We design around your brand and your actual customers, not a template. You review layouts before they become finished pages.
+Copy: answer the questions that hold up a sale
+We write plain-language copy aimed at the agreed action. You confirm the facts; we remove filler and claims you cannot support.
+Build: make the site usable on every screen
+Responsive pages, fast loading and accessible navigation are part of the build. We check keyboard use, readable contrast and labelled forms alongside the mobile customer path.
+Technical foundations: be ready to be found
+We agree responsibility for hosting, domain setup and SSL. Analytics, SEO structure and the sitemap are scoped alongside Google Business Profile setup or updates where relevant. Account fees are identified separately.
+Integrations: get the enquiry where it belongs
+We scope booking, payments, CRM and email connections around the tools you use. Forms route to the agreed people, with test submissions before launch.
+Handover: own it and know how to use it
+You own the site and the accounts. We hand over access and train you to make simple edits using the agreed editing setup. Third-party services keep their own terms.
+After launch: know who is watching and who to call
+We agree the monitoring and support plan before launch, including uptime, form delivery, performance and analytics checks where included. Your scope names the support contact, response arrangements and any ongoing fee; later changes are quoted separately.
+Why speed belongs in the budget
+
+Published research gives us a reason to measure. Your own results determine what the work is worth.
+
+53%
+
+A reason to take mobile loading seriously
+
+Think with Google reports that this share of mobile visitors leaves a page taking longer than 3 seconds to load. This is historical research, not a measurement of your customers or a KCG result.
+
+Sources: Think with Google, Masters of Mobile report
+
+20%
+
+Speed has a conversion cost
+
+The Google report describes a drop in conversions for every second of mobile loading delay. This is a historical research finding, not a universal forecast. Making a page faster does not guarantee an equal increase in sales.
+
+Derived illustration: starting conversions × (1 − 20 / 100) = starting conversions × 0.80 after a second of delay. That leaves 80% of the starting total in this illustration.
+
+Sources: Think with Google, Masters of Mobile report
+
+2.5 seconds
+
+The performance targets we work toward
+
+Google’s good-experience thresholds are LCP within 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. LCP measures loading. INP measures responsiveness, while CLS measures visual stability. These are targets, not a claim that an untested build passes. Good scores alone do not guarantee rankings.
+
+Sources: Google Search Central, Core Web Vitals
+Find out how slow your site is
+What the build actually looks like
+Discovery: agree on the customer path
+
+Show us the current site and explain what a good enquiry looks like. We review the pages you need and the material you already have. Seth and Hunter work directly with you to decide what belongs in the build.
+
+Build: review the actual pages
+
+We turn the agreed scope into pages you can open and read. You check that the offer is accurate. We test the phone layout and any assistant or booking connection included in your project before asking you to approve it.
+
+Launch: check the path to your inbox
+
+We verify the domain setup and submit test enquiries through the finished site. We check the agreed customer paths on mobile and desktop. Any unresolved dependency is made visible before launch.
+
+Handover: know what you own
+
+You own the site, with no platform lock-in. We walk through the agreed editing setup and hand over access. Hosting and any third-party assistant fees are identified separately so you know what continues after the build.
+
+A good fit
+You need your site to explain the work before a prospect calls.
+You can supply accurate service details and approve the pages with us.
+You want ownership of the site and a build shaped around your actual sales process.
+Not a good fit
+You need a guaranteed ranking or sales figure before anyone has measured your traffic.
+You want animation everywhere even when it makes the site harder to use.
+You need a custom application outside these capabilities without a separate scope.
+Common questions
+What does a website cost?
+
+We quote after reviewing the pages and connections you need. A focused landing page and a site with a voice assistant involve different work. We identify processing savings first and discuss reinvesting verified savings into the build. Savings are not assumed to cover the whole project.
+
+How long will the build take?
+
+The schedule depends on the agreed scope and when content or account access is available. We set review points before work begins. We will not attach a stock turnaround promise to a project we have not looked at.
+
+What if we already have a website?
+
+Send it to us. We review what is useful before recommending a replacement. Existing copy or photographs may carry over if you own them and they still describe the business accurately. We agree what changes before building.
+
+Do I own it, and can I move it later?
+
+Yes. You own your site and are not locked to a KCG platform. We explain the handover and hosting arrangements in the scope. Third-party subscriptions have their own terms, which we identify before you commit.
+
+Can the site work with our current CRM?
+
+We check the form destination and the access your CRM allows before promising a connection. The goal is an enquiry arriving where the team already works. If the current system limits that handoff, we explain the options and scope the work.
+
+How soon will it bring in customers?
+
+The site can accept enquiries once it is live and the contact path is tested. Generating demand is a separate question. We cannot promise a sales date or conversion lift. Your traffic and enquiry baseline give us a starting point for measurement, so any lift we report later is measured against your own numbers rather than a promise made now.
+
+What do you need from us?
+
+An explanation of your services and access to whoever approves the content. We also need the brand material you have permission to use. For a rebuild, we identify the domain and hosting access needed before the launch date is agreed.
+
+Show us the site you have outgrown.
+
+Send your current website and the part of the enquiry process that frustrates you. Seth or Hunter will discuss what needs rebuilding and where processing savings might help fund it.
+
+Talk through your site

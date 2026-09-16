@@ -1,0 +1,60 @@
+{
+  "home-390-dark": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "scrollHeight": 18198,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "theme": "dark",
+    "h1": "We Find Hidden Profitin Your Business.",
+    "sections": [
+      "relative min-h-screen flex items-center pt-20 overflow-hidden",
+      "$0+",
+      "One System. Three Steps.",
+      "The Fastest Way to Put Money Back in Your Pocket",
+      "pricing",
+      "calculator",
+      "services",
+      "py-32 relative bg-charcoal-dark border-t border-white/5",
+      "Trusted Across Every Industry",
+      "Why Keystone",
+      "Real Results. Real Savings.",
+      "py-24 border-y border-teal/10 bg-charcoal-dark/30 overflow-hidden relative",
+      "about"
+    ],
+    "errors": []
+  },
+  "home-1440-dark": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "scrollHeight": 11426,
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "theme": "dark",
+    "h1": "We Find Hidden Profitin Your Business.",
+    "sections": [
+      "relative min-h-screen flex items-center pt-20 overflow-hidden",
+      "$0+",
+      "One System. Three Steps.",
+      "The Fastest Way to Put Money Back in Your Pocket",
+      "pricing",
+      "calculator",
+      "services",
+      "py-32 relative bg-charcoal-dark border-t border-white/5",
+      "Trusted Across Every Industry",
+      "Why Keystone",
+      "Real Results. Real Savings.",
+      "py-24 border-y border-teal/10 bg-charcoal-dark/30 overflow-hidden relative",
+      "about"
+    ],
+    "errors": []
+  }
+}

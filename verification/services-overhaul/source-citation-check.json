@@ -1,0 +1,43 @@
+[
+  {
+    "url": "https://developers.google.com/search/docs/appearance/core-web-vitals",
+    "status": 200,
+    "final_url": "https://developers.google.com/search/docs/appearance/core-web-vitals",
+    "bytes": 173690,
+    "claims": [
+      "LCP within 2.5 seconds",
+      "INP under 200 milliseconds",
+      "CLS under 0.1"
+    ]
+  },
+  {
+    "url": "https://www.thinkwithgoogle.com/_qs/documents/6522/TwG_AUNZ_Masters_of_Mobile_Report.pdf",
+    "status": 200,
+    "final_url": "https://www.thinkwithgoogle.com/_qs/documents/6522/TwG_AUNZ_Masters_of_Mobile_Report.pdf",
+    "bytes": 5181655,
+    "claims": [
+      "53% leave mobile pages loading longer than 3 seconds",
+      "20% conversion drop per extra second",
+      "Derived: 1 - 20/100 = 0.80 = 80% remaining"
+    ]
+  },
+  {
+    "url": "https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf",
+    "status": 200,
+    "final_url": "https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf",
+    "bytes": 10179487,
+    "claims": [
+      "40–60 minutes saved per active day, self-reported",
+      "Derived, assuming 5 days: 40–60 × 5 = 200–300 minutes; ÷ 60 = 3h20m–5h/week"
+    ]
+  },
+  {
+    "url": "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-promise-and-the-reality-of-gen-ai-agents-in-the-enterprise",
+    "error": "The read operation timed out",
+    "claims": [
+      "5,000 support agents",
+      "14% more issues resolved/hour",
+      "Derived: 1 + 14/100 = 1.14 × baseline issues/hour"
+    ]
+  }
+]

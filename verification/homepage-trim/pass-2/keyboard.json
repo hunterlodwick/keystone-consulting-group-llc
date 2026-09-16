@@ -1,0 +1,218 @@
+{
+  "desktopHeroContact": {
+    "before": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Book a Call",
+      "isBody": false,
+      "inDialog": false
+    },
+    "afterOpen": {
+      "tag": "BUTTON",
+      "id": "modal-close-btn",
+      "role": null,
+      "ariaLabel": "Close modal",
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterTab": {
+      "tag": "INPUT",
+      "id": "firstName",
+      "role": null,
+      "ariaLabel": null,
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterClose": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Book a Call",
+      "isBody": false,
+      "inDialog": false
+    },
+    "dialogGone": true
+  },
+  "desktopHeaderContact": {
+    "before": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Book a Call",
+      "isBody": false,
+      "inDialog": false
+    },
+    "afterOpen": {
+      "tag": "BUTTON",
+      "id": "modal-close-btn",
+      "role": null,
+      "ariaLabel": "Close modal",
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterTab": {
+      "tag": "INPUT",
+      "id": "firstName",
+      "role": null,
+      "ariaLabel": null,
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterClose": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Book a Call",
+      "isBody": false,
+      "inDialog": false
+    },
+    "dialogGone": true
+  },
+  "desktopStatement": {
+    "before": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Get a Free Statement Analysis",
+      "isBody": false,
+      "inDialog": false
+    },
+    "afterOpen": {
+      "tag": "BUTTON",
+      "id": "modal-close-btn",
+      "role": null,
+      "ariaLabel": "Close modal",
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterTab": {
+      "tag": "INPUT",
+      "id": "businessName",
+      "role": null,
+      "ariaLabel": null,
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterClose": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Get a Free Statement Analysis",
+      "isBody": false,
+      "inDialog": false
+    },
+    "dialogGone": true
+  },
+  "mobileMenuContact": {
+    "before": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Book a Call",
+      "isBody": false,
+      "inDialog": false
+    },
+    "afterOpen": {
+      "tag": "BUTTON",
+      "id": "modal-close-btn",
+      "role": null,
+      "ariaLabel": "Close modal",
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterTab": {
+      "tag": "INPUT",
+      "id": "firstName",
+      "role": null,
+      "ariaLabel": null,
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterClose": {
+      "tag": "BUTTON",
+      "id": "mobile-menu-toggle",
+      "role": null,
+      "ariaLabel": "Open menu",
+      "text": "",
+      "isBody": false,
+      "inDialog": false
+    },
+    "dialogGone": true,
+    "menuOpenFocus": {
+      "tag": "BUTTON",
+      "id": "mobile-menu-toggle",
+      "role": null,
+      "ariaLabel": "Close menu",
+      "text": "",
+      "isBody": false,
+      "inDialog": false
+    }
+  },
+  "mobileStatement": {
+    "before": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Get a Free Statement Analysis",
+      "isBody": false,
+      "inDialog": false
+    },
+    "afterOpen": {
+      "tag": "BUTTON",
+      "id": "modal-close-btn",
+      "role": null,
+      "ariaLabel": "Close modal",
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterTab": {
+      "tag": "INPUT",
+      "id": "businessName",
+      "role": null,
+      "ariaLabel": null,
+      "text": "",
+      "isBody": false,
+      "inDialog": true
+    },
+    "afterClose": {
+      "tag": "BUTTON",
+      "id": null,
+      "role": null,
+      "ariaLabel": null,
+      "text": "Get a Free Statement Analysis",
+      "isBody": false,
+      "inDialog": false
+    },
+    "dialogGone": true
+  },
+  "mobileHashMenuClose": {
+    "afterAbout": {
+      "url": "http://localhost:4173/#about",
+      "menuClosed": true,
+      "aboutVisible": true
+    },
+    "afterProcessing": {
+      "url": "http://localhost:4173/#pricing",
+      "menuClosed": true,
+      "pricingVisible": true
+    }
+  }
+}

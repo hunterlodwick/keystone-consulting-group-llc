@@ -1,0 +1,787 @@
+{
+  "capturedAt": "2026-09-15T05:25:03.518Z",
+  "previewBase": "http://127.0.0.1:4173",
+  "baseline": {
+    "home-390-dark": {
+      "scrollHeight": 18198,
+      "scrollWidth": 390,
+      "clientWidth": 390
+    },
+    "home-1440-dark": {
+      "scrollHeight": 11426,
+      "scrollWidth": 1440,
+      "clientWidth": 1440
+    }
+  },
+  "after": {
+    "home-390-dark": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "reducedMotion": false,
+      "disableObserver": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "scrollHeight": 6270,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 204.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 124.171875,
+        "inFirstViewport": true
+      },
+      "copyBox": {
+        "top": 224.171875,
+        "bottom": 341.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 117,
+        "inFirstViewport": true
+      },
+      "ctaBox": {
+        "top": 373.171875,
+        "bottom": 429.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 477.171875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false,
+      "percentReduction": 65.55,
+      "h1Overflow": false
+    },
+    "home-1440-dark": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "reducedMotion": false,
+      "disableObserver": false,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollHeight": 3812,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 411.1875,
+        "left": 128,
+        "right": 779.1875,
+        "width": 651.1875,
+        "height": 331.1875,
+        "inFirstViewport": true
+      },
+      "copyBox": {
+        "top": 431.1875,
+        "bottom": 528.6875,
+        "left": 128,
+        "right": 704,
+        "width": 576,
+        "height": 97.5,
+        "inFirstViewport": true
+      },
+      "ctaBox": {
+        "top": 560.6875,
+        "bottom": 616.6875,
+        "left": 128,
+        "right": 274.578125,
+        "width": 146.578125,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 680.6875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false,
+      "percentReduction": 66.64
+    },
+    "home-390-light": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "reducedMotion": false,
+      "disableObserver": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "scrollHeight": 6270,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 204.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 124.171875
+      },
+      "copyBox": {
+        "top": 224.171875,
+        "bottom": 341.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 117
+      },
+      "ctaBox": {
+        "top": 373.171875,
+        "bottom": 429.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 477.171875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false
+    },
+    "home-1440-light": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "light",
+      "reducedMotion": false,
+      "disableObserver": false,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollHeight": 3812,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 411.1875,
+        "left": 128,
+        "right": 779.1875,
+        "width": 651.1875,
+        "height": 331.1875
+      },
+      "copyBox": {
+        "top": 431.1875,
+        "bottom": 528.6875,
+        "left": 128,
+        "right": 704,
+        "width": 576,
+        "height": 97.5
+      },
+      "ctaBox": {
+        "top": 560.6875,
+        "bottom": 616.6875,
+        "left": 128,
+        "right": 274.578125,
+        "width": 146.578125,
+        "height": 56,
+        "inFirstViewport": true
+      },
+      "headerHeight": 85,
+      "servicesTop": 680.6875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false
+    },
+    "home-390-reduced-motion": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "reducedMotion": true,
+      "disableObserver": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "scrollHeight": 6270,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 204.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 124.171875
+      },
+      "copyBox": {
+        "top": 224.171875,
+        "bottom": 341.171875,
+        "left": 24,
+        "right": 366,
+        "width": 342,
+        "height": 117
+      },
+      "ctaBox": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "headerHeight": 85,
+      "servicesTop": 477.171875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false
+    },
+    "home-observer-disabled": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "reducedMotion": false,
+      "disableObserver": true,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollHeight": 3812,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "h1": "Lower Processing Fees. Website Builds. AI Automations.",
+      "h1Box": {
+        "top": 80,
+        "bottom": 411.1875,
+        "left": 128,
+        "right": 779.1875,
+        "width": 651.1875,
+        "height": 331.1875
+      },
+      "copyBox": {
+        "top": 431.1875,
+        "bottom": 528.6875,
+        "left": 128,
+        "right": 704,
+        "width": 576,
+        "height": 97.5
+      },
+      "ctaBox": {
+        "top": 20,
+        "bottom": 64,
+        "left": 1280.78125,
+        "right": 1388,
+        "width": 107.21875,
+        "height": 44
+      },
+      "headerHeight": 85,
+      "servicesTop": 680.6875,
+      "pricingScrollMargin": "96px",
+      "aboutScrollMargin": "96px",
+      "numericFontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "cards": [
+        {
+          "title": "Credit Card Processing",
+          "href": "/#pricing"
+        },
+        {
+          "title": "Website Builds",
+          "href": "/services/web-design"
+        },
+        {
+          "title": "AI Automations",
+          "href": "/services/automations"
+        }
+      ],
+      "processNums": [
+        "Tell Us What You Need.",
+        "Review the Plan.",
+        "Put It to Work."
+      ],
+      "desktopNavSample": [
+        "Processing",
+        "Websites",
+        "AI Automations",
+        "About"
+      ],
+      "h2s": [
+        "Three Core Services. One Local Partner.",
+        "Two Ways to Reduce Processing Costs.",
+        "A Clear Plan. Three Steps.",
+        "Work Directly With the Owners."
+      ],
+      "sectionCount": 5,
+      "forbiddenHits": [],
+      "loadedFonts": [
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans unloaded",
+        "DM Sans loaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "JetBrains Mono unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display unloaded",
+        "Playfair Display loaded"
+      ],
+      "overflowX": false
+    },
+    "mobileNav": [
+      {
+        "text": "Keystone Consulting Group",
+        "href": "/",
+        "height": 28
+      },
+      {
+        "text": "Processing",
+        "href": "/#pricing",
+        "height": 0
+      },
+      {
+        "text": "Websites",
+        "href": "/services/web-design",
+        "height": 0
+      },
+      {
+        "text": "AI Automations",
+        "href": "/services/automations",
+        "height": 0
+      },
+      {
+        "text": "About",
+        "href": "/#about",
+        "height": 0
+      },
+      {
+        "text": "",
+        "href": null,
+        "height": 0
+      },
+      {
+        "text": "(866) 667-5219",
+        "href": "tel:8666675219",
+        "height": 0
+      },
+      {
+        "text": "Book a Call",
+        "href": null,
+        "height": 0
+      },
+      {
+        "text": "",
+        "href": null,
+        "height": 24
+      },
+      {
+        "text": "",
+        "href": null,
+        "height": 44
+      },
+      {
+        "text": "Processing",
+        "href": "/#pricing",
+        "height": 44
+      },
+      {
+        "text": "Websites",
+        "href": "/services/web-design",
+        "height": 44
+      },
+      {
+        "text": "AI Automations",
+        "href": "/services/automations",
+        "height": 44
+      },
+      {
+        "text": "About",
+        "href": "/#about",
+        "height": 44
+      },
+      {
+        "text": "(866) 667-5219",
+        "href": "tel:8666675219",
+        "height": 44
+      },
+      {
+        "text": "Book a Call",
+        "href": null,
+        "height": 48
+      }
+    ],
+    "mobileMenuClosesOnNav": {
+      "arrived": "http://127.0.0.1:4173/services/web-design",
+      "menuClosed": true,
+      "menuOpenGone": true
+    },
+    "modals": {
+      "contactTitle": "Book a Call",
+      "statementTitle": "Get a Free Statement Analysis",
+      "contactInvalid": true,
+      "statementInvalid": true,
+      "contactClosed": 0,
+      "keyboardFocusSample": "Websites"
+    },
+    "anchorClearance": {
+      "pricingClearance": {
+        "hash": "#pricing",
+        "headerBottom": 69,
+        "headingTop": 176.9375,
+        "inView": true,
+        "scrollY": 1119
+      },
+      "aboutClearance": {
+        "hash": "#about",
+        "headerBottom": 69,
+        "headingTop": 176.4375,
+        "inView": true,
+        "scrollY": 2444
+      }
+    },
+    "clickNav": {
+      "afterClick": {
+        "url": "http://127.0.0.1:4173/services/web-design",
+        "h1": "Custom Web Design"
+      },
+      "afterBack": {
+        "url": "http://127.0.0.1:4173/",
+        "h1": "Lower Processing Fees. Website Builds. AI Automations."
+      },
+      "afterForward": {
+        "url": "http://127.0.0.1:4173/services/web-design",
+        "h1": "Custom Web Design"
+      },
+      "pricingClick": {
+        "url": "http://127.0.0.1:4173/#pricing",
+        "pricingInView": true
+      },
+      "autoClick": {
+        "url": "http://127.0.0.1:4173/services/automations",
+        "h1": "AI & Automations"
+      }
+    },
+    "hashRecheckAt": "2026-09-15T05:28:10.173Z"
+  }
+}

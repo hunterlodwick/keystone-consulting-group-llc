@@ -1,0 +1,185 @@
+Keystone Consulting Group
+All services
+Website Builds
+
+Your website should be your best salesperson.
+
+Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone.
+
+What we build
+The numbers
+The build process
+Common questions
+The site is there. The enquiries are another matter.
+
+You send a prospect your website, then explain on the phone what the page should have made clear. Your work has improved. The site still describes the business you used to run.
+
+On a phone, the contact button is hard to find. A visitor has to pinch the screen to read the service details. Someone interested enough to click still has to work out how to buy.
+
+You want a site you can be proud to send people to. You also need it to answer practical questions and put an enquiry where your team will see it. A good-looking page that leaves that job unfinished is still unfinished.
+
+What we build
+3D Animated Websites
+
+We build dimensional visuals and scroll-driven movement around what you sell. A product can be shown from different angles; a service can be explained as the visitor moves down the page. The movement needs a reason to be there.
+
+What it replaces
+A static template that makes your business look interchangeable, or decorative effects that get in the way of reading. We start with the story the page needs to tell.
+What you get
+A website with motion designed around its content. Visitors can still read and contact you with reduced motion enabled. Heavy visual elements must earn their place against mobile performance.
+Who it is for
+Businesses whose product or process benefits from a visual explanation. If a photograph explains it better, we use the photograph. You do not need animation on every page.
+AI Voice Chatbots
+
+We add a voice assistant that answers the questions you approve and guides visitors toward an enquiry or booking. We define what it can say before connecting it to the site.
+
+What it replaces
+The gap between someone arriving with a question and your team being available to answer. It also reduces the need to hunt through pages for a straightforward answer.
+What you get
+A conversational way to ask about your services, with a clear route to a person when the answer is uncertain. Booking depends on the calendar connection agreed in the scope.
+Who it is for
+Businesses that repeatedly answer the same pre-sale questions. It is a poor fit when every answer requires a private account review or a judgement only your staff can make.
+High-Conversion Landing Pages
+
+We build focused pages around a specific offer and the action you want a visitor to take. The message follows the reason they clicked, rather than sending every visitor to a general homepage.
+
+What it replaces
+A page crowded with unrelated offers, or a campaign that makes a promise the destination never explains. We remove the steps that make an interested person hesitate.
+What you get
+A clear offer with the evidence you can actually provide, followed by a relevant contact or booking path. We check the form handoff so an enquiry reaches the intended person.
+Who it is for
+Businesses promoting a defined service or running a campaign with a clear audience. High-conversion describes the design objective. Your actual conversion rate needs to be measured after launch.
+Mobile-First & Lightning Fast
+
+We design the phone experience from the start. Navigation must work with a thumb, text must be readable, and a form must be usable without zooming or sideways scrolling.
+
+What it replaces
+A desktop design squeezed into a narrow screen, oversized media that delays reading, and layouts that jump while a visitor tries to tap.
+What you get
+Responsive pages with appropriately sized images and performance checks. We use Core Web Vitals as targets and explain any tradeoff between visual complexity and loading speed.
+Who it is for
+Any business whose customers may visit from a phone. We test the important customer path on small screens, including what happens after the contact button is pressed.
+Why speed belongs in the budget
+
+Published research gives us a reason to measure. Your own results determine what the work is worth.
+
+53%
+
+A reason to take mobile loading seriously
+
+Think with Google reports that this share of mobile visitors leaves a page taking longer than 3 seconds to load. This is historical research, not a measurement of your customers or a KCG result.
+
+Sources: Think with Google, Masters of Mobile report
+
+20%
+
+Speed has a conversion cost
+
+The Google report describes a drop in conversions for every second of mobile loading delay. This is a historical research finding, not a universal forecast. Making a page faster does not guarantee an equal increase in sales.
+
+Derived illustration: starting conversions × (1 − 20 / 100) = starting conversions × 0.80 after a second of delay. That leaves 80% of the starting total in this illustration.
+
+Sources: Think with Google, Masters of Mobile report
+
+2.5 seconds
+
+The performance targets we work toward
+
+Google’s good-experience thresholds are LCP within 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. LCP measures loading. INP measures responsiveness, while CLS measures visual stability. These are targets, not a claim that an untested build passes. Good scores alone do not guarantee rankings.
+
+Sources: Google Search Central, Core Web Vitals
+What the build actually looks like
+Discovery: agree on the customer path
+
+Show us the current site and explain what a good enquiry looks like. We review the pages you need and the material you already have. Seth and Hunter work directly with you to decide what belongs in the build.
+
+Build: review the actual pages
+
+We turn the agreed scope into pages you can open and read. You check that the offer is accurate. We test the phone layout and any assistant or booking connection included in your project before asking you to approve it.
+
+Launch: check the path to your inbox
+
+We verify the domain setup and submit test enquiries through the finished site. We check the agreed customer paths on mobile and desktop. Any unresolved dependency is made visible before launch.
+
+Handover: know what you own
+
+You own the site, with no platform lock-in. We walk through the agreed editing setup and hand over access. Hosting and any third-party assistant fees are identified separately so you know what continues after the build.
+
+A good fit
+You need your site to explain the work before a prospect calls.
+You can supply accurate service details and approve the pages with us.
+You want ownership of the site and a build shaped around your actual sales process.
+Not a good fit
+You need a guaranteed ranking or sales figure before anyone has measured your traffic.
+You want animation everywhere even when it makes the site harder to use.
+You need a custom application outside these capabilities without a separate scope.
+Common questions
+What does a website cost?
+
+We quote after reviewing the pages and connections you need. A focused landing page and a site with a voice assistant involve different work. We identify processing savings first and discuss reinvesting verified savings into the build. Savings are not assumed to cover the whole project.
+
+How long will the build take?
+
+The schedule depends on the agreed scope and when content or account access is available. We set review points before work begins. We will not attach a stock turnaround promise to a project we have not looked at.
+
+What if we already have a website?
+
+Send it to us. We review what is useful before recommending a replacement. Existing copy or photographs may carry over if you own them and they still describe the business accurately. We agree what changes before building.
+
+Do I own it, and can I move it later?
+
+Yes. You own your site and are not locked to a KCG platform. We explain the handover and hosting arrangements in the scope. Third-party subscriptions have their own terms, which we identify before you commit.
+
+Can the site work with our current CRM?
+
+We check the form destination and the access your CRM allows before promising a connection. The goal is an enquiry arriving where the team already works. If the current system limits that handoff, we explain the options and scope the work.
+
+How soon will it bring in customers?
+
+The site can accept enquiries once it is live and the contact path is tested. Generating demand is a separate question. We cannot promise a sales date or conversion lift. Your traffic and enquiry baseline give us a starting point for measurement, so any lift we report later is measured against your own numbers rather than a promise made now.
+
+What do you need from us?
+
+An explanation of your services and access to whoever approves the content. We also need the brand material you have permission to use. For a rebuild, we identify the domain and hosting access needed before the launch date is agreed.
+
+Show us the site you have outgrown.
+
+Send your current website and the part of the enquiry process that frustrates you. Seth or Hunter will discuss what needs rebuilding and where processing savings might help fund it.
+
+Discuss my website
+Keystone Consulting Group
+
+We find the money you're losing to processing fees, fix it, and reinvest the savings into websites, CRMs, and AI tools that grow your business. Your local partner for payment optimization and scaling smart.
+
+Seth: (801) 360-9156
+Hunter: (505) 506-6563
+info@keystoneconsultingg.com
+Services
+Custom Web Design
+CRM Systems
+AI & Automations
+Business Consulting
+Prep-to-Sell
+Industry
+E-commerce
+Retail
+Food & Restaurant
+Repair Services
+Health
+Beauty
+Resources
+About Us
+Terms & Conditions
+Privacy Policy
+Contact Us
+Finance
+Pricing
+Custom Pricing
+Interchange Plus
+The Edge Program
+Simplified Pricing
+
+© 2026 Keystone Consulting Group LLC. All rights reserved.
+
+Privacy Policy
+Terms of Service

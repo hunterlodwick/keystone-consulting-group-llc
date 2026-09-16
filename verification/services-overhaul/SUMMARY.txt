@@ -1,0 +1,31 @@
+KCG services overhaul: LOCAL ONLY, no deploy. Isolated reviewed worktree: /tmp/kcg-services-overhaul-review.
+Preview: http://127.0.0.1:4177/services/web-design | /services/automations
+Rendered main-content word counts (same DOM scope before/after):
+web-design: 297 -> 1560 words; +1263 (+425.3%).
+automations: 298 -> 1585 words; +1287 (+431.9%).
+Statistics and sources:
+  LCP within 2.5 seconds; INP under 200 milliseconds; CLS under 0.1
+  Source: https://developers.google.com/search/docs/appearance/core-web-vitals
+  53% leave mobile pages loading longer than 3 seconds; 20% conversion drop per extra second; Derived: 1 - 20/100 = 0.80 = 80% remaining
+  Source: https://www.thinkwithgoogle.com/_qs/documents/6522/TwG_AUNZ_Masters_of_Mobile_Report.pdf
+  40–60 minutes saved per active day, self-reported; Derived, assuming 5 days: 40–60 × 5 = 200–300 minutes; ÷ 60 = 3h20m–5h/week
+  Source: https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf
+  5,000 support agents; 14% more issues resolved/hour; Derived: 1 + 14/100 = 1.14 × baseline issues/hour
+  Source: https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-promise-and-the-reality-of-gen-ai-agents-in-the-enterprise
+[needs number]: Website expected conversion lift; AI measured daily saving.
+Build PASS. Typecheck PASS. SlopMonster 5/5 both (full rendered body text, no proof exemption).
+All 8 deep-page theme/viewport cells PASS; no overflow, broken images, hidden copy or console errors.
+Nine other service pages: identical rendered main HTML and data entries.
+ContactForm opens in all 8 cells. Fresh context defaults light. No form submissions sent.
+Computed colors recorded; no deep-page text overlaps photos; statistics use opaque surfaces.
+Hermes independent verification complete; Astra dispositions: ASTRA-REVIEW.md.
+Source caveat: McKinsey readable via web research retrieval; direct local HTTP/Chromium blocked.
+Rival Claude copy-review attempt blocked by expired OAuth; regex gate and Hermes review completed.
+Shared checkout retains concurrent CTA edits to the other services; owner choice pending.
+Reviewed scope: overhaul-only.patch / ServicesPage.overhaul-only.txt; separate edits: concurrent-cta.patch.
+Evidence: verification/services-overhaul/
+  PLAN.md | REPORT.md | SOURCES.md | ASTRA-REVIEW.md | HERMES-VERIFICATION.md
+  before/ and after/: full screenshots, hero/value crops, rendered texts, metrics.json
+  slop-web-design.txt | slop-automations.txt | build.log | lint.log
+  interactions.json | source-citation-check.json | source-browser.json
+  Re-run: node verification/services-overhaul/capture.mjs after; python3 verification/services-overhaul/finalize.py

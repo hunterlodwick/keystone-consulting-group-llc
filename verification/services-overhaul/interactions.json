@@ -1,0 +1,562 @@
+[
+  {
+    "id": "web-design",
+    "width": 1440,
+    "theme": "light",
+    "defaultTheme": "light",
+    "overflow": false,
+    "hidden": 0,
+    "textOverImage": [],
+    "colors": [
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H1",
+        "color": "rgb(26, 26, 26)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgba(26, 26, 26, 0.75)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H2",
+        "color": "rgb(26, 26, 26)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      }
+    ],
+    "stats": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: Think with Google, Masters of Mobile report"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: Think with Google, Masters of Mobile report"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: Google Search Central, Core Web Vitals"
+      }
+    ],
+    "ctaCount": 1,
+    "contactFormOpened": true
+  },
+  {
+    "id": "web-design",
+    "width": 1440,
+    "theme": "dark",
+    "defaultTheme": "dark",
+    "overflow": false,
+    "hidden": 0,
+    "textOverImage": [],
+    "colors": [
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H1",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "oklab(0.968761 -0.00183606 0.00635779 / 0.8)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H2",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      }
+    ],
+    "stats": [
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: Think with Google, Masters of Mobile report"
+      },
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: Think with Google, Masters of Mobile report"
+      },
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: Google Search Central, Core Web Vitals"
+      }
+    ],
+    "ctaCount": 1,
+    "contactFormOpened": true
+  },
+  {
+    "id": "web-design",
+    "width": 390,
+    "theme": "light",
+    "defaultTheme": "light",
+    "overflow": false,
+    "hidden": 0,
+    "textOverImage": [],
+    "colors": [
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H1",
+        "color": "rgb(26, 26, 26)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgba(26, 26, 26, 0.75)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H2",
+        "color": "rgb(26, 26, 26)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      }
+    ],
+    "stats": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: Think with Google, Masters of Mobile report"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: Think with Google, Masters of Mobile report"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: Google Search Central, Core Web Vitals"
+      }
+    ],
+    "ctaCount": 1,
+    "contactFormOpened": true
+  },
+  {
+    "id": "web-design",
+    "width": 390,
+    "theme": "dark",
+    "defaultTheme": "dark",
+    "overflow": false,
+    "hidden": 0,
+    "textOverImage": [],
+    "colors": [
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H1",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "oklab(0.968761 -0.00183606 0.00635779 / 0.8)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H2",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      }
+    ],
+    "stats": [
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: Think with Google, Masters of Mobile report"
+      },
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: Think with Google, Masters of Mobile report"
+      },
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: Google Search Central, Core Web Vitals"
+      }
+    ],
+    "ctaCount": 1,
+    "contactFormOpened": true
+  },
+  {
+    "id": "automations",
+    "width": 1440,
+    "theme": "light",
+    "defaultTheme": "light",
+    "overflow": false,
+    "hidden": 0,
+    "textOverImage": [],
+    "colors": [
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H1",
+        "color": "rgb(26, 26, 26)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgba(26, 26, 26, 0.75)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgba(26, 26, 26, 0.75)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      }
+    ],
+    "stats": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: OpenAI, The state of enterprise AI (2025)"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: McKinsey, The promise and the reality of gen AI agents in the enterprise (May 2024)"
+      }
+    ],
+    "ctaCount": 1,
+    "contactFormOpened": true
+  },
+  {
+    "id": "automations",
+    "width": 1440,
+    "theme": "dark",
+    "defaultTheme": "dark",
+    "overflow": false,
+    "hidden": 0,
+    "textOverImage": [],
+    "colors": [
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H1",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "oklab(0.968761 -0.00183606 0.00635779 / 0.8)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "oklab(0.968761 -0.00183606 0.00635779 / 0.7)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      }
+    ],
+    "stats": [
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: OpenAI, The state of enterprise AI (2025)"
+      },
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: McKinsey, The promise and the reality of gen AI agents in the enterprise (May 2024)"
+      }
+    ],
+    "ctaCount": 1,
+    "contactFormOpened": true
+  },
+  {
+    "id": "automations",
+    "width": 390,
+    "theme": "light",
+    "defaultTheme": "light",
+    "overflow": false,
+    "hidden": 0,
+    "textOverImage": [],
+    "colors": [
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H1",
+        "color": "rgb(26, 26, 26)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgba(26, 26, 26, 0.75)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgba(26, 26, 26, 0.75)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(0, 122, 122)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      }
+    ],
+    "stats": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: OpenAI, The state of enterprise AI (2025)"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "source": "Sources: McKinsey, The promise and the reality of gen AI agents in the enterprise (May 2024)"
+      }
+    ],
+    "ctaCount": 1,
+    "contactFormOpened": true
+  },
+  {
+    "id": "automations",
+    "width": 390,
+    "theme": "dark",
+    "defaultTheme": "dark",
+    "overflow": false,
+    "hidden": 0,
+    "textOverImage": [],
+    "colors": [
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "H1",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Playfair Display\", ui-serif, Georgia, serif"
+      },
+      {
+        "tag": "P",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "oklab(0.968761 -0.00183606 0.00635779 / 0.8)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "P",
+        "color": "oklab(0.968761 -0.00183606 0.00635779 / 0.7)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      },
+      {
+        "tag": "A",
+        "color": "rgb(102, 178, 178)",
+        "font": "\"DM Sans\", ui-sans-serif, system-ui, sans-serif"
+      }
+    ],
+    "stats": [
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: OpenAI, The state of enterprise AI (2025)"
+      },
+      {
+        "background": "rgb(30, 30, 30)",
+        "source": "Sources: McKinsey, The promise and the reality of gen AI agents in the enterprise (May 2024)"
+      }
+    ],
+    "ctaCount": 1,
+    "contactFormOpened": true
+  }
+]

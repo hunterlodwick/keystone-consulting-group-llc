@@ -1,0 +1,7 @@
+937 words of visible copy
+
+  rule-of-three rhythm:
+    · rule-of-three list  (websites, tools, and systems)
+
+  score 4/5  needs a cleanse
+SLOP_EXIT:1

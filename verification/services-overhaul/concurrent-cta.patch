@@ -1,0 +1,167 @@
+--- a/src/pages/ServicesPage.tsx
++++ b/src/pages/ServicesPage.tsx
+@@ -36,6 +36,77 @@
+ } from 'lucide-react';
+ import { ContactForm } from '../App';
+ 
++// Contextual CTAs per service - each page's action matches what the visitor came to do.
++// Mirrors the Patterson Homes pattern (home="Find your place", plans="Talk about your plan",
++// move-ins="Join the interest list"): never one generic "Get Started" everywhere.
++type ServiceCta = { hero: string; mid?: { label: string; after: string }; close: string; closeBody: string };
++
++const SERVICE_CTAS: Record<string, ServiceCta> = {
++  "web-design": {
++    hero: "See what your site could be",
++    mid: { label: "Find out how slow your site is", after: "speed" },
++    close: "Talk through your site",
++    closeBody: "Bring the site you have now. We will tell you what is costing you calls and what we would change first.",
++  },
++  automations: {
++    hero: "Find out what we can automate",
++    mid: { label: "Add up your team's hours", after: "hours" },
++    close: "Map your first automation",
++    closeBody: "Walk us through the work your team repeats every day. We will show you what can run itself.",
++  },
++  crm: {
++    hero: "See your pipeline in one place",
++    close: "Talk through your sales process",
++    closeBody: "Show us how your team sells today and we will map it into a CRM they will actually open.",
++  },
++  consulting: {
++    hero: "Find where the money is leaking",
++    close: "Start with an operations review",
++    closeBody: "We will go through the books, the tools, and the day-to-day until the waste is obvious.",
++  },
++  "prep-to-sell": {
++    hero: "See what your business is worth",
++    close: "Talk about your exit",
++    closeBody: "Tell us your timeline and we will show you what raises the multiple before a buyer ever looks.",
++  },
++  seo: {
++    hero: "See where you rank today",
++    close: "Talk through your search visibility",
++    closeBody: "We will show you the terms your customers actually search and where you stand on them.",
++  },
++  "google-business": {
++    hero: "See how you show up locally",
++    close: "Talk through your local presence",
++    closeBody: "We will review your profile, your reviews, and how you compare to the shop down the street.",
++  },
++  bpo: {
++    hero: "See what your pipeline could hold",
++    close: "Talk through your lead flow",
++    closeBody: "Tell us your target and we will show you how the outreach and booking would run.",
++  },
++  "consumer-financing": {
++    hero: "See what financing would do to your close rate",
++    close: "Talk through customer financing",
++    closeBody: "We will show you how pay-over-time changes the size of the jobs you win.",
++  },
++  "business-loans": {
++    hero: "See what you qualify for",
++    close: "Talk through your funding options",
++    closeBody: "Bring the numbers and we will show you what capital is available and what it costs.",
++  },
++  "pos-placement": {
++    hero: "Get your counter set up",
++    close: "Talk through hardware for your counter",
++    closeBody: "Tell us your setup and we will show you what terminals and hardware fit it.",
++  },
++};
++
++const ctaFor = (id: string, fallback: string) => SERVICE_CTAS[id] ?? {
++  hero: "Talk through " + fallback.toLowerCase(),
++  close: "Talk through " + fallback.toLowerCase(),
++  closeBody: "Tell us what you are trying to fix and we will show you what we would do first.",
++};
++
+ const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+ 
+ // Scroll animation hook
+@@ -721,7 +792,9 @@
+       </section>
+ 
+       {/* Service Sections */}
+-      {SERVICES_DETAIL.map((service, idx) => (
++      {SERVICES_DETAIL.map((service, idx) => {
++        const cta = ctaFor(service.id, service.title);
++        return (
+         <section 
+           key={service.id} 
+           id={service.id}
+@@ -739,10 +812,10 @@
+                 <p className="text-teal text-lg font-medium mb-4">{service.tagline}</p>
+                 <p className="text-offwhite/70 text-lg font-light leading-relaxed mb-8">{service.heroDesc}</p>
+                 <button 
+-                  onClick={() => onOpenModal(`Get Started with ${service.title}`, <ContactForm />)}
++                  onClick={() => onOpenModal(cta.close, <ContactForm />)}
+                   className="inline-flex items-center gap-2 px-6 py-3 bg-teal text-white font-medium rounded-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]"
+                 >
+-                  Get Started <ArrowRight className="w-4 h-4" />
++                  {cta.close} <ArrowRight className="w-4 h-4" />
+                 </button>
+               </div>
+ 
+@@ -797,16 +870,17 @@
+             </div>
+           </div>
+         </section>
+-      ))}
++        );
++      })}
+ 
+       {/* Final CTA */}
+       <section className="py-24 md:py-32 relative overflow-hidden bg-teal/10 border-t border-teal/20">
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
+         <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+           <div className="animate-on-scroll">
+-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">What Would You Do With an Extra $2,000 a Month?</h2>
++            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Tell Us What You Need Built.</h2>
+             <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+-              Most owners we talk to put it into the systems that bring in more customers. Book a call and we'll map out what that looks like for your numbers.
++              Payments gets your money back. Websites and AI put it to work. Walk us through what your business actually needs and we will tell you what we would build first.
+             </p>
+             <div className="flex flex-col sm:flex-row justify-center gap-4">
+               <button 
+@@ -933,6 +1007,7 @@
+   if (service.problem) return <DeepServiceContent service={service} onOpenModal={onOpenModal} />;
+ 
+   const idx = SERVICES_DETAIL.indexOf(service);
++  const cta = ctaFor(service.id, service.title);
+ 
+   return (
+     <div className="pt-24">
+@@ -954,10 +1029,10 @@
+             </p>
+             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+               <button 
+-                onClick={() => onOpenModal(`Get Started with ${service.title}`, <ContactForm />)}
++                onClick={() => onOpenModal(cta.hero, <ContactForm />)}
+                 className="cta-button-pulse inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]"
+               >
+-                Get Started <ArrowRight className="w-4 h-4" />
++                {cta.hero} <ArrowRight className="w-4 h-4" />
+               </button>
+               <a 
+                 href="/services"
+@@ -1032,16 +1107,16 @@
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.15)_0%,transparent_70%)]"></div>
+         <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+           <div className="animate-on-scroll">
+-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Ready to Get Started?</h2>
++            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">{cta.close}</h2>
+             <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+-              Book a call and let's talk about how {service.title.toLowerCase()} can transform your business.
++              {cta.closeBody}
+             </p>
+             <div className="flex flex-col sm:flex-row justify-center gap-4">
+               <button 
+-                onClick={() => onOpenModal(`Get Started with ${service.title}`, <ContactForm />)}
++                onClick={() => onOpenModal(cta.close, <ContactForm />)}
+                 className="cta-button-pulse inline-flex items-center justify-center px-8 py-4 bg-white text-charcoal font-medium rounded-sm transition-all duration-300 hover:scale-[1.02]"
+               >
+-                Book a Call
++                {cta.close}
+               </button>
+               <a 
+                 href="/"
