@@ -249,6 +249,16 @@ body::after {
   color: rgba(26, 26, 26, 0.7) !important;
 }
 
+/* On-photo text: always light, in BOTH themes.
+   Cards with full-bleed photographs behind the copy keep their dark charcoal scrim in light mode,
+   so white text is required for contrast regardless of theme. */
+.on-photo-text {
+  color: #FFFFFF !important;
+}
+.on-photo-text-soft {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
 /* Fix border colors */
 [data-theme="light"] .border-white\/5,
 [data-theme="light"] .border-white\/10,

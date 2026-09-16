@@ -1053,15 +1053,18 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
     </section>
   );
 };// ProductGrid
-const HOMEPAGE_PRODUCTS = [
+const HOMEPAGE_PRODUCTS: {
+  id: string; title: string; icon: any; desc: string; linkTo: string;
+  detailAnchor?: string; image?: string; imageAlt?: string; imagePosition?: string;
+}[] = [
   {
     id: "processing",
     title: "Credit Card Processing",
     icon: CreditCard,
     desc: "We find the fees you shouldn't be paying and cut them. The Edge Program at $0, or interchange-plus at wholesale. No contracts.",
     linkTo: "/#calculator",
-    image: "/images/pos-zero-fees.jpg",
-    imageAlt: "Modern black POS terminal on a dark countertop",
+    image: "/images/card-processing.jpg",
+    imageAlt: "Shop owner serving a customer at a retail checkout counter",
   },
   {
     id: "web-design",
@@ -1070,6 +1073,9 @@ const HOMEPAGE_PRODUCTS = [
     desc: "Websites that make the phone ring, not just look pretty. 3D animated, AI-powered, and built to convert visitors into customers.",
     linkTo: "/services/web-design",
     detailAnchor: "#websites",
+    image: "/images/card-websites.jpg",
+    imageAlt: "Business owner working at their desk",
+    imagePosition: "38% 30%",
   },
   {
     id: "automations",
@@ -1078,8 +1084,8 @@ const HOMEPAGE_PRODUCTS = [
     desc: "AI agents that qualify leads, answer customers, and run your back office while you sleep.",
     linkTo: "/services/automations",
     detailAnchor: "#ai",
-    image: "/images/ai-chat.jpg",
-    imageAlt: "Smartphone with soft teal screen glow on a dark desk",
+    image: "/images/card-ai.jpg",
+    imageAlt: "Small business operator at a service desk",
   },
 ];
 
@@ -1243,31 +1249,34 @@ const ProductGrid = ({ onOpenModal }: { onOpenModal: (title: string, content: Re
             <a
               key={idx}
               href={sol.linkTo}
-              className="animate-on-scroll card-hover-effect group relative bg-slate-dark/40 rounded-xl border border-white/5 flex flex-col justify-between cursor-pointer overflow-hidden min-h-[200px]"
+              className="animate-on-scroll card-hover-effect group relative rounded-xl border border-white/10 flex flex-col justify-end cursor-pointer overflow-hidden min-h-[420px] lg:min-h-[460px]"
             >
-              {sol.image && (
-                <div className="relative h-36 overflow-hidden border-b border-white/5">
-                  <img
-                    src={sol.image}
-                    alt={sol.imageAlt || sol.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                    loading="lazy"
-                    width={800}
-                    height={450}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/80 to-transparent pointer-events-none" />
-                </div>
+              {/* Full-bleed background photo */}
+              {sol.image ? (
+                <img
+                  src={sol.image}
+                  alt={sol.imageAlt || sol.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+                  style={{ objectPosition: sol.imagePosition || 'center' }}
+                  loading="lazy"
+                  width={1200}
+                  height={900}
+                />
+              ) : (
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg,#3A3A3A,#1E1E1E)' }} />
               )}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              
-              <div className={`relative z-10 p-8 flex flex-col flex-1 ${sol.image ? 'pt-6' : ''}`}>
-                <div className="flex justify-between items-start">
-                  <sol.icon className="w-8 h-8 text-teal transition-transform duration-300 ease-custom group-hover:rotate-3" strokeWidth={1} />
-                </div>
-                <div className="mt-8">
-                  <h3 className="font-medium text-white mb-2 text-xl">{sol.title}</h3>
-                  <p className="text-offwhite/60 text-sm font-light leading-relaxed">{sol.desc}</p>
-                </div>
+
+              {/* Scrim: hardcoded dark (NOT theme vars) so it stays dark in light mode too.
+                  One continuous gradient, no layered seam. */}
+              <div className="absolute inset-x-0 bottom-0 h-[72%] pointer-events-none"
+                   style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.98) 0%, rgba(18,18,18,0.93) 30%, rgba(18,18,18,0.6) 60%, rgba(18,18,18,0.16) 84%, transparent 100%)' }} />
+
+              {/* Content sits over the photo, bottom-anchored. Description has a min-height so
+                  all three cards align even when the copy wraps to different line counts. */}
+              <div className="relative z-10 p-8 mt-auto">
+                <sol.icon className="w-9 h-9 text-teal mb-4 transition-transform duration-300 ease-custom group-hover:rotate-3" strokeWidth={1.25} />
+                <h3 className="font-serif text-2xl on-photo-text mb-3">{sol.title}</h3>
+                <p className="text-sm font-light leading-relaxed on-photo-text-soft min-h-[6rem]">{sol.desc}</p>
               </div>
             </a>
           ))}
