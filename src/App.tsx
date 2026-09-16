@@ -605,7 +605,7 @@ const NAV_DROPDOWNS = {
   financial: {
     label: 'Payment Processing',
     items: [
-      { name: 'Low Rate Payment Processing', icon: CreditCard, desc: 'Interchange-plus & zero-fee Edge Program', href: '/#pricing' },
+      { name: 'Low Rate Payment Processing', icon: CreditCard, desc: 'Interchange-plus & zero-fee Edge Program', href: '/#calculator' },
       { name: 'Consumer Financing', icon: Banknote, desc: 'Let customers pay over time. You get paid now.', href: '/services/consumer-financing' },
       { name: 'Business Loans', icon: TrendingUp, desc: 'Fast capital for growth, equipment & working cash', href: '/services/business-loans' },
       { name: 'POS Placement', icon: MonitorSmartphone, desc: 'Free smart terminals & POS hardware placement', href: '/services/pos-placement' },
@@ -1059,7 +1059,7 @@ const HOMEPAGE_PRODUCTS = [
     title: "Credit Card Processing",
     icon: CreditCard,
     desc: "We find the fees you shouldn't be paying and cut them. The Edge Program at $0, or interchange-plus at wholesale. No contracts.",
-    linkTo: "/#pricing",
+    linkTo: "/#calculator",
     image: "/images/pos-zero-fees.jpg",
     imageAlt: "Modern black POS terminal on a dark countertop",
   },
@@ -1413,130 +1413,6 @@ const WhyChooseUs = () => {
   );
 };
 
-// Pricing
-const Pricing = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
-  return (
-    <section className="py-32 relative bg-charcoal border-t border-white/5" id="pricing">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center mb-20 animate-on-scroll">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Stop Paying to Get Paid.</h2>
-          <p className="text-offwhite/70 text-lg font-light max-w-2xl mx-auto">
-            Pick the model that fits. The Edge Program eliminates your processing fees entirely. Interchange Plus gives you true wholesale pricing. Both come with no contracts.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* The Edge Program Card */}
-          <div className="relative bg-charcoal-dark border border-teal/40 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(0,128,128,0.15)] flex flex-col transform transition-transform duration-300 hover:-translate-y-2">
-            <div className="absolute top-0 right-10 translate-y-[-50%] bg-teal text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full z-20">
-              Most Popular
-            </div>
-            <div className="relative h-48 md:h-56 overflow-hidden border-b border-teal/20">
-              <img
-                src="/images/pos-zero-fees.jpg"
-                alt="Modern black POS terminal on a dark countertop"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                width={800}
-                height={600}
-              />
-            </div>
-            <div className="p-10 flex flex-col flex-1">
-            <div className="mb-8">
-              <h3 className="text-3xl font-serif text-white mb-3">The Edge Program</h3>
-              <p className="text-offwhite/60 font-light h-12">Your customers pay the fee. You keep every dollar.</p>
-            </div>
-            <div className="mb-8 flex items-end gap-3">
-              <div className="text-5xl font-mono text-teal font-medium">$0<span className="text-2xl text-offwhite/40">/mo</span></div>
-              <div className="text-sm font-medium text-teal px-3 py-1 bg-teal/10 rounded-full border border-teal/20 mb-1">+ 0% Processing</div>
-            </div>
-            <ul className="space-y-4 mb-10 flex-1">
-              {[
-                "Keep 100% of your revenue", 
-                "Free Smart POS or Terminal", 
-                "No contracts or hidden fees", 
-                "Next-day funding included"
-              ].map((feature, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
-                  <span className="text-offwhite/80 font-light">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <button 
-              onClick={() => onOpenModal("See if you qualify", <ContactForm />)}
-              className="w-full py-4 bg-teal text-white font-medium rounded transition-all duration-300 hover:bg-teal-soft hover:shadow-[0_0_20px_rgba(0,128,128,0.3)]"
-            >
-              See if you qualify
-            </button>
-            </div>
-          </div>
-
-          {/* Interchange Plus Card */}
-          <div className="bg-slate-dark/40 border border-white/10 rounded-2xl overflow-hidden flex flex-col transform transition-transform duration-300 hover:-translate-y-2">
-            <div className="relative h-48 md:h-56 overflow-hidden border-b border-white/10">
-              <img
-                src="/images/billing-statement.jpg"
-                alt="Stack of printed invoices on a dark slate surface"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                width={800}
-                height={600}
-              />
-            </div>
-            <div className="p-10 flex flex-col flex-1">
-            <div className="mb-8">
-              <h3 className="text-3xl font-serif text-white mb-3">Interchange Plus</h3>
-              <p className="text-offwhite/60 font-light h-12">Pay exact wholesale. No markup games.</p>
-            </div>
-            <div className="mb-8 flex flex-col gap-1">
-              <div className="text-4xl font-mono text-white">Direct Cost</div>
-              <div className="text-lg text-offwhite/50 font-light">+ Small markup</div>
-            </div>
-            <ul className="space-y-4 mb-10 flex-1">
-              {[
-                "Transparent line-item billing", 
-                "Dedicated account manager", 
-                "Custom hardware solutions", 
-                "B2B Level 2/3 optimization"
-              ].map((feature, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-offwhite/40 flex-shrink-0 mt-0.5" />
-                  <span className="text-offwhite/80 font-light">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <button 
-              onClick={() => onOpenModal("Get a Custom Quote", <ContactForm />)}
-              className="w-full py-4 bg-transparent border border-white/20 text-white font-medium rounded transition-all duration-300 hover:bg-white/5 hover:border-white/40"
-            >
-              Get a Custom Quote
-            </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 max-w-5xl mx-auto animate-on-scroll border border-white/10 rounded-2xl p-8 md:p-10 bg-slate-dark/30">
-          <h3 className="text-xl md:text-2xl font-serif text-white mb-3">Consumer Financing</h3>
-          <p className="text-offwhite/70 font-light mb-6">Through Flex Buy, customers pay over time. You get paid in full upfront.</p>
-          <ul className="space-y-3">
-            {[
-              "Customers pay over time while you get paid in full upfront.",
-              "Financing available up to $100K.",
-              "Big tickets close about 30% more often when financing is on the table.",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
-                <span className="text-offwhite/80 font-light">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 // Mobile-Optimized ROI Calculator — fully native slider, zero React renders during drag
 const ROICalculator = () => {
   const MIN = 10000, MAX = 500000;
@@ -1714,64 +1590,6 @@ const Industries = ({ onOpenSplash }: { onOpenSplash: (industryId: string) => vo
 };
 
 // Free Placement
-const FreePlacement = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
-  const offers = [
-    {
-      title: "Free Bluetooth Card Readers",
-      icon: Bluetooth,
-      desc: "Take payments anywhere with a free Bluetooth reader. No upfront cost, no hardware to buy. Perfect for mobile pros and on-the-go businesses.",
-      image: "/images/bluetooth-reader.jpg",
-      imageAlt: "White Bluetooth card reader on dark charcoal surface",
-    },
-    {
-      title: "Free POS Systems & Hardware Credits",
-      icon: Gift,
-      desc: "Upgrade your counter with a free POS system, or get up to $7,500 in hardware credits. No catch, no fine print. Your terminal, paid for.",
-      image: "/images/pos-kitchen.jpg",
-      imageAlt: "Restaurant POS terminal on a dark countertop",
-    },
-  ];
-
-  return (
-    <section className="py-32 relative bg-charcoal-dark border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger-children">
-          {offers.map((offer, idx) => (
-            <div
-              key={idx}
-              className="animate-on-scroll card-hover-effect bg-slate-dark/30 border border-white/5 rounded-2xl hover:bg-slate-dark/50 hover:border-teal/30 transition-all duration-300 flex flex-col relative overflow-hidden group"
-            >
-              <div className="relative h-52 overflow-hidden border-b border-white/5">
-                <img
-                  src={offer.image}
-                  alt={offer.imageAlt}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                  loading="lazy"
-                  width={800}
-                  height={800}
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              <div className="relative z-10 p-10 flex flex-col flex-1">
-                <div className="w-14 h-14 rounded-full bg-teal/10 flex items-center justify-center mb-6 border border-teal/20 group-hover:scale-110 transition-transform duration-500">
-                  <offer.icon className="w-7 h-7 text-teal" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-serif text-white mb-4">{offer.title}</h3>
-                <p className="text-offwhite/70 font-light leading-relaxed mb-8 flex-1">{offer.desc}</p>
-                <button 
-                  onClick={() => onOpenModal("Claim Offer", <ContactForm />)}
-                  className="text-teal font-medium text-sm tracking-wide hover:text-teal-soft transition-colors flex items-center gap-2 self-start"
-                >
-                  Learn More <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // Processing Volume Social Proof
 const ProcessingVolume = ({ theme }: { theme?: string }) => {
