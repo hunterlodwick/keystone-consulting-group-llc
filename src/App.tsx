@@ -912,13 +912,13 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
 
   return (
     <section 
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+      className="relative flex items-center pt-24 pb-16 lg:min-h-screen lg:pt-20 lg:pb-0 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 items-center">
         
         {/* Left Side */}
-        <div className="z-10 animate-on-scroll mt-12 lg:mt-0">
+        <div className="z-10 animate-on-scroll">
           {/* Subtle badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-offwhite/80 text-xs font-medium mb-6">
             <Shield className="w-3.5 h-3.5 text-teal" />
