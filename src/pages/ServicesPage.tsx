@@ -134,11 +134,13 @@ function useScrollAnimation() {
 type ServiceDetail = {
   id: string; title: string; icon: typeof Code; image: string; imageAlt: string;
   tagline: string; heroDesc: string;
-  sections: { title: string; icon: typeof Code; desc: string; replaces?: string; produces?: string; audience?: string }[];
+  sections: { title: string; image?: string; icon: typeof Code; desc: string; replaces?: string; produces?: string; audience?: string }[];
   features: string[];
   problem?: string[];
   heroNote?: string;
   statistics?: { title: string; value: string; explanation: string; arithmetic?: string; source: string; url: string }[];
+  buildIncludes?: { intro: string; items: { title: string; description: string }[] };
+  interactiveEvidence?: { title: string; paragraphs: string[]; sources: { label: string; url: string }[] };
   process?: { title: string; description: string }[];
   fit?: { yes: string[]; no: string[] };
   questions?: { question: string; answer: string }[];
@@ -159,39 +161,115 @@ const SERVICES_DETAIL: ServiceDetail[] = [
           "You want a site you can be proud to send people to. You also need it to answer practical questions and put an enquiry where your team will see it. A good-looking page that leaves that job unfinished is still unfinished."
       ],
       "sections": [
-          {
-              "title": "3D Animated Websites",
-              "icon": Layers,
-              "desc": "We build dimensional visuals and scroll-driven movement around what you sell. A product can be shown from different angles; a service can be explained as the visitor moves down the page. The movement needs a reason to be there.",
-              "replaces": "A static template that makes your business look interchangeable, or decorative effects that get in the way of reading. We start with the story the page needs to tell.",
-              "produces": "A website with motion designed around its content. Visitors can still read and contact you with reduced motion enabled. Heavy visual elements must earn their place against mobile performance.",
-              "audience": "Businesses whose product or process benefits from a visual explanation. If a photograph explains it better, we use the photograph. You do not need animation on every page."
-          },
-          {
-              "title": "AI Voice Chatbots",
-              "icon": Mic,
-              "desc": "We add a voice assistant that answers the questions you approve and guides visitors toward an enquiry or booking. We define what it can say before connecting it to the site.",
-              "replaces": "The gap between someone arriving with a question and your team being available to answer. It also reduces the need to hunt through pages for a straightforward answer.",
-              "produces": "A conversational way to ask about your services, with a clear route to a person when the answer is uncertain. Booking depends on the calendar connection agreed in the scope.",
-              "audience": "Businesses that repeatedly answer the same pre-sale questions. It is a poor fit when every answer requires a private account review or a judgement only your staff can make."
-          },
-          {
-              "title": "High-Conversion Landing Pages",
-              "icon": TrendingUp,
-              "desc": "We build focused pages around a specific offer and the action you want a visitor to take. The message follows the reason they clicked, rather than sending every visitor to a general homepage.",
-              "replaces": "A page crowded with unrelated offers, or a campaign that makes a promise the destination never explains. We remove the steps that make an interested person hesitate.",
-              "produces": "A clear offer with the evidence you can actually provide, followed by a relevant contact or booking path. We check the form handoff so an enquiry reaches the intended person.",
-              "audience": "Businesses promoting a defined service or running a campaign with a clear audience. High-conversion describes the design objective. Your actual conversion rate needs to be measured after launch."
-          },
-          {
-              "title": "Mobile-First & Lightning Fast",
-              "icon": Globe,
-              "desc": "We design the phone experience from the start. Navigation must work with a thumb, text must be readable, and a form must be usable without zooming or sideways scrolling.",
-              "replaces": "A desktop design squeezed into a narrow screen, oversized media that delays reading, and layouts that jump while a visitor tries to tap.",
-              "produces": "Responsive pages with appropriately sized images and performance checks. We use Core Web Vitals as targets and explain any tradeoff between visual complexity and loading speed.",
-              "audience": "Any business whose customers may visit from a phone. We test the important customer path on small screens, including what happens after the contact button is pressed."
-          }
-      ],
+    {
+        "title": "Turn visits into calls with a custom business website",
+        "icon": Code,
+        "image": "/images/services/sub/mobile-first-lightning-fast.jpg",
+        "desc": "Our core offering is a custom business website. We design around how your customer decides: what you do, why they should trust you, and how to get in touch. Most clients need this foundation first.",
+        "replaces": "An outdated brochure site that leaves you explaining the basics on every call, or a template that buries the contact button.",
+        "produces": "Pages built to make the phone ring, with clear service details and a direct enquiry path. Mobile-first layouts and fast loading help people act from the screen they have.",
+        "audience": "Local businesses, trades and professional services that need customers to understand the offer and contact the team."
+    },
+    {
+        "title": "Turn a campaign click into a lead",
+        "icon": TrendingUp,
+        "image": "/images/services/sub/high-conversion-landing-pages.jpg",
+        "desc": "Lead-generating landing pages focus on a single offer. The page answers the reason someone clicked your ad, campaign or service link and gives them a clear next step.",
+        "replaces": "Sending paid traffic to a general homepage, where visitors have to find the offer again.",
+        "produces": "A focused offer with supporting proof and a relevant enquiry form. We check that submissions reach the intended person and agree how to measure results.",
+        "audience": "Businesses running ads, promoting a specific service or testing an offer with a defined audience. Conversion is the goal, not a promised rate."
+    },
+    {
+        "title": "Let customers browse, buy and pay online",
+        "icon": Store,
+        "image": "/screenshots/opt/benitz-appliance.jpg",
+        "desc": "E-commerce and online stores give customers a route from product catalogue to checkout. We organise products around how people shop and make the purchase steps clear.",
+        "replaces": "Taking every order through messages, sending separate payment links, or making customers call to find out what you sell.",
+        "produces": "Product pages, a cart and checkout, plus an order flow your team can manage. Product options, stock handling, delivery and payment connections are agreed before the build.",
+        "audience": "Retailers and product businesses ready to sell online. Catalogue size and fulfilment needs determine the scope and platform."
+    },
+    {
+        "title": "Capture the job while the customer is ready",
+        "icon": FileText,
+        "image": "/images/services/sub/appointment-setting.jpg",
+        "desc": "Bookings, quotes and enquiries turn interest into a request your team can act on. We ask for the details you need to schedule an appointment or price the work.",
+        "replaces": "Missed calls, vague contact messages and forms that land in an inbox nobody checks.",
+        "produces": "Booking systems, quote requests or service enquiry flows, with forms routed to the right person. We test confirmations and the handoff into your calendar or CRM where included.",
+        "audience": "Trades, clinics and appointment-based businesses, plus teams that need job details before they can quote."
+    },
+    {
+        "title": "Answer the next customer after closing time",
+        "icon": Mic,
+        "image": "/images/services/sub/ai-voice-chatbots.jpg",
+        "desc": "AI on the website gives visitors a chat or voice assistant that answers approved questions and captures leads outside business hours. With an agreed calendar connection, it can book appointments.",
+        "replaces": "Waiting until morning to answer routine questions, or asking visitors to search through pages for a simple answer.",
+        "produces": "An assistant with defined answers and a clear handoff to your team when it is unsure. We scope the knowledge, booking access and ongoing usage fees before connecting it.",
+        "audience": "Businesses handling repeated pre-sale questions. Private account reviews and decisions requiring staff judgement stay with a person."
+    },
+    {
+        "title": "Help buyers inspect the details before they decide",
+        "icon": Layers,
+        "image": "/images/services/sub/3d-animated-websites.jpg",
+        "desc": "Interactive 3D and motion are specialist options. A customer can rotate a product or explore a space when photographs leave an important question unanswered. Scroll-driven motion can explain a product or process when movement helps.",
+        "replaces": "Guessing at a product’s shape from a fixed angle, or leaving buyers without a way to explore a space they cannot visit yet.",
+        "produces": "A product viewer or purposeful motion, with mobile performance checks and a readable reduced-motion experience. A simple rotate-and-look viewer is often enough. Product-viewer research does not establish a return on decorative scroll animation.",
+        "audience": "E-commerce product pages, including furniture, apparel, footwear, jewellery or customisable products; real estate and property; automotive; equipment and machinery; hospitality venues. It is not right for every business. We will tell you when it is not worth the money."
+    }
+],
+      "buildIncludes": {
+    "intro": "Every build starts with a written scope. We agree which work below your project needs, who supplies what, and what costs continue after launch. This is not an unlimited package.",
+    "items": [
+        {
+            "title": "Strategy: give the visitor a clear next step",
+            "description": "We agree who the site is for, what they need to know and the main action they should take. That decision guides the pages we build."
+        },
+        {
+            "title": "Design: look like the business customers will meet",
+            "description": "We design around your brand and your actual customers, not a template. You review layouts before they become finished pages."
+        },
+        {
+            "title": "Copy: answer the questions that hold up a sale",
+            "description": "We write plain-language copy aimed at the agreed action. You confirm the facts; we remove filler and claims you cannot support."
+        },
+        {
+            "title": "Build: make the site usable on every screen",
+            "description": "Responsive pages, fast loading and accessible navigation are part of the build. We check keyboard use, readable contrast and labelled forms alongside the mobile customer path."
+        },
+        {
+            "title": "Technical foundations: be ready to be found",
+            "description": "We agree responsibility for hosting, domain setup and SSL. Analytics, SEO structure and the sitemap are scoped alongside Google Business Profile setup or updates where relevant. Account fees are identified separately."
+        },
+        {
+            "title": "Integrations: get the enquiry where it belongs",
+            "description": "We scope booking, payments, CRM and email connections around the tools you use. Forms route to the agreed people, with test submissions before launch."
+        },
+        {
+            "title": "Handover: own it and know how to use it",
+            "description": "You own the site and the accounts. We hand over access and train you to make simple edits using the agreed editing setup. Third-party services keep their own terms."
+        },
+        {
+            "title": "After launch: know who is watching and who to call",
+            "description": "We agree the monitoring and support plan before launch, including uptime, form delivery, performance and analytics checks where included. Your scope names the support contact, response arrangements and any ongoing fee; later changes are quoted separately."
+        }
+    ]
+},
+      "interactiveEvidence": {
+    "title": "What the product-viewer tests actually show",
+    "paragraphs": [
+        "Fibbl reports a 6.3% conversion uplift for GANT at 95% statistical significance. Nubikk saw add-to-cart rise 10.9% and visitors reaching checkout rise 21%, both at 99% certainty. These are footwear/apparel brand tests, not KCG results or universal forecasts.",
+        "The gains are modest overall and can be stronger on mobile. Nubikk’s desktop transactions showed no measurable effect. Samples are limited and confidence intervals are wide. Novelty may inflate early results; the lift may shrink as 3D becomes standard. Brands investing in 3D often improve the rest of their digital experience too. The simple viewer carries most usage; extra effects need their own business case."
+    ],
+    "sources": [
+        {
+            "label": "Fibbl, GANT conversion study",
+            "url": "https://fibbl.com/gant-3d-first/"
+        },
+        {
+            "label": "Fibbl, what the footwear A/B tests actually show",
+            "url": "https://fibbl.com/does-3d-increase-conversion-rate-what-the-footwear-a-b-tests-actually-show/"
+        }
+    ]
+},
       "statistics": [
           {
               "title": "A reason to take mobile loading seriously",
@@ -843,7 +921,7 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
                   className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
                 >
                   <div className="aspect-square overflow-hidden border-b border-white/5">
-                    <img src={`/images/services/sub/${slugify(sub.title)}.jpg`} alt={sub.title} className="w-full h-full object-cover" loading="lazy" />
+                    <img src={sub.image ?? `/images/services/sub/${slugify(sub.title)}.jpg`} alt={sub.title} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -907,6 +985,7 @@ export { SERVICES_DETAIL };
 
 // Deep content is opt-in; the original renderer below remains the fallback.
 function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; onOpenModal: (title: string, content: React.ReactNode) => void }) {
+  const webCta = service.id === 'web-design' ? ctaFor(service.id, service.title) : undefined;
   const heading = 'font-serif text-3xl md:text-4xl text-white leading-tight';
   const prose = 'text-offwhite/80 leading-relaxed';
   return (
@@ -917,9 +996,11 @@ function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; 
         <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl text-white leading-tight mb-6 break-words">{service.title}</h1>
         <p className="text-teal text-xl md:text-2xl mb-5">{service.tagline}</p>
         <p className={`${prose} text-lg max-w-3xl`}>{service.heroDesc}</p>
+        {webCta && <button onClick={() => onOpenModal(webCta.hero, <ContactForm />)} className="inline-flex items-center gap-3 px-6 py-4 mt-7 bg-teal text-white font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal">{webCta.hero}<ArrowRight aria-hidden="true" className="w-4 h-4" /></button>}
         {service.heroNote && <p className="text-offwhite/70 max-w-3xl mt-4 text-sm leading-relaxed">{service.heroNote}</p>}
         <nav aria-label="On this page" className="flex flex-wrap gap-x-6 gap-y-1 border-y border-white/10 py-3 mt-9 mb-10 text-sm">
           <a href="#what-we-build" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">What we build</a>
+          {service.buildIncludes && <a href="#build-includes" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">What is included</a>}
           <a href="#the-value" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">The numbers</a>
           <a href="#the-process" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">The build process</a>
           <a href="#questions" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">Common questions</a>
@@ -939,7 +1020,7 @@ function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; 
             {service.sections.map(sub => <section key={sub.title} className="grid md:grid-cols-[0.8fr_1.5fr] gap-6 md:gap-12 border-t border-white/10 pt-8">
               <div>
                 <h3 className="font-serif text-2xl md:text-3xl text-white mb-5">{sub.title}</h3>
-                <img src={`/images/services/sub/${slugify(sub.title)}.jpg`} alt="" loading="lazy" width={480} height={320} className="w-full h-40 md:h-60 object-cover rounded-xl" />
+                <img src={sub.image ?? `/images/services/sub/${slugify(sub.title)}.jpg`} alt="" loading="lazy" width={480} height={320} className="w-full h-40 md:h-60 object-cover rounded-xl" />
               </div>
               <div className="space-y-5">
                 <p className={prose}>{sub.desc}</p>
@@ -951,8 +1032,19 @@ function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; 
               </div>
             </section>)}
           </div>
+          {service.interactiveEvidence && <aside className="border-t border-teal/30 mt-10 pt-8 md:ml-[calc((100%-3rem)*0.8/2.3+3rem)]" aria-label="Interactive 3D evidence">
+            <h4 className="text-white text-xl font-medium mb-4">{service.interactiveEvidence.title}</h4>
+            <div className="space-y-4">{service.interactiveEvidence.paragraphs.map(p => <p className={prose} key={p}>{p}</p>)}</div>
+            <p className="text-sm text-offwhite/70 mt-5">Sources: {service.interactiveEvidence.sources.map((source, i) => <React.Fragment key={source.url}>{i > 0 && '; '}<a className="text-teal underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></React.Fragment>)}</p>
+          </aside>}
         </div>
       </section>
+
+      {service.buildIncludes && <section id="build-includes" className="scroll-mt-28 max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-24">
+        <h2 className={`${heading} mb-5`}>What a KCG build includes</h2>
+        <p className={`${prose} max-w-3xl mb-10`}>{service.buildIncludes.intro}</p>
+        <dl className="grid md:grid-cols-2 gap-x-14 gap-y-8">{service.buildIncludes.items.map(item => <div key={item.title} className="border-t border-white/10 pt-5"><dt className="text-white text-xl font-medium mb-3">{item.title}</dt><dd className={prose}>{item.description}</dd></div>)}</dl>
+      </section>}
 
       {service.statistics && <section id="the-value" className="scroll-mt-28 max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-24">
         <h2 className={`${heading} mb-5`}>{service.id === 'web-design' ? 'Why speed belongs in the budget' : 'Put a number on the time bought back'}</h2>
@@ -964,6 +1056,7 @@ function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; 
           </div>
           <figcaption className="border-t border-white/10 pt-5 mt-6 text-sm text-offwhite/70">Sources: <a className="text-teal underline underline-offset-4 break-words" href={stat.url} target="_blank" rel="noopener noreferrer">{stat.source}</a></figcaption>
         </figure>)}</div>
+        {webCta?.mid && <button onClick={() => onOpenModal(webCta.mid!.label, <ContactForm />)} className="inline-flex items-center gap-3 px-6 py-4 mt-8 bg-teal text-white font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal">{webCta.mid.label}<ArrowRight aria-hidden="true" className="w-4 h-4" /></button>}
       </section>}
 
       {service.process && <section id="the-process" className="scroll-mt-28 bg-charcoal-dark border-y border-white/10 py-16 md:py-24">
@@ -985,7 +1078,7 @@ function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; 
       {service.close && <section className="max-w-6xl mx-auto px-6 md:px-12 border-t border-teal/30 pt-12">
         <h2 className={`${heading} mb-5`}>{service.close.title}</h2>
         <p className={`${prose} max-w-2xl mb-7`}>{service.close.description}</p>
-        <button onClick={() => onOpenModal(service.close!.button, <ContactForm />)} className="inline-flex items-center gap-3 px-6 py-4 bg-teal text-white font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal">{service.close.button}<ArrowRight aria-hidden="true" className="w-4 h-4" /></button>
+        <button onClick={() => onOpenModal(webCta?.close ?? service.close!.button, <ContactForm />)} className="inline-flex items-center gap-3 px-6 py-4 bg-teal text-white font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal">{webCta?.close ?? service.close.button}<ArrowRight aria-hidden="true" className="w-4 h-4" /></button>
       </section>}
     </article>
   );
@@ -1070,7 +1163,7 @@ export function SingleServicePage({ serviceId, onOpenModal, onNavigate }: { serv
                 className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
               >
                 <div className="aspect-square overflow-hidden border-b border-white/5">
-                  <img src={`/images/services/sub/${slugify(sub.title)}.jpg`} alt={sub.title} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={sub.image ?? `/images/services/sub/${slugify(sub.title)}.jpg`} alt={sub.title} className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
