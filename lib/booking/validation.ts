@@ -6,6 +6,7 @@ import {
   SLOT_DURATION_SECONDS,
   type BookingConfig,
 } from './config.js';
+import { sanitizeAttribution, ATTRIBUTION_KEYS, type BookingAttribution } from './attribution.js';
 import { uniqueLocalDateTime } from './schedule.js';
 
 export const ERROR_CODES = {
@@ -23,7 +24,7 @@ export type BookingErrorBody = {
 
 export type SlotsQuery = { from: string; days: number };
 
-export type BookInput = {
+export type BookInput = BookingAttribution & {
   start: string;
   name: string;
   email: string;
@@ -66,7 +67,7 @@ export function isDeliverableEmail(email: string): boolean {
   return labels.every((label) => DOMAIN_LABEL_RE.test(label));
 }
 
-const BOOK_KEYS = new Set(['start', 'name', 'email', 'phone', 'notes']);
+const BOOK_KEYS = new Set(['start', 'name', 'email', 'phone', 'notes', ...ATTRIBUTION_KEYS]);
 
 export function headerValue(req: IncomingMessage, name: string): string | undefined {
   const raw = req.headers[name.toLowerCase()];
@@ -301,7 +302,12 @@ export function parseBookBody(
     if (trimmed.length > 0) notes = trimmed;
   }
 
-  return { ok: true, value: { start, name, email, phone, notes } };
+  for (const key of ATTRIBUTION_KEYS) {
+    if (body[key] !== undefined && typeof body[key] !== 'string') {
+      return { ok: false, message: MSG_INVALID };
+    }
+  }
+  return { ok: true, value: { start, name, email, phone, notes, ...sanitizeAttribution(body) } };
 }
 
 export function parseExplicitInstant(start: string): DateTime | null {

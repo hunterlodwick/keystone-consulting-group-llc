@@ -1,7 +1,9 @@
+import { sanitizeAttribution, type BookingAttribution } from './attribution.js';
 import { createHash } from 'node:crypto';
 import { DateTime } from 'luxon';
 import {
   EVENT_ID_PREFIX,
+  WEBSITE_BOOKING_COLOR_ID,
   EVENT_REMINDER_MINUTES,
   FREEBUSY_TIMEOUT_MS,
   INSERT_TIMEOUT_MS,
@@ -278,6 +280,8 @@ export type BookingEventBody = {
   end: { dateTime: string; timeZone: string };
   transparency: 'opaque';
   visibility: 'private';
+  colorId: string;
+  extendedProperties: { private: Record<string, string> };
   attendees: BookingEventAttendee[];
   guestsCanModify: false;
   guestsCanInviteOthers: false;
@@ -309,7 +313,8 @@ export type BookingEventRequest = {
   intent: BookingInviteIntent;
 };
 
-export function buildBookingEventRequest(args: {
+export function buildBookingEventRequest(args: BookingAttribution & {
+  bookedAt?: Date;
   calendarId: string;
   tz: string;
   startMs: number;
@@ -350,6 +355,15 @@ export function buildBookingEventRequest(args: {
     },
     transparency: 'opaque',
     visibility: 'private',
+    colorId: WEBSITE_BOOKING_COLOR_ID,
+    extendedProperties: { private: {
+      kcgSource: 'website',
+      kcgBookedAt: (args.bookedAt ?? new Date()).toISOString(),
+      kcgPage: 'unknown',
+      kcgCta: 'unknown',
+      kcgReferrer: 'direct',
+      ...sanitizeAttribution(args),
+    } },
     attendees: [{ email: args.email, responseStatus: 'needsAction' }],
     guestsCanModify: false,
     guestsCanInviteOthers: false,
@@ -410,7 +424,8 @@ function insertedEventId(json: unknown): string | null {
   return typeof id === 'string' && id.length > 0 ? id : null;
 }
 
-export async function insertBookingEvent(args: {
+export async function insertBookingEvent(args: BookingAttribution & {
+  bookedAt?: Date;
   accessToken: string;
   calendarId: string;
   tz: string;
@@ -424,6 +439,7 @@ export async function insertBookingEvent(args: {
   randomUUID: () => string;
   deadline?: AbortSignal;
 }): Promise<{ eventId: string }> {
+  args = { ...args, bookedAt: args.bookedAt ?? new Date() };
   const requestId = args.randomUUID();
   const withConference = buildBookingEventRequest({ ...args, requestId, includeConference: true });
 

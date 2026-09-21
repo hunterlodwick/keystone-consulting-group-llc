@@ -1,3 +1,4 @@
+import { captureBookingAttribution, useBookingCta } from './BookingAttribution';
 import './booking.css';
 import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 
@@ -104,10 +105,13 @@ function daysBetween(from: string, to: string): number {
 export function BookingWidget({
   onRequestContact,
   variant = 'modal',
+  ctaLabel,
 }: {
   onRequestContact?: () => void;
   variant?: 'modal' | 'inline';
+  ctaLabel?: string;
 }): React.ReactElement {
+  const attributionCta = useBookingCta(variant, ctaLabel);
   const liveId = useId();
   const formId = useId();
   const nameId = useId();
@@ -430,6 +434,7 @@ export function BookingWidget({
     setStatusText('Submitting your booking.');
     try {
       const body: Record<string, string> = {
+        ...captureBookingAttribution(attributionCta, variant),
         start: selectedSlot.start,
         name: name.trim(),
         email: email.trim(),

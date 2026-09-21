@@ -1,0 +1,26 @@
+{
+  "src/pages/ServicesPage.tsx": {
+    "sha256": "0a7a361d0553189f786fc6326b5003285ebfb6df80634f0cb6aeeedd56195ac7",
+    "matches_main": true
+  },
+  "src/index.css": {
+    "sha256": "6704103e47c24422137d8118db35c64355bbb3c2604f43e361e3f329b3163d6e",
+    "matches_main": true
+  },
+  "server.ts": {
+    "sha256": "865c03363c1055a58bd538ffd8cb018b8a47aa36081d1680fe18faa6ee031664",
+    "matches_main": true
+  },
+  "src/App.tsx": {
+    "sha256": "7df0d4b007f6291e46682d4be1486a66729ea7f0fd11657b464931e079ff3575",
+    "matches_main": true
+  },
+  "tests/booking/browser.spec.ts": {
+    "sha256": "d6a1da342a65e046bb430b357d7b81e1e2709aef6bd0c6c1b6c0824c4eefb0ea",
+    "matches_main": true
+  },
+  "tests/booking/playwright.config.ts": {
+    "sha256": "e04c87e8224329560d4a4ed177b7b16de4144935d9760d25972674164c743995",
+    "matches_main": true
+  }
+}

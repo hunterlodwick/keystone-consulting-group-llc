@@ -1,0 +1,40 @@
+{
+  "testEventId": "kcgattr9b5239f00aaf7cc5499332e2",
+  "filter": "privateExtendedProperty=kcgSource=website",
+  "insertStatus": 200,
+  "filterStatus": 200,
+  "rawFilterResult": {
+    "items": [
+      {
+        "id": "kcgattr9b5239f00aaf7cc5499332e2",
+        "status": "confirmed",
+        "summary": "KCG call - Attribution API proof (temporary)",
+        "colorId": "9",
+        "start": {
+          "dateTime": "2026-09-20T11:44:15-06:00",
+          "timeZone": "America/Denver"
+        },
+        "extendedProperties": {
+          "private": {
+            "kcgReferrer": "direct",
+            "kcgPage": "/__attribution-api-proof",
+            "kcgCta": "Controlled API proof",
+            "kcgBookedAt": "2026-09-21T17:44:15.995Z",
+            "kcgSource": "website",
+            "kcgWidget": "modal"
+          }
+        }
+      }
+    ]
+  },
+  "deleteStatus": 204,
+  "afterDeleteGetStatus": 200,
+  "afterDeleteGet": {
+    "id": "kcgattr9b5239f00aaf7cc5499332e2",
+    "status": "cancelled"
+  },
+  "afterDeleteFilter": {
+    "items": []
+  },
+  "cleanupVerified": true
+}

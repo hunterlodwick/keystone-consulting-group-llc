@@ -48,6 +48,9 @@ export const TOKEN_TIMEOUT_MS = 5_000;
 export const FREEBUSY_TIMEOUT_MS = 8_000;
 export const INSERT_TIMEOUT_MS = 2_500;
 
+/** Blueberry identifies website bookings at a glance on Seth's calendar. */
+export const WEBSITE_BOOKING_COLOR_ID = '9';
+
 export const EVENT_ID_PREFIX = 'kcg1';
 
 export type WallClock = { hour: number; minute: number };
