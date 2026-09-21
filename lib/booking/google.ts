@@ -7,10 +7,10 @@ import {
   INSERT_TIMEOUT_MS,
   TOKEN_TIMEOUT_MS,
   type BookingConfig,
-} from './config';
-import type { BusyInterval } from './schedule';
-import { formatSlotInstant } from './schedule';
-import { escapePlain } from './validation';
+} from './config.js';
+import type { BusyInterval } from './schedule.js';
+import { formatSlotInstant } from './schedule.js';
+import { escapePlain } from './validation.js';
 
 /**
  * Plain REST via fetch: OAuth token, freeBusy, and events.insert are a small

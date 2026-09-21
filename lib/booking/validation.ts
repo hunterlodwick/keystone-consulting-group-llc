@@ -5,8 +5,8 @@ import {
   MAX_QUERY_DAYS,
   SLOT_DURATION_SECONDS,
   type BookingConfig,
-} from './config';
-import { uniqueLocalDateTime } from './schedule';
+} from './config.js';
+import { uniqueLocalDateTime } from './schedule.js';
 
 export const ERROR_CODES = {
   INVALID_INPUT: 'INVALID_INPUT',

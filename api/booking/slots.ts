@@ -5,15 +5,15 @@ import {
   REQUEST_DEADLINE_MS,
   readBookingConfig,
   toSlotConfig,
-} from '../../lib/booking/config';
+} from '../../lib/booking/config.js';
 import {
   GoogleCalendarError,
   calendarQueryWindow,
   getAccessToken,
   queryFreeBusy,
   type BookingHandlerDeps,
-} from '../../lib/booking/google';
-import { generateSlots } from '../../lib/booking/schedule';
+} from '../../lib/booking/google.js';
+import { generateSlots } from '../../lib/booking/schedule.js';
 import {
   ERROR_CODES,
   MSG_INVALID,
@@ -27,7 +27,7 @@ import {
   writeError,
   writeJson,
   type BookingIncoming,
-} from '../../lib/booking/validation';
+} from '../../lib/booking/validation.js';
 
 export async function handleSlotsRequest(
   req: BookingIncoming,

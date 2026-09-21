@@ -2,7 +2,7 @@ import { DateTime } from 'luxon';
 import {
   SLOT_DURATION_SECONDS,
   type SlotGenerationConfig,
-} from './config';
+} from './config.js';
 
 export type BusyInterval = {
   startMs: number;
