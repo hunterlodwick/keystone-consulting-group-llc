@@ -1,0 +1,33 @@
+{
+  "deployment": "dpl_6XbaaCdzZ1wD7Nzjj1L5KBR3qRk9",
+  "codeCommit": "4bba68db0a13d1323f38e1ead20ef4eb9f0c26b7",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/services/automations",
+      "status": 200
+    },
+    {
+      "path": "/work",
+      "status": 200
+    },
+    {
+      "path": "/privacy",
+      "status": 200
+    },
+    {
+      "path": "/terms",
+      "status": 200
+    }
+  ],
+  "bookingPosts": 0,
+  "consoleErrors": [],
+  "asset": "/assets/index-D4UZETmp.js",
+  "attributionInLiveBundle": true,
+  "slotsStatus": 200,
+  "bookingMode": "live",
+  "mobileBookingOpens": true
+}

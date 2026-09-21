@@ -43,3 +43,11 @@ Controlled API proof: exactly one transparent, private event, no attendees, no M
 Initial verification failures were corrected: fixture used the wrong local-server property/signature; Luxon fixture required validity narrowing; default port 4173 was occupied by another job; example CTA “Map your first automation” is not rendered on the current deep automations page. The spec now tests the actual header booking CTA and a clearly synthetic arbitrary-label fixture. Existing deep-service contact-form actions were preserved.
 
 Source references: [Google events.list](https://developers.google.com/workspace/calendar/api/v3/reference/events/list) documents `privateExtendedProperty` and `calendar.events.owned`; [private extended properties](https://developers.google.com/workspace/calendar/api/guides/extended-properties) documents owner-copy visibility and limits.
+
+## Production result
+
+Code commit `4bba68db0a13d1323f38e1ead20ef4eb9f0c26b7` fast-forward merged into main and pushed. Production deploy exit 0: `dpl_6XbaaCdzZ1wD7Nzjj1L5KBR3qRk9`, https://keystone-consulting-group-lfri-jw3uedd4n.vercel.app, aliased to https://www.keystoneconsultingg.com.
+
+Read-only live verification exit 0: attribution markers present in `/assets/index-D4UZETmp.js`; homepage, automations, work, privacy and terms HTTP 200; slots HTTP 200 with `X-Booking-Mode: live`; mobile booking opens; console errors 0, production booking POSTs 0. No production environment variables were changed. See `production.json`. End-to-end creation via the production form was deliberately not performed per owner instruction.
+
+Final results: backend 51/51, attribution unit/integration/report tests 6/6, existing browser suite 32/32, new browser suite 4/4; all exit 0. Lint/build/report/API proof/deploy also exit 0. Missing credentials explicitly tested with a mocked home-directory lookup: expected exit 1, clear credential-path error, no secrets.
