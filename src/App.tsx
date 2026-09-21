@@ -1,4 +1,5 @@
 import LegalPage from './pages/LegalPage';
+import { MobileStickyCta, stickyCtaLabel } from './components/MobileStickyCta';
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { 
   CreditCard, 
@@ -2404,7 +2405,7 @@ export default function App() {
     <div className="min-h-screen bg-charcoal bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-charcoal-dark via-charcoal to-charcoal-dark text-offwhite font-sans selection:bg-teal selection:text-white">
       <Header onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
       
-      <main>
+      <main data-mobile-cta-page={Boolean(stickyCtaLabel(currentPath))}>
         {currentPath === '/privacy' || currentPath === '/terms' ? (
           <LegalPage kind={currentPath === '/privacy' ? 'privacy' : 'terms'} onNavigate={(path) => {
             window.history.pushState({}, '', path);
@@ -2455,6 +2456,11 @@ export default function App() {
       </main>
 
       <Footer onOpenSplash={handleOpenSplash} onOpenModal={handleOpenModal} />
+      <MobileStickyCta
+        path={currentPath}
+        modalOpen={modalState.isOpen || splashState.isOpen}
+        onBook={() => handleOpenModal('Book a Call', <ContactForm />)}
+      />
       
       <Modal
         isOpen={modalState.isOpen}
