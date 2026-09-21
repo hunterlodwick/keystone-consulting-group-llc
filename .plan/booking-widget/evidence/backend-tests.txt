@@ -1,0 +1,461 @@
+
+> react-example@0.0.0 test:booking
+> node --import tsx --test tests/booking/booking.test.ts
+
+TAP version 13
+# Subtest: booking config
+    # Subtest: rejects missing dry-run and never defaults to writes
+    ok 1 - rejects missing dry-run and never defaults to writes
+      ---
+      duration_ms: 0.587
+      type: 'test'
+      ...
+    # Subtest: rejects invalid timezone and incomplete google credentials
+    ok 2 - rejects invalid timezone and incomplete google credentials
+      ---
+      duration_ms: 0.336417
+      type: 'test'
+      ...
+    # Subtest: allows dry-run without google credentials
+    ok 3 - allows dry-run without google credentials
+      ---
+      duration_ms: 0.117208
+      type: 'test'
+      ...
+    1..3
+ok 1 - booking config
+  ---
+  duration_ms: 1.462833
+  type: 'suite'
+  ...
+# Subtest: generateSlots
+    # Subtest: emits 30-minute grid slots inside working hours
+    ok 1 - emits 30-minute grid slots inside working hours
+      ---
+      duration_ms: 8.320583
+      type: 'test'
+      ...
+    # Subtest: omits slots that overlap expanded busy intervals
+    ok 2 - omits slots that overlap expanded busy intervals
+      ---
+      duration_ms: 2.871584
+      type: 'test'
+      ...
+    # Subtest: treats touching boundaries as free when buffer is zero
+    ok 3 - treats touching boundaries as free when buffer is zero
+      ---
+      duration_ms: 2.596042
+      type: 'test'
+      ...
+    # Subtest: merges adjacent busy events after buffer expansion
+    ok 4 - merges adjacent busy events after buffer expansion
+      ---
+      duration_ms: 4.675084
+      type: 'test'
+      ...
+    # Subtest: clears a day covered by an all-day busy interval
+    ok 5 - clears a day covered by an all-day busy interval
+      ---
+      duration_ms: 2.764958
+      type: 'test'
+      ...
+    # Subtest: treats recurring-style expanded intervals as separate busy blocks
+    ok 6 - treats recurring-style expanded intervals as separate busy blocks
+      ---
+      duration_ms: 2.790292
+      type: 'test'
+      ...
+    # Subtest: returns no slots for past dates and weekends
+    ok 7 - returns no slots for past dates and weekends
+      ---
+      duration_ms: 0.308375
+      type: 'test'
+      ...
+    # Subtest: enforces minimum notice and horizon
+    ok 8 - enforces minimum notice and horizon
+      ---
+      duration_ms: 4.299792
+      type: 'test'
+      ...
+    # Subtest: omits nonexistent spring-forward times in America/Denver
+    ok 9 - omits nonexistent spring-forward times in America/Denver
+      ---
+      duration_ms: 0.976083
+      type: 'test'
+      ...
+    # Subtest: omits ambiguous fall-back times in America/Denver
+    ok 10 - omits ambiguous fall-back times in America/Denver
+      ---
+      duration_ms: 1.6175
+      type: 'test'
+      ...
+    # Subtest: omits nonexistent and ambiguous local times in America/Los_Angeles
+    ok 11 - omits nonexistent and ambiguous local times in America/Los_Angeles
+      ---
+      duration_ms: 1.972292
+      type: 'test'
+      ...
+    # Subtest: keeps Friday and Monday offsets correct across DST with frozen clocks
+    ok 12 - keeps Friday and Monday offsets correct across DST with frozen clocks
+      ---
+      duration_ms: 10.724333
+      type: 'test'
+      ...
+    1..12
+ok 2 - generateSlots
+  ---
+  duration_ms: 44.439875
+  type: 'suite'
+  ...
+# Subtest: consent primitives with fake token transport
+    # Subtest: builds PKCE S256 and verifies state
+    ok 1 - builds PKCE S256 and verifies state
+      ---
+      duration_ms: 0.563
+      type: 'test'
+      ...
+    # Subtest: exchanges a code via injected fetch and does not require a token file
+    ok 2 - exchanges a code via injected fetch and does not require a token file
+      ---
+      duration_ms: 1.600792
+      type: 'test'
+      ...
+    # Subtest: accepts a loopback callback only when state matches
+    ok 3 - accepts a loopback callback only when state matches
+      ---
+      duration_ms: 32.077
+      type: 'test'
+      ...
+    1..3
+ok 3 - consent primitives with fake token transport
+  ---
+  duration_ms: 34.376208
+  type: 'suite'
+  ...
+# Subtest: deliverable email and escaped notes
+    # Subtest: accepts normal addresses and plus tags
+    ok 1 - accepts normal addresses and plus tags
+      ---
+      duration_ms: 0.218708
+      type: 'test'
+      ...
+    # Subtest: rejects leading, trailing, consecutive dots and oversized local parts
+    ok 2 - rejects leading, trailing, consecutive dots and oversized local parts
+      ---
+      duration_ms: 0.047292
+      type: 'test'
+      ...
+    # Subtest: HTML-escapes prospect text used in event descriptions
+    ok 3 - HTML-escapes prospect text used in event descriptions
+      ---
+      duration_ms: 0.080792
+      type: 'test'
+      ...
+    1..3
+ok 4 - deliverable email and escaped notes
+  ---
+  duration_ms: 0.4025
+  type: 'suite'
+  ...
+# {"src":"booking","id":"5a5b87a2-a58b-45a5-b7ec-2d4b7cf0e5da","op":"slots","status":200,"ms":7}
+# Subtest: booking HTTP handlers
+    # Subtest: dry-run with fake transport
+        # Subtest: returns the slots contract and never inserts
+        ok 1 - returns the slots contract and never inserts
+          ---
+          duration_ms: 14.550875
+          type: 'test'
+          ...
+# {"src":"booking","id":"b6fd1e9e-91c2-4f2e-900d-bca52f0f84c0","op":"slots","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"94c339e9-86eb-43e2-87eb-236f70ca0482","op":"slots","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"bb9a88f3-af42-4798-bf45-1236009b97e2","op":"slots","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"8407dde3-7f1f-42e4-8fb4-64fc9656d59a","op":"slots","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"d3d337a6-3ce5-40a7-a33b-e2330bc3af5a","op":"slots","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"57cc1393-53d0-4c2d-9458-b48063a040f1","op":"slots","status":400,"ms":1,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"1161f3b2-49cf-461f-9da9-53c50977b355","op":"slots","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"c6a7471c-d4a4-4e8d-a0b1-4176413d5ca8","op":"slots","status":400,"ms":1,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"bdbbcc2f-4698-4a0a-9f1e-3f475f3bd120","op":"slots","status":400,"ms":1,"code":"INVALID_INPUT"}
+        # Subtest: rejects days=0, days=15, non-integer, duplicates, malformed dates, and out-of-horizon ranges before Google
+        ok 2 - rejects days=0, days=15, non-integer, duplicates, malformed dates, and out-of-horizon ranges before Google
+          ---
+          duration_ms: 11.545958
+          type: 'test'
+          ...
+# {"src":"booking","id":"caf0f1ed-a634-47cd-9c11-8df67174dc4c","op":"slots","status":200,"ms":1}
+        # Subtest: returns empty slots for a past date inside the allowed lookback
+        ok 3 - returns empty slots for a past date inside the allowed lookback
+          ---
+          duration_ms: 1.503291
+          type: 'test'
+          ...
+# {"src":"booking","id":"605a2bb8-d38e-42e6-b149-de5b9c4d6291","op":"slots","status":200,"ms":7}
+        # Subtest: iterates local calendar days across the spring DST weekend
+        ok 4 - iterates local calendar days across the spring DST weekend
+          ---
+          duration_ms: 9.174667
+          type: 'test'
+          ...
+# {"src":"booking","id":"97815b19-2bea-434d-be0e-8d8651799a35","op":"book","status":200,"ms":4}
+        # Subtest: books in dry-run without an eventId and with zero insert calls
+        ok 5 - books in dry-run without an eventId and with zero insert calls
+          ---
+          duration_ms: 8.162125
+          type: 'test'
+          ...
+# {"src":"booking","id":"3b383b4e-d95a-4f3b-9edd-b69950ace285","op":"book","status":200,"ms":3}
+        # Subtest: records invite intent in dry-run from the handler without sending email or writing events
+        ok 6 - records invite intent in dry-run from the handler without sending email or writing events
+          ---
+          duration_ms: 4.529084
+          type: 'test'
+          ...
+# {"src":"booking","id":"9d806146-9025-4e1d-a585-593eca03693c","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"b8eee34b-c06c-4159-a61c-54591a2f331e","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"d63d8dba-6ee3-4854-b637-16c0df574c31","op":"book","status":400,"ms":1,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"11ce21bc-a91c-4712-a02a-fd9bd5d9fbed","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"934d14f6-c4e0-48ab-b55d-587b4990de60","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"ca84a97d-2211-4e46-89ed-5d8f603d5d84","op":"book","status":400,"ms":1,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"5f76e85d-6a0c-4dc2-8781-4275b5e78c85","op":"book","status":400,"ms":1,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"69697af4-a982-4fb5-9600-294108845d6f","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"87af472a-fbe6-438e-9a45-821a49a4af50","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+        # Subtest: rejects invalid or empty booker email with 400 before any calendar write
+        ok 7 - rejects invalid or empty booker email with 400 before any calendar write
+          ---
+          duration_ms: 7.480708
+          type: 'test'
+          ...
+# {"src":"booking","id":"0ccbb365-7928-4bc1-a982-f178d83baa52","op":"book","status":200,"ms":3}
+        # Subtest: accepts a plus-tagged delivery address in dry-run
+        ok 8 - accepts a plus-tagged delivery address in dry-run
+          ---
+          duration_ms: 9.831959
+          type: 'test'
+          ...
+# {"src":"booking","id":"95809818-f92d-444c-893f-84e58c21ce92","op":"slots","status":405,"ms":0,"code":"METHOD_NOT_ALLOWED"}
+# {"src":"booking","id":"144dc4ba-5a71-4cd2-8ad0-98fd6c58d075","op":"book","status":405,"ms":0,"code":"METHOD_NOT_ALLOWED"}
+        # Subtest: returns 405 for the wrong methods
+        ok 9 - returns 405 for the wrong methods
+          ---
+          duration_ms: 1.316792
+          type: 'test'
+          ...
+# {"src":"booking","id":"806c1393-7887-4fee-8d2b-f6fdd7634f00","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"8a666c69-3571-46f9-a150-8d74de9861c5","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"58618356-7374-45c9-882a-881e3166b2bf","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+        # Subtest: rejects unknown keys, arrays, and oversize or non-json bodies
+        ok 10 - rejects unknown keys, arrays, and oversize or non-json bodies
+          ---
+          duration_ms: 1.953458
+          type: 'test'
+          ...
+        # Subtest: serves SPA HTML for a deep service path
+        ok 11 - serves SPA HTML for a deep service path
+          ---
+          duration_ms: 0.5015
+          type: 'test'
+          ...
+        1..11
+    ok 1 - dry-run with fake transport
+      ---
+      duration_ms: 71.559375
+      type: 'suite'
+      ...
+# {"src":"booking","id":"448adb1a-1d07-4d99-8b1b-6184c2880530","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+    # Subtest: fail closed
+        # Subtest: returns 503 rather than free availability when credentials are missing
+        ok 1 - returns 503 rather than free availability when credentials are missing
+          ---
+          duration_ms: 2.457791
+          type: 'test'
+          ...
+# {"src":"booking","id":"9a91078d-ea23-40ee-866b-bc7111a713b2","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"447f5750-5784-4108-b44b-c2e4946be043","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+        # Subtest: returns 503 when Google omits the calendar or reports a per-calendar error
+        ok 2 - returns 503 when Google omits the calendar or reports a per-calendar error
+          ---
+          duration_ms: 3.678958
+          type: 'test'
+          ...
+# {"src":"booking","id":"c8edf7bc-6030-4601-a128-f24b8e517c27","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"8ce2bda7-b9d8-43f6-9051-4aab9a61dbed","op":"book","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"cd5b47f0-e06f-4eb4-86bb-414f0eeb8c1b","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"a114eb65-b31d-4cc7-9134-7f40d03b1a55","op":"book","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"c93a7a0a-9381-41f9-8b5e-a686b5656668","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"29866ff8-e22e-4638-9598-50001a2fcb2b","op":"book","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"3a085a59-4682-4e71-9b80-604493d46223","op":"slots","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"0937192a-e961-46f1-abe8-10ef9c71b3a5","op":"book","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"73aaddb6-bcfe-4d49-80e2-781abe2af08e","op":"slots","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"fbf8084e-0bf5-47de-8c6f-244c70fd10df","op":"book","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"9fee7ebe-6f58-483d-aa24-653b13bf319d","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"8f40cd3a-aa15-436c-bbcd-7c441977f883","op":"book","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"a3f43ba6-2ab5-4b31-a887-dfcda527a88e","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"3717af77-423a-4a9e-a8ba-92f5dbe93994","op":"book","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"e4ed65a2-66d8-4215-a484-164483405eee","op":"slots","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"ecf01823-9951-4753-9a26-1b05320f8574","op":"book","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"1a1b882e-abb5-4d1f-b5be-2dd673239779","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"3cef1d2d-973f-4d9c-bbd3-b53258fbcd5e","op":"book","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"0b3b50de-1f70-4fe5-abfc-1dd40b0e908d","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"833072dc-25de-4eff-91a0-ac515a5079ec","op":"book","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"054a1f58-2129-4ee8-baad-ade7689f3949","op":"slots","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"ee1d8e2f-3ca7-4e2d-800b-d18f8a6396ba","op":"book","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"6d95695b-5907-45be-821b-d3bd83c9d4ff","op":"slots","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"fd359b54-e0ac-4110-8095-2f6a6092065f","op":"book","status":503,"ms":0,"code":"BOOKING_UNAVAILABLE"}
+        # Subtest: returns 503 and zero inserts for malformed freebusy payloads
+        ok 3 - returns 503 and zero inserts for malformed freebusy payloads
+          ---
+          duration_ms: 39.6315
+          type: 'test'
+          ...
+# {"src":"booking","id":"2733a8aa-ecba-4267-b4cb-a2a7eeedd735","op":"slots","status":200,"ms":2}
+        # Subtest: treats a valid empty busy array as free
+        ok 4 - treats a valid empty busy array as free
+          ---
+          duration_ms: 3.433167
+          type: 'test'
+          ...
+# {"src":"booking","id":"0d15af2b-255a-48a9-a36a-8380bb33488e","op":"book","status":503,"ms":1,"code":"BOOKING_UNAVAILABLE"}
+        # Subtest: rejects the offset-less freebusy repro with 503 and zero inserts
+        ok 5 - rejects the offset-less freebusy repro with 503 and zero inserts
+          ---
+          duration_ms: 1.579167
+          type: 'test'
+          ...
+# {"src":"booking","id":"debc3463-90e6-4c25-b7ed-f3291013f5ca","op":"slots","status":200,"ms":3}
+# {"src":"booking","id":"ce5a6809-7df9-4083-8d5e-34a48bc20356","op":"book","status":409,"ms":3,"code":"SLOT_TAKEN"}
+        # Subtest: keeps date-only busy intervals as all-day handling
+        ok 6 - keeps date-only busy intervals as all-day handling
+          ---
+          duration_ms: 8.194
+          type: 'test'
+          ...
+        # Subtest: does not interpret offset-less timestamps using the process zone
+        ok 7 - does not interpret offset-less timestamps using the process zone
+          ---
+          duration_ms: 0.610417
+          type: 'test'
+          ...
+        1..7
+    ok 2 - fail closed
+      ---
+      duration_ms: 59.766333
+      type: 'suite'
+      ...
+# {"src":"booking","id":"55d4d014-7e83-4e6c-8bbd-6638f78bf8af","op":"book","status":200,"ms":3}
+    # Subtest: live branch with fake Google only
+        # Subtest: rechecks freebusy immediately before insert
+        ok 1 - rechecks freebusy immediately before insert
+          ---
+          duration_ms: 4.760459
+          type: 'test'
+          ...
+# {"src":"booking","id":"c09e16cd-8395-403b-93a9-b75f86a905ba","op":"book","status":200,"ms":3}
+# {"src":"booking","id":"f2253996-cba7-4694-8e35-f831eb789275","op":"book","status":200,"ms":2}
+# {"src":"booking","id":"f4749730-4118-4257-9520-c5f865486d1f","op":"book","status":200,"ms":3}
+# {"src":"booking","id":"ac9ec20a-53be-49de-b252-00ec478306f2","op":"book","status":200,"ms":2}
+# {"src":"booking","id":"7513fdae-3b16-41dc-9138-a799ce2c265d","op":"book","status":200,"ms":3}
+        # Subtest: treats 200 and 201 conference payloads as success and inserts once
+        ok 2 - treats 200 and 201 conference payloads as success and inserts once
+          ---
+          duration_ms: 19.320209
+          type: 'test'
+          ...
+# {"src":"booking","id":"a2052648-79a0-45dd-954a-f57050aa4f25","op":"book","status":200,"ms":2}
+# {"src":"booking","id":"b36516fa-f135-4d8d-916a-d0acb4c69ccb","op":"book","status":200,"ms":3}
+        # Subtest: uses a unique conference requestId per booking and emails the invite
+        ok 3 - uses a unique conference requestId per booking and emails the invite
+          ---
+          duration_ms: 8.24025
+          type: 'test'
+          ...
+# {"src":"booking","id":"185bc0c9-f4bf-4a86-9acb-a2569a5467fa","op":"book","status":200,"ms":3}
+        # Subtest: still books and emails the invite when Meet conference creation fails
+        ok 4 - still books and emails the invite when Meet conference creation fails
+          ---
+          duration_ms: 4.266083
+          type: 'test'
+          ...
+# {"src":"booking","id":"9350bca3-0fc7-4f1e-844b-3141b94ab090","op":"book","status":503,"ms":3,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"dd24e19a-1de5-436f-952e-b52774217dbe","op":"book","status":503,"ms":2,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"04ae51d1-65d4-4446-b02f-19327a23303f","op":"book","status":503,"ms":2508,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"b19d4e2c-7a90-491f-8cba-9d69f17e5cb6","op":"book","status":503,"ms":3,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"df6e616b-5b04-495a-9ea2-44bacb440d75","op":"book","status":503,"ms":2,"code":"BOOKING_UNAVAILABLE"}
+# {"src":"booking","id":"508de11f-cadb-4e9b-ad8a-222d641beb21","op":"book","status":503,"ms":2,"code":"BOOKING_UNAVAILABLE"}
+        # Subtest: does not retry unrelated 4xx, 5xx, timeout, or auth/quota errors that mention conferenceData
+        ok 5 - does not retry unrelated 4xx, 5xx, timeout, or auth/quota errors that mention conferenceData
+          ---
+          duration_ms: 2531.021125
+          type: 'test'
+          ...
+# {"src":"booking","id":"d8ddea61-7f2f-4a4a-a420-9e31af895a42","op":"book","status":200,"ms":3}
+        # Subtest: falls back once for an explicit invalidConferenceType rejection
+        ok 6 - falls back once for an explicit invalidConferenceType rejection
+          ---
+          duration_ms: 3.422625
+          type: 'test'
+          ...
+# {"src":"booking","id":"0ef7ff39-244a-4145-a365-a77de245a337","op":"book","status":200,"ms":2}
+        # Subtest: keeps markup in notes literal in the event description
+        ok 7 - keeps markup in notes literal in the event description
+          ---
+          duration_ms: 3.071084
+          type: 'test'
+          ...
+# {"src":"booking","id":"46172f7c-82cb-457e-9925-82fed35cb76a","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"220f7f9e-11ac-4b8d-9782-b4d8586a74d6","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"d3b847be-1a60-4c16-b235-461470bc5125","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+# {"src":"booking","id":"0191f00a-ce1d-47cf-89a6-c5432c938ea6","op":"book","status":400,"ms":0,"code":"INVALID_INPUT"}
+        # Subtest: rejects invalid booker email on the live branch before any calendar write
+        ok 8 - rejects invalid booker email on the live branch before any calendar write
+          ---
+          duration_ms: 3.330875
+          type: 'test'
+          ...
+# {"src":"booking","id":"62d0098c-63c2-472b-9c82-a8ae1ae6a463","op":"book","status":409,"ms":2,"code":"SLOT_TAKEN"}
+        # Subtest: returns 409 without insert when the recheck shows busy
+        ok 9 - returns 409 without insert when the recheck shows busy
+          ---
+          duration_ms: 3.219958
+          type: 'test'
+          ...
+# {"src":"booking","id":"44a621c1-7292-46c1-9451-050b0988935f","op":"book","status":409,"ms":3,"code":"SLOT_TAKEN"}
+        # Subtest: maps duplicate event IDs to 409
+        ok 10 - maps duplicate event IDs to 409
+          ---
+          duration_ms: 3.167917
+          type: 'test'
+          ...
+# {"src":"booking","id":"57a1882c-1d5b-4685-82ff-cb987b40d11a","op":"book","status":503,"ms":2507,"code":"BOOKING_UNAVAILABLE"}
+        # Subtest: never auto-retries a timed-out insert
+        ok 11 - never auto-retries a timed-out insert
+          ---
+          duration_ms: 2508.480709
+          type: 'test'
+          ...
+# {"src":"booking","id":"927248f5-8a05-4774-a566-9b6e7df517c4","op":"book","status":409,"ms":2,"code":"SLOT_TAKEN"}
+        # Subtest: does not insert when the notice cutoff is crossed during freebusy
+        ok 12 - does not insert when the notice cutoff is crossed during freebusy
+          ---
+          duration_ms: 5.956042
+          type: 'test'
+          ...
+        1..12
+    ok 3 - live branch with fake Google only
+      ---
+      duration_ms: 5098.641375
+      type: 'suite'
+      ...
+    1..3
+ok 5 - booking HTTP handlers
+  ---
+  duration_ms: 5230.13925
+  type: 'suite'
+  ...
+1..5
+# tests 51
+# suites 8
+# pass 51
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5550.417458

@@ -1,0 +1,123 @@
+Final preview: https://keystone-consulting-group-j3ktl7srn.vercel.app
+
+GET /api/booking/slots?from=2026-09-22&days=2
+HTTP/2 200 
+age: 0
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Mon, 21 Sep 2026 16:40:36 GMT
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-booking-mode: dry-run
+x-robots-tag: noindex
+x-vercel-cache: MISS
+x-vercel-id: sfo1::iad1::j84ws-1790008836312-f5a828de8e29
+content-length: 2400
+
+{"tz":"America/Denver","days":[{"date":"2026-09-22","slots":[{"start":"2026-09-22T10:00:00-06:00","end":"2026-09-22T10:30:00-06:00"},{"start":"2026-09-22T10:30:00-06:00","end":"2026-09-22T11:00:00-06:00"},{"start":"2026-09-22T11:00:00-06:00","end":"2026-09-22T11:30:00-06:00"},{"start":"2026-09-22T11:30:00-06:00","end":"2026-09-22T12:00:00-06:00"},{"start":"2026-09-22T12:00:00-06:00","end":"2026-09-22T12:30:00-06:00"},{"start":"2026-09-22T12:30:00-06:00","end":"2026-09-22T13:00:00-06:00"},{"start":"2026-09-22T13:00:00-06:00","end":"2026-09-22T13:30:00-06:00"},{"start":"2026-09-22T13:30:00-06:00","end":"2026-09-22T14:00:00-06:00"},{"start":"2026-09-22T14:00:00-06:00","end":"2026-09-22T14:30:00-06:00"},{"start":"2026-09-22T14:30:00-06:00","end":"2026-09-22T15:00:00-06:00"},{"start":"2026-09-22T15:00:00-06:00","end":"2026-09-22T15:30:00-06:00"},{"start":"2026-09-22T17:00:00-06:00","end":"2026-09-22T17:30:00-06:00"},{"start":"2026-09-22T17:30:00-06:00","end":"2026-09-22T18:00:00-06:00"},{"start":"2026-09-22T18:00:00-06:00","end":"2026-09-22T18:30:00-06:00"},{"start":"2026-09-22T18:30:00-06:00","end":"2026-09-22T19:00:00-06:00"}]},{"date":"2026-09-23","slots":[{"start":"2026-09-23T09:00:00-06:00","end":"2026-09-23T09:30:00-06:00"},{"start":"2026-09-23T11:00:00-06:00","end":"2026-09-23T11:30:00-06:00"},{"start":"2026-09-23T11:30:00-06:00","end":"2026-09-23T12:00:00-06:00"},{"start":"2026-09-23T12:00:00-06:00","end":"2026-09-23T12:30:00-06:00"},{"start":"2026-09-23T12:30:00-06:00","end":"2026-09-23T13:00:00-06:00"},{"start":"2026-09-23T13:00:00-06:00","end":"2026-09-23T13:30:00-06:00"},{"start":"2026-09-23T13:30:00-06:00","end":"2026-09-23T14:00:00-06:00"},{"start":"2026-09-23T14:00:00-06:00","end":"2026-09-23T14:30:00-06:00"},{"start":"2026-09-23T14:30:00-06:00","end":"2026-09-23T15:00:00-06:00"},{"start":"2026-09-23T15:00:00-06:00","end":"2026-09-23T15:30:00-06:00"},{"start":"2026-09-23T15:30:00-06:00","end":"2026-09-23T16:00:00-06:00"},{"start":"2026-09-23T16:00:00-06:00","end":"2026-09-23T16:30:00-06:00"},{"start":"2026-09-23T16:30:00-06:00","end":"2026-09-23T17:00:00-06:00"},{"start":"2026-09-23T17:00:00-06:00","end":"2026-09-23T17:30:00-06:00"},{"start":"2026-09-23T17:30:00-06:00","end":"2026-09-23T18:00:00-06:00"},{"start":"2026-09-23T18:00:00-06:00","end":"2026-09-23T18:30:00-06:00"},{"start":"2026-09-23T18:30:00-06:00","end":"2026-09-23T19:00:00-06:00"}]}]}
+
+GET /services/web-design
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 0
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="index.html"
+content-type: text/html; charset=utf-8
+date: Mon, 21 Sep 2026 16:40:37 GMT
+etag: "5d1f5f3d3515ad6f9e7457eedfd9b686"
+last-modified: Mon, 21 Sep 2026 16:40:37 GMT
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-robots-tag: noindex
+x-vercel-cache: MISS
+x-vercel-id: sfo1::4c5ht-1790008837022-1e6afce88b4e
+content-length: 1780
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2D2D2D" />
+    <title>Keystone Consulting Group | We Find Hidden Profit and Turn It Into Growth</title>
+    <meta name="description" content="We find hidden profit in your business and turn it into growth. Keystone Consulting Group audits your costs, eliminates unnecessary fees, and reinvests the savings into systems that scale your business." />
+    
+    <!-- Preconnect to Google Fonts to eliminate DNS/TLS roundtrips -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Keystone Consulting Group | We Find Hidden Profit and Turn It Into Growth" />
+    <meta property="og:description" content="We audit your business, identify where money is leaking, and turn those savings into growth. Get a free Profit Leak Analysis today." />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Keystone Consulting Group" />
+    <meta name="twitter:description" content="We Find Hidden Profit and Turn It Into Growth." />
+    <script type="module" crossorigin src="/assets/index-DmWqDFQ-.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-CLxqWkL9.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-1jf2xJTu.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-Cn-MrvnQ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
+
+
+GET /privacy
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 0
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="index.html"
+content-type: text/html; charset=utf-8
+date: Mon, 21 Sep 2026 16:40:37 GMT
+etag: "5d1f5f3d3515ad6f9e7457eedfd9b686"
+last-modified: Mon, 21 Sep 2026 16:40:37 GMT
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-robots-tag: noindex
+x-vercel-cache: HIT
+x-vercel-id: sfo1::hzj2j-1790008837292-f841c29b2c52
+content-length: 1780
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2D2D2D" />
+    <title>Keystone Consulting Group | We Find Hidden Profit and Turn It Into Growth</title>
+    <meta name="description" content="We find hidden profit in your business and turn it into growth. Keystone Consulting Group audits your costs, eliminates unnecessary fees, and reinvests the savings into systems that scale your business." />
+    
+    <!-- Preconnect to Google Fonts to eliminate DNS/TLS roundtrips -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Keystone Consulting Group | We Find Hidden Profit and Turn It Into Growth" />
+    <meta property="og:description" content="We audit your business, identify where money is leaking, and turn those savings into growth. Get a free Profit Leak Analysis today." />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Keystone Consulting Group" />
+    <meta name="twitter:description" content="We Find Hidden Profit and Turn It Into Growth." />
+    <script type="module" crossorigin src="/assets/index-DmWqDFQ-.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-CLxqWkL9.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-1jf2xJTu.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-Cn-MrvnQ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
+
+
+Routing verdict: PASS. Slots returns application/json; SPA deep links return text/html. No rewrite change needed. Policy rendered in CDP on direct hard load (privacy-page.txt). Initial runtime ERR_MODULE_NOT_FOUND fixed with .js import specifiers.

@@ -1,0 +1,114 @@
+{
+  "phase": "go-live",
+  "finished_at": "2026-09-21T16:40:58.509331+00:00",
+  "status": "deployed_and_verified_dry_run_restored",
+  "preview_url": "https://keystone-consulting-group-j3ktl7srn.vercel.app",
+  "production_url": "https://www.keystoneconsultingg.com",
+  "privacy_hard_load": true,
+  "terms_hard_load": true,
+  "routing": {
+    "slots": "HTTP 200 application/json",
+    "services": "HTTP 200 text/html",
+    "privacy": "HTTP 200 text/html with rendered policy",
+    "vercel_json_changed": false
+  },
+  "exit_codes": {
+    "backend_tests": 0,
+    "lint": 0,
+    "build": 0,
+    "browser_suite": 0
+  },
+  "test_counts": {
+    "backend": 51,
+    "browser": 24
+  },
+  "oauth": {
+    "checked_at": "2026-09-21T16:39:43.378Z",
+    "publishing_status": "In production",
+    "refresh_token_minted_after_publish": true,
+    "existing_client_modified": false,
+    "verification_status": "Google still requests verification for sensitive scopes; single authorizing user allowed under user cap.",
+    "seven_day_testing_limit_removed": true,
+    "credential_location": "~/.kcg-secrets/oauth.json"
+  },
+  "invite_test": {
+    "tested_at": "2026-09-21T16:37:33.799Z",
+    "http_status": 200,
+    "response": {
+      "ok": true,
+      "eventId": "kcg1a238ee1328f9bb4720defe5999819b5b94a22888dcea90a2f45ad084c4373955",
+      "start": "2026-09-21T17:00:00-06:00",
+      "end": "2026-09-21T17:30:00-06:00"
+    },
+    "event_seen": true,
+    "email_arrived": true,
+    "meet_link_present": true,
+    "test_address": "seth+booking-test@keystoneconsultingg.com",
+    "event_calendar": "seth@keystoneconsultingg.com",
+    "event_summary": "KCG call - KCG controlled invite test",
+    "conference_status": "success",
+    "attendees": [
+      {
+        "email": "seth+booking-test@keystoneconsultingg.com",
+        "responseStatus": "needsAction"
+      }
+    ],
+    "email_meet_link_present": true,
+    "email_subject": "Invitation: KCG call - KCG controlled invite test",
+    "email_observed_in": "Seth Gmail inbox via CDP 9444",
+    "live_test_deployment_removed": true,
+    "final_dry_run": true,
+    "email_attachment": "invite.ics"
+  },
+  "environments": {
+    "preview": [
+      "GOOGLE_CLIENT_ID",
+      "GOOGLE_CLIENT_SECRET",
+      "GOOGLE_REFRESH_TOKEN",
+      "BOOKING_CALENDAR_ID",
+      "BOOKING_TZ",
+      "BOOKING_DRY_RUN"
+    ],
+    "production": [
+      "GOOGLE_CLIENT_ID",
+      "GOOGLE_CLIENT_SECRET",
+      "GOOGLE_REFRESH_TOKEN",
+      "BOOKING_CALENDAR_ID",
+      "BOOKING_TZ",
+      "BOOKING_DRY_RUN"
+    ],
+    "timezone": "America/Denver",
+    "final_dry_run": true
+  },
+  "off_limits_hashes_unchanged": {
+    "src/pages/ServicesPage.tsx": "0a7a361d0553189f786fc6326b5003285ebfb6df80634f0cb6aeeedd56195ac7",
+    "src/index.css": "6704103e47c24422137d8118db35c64355bbb3c2604f43e361e3f329b3163d6e"
+  },
+  "server_and_consent_script_unchanged": true,
+  "commits": [
+    "78f7703",
+    "e1e7c21"
+  ],
+  "branch": "booking-go-live-legal",
+  "secret_scan": "PASS; credentials and local env files not staged",
+  "design_checks": {
+    "legal_copy": "5/5 both pages",
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "widths": [
+      390,
+      1440
+    ],
+    "horizontal_overflow": 0
+  },
+  "limitations": [
+    "Public booking intentionally remains dry-run per explicit instruction; live customer booking requires BOOKING_DRY_RUN=false and redeploy.",
+    "Google sensitive-scope verification still pending; published app works for Seth under current user cap.",
+    "Unconfirmed defaults: 15-minute buffer, 120-minute notice, 30-day horizon, 60-minute reminder; no lunch exclusion.",
+    "Availability checks one calendar; other calendars and concurrent booking races remain limitations.",
+    "Pre-existing /api/contact has no serverless function.",
+    "One controlled test event remains on Seth calendar on September 21, 2026, 17:00-17:30 America/Denver."
+  ]
+}

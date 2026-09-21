@@ -1,0 +1,29 @@
+{
+  "tested_at": "2026-09-21T16:37:33.799Z",
+  "http_status": 200,
+  "response": {
+    "ok": true,
+    "eventId": "kcg1a238ee1328f9bb4720defe5999819b5b94a22888dcea90a2f45ad084c4373955",
+    "start": "2026-09-21T17:00:00-06:00",
+    "end": "2026-09-21T17:30:00-06:00"
+  },
+  "event_seen": true,
+  "email_arrived": true,
+  "meet_link_present": true,
+  "test_address": "seth+booking-test@keystoneconsultingg.com",
+  "event_calendar": "seth@keystoneconsultingg.com",
+  "event_summary": "KCG call - KCG controlled invite test",
+  "conference_status": "success",
+  "attendees": [
+    {
+      "email": "seth+booking-test@keystoneconsultingg.com",
+      "responseStatus": "needsAction"
+    }
+  ],
+  "email_meet_link_present": true,
+  "email_subject": "Invitation: KCG call - KCG controlled invite test",
+  "email_observed_in": "Seth Gmail inbox via CDP 9444",
+  "live_test_deployment_removed": true,
+  "final_dry_run": true,
+  "email_attachment": "invite.ics"
+}

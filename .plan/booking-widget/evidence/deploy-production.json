@@ -1,0 +1,24 @@
+[
+  {
+    "route": "/privacy",
+    "status": 200,
+    "heading": "Privacy Policy"
+  },
+  {
+    "route": "/terms",
+    "status": 200,
+    "heading": "Terms of Service"
+  },
+  {
+    "route": "/services/web-design",
+    "status": 200,
+    "heading": "Website Builds"
+  },
+  {
+    "route": "/api/booking/slots",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "mode": "dry-run",
+    "days": 2
+  }
+]

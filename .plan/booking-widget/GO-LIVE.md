@@ -48,3 +48,7 @@ Then set BOOKING_DRY_RUN=false in Production and redeploy. Confirm on the live s
 - Confirm buffer 15 / minimum notice 120 / horizon 30 / reminder 60.
 - Lunch break: currently the window sells straight through noon.
 - Pre-existing, unrelated: ContactForm posts to /api/contact, which has no serverless function.
+
+## Executed September 21, 2026
+
+Privacy and terms routes deployed and hard-load verified. Preview and Production credentials provisioned; OAuth published In production and token re-minted afterward. Actual Calendar event and Gmail invitation with Meet link proven. Final BOOKING_DRY_RUN=true in both environments, as explicitly requested. The temporary live-write test deployment was removed. Final preview: https://keystone-consulting-group-j3ktl7srn.vercel.app. Production: https://www.keystoneconsultingg.com. See evidence/result.json for checks and remaining limits. Google sensitive-scope verification is still pending; this is separate from publishing. No claim of a never-expiring token is made.

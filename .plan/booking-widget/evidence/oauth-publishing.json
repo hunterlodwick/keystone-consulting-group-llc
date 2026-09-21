@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-09-21T16:39:43.378Z",
+  "publishing_status": "In production",
+  "refresh_token_minted_after_publish": true,
+  "existing_client_modified": false,
+  "verification_status": "Google still requests verification for sensitive scopes; single authorizing user allowed under user cap.",
+  "seven_day_testing_limit_removed": true,
+  "credential_location": "~/.kcg-secrets/oauth.json"
+}
