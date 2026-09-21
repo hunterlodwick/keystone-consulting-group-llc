@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { expect, test, type Page, type ConsoleMessage, type Locator } from '@playwright/test';
@@ -1803,3 +1803,114 @@ for (const where of ['dialog', 'inline'] as const) {
     }
   }
 }
+
+// Source-based expectations prevent the protected service CTA mirror from drifting.
+const serviceSource = readFileSync(path.join(ROOT, 'src/pages/ServicesPage.tsx'), 'utf8');
+const serviceCtas = [...serviceSource.slice(serviceSource.indexOf('const SERVICE_CTAS'), serviceSource.indexOf('const ctaFor')).matchAll(/(?:"([\w-]+)"|\b([\w]+)):\s*\{[\s\S]*?close:\s*"([^"]+)"/g)]
+  .map(match => ({ url: `/services/${match[1] || match[2]}`, label: match[3] }));
+const industrySource = readFileSync(path.join(ROOT, 'src/pages/IndustryPageTemplate.tsx'), 'utf8');
+const industryCtas = [...industrySource.matchAll(/^  '([^']+)': \{\n    title: '([^']+)'/gm)]
+  .map(match => ({ url: `/${match[1]}`, label: `Free ${match[2]} Analysis` }));
+const stickyPages = [{ url: '/', label: 'Book a Call' }, { url: '/services', label: 'Book a Call' },
+  { url: '/work', label: 'Schedule a Call' }, ...serviceCtas, ...industryCtas];
+const stickyEvidence: unknown[] = [];
+test.afterAll(() => writeFileSync(path.join(EVIDENCE, 'sticky-cta-measurements.json'), JSON.stringify(stickyEvidence, null, 2)));
+
+async function revealSticky(page: Page) {
+  const bar = page.locator('[data-mobile-sticky-cta]');
+  const start = await page.evaluate(() => Math.max(innerHeight + 100, (document.querySelector('main h1')?.closest('section, header')?.getBoundingClientRect().bottom ?? 0) + scrollY + 100));
+  for (let y = start; y < start + 3000; y += 180) {
+    await page.evaluate(y => window.scrollTo(0, y), y);
+    await page.waitForTimeout(50);
+    if (await bar.isVisible()) return;
+  }
+  await expect(bar).toBeVisible();
+}
+
+for (const width of [390, 1440]) for (const theme of ['light', 'dark'] as const) {
+  test(`sticky CTA route matrix ${width} ${theme}`, async ({ page }) => {
+    test.setTimeout(180_000);
+    await page.setViewportSize({width, height: width === 390 ? 844 : 900});
+    const errors: string[] = [];
+    page.on('pageerror', e => errors.push(e.message));
+    page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+    await page.route('**/api/booking/book', route => route.abort());
+    expect(serviceCtas).toHaveLength(11);expect(industryCtas).toHaveLength(12);
+    for (const {url, label} of stickyPages) {
+      await setThemeAndGoto(page, theme, url);
+      const bar = page.locator('[data-mobile-sticky-cta]');
+      await expect(bar).toBeHidden();
+      await expect(bar.locator('button')).toHaveText(label);
+      if (width === 1440) {
+        await page.evaluate(() => scrollTo(0, innerHeight * 2));
+        await expect(bar).toBeHidden();continue;
+      }
+      await revealSticky(page);
+      const button = bar.locator('button');
+      const geometry = await button.boundingBox();expect(geometry!.height).toBeGreaterThanOrEqual(44);
+      expect(await focusedIsUnoccluded(page, button)).toBeTruthy();
+      await page.keyboard.press('Tab');await button.focus();
+      const focus = await button.evaluate(el => ({visible:el.matches(':focus-visible'),width:getComputedStyle(el).outlineWidth}));
+      expect(focus.visible).toBeTruthy();expect(parseFloat(focus.width)).toBeGreaterThanOrEqual(2);
+      const edge = await bar.evaluate(el => {const r=el.getBoundingClientRect();const hit=document.elementFromPoint(innerWidth/2,r.top-1);return {top:r.top,hit:hit?.tagName,clear:Boolean(hit&&!el.contains(hit))};});
+      expect(edge.clear).toBeTruthy();
+      if (['/', '/services/web-design', '/restaurants'].includes(url)) await page.screenshot({animations:'disabled',path:path.join(SHOTS,`sticky-cta-${url==='/'?'home':url.split('/').at(-1)}-${theme}.png`)});
+      const existingClose = url.startsWith('/services/') ? page.locator('main button.bg-teal').last() : null;
+      const expectedTitle = existingClose ? (await existingClose.innerText()).trim() : label;
+      await button.click();await expect(page.getByRole('dialog')).toBeVisible();await expect(bar).toBeHidden();
+      await expect(page.locator('#modal-title')).toHaveText(url==='/'||url==='/services'?'Book a Call with Seth':expectedTitle);
+      await page.getByRole('button',{name:'Close modal',exact:true}).click();
+      // Closing equivalent CTA and footer each independently suppress the global bar.
+      if (url !== '/') {
+        const equivalent = existingClose ?? (url==='/services' || url==='/work'
+          ? page.locator('main').getByRole('button',{name:label,exact:true}).last()
+          : page.locator('main').getByRole('button',{name:'Get Your Free Statement Analysis',exact:true}).last());
+        await equivalent.scrollIntoViewIfNeeded();await expect(bar).toBeHidden();
+      }
+      await page.locator('footer').scrollIntoViewIfNeeded();await expect(bar).toBeHidden();
+      const footerHit = await page.locator('footer').evaluate(el=>{const r=el.getBoundingClientRect();const y=Math.min(innerHeight-20,Math.max(100,r.top+20));return el.contains(document.elementFromPoint(innerWidth/2,y));});
+      expect(footerHit).toBeTruthy();
+      stickyEvidence.push({type:'route',url,label,width,theme,geometry,focus,edge,footerHit});
+    }
+    for (const url of ['/privacy','/terms','/dashboard']) {
+      await page.goto(url);await expect(page.locator('[data-mobile-sticky-cta]')).toHaveCount(0);
+    }
+    expect(errors).toEqual([]);
+  });
+}
+
+for (const theme of ['light','dark'] as const) test(`sticky CTA booking exclusion 390 ${theme}`, async ({page}) => {
+  await page.setViewportSize({width:390,height:844});
+  await page.route('**/api/booking/book',route=>route.abort());
+  await setThemeAndGoto(page,theme);
+  await page.evaluate(() => {
+    const state = {samples:0,collisions:[] as unknown[]};
+    (window as any).__stickyAudit=state;
+    const visible=(el:Element|null)=>{if(!el||!el.getClientRects().length)return false;const r=el.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&getComputedStyle(el).visibility!=='hidden';};
+    const sample=()=>{state.samples++;const global=document.querySelector('[data-mobile-sticky-cta]');const actions=[...document.querySelectorAll('[data-booking-actions]')];if(visible(global)&&actions.some(visible))state.collisions.push({scrollY,global:global?.getBoundingClientRect().toJSON(),actions:actions.map(x=>x.getBoundingClientRect().toJSON())});requestAnimationFrame(sample);};requestAnimationFrame(sample);
+  });
+  await revealSticky(page);
+  await page.locator('[data-mobile-sticky-cta] button').click();
+  const dialog=page.getByRole('dialog');
+  await dialog.getByRole('radio').first().click();
+  await expect(page.locator('[data-mobile-sticky-cta]')).toBeHidden();
+  await dialog.getByRole('button',{name:'Continue',exact:true}).click();
+  await expect(page.locator('[data-mobile-sticky-cta]')).toBeHidden();
+  const modalRect=await dialog.locator('[data-booking-actions]').boundingBox();
+  await page.screenshot({path:path.join(SHOTS,`sticky-cta-booking-modal-${theme}.png`)});
+  await page.getByRole('button',{name:'Close modal',exact:true}).click();
+  const inline=page.locator('#book-a-call');
+  const target=await inline.evaluate(el=>el.getBoundingClientRect().top+scrollY);
+  await page.evaluate(y=>scrollTo(0,y-innerHeight-200),target);
+  for(let i=0;i<20;i++){await page.mouse.wheel(0,100);await page.waitForTimeout(30);}
+  await inline.getByRole('radio').first().click();
+  await expect(page.locator('[data-mobile-sticky-cta]')).toBeHidden();
+  await inline.getByRole('button',{name:'Continue',exact:true}).click();
+  await expect(page.locator('[data-mobile-sticky-cta]')).toBeHidden();
+  const inlineRect=await inline.locator('[data-booking-actions]').boundingBox();
+  await page.screenshot({path:path.join(SHOTS,`sticky-cta-booking-inline-${theme}.png`)});
+  for(let i=0;i<25;i++){await page.mouse.wheel(0,-100);await page.waitForTimeout(30);}
+  const audit=await page.evaluate(()=>(window as any).__stickyAudit);
+  expect(audit.collisions).toEqual([]);
+  stickyEvidence.push({type:'booking-exclusion',theme,width:390,modalRect,inlineRect,...audit});
+});

@@ -1,0 +1,35 @@
+.mobile-sticky-cta { display: none; }
+@media (max-width: 767px) {
+  main[data-mobile-cta-page='true'] { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
+  .mobile-sticky-cta:not([hidden]) {
+    display: block;
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 40;
+    padding: 12px 24px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    background: var(--color-charcoal-dark);
+    border-top: 1px solid var(--color-offwhite);
+  }
+  .mobile-sticky-cta button {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 2px;
+    background: var(--color-teal);
+    color: var(--color-white);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  .mobile-sticky-cta button:focus-visible {
+    outline: 2px solid var(--color-offwhite);
+    outline-offset: 4px;
+  }
+}
+@media (max-width: 767px) {
+  body:has(.mobile-sticky-cta:not([hidden])) button[aria-label='Scroll to top'] { visibility: hidden; }
+}

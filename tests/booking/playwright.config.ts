@@ -2,6 +2,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from '@playwright/test';
 
+const harnessUrl = `http://127.0.0.1:${process.env.BOOKING_HARNESS_PORT || 4173}`;
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
 export default defineConfig({
@@ -14,7 +15,7 @@ export default defineConfig({
   retries: 0,
   reporter: [['list']],
   use: {
-    baseURL: process.env.BOOKING_PREVIEW_URL || 'http://127.0.0.1:4173',
+    baseURL: process.env.BOOKING_PREVIEW_URL || harnessUrl,
     storageState: process.env.BOOKING_PREVIEW_STORAGE_STATE,
     trace: 'off',
     video: 'off',
@@ -24,7 +25,7 @@ export default defineConfig({
   webServer: process.env.BOOKING_PREVIEW_URL ? undefined : {
     command: 'node --import tsx tests/booking/local-server.ts --harness',
     cwd: root,
-    url: 'http://127.0.0.1:4173',
+    url: harnessUrl,
     reuseExistingServer: false,
     timeout: 30_000,
   },
