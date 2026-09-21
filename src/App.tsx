@@ -294,7 +294,7 @@ const Modal = ({
   return (
     <div
       ref={dialogRef}
-      className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6"
+      className={`fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6 ${isBookingModalTitle(title) ? 'booking-dialog' : ''}`}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"

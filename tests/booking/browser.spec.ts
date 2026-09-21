@@ -1,10 +1,11 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { expect, test, type Page, type ConsoleMessage } from '@playwright/test';
+import { expect, test, type Page, type ConsoleMessage, type Locator } from '@playwright/test';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const EVIDENCE = path.join(ROOT, '.plan/booking-widget/evidence');
+const RESULT_PREFIX = process.env.BOOKING_PREVIEW_URL ? 'mobile-ux-preview-' : '';
 const SHOTS = path.join(EVIDENCE, 'screenshots');
 
 mkdirSync(SHOTS, { recursive: true });
@@ -558,9 +559,8 @@ async function focusIsInDialog(page: Page) {
   });
 }
 
-async function focusedIsUnoccluded(page: Page) {
-  return page.evaluate(() => {
-    const el = document.activeElement;
+async function focusedIsUnoccluded(page: Page, target?: Locator) {
+  const hitTest = (el: Element | null) => {
     if (!(el instanceof HTMLElement) || el === document.body) return false;
     const rect = el.getBoundingClientRect();
     if (rect.width <= 0 || rect.height <= 0) return false;
@@ -568,12 +568,17 @@ async function focusedIsUnoccluded(page: Page) {
       { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 },
       { x: rect.left + rect.width / 2, y: rect.top + 2 },
       { x: rect.left + rect.width / 2, y: rect.bottom - 2 },
+      { x: rect.left + 8, y: rect.top + 8 },
+      { x: rect.right - 8, y: rect.top + 8 },
+      { x: rect.left + 8, y: rect.bottom - 8 },
+      { x: rect.right - 8, y: rect.bottom - 8 },
     ];
     return points.every(({ x, y }) => {
       const top = document.elementFromPoint(x, y);
       return Boolean(top && (el === top || el.contains(top) || top.contains(el)));
     });
-  });
+  };
+  return (target ?? page.locator(':focus')).evaluate(hitTest);
 }
 
 async function stickyClearOfName(page: Page, where: 'dialog' | 'inline' = 'dialog') {
@@ -630,15 +635,15 @@ test.beforeEach(async ({ page }) => {
 
 test.afterAll(() => {
   writeFileSync(
-    path.join(EVIDENCE, 'browser-results.json'),
+    path.join(EVIDENCE, `${RESULT_PREFIX}browser-results.json`),
     `${JSON.stringify({ generatedAt: new Date().toISOString(), scenarios, googleWriteAttempts }, null, 2)}\n`,
   );
   writeFileSync(
-    path.join(EVIDENCE, 'measurements.json'),
+    path.join(EVIDENCE, `${RESULT_PREFIX}measurements.json`),
     `${JSON.stringify({ generatedAt: new Date().toISOString(), measurements }, null, 2)}\n`,
   );
   writeFileSync(
-    path.join(EVIDENCE, 'cta-matrix.json'),
+    path.join(EVIDENCE, `${RESULT_PREFIX}cta-matrix.json`),
     `${JSON.stringify({ generatedAt: new Date().toISOString(), ctaMatrix }, null, 2)}\n`,
   );
 });
@@ -1722,3 +1727,79 @@ test.describe('booking widget browser matrix', () => {
     });
   });
 });
+
+// Reachability checks must run before Playwright can auto-scroll a click or input.
+for (const where of ['dialog', 'inline'] as const) {
+  for (const width of [390, 1440]) {
+    for (const theme of ['light', 'dark'] as const) {
+      test(`mobile UX ${where} ${width} ${theme} ordinary scroll completion`, async ({ page }) => {
+        await blockExternalWrites(page);
+        const mode = await page.request.get(`/api/booking/slots?from=${denverToday()}&days=7`);
+        expect(mode.ok()).toBeTruthy();
+        expect(mode.headers()['x-booking-mode']).toBe('dry-run');
+        await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
+        await setThemeAndGoto(page, theme);
+        if (where === 'dialog') await openBooking(page, width);
+        else await page.locator('#book-a-call').scrollIntoViewIfNeeded();
+        await waitForWidget(page, where);
+        const root = bookingScope(page, where);
+        const widget = root.locator('[data-booking-widget]');
+        const shot = async (step: string) => {
+          writeFileSync(path.join(EVIDENCE, `mobile-ux-copy-${step}.txt`), await widget.innerText());
+          if (width === 390) await page.screenshot({ path: path.join(SHOTS, `mobile-ux-${where}-${theme}-${step}.png`) });
+        };
+        const primary = async (name: string) => {
+          const button = root.getByRole('button', { name, exact: true });
+          await expect.poll(() => focusedIsUnoccluded(page, button)).toBeTruthy();
+          const rect = await button.boundingBox();
+          expect(rect!.y).toBeGreaterThanOrEqual(0);
+          expect(rect!.y + rect!.height).toBeLessThanOrEqual(width === 390 ? 844 : 900);
+          measurements.push({ name: 'mobile-ux-primary', where, width, theme, action: name, rect, unoccluded: true });
+          return button;
+        };
+        const reach = async (target: Locator) => {
+          for (let i = 0; i < 30; i++) {
+            if (await focusedIsUnoccluded(page, target)) return;
+            const box = await target.boundingBox();
+            await page.mouse.move(width / 2, width === 390 ? 440 : 450);
+            await page.mouse.wheel(0, box && box.y < 120 ? -180 : 180);
+            await page.waitForTimeout(60);
+          }
+          expect(await focusedIsUnoccluded(page, target), 'ordinary scroll must expose the whole control').toBeTruthy();
+        };
+        await shot('pick');
+        const slot = widget.getByRole('radio').first();
+        await expect(slot).toBeAttached();
+        await reach(slot);
+        await slot.click();
+        await primary('Continue');
+        await shot('selected');
+        await (await primary('Continue')).click();
+        await primary('Book this time');
+        await expect(root.locator('[aria-invalid=true]')).toHaveCount(0);
+        await expect(root.getByRole('group', { name: 'Dates' })).toHaveCount(0);
+        const nested = await widget.evaluate(el => [...el.querySelectorAll('*')].filter(node => {
+          const css = getComputedStyle(node);
+          return /(auto|scroll)/.test(css.overflowY) && node.scrollHeight > node.clientHeight;
+        }).map(node => node.tagName));
+        expect(nested).toEqual([]);
+        if (where === 'dialog') {
+          expect(await root.locator('[data-booking-scroll]').evaluate(el => getComputedStyle(el).overflowY)).toBe('visible');
+        }
+        await shot('details');
+        for (const [name, value] of [['name', 'Mobile Visitor'], ['email', 'mobile@example.com'], ['phone', '5555550100'], ['notes', 'Preview usability check']]) {
+          const field = root.locator(`[name="${name}"]`);
+          await reach(field);
+          await field.click();
+          await expect.poll(() => focusedIsUnoccluded(page)).toBeTruthy();
+          await page.keyboard.type(value);
+        }
+        assertContrast(await measureContrast(page));
+        await (await primary('Book this time')).click();
+        await expect(widget).toHaveAttribute('data-booking-state', 'confirm');
+        await expect(root.getByText('This was a test. No invitation was emailed.')).toBeVisible();
+        await shot('confirmed');
+      });
+    }
+  }
+}

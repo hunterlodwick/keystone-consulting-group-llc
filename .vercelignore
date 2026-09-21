@@ -1,0 +1,9 @@
+.plan
+.image-audit
+verification
+test-results
+tests
+.git
+.env*
+*.log
+node_modules

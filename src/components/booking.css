@@ -1,0 +1,43 @@
+/* One vertical scroll owner: the dialog, or the homepage itself. */
+.booking-dialog {
+  display: block;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding: 24px 0 140px;
+}
+.booking-dialog > :first-child { position: fixed; }
+.booking-dialog [data-booking-panel] {
+  margin: 0 auto;
+  max-height: none;
+  overflow: visible;
+  backdrop-filter: none;
+  background: var(--color-charcoal-dark);
+}
+.booking-dialog [data-booking-scroll] { overflow: visible; }
+[data-booking-variant='inline'] { scroll-margin-top: 110px; }
+#book-a-call [data-booking-panel] { backdrop-filter: none; }
+[data-booking-widget] input, [data-booking-widget] textarea {
+  scroll-margin-top: 110px;
+  scroll-margin-bottom: 150px;
+}
+.booking-progress { display: flex; gap: 12px; font-size: 12px; }
+.booking-progress li { flex: 1; border-bottom: 2px solid var(--color-offwhite); padding-bottom: 10px; }
+.booking-progress li[aria-current] { border-bottom: 4px solid var(--color-teal); font-weight: 600; }
+.booking-progress span { display: block; font-size: 16px; }
+.booking-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 60;
+  padding: 12px 0 max(12px, env(safe-area-inset-bottom));
+  background: var(--color-charcoal-dark);
+  border-top: 1px solid var(--color-offwhite);
+  display: grid;
+  gap: 8px;
+}
+@media (max-width: 639px) {
+  .booking-dialog { padding: 0; }
+  .booking-dialog [data-booking-panel] { border-radius: 0; min-height: 100dvh; }
+  .booking-dialog [data-booking-panel] > :first-child { padding: 12px 24px; }
+  .booking-actions { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
+  #book-a-call { padding-top: 64px; padding-bottom: 64px; }
+}

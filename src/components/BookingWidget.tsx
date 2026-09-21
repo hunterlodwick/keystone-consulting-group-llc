@@ -1,3 +1,4 @@
+import './booking.css';
 import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 
 export const KCG_BOOKING_EMAIL = 'info@keystoneconsultingg.com';
@@ -27,10 +28,10 @@ const LOAD_TIMEOUT_MS = 15_000;
 const POST_TIMEOUT_MS = 15_000;
 
 const controlEdge = 'shadow-[inset_0_0_0_1px_var(--color-offwhite)]';
-const fieldClass = `w-full min-h-[44px] bg-charcoal/90 ${controlEdge} rounded-sm px-4 py-2 text-offwhite scroll-mt-[var(--booking-sticky-clearance,12rem)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal`;
+const fieldClass = `w-full min-h-[44px] bg-charcoal/90 ${controlEdge} rounded-sm px-4 py-2 text-offwhite scroll-mt-[var(--booking-sticky-clearance,12rem)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-offwhite`;
 const btnPrimary =
-  'inline-flex items-center justify-center min-h-[44px] px-5 bg-teal text-white font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal disabled:opacity-50';
-const btnGhost = `inline-flex items-center justify-center min-h-[44px] px-5 ${controlEdge} text-offwhite font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal disabled:opacity-50`;
+  'inline-flex items-center justify-center min-h-[44px] px-5 bg-teal text-white font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-offwhite disabled:opacity-50';
+const btnGhost = `inline-flex items-center justify-center min-h-[44px] px-5 ${controlEdge} text-offwhite font-medium rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-offwhite disabled:opacity-50`;
 
 type Slot = { start: string; end: string };
 type DayPayload = { date: string; slots: Slot[] };
@@ -108,6 +109,7 @@ export function BookingWidget({
   variant?: 'modal' | 'inline';
 }): React.ReactElement {
   const liveId = useId();
+  const formId = useId();
   const nameId = useId();
   const emailId = useId();
   const phoneId = useId();
@@ -158,46 +160,17 @@ export function BookingWidget({
   }, [phase]);
 
   const revealFromSticky = useCallback((el: HTMLElement | null) => {
-    if (!el) return;
+    if (!el || el.closest('[data-booking-actions]')) return;
     const run = () => {
-      if (variant === 'inline') {
-        const header = document.querySelector('header');
-        const headerBottom = header instanceof HTMLElement ? header.getBoundingClientRect().bottom : 0;
-        const clearance = Math.max(0, headerBottom) + 8;
-        rootRef.current?.style.setProperty('--booking-sticky-clearance', `${clearance}px`);
-        el.style.scrollMarginTop = `${clearance}px`;
-        const rect = el.getBoundingClientRect();
-        const pad = 8;
-        let delta = 0;
-        if (rect.top < clearance + pad) {
-          delta = rect.top - (clearance + pad);
-        } else if (rect.bottom > window.innerHeight - pad) {
-          delta = rect.bottom - (window.innerHeight - pad);
-        }
-        if (delta !== 0) window.scrollBy(0, delta);
-        return;
-      }
-      const sticky = rootRef.current?.querySelector('[data-booking-sticky]');
-      const scroller =
-        el.closest('[data-booking-scroll]') ?? document.querySelector('[data-booking-scroll]');
-      if (!(sticky instanceof HTMLElement) || !(scroller instanceof HTMLElement)) {
-        el.scrollIntoView({ block: 'nearest' });
-        return;
-      }
-      const clearance = sticky.getBoundingClientRect().height + 8;
-      rootRef.current?.style.setProperty('--booking-sticky-clearance', `${clearance}px`);
-      el.style.scrollMarginTop = `${clearance}px`;
-      const stickyBottom = sticky.getBoundingClientRect().bottom;
-      const scrollerRect = scroller.getBoundingClientRect();
+      const dialog = rootRef.current?.closest('[role="dialog"]');
+      const header = variant === 'inline' ? document.querySelector('header') : null;
+      const top = Math.max(0, header?.getBoundingClientRect().bottom ?? 0) + 16;
+      const bar = rootRef.current?.querySelector('[data-booking-actions]');
+      const bottom = Math.min(window.innerHeight, bar?.getBoundingClientRect().top ?? window.innerHeight) - 16;
       const rect = el.getBoundingClientRect();
-      const pad = 8;
-      let delta = 0;
-      if (rect.top < stickyBottom + pad) {
-        delta = rect.top - (stickyBottom + pad);
-      } else if (rect.bottom > scrollerRect.bottom - pad) {
-        delta = rect.bottom - (scrollerRect.bottom - pad);
-      }
-      if (delta !== 0) scroller.scrollTop += delta;
+      const delta = rect.top < top ? rect.top - top : rect.bottom > bottom ? rect.bottom - bottom : 0;
+      if (dialog) dialog.scrollTop += delta;
+      else window.scrollBy(0, delta);
     };
     run();
     window.requestAnimationFrame(run);
@@ -369,7 +342,10 @@ export function BookingWidget({
 
   useEffect(() => {
     if (phase === 'form') {
-      nameRef.current?.focus();
+      const dialog = rootRef.current?.closest('[role="dialog"]');
+      if (dialog) dialog.scrollTop = 0;
+      else rootRef.current?.scrollIntoView({ block: 'start' });
+      nameRef.current?.focus({ preventScroll: true });
       revealFromSticky(nameRef.current);
     }
   }, [phase, revealFromSticky]);
@@ -542,12 +518,15 @@ export function BookingWidget({
     </div>
   );
 
-  const invitationHint =
-    dryRun === true
-      ? null
-      : dryRun === false
-        ? 'An email invitation will be requested for the time you book. If it does not arrive, email KCG.'
-        : 'Choose a 30-minute time with Seth.';
+  const step = phase === 'confirm' ? 3 : phase === 'form' || phase === 'submitting' ? 2 : 1;
+
+  useEffect(() => {
+    if (phase === 'confirm') {
+      const heading = rootRef.current?.querySelector<HTMLElement>('[data-booking-confirm]');
+      heading?.focus();
+      revealFromSticky(heading ?? null);
+    }
+  }, [phase, revealFromSticky]);
 
   return (
     <div
@@ -557,35 +536,19 @@ export function BookingWidget({
       data-booking-state={bookingState}
       className="space-y-5 text-offwhite"
     >
-      <div
-        data-booking-sticky="true"
-        className={
-          variant === 'inline'
-            ? 'relative py-3 space-y-2'
-            : 'sticky top-0 z-[1] -mx-6 px-6 py-3 bg-charcoal-dark/90 backdrop-blur-xl space-y-2'
-        }
-      >
-        <p className="font-serif text-xl text-white">30 minutes with Seth</p>
-        <p className="text-sm text-offwhite">
-          {tz ? `Times shown in ${tz}.` : 'Times are shown in the calendar time zone after they load.'}
-        </p>
-        {invitationHint ? <p className="text-sm text-offwhite">{invitationHint}</p> : null}
-        {dryRun === true ? (
-          <p className={`text-sm ${controlEdge} bg-charcoal/90 rounded-sm px-4 py-3 text-offwhite`}>
-            Test booking. No calendar event or invitation will be created.
-          </p>
-        ) : null}
-        <Fallback compact />
-        {alertText ? (
-          <p
-            ref={alertRef}
-            role="alert"
-            data-booking-alert="true"
-            className={`text-sm text-offwhite ${controlEdge} bg-charcoal/90 rounded-sm px-4 py-3`}
-          >
-            {alertText}
-          </p>
-        ) : null}
+      <div data-booking-sticky="true" className="space-y-3">
+        <p className="text-sm text-offwhite">30 minutes with Seth</p>
+        <ol aria-label="Booking progress" className="booking-progress">
+          {['Pick a time', 'Your details', 'Confirmed'].map((label, i) => (
+            <li key={label} aria-current={step === i + 1 ? 'step' : undefined}>
+              <span>{i + 1}</span> {label}
+            </li>
+          ))}
+        </ol>
+        <h4 className="font-serif text-2xl text-white">{step === 1 ? 'Pick a day, then a time' : step === 2 ? 'Add your details' : 'All done'}</h4>
+        {step === 1 && tz ? <p className="text-sm text-offwhite">Times shown in {tz}.</p> : null}
+        {dryRun === true ? <p className="text-sm text-offwhite">Test booking. No calendar event or invitation will be created.</p> : null}
+        {alertText ? <p ref={alertRef} role="alert" data-booking-alert="true" className={`text-sm text-offwhite ${controlEdge} bg-charcoal/90 rounded-sm px-4 py-3`}>{alertText}</p> : null}
       </div>
 
       <div id={liveId} className="sr-only" aria-live="polite">
@@ -620,7 +583,7 @@ export function BookingWidget({
 
       {phase === 'confirm' && booked ? (
         <div>
-          <p className="font-serif text-lg text-white">
+          <p data-booking-confirm="true" tabIndex={-1} className="font-serif text-lg text-white">
             {dryRun === true ? 'Test complete. No booking was created.' : 'Your call is booked.'}
           </p>
           <p className="text-offwhite mt-2">{formatRange(booked.start, booked.end, tz)}</p>
@@ -634,7 +597,7 @@ export function BookingWidget({
 
       {(phase === 'ready' || phase === 'form' || phase === 'submitting') && (
         <>
-          {todayEmpty && rangeHasSlots ? (
+          {phase === 'ready' && todayEmpty && rangeHasSlots ? (
             <p className="text-sm text-offwhite">No times available today.</p>
           ) : null}
           {!rangeHasSlots && phase !== 'form' ? (
@@ -649,7 +612,7 @@ export function BookingWidget({
             </div>
           ) : null}
 
-          {rangeHasSlots ? (
+          {rangeHasSlots && phase === 'ready' ? (
             <div className="space-y-4">
               <div className="flex items-center justify-between gap-3">
                 <button type="button" className={btnGhost} onClick={goBack} disabled={!canGoBack || phase === 'submitting'}>
@@ -660,7 +623,7 @@ export function BookingWidget({
                 </button>
               </div>
 
-              <div className="flex flex-nowrap gap-2 overflow-x-auto overscroll-contain pb-1" role="group" aria-label="Dates">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2" role="group" aria-label="Dates">
                 {days.map((day) => {
                   const pressed = day.date === selectedDate;
                   const hasSlots = day.slots.length > 0;
@@ -676,7 +639,7 @@ export function BookingWidget({
                         setSelectedSlot(null);
                         if (phase === 'form') setPhase('ready');
                       }}
-                      className={`shrink-0 min-h-[44px] min-w-[44px] px-3 rounded-sm text-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal ${
+                      className={`shrink-0 min-h-[44px] min-w-[44px] px-3 rounded-sm text-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-offwhite ${
                         pressed ? 'bg-teal text-white' : `bg-charcoal/90 text-white ${controlEdge}`
                       }`}
                     >
@@ -722,29 +685,14 @@ export function BookingWidget({
                 </div>
               ) : null}
 
-              {phase !== 'form' && phase !== 'submitting' ? (
-                <button
-                  type="button"
-                  className={`${btnPrimary} w-full`}
-                  disabled={!selectedSlot}
-                  onClick={() => {
-                    if (!selectedSlot) return;
-                    setPhase('form');
-                  }}
-                >
-                  Continue
-                </button>
-              ) : null}
+
             </div>
           ) : null}
 
           {(phase === 'form' || phase === 'submitting') && selectedSlot ? (
-            <form className="space-y-4" onSubmit={submit} noValidate>
-              <p className="text-sm text-offwhite">
-                {dryRun === true
-                  ? `Test booking ${formatRange(selectedSlot.start, selectedSlot.end, tz)}. No invitation will be created.`
-                  : `Booking ${formatRange(selectedSlot.start, selectedSlot.end, tz)}. An email invitation will be requested for this 30-minute call. If it does not arrive, email KCG.`}
-              </p>
+            <form id={formId} className="space-y-4" onSubmit={submit} noValidate>
+              <p className="text-sm text-offwhite">Name and email are required.</p>
+              {dryRun === false ? <p className="text-sm text-offwhite">An email invitation will be requested. If it does not arrive, email KCG.</p> : null}
               <div>
                 <label htmlFor={nameId} className="block text-sm text-offwhite mb-1">
                   Name
@@ -833,9 +781,6 @@ export function BookingWidget({
                 </p>
               </div>
               <div className="flex flex-col gap-3">
-                <button type="submit" className={btnPrimary} disabled={phase === 'submitting'}>
-                  {phase === 'submitting' ? 'Booking...' : 'Book this time'}
-                </button>
                 <button
                   type="button"
                   className={btnGhost}
@@ -849,6 +794,19 @@ export function BookingWidget({
           ) : null}
         </>
       )}
+      {phase === 'loading' || phase === 'ready' || phase === 'form' || phase === 'confirm' ? <Fallback compact /> : null}
+      {(phase === 'ready' && rangeHasSlots) || phase === 'form' || phase === 'submitting' ? (
+        <div data-booking-actions="true" className="booking-actions">
+          <p className="text-sm text-offwhite">
+            {selectedSlot ? `${formatDateLabel(selectedSlot.start.slice(0, 10), tz, 'short')} - ${formatTime(selectedSlot.start, tz)}` : 'Choose a time to continue'}
+          </p>
+          {step === 1 ? (
+            <button type="button" className={`${btnPrimary} w-full`} disabled={!selectedSlot} onClick={(event) => { event.preventDefault(); setPhase('form'); }}>Continue</button>
+          ) : (
+            <button type="submit" form={formId} className={`${btnPrimary} w-full`} disabled={phase === 'submitting'}>{phase === 'submitting' ? 'Booking...' : 'Book this time'}</button>
+          )}
+        </div>
+      ) : null}
     </div>
   );
 }
