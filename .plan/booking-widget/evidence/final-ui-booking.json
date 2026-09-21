@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-09-21T16:50:41.722Z",
+  "url": "https://www.keystoneconsultingg.com/#book-a-call",
+  "method": "Chrome CDP 9444 actual live UI, no request interception",
+  "http_status": 200,
+  "mode": "live",
+  "response": {
+    "ok": true,
+    "eventId": "kcg1a38f285619128472d1701329d2063703fa5992961c013a569adf39d5882b13a0",
+    "start": "2026-09-22T10:00:00-06:00",
+    "end": "2026-09-22T10:30:00-06:00"
+  },
+  "rendered_text": "Pick a time with Seth\n\nThirty minutes. Seth takes the call himself. Choose a slot below.\n\n30 minutes with Seth\n\nTimes shown in America/Denver.\n\nAn email invitation will be requested for the time you book. If it does not arrive, email KCG.\n\nEmail KCG\n\ninfo@keystoneconsultingg.com\n\nContact KCG\nYour call is booked. An invitation was requested.\n\nYour call is booked.\n\nTuesday, September 22, 2026, 10:00 AM to 10:30 AM\n\nAn invitation was requested for this call. If it does not arrive, email KCG."
+}

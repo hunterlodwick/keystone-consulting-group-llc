@@ -1,0 +1,272 @@
+{
+  "status": "live_verified",
+  "finished_at": "2026-09-21T16:55:15.198616+00:00",
+  "merge": {
+    "branch": "main",
+    "merged_commits": [
+      "78f7703",
+      "e1e7c21",
+      "d26f4d5"
+    ],
+    "legal_prerender_commit": "833e114",
+    "pushed": true
+  },
+  "production_url": "https://www.keystoneconsultingg.com",
+  "production_deployment": "https://keystone-consulting-group-lfri-2kiutawoq.vercel.app",
+  "production_deployment_id": "dpl_GqR3ENvinsjEdGQMPFM9261nvctF",
+  "project_correction": {
+    "canonical": "keystone-consulting-group-lfri",
+    "repository": "keystone-consulting-group-llc",
+    "previous_local_project": "keystone-consulting-group",
+    "reason": "Public domain and Git integration belonged to canonical project; old local project needed manual aliases and automatic main deploys lacked runtime variables. Local link and both environments now aligned."
+  },
+  "legal": {
+    "checked_at": "2026-09-21T16:54:32.116Z",
+    "cdp": 9444,
+    "pages": {
+      "privacy": {
+        "url": "https://www.keystoneconsultingg.com/privacy",
+        "status": 200,
+        "bytes": 6937,
+        "raw_title": "Privacy Policy | Keystone Consulting Group",
+        "rendered_title": "Privacy Policy | Keystone Consulting Group",
+        "rendered_text": "Back to KCG\nPrivacy Policy\n\nEffective September 21, 2026\n\nWe take your privacy seriously. Here is how KCG handles your personal and business information.\n\nWhat we collect\n\nWhen you contact Keystone Consulting Group LLC (KCG) or book a call, we collect the information you submit: your name, email address, phone number, business information, and any message or notes. Booking also includes the date and time you choose. Only send information we need to help you. Do not put card numbers, passwords, or other sensitive account details in these forms.\n\nHow we use it\n\nWe use your information to respond to enquiries, understand your business needs, schedule calls, and provide the services you request. We do not sell your personal information.\n\nBooking and Google Calendar\n\nOur booking service uses Google Calendar and Google APIs to check the availability of KCG's calendar and create appointments. We use availability information to offer open times; we do not show visitors the details of other appointments. When you book, your name, email, phone number if provided, and notes are stored in the calendar event on KCG's Google Calendar. Google Calendar emails an invitation to the address you provide. The invitation includes a Google Meet link when one is available. Test bookings marked as dry-run do not create an event or send an invitation.\n\nService providers and payment partners\n\nVercel hosts this website and its booking endpoints. Google processes calendar events and their invitations, including meeting information. Our contact and enquiry tools process the information you submit so we can respond. If you ask us to help with payment processing, we may share the business and contact information needed with the payment processing partners KCG works with to evaluate or provide that service. Their applications and services have their own privacy terms. We may also disclose information when required by law.\n\nCookies and local storage\n\nThis site saves your light or dark theme preference in your browser using localStorage under kcg-theme. You can remove it by clearing this site\u2019s browser data. Our hosting and service providers may process technical information such as IP addresses and request logs to deliver and protect their services. Google services you open from an invitation may use cookies under Google\u2019s privacy policy.\n\nRetention and protection\n\nWe only retain collected information for as long as necessary to provide your requested service, handle follow-up, and meet applicable recordkeeping obligations. Booking information remains in our Google Calendar until it is no longer needed or we act on a valid deletion request. We limit access to the people and providers who need it to do this work. No website or email system can guarantee absolute security.\n\nYour choices and requests\n\nYou can ask to access, correct, or delete the personal information we hold about you by contacting us below. We may need to verify that the request is yours. We will explain if we need to retain a record for a legal obligation or an ongoing service. Removing an event from our calendar does not remove copies of invitations already delivered to an email inbox. You can also contact us to change or cancel a booking.\n\nChanges to this policy\n\nWe will update this page when our practices change and revise the effective date. Contact us if you need help understanding how this policy applies to your information.\n\nContact KCG\n\nKeystone Consulting Group LLC\n\ninfo@keystoneconsultingg.com\n(801) 360-9156\n(505) 506-6563\nTerms of Service",
+        "raw_contains_content": true
+      },
+      "terms": {
+        "url": "https://www.keystoneconsultingg.com/terms",
+        "status": 200,
+        "bytes": 5656,
+        "raw_title": "Terms of Service | Keystone Consulting Group",
+        "rendered_title": "Terms of Service | Keystone Consulting Group",
+        "rendered_text": "Back to KCG\nTerms of Service\n\nEffective September 21, 2026\n\nUsing this website\n\nThese terms apply to your use of the Keystone Consulting Group LLC (KCG) website and its contact and booking tools. By using the website, you agree to these terms. If you do not agree, do not use the website.\n\nEnquiries and appointments\n\nProvide accurate contact details and book only appointments you intend to attend. A booking reserves time for a conversation; it does not create a paid service agreement or guarantee a particular result. Google Calendar sends the invitation to the email address you enter. Contact us if you need to reschedule or cancel. We may need to change an appointment and will use your contact details to let you know.\n\nService agreements\n\nThe scope, price, payment schedule, and other terms for paid KCG work are set out in a separate agreement with you. Website descriptions are general information, not a promise of approval, savings, revenue, or any other specific outcome. Payment processing and financing services may require approval and separate agreements with the relevant provider.\n\nAcceptable use\n\nDo not use this website to submit spam, impersonate another person, make fraudulent bookings, interfere with availability, or attempt to access systems or information without permission. Do not submit information you do not have permission to share.\n\nWebsite content and outside services\n\nKCG and its content owners retain their rights in the website\u2019s materials. You may use the site to learn about our services and contact us. Ask before republishing our materials. Links and integrations may take you to third-party services, including Google Calendar and Google Meet. Those services operate under their own terms and privacy policies.\n\nAvailability and accuracy\n\nWe work to keep this website accurate and available, but errors and interruptions can happen. Contact us to confirm information before making a business decision. Nothing on this page limits rights or responsibilities that cannot be limited under applicable law.\n\nPrivacy and updates\n\nOur Privacy Policy explains how we handle information submitted through this website. We may update these terms by posting a revised version with a new effective date. Separate signed service agreements remain subject to their own terms.\n\nContact KCG\n\nKeystone Consulting Group LLC\n\ninfo@keystoneconsultingg.com\n(801) 360-9156\n(505) 506-6563\nPrivacy Policy",
+        "raw_contains_content": true
+      }
+    }
+  },
+  "environments": {
+    "checked_at": "2026-09-21T16:54:23.442Z",
+    "project": "keystone-consulting-group-lfri",
+    "environments": {
+      "preview": {
+        "all_six_present": true,
+        "names": [
+          "GOOGLE_CLIENT_ID",
+          "GOOGLE_CLIENT_SECRET",
+          "GOOGLE_REFRESH_TOKEN",
+          "BOOKING_CALENDAR_ID",
+          "BOOKING_TZ",
+          "BOOKING_DRY_RUN"
+        ],
+        "dry_run": "true",
+        "timezone": "America/Denver",
+        "credentials_match_local": true
+      },
+      "prod": {
+        "all_six_present": true,
+        "names": [
+          "GOOGLE_CLIENT_ID",
+          "GOOGLE_CLIENT_SECRET",
+          "GOOGLE_REFRESH_TOKEN",
+          "BOOKING_CALENDAR_ID",
+          "BOOKING_TZ",
+          "BOOKING_DRY_RUN"
+        ],
+        "dry_run": "false",
+        "timezone": "America/Denver",
+        "credentials_match_local": true
+      }
+    }
+  },
+  "mode_before": {
+    "status_line": "HTTP/2 200 ",
+    "mode": "dry-run",
+    "server_date": "Mon, 21 Sep 2026 16:49:04 GMT"
+  },
+  "mode_after": {
+    "status_line": "HTTP/2 200 ",
+    "mode": "live",
+    "server_date": "Mon, 21 Sep 2026 16:54:31 GMT"
+  },
+  "booking": {
+    "created_at": "2026-09-21T16:50:41.722Z",
+    "url": "https://www.keystoneconsultingg.com/#book-a-call",
+    "method": "Chrome CDP 9444 actual live UI, no request interception",
+    "http_status": 200,
+    "mode": "live",
+    "response": {
+      "ok": true,
+      "eventId": "kcg1a38f285619128472d1701329d2063703fa5992961c013a569adf39d5882b13a0",
+      "start": "2026-09-22T10:00:00-06:00",
+      "end": "2026-09-22T10:30:00-06:00"
+    },
+    "rendered_text": "Pick a time with Seth\n\nThirty minutes. Seth takes the call himself. Choose a slot below.\n\n30 minutes with Seth\n\nTimes shown in America/Denver.\n\nAn email invitation will be requested for the time you book. If it does not arrive, email KCG.\n\nEmail KCG\n\ninfo@keystoneconsultingg.com\n\nContact KCG\nYour call is booked. An invitation was requested.\n\nYour call is booked.\n\nTuesday, September 22, 2026, 10:00 AM to 10:30 AM\n\nAn invitation was requested for this call. If it does not arrive, email KCG."
+  },
+  "event_created": true,
+  "calendar_proof": {
+    "calendar": "seth@keystoneconsultingg.com",
+    "events": [
+      {
+        "id": "kcg1a238ee1328f9bb4720defe5999819b5b94a22888dcea90a2f45ad084c4373955",
+        "summary": "KCG call - KCG controlled invite test",
+        "start": {
+          "dateTime": "2026-09-21T17:00:00-06:00",
+          "timeZone": "America/Denver"
+        },
+        "end": {
+          "dateTime": "2026-09-21T17:30:00-06:00",
+          "timeZone": "America/Denver"
+        },
+        "status": "confirmed",
+        "organizer": "seth@keystoneconsultingg.com",
+        "attendees": [
+          "seth+booking-test@keystoneconsultingg.com"
+        ],
+        "meet_link_present": true,
+        "conference_status": "success",
+        "checked_at": "2026-09-21T16:51:00.095Z"
+      },
+      {
+        "id": "kcg1a38f285619128472d1701329d2063703fa5992961c013a569adf39d5882b13a0",
+        "summary": "KCG call - KCG go-live UI test",
+        "start": {
+          "dateTime": "2026-09-22T10:00:00-06:00",
+          "timeZone": "America/Denver"
+        },
+        "end": {
+          "dateTime": "2026-09-22T10:30:00-06:00",
+          "timeZone": "America/Denver"
+        },
+        "status": "confirmed",
+        "organizer": "seth@keystoneconsultingg.com",
+        "attendees": [
+          "seth+booking-test@keystoneconsultingg.com"
+        ],
+        "meet_link_present": true,
+        "conference_status": "success",
+        "checked_at": "2026-09-21T16:51:00.289Z"
+      }
+    ]
+  },
+  "email_arrived": true,
+  "meet_link_present": true,
+  "email_proof": {
+    "checked_at": "2026-09-21T16:51:40.409Z",
+    "observed_in": "Seth Gmail via signed-in Chrome CDP 9444",
+    "title": "Invitation: KCG call - KCG go-live UI test @ Tue Sep 22, 2026 10am - 10:30am (MDT) (seth+booking-test@keystoneconsultingg.com) - seth@keystoneconsultingg.com - Keystone Consulting Group LLC Mail",
+    "url": "https://mail.google.com/mail/u/0/#search/in%3Aanywhere+subject%3AKCG+go-live+UI+test/FMfcgzQhWTvgpPZrpHwKtxNvHfslQnWR",
+    "email_arrived": true,
+    "meet_link_present": true,
+    "invite_attachment_present": true,
+    "observed_content": [
+      "KCG call - KCG go-live UI test",
+      "Join with Google Meet",
+      "Tuesday Sep 22, 2026, 10am\u201310:30am (Mountain Time - Denver)",
+      "Sent by Google Calendar",
+      "invite.ics"
+    ]
+  },
+  "cleanup": {
+    "calendar": "seth@keystoneconsultingg.com",
+    "events": [
+      {
+        "id": "kcg1a238ee1328f9bb4720defe5999819b5b94a22888dcea90a2f45ad084c4373955",
+        "summary": "KCG call - KCG controlled invite test",
+        "start": {
+          "dateTime": "2026-09-21T17:00:00-06:00",
+          "timeZone": "America/Denver"
+        },
+        "end": {
+          "dateTime": "2026-09-21T17:30:00-06:00",
+          "timeZone": "America/Denver"
+        },
+        "status": "confirmed",
+        "organizer": "seth@keystoneconsultingg.com",
+        "attendees": [
+          "seth+booking-test@keystoneconsultingg.com"
+        ],
+        "meet_link_present": true,
+        "conference_status": "success",
+        "checked_at": "2026-09-21T16:52:02.114Z",
+        "delete_status": 204,
+        "deleted_at": "2026-09-21T16:52:02.850Z",
+        "verify_status": 200,
+        "verified_deleted": true
+      },
+      {
+        "id": "kcg1a38f285619128472d1701329d2063703fa5992961c013a569adf39d5882b13a0",
+        "summary": "KCG call - KCG go-live UI test",
+        "start": {
+          "dateTime": "2026-09-22T10:00:00-06:00",
+          "timeZone": "America/Denver"
+        },
+        "end": {
+          "dateTime": "2026-09-22T10:30:00-06:00",
+          "timeZone": "America/Denver"
+        },
+        "status": "confirmed",
+        "organizer": "seth@keystoneconsultingg.com",
+        "attendees": [
+          "seth+booking-test@keystoneconsultingg.com"
+        ],
+        "meet_link_present": true,
+        "conference_status": "success",
+        "checked_at": "2026-09-21T16:52:03.040Z",
+        "delete_status": 204,
+        "deleted_at": "2026-09-21T16:52:03.840Z",
+        "verify_status": 200,
+        "verified_deleted": true
+      }
+    ]
+  },
+  "exit_codes": {
+    "backend-tests": 0,
+    "lint": 0,
+    "build": 0,
+    "browser-suite": 0
+  },
+  "test_counts": {
+    "backend": 51,
+    "browser": 24,
+    "failed": 0,
+    "skipped": 0
+  },
+  "safety": {
+    "checked_at": "2026-09-21T16:53:42.461441+00:00",
+    "secret_scan_absent": {
+      "committed_diff": {
+        "client_id": true,
+        "client_secret": true,
+        "refresh_token": true
+      },
+      "working_diff": {
+        "client_id": true,
+        "client_secret": true,
+        "refresh_token": true
+      },
+      "staged_diff": {
+        "client_id": true,
+        "client_secret": true,
+        "refresh_token": true
+      }
+    },
+    "hashes": {
+      "src/pages/ServicesPage.tsx": "0a7a361d0553189f786fc6326b5003285ebfb6df80634f0cb6aeeedd56195ac7",
+      "src/index.css": "6704103e47c24422137d8118db35c64355bbb3c2604f43e361e3f329b3163d6e"
+    },
+    "protected_unchanged_since_start": {
+      "server.ts": true,
+      "scripts/google-consent.mjs": true
+    }
+  },
+  "accepted_limitations": [
+    "No lunch break within Monday-Friday 09:00-19:00 America/Denver.",
+    "Concurrency is best-effort; simultaneous adjacent bookings can both succeed.",
+    "15-minute buffer, 120-minute notice and 30-day horizon are provisional defaults.",
+    "Single-calendar availability; other calendars are not checked."
+  ],
+  "remaining_unverified": [
+    "Google sensitive-scope verification remains pending per prior setup evidence; not changed or re-audited during this activation."
+  ],
+  "blocking": []
+}

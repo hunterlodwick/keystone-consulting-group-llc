@@ -110,5 +110,7 @@
     "Availability checks one calendar; other calendars and concurrent booking races remain limitations.",
     "Pre-existing /api/contact has no serverless function.",
     "One controlled test event remains on Seth calendar on September 21, 2026, 17:00-17:30 America/Denver."
-  ]
+  ],
+  "superseded_by": "go-live.json",
+  "historical_report_correction": "Previous production legal and Preview completeness claims were not reliable. Final go-live independently re-proves raw HTML, rendered content, configuration, live booking and cleanup."
 }

@@ -1,0 +1,53 @@
+{
+  "calendar": "seth@keystoneconsultingg.com",
+  "events": [
+    {
+      "id": "kcg1a238ee1328f9bb4720defe5999819b5b94a22888dcea90a2f45ad084c4373955",
+      "summary": "KCG call - KCG controlled invite test",
+      "start": {
+        "dateTime": "2026-09-21T17:00:00-06:00",
+        "timeZone": "America/Denver"
+      },
+      "end": {
+        "dateTime": "2026-09-21T17:30:00-06:00",
+        "timeZone": "America/Denver"
+      },
+      "status": "confirmed",
+      "organizer": "seth@keystoneconsultingg.com",
+      "attendees": [
+        "seth+booking-test@keystoneconsultingg.com"
+      ],
+      "meet_link_present": true,
+      "conference_status": "success",
+      "checked_at": "2026-09-21T16:52:02.114Z",
+      "delete_status": 204,
+      "deleted_at": "2026-09-21T16:52:02.850Z",
+      "verify_status": 200,
+      "verified_deleted": true
+    },
+    {
+      "id": "kcg1a38f285619128472d1701329d2063703fa5992961c013a569adf39d5882b13a0",
+      "summary": "KCG call - KCG go-live UI test",
+      "start": {
+        "dateTime": "2026-09-22T10:00:00-06:00",
+        "timeZone": "America/Denver"
+      },
+      "end": {
+        "dateTime": "2026-09-22T10:30:00-06:00",
+        "timeZone": "America/Denver"
+      },
+      "status": "confirmed",
+      "organizer": "seth@keystoneconsultingg.com",
+      "attendees": [
+        "seth+booking-test@keystoneconsultingg.com"
+      ],
+      "meet_link_present": true,
+      "conference_status": "success",
+      "checked_at": "2026-09-21T16:52:03.040Z",
+      "delete_status": 204,
+      "deleted_at": "2026-09-21T16:52:03.840Z",
+      "verify_status": 200,
+      "verified_deleted": true
+    }
+  ]
+}

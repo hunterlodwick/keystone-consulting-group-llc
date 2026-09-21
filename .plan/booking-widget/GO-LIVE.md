@@ -49,6 +49,12 @@ Then set BOOKING_DRY_RUN=false in Production and redeploy. Confirm on the live s
 - Lunch break: currently the window sells straight through noon.
 - Pre-existing, unrelated: ContactForm posts to /api/contact, which has no serverless function.
 
-## Executed September 21, 2026
+## Final activation, September 21, 2026
 
-Privacy and terms routes deployed and hard-load verified. Preview and Production credentials provisioned; OAuth published In production and token re-minted afterward. Actual Calendar event and Gmail invitation with Meet link proven. Final BOOKING_DRY_RUN=true in both environments, as explicitly requested. The temporary live-write test deployment was removed. Final preview: https://keystone-consulting-group-j3ktl7srn.vercel.app. Production: https://www.keystoneconsultingg.com. See evidence/result.json for checks and remaining limits. Google sensitive-scope verification is still pending; this is separate from publishing. No claim of a never-expiring token is made.
+LIVE, authorized by Hunter. Branch booking-go-live-legal merged to main and pushed. Production BOOKING_DRY_RUN=false; Preview remains true. All six variables verified in both environments. The canonical Vercel project is `keystone-consulting-group-lfri`, linked to `keystone-consulting-group-llc`; the local project link was corrected from the older project. Future deploys must use the canonical project so domain assignment and runtime variables stay together.
+
+Legal pages are prerendered from LegalPage.tsx by the build, with explicit /privacy and /terms rewrites. Raw HTML contains policy content and correct titles; fresh CDP 9444 loads render it. The former 1,780-byte generic-shell check was insufficient.
+
+The actual production widget created a controlled September 22 10:00–10:30 Denver booking. Its event was verified through Google Calendar; its invitation, Meet link and invite.ics were read in Seth's Gmail. That event and the previous September 21 17:00–17:30 test were deleted and verified cancelled. No other events were touched.
+
+Source of final evidence: `evidence/go-live.json`. Prior `evidence/result.json` is historical and superseded. Backend 51 and browser 24 tests pass; lint/build pass. Protected files remain unchanged. Accepted limits above remain; Google sensitive-scope verification is separate from publishing and remains pending.

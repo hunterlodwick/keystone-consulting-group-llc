@@ -1,0 +1,39 @@
+
+> react-example@0.0.0 test:booking-browser
+> playwright test --config tests/booking/playwright.config.ts
+
+[WebServer] (node:72536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:72536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 1 worker
+
+(node:72537) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/booking/browser.spec.ts:647:3 › booking widget browser matrix › contrast helper fails a 1.2:1 control boundary (173ms)
+  ✓   2 tests/booking/browser.spec.ts:658:3 › booking widget browser matrix › contrast helper fails unparsed near-background text (70ms)
+  ✓   3 tests/booking/browser.spec.ts:668:3 › booking widget browser matrix › contrast helper fails a weak outline with no border (72ms)
+  ✓   4 tests/booking/browser.spec.ts:679:3 › booking widget browser matrix › contrast helper fails a weak outer box-shadow ring (64ms)
+  ✓   5 tests/booking/browser.spec.ts:695:3 › booking widget browser matrix › contrast helper fails unparsed display-p3 background (63ms)
+  ✓   6 tests/booking/browser.spec.ts:711:3 › booking widget browser matrix › image inspector fails a missing image (71ms)
+  ✓   7 tests/booking/browser.spec.ts:717:3 › booking widget browser matrix › clean storage defaults to light theme at 390 (965ms)
+  ✓   8 tests/booking/browser.spec.ts:763:7 › booking widget browser matrix › 1440x900 light slots (1.0s)
+  ✓   9 tests/booking/browser.spec.ts:763:7 › booking widget browser matrix › 1440x900 dark slots (948ms)
+  ✓  10 tests/booking/browser.spec.ts:763:7 › booking widget browser matrix › 390x844 light slots (774ms)
+  ✓  11 tests/booking/browser.spec.ts:763:7 › booking widget browser matrix › 390x844 dark slots (795ms)
+  ✓  12 tests/booking/browser.spec.ts:823:3 › booking widget browser matrix › loading, invalid form, dry-run confirm, empty, 409, 503 (4.2s)
+  ✓  13 tests/booking/browser.spec.ts:1039:3 › booking widget browser matrix › keyboard path traps tab, restores focus, and never uses click shortcuts (930ms)
+  ✓  14 tests/booking/browser.spec.ts:1113:3 › booking widget browser matrix › refresh, conflict and pending submission stay recoverable (16.9s)
+  ✓  15 tests/booking/browser.spec.ts:1203:3 › booking widget browser matrix › obsolete GET cannot replace a newer slots response (760ms)
+  ✓  16 tests/booking/browser.spec.ts:1269:3 › booking widget browser matrix › pre-submit GET cannot overwrite confirmation or submitting (2.6s)
+  ✓  17 tests/booking/browser.spec.ts:1398:3 › booking widget browser matrix › mobile header restore and sticky do not occlude focused fields (820ms)
+  ✓  18 tests/booking/browser.spec.ts:1445:3 › booking widget browser matrix › booking CTAs and unchanged non-booking CTAs (3.5s)
+  ✓  19 tests/booking/browser.spec.ts:1544:3 › booking widget browser matrix › homepage inline widget completes date, slot, submit, confirmation (885ms)
+  ✓  20 tests/booking/browser.spec.ts:1589:7 › booking widget browser matrix › homepage 1440x900 light inline matrix (797ms)
+  ✓  21 tests/booking/browser.spec.ts:1589:7 › booking widget browser matrix › homepage 1440x900 dark inline matrix (820ms)
+  ✓  22 tests/booking/browser.spec.ts:1589:7 › booking widget browser matrix › homepage 390x844 light inline matrix (847ms)
+  ✓  23 tests/booking/browser.spec.ts:1589:7 › booking widget browser matrix › homepage 390x844 dark inline matrix (770ms)
+  ✓  24 tests/booking/browser.spec.ts:1656:3 › booking widget browser matrix › homepage inline keyboard path is completable without a mouse (758ms)
+
+  24 passed (40.7s)

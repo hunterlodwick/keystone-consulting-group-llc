@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-09-21T16:53:42.461441+00:00",
+  "secret_scan_absent": {
+    "committed_diff": {
+      "client_id": true,
+      "client_secret": true,
+      "refresh_token": true
+    },
+    "working_diff": {
+      "client_id": true,
+      "client_secret": true,
+      "refresh_token": true
+    },
+    "staged_diff": {
+      "client_id": true,
+      "client_secret": true,
+      "refresh_token": true
+    }
+  },
+  "hashes": {
+    "src/pages/ServicesPage.tsx": "0a7a361d0553189f786fc6326b5003285ebfb6df80634f0cb6aeeedd56195ac7",
+    "src/index.css": "6704103e47c24422137d8118db35c64355bbb3c2604f43e361e3f329b3163d6e"
+  },
+  "protected_unchanged_since_start": {
+    "server.ts": true,
+    "scripts/google-consent.mjs": true
+  }
+}

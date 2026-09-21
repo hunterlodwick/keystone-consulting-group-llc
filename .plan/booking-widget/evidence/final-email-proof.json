@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-09-21T16:51:40.409Z",
+  "observed_in": "Seth Gmail via signed-in Chrome CDP 9444",
+  "title": "Invitation: KCG call - KCG go-live UI test @ Tue Sep 22, 2026 10am - 10:30am (MDT) (seth+booking-test@keystoneconsultingg.com) - seth@keystoneconsultingg.com - Keystone Consulting Group LLC Mail",
+  "url": "https://mail.google.com/mail/u/0/#search/in%3Aanywhere+subject%3AKCG+go-live+UI+test/FMfcgzQhWTvgpPZrpHwKtxNvHfslQnWR",
+  "email_arrived": true,
+  "meet_link_present": true,
+  "invite_attachment_present": true,
+  "observed_content": [
+    "KCG call - KCG go-live UI test",
+    "Join with Google Meet",
+    "Tuesday Sep 22, 2026, 10am\u201310:30am (Mountain Time - Denver)",
+    "Sent by Google Calendar",
+    "invite.ics"
+  ]
+}

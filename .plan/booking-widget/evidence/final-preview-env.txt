@@ -1,0 +1,16 @@
+Retrieving project…
+> Environment Variables found for hunterlodwick-5817s-projects/keystone-consulting-group-lfri [80ms]
+
+ name                               value               environments                        created     
+ BOOKING_DRY_RUN                    Encrypted           Preview                             26s ago     
+ BOOKING_TZ                         Encrypted           Preview                             27s ago     
+ BOOKING_CALENDAR_ID                Encrypted           Preview                             28s ago     
+ GOOGLE_REFRESH_TOKEN               Encrypted           Preview                             29s ago     
+ GOOGLE_CLIENT_SECRET               Encrypted           Preview                             30s ago     
+ GOOGLE_CLIENT_ID                   Encrypted           Preview                             30s ago     
+ VITE_WEB3FORMS_ACCESS_KEY          Encrypted           Production, Preview, Development    195d ago    
+
+Common next commands:
+- `vercel env add`
+- `vercel env rm`
+- `vercel env pull`

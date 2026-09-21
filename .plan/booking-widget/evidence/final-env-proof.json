@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-09-21T16:54:23.442Z",
+  "project": "keystone-consulting-group-lfri",
+  "environments": {
+    "preview": {
+      "all_six_present": true,
+      "names": [
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_REFRESH_TOKEN",
+        "BOOKING_CALENDAR_ID",
+        "BOOKING_TZ",
+        "BOOKING_DRY_RUN"
+      ],
+      "dry_run": "true",
+      "timezone": "America/Denver",
+      "credentials_match_local": true
+    },
+    "prod": {
+      "all_six_present": true,
+      "names": [
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_REFRESH_TOKEN",
+        "BOOKING_CALENDAR_ID",
+        "BOOKING_TZ",
+        "BOOKING_DRY_RUN"
+      ],
+      "dry_run": "false",
+      "timezone": "America/Denver",
+      "credentials_match_local": true
+    }
+  }
+}
