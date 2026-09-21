@@ -1,0 +1,54 @@
+import { useEffect } from 'react';
+
+const privacy = [
+  ['What we collect', 'When you contact Keystone Consulting Group LLC (KCG) or book a call, we collect the information you submit: your name, email address, phone number, business information, and any message or notes. Booking also includes the date and time you choose. Only send information we need to help you. Do not put card numbers, passwords, or other sensitive account details in these forms.'],
+  ['How we use it', 'We use your information to respond to enquiries, understand your business needs, schedule calls, and provide the services you request. We do not sell your personal information.'],
+  ['Booking and Google Calendar', "Our booking service uses Google Calendar and Google APIs to check the availability of KCG's calendar and create appointments. We use availability information to offer open times; we do not show visitors the details of other appointments. When you book, your name, email, phone number if provided, and notes are stored in the calendar event on KCG's Google Calendar. Google Calendar emails an invitation to the address you provide. The invitation includes a Google Meet link when one is available. Test bookings marked as dry-run do not create an event or send an invitation."],
+  ['Service providers and payment partners', 'Vercel hosts this website and its booking endpoints. Google processes calendar events, invitations, and meeting information. Our contact and enquiry tools process the information you submit so we can respond. If you ask us to help with payment processing, we may share the business and contact information needed with the payment processing partners KCG works with to evaluate or provide that service. Their applications and services have their own privacy terms. We may also disclose information when required by law.'],
+  ['Cookies and local storage', 'This site saves your light or dark theme preference in your browser using localStorage under kcg-theme. You can remove it by clearing this site’s browser data. Our hosting and service providers may process technical information such as IP addresses and request logs to deliver and protect their services. Google services you open from an invitation may use cookies under Google’s privacy policy.'],
+  ['Retention and protection', 'We only retain collected information for as long as necessary to provide your requested service, handle follow-up, and meet applicable recordkeeping obligations. Booking information remains in our Google Calendar until it is no longer needed or we act on a valid deletion request. We limit access to the people and providers who need it to do this work. No website or email system can guarantee absolute security.'],
+  ['Your choices and requests', 'You can ask to access, correct, or delete the personal information we hold about you by contacting us below. We may need to verify that the request is yours. We will explain if we need to retain a record for a legal obligation or an ongoing service. Removing an event from our calendar does not remove copies of invitations already delivered to an email inbox. You can also contact us to change or cancel a booking.'],
+  ['Changes to this policy', 'We will update this page when our practices change and revise the effective date. Contact us if you need help understanding how this policy applies to your information.'],
+];
+
+const terms = [
+  ['Using this website', 'These terms apply to your use of the Keystone Consulting Group LLC (KCG) website and its contact and booking tools. By using the website, you agree to these terms. If you do not agree, do not use the website.'],
+  ['Enquiries and appointments', 'Provide accurate contact details and book only appointments you intend to attend. A booking reserves time for a conversation; it does not create a paid service agreement or guarantee a particular result. Google Calendar sends the invitation to the email address you enter. Contact us if you need to reschedule or cancel. We may need to change an appointment and will use your contact details to let you know.'],
+  ['Service agreements', 'The scope, price, payment schedule, and other terms for paid KCG work are set out in a separate agreement with you. Website descriptions are general information, not a promise of approval, savings, revenue, or any other specific outcome. Payment processing and financing services may require approval and separate agreements with the relevant provider.'],
+  ['Acceptable use', 'Do not use this website to submit spam, impersonate another person, make fraudulent bookings, interfere with availability, or attempt to access systems or information without permission. Do not submit information you do not have permission to share.'],
+  ['Website content and outside services', 'KCG and its content owners retain their rights in the website’s materials. You may use the site to learn about our services and contact us. Ask before republishing our materials. Links and integrations may take you to third-party services, including Google Calendar and Google Meet. Those services operate under their own terms and privacy policies.'],
+  ['Availability and accuracy', 'We work to keep this website accurate and available, but errors and interruptions can happen. Contact us to confirm information before making a business decision. Nothing on this page limits rights or responsibilities that cannot be limited under applicable law.'],
+  ['Privacy and updates', 'Our Privacy Policy explains how we handle information submitted through this website. We may update these terms by posting a revised version with a new effective date. Separate signed service agreements remain subject to their own terms.'],
+];
+
+export default function LegalPage({ kind, onNavigate }: { kind: 'privacy' | 'terms'; onNavigate: (path: string) => void }) {
+  const title = kind === 'privacy' ? 'Privacy Policy' : 'Terms of Service';
+  useEffect(() => {
+    const previous = document.title;
+    document.title = `${title} | Keystone Consulting Group`;
+    return () => { document.title = previous; };
+  }, [title]);
+
+  return (
+    <article className="max-w-3xl mx-auto px-6 pt-32 pb-20 md:pt-40 text-offwhite">
+      <button type="button" onClick={() => onNavigate('/')} className="min-h-11 mb-8 underline underline-offset-4">Back to KCG</button>
+      <h1 className="font-serif text-4xl md:text-5xl mb-4">{title}</h1>
+      <p className="mb-10 text-offwhite/80">Effective September 21, 2026</p>
+      {kind === 'privacy' && <p className="mb-10 leading-relaxed">We take your privacy seriously. Here is how KCG collects, uses, and protects your personal and business information.</p>}
+      {(kind === 'privacy' ? privacy : terms).map(([heading, body]) => (
+        <section key={heading} className="mb-8">
+          <h2 className="font-serif text-2xl mb-3">{heading}</h2>
+          <p className="leading-relaxed text-offwhite/90">{body}</p>
+        </section>
+      ))}
+      <section className="border-t border-teal/30 pt-8">
+        <h2 className="font-serif text-2xl mb-3">Contact KCG</h2>
+        <p className="leading-relaxed">Keystone Consulting Group LLC</p>
+        <a className="block py-3 underline break-words" href="mailto:info@keystoneconsultingg.com">info@keystoneconsultingg.com</a>
+        <a className="block py-3 underline" href="tel:+18013609156">(801) 360-9156</a>
+        <a className="block py-3 underline" href="tel:+15055066563">(505) 506-6563</a>
+        <a className="inline-block py-3 mt-4 underline" href={kind === 'privacy' ? '/terms' : '/privacy'}>{kind === 'privacy' ? 'Terms of Service' : 'Privacy Policy'}</a>
+      </section>
+    </article>
+  );
+}

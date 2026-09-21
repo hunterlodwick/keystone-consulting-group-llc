@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
+import LegalPage from './pages/LegalPage';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { 
   CreditCard, 
   MonitorSmartphone, 
@@ -49,6 +50,8 @@ import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
 import ServicesPage, { SingleServicePage } from './pages/ServicesPage';
 import WorkPage from './pages/WorkPage';
+import { BookingWidget, isBookingModalTitle } from './components/BookingWidget';
+import { BookingSection } from './components/BookingSection';
 
 
 // Custom Hooks for Animations
@@ -142,21 +145,178 @@ const KeystoneLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
 );
 
 // Modal Component
-const Modal = ({ isOpen, onClose, title, children }: { isOpen: boolean, onClose: () => void, title: string, children: React.ReactNode }) => {
+const FOCUSABLE =
+  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function getFocusable(root: HTMLElement): HTMLElement[] {
+  return [...root.querySelectorAll<HTMLElement>(FOCUSABLE)].filter((el) => {
+    if (el.hasAttribute('disabled') || el.getAttribute('aria-hidden') === 'true') return false;
+    const style = window.getComputedStyle(el);
+    if (style.visibility === 'hidden' || style.display === 'none') return false;
+    return true;
+  });
+}
+
+const Modal = ({
+  isOpen,
+  onClose,
+  title,
+  children,
+  returnFocusRef,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  children: React.ReactNode;
+  returnFocusRef: React.RefObject<HTMLElement | null>;
+}) => {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const dialog = dialogRef.current;
+    const parent = dialog?.parentElement;
+    const siblings = parent ? [...parent.children].filter((node) => node !== dialog) : [];
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    siblings.forEach((node) => {
+      if (node instanceof HTMLElement) node.setAttribute('inert', '');
+    });
+
+    const focusInside = (): boolean => {
+      const node = dialogRef.current;
+      if (!node) return false;
+      const active = document.activeElement;
+      return Boolean(active && active !== document.body && node.contains(active));
+    };
+
+    const focusInitial = () => {
+      const node = dialogRef.current;
+      if (!node) return;
+      if (focusInside()) return;
+      const focusable = getFocusable(node);
+      const preferredRaw = node.querySelector<HTMLElement>('[data-booking-initial-focus]');
+      const preferred = preferredRaw && focusable.includes(preferredRaw) ? preferredRaw : null;
+      const target = preferred ?? focusable[0] ?? closeBtnRef.current;
+      target?.focus();
+    };
+
+    let attempts = 0;
+    let frame = 0;
+    const tick = () => {
+      focusInitial();
+      if (focusInside() || attempts++ > 12) return;
+      frame = window.requestAnimationFrame(tick);
+    };
+    frame = window.requestAnimationFrame(tick);
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      const node = dialogRef.current;
+      if (!node) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const focusable = getFocusable(node);
+      event.preventDefault();
+      if (focusable.length === 0) {
+        closeBtnRef.current?.focus();
+        return;
+      }
+      const active = document.activeElement;
+      const currentIndex = active instanceof HTMLElement ? focusable.indexOf(active) : -1;
+      if (event.shiftKey) {
+        const next = currentIndex <= 0 ? focusable.length - 1 : currentIndex - 1;
+        focusable[next].focus();
+      } else {
+        const next = currentIndex === -1 || currentIndex === focusable.length - 1 ? 0 : currentIndex + 1;
+        focusable[next].focus();
+      }
+    };
+
+    const onFocusIn = (event: FocusEvent) => {
+      const node = dialogRef.current;
+      if (!node) return;
+      if (event.target instanceof Node && !node.contains(event.target)) {
+        const focusable = getFocusable(node);
+        (focusable[0] ?? closeBtnRef.current)?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown, true);
+    document.addEventListener('focusin', onFocusIn);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      document.removeEventListener('keydown', onKeyDown, true);
+      document.removeEventListener('focusin', onFocusIn);
+      document.body.style.overflow = previousOverflow;
+      siblings.forEach((node) => {
+        if (node instanceof HTMLElement) node.removeAttribute('inert');
+      });
+      const restoreTriggerFocus = () => {
+        const stored = returnFocusRef.current;
+        const isUsable = (el: HTMLElement | null): el is HTMLElement => {
+          if (!el || !el.isConnected) return false;
+          if (el.hasAttribute('disabled')) return false;
+          const style = window.getComputedStyle(el);
+          if (style.display === 'none' || style.visibility === 'hidden') return false;
+          const rect = el.getBoundingClientRect();
+          return rect.width > 0 && rect.height > 0;
+        };
+        if (isUsable(stored)) {
+          stored.focus();
+          return;
+        }
+        const openMenu = document.querySelector<HTMLElement>('header button[aria-label="Open menu"]');
+        if (isUsable(openMenu)) {
+          openMenu.focus();
+          return;
+        }
+        const headerBook = [...document.querySelectorAll<HTMLElement>('header button')].find(
+          (el) => el.textContent?.trim() === 'Book a Call' && isUsable(el),
+        );
+        if (headerBook) {
+          headerBook.focus();
+          return;
+        }
+        const visibleHeaderBtn = [...document.querySelectorAll<HTMLElement>('header button')].find(isUsable);
+        visibleHeaderBtn?.focus();
+      };
+      window.requestAnimationFrame(restoreTriggerFocus);
+    };
+  }, [isOpen, title, onClose, returnFocusRef]);
+
   if (!isOpen) return null;
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div
+      ref={dialogRef}
+      className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose}></div>
       <div
-        className="relative w-full max-w-lg bg-charcoal-dark/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden z-10"
+        data-booking-panel="true"
+        className="relative w-full max-w-lg bg-charcoal-dark/90 backdrop-blur-xl border border-offwhite rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden z-10 flex flex-col max-h-[min(calc(100dvh-2rem),40rem)]"
       >
-        <div className="flex items-center justify-between p-6 border-b border-white/5">
+        <div className="flex items-center justify-between p-6 border-b border-offwhite shrink-0">
           <h3 id="modal-title" className="text-xl font-serif text-white">{title}</h3>
-          <button aria-label="Close modal" id="modal-close-btn" onClick={onClose} className="text-offwhite/50 hover:text-white transition-colors">
+          <button
+            ref={closeBtnRef}
+            aria-label="Close modal"
+            id="modal-close-btn"
+            onClick={onClose}
+            className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-offwhite hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
+          >
             <X className="w-5 h-5" />
           </button>
         </div>
-        <div className="p-6">
+        <div data-booking-scroll="true" className="p-6 overflow-y-auto overscroll-contain">
           {children}
         </div>
       </div>
@@ -647,7 +807,8 @@ const INDUSTRY_NAV_ITEMS = [
 
 const STATIC_NAV_ITEMS = [
   { name: "Work", href: "/work" },
-  { name: "About", href: "/#about" }
+  { name: "About", href: "/#about" },
+  { name: "Book", href: "/#book-a-call" },
 ];
 
 // Header
@@ -2027,9 +2188,11 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
             <ul className="space-y-3 text-sm text-offwhite/60 font-light">
               {RESOURCES_DATA.map(res => (
                 <li key={res.id}>
-                  <button onClick={() => onOpenModal(res.title, <ServiceDetails service={res} onOpenModal={onOpenModal} />)} className="hover:text-teal transition-colors text-left">
-                    {res.title}
-                  </button>
+                  {res.id === 'privacy-policy' || res.id === 'terms-conditions' ? (
+                    <a href={res.id === 'privacy-policy' ? '/privacy' : '/terms'} className="hover:text-teal transition-colors">{res.title}</a>
+                  ) : (
+                    <button onClick={() => onOpenModal(res.title, <ServiceDetails service={res} onOpenModal={onOpenModal} />)} className="hover:text-teal transition-colors text-left">{res.title}</button>
+                  )}
                 </li>
               ))}
               <li>
@@ -2060,8 +2223,8 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
             &copy; {new Date().getFullYear()} Keystone Consulting Group LLC. All rights reserved.
           </p>
           <div className="flex gap-4 text-offwhite/40 text-xs">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
@@ -2098,6 +2261,7 @@ function MainLandingPage({ onOpenModal, onOpenSplash, theme }: { onOpenModal: (t
       <WhyChooseUs />
       <IntegrationEcosystem />
       <Team onOpenModal={onOpenModal} />
+      <BookingSection onRequestContact={() => onOpenModal("Contact Us", <ContactForm />)} />
     </>
   );
 }
@@ -2127,19 +2291,40 @@ export default function App() {
     title: "",
     content: null
   });
+  const modalTriggerRef = useRef<HTMLElement | null>(null);
 
   const [splashState, setSplashState] = useState<{ isOpen: boolean, industry: any | null }>({
     isOpen: false,
     industry: null
   });
 
-  const handleOpenModal = (title: string, content: React.ReactNode) => {
-    setModalState({ isOpen: true, title, content });
-  };
+  const openContactFromBooking = useCallback(() => {
+    setModalState({
+      isOpen: true,
+      title: 'Contact Us',
+      content: <ContactForm />,
+    });
+  }, []);
 
-  const handleCloseModal = () => {
-    setModalState(prev => ({ ...prev, isOpen: false }));
-  };
+  const handleOpenModal = useCallback((title: string, content: React.ReactNode) => {
+    const active = document.activeElement;
+    if (active instanceof HTMLElement) {
+      modalTriggerRef.current = active;
+    }
+    if (isBookingModalTitle(title)) {
+      setModalState({
+        isOpen: true,
+        title: 'Book a Call with Seth',
+        content: <BookingWidget onRequestContact={openContactFromBooking} />,
+      });
+      return;
+    }
+    setModalState({ isOpen: true, title, content });
+  }, [openContactFromBooking]);
+
+  const handleCloseModal = useCallback(() => {
+    setModalState({ isOpen: false, title: '', content: null });
+  }, []);
 
   const handleOpenSplash = (industryId: string) => {
     const industry = INDUSTRY_DATA.find(ind => ind.id === industryId);
@@ -2220,7 +2405,13 @@ export default function App() {
       <Header onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
       
       <main>
-        {currentPath.startsWith('/services/') ? (
+        {currentPath === '/privacy' || currentPath === '/terms' ? (
+          <LegalPage kind={currentPath === '/privacy' ? 'privacy' : 'terms'} onNavigate={(path) => {
+            window.history.pushState({}, '', path);
+            setCurrentPath(path);
+            window.scrollTo(0, 0);
+          }} />
+        ) : currentPath.startsWith('/services/') ? (
           <SingleServicePage 
             serviceId={currentPath.replace('/services/', '')}
             onOpenModal={handleOpenModal}
@@ -2265,11 +2456,14 @@ export default function App() {
 
       <Footer onOpenSplash={handleOpenSplash} onOpenModal={handleOpenModal} />
       
-      {modalState.isOpen && (
-        <Modal isOpen={modalState.isOpen} onClose={handleCloseModal} title={modalState.title}>
-          {modalState.content}
-        </Modal>
-      )}
+      <Modal
+        isOpen={modalState.isOpen}
+        onClose={handleCloseModal}
+        title={modalState.title}
+        returnFocusRef={modalTriggerRef}
+      >
+        {modalState.content}
+      </Modal>
 
       {splashState.isOpen && splashState.industry && (
         <IndustrySplash 
