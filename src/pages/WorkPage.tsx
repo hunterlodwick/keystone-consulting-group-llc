@@ -14,6 +14,7 @@ import {
   Bot,
   Database,
   Workflow,
+  Scissors,
   Code
 } from 'lucide-react';
 import { ContactForm } from '../App';
@@ -114,6 +115,17 @@ const PROJECTS = [
     desc: "The owner updates today's location from their phone. No developer, no email, no \"where are you parked?\" texts. Customers check the site and show up.",
     tags: ["Food Truck", "Custom CMS", "Location Updates"],
     icon: Truck,
+    isConfidential: false
+  },
+  {
+    name: "Prism Silks",
+    label: "Prism Silks",
+    url: "https://www.prismsilks.com",
+    domain: "prismsilks.com",
+    screenshot: "prism-silks",
+    desc: "A 25-year fabric shop paying $38,000 to $48,000 a year in platform fees. We built her a real storefront, one catalog brain under Etsy, eBay, and the new shop, and an assistant that answers what she used to retype by hand. Oversells stopped. Cards clear without the marketplace cut.",
+    tags: ["E-commerce", "Inventory Sync", "Payment Savings", "AI Assistant"],
+    icon: Scissors,
     isConfidential: false
   },
   {
