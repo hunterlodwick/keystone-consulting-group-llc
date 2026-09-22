@@ -52,32 +52,21 @@ const PROJECTS = [
     isConfidential: false
   },
   {
-    name: "Teton Reach",
-    label: "Teton Reach",
-    url: "https://www.tetonreach.com",
-    domain: "tetonreach.com",
-    screenshot: "teton-reach",
-    desc: "When referrals aren't enough, this site makes cold prospects feel like they already know you. Clean design that earns trust before the first conversation ever happens.",
-    tags: ["Professional Services", "Web Design"],
-    icon: Mountain,
+    name: "Prism Silks",
+    label: "Prism Silks",
+    url: "https://www.prismsilks.com",
+    domain: "prismsilks.com",
+    screenshot: "prism-silks",
+    desc: "A 25-year fabric shop paying $38,000 to $48,000 a year in platform fees. We built her a real storefront, one catalog brain under Etsy, eBay, and the new shop, and an assistant that answers what she used to retype by hand. Oversells stopped. Cards clear without the marketplace cut.",
+    tags: ["E-commerce", "Inventory Sync", "Payment Savings", "AI Assistant"],
+    icon: Scissors,
     isConfidential: false
-  },
-  {
-    name: "Keystone OS Dashboard",
-    label: "Keystone OS",
-    url: "https://keystone-os-dashboard.vercel.app",
-    domain: "keystone-os-dashboard.vercel.app",
-    screenshot: "keystone-os",
-    desc: "Every project, client, and deadline in one place. We built this to run our own agency. Now we can build one shaped around how your team actually works.",
-    tags: ["Custom CRM", "Kanban", "Internal Tools"],
-    icon: LayoutDashboard,
-    isConfidential: true
   },
   {
     name: "Benitz Appliance",
     label: "Benitz Appliance",
-    url: "https://benitz-appliance.vercel.app",
-    domain: "benitz-appliance.vercel.app",
+    url: "https://www.benitzapplianceshop.com",
+    domain: "benitzapplianceshop.com",
     screenshot: "benitz-appliance",
     desc: "631 products searchable in seconds. An AI assistant that answers stock and pricing questions at 2 AM so the owner sells appliances instead of answering the phone all day.",
     tags: ["E-commerce", "AI Assistant", "631 Products", "Payments"],
@@ -118,17 +107,6 @@ const PROJECTS = [
     isConfidential: false
   },
   {
-    name: "Prism Silks",
-    label: "Prism Silks",
-    url: "https://www.prismsilks.com",
-    domain: "prismsilks.com",
-    screenshot: "prism-silks",
-    desc: "A 25-year fabric shop paying $38,000 to $48,000 a year in platform fees. We built her a real storefront, one catalog brain under Etsy, eBay, and the new shop, and an assistant that answers what she used to retype by hand. Oversells stopped. Cards clear without the marketplace cut.",
-    tags: ["E-commerce", "Inventory Sync", "Payment Savings", "AI Assistant"],
-    icon: Scissors,
-    isConfidential: false
-  },
-  {
     name: "Sego Flooring SWFL",
     label: "Sego Flooring",
     url: "https://www.segoflooringswfl.com",
@@ -138,6 +116,28 @@ const PROJECTS = [
     tags: ["3D Animation", "Flooring", "Appointment Booking", "High Conversion"],
     icon: Layers,
     isConfidential: false
+  },
+  {
+    name: "Teton Reach",
+    label: "Teton Reach",
+    url: "https://www.tetonreach.com",
+    domain: "tetonreach.com",
+    screenshot: "teton-reach",
+    desc: "When referrals aren't enough, this site makes cold prospects feel like they already know you. Clean design that earns trust before the first conversation ever happens.",
+    tags: ["Professional Services", "Web Design"],
+    icon: Mountain,
+    isConfidential: false
+  },
+  {
+    name: "Keystone OS Dashboard",
+    label: "Keystone OS",
+    url: "https://keystone-os-dashboard.vercel.app",
+    domain: "keystone-os-dashboard.vercel.app",
+    screenshot: "keystone-os",
+    desc: "Every project, client, and deadline in one place. We built this to run our own agency. Now we can build one shaped around how your team actually works.",
+    tags: ["Custom CRM", "Kanban", "Internal Tools"],
+    icon: LayoutDashboard,
+    isConfidential: true
   }
 ];
 
