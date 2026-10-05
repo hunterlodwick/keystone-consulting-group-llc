@@ -2406,8 +2406,8 @@ export default function App() {
       <Header onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
       
       <main data-mobile-cta-page={Boolean(stickyCtaLabel(currentPath))}>
-        {currentPath === '/privacy' || currentPath === '/terms' ? (
-          <LegalPage kind={currentPath === '/privacy' ? 'privacy' : 'terms'} onNavigate={(path) => {
+        {['/privacy', '/privacy-policy', '/terms', '/terms-of-service'].includes(currentPath) ? (
+          <LegalPage kind={currentPath === '/privacy' || currentPath === '/privacy-policy' ? 'privacy' : 'terms'} onNavigate={(path) => {
             window.history.pushState({}, '', path);
             setCurrentPath(path);
             window.scrollTo(0, 0);
