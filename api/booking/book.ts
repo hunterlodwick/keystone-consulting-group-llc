@@ -1,9 +1,12 @@
+import { classifySubmission, getClientIp, stripGuardFields } from '../../lib/spam-guard.js';
+import { CONFIG } from '../../lib/spam-guard-config.js';
 import type { ServerResponse } from 'node:http';
 import { randomUUID } from 'node:crypto';
 import { DateTime } from 'luxon';
 import {
   BookingConfigError,
   REQUEST_DEADLINE_MS,
+  SLOT_DURATION_SECONDS,
   readBookingConfig,
   toSlotConfig,
 } from '../../lib/booking/config.js';
@@ -81,7 +84,26 @@ export async function handleBookRequest(
       return;
     }
 
-    const parsed = parseBookBody(raw.value);
+    const { verdict, reasons } = classifySubmission({ fields: raw.value, ip: getClientIp(req.headers) }, CONFIG);
+    if (verdict !== 'ok') {
+      console.warn('[spam-guard]', verdict, reasons);
+      const start = typeof raw.value.start === 'string'
+        ? DateTime.fromISO(raw.value.start, { zone: config.tz }) : DateTime.invalid('Missing start');
+      const startIso = start.isValid ? formatSlotInstant(start.toMillis(), config.tz) : '';
+      const endIso = start.isValid ? formatSlotInstant(start.plus({ seconds: SLOT_DURATION_SECONDS }).toMillis(), config.tz) : '';
+      status = 200;
+      code = undefined;
+      writeJson(res, 200, {
+        ok: true,
+        ...(config.dryRun ? {} : { eventId: randomUUID() }),
+        start: startIso,
+        end: endIso,
+      }, mode);
+      finish();
+      return;
+    }
+
+    const parsed = parseBookBody(stripGuardFields(raw.value, CONFIG));
     if (!parsed.ok) {
       status = 400;
       code = ERROR_CODES.INVALID_INPUT;

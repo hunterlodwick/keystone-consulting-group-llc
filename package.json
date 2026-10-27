@@ -10,7 +10,8 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "test:booking": "node --import tsx --test tests/booking/booking.test.ts",
-    "test:booking-browser": "playwright test --config tests/booking/playwright.config.ts"
+    "test:booking-browser": "playwright test --config tests/booking/playwright.config.ts",
+    "test:spam-guard": "node --import tsx --test tests/spam-guard.test.ts"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
