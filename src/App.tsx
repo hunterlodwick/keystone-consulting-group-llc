@@ -1,3 +1,6 @@
+import { spamCheck } from './lib/spamCheck';
+import { useFormToken } from './hooks/useFormToken';
+import { SpamGuardFields } from './components/SpamGuardFields';
 import LegalPage from './pages/LegalPage';
 import { MobileStickyCta, stickyCtaLabel } from './components/MobileStickyCta';
 import React, { useEffect, useState, useRef, useCallback } from 'react';
@@ -577,10 +580,12 @@ const IndustrySplash = ({ industry, onOpenModal, onClose }: { industry: any, onO
 // Forms
 // ContactForm component to be exported
 export const ContactForm = () => {
+  const { token, ready } = useFormToken();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!ready) return;
     setStatus('loading');
     
     const formData = new FormData(e.currentTarget);
@@ -596,6 +601,15 @@ export const ContactForm = () => {
     };
 
     try {
+      const deliver = await spamCheck({
+        ...data,
+        company_website: formData.get('company_website'),
+        _sg_t: token,
+      });
+      if (!deliver) {
+        setStatus('success');
+        return;
+      }
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -627,6 +641,7 @@ export const ContactForm = () => {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
+      <SpamGuardFields token={token} />
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="firstName" className="block text-sm text-offwhite/90 mb-1">First Name</label>
@@ -645,7 +660,7 @@ export const ContactForm = () => {
         <label htmlFor="phone" className="block text-sm text-offwhite/90 mb-1">Phone</label>
         <input id="phone" name="phone" type="tel" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
       </div>
-      <button type="submit" disabled={status === 'loading'} className="w-full bg-teal text-white py-3 rounded-sm mt-4 hover:bg-teal-soft transition-colors font-medium tracking-wide disabled:opacity-50">
+      <button type="submit" disabled={!ready || status === 'loading'} className="w-full bg-teal text-white py-3 rounded-sm mt-4 hover:bg-teal-soft transition-colors font-medium tracking-wide disabled:opacity-50">
         {status === 'loading' ? 'Submitting...' : 'Submit Request'}
       </button>
       {status === 'error' && <p className="text-red-400 text-sm mt-2">There was an error submitting your request. Please try again.</p>}
@@ -654,10 +669,12 @@ export const ContactForm = () => {
 };
 
 const StatementAnalysisForm = () => {
+  const { token, ready } = useFormToken();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!ready) return;
     setStatus('loading');
     
     const formData = new FormData(e.currentTarget);
@@ -673,6 +690,15 @@ const StatementAnalysisForm = () => {
     };
 
     try {
+      const deliver = await spamCheck({
+        ...data,
+        company_website: formData.get('company_website'),
+        _sg_t: token,
+      });
+      if (!deliver) {
+        setStatus('success');
+        return;
+      }
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -704,6 +730,7 @@ const StatementAnalysisForm = () => {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
+      <SpamGuardFields token={token} />
       <p className="text-sm text-offwhite/90 mb-4 leading-relaxed">Send us your processing statement. We'll find every fee you shouldn't be paying, show you the exact savings, and hand you a reinvestment plan. All for free.</p>
       <div>
         <label htmlFor="businessName" className="block text-sm text-offwhite/90 mb-1">Business Name</label>
@@ -713,7 +740,7 @@ const StatementAnalysisForm = () => {
         <label htmlFor="analysis-email" className="block text-sm text-offwhite/90 mb-1">Email</label>
         <input id="analysis-email" name="email" type="email" className="w-full bg-charcoal border border-white/20 rounded-sm px-4 py-2 text-white focus:border-teal outline-none transition-colors" required />
       </div>
-      <button type="submit" disabled={status === 'loading'} className="w-full bg-teal text-white py-3 rounded-sm mt-4 hover:bg-teal-soft transition-colors font-medium tracking-wide disabled:opacity-50">
+      <button type="submit" disabled={!ready || status === 'loading'} className="w-full bg-teal text-white py-3 rounded-sm mt-4 hover:bg-teal-soft transition-colors font-medium tracking-wide disabled:opacity-50">
         {status === 'loading' ? 'Submitting...' : 'Request Free Profit Leak Analysis'}
       </button>
       {status === 'error' && <p className="text-red-400 text-sm mt-2">There was an error submitting your request. Please try again.</p>}

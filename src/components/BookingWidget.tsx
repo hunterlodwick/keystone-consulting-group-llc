@@ -1,3 +1,5 @@
+import { useFormToken } from '../hooks/useFormToken';
+import { SpamGuardFields } from './SpamGuardFields';
 import { captureBookingAttribution, useBookingCta } from './BookingAttribution';
 import './booking.css';
 import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
@@ -111,6 +113,7 @@ export function BookingWidget({
   variant?: 'modal' | 'inline';
   ctaLabel?: string;
 }): React.ReactElement {
+  const { token, ready } = useFormToken();
   const attributionCta = useBookingCta(variant, ctaLabel);
   const liveId = useId();
   const formId = useId();
@@ -414,8 +417,9 @@ export function BookingWidget({
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (!selectedSlot || phase === 'submitting') return;
+    if (!ready || !selectedSlot || phase === 'submitting') return;
     if (!validateForm()) return;
+    const guardFields = new FormData(event.currentTarget as HTMLFormElement);
 
     abortRef.current?.abort();
     requestIdRef.current += 1;
@@ -435,6 +439,8 @@ export function BookingWidget({
     try {
       const body: Record<string, string> = {
         ...captureBookingAttribution(attributionCta, variant),
+        _sg_t: token,
+        company_website: String(guardFields.get('company_website') ?? ''),
         start: selectedSlot.start,
         name: name.trim(),
         email: email.trim(),
@@ -696,6 +702,7 @@ export function BookingWidget({
 
           {(phase === 'form' || phase === 'submitting') && selectedSlot ? (
             <form id={formId} className="space-y-4" onSubmit={submit} noValidate>
+              <SpamGuardFields token={token} />
               <p className="text-sm text-offwhite">Name and email are required.</p>
               {dryRun === false ? <p className="text-sm text-offwhite">An email invitation will be requested. If it does not arrive, email KCG.</p> : null}
               <div>
@@ -808,7 +815,7 @@ export function BookingWidget({
           {step === 1 ? (
             <button type="button" className={`${btnPrimary} w-full`} disabled={!selectedSlot} onClick={(event) => { event.preventDefault(); setPhase('form'); }}>Continue</button>
           ) : (
-            <button type="submit" form={formId} className={`${btnPrimary} w-full`} disabled={phase === 'submitting'}>{phase === 'submitting' ? 'Booking...' : 'Book this time'}</button>
+            <button type="submit" form={formId} className={`${btnPrimary} w-full`} disabled={!ready || phase === 'submitting'}>{phase === 'submitting' ? 'Booking...' : 'Book this time'}</button>
           )}
         </div>
       ) : null}
