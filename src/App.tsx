@@ -1,3 +1,4 @@
+import { spamCheck } from './lib/spamCheck';
 import { useFormToken } from './hooks/useFormToken';
 import { SpamGuardFields } from './components/SpamGuardFields';
 import LegalPage from './pages/LegalPage';
@@ -589,8 +590,7 @@ export const ContactForm = () => {
     
     const formData = new FormData(e.currentTarget);
     const data = {
-      _sg_t: token,
-      company_website: formData.get('company_website'),
+      access_key: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_KEY",
       ccemail: "hunter@keystoneconsultingg.com, seth@keystoneconsultingg.com",
       subject: "New Contact Request - Keystone Consulting",
       name: `${formData.get('firstName')} ${formData.get('lastName')}`,
@@ -601,7 +601,16 @@ export const ContactForm = () => {
     };
 
     try {
-      const response = await fetch('/api/contact', {
+      const deliver = await spamCheck({
+        ...data,
+        company_website: formData.get('company_website'),
+        _sg_t: token,
+      });
+      if (!deliver) {
+        setStatus('success');
+        return;
+      }
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
@@ -670,8 +679,7 @@ const StatementAnalysisForm = () => {
     
     const formData = new FormData(e.currentTarget);
     const data = {
-      _sg_t: token,
-      company_website: formData.get('company_website'),
+      access_key: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_KEY",
       ccemail: "hunter@keystoneconsultingg.com, seth@keystoneconsultingg.com",
       subject: "New Profit Leak Analysis Request - Keystone Consulting",
       name: formData.get('businessName'),
@@ -682,7 +690,16 @@ const StatementAnalysisForm = () => {
     };
 
     try {
-      const response = await fetch('/api/contact', {
+      const deliver = await spamCheck({
+        ...data,
+        company_website: formData.get('company_website'),
+        _sg_t: token,
+      });
+      if (!deliver) {
+        setStatus('success');
+        return;
+      }
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)

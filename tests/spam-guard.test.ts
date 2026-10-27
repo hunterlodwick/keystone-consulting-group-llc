@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import { beforeEach, afterEach, test, mock } from 'node:test';
 import type { ServerResponse } from 'node:http';
-import contact from '../api/contact';
+import spamCheckEndpoint from '../api/spam-check';
+import { spamCheck } from '../src/lib/spamCheck';
 import tokenEndpoint from '../api/form-token';
 import { handleBookRequest } from '../api/booking/book';
 import { CONFIG } from '../lib/spam-guard-config';
@@ -16,22 +17,13 @@ const env = {
   BOOKING_CALENDAR_ID: 'test@example.com', GOOGLE_CLIENT_ID: 'test',
   GOOGLE_CLIENT_SECRET: 'test', GOOGLE_REFRESH_TOKEN: 'test',
 };
-const originalKey = process.env.WEB3FORMS_ACCESS_KEY;
-const fallbackKey = process.env.VITE_WEB3FORMS_ACCESS_KEY;
 beforeEach(() => {
   __resetRateLimit();
-  process.env.WEB3FORMS_ACCESS_KEY = 'test-key';
   mock.method(globalThis, 'fetch', async () => { throw new Error('Unexpected network call'); });
   mock.method(console, 'warn', () => {});
   mock.method(console, 'log', () => {});
 });
-afterEach(() => {
-  mock.restoreAll();
-  if (originalKey === undefined) delete process.env.WEB3FORMS_ACCESS_KEY;
-  else process.env.WEB3FORMS_ACCESS_KEY = originalKey;
-  if (fallbackKey === undefined) delete process.env.VITE_WEB3FORMS_ACCESS_KEY;
-  else process.env.VITE_WEB3FORMS_ACCESS_KEY = fallbackKey;
-});
+afterEach(() => { mock.restoreAll(); });
 function request(body: unknown, method = 'POST'): BookingIncoming {
   return { method, body, headers: { 'content-type': 'application/json', 'x-forwarded-for': '192.0.2.1' } } as unknown as BookingIncoming;
 }
@@ -46,45 +38,35 @@ function response() {
 }
 const lead = () => ({
   name: 'Jane Example', email: 'jane@example.com',
-  company_website: '', _sg_t: issueFormToken(CONFIG, Date.now() - 5000),
+  company_website: '', _sg_t: issueFormToken(CONFIG, Date.now() - 3100),
 });
 const pitch = 'We can get your site on the first page of Google with our SEO services';
 
-for (const endpoint of ['contact', 'booking'] as const) {
+for (const endpoint of ['spam-check', 'booking'] as const) {
   async function invoke(extra: Record<string, unknown> = {}, dryRun = false) {
-    const calls: Record<string, unknown>[] = [];
     const transport = createFakeGoogleTransport();
-    mock.method(globalThis, 'fetch', async (url, init) => {
-      assert.equal(url, 'https://api.web3forms.com/submit');
-      calls.push(JSON.parse(String(init?.body)));
-      return Response.json({ success: true, message: 'Thanks', data: { id: 'test' } });
-    });
     const { res, result } = response();
     const body = { ...lead(), ...(endpoint === 'booking' ? { start } : {}), ...extra };
-    if (endpoint === 'contact') await contact(request(body), res);
+    if (endpoint === 'spam-check') await spamCheckEndpoint(request(body), res);
     else await handleBookRequest(request(body), res, {
       env: { ...env, BOOKING_DRY_RUN: String(dryRun) },
       now: () => new Date('2026-09-21T07:00:00-06:00'),
       fetchImpl: transport.fetchImpl,
       onDryRunIntent: transport.recordIntent,
     });
-    return { result, calls, transport, body };
+    return { result, transport, body };
   }
   for (const missingToken of [false, true]) {
-    test(endpoint + ': legitimate marketing lead forwards' + (missingToken ? ' without token' : ''), async () => {
+    test(endpoint + ': legitimate marketing lead permits delivery after 3.1s' + (missingToken ? ' without token' : ''), async () => {
       const text = 'I need SEO and digital marketing services for my business.';
-      const { result, calls, transport } = await invoke({
-        [endpoint === 'contact' ? 'message' : 'notes']: text,
+      const { result, transport } = await invoke({
+        [endpoint === 'spam-check' ? 'message' : 'notes']: text,
         ...(missingToken ? { _sg_t: '' } : {}),
       });
       assert.equal(result.status, 200);
-      if (endpoint === 'contact') {
-        assert.deepEqual(result.body, { success: true, message: 'Thanks', data: { id: 'test' } });
-        assert.equal(calls.length, 1);
-        assert.equal(calls[0].message, text);
-        assert.equal(calls[0].access_key, 'test-key');
-        assert.ok(!('company_website' in calls[0]));
-        assert.ok(!('_sg_t' in calls[0]));
+      if (endpoint === 'spam-check') {
+        assert.deepEqual(result.body, { success: true, deliver: true });
+        assert.equal((fetch as any).mock.callCount(), 0);
       } else {
         assert.deepEqual(result.body, { ok: true, eventId: 'fake-event-id', start, end });
         assert.equal(transport.counts.insert, 1);
@@ -101,10 +83,10 @@ for (const endpoint of ['contact', 'booking'] as const) {
       }
       const extra = scenario === 'honeypot' ? { company_website: 'bot' }
         : scenario === 'too-fast' ? { _sg_t: issueFormToken(CONFIG) }
-        : scenario === 'pitch' ? { [endpoint === 'contact' ? 'message' : 'notes']: pitch } : {};
-      const { result, calls, transport } = await invoke(extra);
+        : scenario === 'pitch' ? { [endpoint === 'spam-check' ? 'message' : 'notes']: pitch } : {};
+      const { result, transport } = await invoke(extra);
       assert.equal(result.status, 200);
-      if (endpoint === 'contact') assert.deepEqual(result.body, { success: true, message: 'ok' });
+      if (endpoint === 'spam-check') assert.deepEqual(result.body, { success: true, deliver: false });
       else {
         assert.deepEqual(Object.keys(result.body).sort(), ['end', 'eventId', 'ok', 'start']);
         assert.equal(result.body.ok, true);
@@ -112,7 +94,7 @@ for (const endpoint of ['contact', 'booking'] as const) {
         assert.equal(result.body.end, end);
         assert.equal(result.headers['x-booking-mode'], 'live');
       }
-      assert.equal(calls.length, 0);
+      assert.equal((fetch as any).mock.callCount(), 0);
       assert.deepEqual(transport.calls, []);
       assert.equal(transport.inviteIntents.length, 0);
       const warnings = (console.warn as any).mock.calls;
@@ -140,15 +122,50 @@ test('token endpoint issues valid uncached token and rejects POST', () => {
   tokenEndpoint(request({}), rejected.res);
   assert.equal(rejected.result.status, 405);
 });
-test('contact uses fallback server key and preserves upstream errors', async () => {
-  delete process.env.WEB3FORMS_ACCESS_KEY;
-  process.env.VITE_WEB3FORMS_ACCESS_KEY = 'fallback-test-key';
-  mock.method(globalThis, 'fetch', async (_url, init) => {
-    assert.equal(JSON.parse(String(init?.body)).access_key, 'fallback-test-key');
-    return Response.json({ success: false, message: 'Invalid email' }, { status: 400 });
+test('spam-check rejects non-POST and invalid JSON without fetch', async () => {
+  for (const [body, method, status] of [[{}, 'GET', 405], ['{', 'POST', 400], [[], 'POST', 400]] as const) {
+    const { res, result } = response();
+    await spamCheckEndpoint(request(body, method), res);
+    assert.equal(result.status, status);
+    if (status === 405) assert.equal(result.headers.allow, 'POST');
+  }
+  assert.equal((fetch as any).mock.callCount(), 0);
+});
+
+for (const [label, body, status, expected] of [
+  ['allow', { success: true, deliver: true }, 200, true],
+  ['drop', { success: true, deliver: false }, 200, false],
+  ['server error', { success: true, deliver: false }, 500, true],
+  ['missing verdict', { success: true }, 200, true],
+  ['invalid verdict', { success: true, deliver: 'false' }, 200, true],
+  ['unsuccessful check', { success: false, deliver: false }, 200, true],
+  ['null response', null, 200, true],
+] as const) {
+  test('client spam check: ' + label, async () => {
+    const fields = lead();
+    mock.method(globalThis, 'fetch', async (url, init) => {
+      assert.equal(url, '/api/spam-check');
+      assert.equal(init?.method, 'POST');
+      assert.deepEqual(JSON.parse(String(init?.body)), fields);
+      return Response.json(body, { status });
+    });
+    assert.equal(await spamCheck(fields), expected);
   });
-  const { res, result } = response();
-  await contact(request({ ...lead(), access_key: 'untrusted' }), res);
-  assert.equal(result.status, 400);
-  assert.deepEqual(result.body, { success: false, message: 'Invalid email' });
+}
+test('client spam check fails open on network and JSON errors', async () => {
+  assert.equal(await spamCheck(lead()), true);
+  mock.method(globalThis, 'fetch', async () => new Response('invalid JSON'));
+  assert.equal(await spamCheck(lead()), true);
+});
+test('client spam check fails open after 3s even if response body hangs', async (t) => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  let signal: AbortSignal | undefined;
+  mock.method(globalThis, 'fetch', async (_url, init) => {
+    signal = init?.signal ?? undefined;
+    return { ok: true, json: () => new Promise(() => {}) } as Response;
+  });
+  const result = spamCheck(lead());
+  t.mock.timers.tick(3000);
+  assert.equal(await result, true);
+  assert.equal(signal?.aborted, true);
 });
