@@ -1,0 +1,31 @@
+/guides
+<h1>Business answers for your next decision</h1>
+<title>Business answers for your next decision | KCG</title>
+<meta name="description" content="Practical, sourced guides to payment processing, websites, AI automation and local SEO for business owners nationwide." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/guides" />
+JSON-LD parses: true
+HTTP_STATUS=200
+
+/guides/payment-processing
+<h1>A business owner’s guide to payment processing</h1>
+<title>A business owner’s guide to payment processing | KCG</title>
+<meta name="description" content="Compare processing options, recurring billing migrations, dual pricing, embedded checkout, Flexbuy and next-day funding with KCG." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/guides/payment-processing" />
+JSON-LD parses: true
+HTTP_STATUS=200
+
+/guides/switch-from-stripe
+<h1>How do I switch from Stripe without losing recurring billing?</h1>
+<title>How do I switch from Stripe without losing recurring billing? | KCG</title>
+<meta name="description" content="Treat switching from Stripe as two migrations: payment credentials and billing logic." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/guides/switch-from-stripe" />
+JSON-LD parses: true
+HTTP_STATUS=200
+
+/guides/california-dual-pricing
+<h1>California: dual pricing and credit-card surcharge rules</h1>
+<title>California: dual pricing and credit-card surcharge rules | KCG</title>
+<meta name="description" content="SB 478 distinguishes unavoidable fees from optional card fees; credit-only payment makes the fee mandatory." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/guides/california-dual-pricing" />
+JSON-LD parses: true
+HTTP_STATUS=200

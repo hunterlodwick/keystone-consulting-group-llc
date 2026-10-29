@@ -1,0 +1,598 @@
+{
+  "checkedAt": "2026-10-29T05:26:42.571Z",
+  "checks": [
+    {
+      "path": "/guides",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/payment-processing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/business-websites",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-automation",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/local-seo",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/dual-pricing-laws",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/surcharge-vs-cash-discount",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/surcharge-debit-cards",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/surcharge-cap",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/surcharge-notice",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/switch-from-stripe",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/recurring-billing-checklist",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/next-day-funding",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/small-business-bnpl",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/embedded-checkout",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/no-contract-processing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/website-cost",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/website-scope",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/website-ownership",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/website-leads",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-voice-agents",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-human-handoff",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/first-automation",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-crm-integration",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/measure-ai-pilot",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/google-map-pack",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/service-area-profile",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/google-reviews",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/chatgpt-recommendations",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-search-seo",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/faq-schema",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/fluid-pay-vs-stripe",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/fluid-pay-vs-square",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/fluid-pay-vs-clover",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/stripe-recurring-alternatives",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/california-dual-pricing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/connecticut-dual-pricing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/massachusetts-dual-pricing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/maine-dual-pricing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/colorado-dual-pricing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/new-york-dual-pricing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/new-jersey-dual-pricing",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/payment-processing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/business-websites",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-automation",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/local-seo",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/dual-pricing-laws",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/surcharge-vs-cash-discount",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/surcharge-debit-cards",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/surcharge-cap",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/surcharge-notice",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/switch-from-stripe",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/recurring-billing-checklist",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/next-day-funding",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/small-business-bnpl",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/embedded-checkout",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/no-contract-processing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/website-cost",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/website-scope",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/website-ownership",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/website-leads",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-voice-agents",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-human-handoff",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/first-automation",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-crm-integration",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/measure-ai-pilot",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/google-map-pack",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/service-area-profile",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/google-reviews",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/chatgpt-recommendations",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-search-seo",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/faq-schema",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/fluid-pay-vs-stripe",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/fluid-pay-vs-square",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/fluid-pay-vs-clover",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/stripe-recurring-alternatives",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/california-dual-pricing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/connecticut-dual-pricing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/massachusetts-dual-pricing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/maine-dual-pricing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/colorado-dual-pricing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/new-york-dual-pricing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/new-jersey-dual-pricing",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    }
+  ],
+  "existingRoutesSmokeTested": 29,
+  "screenshots": 11,
+  "submissions": 0,
+  "thirdPartyRequests": "blocked",
+  "bookingApiRequests": "blocked"
+}

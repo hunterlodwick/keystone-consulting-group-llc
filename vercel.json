@@ -1,11 +1,196 @@
 {
   "redirects": [
-    { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },
-    { "source": "/terms-of-service", "destination": "/terms", "permanent": true }
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html"
+    },
+    {
+      "source": "/guides/payment-processing",
+      "destination": "/guides/payment-processing.html"
+    },
+    {
+      "source": "/guides/business-websites",
+      "destination": "/guides/business-websites.html"
+    },
+    {
+      "source": "/guides/ai-automation",
+      "destination": "/guides/ai-automation.html"
+    },
+    {
+      "source": "/guides/local-seo",
+      "destination": "/guides/local-seo.html"
+    },
+    {
+      "source": "/guides/dual-pricing-laws",
+      "destination": "/guides/dual-pricing-laws.html"
+    },
+    {
+      "source": "/guides/surcharge-vs-cash-discount",
+      "destination": "/guides/surcharge-vs-cash-discount.html"
+    },
+    {
+      "source": "/guides/surcharge-debit-cards",
+      "destination": "/guides/surcharge-debit-cards.html"
+    },
+    {
+      "source": "/guides/surcharge-cap",
+      "destination": "/guides/surcharge-cap.html"
+    },
+    {
+      "source": "/guides/surcharge-notice",
+      "destination": "/guides/surcharge-notice.html"
+    },
+    {
+      "source": "/guides/switch-from-stripe",
+      "destination": "/guides/switch-from-stripe.html"
+    },
+    {
+      "source": "/guides/recurring-billing-checklist",
+      "destination": "/guides/recurring-billing-checklist.html"
+    },
+    {
+      "source": "/guides/next-day-funding",
+      "destination": "/guides/next-day-funding.html"
+    },
+    {
+      "source": "/guides/small-business-bnpl",
+      "destination": "/guides/small-business-bnpl.html"
+    },
+    {
+      "source": "/guides/embedded-checkout",
+      "destination": "/guides/embedded-checkout.html"
+    },
+    {
+      "source": "/guides/no-contract-processing",
+      "destination": "/guides/no-contract-processing.html"
+    },
+    {
+      "source": "/guides/website-cost",
+      "destination": "/guides/website-cost.html"
+    },
+    {
+      "source": "/guides/website-scope",
+      "destination": "/guides/website-scope.html"
+    },
+    {
+      "source": "/guides/website-ownership",
+      "destination": "/guides/website-ownership.html"
+    },
+    {
+      "source": "/guides/website-leads",
+      "destination": "/guides/website-leads.html"
+    },
+    {
+      "source": "/guides/ai-voice-agents",
+      "destination": "/guides/ai-voice-agents.html"
+    },
+    {
+      "source": "/guides/ai-human-handoff",
+      "destination": "/guides/ai-human-handoff.html"
+    },
+    {
+      "source": "/guides/first-automation",
+      "destination": "/guides/first-automation.html"
+    },
+    {
+      "source": "/guides/ai-crm-integration",
+      "destination": "/guides/ai-crm-integration.html"
+    },
+    {
+      "source": "/guides/measure-ai-pilot",
+      "destination": "/guides/measure-ai-pilot.html"
+    },
+    {
+      "source": "/guides/google-map-pack",
+      "destination": "/guides/google-map-pack.html"
+    },
+    {
+      "source": "/guides/service-area-profile",
+      "destination": "/guides/service-area-profile.html"
+    },
+    {
+      "source": "/guides/google-reviews",
+      "destination": "/guides/google-reviews.html"
+    },
+    {
+      "source": "/guides/chatgpt-recommendations",
+      "destination": "/guides/chatgpt-recommendations.html"
+    },
+    {
+      "source": "/guides/ai-search-seo",
+      "destination": "/guides/ai-search-seo.html"
+    },
+    {
+      "source": "/guides/faq-schema",
+      "destination": "/guides/faq-schema.html"
+    },
+    {
+      "source": "/guides/fluid-pay-vs-stripe",
+      "destination": "/guides/fluid-pay-vs-stripe.html"
+    },
+    {
+      "source": "/guides/fluid-pay-vs-square",
+      "destination": "/guides/fluid-pay-vs-square.html"
+    },
+    {
+      "source": "/guides/fluid-pay-vs-clover",
+      "destination": "/guides/fluid-pay-vs-clover.html"
+    },
+    {
+      "source": "/guides/stripe-recurring-alternatives",
+      "destination": "/guides/stripe-recurring-alternatives.html"
+    },
+    {
+      "source": "/guides/california-dual-pricing",
+      "destination": "/guides/california-dual-pricing.html"
+    },
+    {
+      "source": "/guides/connecticut-dual-pricing",
+      "destination": "/guides/connecticut-dual-pricing.html"
+    },
+    {
+      "source": "/guides/massachusetts-dual-pricing",
+      "destination": "/guides/massachusetts-dual-pricing.html"
+    },
+    {
+      "source": "/guides/maine-dual-pricing",
+      "destination": "/guides/maine-dual-pricing.html"
+    },
+    {
+      "source": "/guides/colorado-dual-pricing",
+      "destination": "/guides/colorado-dual-pricing.html"
+    },
+    {
+      "source": "/guides/new-york-dual-pricing",
+      "destination": "/guides/new-york-dual-pricing.html"
+    },
+    {
+      "source": "/guides/new-jersey-dual-pricing",
+      "destination": "/guides/new-jersey-dual-pricing.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

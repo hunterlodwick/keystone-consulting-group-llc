@@ -1,4 +1,6 @@
 import LegalPage from './pages/LegalPage';
+import GuidesPage, { GuideHead } from './pages/GuidesPage';
+import { guideBySlug } from './content/guides';
 import { MobileStickyCta, stickyCtaLabel } from './components/MobileStickyCta';
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { 
@@ -807,6 +809,7 @@ const INDUSTRY_NAV_ITEMS = [
 ];
 
 const STATIC_NAV_ITEMS = [
+  { name: "Guides", href: "/guides" },
   { name: "Work", href: "/work" },
   { name: "About", href: "/#about" },
   { name: "Book", href: "/#book-a-call" },
@@ -860,7 +863,7 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
               <button 
                 onMouseEnter={() => setOpenDropdown(key)}
                 onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
-                className="text-offwhite/90 group-hover:text-white font-medium text-[13px] tracking-wide flex items-center gap-1 py-2 px-3 transition-colors"
+                className="text-offwhite/90 group-hover:text-white font-medium text-[13px] tracking-wide flex items-center gap-1 py-2 px-2 transition-colors"
               >
                 {dropdown.label} <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${openDropdown === key ? 'rotate-180' : ''}`} />
               </button>
@@ -892,7 +895,7 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
             <button 
               onMouseEnter={() => setOpenDropdown('industries')}
               onClick={() => setOpenDropdown(openDropdown === 'industries' ? null : 'industries')}
-              className="text-offwhite/90 group-hover:text-white font-medium text-[13px] tracking-wide flex items-center gap-1 py-2 px-3 transition-colors"
+              className="text-offwhite/90 group-hover:text-white font-medium text-[13px] tracking-wide flex items-center gap-1 py-2 px-2 transition-colors"
             >
               Industries <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${openDropdown === 'industries' ? 'rotate-180' : ''}`} />
             </button>
@@ -914,7 +917,7 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
             <a 
               key={item.name} 
               href={item.href}
-              className="relative text-offwhite/90 hover:text-white font-medium text-[13px] tracking-wide group py-2 px-3"
+              className="relative text-offwhite/90 hover:text-white font-medium text-[13px] tracking-wide group py-2 px-2"
             >
               {item.name}
               <span className="absolute -bottom-1 left-3 right-3 h-[2px] bg-teal scale-x-0 transition-transform duration-300 ease-custom group-hover:scale-x-100 origin-left"></span>
@@ -935,12 +938,12 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
             </div>
           </button>
 
-          <a href="tel:801-360-9156" className="text-teal font-medium text-[13px] tracking-wide hover:text-teal-soft transition-colors">
+          <a href="tel:801-360-9156" className="whitespace-nowrap text-teal font-medium text-[13px] tracking-wide hover:text-teal-soft transition-colors">
             (801) 360-9156
           </a>
           <button 
             onClick={() => onOpenModal("Book a Call", <ContactForm />)}
-            className="inline-flex items-center justify-center px-5 py-2 bg-teal text-white text-[13px] font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]">
+            className="whitespace-nowrap inline-flex items-center justify-center px-5 py-2 bg-teal text-white text-[13px] font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]">
             Book a Call
           </button>
         </div>
@@ -2187,6 +2190,7 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
           <div>
             <h4 className="text-white font-medium mb-6">Resources</h4>
             <ul className="space-y-3 text-sm text-offwhite/60 font-light">
+              <li><a href="/guides" className="hover:text-teal transition-colors">Business guides & answers</a></li>
               {RESOURCES_DATA.map(res => (
                 <li key={res.id}>
                   {res.id === 'privacy-policy' || res.id === 'terms-conditions' ? (
@@ -2253,6 +2257,7 @@ function MainLandingPage({ onOpenModal, onOpenSplash, theme }: { onOpenModal: (t
     <>
 
       <Hero onOpenModal={onOpenModal} />
+      <section className="py-8 border-y border-teal/20 text-center px-6"><a href="/guides" className="text-teal font-medium">Payment processing, websites, AI, or local SEO? Explore our business guides →</a></section>
       <ProcessingVolume theme={theme} />
       <HowItWorks onOpenModal={onOpenModal} />
       <ROICalculator />
@@ -2269,12 +2274,12 @@ function MainLandingPage({ onOpenModal, onOpenSplash, theme }: { onOpenModal: (t
 
 // (Pages imported at top)
 
-export default function App() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+export default function App({ initialPath }: { initialPath?: string } = {}) {
+  const [currentPath, setCurrentPath] = useState(initialPath ?? (typeof window === 'undefined' ? '/' : window.location.pathname));
 
   // Theme state - persisted to localStorage
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('kcg-theme');
+    const saved = typeof localStorage === 'undefined' ? null : localStorage.getItem('kcg-theme');
     return saved || 'light';
   });
 
@@ -2356,8 +2361,10 @@ export default function App() {
       const anchor = target.closest('a');
       
       if (anchor && anchor.href && anchor.href.startsWith(window.location.origin)) {
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || anchor.target === '_blank' || anchor.hasAttribute('download')) return;
         // Find if this should just scroll current page
         const url = new URL(anchor.href);
+        if (url.pathname !== window.location.pathname && (url.pathname.startsWith('/guides') || window.location.pathname.startsWith('/guides'))) return;
         const isHashOnlyOnCurrentPage = url.pathname === window.location.pathname && url.hash;
         
         if (!isHashOnlyOnCurrentPage) {
@@ -2403,10 +2410,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-charcoal bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-charcoal-dark via-charcoal to-charcoal-dark text-offwhite font-sans selection:bg-teal selection:text-white">
+      <GuideHead path={currentPath} />
       <Header onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
       
       <main data-mobile-cta-page={Boolean(stickyCtaLabel(currentPath))}>
-        {['/privacy', '/privacy-policy', '/terms', '/terms-of-service'].includes(currentPath) ? (
+        {(currentPath === '/guides' || (currentPath.startsWith('/guides/') && guideBySlug(currentPath.slice(8)))) ? (
+          <GuidesPage path={currentPath} />
+        ) : ['/privacy', '/privacy-policy', '/terms', '/terms-of-service'].includes(currentPath) ? (
           <LegalPage kind={currentPath === '/privacy' || currentPath === '/privacy-policy' ? 'privacy' : 'terms'} onNavigate={(path) => {
             window.history.pushState({}, '', path);
             setCurrentPath(path);
