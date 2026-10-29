@@ -89,10 +89,10 @@ export const sources = {
     "url": "https://docs.stripe.com/payouts/next-day-settlement",
     "note": "Business-day settlement versus payout/bank timing. Used for definitions, not KCG eligibility."
   },
-  "flexbuy": {
+  "flexxbuy": {
     "label": "Flexxbuy official website",
     "url": "https://www.flexxbuy.com/",
-    "note": "Customer financing; multi-lender platform; not every business qualifies for every program. User spelling Flexbuy retained."
+    "note": "Customer financing; multi-lender platform; not every business qualifies for every program. User spelling Flexxbuy retained."
   },
   "local": {
     "label": "Google: local ranking",

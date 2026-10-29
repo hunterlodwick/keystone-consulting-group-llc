@@ -2,7 +2,7 @@
 
 Research reviewed 2026-10-28. Public content uses inline source links. Provider documentation describes that provider, not an unverified KCG capability. Advice and evaluation checklists are editorial recommendations, not measured outcomes.
 
-Owner-supplied facts: KCG serves merchants nationwide; Fluid Pay plan $30/month with no contract; next-day funding available; Flexbuy for buy-now-pay-later. These are not independent web verification and do not imply all-in processing cost, universal approval, a funding guarantee, or no contracts on every KCG service.
+Owner-supplied facts: KCG serves merchants nationwide; Fluid Pay plan $30/month with no contract; next-day funding available; Flexxbuy for buy-now-pay-later. These are not independent web verification and do not imply all-in processing cost, universal approval, a funding guarantee, or no contracts on every KCG service.
 
 - **visa: Visa: US merchant surcharge Q&A**
   - URL: https://usa.visa.com/dam/VCOM/global/support-legal/documents/merchant-surcharging-qa-for-web.pdf
@@ -94,9 +94,9 @@ Owner-supplied facts: KCG serves merchants nationwide; Fluid Pay plan $30/month 
   - Supports: Business-day settlement versus payout/bank timing. Used for definitions, not KCG eligibility.
   - Retrieved: 2026-10-28 via Firecrawl; page text read.
 
-- **flexbuy: Flexxbuy official website**
+- **flexxbuy: Flexxbuy official website**
   - URL: https://www.flexxbuy.com/
-  - Supports: Customer financing; multi-lender platform; not every business qualifies for every program. User spelling Flexbuy retained.
+  - Supports: Customer financing; multi-lender platform; not every business qualifies for every program. User spelling Flexxbuy retained.
   - Retrieved: 2026-10-28 via Firecrawl; page text read.
 
 - **local: Google: local ranking**

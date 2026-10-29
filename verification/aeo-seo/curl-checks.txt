@@ -9,7 +9,7 @@ HTTP_STATUS=200
 /guides/payment-processing
 <h1>A business owner’s guide to payment processing</h1>
 <title>A business owner’s guide to payment processing | KCG</title>
-<meta name="description" content="Compare processing options, recurring billing migrations, dual pricing, embedded checkout, Flexbuy and next-day funding with KCG." />
+<meta name="description" content="Compare processing options, recurring billing migrations, dual pricing, embedded checkout, Flexxbuy and next-day funding with KCG." />
 <link rel="canonical" href="https://www.keystoneconsultingg.com/guides/payment-processing" />
 JSON-LD parses: true
 HTTP_STATUS=200

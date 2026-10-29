@@ -37,7 +37,7 @@ The following are editorial formulations derived from those decisions, not claim
 | [How do I switch from Stripe without losing recurring billing?](/guides/switch-from-stripe) | payments | migration |
 | [What should I check before choosing recurring billing?](/guides/recurring-billing-checklist) | payments | migration, stripe |
 | [What is next-day funding?](/guides/next-day-funding) | payments | funding |
-| [Can a small business offer buy-now-pay-later?](/guides/small-business-bnpl) | payments | flexbuy |
+| [Can a small business offer buy-now-pay-later?](/guides/small-business-bnpl) | payments | flexxbuy |
 | [What is an embedded checkout?](/guides/embedded-checkout) | payments | checkout |
 | [What should I check in a no-contract payment plan?](/guides/no-contract-processing) | payments | migration |
 | [How much does a small business website cost?](/guides/website-cost) | websites | Editorial purchasing checklist |

@@ -26,7 +26,7 @@ The new light/dark page styling uses the existing teal palette, serif headings, 
 
 Read [QUESTIONS.md](QUESTIONS.md) for the buyer-question evidence and editorial map, and [SOURCES.md](SOURCES.md) for every factual source and URL. Forum excerpts informed questions only. Factual legal, network, Google, AI-search, and competitor statements use official sources. No PAA extraction, search-volume measurement, or original customer research is claimed.
 
-Only the supplied KCG offer facts are stated: the Fluid Pay plan is $30/month with no contract, next-day funding is available, and Flexbuy is an option for BNPL/customer financing. The plan price is explicitly not represented as all-in processing cost. No internal rates, residuals, customer results, testimonials, or website price ranges were added.
+Only the supplied KCG offer facts are stated: the Fluid Pay plan is $30/month with no contract, next-day funding is available, and Flexxbuy is an option for BNPL/customer financing. The plan price is explicitly not represented as all-in processing cost. No internal rates, residuals, customer results, testimonials, or website price ranges were added.
 
 Comparisons cite Stripe, Square, and Clover's own public pricing pages and display “As of Oct 2026, check current.” They explain scope differences without declaring a winner or claiming savings. Stripe's published domestic online-card rate is identified as a transaction rate, distinct from the Fluid Pay monthly plan.
 
@@ -56,7 +56,7 @@ The build reports a non-failing main-bundle size warning (approximately 577 kB m
 
 ## Owner review before any future publication
 
-1. Approve the published offer scope and spelling: owner wording “Flexbuy” is retained; the official provider site styles its name “Flexxbuy.” Confirm intended provider branding and applicable program.
+1. Approve the published offer scope and spelling: owner wording “Flexxbuy” is retained; the official provider site styles its name “Flexxbuy.” Confirm intended provider branding and applicable program.
 2. Have legal counsel/acquirer review the surcharge and discount implementations, state summaries, proposed disclosures, and Mastercard's current notification process. Recheck state and network sources at launch, especially unreviewed states. The pages do not approve any merchant's pricing setup.
 3. Recheck competitor pricing and terms against the linked pages, and approve the neutral comparison copy as a dated snapshot.
 4. Confirm receiving-provider migration capabilities, recurring workflows, equipment compatibility, next-day funding eligibility, and all-in proposal terms before making merchant-specific commitments. Those capabilities are framed as questions rather than assumed promises here.
