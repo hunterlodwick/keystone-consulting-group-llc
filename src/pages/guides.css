@@ -69,3 +69,18 @@
 @media(max-width:900px) { .guide-body-grid { grid-template-columns:minmax(0,1fr); gap:0; } .guide-sidebar { display:none; } .guide-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .guide-contact { gap:32px; } .guide-inline-cta { align-items:flex-start; flex-direction:column; } }
 @media(max-width:600px) { .guides-layout { padding-top:96px; } .guides-container { padding:0 22px; } .guide-breadcrumb { margin-bottom:28px; } .guide-hero { padding-bottom:30px; } .guide-answer { font-size:17px; line-height:1.8; } .guide-grid,.guide-pillars,.guide-contact { grid-template-columns:minmax(0,1fr); } .guide-topic-heading { align-items:flex-start; flex-direction:column; } .guide-contact h2 { font-size:32px; } .guide-form { padding:22px; } .guide-inline-cta { padding:20px; } .guide-button { width:100%; } .guide-top-cta { gap:18px; } .guide-section h2 { font-size:27px; } }
 @media(prefers-reduced-motion:reduce) { .guide-card { transition:none; } .guide-card:hover { transform:none; } }
+
+.guides-layout { overflow-wrap:anywhere; }
+.guides-layout img,.guides-layout video { max-width:100%; height:auto; }
+.guides-layout pre { white-space:pre-wrap; word-break:break-word; }
+@media (max-width:640px) {
+  .guide-table-scroll { overflow-x:visible; border:0; }
+  .guide-table-scroll table { min-width:0; }
+  .guide-table-scroll table,.guide-table-scroll tbody,.guide-table-scroll tr,.guide-table-scroll th,.guide-table-scroll td { display:block; width:100%; }
+  .guide-table-scroll thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+  .guide-table-scroll tr { border:1px solid var(--guide-line); border-radius:6px; margin-bottom:14px; }
+  .guide-table-scroll th,.guide-table-scroll td { padding:10px 14px; min-width:0 !important; }
+  .guide-table-scroll tbody th { background:#e7f0eb; }
+  [data-theme="dark"] .guide-table-scroll tbody th { background:#263e36; }
+  .guide-table-scroll td::before { content:attr(data-label); display:block; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:inherit; margin-bottom:2px; }
+}
