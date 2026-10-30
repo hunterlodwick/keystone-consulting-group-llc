@@ -43,7 +43,7 @@ for (const route of newRoutes) {
 }
 } finally { await renderer.close(); }
 const xml = (value: string) => escapeHtml(value);
-const oldModified = (file: string) => execFileSync('git', ['log', '-1', '--format=%cs', '--', file], { encoding: 'utf8' }).trim() || MODIFIED;
+const oldModified = (file: string) => { try { return execFileSync('git', ['log', '-1', '--format=%cs', '--', file], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim() || MODIFIED; } catch { return MODIFIED; } };
 const entries = [...existingRoutes.map(r => ({ path: r.path, modified: oldModified(r.file) })), ...newRoutes.map(path => ({ path, modified: MODIFIED }))];
 await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(r => `  <url><loc>${xml(SITE + r.path)}</loc><lastmod>${r.modified}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 const bots = ['*', 'GPTBot', 'OAI-SearchBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Bingbot'];
