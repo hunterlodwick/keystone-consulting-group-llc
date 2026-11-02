@@ -2398,14 +2398,14 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
   ];
 
   if (currentPath === '/dashboard') {
-    return <DashboardPage 
+    return <><GuideHead path={currentPath} /><DashboardPage
       onNavigate={(path) => {
         window.history.pushState({}, '', path);
         setCurrentPath(path);
         window.scrollTo(0, 0);
       }} 
       onOpenModal={handleOpenModal} 
-    />;
+    /></>;
   }
 
   return (

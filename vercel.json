@@ -13,6 +13,114 @@
   ],
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/dashboard.html"
+    },
+    {
+      "source": "/services/web-design",
+      "destination": "/services/web-design.html"
+    },
+    {
+      "source": "/services/crm",
+      "destination": "/services/crm.html"
+    },
+    {
+      "source": "/services/automations",
+      "destination": "/services/automations.html"
+    },
+    {
+      "source": "/services/consulting",
+      "destination": "/services/consulting.html"
+    },
+    {
+      "source": "/services/prep-to-sell",
+      "destination": "/services/prep-to-sell.html"
+    },
+    {
+      "source": "/services/seo",
+      "destination": "/services/seo.html"
+    },
+    {
+      "source": "/services/google-business",
+      "destination": "/services/google-business.html"
+    },
+    {
+      "source": "/services/bpo",
+      "destination": "/services/bpo.html"
+    },
+    {
+      "source": "/services/consumer-financing",
+      "destination": "/services/consumer-financing.html"
+    },
+    {
+      "source": "/services/business-loans",
+      "destination": "/services/business-loans.html"
+    },
+    {
+      "source": "/services/pos-placement",
+      "destination": "/services/pos-placement.html"
+    },
+    {
+      "source": "/restaurants",
+      "destination": "/restaurants.html"
+    },
+    {
+      "source": "/grocery",
+      "destination": "/grocery.html"
+    },
+    {
+      "source": "/healthcare",
+      "destination": "/healthcare.html"
+    },
+    {
+      "source": "/ecommerce",
+      "destination": "/ecommerce.html"
+    },
+    {
+      "source": "/salons",
+      "destination": "/salons.html"
+    },
+    {
+      "source": "/auto-repair",
+      "destination": "/auto-repair.html"
+    },
+    {
+      "source": "/gas-stations",
+      "destination": "/gas-stations.html"
+    },
+    {
+      "source": "/high-risk",
+      "destination": "/high-risk.html"
+    },
+    {
+      "source": "/nonprofits",
+      "destination": "/nonprofits.html"
+    },
+    {
+      "source": "/b2b",
+      "destination": "/b2b.html"
+    },
+    {
+      "source": "/real-estate",
+      "destination": "/real-estate.html"
+    },
+    {
+      "source": "/retail",
+      "destination": "/retail.html"
+    },
+    {
       "source": "/privacy",
       "destination": "/privacy.html"
     },
@@ -191,6 +299,17 @@
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/dashboard",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }

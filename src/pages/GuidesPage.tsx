@@ -4,17 +4,20 @@ import { ContactForm } from '../App';
 import { guideBySlug, guidePath, guides, MODIFIED, topics, type Guide } from '../content/guides';
 import { sources, type SourceId } from '../content/guide-sources';
 import { stateDetails, stateNames } from '../content/guide-states';
-import { hubDescription, hubTitle, metadataMarkup } from '../content/guide-seo';
+import { hubDescription, hubTitle } from '../content/guide-seo';
 
-// Restore the previous shell metadata when navigating back to an existing SPA page.
+import { siteMetadataMarkup } from '../content/site-seo';
+
+// Keep metadata in sync with client-side navigation.
 export function GuideHead({ path }: { path: string }) {
   useEffect(() => {
-    if (path !== '/guides' && !guideBySlug(path.replace(/^\/guides\//, ''))) return;
-    const selectors = 'title, meta[name="description"], link[rel="canonical"], meta[property^="og:"], meta[name^="twitter:"], #guide-schema';
+    const selectors = 'title, meta[name="description"], link[rel="canonical"], meta[property^="og:"], meta[name^="twitter:"], #guide-schema, meta[name="robots"]';
     const previous = [...document.head.querySelectorAll(selectors)];
     previous.forEach(node => node.remove());
     const template = document.createElement('template');
-    template.innerHTML = metadataMarkup(path);
+    const canonicalPath = path === '/privacy-policy' ? '/privacy' : path === '/terms-of-service' ? '/terms' : path;
+    try { template.innerHTML = siteMetadataMarkup(canonicalPath); }
+    catch { template.innerHTML = siteMetadataMarkup('/'); }
     const nodes = [...template.content.children];
     nodes.forEach(node => document.head.append(node));
     return () => { nodes.forEach(node => node.remove()); previous.forEach(node => document.head.append(node)); };
@@ -58,7 +61,7 @@ export default function GuidesPage({ path }: { path: string }) {
         <h1>{page?.title ?? hubTitle}</h1>
         <p className="guide-answer" data-answer-first={Boolean(page)}>{page?.answer ?? hubDescription}</p>
         <Cta />
-        <div className="guide-meta">By Keystone Consulting Group <span aria-hidden="true">·</span> Updated <time dateTime={MODIFIED}>October 28, 2026</time></div>
+        <div className="guide-meta">By Keystone Consulting Group <span aria-hidden="true">·</span> Last reviewed <time dateTime={MODIFIED}>{MODIFIED}</time></div>
         {page && <Citations ids={page.sources} />}
       </header>
       {!page ? <>

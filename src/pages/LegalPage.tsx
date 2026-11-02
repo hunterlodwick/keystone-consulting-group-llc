@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 const privacy = [
   ['What we collect', 'When you contact Keystone Consulting Group LLC (KCG) or book a call, we collect the information you submit: your name, email address, phone number, business information, and any message or notes. Booking also includes the date and time you choose. Only send information we need to help you. Do not put card numbers, passwords, or other sensitive account details in these forms.'],
@@ -25,11 +25,7 @@ const terms: [string, ReactNode][] = [
 
 export default function LegalPage({ kind, onNavigate }: { kind: 'privacy' | 'terms'; onNavigate: (path: string) => void }) {
   const title = kind === 'privacy' ? 'Privacy Policy' : 'Terms of Service';
-  useEffect(() => {
-    const previous = document.title;
-    document.title = `${title} | Keystone Consulting Group`;
-    return () => { document.title = previous; };
-  }, [title]);
+
 
   return (
     <article className="max-w-3xl mx-auto px-6 pt-32 pb-20 md:pt-40 text-offwhite">
