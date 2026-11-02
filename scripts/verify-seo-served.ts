@@ -93,11 +93,17 @@ try {
     assert.equal(await liveTab.title(), siteMetadata(path).title, `Mounted title ${path}`);
     assert.ok(await liveTab.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), `${path} horizontal overflow at 375px`);
   }
-  await liveTab.goto(base + '/services', { waitUntil: 'networkidle' });
-  await liveTab.locator('a[href="/work"]').first().click();
-  await liveTab.waitForURL(base + '/work');
-  assert.equal(await liveTab.title(), siteMetadata('/work').title);
-  assert.equal(await liveTab.locator('link[rel="canonical"]').getAttribute('href'), SITE + '/work');
+  // Client-side navigation check uses a desktop viewport: the /work nav link is hidden behind the mobile menu at 375px.
+  const desktop = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
+  await desktop.route('**/*', route => new URL(route.request().url()).origin === base && route.request().method() === 'GET' && !route.request().url().includes('/api/') ? route.continue() : route.abort());
+  const navTab = await desktop.newPage();
+  navTab.on('pageerror', error => errors.push(error.message));
+  await navTab.goto(base + '/services', { waitUntil: 'networkidle' });
+  await navTab.locator('a[href="/work"]:visible').first().click();
+  await navTab.waitForURL(base + '/work');
+  assert.equal(await navTab.title(), siteMetadata('/work').title);
+  assert.equal(await navTab.locator('link[rel="canonical"]').getAttribute('href'), SITE + '/work');
+  await desktop.close();
   assert.deepEqual(errors, [], 'Client runtime errors');
   const fragments = [...links].filter(link => link.includes('#') && !link.startsWith('/guides'));
   for (const path of new Set(fragments.map(link => link.split('#')[0]))) {

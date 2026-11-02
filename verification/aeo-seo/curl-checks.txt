@@ -1,3 +1,43 @@
+/
+<h1 class="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white mb-6">Stop Losing Money<br/><span class="block mt-2">to Hidden Fees.</span></h1>
+<title>Stop Losing Money to Hidden Fees | KCG</title>
+<meta name="description" content="We audit your processing statements, show you exactly where the money is leaking, and fix it. Then we reinvest those savings into websites and systems that make the phone ring." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/" />
+JSON-LD parses: true
+HTTP_STATUS=200
+
+/services
+<h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1]">Turn Savings Into<br/><span class="text-teal">Something That Pays You Back.</span></h1>
+<title>Services: Turn Savings Into Something That Pays You Back | KCG</title>
+<meta name="description" content="Once we find the money you&#39;re overpaying, these are the systems we put it into. One connected growth engine, not a random menu of add-ons." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/services" />
+JSON-LD parses: true
+HTTP_STATUS=200
+
+/services/web-design
+<h1 class="font-serif text-4xl sm:text-5xl md:text-7xl text-white leading-tight mb-6 break-words">Website Builds</h1>
+<title>Website Builds | KCG</title>
+<meta name="description" content="Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/services/web-design" />
+JSON-LD parses: true
+HTTP_STATUS=200
+
+/restaurants
+<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 max-w-4xl mx-auto leading-[1.1]">Keep More of Every Check. Fill More Seats.</h1>
+<title>Restaurants &amp; Food Service | KCG</title>
+<meta name="description" content="Processing fees, third-party commissions, and slow service quietly shrink every night. We cut the waste, speed up the table, and put growth systems behind the kitchen door." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/restaurants" />
+JSON-LD parses: true
+HTTP_STATUS=200
+
+/work
+<h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1] text-balance">Selected Work</h1>
+<title>Selected Work | KCG</title>
+<meta name="description" content="Websites and custom software that make the phone ring, fill the calendar, and keep customers finding you on Google. Built for small businesses that can&#39;t afford to wait." />
+<link rel="canonical" href="https://www.keystoneconsultingg.com/work" />
+JSON-LD parses: true
+HTTP_STATUS=200
+
 /guides
 <h1>Business answers for your next decision</h1>
 <title>Business answers for your next decision | KCG</title>
