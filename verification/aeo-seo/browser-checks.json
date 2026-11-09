@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-29T05:26:42.571Z",
+  "checkedAt": "2026-11-09T16:46:00.040Z",
   "checks": [
     {
       "path": "/guides",
@@ -31,6 +31,34 @@
     },
     {
       "path": "/guides/local-seo",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/cash-discount-for-restaurants",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/choose-merchant-services-consultant",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-websites-for-local-businesses",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/zero-fee-processing",
       "width": 1440,
       "renders": true,
       "noOverflow": true,
@@ -325,6 +353,34 @@
     },
     {
       "path": "/guides/local-seo",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/cash-discount-for-restaurants",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/choose-merchant-services-consultant",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/ai-websites-for-local-businesses",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/zero-fee-processing",
       "width": 390,
       "renders": true,
       "noOverflow": true,
@@ -590,7 +646,7 @@
       "contactAnchor": true
     }
   ],
-  "existingRoutesSmokeTested": 29,
+  "existingRoutesSmokeTested": 28,
   "screenshots": 11,
   "submissions": 0,
   "thirdPartyRequests": "blocked",
