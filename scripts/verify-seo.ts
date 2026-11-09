@@ -1,98 +1,88 @@
 import assert from 'node:assert/strict';
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { execFileSync } from 'node:child_process';
-import { chromium } from '@playwright/test';
-import { guides, guidePath, SITE } from '../src/content/guides';
-import { guideMetadata } from '../src/content/guide-seo';
-import { existingRoutes, newRoutes } from './seo-routes';
+import { readFile } from 'node:fs/promises';
+import { guides, guidePath, guideReviewed, SITE, topics } from '../src/content/guides';
+import { escapeHtml } from '../src/content/guide-seo';
+import { siteMetadata } from '../src/content/site-seo';
+import { publicRoutes, staticFile } from './seo-routes';
 
-const base = process.env.SEO_PREVIEW_URL || 'http://127.0.0.1:4180';
-const output = 'verification/aeo-seo';
-await mkdir(output, { recursive: true });
-const allRoutes = [...existingRoutes.map(r => r.path), ...newRoutes];
-const known = new Set(allRoutes);
-const sitemap = await (await fetch(`${base}/sitemap.xml`)).text();
-const sitemapRoutes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => new URL(m[1]).pathname);
-assert.deepEqual(new Set(sitemapRoutes), known, 'Sitemap must list every canonical route exactly once');
-assert.equal(sitemapRoutes.length, known.size);
-assert.equal([...sitemap.matchAll(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g)].length, known.size);
-const robots = await (await fetch(`${base}/robots.txt`)).text();
-for (const bot of ['GPTBot', 'OAI-SearchBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Bingbot']) assert.ok(robots.includes(`User-agent: ${bot}\nAllow: /`));
-assert.ok(robots.includes(`${SITE}/sitemap.xml`));
-assert.ok((await (await fetch(`${base}/llms.txt`)).text()).includes(`${SITE}/guides`));
-const browser = await chromium.launch({ headless: true });
-const context = await browser.newContext({ javaScriptEnabled: false });
-await context.route('**/*', route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
-const tab = await context.newPage();
-const checks: object[] = [];
-const links = new Set<string>();
-try {
-  for (const path of newRoutes) {
-    const response = await fetch(base + path);
-    assert.equal(response.status, 200, path);
-    assert.ok(response.headers.get('content-type')?.includes('text/html'));
-    const html = await response.text();
-    const local = await readFile(`dist${path}.html`, 'utf8');
-    assert.equal(html, local, `${path} must serve its static file, not the SPA fallback`);
-    const ld = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
-    assert.equal(ld.length, 1, path);
-    const expected = guideMetadata(path);
-    assert.deepEqual(ld[0], expected.jsonLd, path);
-    await tab.goto(base + path, { waitUntil: 'domcontentloaded' });
-    assert.equal(await tab.locator('h1').count(), 1, path);
-    assert.equal(await tab.title(), expected.title);
-    assert.equal(await tab.locator('meta[name="description"]').getAttribute('content'), expected.description);
-    assert.equal(await tab.locator('link[rel="canonical"]').getAttribute('href'), expected.canonical);
-    assert.equal(await tab.locator('meta[property="og:url"]').getAttribute('content'), expected.canonical);
-    assert.equal(await tab.locator('meta[property="og:title"]').getAttribute('content'), expected.title);
-    assert.equal(await tab.locator('meta[property="og:description"]').getAttribute('content'), expected.description);
-    assert.equal(await tab.locator('meta[name="twitter:title"]').getAttribute('content'), expected.title);
-    assert.equal(await tab.locator('meta[name="twitter:description"]').getAttribute('content'), expected.description);
-    assert.equal(await tab.locator('#guide-contact form').count(), 1);
-    assert.ok(await tab.locator('#guide-contact input').first().isDisabled(), 'Static form must not submit a native GET without JavaScript');
-    const page = guides.find(g => guidePath(g.slug) === path);
-    if (page) {
-      assert.equal(await tab.locator('[data-answer-first="true"]').textContent(), page.answer);
-      const faq = await tab.locator('.guide-faq').evaluateAll(nodes => nodes.map(node => ({ question: node.querySelector('summary')?.textContent, answer: node.querySelector('p')?.textContent })));
-      assert.deepEqual(faq, page.faq);
-      assert.equal(await tab.locator('.guide-inline-cta').count(), 1);
-      for (const section of page.sections) assert.ok((await tab.locator('.guide-article').textContent())?.includes(section.body));
-    }
-    const hrefs = await tab.locator('a[href]').evaluateAll(nodes => nodes.map(n => n.getAttribute('href')!));
-    for (const href of hrefs) {
-      const url = new URL(href, base + path);
-      if (![base, SITE].includes(url.origin)) continue;
-      links.add(url.pathname + url.hash);
-      assert.ok(known.has(url.pathname), `Unknown internal route ${href} from ${path}`);
-      if (url.pathname === path && url.hash) assert.equal(await tab.locator(`[id=${JSON.stringify(decodeURIComponent(url.hash.slice(1)))}]`).count(), 1, `Missing fragment ${href}`);
-    }
-    checks.push({ path, status: response.status, staticMatch: true, jsonLd: true, metadata: true, noJavaScriptContent: true, formPresent: true });
+// Always verify build artifacts without requiring a server or browser.
+// Set SEO_PREVIEW_URL to a local preview to additionally run HTTP/browser checks.
+const config = JSON.parse(await readFile('vercel.json', 'utf8'));
+const titles = new Set<string>();
+const descriptions = new Set<string>();
+for (const path of [...publicRoutes, '/dashboard']) {
+  const html = await readFile(`dist${staticFile(path)}`, 'utf8');
+  const expected = siteMetadata(path);
+  assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1, `${path}: one h1`);
+  assert.equal((html.match(/<title>/g) ?? []).length, 1, path);
+  assert.ok(html.includes(`<title>${escapeHtml(expected.title)}</title>`), path);
+  assert.ok(!titles.has(expected.title), `${path}: duplicate title`);
+  titles.add(expected.title);
+  assert.ok(!descriptions.has(expected.description), `${path}: duplicate description`);
+  descriptions.add(expected.description);
+  assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1, path);
+  assert.ok(html.includes(`<link rel="canonical" href="${expected.canonical}"`), path);
+  for (const [attribute, name, value] of [
+    ['name', 'description', expected.description],
+    ['property', 'og:title', expected.title],
+    ['property', 'og:description', expected.description],
+    ['property', 'og:url', expected.canonical],
+  ]) assert.ok(html.includes(`<meta ${attribute}="${name}" content="${escapeHtml(value)}"`), `${path}: ${name}`);
+  const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)];
+  assert.equal(schemas.length, 1, path);
+  assert.deepEqual(JSON.parse(schemas[0][1]), expected.jsonLd, path);
+  assert.equal(html.includes('<meta name="robots" content="noindex"'), path === '/dashboard', path);
+  const rewrite = config.rewrites.find((r: { source: string }) => r.source === path || r.source === '/(.*)');
+  assert.equal(rewrite?.destination, staticFile(path), `${path}: exact rewrite before fallback`);
+  assert.match(html, /<script[^>]+type="module"[^>]+src="\/assets\//, `${path}: client entry retained`);
+  const page = guides.find(g => guidePath(g.slug) === path);
+  if (page) {
+    assert.ok(html.includes(escapeHtml(page.answer)), `${path}: first answer`);
+    assert.ok(html.includes(`Last reviewed <time dateTime="${guideReviewed(page)}">${guideReviewed(page)}</time>`), `${path}: review date`);
+    assert.equal(expected.jsonLd['@graph'].find(node => node['@type'] === 'Article')?.dateModified, guideReviewed(page), `${path}: Article dateModified`);
+    if (page.kind === 'comparison') assert.ok(page.answer.startsWith('Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG).'), `${path}: partner application in first answer`);
+    if (page.kind === 'state') assert.ok(page.answer.startsWith('Short answer: '));
+    if (page.kind === 'comparison') assert.ok(page.faq.some(f => f.answer.includes('the provider they apply with')));
+    if (page.kind === 'question') assert.ok(page.answer.split(/\s+/).length >= 40 && page.answer.split(/\s+/).length <= 60);
+    assert.ok(!JSON.stringify(page).includes('—'));
   }
-  // Existing pages are SPA routes, so check their rendered fragment targets with JS enabled.
-  const live = await browser.newContext();
-  await live.route('**/*', route => new URL(route.request().url()).origin === base && route.request().method() === 'GET' && !route.request().url().includes('/api/') ? route.continue() : route.abort());
-  const liveTab = await live.newPage();
-  const fragments = [...links].filter(link => link.includes('#') && !link.startsWith('/guides'));
-  for (const path of new Set(fragments.map(link => link.split('#')[0]))) {
-    await liveTab.goto(base + path, { waitUntil: 'networkidle' });
-    for (const link of fragments.filter(link => link.split('#')[0] === path)) {
-      const id = decodeURIComponent(link.split('#')[1]);
-      assert.equal(await liveTab.locator(`[id=${JSON.stringify(id)}]`).count(), 1, `Missing existing fragment ${link}`);
+  if (path === '/') {
+    for (const tag of ['header', 'main', 'footer']) {
+      assert.ok(html.match(new RegExp(`<${tag}[\\s\\S]*?</${tag}>`))?.[0].includes('href="/guides"'), `${tag}: guide link`);
     }
+    assert.ok(expected.jsonLd['@graph'].some(g => g['@type'] === 'ProfessionalService'));
   }
-  for (const path of existingRoutes.map(r => r.path)) {
-    const response = await fetch(base + path);
-    assert.equal(response.status, 200, path);
+  if (path === '/guides') {
+    const list = expected.jsonLd['@graph'].find(g => g['@type'] === 'ItemList');
+    assert.ok(list);
+    assert.deepEqual((list.itemListElement as { url: string }[]).map(item => item.url), guides.map(g => SITE + guidePath(g.slug)));
   }
-  await live.close();
-} finally { await browser.close(); }
-// Explicit curl evidence, separate from browser/Fetch checks.
-const curlRoutes = ['/guides', '/guides/payment-processing', '/guides/switch-from-stripe', '/guides/california-dual-pricing'];
-const curlEvidence = curlRoutes.map(path => {
-  const result = execFileSync('curl', ['--fail', '--silent', '--show-error', '-w', '\nHTTP_STATUS=%{http_code}', base + path], { encoding: 'utf8', maxBuffer: 5_000_000 });
-  assert.ok(result.endsWith('HTTP_STATUS=200'));
-  return `${path}\n${result.match(/<h1[^>]*>[\s\S]*?<\/h1>/)?.[0]}\n${result.match(/<title>[^<]*<\/title>/)?.[0]}\n${result.match(/<meta name="description"[^>]*>/)?.[0]}\n${result.match(/<link rel="canonical"[^>]*>/)?.[0]}\nJSON-LD parses: ${Boolean(JSON.parse(result.match(/<script type="application\/ld\+json" id="guide-schema">([\s\S]*?)<\/script>/)![1]))}\nHTTP_STATUS=200\n`;
-});
-await writeFile(`${output}/curl-checks.txt`, curlEvidence.join('\n'));
-await writeFile(`${output}/static-checks.json`, JSON.stringify({ checkedAt: new Date().toISOString(), base, routes: checks, sitemapRoutes: sitemapRoutes.length, existingRoutes: existingRoutes.length, internalLinks: links.size, internalLinksChecked: [...links].sort(), externalActions: 'No forms submitted, external requests blocked in browser' }, null, 2));
-console.log(`PASS: ${checks.length} static routes, ${sitemapRoutes.length} sitemap entries, ${links.size} internal destinations, JSON-LD, metadata, forms, and curl checks.`);
+}
+const sitemap = await readFile('dist/sitemap.xml', 'utf8');
+const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+assert.deepEqual(locations.sort(), publicRoutes.map(path => SITE + path).sort());
+assert.ok(!sitemap.includes('/dashboard'));
+const llms = await readFile('dist/llms.txt', 'utf8');
+const hub = await readFile(`dist${staticFile('/guides')}`, 'utf8');
+for (const slug of ['cash-discount-for-restaurants', 'choose-merchant-services-consultant', 'ai-websites-for-local-businesses', 'zero-fee-processing']) {
+  const page = guides.find(g => g.slug === slug)!;
+  assert.ok(page, `${slug}: buyer question exists`);
+  assert.ok(page.sections.length >= 3 && page.sections.length <= 5, `${slug}: section count`);
+  assert.ok(page.sections[0].bullets?.length, `${slug}: opening checklist`);
+  assert.ok(llms.includes(SITE + guidePath(slug)), `${slug}: llms link`);
+  assert.ok(hub.includes(`href="${guidePath(slug)}"`), `${slug}: hub link`);
+  const pillar = await readFile(`dist${staticFile(guidePath(topics[page.topic].slug))}`, 'utf8');
+  assert.ok(pillar.includes(`href="${guidePath(slug)}"`), `${slug}: pillar link`);
+}
+const robots = await readFile('dist/robots.txt', 'utf8');
+for (const bot of ['*', 'GPTBot', 'OAI-SearchBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Bingbot', 'ChatGPT-User', 'Claude-SearchBot', 'Claude-User', 'Perplexity-User', 'Applebot-Extended']) {
+  assert.ok(robots.includes(`User-agent: ${bot}\nAllow: /\n`), bot);
+}
+assert.ok(robots.includes(`Sitemap: ${SITE}/sitemap.xml`));
+console.log(`PASS: ${publicRoutes.length} public static files plus noindex dashboard; unique metadata, canonical, h1, JSON-LD, rewrites, guide answers, sitemap and robots.`);
+if (process.env.SEO_PREVIEW_URL) {
+  assert.ok(['127.0.0.1', 'localhost', '[::1]'].includes(new URL(process.env.SEO_PREVIEW_URL).hostname), 'Verification must use a local preview');
+  await import('./verify-seo-served');
+} else {
+  console.log('HTTP/client/mobile checks not run. Set SEO_PREVIEW_URL to a local preview server to enable them.');
+}

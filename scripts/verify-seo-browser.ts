@@ -3,6 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { chromium } from '@playwright/test';
 import { newRoutes, existingRoutes } from './seo-routes';
 import { guideMetadata } from '../src/content/guide-seo';
+import { siteMetadata } from '../src/content/site-seo';
 
 const base = process.env.SEO_PREVIEW_URL || 'http://127.0.0.1:4180';
 const output = 'verification/aeo-seo';
@@ -51,7 +52,11 @@ try {
     assert.equal(await page.title(), guideMetadata('/guides/payment-processing').title);
     await page.locator('.guide-breadcrumb a[href="/"]').click();
     await page.waitForURL(base + '/');
-    assert.equal(await page.locator('#guide-schema').count(), 0, 'Guide metadata must not leak onto home');
+    const homeMetadata = siteMetadata('/');
+    assert.equal(await page.title(), homeMetadata.title);
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), homeMetadata.canonical);
+    assert.equal(await page.locator('#guide-schema').count(), 1);
+    assert.deepEqual(JSON.parse(await page.locator('#guide-schema').innerText()), homeMetadata.jsonLd, 'Guide metadata must not leak onto home');
     // Theme toggle is the existing control. Verify dark theme on a guide at desktop size.
     if (width === 1440) {
       await page.goto(base + '/guides/switch-from-stripe', { waitUntil: 'networkidle' });

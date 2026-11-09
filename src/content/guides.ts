@@ -8,6 +8,7 @@ export const MODIFIED = '2026-10-28';
 export type Topic = 'payments' | 'websites' | 'automation' | 'visibility';
 export type Section = { heading: string; body: string; sources?: SourceId[]; bullets?: string[] };
 export type Guide = {
+  reviewed?: string;
   slug: string; title: string; description: string; answer: string;
   kind: 'pillar' | 'question' | 'comparison' | 'state'; topic: Topic;
   sources: SourceId[]; sections: Section[];
@@ -82,3 +83,5 @@ const pillars: Guide[] = [
 export const guides: Guide[] = [...pillars, ...questions, ...comparisons, ...stateGuides];
 export const guidePath = (slug: string) => `/guides/${slug}`;
 export const guideBySlug = (slug: string) => guides.find(page => page.slug === slug);
+
+export const guideReviewed = (page?: Guide) => page?.reviewed ?? MODIFIED;

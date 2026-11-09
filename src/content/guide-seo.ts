@@ -1,4 +1,4 @@
-import { guideBySlug, guidePath, guides, MODIFIED, SITE, topics } from './guides';
+import { guideBySlug, guidePath, guideReviewed, guides, MODIFIED, SITE, topics } from './guides';
 
 export const hubTitle = 'Business answers for your next decision';
 export const hubDescription = 'Practical, sourced guides to payment processing, websites, AI automation and local SEO for business owners nationwide.';
@@ -18,16 +18,19 @@ export function guideMetadata(path: string) {
     '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, ...c })),
   }];
   if (page) {
-    graph.push({ '@type': 'Article', '@id': canonical + '#article', headline: page.title, description, dateModified: MODIFIED, author: { '@id': organization['@id'] }, publisher: { '@id': organization['@id'] }, mainEntityOfPage: canonical, inLanguage: 'en-US' });
+    graph.push({ '@type': 'Article', '@id': canonical + '#article', headline: page.title, description, dateModified: guideReviewed(page), author: { '@id': organization['@id'] }, publisher: { '@id': organization['@id'] }, mainEntityOfPage: canonical, inLanguage: 'en-US' });
     if (page.kind === 'pillar') graph.push({ '@type': 'Service', name: topics[page.topic].title, serviceType: topics[page.topic].title, provider: { '@id': organization['@id'] }, areaServed: { '@type': 'Country', name: 'United States' }, url: SITE + topics[page.topic].service });
     graph.push({ '@type': 'FAQPage', '@id': canonical + '#faq', mainEntity: page.faq.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) });
-  } else graph.push({ '@type': 'CollectionPage', name: hubTitle, url: canonical, dateModified: MODIFIED, hasPart: guides.filter(g => g.kind === 'pillar').map(g => ({ '@type': 'WebPage', name: g.title, url: SITE + guidePath(g.slug) })) });
+  } else graph.push({ '@type': 'CollectionPage', name: hubTitle, url: canonical, mainEntity: { '@id': canonical + '#list' }, dateModified: MODIFIED, hasPart: guides.filter(g => g.kind === 'pillar').map(g => ({ '@type': 'WebPage', name: g.title, url: SITE + guidePath(g.slug) })) });
+  if (!page) graph.push({ '@type': 'ItemList', '@id': canonical + '#list', itemListElement: guides.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: g.title, url: SITE + guidePath(g.slug) })) });
   return { title, description, canonical, type: page ? 'article' : 'website', jsonLd: { '@context': 'https://schema.org', '@graph': graph } };
 }
 export function escapeHtml(text: string) { return text.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]!)); }
 export function serializeJson(value: unknown) { return JSON.stringify(value).replace(/</g, '\\u003c'); }
 export function metadataMarkup(path: string) {
-  const m = guideMetadata(path);
+  return renderMetadata(guideMetadata(path));
+}
+export function renderMetadata(m: ReturnType<typeof guideMetadata>) {
   return `<title>${escapeHtml(m.title)}</title>
 <meta name="description" content="${escapeHtml(m.description)}" />
 <link rel="canonical" href="${m.canonical}" />
