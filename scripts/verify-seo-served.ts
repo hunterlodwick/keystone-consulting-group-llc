@@ -2,9 +2,8 @@ import assert from 'node:assert/strict';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { chromium } from '@playwright/test';
-import { guides, guidePath, SITE } from '../src/content/guides';
+import { guides, guideBySlug, guidePath, guideReviewed, SITE } from '../src/content/guides';
 import { siteMetadata } from '../src/content/site-seo';
-import { MODIFIED } from '../src/content/guides';
 import { existingRoutes, newRoutes, staticFile } from './seo-routes';
 
 const base = process.env.SEO_PREVIEW_URL || 'http://127.0.0.1:4180';
@@ -59,7 +58,7 @@ try {
     if (path.startsWith('/guides')) {
       assert.equal(await tab.locator('#guide-contact form').count(), 1);
       assert.ok(await tab.locator('#guide-contact input').first().isDisabled(), 'Static form must not submit a native GET without JavaScript');
-      assert.ok((await tab.locator('.guide-meta').textContent())?.includes(`Last reviewed ${MODIFIED}`));
+      assert.ok((await tab.locator('.guide-meta').textContent())?.includes(`Last reviewed ${guideReviewed(guideBySlug(path.replace(/^\/guides\//, '')))}`));
     }
     const page = guides.find(g => guidePath(g.slug) === path);
     if (page) {

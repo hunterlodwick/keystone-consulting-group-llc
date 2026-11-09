@@ -1,9 +1,9 @@
 import type { Guide } from './guides';
 export const comparisons: Guide[] = [
   {
-    slug: 'fluid-pay-vs-stripe', kind: 'comparison', topic: 'payments', title: 'KCG / Fluid Pay vs Stripe: what to compare',
+    slug: 'fluid-pay-vs-stripe', kind: 'comparison', reviewed: '2026-11-09', topic: 'payments', title: 'KCG / Fluid Pay vs Stripe: what to compare',
     description: 'Compare the KCG Fluid Pay plan with Stripe’s public pricing, integration scope and recurring-billing migration requirements.',
-    answer: 'Compare KCG’s Fluid Pay proposal and Stripe using your actual payment channels and billing requirements. KCG’s Fluid Pay plan is $30/month with no contract. Stripe publishes standard US online domestic-card pricing of 2.9% plus 30¢. These are different pricing components, so neither figure alone establishes your complete cost or the better fit.',
+    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare KCG’s Fluid Pay proposal and Stripe using your actual payment channels and billing requirements. KCG’s Fluid Pay plan is $30/month with no contract. Stripe publishes standard US online domestic-card pricing of 2.9% plus 30¢. These are different pricing components, so neither figure alone establishes your complete cost or the better fit.',
     sources: ['stripe', 'migration'],
     table: { headings: ['Decision', 'KCG / Fluid Pay', 'Stripe'], rows: [
       ['Public starting point', '$30/month Fluid Pay plan, no contract. Request full processing terms.', 'Standard online domestic cards: 2.9% + 30¢ per successful transaction. See current pricing.'],
@@ -18,9 +18,9 @@ export const comparisons: Guide[] = [
     related: ['switch-from-stripe', 'stripe-recurring-alternatives', 'no-contract-processing'],
   },
   {
-    slug: 'fluid-pay-vs-square', kind: 'comparison', topic: 'payments', title: 'KCG / Fluid Pay vs Square: compare the workflow',
+    slug: 'fluid-pay-vs-square', kind: 'comparison', reviewed: '2026-11-09', topic: 'payments', title: 'KCG / Fluid Pay vs Square: compare the workflow',
     description: 'Compare Square’s published plans with a KCG Fluid Pay proposal across software, hardware, payments and recurring costs.',
-    answer: 'Compare Square and a KCG Fluid Pay proposal by listing the checkout, software, hardware, and billing workflow you need. Square’s public pricing includes Free, Plus, and Premium plans, with processing charges varying by plan and channel. KCG’s Fluid Pay plan is $30/month with no contract; ask for its complete processing and integration proposal.',
+    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare Square and a KCG Fluid Pay proposal by listing the checkout, software, hardware, and billing workflow you need. Square’s public pricing includes Free, Plus, and Premium plans, with processing charges varying by plan and channel. KCG’s Fluid Pay plan is $30/month with no contract; ask for its complete processing and integration proposal.',
     sources: ['square'],
     table: { headings: ['Decision', 'KCG / Fluid Pay', 'Square'], rows: [
       ['Monthly plan', 'Owner-confirmed Fluid Pay plan: $30/month with no contract.', 'Square Free has no monthly subscription cost; paid plans also available.'],
@@ -35,9 +35,9 @@ export const comparisons: Guide[] = [
     related: ['payment-processing', 'no-contract-processing', 'recurring-billing-checklist'],
   },
   {
-    slug: 'fluid-pay-vs-clover', kind: 'comparison', topic: 'payments', title: 'KCG / Fluid Pay vs Clover: separate hardware from processing',
+    slug: 'fluid-pay-vs-clover', kind: 'comparison', reviewed: '2026-11-09', topic: 'payments', title: 'KCG / Fluid Pay vs Clover: separate hardware from processing',
     description: 'Review Clover’s public pricing and hardware subscription terms alongside a complete KCG Fluid Pay proposal.',
-    answer: 'Compare Clover and a KCG Fluid Pay proposal by separating hardware, software, and payment processing. Clover’s public pricing organizes packages by business type and distinguishes equipment subscriptions from processing charges. KCG’s Fluid Pay plan is $30/month with no contract. That statement does not establish terms for separate hardware or other agreements.',
+    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare Clover and a KCG Fluid Pay proposal by separating hardware, software, and payment processing. Clover’s public pricing organizes packages by business type and distinguishes equipment subscriptions from processing charges. KCG’s Fluid Pay plan is $30/month with no contract. That statement does not establish terms for separate hardware or other agreements.',
     sources: ['clover'],
     table: { headings: ['Decision', 'KCG / Fluid Pay', 'Clover'], rows: [
       ['Published plan scope', '$30/month no-contract Fluid Pay plan; request complete terms.', 'Business-type packages with software and processing components.'],
@@ -52,9 +52,9 @@ export const comparisons: Guide[] = [
     related: ['no-contract-processing', 'payment-processing', 'fluid-pay-vs-square'],
   },
   {
-    slug: 'stripe-recurring-alternatives', kind: 'comparison', topic: 'payments', title: 'Stripe alternatives for recurring billing: a buyer’s checklist',
+    slug: 'stripe-recurring-alternatives', kind: 'comparison', reviewed: '2026-11-09', topic: 'payments', title: 'Stripe alternatives for recurring billing: a buyer’s checklist',
     description: 'Evaluate recurring-billing alternatives using lifecycle tests, migration limits and current Stripe, Square and Clover pricing sources.',
-    answer: 'Evaluate a Stripe recurring-billing alternative by testing subscriptions, failed payments, changes, cancellation, reporting, and portability before comparing cost. Ask KCG to demonstrate the proposed Fluid Pay workflow. Square and Clover publish their own plans, but a pricing page alone does not prove feature parity or a seamless migration from your current setup.',
+    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Evaluate a Stripe recurring-billing alternative by testing subscriptions, failed payments, changes, cancellation, reporting, and portability before comparing cost. Ask KCG to demonstrate the proposed Fluid Pay workflow. Square and Clover publish their own plans, but a pricing page alone does not prove feature parity or a seamless migration from your current setup.',
     sources: ['stripe', 'square', 'clover', 'migration'],
     table: { headings: ['Option', 'Public pricing reference', 'What to verify'], rows: [
       ['KCG / Fluid Pay', '$30/month Fluid Pay plan with no contract; full proposal required.', 'Receiving-provider eligibility, scheduling, retries, reporting, and total costs.'],

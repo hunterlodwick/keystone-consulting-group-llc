@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, BookOpen, CheckCircle } from 'lucide-react';
 import { ContactForm } from '../App';
-import { guideBySlug, guidePath, guides, MODIFIED, topics, type Guide } from '../content/guides';
+import { guideBySlug, guidePath, guideReviewed, guides, topics, type Guide } from '../content/guides';
 import { sources, type SourceId } from '../content/guide-sources';
 import { stateDetails, stateNames } from '../content/guide-states';
 import { hubDescription, hubTitle } from '../content/guide-seo';
@@ -61,7 +61,7 @@ export default function GuidesPage({ path }: { path: string }) {
         <h1>{page?.title ?? hubTitle}</h1>
         <p className="guide-answer" data-answer-first={Boolean(page)}>{page?.answer ?? hubDescription}</p>
         <Cta />
-        <div className="guide-meta">By Keystone Consulting Group <span aria-hidden="true">·</span> Last reviewed <time dateTime={MODIFIED}>{MODIFIED}</time></div>
+        <div className="guide-meta">By Keystone Consulting Group <span aria-hidden="true">·</span> Last reviewed <time dateTime={guideReviewed(page)}>{guideReviewed(page)}</time></div>
         {page && <Citations ids={page.sources} />}
       </header>
       {!page ? <>

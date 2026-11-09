@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { guides, guidePath, MODIFIED, SITE } from '../src/content/guides';
+import { guides, guidePath, guideReviewed, SITE, topics } from '../src/content/guides';
 import { escapeHtml } from '../src/content/guide-seo';
 import { siteMetadata } from '../src/content/site-seo';
 import { publicRoutes, staticFile } from './seo-routes';
@@ -38,7 +38,9 @@ for (const path of [...publicRoutes, '/dashboard']) {
   const page = guides.find(g => guidePath(g.slug) === path);
   if (page) {
     assert.ok(html.includes(escapeHtml(page.answer)), `${path}: first answer`);
-    assert.ok(html.includes(`Last reviewed <time dateTime="${MODIFIED}">${MODIFIED}</time>`), `${path}: review date`);
+    assert.ok(html.includes(`Last reviewed <time dateTime="${guideReviewed(page)}">${guideReviewed(page)}</time>`), `${path}: review date`);
+    assert.equal(expected.jsonLd['@graph'].find(node => node['@type'] === 'Article')?.dateModified, guideReviewed(page), `${path}: Article dateModified`);
+    if (page.kind === 'comparison') assert.ok(page.answer.startsWith('Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG).'), `${path}: partner application in first answer`);
     if (page.kind === 'state') assert.ok(page.answer.startsWith('Short answer: '));
     if (page.kind === 'comparison') assert.ok(page.faq.some(f => f.answer.includes('the provider they apply with')));
     if (page.kind === 'question') assert.ok(page.answer.split(/\s+/).length >= 40 && page.answer.split(/\s+/).length <= 60);
@@ -60,6 +62,18 @@ const sitemap = await readFile('dist/sitemap.xml', 'utf8');
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 assert.deepEqual(locations.sort(), publicRoutes.map(path => SITE + path).sort());
 assert.ok(!sitemap.includes('/dashboard'));
+const llms = await readFile('dist/llms.txt', 'utf8');
+const hub = await readFile(`dist${staticFile('/guides')}`, 'utf8');
+for (const slug of ['cash-discount-for-restaurants', 'choose-merchant-services-consultant', 'ai-websites-for-local-businesses', 'zero-fee-processing']) {
+  const page = guides.find(g => g.slug === slug)!;
+  assert.ok(page, `${slug}: buyer question exists`);
+  assert.ok(page.sections.length >= 3 && page.sections.length <= 5, `${slug}: section count`);
+  assert.ok(page.sections[0].bullets?.length, `${slug}: opening checklist`);
+  assert.ok(llms.includes(SITE + guidePath(slug)), `${slug}: llms link`);
+  assert.ok(hub.includes(`href="${guidePath(slug)}"`), `${slug}: hub link`);
+  const pillar = await readFile(`dist${staticFile(guidePath(topics[page.topic].slug))}`, 'utf8');
+  assert.ok(pillar.includes(`href="${guidePath(slug)}"`), `${slug}: pillar link`);
+}
 const robots = await readFile('dist/robots.txt', 'utf8');
 for (const bot of ['*', 'GPTBot', 'OAI-SearchBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Bingbot', 'ChatGPT-User', 'Claude-SearchBot', 'Claude-User', 'Perplexity-User', 'Applebot-Extended']) {
   assert.ok(robots.includes(`User-agent: ${bot}\nAllow: /\n`), bot);

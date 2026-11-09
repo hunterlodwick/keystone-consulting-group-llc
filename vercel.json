@@ -297,6 +297,22 @@
       "destination": "/guides/new-jersey-dual-pricing.html"
     },
     {
+      "source": "/guides/cash-discount-for-restaurants",
+      "destination": "/guides/cash-discount-for-restaurants.html"
+    },
+    {
+      "source": "/guides/choose-merchant-services-consultant",
+      "destination": "/guides/choose-merchant-services-consultant.html"
+    },
+    {
+      "source": "/guides/ai-websites-for-local-businesses",
+      "destination": "/guides/ai-websites-for-local-businesses.html"
+    },
+    {
+      "source": "/guides/zero-fee-processing",
+      "destination": "/guides/zero-fee-processing.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
