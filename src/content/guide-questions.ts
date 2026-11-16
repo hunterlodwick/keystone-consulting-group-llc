@@ -1,9 +1,22 @@
+import { providerChecklist } from './payment-services';
 import type { Guide, Topic, Section } from './guides';
 import type { SourceId } from './guide-sources';
 function q(slug: string, topic: Topic, title: string, answer: string, sections: Section[], faq: Guide['faq'], sources: SourceId[], related: string[], legal = false): Guide {
   return { slug, topic, title, answer, description: answer.split('. ').slice(0, 1).join('. ').replace(/\.$/, '') + '.', kind: 'question', sections, faq, sources, related, legal };
 }
 export const questions: Guide[] = [
+  q('choose-dual-pricing-provider', 'payments', 'How do I choose a dual pricing provider?',
+    'Choose a dual pricing provider by reviewing the checkout, written costs, and cancellation terms before signing. Ask for a demonstration showing cash, credit, debit, and refunds on your equipment. Confirm how prices appear before payment, who reviews disclosures, and which monthly or equipment charges remain after processing fees shift to customers.',
+    [
+      { heading: 'Use the same checklist for every provider', body: 'Bring a recent statement and a list of your sales channels. Ask each provider to answer these questions in writing.', bullets: providerChecklist },
+      { heading: 'Test prices and payment types', body: 'Ask for a demonstration on your POS or terminal. Review the card and cash prices on menus, labels, screens, and receipts. A cash discount reduces a displayed price; adding a fee at checkout may be a surcharge. Visa prohibits debit and prepaid surcharges, even when debit is run as credit. Include refunds and online orders in the demonstration.', sources: ['visa'] },
+      { heading: 'Compare the full agreement', body: 'Separate processing charges from monthly gateway, software, and equipment costs. Read contract duration, cancellation charges, and equipment-return terms. A zero-fee processing claim does not establish the total cost of acceptance. Ask how support and configuration changes are handled before approving the switch.' },
+      { heading: 'Review disclosure for each location', body: 'Ask your acquirer and legal adviser to review signs, menus, checkout wording, and receipts. Connecticut describes dual posted prices as a way to comply with its surcharge prohibition; New York requires the complete credit-card price. Do not assume one national configuration fits every location.', sources: ['ct', 'ny', 'visa'] },
+    ], [
+      { question: 'Is the lowest advertised rate enough to choose a provider?', answer: 'No. Compare remaining monthly and equipment charges, cancellation terms, checkout behavior, and support alongside processing fees. Request a written proposal using your statement and sales channels.' },
+      { question: 'What should I ask about debit cards?', answer: 'Ask the provider to demonstrate debit handling separately. Visa prohibits debit and prepaid surcharges even when debit is run as credit; the program name does not remove that restriction.' },
+      { question: 'Who should review the signs and receipts?', answer: 'Have your acquirer and legal adviser review the actual price displays, disclosures, and checkout for each location before launch. Ask the provider who supplies and maintains those materials.' },
+    ], ['visa', 'ct', 'ny'], ['dual-pricing-laws', 'surcharge-vs-cash-discount', 'zero-fee-processing', 'payment-processing'], true),
   { ...q('cash-discount-for-restaurants', 'payments', 'How does a cash discount program work for a restaurant?',
     'A restaurant cash discount program gives customers a lower price when they pay cash instead of the displayed card price. Dual pricing shows both prices before payment. Review menus, signs, checkout screens, and receipts together, then have your provider review the setup for your locations before training staff or changing prices.',
     [

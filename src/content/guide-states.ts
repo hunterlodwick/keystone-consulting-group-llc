@@ -1,10 +1,11 @@
 import type { Guide } from './guides';
 import type { SourceId } from './guide-sources';
-type StateDetail = { name: string; slug: string; summary: string; answer: string; sources: SourceId[]; sections: Guide['sections']; faq: Guide['faq'] };
+type StateDetail = { name: string; slug: string; summary: string; verdict: string; answer: string; sources: SourceId[]; sections: Guide['sections']; faq: Guide['faq'] };
 export const stateDetails: StateDetail[] = [
   {
     name: 'California', slug: 'california', summary: 'SB 478 distinguishes unavoidable fees from optional card fees; credit-only payment makes the fee mandatory.',
-    answer: 'California’s SB 478 generally requires advertised consumer prices to include mandatory fees. The Attorney General says an avoidable credit-card fee generally is not mandatory, but a fee is mandatory when a business only accepts credit cards. Dual pricing and surcharging still need separate review under applicable laws and card-network rules.',
+    verdict: 'Dual pricing (cash discount): allowed with conditions. Credit-card surcharge: restricted.',
+    answer: 'California’s SB 478 requires advertised consumer prices to include mandatory fees. An avoidable card fee generally is not mandatory; a credit-only business must include it. Dual pricing and surcharging still need separate legal and card-network review.',
     sources: ['ca', 'visa'],
     sections: [
       { heading: 'The payment options change the advertised-price analysis', body: 'SB 478 took effect July 1, 2024. California’s DOJ FAQ says a card processing fee generally is not mandatory when the customer can avoid it by paying another way, such as cash. If credit cards are the only accepted payment method, the fee must be included in the advertised price. Do not describe SB 478 as a blanket ban on all surcharges.', sources: ['ca'] },
@@ -15,7 +16,8 @@ export const stateDetails: StateDetail[] = [
   },
   {
     name: 'Connecticut', slug: 'connecticut', summary: 'DCP prohibits payment-method surcharges while describing genuine cash discounts and dual posted prices.',
-    answer: 'Connecticut prohibits businesses from adding a surcharge for one payment method over another, while allowing genuine cash discounts. Its consumer agency identifies posting both cash and card prices as a compliant approach. An added transaction fee or non-cash adjustment can still be a prohibited surcharge. Review the actual prices and receipts before launch.',
+    verdict: 'Dual pricing (cash discount): allowed. Payment-method surcharge: banned.',
+    answer: 'Connecticut’s consumer agency recognizes genuine cash discounts and posting both cash and card prices. Adding a transaction fee or non-cash adjustment to the listed price can still be a prohibited surcharge. Review actual prices and receipts before launch.',
     sources: ['ct', 'ctLaw', 'visa'],
     sections: [
       { heading: 'A different name does not change an added fee', body: 'Connecticut DCP cites §42-133ff and its amendment by Public Act 24-142. It explains that adding a processing fee, transaction fee, or non-cash adjustment to the listed price is a surcharge. Start the review with the displayed price, not the terminal vendor’s program label.', sources: ['ct', 'ctLaw'] },
@@ -26,7 +28,8 @@ export const stateDetails: StateDetail[] = [
   },
   {
     name: 'Massachusetts', slug: 'massachusetts', summary: 'Chapter 140D §28A prohibits seller credit-card surcharges and addresses disclosed cash discounts.',
-    answer: 'Massachusetts General Laws chapter 140D, section 28A prohibits a seller from imposing a surcharge when a cardholder chooses a credit card instead of cash, check, or similar means. The statute separately addresses cash discounts. Review a proposed dual-pricing program as an actual discount arrangement, rather than assuming its label avoids the prohibition.',
+    verdict: 'Dual pricing (cash discount): allowed with conditions. Credit-card surcharge: banned.',
+    answer: 'Chapter 140D, section 28A prohibits seller credit-card surcharges and separately protects disclosed cash discounts offered to all prospective buyers. Review the regular price and proposed program as an actual discount arrangement; its label alone does not avoid the prohibition.',
     sources: ['ma', 'visa'],
     sections: [
       { heading: 'Start with the statutory prohibition', body: 'Section 28A(a)(2) states the seller surcharge prohibition. Do not rely on a national provider’s general statement that surcharging is available. Ask the provider to explain how its proposed Massachusetts configuration reflects the statute before considering activation.', sources: ['ma'] },
@@ -37,7 +40,8 @@ export const stateDetails: StateDetail[] = [
   },
   {
     name: 'Maine', slug: 'maine', summary: 'Title 9-A §8-509 prohibits seller credit/debit surcharges and excludes reductions from the regular price.',
-    answer: 'Maine’s Title 9-A, section 8-509 prohibits seller surcharges for credit or debit cards and defines a discount from the regular price as outside that surcharge definition. The statute includes a specific governmental-entity exception. Private businesses should review displayed prices and payment logic rather than treating that exception as general permission.',
+    verdict: 'Dual pricing (cash discount): allowed with conditions. Credit/debit surcharge: banned.',
+    answer: 'Title 9-A, section 8-509 excludes reductions from the regular price from its surcharge definition. Review displayed prices and payment logic to confirm an actual discount. The statute’s governmental-entity exception is not general permission for private businesses to add fees.',
     sources: ['me', 'visa'],
     sections: [
       { heading: 'Both credit and debit are named in the statute', body: 'Maine defines a surcharge as increasing the regular price for a cardholder when the same increase is not imposed on someone paying cash, check, or similar means. The prohibition explicitly names both credit and debit. Review what your regular price is and when a customer learns it.', sources: ['me'] },
@@ -48,7 +52,8 @@ export const stateDetails: StateDetail[] = [
   },
   {
     name: 'Colorado', slug: 'colorado', summary: 'Enacted SB21-091 sets a 2% or actual merchant-discount-fee framework with disclosures and payment exclusions.',
-    answer: 'Colorado’s enacted SB21-091 permits a credit-card surcharge within a framework of 2% of the transaction or the actual merchant discount fee. It requires notice and excludes debit, cash, check, and gift-card payments. Card-network limits still apply. Have the acquirer document the permitted calculation and presentation for your proposed setup.',
+    verdict: 'Dual pricing (cash discount): not specifically addressed in the sources below. Credit-card surcharge: allowed with conditions.',
+    answer: 'The cited SB21-091 text addresses surcharges: 2% of the transaction or the actual merchant discount fee, with notice and payment exclusions. Debit is excluded. Card-network limits still apply; have the acquirer document the calculation and price presentation.',
     sources: ['co', 'visa'],
     sections: [
       { heading: 'Do not flatten the rule into one universal cap', body: 'The enacted summary describes a limit of 2% of the transaction or the merchant discount fee, defined as the actual fee paid to process it. It does not support describing Colorado as an unconditional permission to pass through any amount. Ask for review of the chosen calculation and supporting records.', sources: ['co'] },
@@ -59,7 +64,8 @@ export const stateDetails: StateDetail[] = [
   },
   {
     name: 'New York', slug: 'new-york', summary: 'GBL §518 requires the complete credit-card price to be posted and limits the surcharge to acceptance cost.',
-    answer: 'New York requires a seller imposing a credit-card surcharge to clearly post the total credit-card price, including that surcharge. The fee cannot exceed the business’s applicable acceptance cost under section 518. Posting cash and card totals together is permitted. A sign saying only that a percentage will be added is insufficient.',
+    verdict: 'Dual pricing: allowed with conditions. Credit-card surcharge: allowed with conditions.',
+    answer: 'New York requires the total credit-card price, including any surcharge, to be clearly posted. Section 518 limits the fee to applicable acceptance cost. Cash and card totals may appear together; a percentage-only notice is insufficient. Network restrictions still apply.',
     sources: ['ny', 'nyGuide', 'visa'],
     sections: [
       { heading: 'Show the total, not just the formula', body: 'General Business Law §518 requires a clearly and conspicuously posted credit-card total. The state’s implementation guidance, effective February 11, 2024, contrasts permissible total-price displays with a percentage-only fee notice. Review menus, labels, estimates, and web prices, not only a sign beside the terminal.', sources: ['ny', 'nyGuide'] },
@@ -70,7 +76,8 @@ export const stateDetails: StateDetail[] = [
   },
   {
     name: 'New Jersey', slug: 'new-jersey', summary: 'Actual-cost cap plus specific entry, checkout, restaurant-menu, online, and telephone disclosures.',
-    answer: 'New Jersey limits a credit-card surcharge to the seller’s actual processing cost and requires disclosure before the customer incurs a charge. Its guidance specifies different disclosure locations for stores, restaurants, websites, and telephone sales. A percentage can be disclosed, but a vague notice that a fee applies is not enough.',
+    verdict: 'Dual pricing (cash discount): not specifically addressed in the sources below. Credit-card surcharge: allowed with conditions.',
+    answer: 'New Jersey’s cited guidance limits credit-card surcharges to actual processing cost and requires disclosure before charges are incurred. Disclosure locations vary for stores, restaurants, websites, and telephone sales. A vague fee notice is insufficient. Network debit restrictions still apply.',
     sources: ['nj', 'visa'],
     sections: [
       { heading: 'Tie the fee to actual processing cost', body: 'The Division of Consumer Affairs explains P.L. 2023, c.146, codified at N.J.S.A. 56:8-156.1 and -156.2. A flat rate is possible only if it does not exceed the actual cost of processing the transaction. Request the cost evidence and an approved calculation from your acquirer.', sources: ['nj'] },
@@ -83,7 +90,7 @@ export const stateDetails: StateDetail[] = [
 export const stateGuides: Guide[] = stateDetails.map(s => ({
   slug: `${s.slug}-dual-pricing`, topic: 'payments', kind: 'state', legal: true,
   title: `${s.name}: dual pricing and credit-card surcharge rules`, description: s.summary,
-  answer: `Short answer: ${s.answer}`, sections: s.sections, sources: s.sources, faq: s.faq,
+  answer: `Short answer: ${s.verdict} ${s.answer}`, sections: s.sections, sources: s.sources, faq: s.faq,
   related: ['dual-pricing-laws', 'surcharge-vs-cash-discount', 'surcharge-debit-cards', 'surcharge-notice'],
 }));
 export const stateNames = 'Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming|District of Columbia'.split('|');

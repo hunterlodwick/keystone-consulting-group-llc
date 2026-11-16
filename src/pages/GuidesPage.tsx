@@ -34,7 +34,7 @@ function Cta({ inline = false }: { inline?: boolean }) {
     {!inline && <a className="guide-secondary" href="/#book-a-call">Book a call</a>}
   </aside>;
 }
-function ClosingContact() {
+export function ClosingContact() {
   const [ready, setReady] = useState(false);
   useEffect(() => { setReady(true); }, []);
   return <section id="guide-contact" className="guide-contact" aria-labelledby="guide-contact-heading">
@@ -44,6 +44,9 @@ function ClosingContact() {
 }
 function Card({ page }: { page: Guide }) {
   return <a className="guide-card" href={guidePath(page.slug)}><span className="guide-eyebrow">{page.kind === 'question' ? 'Question answered' : page.kind === 'state' ? 'State rules' : page.kind === 'comparison' ? 'Compare options' : 'Start here'}</span><h3>{page.title}</h3><p>{page.description}</p><span className="guide-read">Read the guide <ArrowRight size={16} aria-hidden="true" /></span></a>;
+}
+function StateVerdicts() {
+  return <section className="guide-section"><h2>At a glance: seven state pricing verdicts</h2><p>These distinctions summarize the existing state guides, not a new legal review. Where the cited text addresses only surcharges, cash-discount permission is not established here.</p><div className="guide-table-scroll" tabIndex={0} role="region" aria-label="State pricing verdicts"><table><thead><tr><th scope="col">State</th><th scope="col">Verdict</th></tr></thead><tbody>{stateDetails.map(state => <tr key={state.slug}><th scope="row" data-label="State"><a href={guidePath(`${state.slug}-dual-pricing`)}>{state.name}</a></th><td data-label="Verdict">{state.verdict}<Citations ids={state.sources} /></td></tr>)}</tbody></table></div></section>;
 }
 function StateTable() {
   return <section className="guide-section"><h2>State-by-state research map</h2><p>This is a research map, not a fifty-state legal clearance. The linked states have verified distinctions. Other entries are not separately reviewed and must not be read as permission to surcharge.</p><div className="guide-table-scroll" tabIndex={0} role="region" aria-label="State research table"><table><thead><tr><th scope="col">State or district</th><th scope="col">Verified distinction or review status</th></tr></thead><tbody>{stateNames.map(name => {
@@ -72,11 +75,13 @@ export default function GuidesPage({ path }: { path: string }) {
         <article className="guide-article">
           {page.legal && <aside className="guide-note"><strong>Not legal advice.</strong> This is general information from the linked sources, reviewed October 28, 2026. Laws and network rules can change. Have your legal adviser and acquirer review your actual pricing, locations, and checkout before implementation.</aside>}
           {page.kind === 'comparison' && <aside className="guide-note"><strong>As of Oct 2026, check current.</strong> Competitor details come from each provider’s public pricing page linked above. Features, eligibility, agreements, and fees vary. No comparative savings or performance guarantee is made.</aside>}
+          {page.stateTable && <StateVerdicts />}
           {page.table && <div className="guide-table-scroll" tabIndex={0} role="region" aria-label="Provider comparison"><table><thead><tr>{page.table.headings.map(h => <th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{page.table.rows.map(row => <tr key={row[0]}>{row.map((cell, i) => i === 0 ? <th key={i} scope="row" data-label={page.table!.headings[i]}>{cell}</th> : <td key={i} data-label={page.table!.headings[i]}>{cell}</td>)}</tr>)}</tbody></table></div>}
           {page.sections.map((section, i) => <div key={section.heading}><section id={`section-${i + 1}`} className="guide-section"><h2>{section.heading}</h2><p>{section.body}</p>{section.bullets && <ul>{section.bullets.map(b => <li key={b}>{b}</li>)}</ul>}<Citations ids={section.sources ?? []} /></section>{i === 1 && <Cta inline />}</div>)}
           {page.stateTable && <StateTable />}
           {page.kind === 'pillar' && <section className="guide-section"><h2>Questions to explore next</h2><ul className="guide-question-list">{guides.filter(g => g.topic === page.topic && g.kind === 'question').map(g => <li key={g.slug}><a href={guidePath(g.slug)}>{g.title} <ArrowRight size={16} aria-hidden="true" /></a></li>)}</ul></section>}
           <section id="faq" className="guide-section"><h2>Frequently asked questions</h2>{page.faq.map(f => <details key={f.question} className="guide-faq" open><summary>{f.question}</summary><p>{f.answer}</p></details>)}</section>
+          {(page.kind === 'state' || ['dual-pricing-laws', 'surcharge-vs-cash-discount', 'zero-fee-processing', 'cash-discount-for-restaurants', 'choose-dual-pricing-provider'].includes(page.slug)) && <section className="guide-section"><h2>Next step</h2><p><a href="/services/edge-program">Explore KCG’s Edge Program</a> and request a free statement audit to review your pricing, payment channels, and remaining costs.</p></section>}
           <section className="guide-section"><h2>Related reading</h2><ul className="guide-question-list">{page.related.map(slug => { const related = guideBySlug(slug)!; return <li key={slug}><a href={guidePath(slug)}>{related.title} <ArrowRight size={16} aria-hidden="true" /></a></li>; })}</ul></section>
         </article>
         <aside className="guide-sidebar"><div className="guide-sidebar-inner"><span className="guide-eyebrow">In this guide</span><nav aria-label="On this page">{page.sections.map((section, i) => <a key={section.heading} href={`#section-${i + 1}`}>{section.heading}</a>)}<a href="#faq">Frequently asked questions</a></nav><div className="guide-sidebar-service"><CheckCircle size={22} aria-hidden="true" /><h2>Put the answer to work.</h2><p>Talk through the details for your business.</p><a href={topics[page.topic].service}>Explore KCG services <ArrowRight size={15} aria-hidden="true" /></a></div></div></aside>

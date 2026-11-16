@@ -1,3 +1,4 @@
+import { consumerFinancingFaq } from '../content/consumer-financing-faq';
 import React, { useEffect } from 'react';
 import { 
   Code, 
@@ -1491,32 +1492,7 @@ const SERVICES_DETAIL: ServiceDetail[] = [
               "You need payment before the provider allows funding and cannot carry that gap."
           ]
       },
-      "questions": [
-          {
-              "question": "Will this increase our close rate?",
-              "answer": "It may help customers whose obstacle is payment timing, but we cannot promise a percentage. We measure completed, funded sales and the costs against your own starting point."
-          },
-          {
-              "question": "Do we receive the full price upfront?",
-              "answer": "The provider's agreement controls timing and deductions. Merchant fees, completion requirements or reserves may apply. We review those details before you plan cash flow around a financed sale."
-          },
-          {
-              "question": "Is there any risk left with us?",
-              "answer": "Yes, there can be obligations for refunds, disputes, fraud or contract breaches. Lender underwriting does not remove your responsibility to deliver the agreed goods or work."
-          },
-          {
-              "question": "What happens if a customer is declined?",
-              "answer": "Staff should explain that the provider made the decision and offer any other payment methods you accept. A different plan may have different criteria, but another approval is never assumed."
-          },
-          {
-              "question": "Can we advertise a monthly payment?",
-              "answer": "Use the provider's approved illustrations and required terms. The amount depends on the actual price, repayment period and financing cost. We avoid unsupported examples that make borrowing look free."
-          },
-          {
-              "question": "Why offer this instead of discounting?",
-              "answer": "Arithmetic: a sale that cannot proceed under payment-in-full terms contributes no sale revenue today. A funded plan may allow it to proceed, less fees and fulfilment costs. That comparison is not a study finding or a prediction that every declined quote becomes a sale."
-          }
-      ],
+      "questions": consumerFinancingFaq,
       "close": {
           "title": "Check whether financing fits your larger jobs.",
           "description": "Bring a typical invoice, your margins and when you need payment. Seth or Hunter will discuss available program requirements and the cost of adding pay-over-time.",
@@ -1865,6 +1841,13 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
         </div>
       </section>
 
+      <section className="max-w-5xl mx-auto px-6 md:px-12 pb-16">
+        <h2 className="font-serif text-3xl text-white mb-6">Payment processing</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <a className="border border-teal/30 rounded-xl p-6 text-offwhite" href="/services/payment-processing"><h3 className="text-xl text-teal mb-3">Low-rate payment processing</h3><p>Compare interchange-plus at wholesale, the Edge Program, and the Fluid Pay plan with a free statement audit.</p></a>
+          <a className="border border-teal/30 rounded-xl p-6 text-offwhite" href="/services/edge-program"><h3 className="text-xl text-teal mb-3">The Edge Program</h3><p>Explore zero-fee processing with cash discounts and dual pricing, no contracts, and nationwide service.</p></a>
+        </div>
+      </section>
       {/* Quick Nav */}
       <section className="border-y border-white/5 bg-charcoal-dark/50 sticky top-[72px] z-40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 md:px-12">

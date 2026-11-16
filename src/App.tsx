@@ -51,6 +51,7 @@ import {
 } from 'lucide-react';
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
+import PaymentServicePage from './pages/PaymentServicePage';
 import ServicesPage, { SingleServicePage } from './pages/ServicesPage';
 import WorkPage from './pages/WorkPage';
 import { BookingWidget, isBookingModalTitle } from './components/BookingWidget';
@@ -768,7 +769,7 @@ const NAV_DROPDOWNS = {
   financial: {
     label: 'Payment Processing',
     items: [
-      { name: 'Low Rate Payment Processing', icon: CreditCard, desc: 'Interchange-plus & zero-fee Edge Program', href: '/#calculator' },
+      { name: 'Low Rate Payment Processing', icon: CreditCard, desc: 'Interchange-plus & zero-fee Edge Program', href: '/services/payment-processing' },
       { name: 'Consumer Financing', icon: Banknote, desc: 'Let customers pay over time. You get paid now.', href: '/services/consumer-financing' },
       { name: 'Business Loans', icon: TrendingUp, desc: 'Fast capital for growth, equipment & working cash', href: '/services/business-loans' },
       { name: 'POS Placement', icon: MonitorSmartphone, desc: 'Free smart terminals & POS hardware placement', href: '/services/pos-placement' },
@@ -2422,6 +2423,8 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
             setCurrentPath(path);
             window.scrollTo(0, 0);
           }} />
+        ) : (currentPath === '/services/edge-program' || currentPath === '/services/payment-processing') ? (
+          <PaymentServicePage serviceId={currentPath === '/services/edge-program' ? 'edge-program' : 'payment-processing'} />
         ) : currentPath.startsWith('/services/') ? (
           <SingleServicePage 
             serviceId={currentPath.replace('/services/', '')}

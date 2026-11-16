@@ -17,7 +17,7 @@ export type Guide = {
   table?: { headings: string[]; rows: string[][] };
 };
 export const topics: Record<Topic, { title: string; slug: string; service: string; description: string }> = {
-  payments: { title: 'Payment processing', slug: 'payment-processing', service: '/services', description: 'Compare the full cost, protect recurring billing, and understand pricing rules.' },
+  payments: { title: 'Payment processing', slug: 'payment-processing', service: '/services/payment-processing', description: 'Compare the full cost, protect recurring billing, and understand pricing rules.' },
   websites: { title: 'Business websites', slug: 'business-websites', service: '/services/web-design', description: 'Define the scope, own the essentials, and make it easier to enquire.' },
   automation: { title: 'AI automation & voice agents', slug: 'ai-automation', service: '/services/automations', description: 'Choose a useful first workflow and test the handoff to your team.' },
   visibility: { title: 'Google Business Profile & SEO', slug: 'local-seo', service: '/services/google-business', description: 'Help customers find accurate answers in local search and AI search.' },

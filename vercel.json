@@ -13,6 +13,18 @@
   ],
   "rewrites": [
     {
+      "source": "/services/edge-program",
+      "destination": "/services/edge-program.html"
+    },
+    {
+      "source": "/services/payment-processing",
+      "destination": "/services/payment-processing.html"
+    },
+    {
+      "source": "/guides/choose-dual-pricing-provider",
+      "destination": "/guides/choose-dual-pricing-provider.html"
+    },
+    {
       "source": "/",
       "destination": "/index.html"
     },
