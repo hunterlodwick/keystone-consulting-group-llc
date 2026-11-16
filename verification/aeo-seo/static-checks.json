@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-09T16:42:42.574Z",
+  "checkedAt": "2026-11-16T16:49:35.061Z",
   "base": "http://127.0.0.1:4180",
   "routes": [
     {
@@ -40,6 +40,24 @@
     },
     {
       "path": "/terms",
+      "status": 200,
+      "staticMatch": true,
+      "jsonLd": true,
+      "metadata": true,
+      "noJavaScriptContent": true,
+      "formPresent": false
+    },
+    {
+      "path": "/services/edge-program",
+      "status": 200,
+      "staticMatch": true,
+      "jsonLd": true,
+      "metadata": true,
+      "noJavaScriptContent": true,
+      "formPresent": false
+    },
+    {
+      "path": "/services/payment-processing",
       "status": 200,
       "staticMatch": true,
       "jsonLd": true,
@@ -292,6 +310,15 @@
     },
     {
       "path": "/guides/local-seo",
+      "status": 200,
+      "staticMatch": true,
+      "jsonLd": true,
+      "metadata": true,
+      "noJavaScriptContent": true,
+      "formPresent": true
+    },
+    {
+      "path": "/guides/choose-dual-pricing-provider",
       "status": 200,
       "staticMatch": true,
       "jsonLd": true,
@@ -678,9 +705,9 @@
       "formPresent": false
     }
   ],
-  "sitemapRoutes": 74,
-  "existingRoutes": 28,
-  "internalLinks": 347,
+  "sitemapRoutes": 77,
+  "existingRoutes": 30,
+  "internalLinks": 359,
   "internalLinksChecked": [
     "/",
     "/#about",
@@ -753,6 +780,14 @@
     "/guides/chatgpt-recommendations#guide-contact",
     "/guides/chatgpt-recommendations#section-1",
     "/guides/chatgpt-recommendations#section-2",
+    "/guides/choose-dual-pricing-provider",
+    "/guides/choose-dual-pricing-provider#faq",
+    "/guides/choose-dual-pricing-provider#guide-contact",
+    "/guides/choose-dual-pricing-provider#section-1",
+    "/guides/choose-dual-pricing-provider#section-2",
+    "/guides/choose-dual-pricing-provider#section-3",
+    "/guides/choose-dual-pricing-provider#section-4",
+    "/guides/choose-dual-pricing-provider#section-5",
     "/guides/choose-merchant-services-consultant",
     "/guides/choose-merchant-services-consultant#faq",
     "/guides/choose-merchant-services-consultant#guide-contact",
@@ -999,12 +1034,16 @@
     "/services/crm#the-process",
     "/services/crm#the-value",
     "/services/crm#what-we-build",
+    "/services/edge-program",
+    "/services/edge-program#guide-contact",
     "/services/google-business",
     "/services/google-business#build-includes",
     "/services/google-business#questions",
     "/services/google-business#the-process",
     "/services/google-business#the-value",
     "/services/google-business#what-we-build",
+    "/services/payment-processing",
+    "/services/payment-processing#guide-contact",
     "/services/pos-placement",
     "/services/pos-placement#questions",
     "/services/pos-placement#the-process",

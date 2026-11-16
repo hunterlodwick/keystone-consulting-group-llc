@@ -1,0 +1,25 @@
+import { edgeFixedFees, paymentServices, providerChecklist, type PaymentServiceId } from '../content/payment-services';
+import { stateDetails } from '../content/guide-states';
+import { ClosingContact } from './GuidesPage';
+
+export default function PaymentServicePage({ serviceId }: { serviceId: PaymentServiceId }) {
+  const page = paymentServices[serviceId];
+  const edge = serviceId === 'edge-program';
+  return <div className="guides-layout"><div className="guides-container">
+    <nav aria-label="Breadcrumb" className="guide-breadcrumb"><a href="/">Home</a><span>/</span><a href="/services">Services</a><span>/</span><span aria-current="page">{edge ? 'Edge Program' : 'Payment processing'}</span></nav>
+    <header className="guide-hero"><span className="guide-eyebrow">KCG payment services · Nationwide</span><h1>{page.title}</h1><p className="guide-answer" data-answer-first>{page.answer}</p><div className="guide-top-cta"><a className="guide-button" href="#guide-contact">Request a free statement audit</a><a className="guide-secondary" href="/#book-a-call">Book a call</a></div></header>
+    <article className="guide-article">
+      {edge ? <>
+        <section className="guide-section"><h2>How the pricing works</h2><p>Example: an item with a $20.00 cash price has a $21.00 card price. The customer sees both prices before paying. A card payment is charged the card price, and you pay $0 in processing volume fees. A cash payment is charged the cash price.</p><p>Visa’s rules for a cash discount require the card price alone, or the card and cash prices side by side, with the card total built from the displayed prices rather than a fee added at checkout. Shelf tags, menus, invoices, and online checkout all need to show prices this way.</p></section>
+        <section className="guide-section"><h2>What you still pay</h2><p>The Edge Program removes processing volume fees. Payments Hub’s fixed fees remain:</p><ul>{edgeFixedFees.map(fee => <li key={fee}>{fee}</li>)}</ul><p>Equipment is quoted separately. There is no processing contract.</p></section>
+        <section className="guide-section"><h2>State rules for dual pricing</h2><p>Connecticut, Massachusetts, and Maine prohibit credit-card surcharges but allow cash discounts. Colorado, New Jersey, and New York allow capped credit-card surcharges with set disclosures. Each guide below cites the statute or agency guidance; read the one for every state where you sell. For background, see <a href="/guides/dual-pricing-laws">Is dual pricing legal?</a> and <a href="/guides/surcharge-vs-cash-discount">surcharge versus cash discount</a>.</p><ul>{stateDetails.map(state => <li key={state.slug}><a href={`/guides/${state.slug}-dual-pricing`}>{state.name}: dual pricing and surcharge rules</a></li>)}</ul></section>
+        <aside className="guide-note"><strong>Not legal advice.</strong> The state summaries are general information from the linked sources. Have your legal adviser review your prices, signs, and checkout before launch.</aside>
+      </> : <>
+        <section className="guide-section"><h2>Two pricing options</h2><p><strong>Interchange-plus at wholesale.</strong> You keep one price for every customer and pay the card networks’ interchange cost plus a disclosed markup. Suits businesses that do not want to show two prices.</p><p><strong><a href="/services/edge-program">The Edge Program</a>.</strong> 5% dual pricing on Payments Hub: customers see a card price and a lower cash price, and you pay $0 in processing volume fees. Payments Hub’s fixed fees remain ({edgeFixedFees.join(', ')}).</p><p>Neither option requires a contract. Bring a recent processing statement for the free audit; it shows your current effective cost next to each option. To try your own numbers first, use the <a href="/#calculator">savings calculator</a>.</p></section>
+        <section className="guide-section"><h2>Fluid Pay, next-day funding, and customer financing</h2><p>Fluid Pay is partner-only, so merchants cannot sign up directly. KCG’s Fluid Pay plan is $30/month with no contract; processing terms are quoted separately. Compare it with <a href="/guides/fluid-pay-vs-stripe">Stripe</a>, <a href="/guides/fluid-pay-vs-square">Square</a>, and <a href="/guides/fluid-pay-vs-clover">Clover</a>.</p><p>Next-day funding is available; eligibility and cutoff times are confirmed at setup. <a href="/services/consumer-financing">Flexxbuy consumer financing</a> lets customers pay over time.</p></section>
+      </>}
+      <section className="guide-section"><h2>{edge ? 'Questions to ask any dual pricing provider' : 'Questions to ask before switching processors'}</h2><ul>{providerChecklist.map(item => <li key={item}>{item}</li>)}</ul><p>More detail: <a href="/guides/choose-dual-pricing-provider">How do I choose a dual pricing provider?</a></p></section>
+      <section className="guide-section" id="faq"><h2>Frequently asked questions</h2>{page.faq.map(f => <details key={f.question} className="guide-faq" open><summary>{f.question}</summary><p>{f.answer}</p></details>)}</section>
+    </article><ClosingContact />
+  </div></div>;
+}

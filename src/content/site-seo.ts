@@ -1,8 +1,11 @@
+import { consumerFinancingFaq } from './consumer-financing-faq';
+import { paymentServices } from './payment-services';
 import { SITE } from './guides';
 import { guideMetadata, renderMetadata } from './guide-seo';
 
 // Titles and descriptions reuse the corresponding pages' existing hero copy.
 const pageCopy: Record<string, [string, string]> = {
+  ...Object.fromEntries(Object.entries(paymentServices).map(([slug, page]) => [`/services/${slug}`, [page.title, page.description] as [string, string]])),
   "/": [
     "Stop Losing Money to Hidden Fees",
     "We audit your processing statements, show you exactly where the money is leaking, and fix it. Then we reinvest those savings into websites and systems that make the phone ring."
@@ -138,8 +141,13 @@ export function siteMetadata(path: string) {
     crumbs.push({ name, item: canonical });
     graph.push({ '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, ...c })) });
   }
+  const payment = paymentServices[path.replace('/services/', '') as keyof typeof paymentServices];
+  const faq = payment?.faq ?? (path === '/services/consumer-financing' ? consumerFinancingFaq : undefined);
+  if (faq) graph.push({ '@type': 'FAQPage', mainEntity: faq.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) });
   return { title: `${name} | KCG`, description, canonical, type: 'website', jsonLd: { '@context': 'https://schema.org', '@graph': graph } };
 }
+export const NOT_FOUND_PATH = '/404';
 export function siteMetadataMarkup(path: string) {
+  if (path === NOT_FOUND_PATH) return `<title>Page not found | KCG</title>\n<meta name="description" content="This page does not exist. Browse Keystone Consulting Group services and business guides." />\n<meta name="robots" content="noindex" />`;
   return renderMetadata(siteMetadata(path)) + (path === '/dashboard' ? '\n<meta name="robots" content="noindex" />' : '');
 }

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-09T16:46:00.040Z",
+  "checkedAt": "2026-11-16T16:51:04.430Z",
   "checks": [
     {
       "path": "/guides",
@@ -31,6 +31,13 @@
     },
     {
       "path": "/guides/local-seo",
+      "width": 1440,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/choose-dual-pricing-provider",
       "width": 1440,
       "renders": true,
       "noOverflow": true,
@@ -353,6 +360,13 @@
     },
     {
       "path": "/guides/local-seo",
+      "width": 390,
+      "renders": true,
+      "noOverflow": true,
+      "contactAnchor": true
+    },
+    {
+      "path": "/guides/choose-dual-pricing-provider",
       "width": 390,
       "renders": true,
       "noOverflow": true,
@@ -646,7 +660,7 @@
       "contactAnchor": true
     }
   ],
-  "existingRoutesSmokeTested": 28,
+  "existingRoutesSmokeTested": 30,
   "screenshots": 11,
   "submissions": 0,
   "thirdPartyRequests": "blocked",

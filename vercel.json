@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/privacy-policy",
@@ -12,6 +13,18 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/services/edge-program",
+      "destination": "/services/edge-program.html"
+    },
+    {
+      "source": "/services/payment-processing",
+      "destination": "/services/payment-processing.html"
+    },
+    {
+      "source": "/guides/choose-dual-pricing-provider",
+      "destination": "/guides/choose-dual-pricing-provider.html"
+    },
     {
       "source": "/",
       "destination": "/index.html"
@@ -311,10 +324,6 @@
     {
       "source": "/guides/zero-fee-processing",
       "destination": "/guides/zero-fee-processing.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ],
   "headers": [

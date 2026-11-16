@@ -1,89 +1,140 @@
 import type { Guide } from './guides';
 import type { SourceId } from './guide-sources';
-type StateDetail = { name: string; slug: string; summary: string; answer: string; sources: SourceId[]; sections: Guide['sections']; faq: Guide['faq'] };
+type StateDetail = {
+  name: string; slug: string; summary: string;
+  /** Short table labels plus the primary law each rests on. */
+  cashDiscount: string; surcharge: string; law: string;
+  /** One-sentence explanations that open the state guide. */
+  cashDetail: string; surchargeDetail: string;
+  answer: string; sources: SourceId[]; sections: Guide['sections']; faq: Guide['faq'];
+};
+export const STATE_REVIEWED = '2026-11-16';
+export const stateVerdict = (s: Pick<StateDetail, 'cashDiscount' | 'surcharge'>) => `Cash discount / dual pricing: ${s.cashDiscount}. Credit-card surcharge: ${s.surcharge}.`;
 export const stateDetails: StateDetail[] = [
   {
-    name: 'California', slug: 'california', summary: 'SB 478 distinguishes unavoidable fees from optional card fees; credit-only payment makes the fee mandatory.',
-    answer: 'California’s SB 478 generally requires advertised consumer prices to include mandatory fees. The Attorney General says an avoidable credit-card fee generally is not mandatory, but a fee is mandatory when a business only accepts credit cards. Dual pricing and surcharging still need separate review under applicable laws and card-network rules.',
-    sources: ['ca', 'visa'],
+    name: 'California', slug: 'california', summary: 'Civil Code §1748.1 allows cash discounts offered to all buyers; its surcharge ban is limited by a 2018 ruling, and SB 478 governs advertised prices.',
+    cashDiscount: 'allowed', surcharge: 'restricted', law: 'Cal. Civ. Code §1748.1; SB 478',
+    cashDetail: 'Civil Code §1748.1(a) lets a retailer offer a discount for paying by cash, check, or other non-credit means if the discount is offered to all prospective buyers.',
+    surchargeDetail: 'The same subsection bars credit-card surcharges, but the Attorney General applies Italian Colors v. Becerra (9th Cir. 2018) to merchants similarly situated to that case’s plaintiffs.',
+    answer: 'Separately, SB 478 (effective July 1, 2024) requires advertised prices to include mandatory fees: an avoidable card fee generally is not mandatory, but a business that accepts only credit cards must include it.',
+    sources: ['caCivil', 'caSurcharge', 'ca', 'visa'],
     sections: [
-      { heading: 'The payment options change the advertised-price analysis', body: 'SB 478 took effect July 1, 2024. California’s DOJ FAQ says a card processing fee generally is not mandatory when the customer can avoid it by paying another way, such as cash. If credit cards are the only accepted payment method, the fee must be included in the advertised price. Do not describe SB 478 as a blanket ban on all surcharges.', sources: ['ca'] },
-      { heading: 'Check scope and the food-service exception', body: 'The FAQ addresses most goods and services for personal use and identifies exclusions, including commercial-use transactions. SB 1524 provides a specific exception for certain food and beverage sellers when mandatory fees are conspicuously displayed wherever prices appear. A restaurant should review that exception directly rather than applying a general retail checklist.', sources: ['ca'] },
-      { heading: 'Review the complete checkout', body: 'Ask counsel to review the applicable pricing laws and proposed payment options. Separately ask the acquirer to review network restrictions, debit exclusions, disclosures, and rate limits. Test product pages, menus, invoices, and receipts against the approved approach. An optional payment fee is not automatic permission to ignore other requirements.', sources: ['visa', 'ca'] },
+      { heading: 'The statute allows cash discounts', body: 'Civil Code §1748.1(a) prohibits a retailer from imposing a surcharge on a consumer who pays by credit card and, in the same subsection, permits discounts for cash, check, or other means not involving a credit card when the discount is offered to all prospective buyers. The California DOJ says that in January 2018 a federal court held the surcharge ban could not be enforced against the businesses that brought Italian Colors v. Becerra, and that it will generally apply that decision to similarly situated merchants. Merchants still may not hide differences between credit, debit, and cash prices.', sources: ['caCivil', 'caSurcharge'] },
+      { heading: 'SB 478 changes the advertised price', body: 'SB 478 took effect July 1, 2024. The DOJ FAQ says a card processing fee generally is not mandatory when the customer can avoid it by paying another way, such as cash. If credit cards are the only accepted payment method, the fee is mandatory and must be included in the advertised price. For a mandatory fee, listing one price and separately stating that a percentage fee will apply does not comply.', sources: ['ca'] },
+      { heading: 'Check scope and the food-service exception', body: 'The DOJ FAQ says SB 478 does not apply to goods or services bought for commercial use or to certain transactions governed by other pricing laws. SB 1524 exempts mandatory fees charged by restaurants, bars, and certain other food vendors when the fee is clearly and conspicuously displayed wherever prices appear.', sources: ['ca'] },
     ],
-    faq: [{ question: 'Does SB 478 prohibit every credit-card fee?', answer: 'No. The DOJ FAQ distinguishes fees that customers can avoid with another payment method from mandatory fees when only credit cards are accepted.' }, { question: 'Can I disclose a mandatory fee only at checkout?', answer: 'For transactions covered by the general rule, the advertised price must include mandatory fees. Review any specific statutory exception separately.' }],
+    faq: [
+      { question: 'Can I offer a cash discount in California?', answer: 'Yes. Civil Code §1748.1(a) permits a discount for cash, check, or other non-credit payment if it is offered to all prospective buyers.' },
+      { question: 'Does SB 478 prohibit every credit-card fee?', answer: 'No. The DOJ FAQ distinguishes fees that customers can avoid with another payment method from mandatory fees when only credit cards are accepted.' },
+    ],
   },
   {
-    name: 'Connecticut', slug: 'connecticut', summary: 'DCP prohibits payment-method surcharges while describing genuine cash discounts and dual posted prices.',
-    answer: 'Connecticut prohibits businesses from adding a surcharge for one payment method over another, while allowing genuine cash discounts. Its consumer agency identifies posting both cash and card prices as a compliant approach. An added transaction fee or non-cash adjustment can still be a prohibited surcharge. Review the actual prices and receipts before launch.',
+    name: 'Connecticut', slug: 'connecticut', summary: 'C.G.S. §42-133ff prohibits payment-method surcharges; the consumer agency names a posted cash discount or dual cash and card prices as ways to comply.',
+    cashDiscount: 'allowed', surcharge: 'prohibited', law: 'Conn. Gen. Stat. §42-133ff',
+    cashDetail: 'The Department of Consumer Protection names a posted cash discount from listed prices, or listing both a cash price and a card price, as ways to comply.',
+    surchargeDetail: 'Section 42-133ff, as amended by Public Act 24-142, prohibits a surcharge for using one payment type over another, with exceptions for municipalities, government agencies, and courts.',
+    answer: 'A “processing fee”, “transaction fee”, or “non-cash adjustment” added to the listed price is a surcharge, whatever it is called.',
     sources: ['ct', 'ctLaw', 'visa'],
     sections: [
       { heading: 'A different name does not change an added fee', body: 'Connecticut DCP cites §42-133ff and its amendment by Public Act 24-142. It explains that adding a processing fee, transaction fee, or non-cash adjustment to the listed price is a surcharge. Start the review with the displayed price, not the terminal vendor’s program label.', sources: ['ct', 'ctLaw'] },
-      { heading: 'Build the discount into the price presentation', body: 'DCP describes a disclosed discount from listed prices or showing both cash and credit prices as ways to comply. Review how the regular price appears on shelves, menus, estimates, and web pages. Ask the provider to demonstrate that a card-paying customer is not surprised by an added fee.', sources: ['ct'] },
-      { heading: 'Do not borrow government exceptions', body: 'DCP identifies exceptions for municipalities, government agencies, courts, and certain tax collection. A private merchant should not assume those exceptions apply to its sales. Ask for review of any industry-specific situation before using a fee-based configuration.', sources: ['ct'] },
+      { heading: 'Build the discount into the price presentation', body: 'DCP gives two compliant examples: a sign stating that all listed prices are discounted by a stated percentage for cash, or dual pricing that lists a cash price and a credit-card price. Check that shelves, menus, estimates, and web pages show the card price as the listed price.', sources: ['ct'] },
+      { heading: 'Government exceptions do not cover private merchants', body: 'DCP identifies exceptions for municipalities, government agencies, courts, and certain tax collection. A private business cannot rely on those exceptions.', sources: ['ct'] },
     ],
-    faq: [{ question: 'Can I call the surcharge a non-cash adjustment?', answer: 'DCP specifically says that label can describe a surcharge when the fee is added to the listed price.' }, { question: 'Does Connecticut recognize dual pricing?', answer: 'DCP says displaying both a cash price and a credit-card price is one way a business can comply. The actual implementation still needs review.' }],
+    faq: [
+      { question: 'Can I call the surcharge a non-cash adjustment?', answer: 'No. DCP says a fee added to the listed price is a surcharge even when it appears on the receipt as a non-cash adjustment.' },
+      { question: 'Does Connecticut recognize dual pricing?', answer: 'Yes. DCP says listing a cash price and a credit-card price is one way a business can comply.' },
+    ],
   },
   {
-    name: 'Massachusetts', slug: 'massachusetts', summary: 'Chapter 140D §28A prohibits seller credit-card surcharges and addresses disclosed cash discounts.',
-    answer: 'Massachusetts General Laws chapter 140D, section 28A prohibits a seller from imposing a surcharge when a cardholder chooses a credit card instead of cash, check, or similar means. The statute separately addresses cash discounts. Review a proposed dual-pricing program as an actual discount arrangement, rather than assuming its label avoids the prohibition.',
+    name: 'Massachusetts', slug: 'massachusetts', summary: 'M.G.L. c.140D §28A bars seller credit-card surcharges and treats a clearly disclosed cash discount offered to all buyers as not a finance charge.',
+    cashDiscount: 'allowed', surcharge: 'prohibited', law: 'M.G.L. c.140D §28A',
+    cashDetail: 'Section 28A(a)(1) bars card issuers from prohibiting cash discounts, and §28A(b) says a discount from the regular price for paying by cash or check is not a finance charge if it is offered to all prospective buyers and clearly and conspicuously disclosed.',
+    surchargeDetail: 'Section 28A(a)(2) says no seller may impose a surcharge on a cardholder who pays by credit card.',
+    answer: 'The statute frames the cash discount as a discount from the regular price, so the card price should be the price customers see.',
     sources: ['ma', 'visa'],
     sections: [
-      { heading: 'Start with the statutory prohibition', body: 'Section 28A(a)(2) states the seller surcharge prohibition. Do not rely on a national provider’s general statement that surcharging is available. Ask the provider to explain how its proposed Massachusetts configuration reflects the statute before considering activation.', sources: ['ma'] },
-      { heading: 'Review the regular price and discount disclosure', body: 'The statute protects offering a cash or similar discount and addresses discounts offered to all prospective buyers with clear and conspicuous disclosure. Have counsel review the regular price and the exact signs and checkout wording. Do not convert a hidden fee into a claimed discount by changing its name.', sources: ['ma'] },
-      { heading: 'Use a transaction acceptance checklist', body: 'Review a card purchase at the posted price, a qualifying discounted payment, a refund, and an online transaction. Ask for consistent treatment across menus, invoices, and terminal screens. Keep the legal review and acquirer approval with the configuration record.' },
+      { heading: 'The surcharge prohibition is in the statute', body: 'Section 28A(a)(2): “No seller in any sales transaction may impose a surcharge on a cardholder who elects to use a credit card in lieu of payment by cash, check or similar means.” A national provider’s statement that surcharging is available does not change that for Massachusetts locations.', sources: ['ma'] },
+      { heading: 'How the statute treats a discount', body: 'Section 28A(b) covers a discount from the regular price offered to induce payment by cash, check, or other means not involving a credit card. It is not a finance charge if offered to all prospective buyers and its availability is disclosed clearly and conspicuously. Visa’s rules separately require the card price alone, or card and cash prices side by side, to be displayed.', sources: ['ma', 'visa'] },
+      { heading: 'Test every payment path', body: 'Run a card purchase at the posted price, a discounted cash payment, a refund, and an online order. Menus, invoices, terminal screens, and receipts should show the same prices.' },
     ],
-    faq: [{ question: 'Can I simply enable a credit-card surcharge in Massachusetts?', answer: 'The cited statute prohibits a seller from imposing that surcharge. Obtain legal review of your specific circumstances and proposed pricing.' }, { question: 'What does the statute say about discounts?', answer: 'It separately addresses discounts for cash, check, or similar means and calls for clear, conspicuous disclosure and availability to all prospective buyers for the stated treatment.' }],
+    faq: [
+      { question: 'Can I add a credit-card surcharge in Massachusetts?', answer: 'No. Section 28A(a)(2) prohibits a seller from imposing a surcharge on a customer who pays by credit card.' },
+      { question: 'What does the statute say about discounts?', answer: 'A discount from the regular price for paying by cash, check, or similar means is not a finance charge if it is offered to all prospective buyers and clearly and conspicuously disclosed.' },
+    ],
   },
   {
-    name: 'Maine', slug: 'maine', summary: 'Title 9-A §8-509 prohibits seller credit/debit surcharges and excludes reductions from the regular price.',
-    answer: 'Maine’s Title 9-A, section 8-509 prohibits seller surcharges for credit or debit cards and defines a discount from the regular price as outside that surcharge definition. The statute includes a specific governmental-entity exception. Private businesses should review displayed prices and payment logic rather than treating that exception as general permission.',
+    name: 'Maine', slug: 'maine', summary: '9-A M.R.S. §8-509 prohibits seller surcharges on credit and debit cards and says a reduction from the regular price is not a surcharge.',
+    cashDiscount: 'allowed', surcharge: 'prohibited (credit and debit)', law: '9-A M.R.S. §8-509',
+    cashDetail: 'Section 8-509(1) says a discount or reduction from the regular price is not a surcharge.',
+    surchargeDetail: 'The same subsection prohibits a seller from surcharging a customer who pays by credit or debit card; only governmental entities have a disclosed, cost-limited exception.',
+    answer: 'A surcharge is any increase in the regular price for a cardholder that is not imposed on a customer paying by cash or check.',
     sources: ['me', 'visa'],
     sections: [
-      { heading: 'Both credit and debit are named in the statute', body: 'Maine defines a surcharge as increasing the regular price for a cardholder when the same increase is not imposed on someone paying cash, check, or similar means. The prohibition explicitly names both credit and debit. Review what your regular price is and when a customer learns it.', sources: ['me'] },
-      { heading: 'A reduction is different from an added charge', body: 'The statute says a discount or reduction from the regular price is not a surcharge. Ask counsel to review the proposed prices and disclosures, then ask the acquirer to validate the terminal configuration. Make the shelf, menu, invoice, and website presentation part of that review.', sources: ['me'] },
-      { heading: 'Keep the government exception in its own context', body: 'Section 8-509 allows governmental entities to impose certain disclosed, cost-limited card fees for specified payments. That statutory exception is not a general permission for a private shop or service business, and network requirements remain a separate consideration.', sources: ['me'] },
+      { heading: 'Credit and debit are both covered', body: 'Maine defines a surcharge as any means of increasing the regular price to a cardholder that is not imposed on a customer paying by cash, check, or similar means. The prohibition names both credit and debit cards.', sources: ['me'] },
+      { heading: 'A reduction is different from an added charge', body: 'The statute says a discount or reduction from the regular price is not a surcharge. The regular price customers see should be the card price, with the cash price shown as the reduction.', sources: ['me'] },
+      { heading: 'The government exception is narrow', body: 'Section 8-509(2) lets governmental entities add a disclosed, cost-limited card fee for specified payments such as taxes, fines, and license fees. It does not apply to private businesses.', sources: ['me'] },
     ],
-    faq: [{ question: 'Does Maine’s prohibition include debit cards?', answer: 'Yes. Section 8-509 expressly names credit cards and debit cards.' }, { question: 'Is a real discount treated as a surcharge?', answer: 'The statute says a discount or reduction from the regular price is not a surcharge. Review whether the proposed implementation actually meets that description.' }],
+    faq: [
+      { question: 'Does Maine’s prohibition include debit cards?', answer: 'Yes. Section 8-509 expressly names credit cards and debit cards.' },
+      { question: 'Is a cash discount treated as a surcharge?', answer: 'No. The statute says a discount or reduction from the regular price is not a surcharge.' },
+    ],
   },
   {
-    name: 'Colorado', slug: 'colorado', summary: 'Enacted SB21-091 sets a 2% or actual merchant-discount-fee framework with disclosures and payment exclusions.',
-    answer: 'Colorado’s enacted SB21-091 permits a credit-card surcharge within a framework of 2% of the transaction or the actual merchant discount fee. It requires notice and excludes debit, cash, check, and gift-card payments. Card-network limits still apply. Have the acquirer document the permitted calculation and presentation for your proposed setup.',
-    sources: ['co', 'visa'],
+    name: 'Colorado', slug: 'colorado', summary: 'C.R.S. §5-2-212 caps credit-card surcharges at 2% or the actual merchant discount fee and treats a disclosed cash discount offered to all buyers as not a finance charge.',
+    cashDiscount: 'not a finance charge if offered to all buyers and disclosed (the statute does not name dual pricing)', surcharge: 'allowed, capped at 2% or the actual merchant discount fee', law: 'C.R.S. §5-2-212',
+    cashDetail: 'C.R.S. §5-2-212(2) says a discount for paying by cash, check, or other non-credit-card means is not a finance charge if it is offered to all prospective buyers and clearly and conspicuously disclosed; the statute does not use the terms “dual pricing” or “cash discount program”.',
+    surchargeDetail: 'Since July 1, 2022, §5-2-212(1) allows a credit-card surcharge of up to 2% of the transaction or up to the merchant discount fee actually paid, with statutory signage, a separate receipt line, and no surcharge on cash, check, debit, or gift-card payments.',
+    answer: 'Visa separately caps credit surcharges at the lower of the merchant discount rate or 3%.',
+    sources: ['coLaw', 'co', 'visa'],
     sections: [
-      { heading: 'Do not flatten the rule into one universal cap', body: 'The enacted summary describes a limit of 2% of the transaction or the merchant discount fee, defined as the actual fee paid to process it. It does not support describing Colorado as an unconditional permission to pass through any amount. Ask for review of the chosen calculation and supporting records.', sources: ['co'] },
-      { heading: 'Include the notice and exclusions', body: 'The act requires notice on the premises or, for online purchases, before the transaction is completed. It excludes debit cards, gift-card redemption, cash, and checks. Include these payment types in the provider’s configuration review and request sample receipts.', sources: ['co'] },
-      { heading: 'Apply the network rule too', body: 'Visa limits its surcharge to the lower of the applicable merchant discount rate or 3%. A state-law framework does not remove that network requirement. Confirm the final approved rate and disclosures for the card brands and channels you accept.', sources: ['visa'] },
+      { heading: 'Choose one of two surcharge caps', body: 'Section 5-2-212(1)(c) lets a seller charge either up to 2% of the total cost of the transaction or up to the merchant discount fee, defined as the actual fee the seller pays its processor or service provider to process the transaction. The statute prescribes different sign wording for each option.', sources: ['coLaw'] },
+      { heading: 'Notice, receipts, and excluded payments', body: 'The statutory notice must be posted at the premises where customers can see it or, online, displayed before the customer completes the purchase. The receipt must show the surcharge as a separate line item, and only one surcharge is allowed per transaction. No surcharge may apply to cash, check, debit (with or without a PIN, or any payment processed as debit), or gift-card redemption. SB21-091 made these changes effective July 1, 2022.', sources: ['coLaw', 'co'] },
+      { heading: 'What the statute says about cash discounts', body: 'Section 5-2-212(2), which SB21-091 left unchanged, covers a discount offered to induce payment by cash, check, or other means not involving a credit card: it is not a finance charge if offered to all prospective buyers and its availability is disclosed clearly and conspicuously under the administrator’s regulations. It does not set rules for displaying dual prices; Visa’s display rules for discount offers still apply.', sources: ['coLaw', 'visa'] },
     ],
-    faq: [{ question: 'Does Colorado permit debit surcharges?', answer: 'No. The enacted summary expressly excludes debit-card payments.' }, { question: 'Is actual cost the only rule to consider?', answer: 'No. Review Colorado’s calculation framework, required disclosures, excluded payment types, and the separate network restrictions.' }],
+    faq: [
+      { question: 'Does Colorado permit debit surcharges?', answer: 'No. Section 5-2-212(1)(f) bars a surcharge on debit card payments, whether or not a PIN is used, and on any payment processed as debit.' },
+      { question: 'Does Colorado law address dual pricing?', answer: 'Not by that name. Section 5-2-212(2) treats a cash or check discount offered to all buyers and clearly disclosed as not a finance charge. Have counsel review how your card and cash prices are displayed.' },
+    ],
   },
   {
-    name: 'New York', slug: 'new-york', summary: 'GBL §518 requires the complete credit-card price to be posted and limits the surcharge to acceptance cost.',
-    answer: 'New York requires a seller imposing a credit-card surcharge to clearly post the total credit-card price, including that surcharge. The fee cannot exceed the business’s applicable acceptance cost under section 518. Posting cash and card totals together is permitted. A sign saying only that a percentage will be added is insufficient.',
+    name: 'New York', slug: 'new-york', summary: 'GBL §518 expressly permits two-tier cash and card pricing and requires the total credit-card price to be posted when a surcharge applies.',
+    cashDiscount: 'allowed (two-tier pricing)', surcharge: 'allowed with the total card price posted, capped at card cost', law: 'N.Y. Gen. Bus. Law §518',
+    cashDetail: 'General Business Law §518 expressly permits a “two-tier pricing system”: the credit-card price, including any surcharge, posted alongside the cash price.',
+    surchargeDetail: 'A seller that surcharges must clearly and conspicuously post the total credit-card price, may not surcharge more than the card company charges the business, and may not charge more than the posted price.',
+    answer: 'The current rule took effect February 11, 2024; the state says it does not apply to debit cards.',
     sources: ['ny', 'nyGuide', 'visa'],
     sections: [
-      { heading: 'Show the total, not just the formula', body: 'General Business Law §518 requires a clearly and conspicuously posted credit-card total. The state’s implementation guidance, effective February 11, 2024, contrasts permissible total-price displays with a percentage-only fee notice. Review menus, labels, estimates, and web prices, not only a sign beside the terminal.', sources: ['ny', 'nyGuide'] },
-      { heading: 'Use dual prices as complete prices', body: 'The statute explicitly allows the credit price, inclusive of any surcharge, next to the cash price. Ask your provider to show a customer-facing total before payment and a matching receipt. A dual-price display is not a reason to skip the statutory cost limit or network restrictions.', sources: ['ny', 'visa'] },
-      { heading: 'Keep the amount within the applicable limit', body: 'Section 518 limits the surcharge by the amount charged to the business for the card use. Have the acquirer document the calculation and any lower network restriction. Review how the approved configuration handles debit, discounts, and refunds before rollout.', sources: ['ny', 'visa'] },
+      { heading: 'Post the total card price', body: 'Section 518 requires the total price for paying by credit card, including any surcharge, to be clearly and conspicuously posted, and the final price cannot exceed the posted price. Each violation carries a civil penalty of up to $500.', sources: ['ny'] },
+      { heading: 'What the state lists as compliant', body: 'The Governor’s announcement of the law, which points businesses to the Department of State’s guidance, lists these as compliant: list the higher card price next to a lower cash price; list the card price and tell customers they receive a discount for cash; or change all prices to the card price.', sources: ['nyGuide'] },
+      { heading: 'What the state lists as non-compliant', body: 'The same announcement lists these as non-compliant: a sign announcing an extra 3.9 percent for credit cards; a price tag reading “$10.00, + 4 percent if paying with a credit card”; a notice that a 4 percent cash discount is built into all pricing with an adjustment shown on card receipts; and a convenience, processing, or non-cash adjustment fee added as a separate receipt line for card users.', sources: ['nyGuide'] },
     ],
-    faq: [{ question: 'Is a percentage-only sign enough?', answer: 'No. New York’s guidance requires the complete credit-card price, not only notice of an added percentage.' }, { question: 'Can I display cash and card prices together?', answer: 'Yes. Section 518 expressly permits two prices when the credit-card price includes the surcharge.' }],
+    faq: [
+      { question: 'Is a percentage-only sign enough?', answer: 'No. The state lists a sign announcing an added percentage for credit cards as non-compliant; the total card price must be posted.' },
+      { question: 'Can I display cash and card prices together?', answer: 'Yes. Section 518 expressly permits a two-tier pricing system with the credit-card price posted alongside the cash price.' },
+    ],
   },
   {
-    name: 'New Jersey', slug: 'new-jersey', summary: 'Actual-cost cap plus specific entry, checkout, restaurant-menu, online, and telephone disclosures.',
-    answer: 'New Jersey limits a credit-card surcharge to the seller’s actual processing cost and requires disclosure before the customer incurs a charge. Its guidance specifies different disclosure locations for stores, restaurants, websites, and telephone sales. A percentage can be disclosed, but a vague notice that a fee applies is not enough.',
-    sources: ['nj', 'visa'],
+    name: 'New Jersey', slug: 'new-jersey', summary: 'N.J.S.A. 56:8-156.1 and -156.2 cap credit-card surcharges at actual processing cost with set disclosure rules; they do not address cash discounts.',
+    cashDiscount: 'not addressed by the surcharge statute', surcharge: 'allowed up to actual processing cost, amount disclosed', law: 'N.J.S.A. 56:8-156.1 to -156.2',
+    cashDetail: 'N.J.S.A. 56:8-156.1 and -156.2 regulate only credit-card surcharges and do not mention cash discounts or dual pricing; the Division of Consumer Affairs says any other fee must still be clearly and conspicuously disclosed at or near the point of sale before the transaction.',
+    surchargeDetail: 'Section 56:8-156.2(a) caps a credit-card surcharge at the seller’s actual cost to process the payment, and the amount must be disclosed before the customer incurs any charge.',
+    answer: 'The law took effect August 18, 2023 and does not apply to debit or gift cards.',
+    sources: ['njLaw', 'nj', 'visa'],
     sections: [
-      { heading: 'Tie the fee to actual processing cost', body: 'The Division of Consumer Affairs explains P.L. 2023, c.146, codified at N.J.S.A. 56:8-156.1 and -156.2. A flat rate is possible only if it does not exceed the actual cost of processing the transaction. Request the cost evidence and an approved calculation from your acquirer.', sources: ['nj'] },
-      { heading: 'Put the amount where the customer decides', body: 'The FAQ calls for entry and point-of-sale signs for sellers other than restaurants. Restaurants need disclosure in the customer service area and on menus, including online and QR-code menus. Online checkout needs conspicuous electronic notice; telephone transactions need verbal notice before processing.', sources: ['nj'] },
-      { heading: 'Keep debit treatment separate', body: 'The New Jersey FAQ says this specific surcharge cap addresses credit cards, not debit or gift cards. That does not authorize a network-prohibited debit surcharge. Visa’s debit and prepaid restrictions still need to be enforced by the payment setup.', sources: ['nj', 'visa'] },
+      { heading: 'Tie the fee to actual processing cost', body: 'P.L. 2023, c.146, codified at N.J.S.A. 56:8-156.1 and -156.2, bars a surcharge greater than the seller’s actual cost to process the credit-card payment and requires sellers to make records available to the Division of Consumer Affairs. The Division’s FAQ says a flat rate is allowed only if it does not exceed the actual cost of processing that transaction.', sources: ['njLaw', 'nj'] },
+      { heading: 'Put the amount where the customer decides', body: 'Sellers other than restaurants must post the amount on a sign at the point of entry and the point of sale. Restaurants need it on a sign in the customer service area and on the menu; the FAQ includes menus posted online or reached by QR code. Websites, apps, and kiosks need clear electronic notice on the checkout page, and telephone sales need verbal notice before processing. A percentage is acceptable; a sign saying only that a surcharge applies is not.', sources: ['njLaw', 'nj'] },
+      { heading: 'Debit is outside this law, not open to surcharges', body: 'The FAQ says the cap applies only to credit-card transactions, not debit or gift cards, and that other laws may limit other fees. Visa separately prohibits surcharging debit and prepaid cards.', sources: ['nj', 'visa'] },
     ],
-    faq: [{ question: 'Can I disclose a percentage in New Jersey?', answer: 'The state FAQ permits a percentage disclosure, but the amount must be clear before charges are incurred and within actual processing cost.' }, { question: 'Do restaurants need notice on digital menus?', answer: 'Yes. The FAQ includes menus posted online or accessed through QR codes.' }],
+    faq: [
+      { question: 'Can I disclose a percentage in New Jersey?', answer: 'Yes. The state FAQ permits a percentage, but the amount must be disclosed before the customer incurs any charge and cannot exceed actual processing cost.' },
+      { question: 'Does New Jersey law address dual pricing?', answer: 'No. The surcharge statute covers only credit-card surcharges. The Division says any other fee must still be clearly and conspicuously disclosed at or near the point of sale before the transaction.' },
+    ],
   },
 ];
 export const stateGuides: Guide[] = stateDetails.map(s => ({
-  slug: `${s.slug}-dual-pricing`, topic: 'payments', kind: 'state', legal: true,
+  slug: `${s.slug}-dual-pricing`, topic: 'payments', kind: 'state', legal: true, reviewed: STATE_REVIEWED,
   title: `${s.name}: dual pricing and credit-card surcharge rules`, description: s.summary,
-  answer: `Short answer: ${s.answer}`, sections: s.sections, sources: s.sources, faq: s.faq,
+  answer: `Short answer: ${stateVerdict(s)} ${s.cashDetail} ${s.surchargeDetail} ${s.answer}`, sections: s.sections, sources: s.sources, faq: s.faq,
   related: ['dual-pricing-laws', 'surcharge-vs-cash-discount', 'surcharge-debit-cards', 'surcharge-notice'],
 }));
 export const stateNames = 'Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming|District of Columbia'.split('|');

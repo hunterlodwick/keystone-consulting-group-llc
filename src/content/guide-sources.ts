@@ -19,6 +19,16 @@ export const sources = {
     "url": "https://oag.ca.gov/hiddenfees",
     "note": "July 1 2024; mandatory all-in price, optional card fee exception, credit-only mandatory; SB1524 food exceptions."
   },
+  "caCivil": {
+    "label": "California Civil Code §1748.1",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1748.1",
+    "note": "Credit-card surcharge prohibition; cash, check or non-credit discount allowed if offered to all prospective buyers."
+  },
+  "caSurcharge": {
+    "label": "California DOJ: credit card surcharges",
+    "url": "https://oag.ca.gov/consumers/general/credit-card-surcharges",
+    "note": "Italian Colors v. Becerra (9th Cir. 2018); AG applies it to similarly situated merchants; no hiding price differences."
+  },
   "ct": {
     "label": "Connecticut DCP: surcharges",
     "url": "https://portal.ct.gov/dcp/legal/credit-card-surcharge",
@@ -39,10 +49,15 @@ export const sources = {
     "url": "https://legislature.maine.gov/statutes/9-a/title9-Asec8-509.html",
     "note": "Credit/debit surcharge prohibition; discount exclusion; government exception."
   },
+  "coLaw": {
+    "label": "Colorado Revised Statutes §5-2-212 (2026 edition, Title 5)",
+    "url": "https://olls.info/crs/crs2026-title-05.pdf",
+    "note": "Official C.R.S. download linked by the Colorado General Assembly. 2% or merchant discount fee; signage; receipt line; debit/gift exclusion; (2) cash discount not a finance charge."
+  },
   "co": {
-    "label": "Colorado SB21-091, enacted summary",
+    "label": "Colorado SB21-091: bill page and signed act",
     "url": "https://leg.colorado.gov/bills/sb21-091",
-    "note": "2% or actual merchant discount fee; disclosure; debit/gift exclusion."
+    "note": "Amended 5-2-212(1), added (3) and (4); effective July 1, 2022."
   },
   "ny": {
     "label": "New York General Business Law §518",
@@ -50,9 +65,14 @@ export const sources = {
     "note": "Full credit price posted; acceptance-cost limit; two prices permitted."
   },
   "nyGuide": {
-    "label": "New York: surcharge display guidance",
+    "label": "New York Governor: credit card surcharge law and Department of State examples",
     "url": "https://www.governor.ny.gov/news/governor-hochul-announces-new-law-clarify-disclosure-credit-card-surcharges-goes-effect-sunday",
     "note": "February 11 2024 effective date; percentage-only sign insufficient."
+  },
+  "njLaw": {
+    "label": "New Jersey P.L. 2023, c.146 (N.J.S.A. 56:8-156.1 and -156.2)",
+    "url": "https://pub.njleg.state.nj.us/Bills/2022/PL23/146_.HTM",
+    "note": "Credit-card surcharge capped at actual processing cost; disclosure locations; approved August 18, 2023."
   },
   "nj": {
     "label": "New Jersey Consumer Affairs: surcharge FAQ",

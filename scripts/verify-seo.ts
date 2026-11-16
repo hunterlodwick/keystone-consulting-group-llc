@@ -1,3 +1,5 @@
+import { paymentServices } from '../src/content/payment-services';
+import { stateDetails, stateVerdict } from '../src/content/guide-states';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { guides, guidePath, guideReviewed, SITE, topics } from '../src/content/guides';
@@ -32,7 +34,7 @@ for (const path of [...publicRoutes, '/dashboard']) {
   assert.equal(schemas.length, 1, path);
   assert.deepEqual(JSON.parse(schemas[0][1]), expected.jsonLd, path);
   assert.equal(html.includes('<meta name="robots" content="noindex"'), path === '/dashboard', path);
-  const rewrite = config.rewrites.find((r: { source: string }) => r.source === path || r.source === '/(.*)');
+  const rewrite = config.rewrites.find((r: { source: string }) => r.source === path);
   assert.equal(rewrite?.destination, staticFile(path), `${path}: exact rewrite before fallback`);
   assert.match(html, /<script[^>]+type="module"[^>]+src="\/assets\//, `${path}: client entry retained`);
   const page = guides.find(g => guidePath(g.slug) === path);
@@ -64,7 +66,7 @@ assert.deepEqual(locations.sort(), publicRoutes.map(path => SITE + path).sort())
 assert.ok(!sitemap.includes('/dashboard'));
 const llms = await readFile('dist/llms.txt', 'utf8');
 const hub = await readFile(`dist${staticFile('/guides')}`, 'utf8');
-for (const slug of ['cash-discount-for-restaurants', 'choose-merchant-services-consultant', 'ai-websites-for-local-businesses', 'zero-fee-processing']) {
+for (const slug of ['choose-dual-pricing-provider', 'cash-discount-for-restaurants', 'choose-merchant-services-consultant', 'ai-websites-for-local-businesses', 'zero-fee-processing']) {
   const page = guides.find(g => g.slug === slug)!;
   assert.ok(page, `${slug}: buyer question exists`);
   assert.ok(page.sections.length >= 3 && page.sections.length <= 5, `${slug}: section count`);
@@ -73,6 +75,26 @@ for (const slug of ['cash-discount-for-restaurants', 'choose-merchant-services-c
   assert.ok(hub.includes(`href="${guidePath(slug)}"`), `${slug}: hub link`);
   const pillar = await readFile(`dist${staticFile(guidePath(topics[page.topic].slug))}`, 'utf8');
   assert.ok(pillar.includes(`href="${guidePath(slug)}"`), `${slug}: pillar link`);
+}
+for (const [slug, service] of Object.entries(paymentServices)) {
+  const path = `/services/${slug}`;
+  const html = await readFile(`dist${staticFile(path)}`, 'utf8');
+  const words = service.answer.split(/\s+/).length;
+  assert.ok(words >= 40 && words <= 60, `${slug}: direct answer length`);
+  assert.ok(!JSON.stringify(service).includes('—'), `${slug}: no em dashes`);
+  assert.ok(html.includes(escapeHtml(service.answer)), `${slug}: static direct answer`);
+  assert.ok(html.includes('id="guide-contact"'), `${slug}: contact CTA destination`);
+  assert.ok(llms.includes(SITE + path), `${slug}: llms link`);
+  const graph = siteMetadata(path).jsonLd['@graph'];
+  for (const type of ['FAQPage', 'Service', 'BreadcrumbList']) assert.ok(graph.some(g => g['@type'] === type), `${slug}: ${type}`);
+  for (const faq of service.faq) assert.ok(html.includes(escapeHtml(faq.answer)), `${slug}: visible FAQ`);
+}
+const laws = await readFile('dist/guides/dual-pricing-laws.html', 'utf8');
+for (const state of stateDetails) {
+  const html = await readFile(`dist/guides/${state.slug}-dual-pricing.html`, 'utf8');
+  assert.ok(html.includes(escapeHtml(`Short answer: ${stateVerdict(state)}`)), `${state.slug}: first verdict`);
+  for (const cell of [state.law, state.cashDiscount.charAt(0).toUpperCase() + state.cashDiscount.slice(1), state.surcharge.charAt(0).toUpperCase() + state.surcharge.slice(1)]) assert.ok(laws.includes(escapeHtml(cell)), `${state.slug}: table cell ${cell}`);
+  assert.ok(html.includes('href="/services/edge-program"'), `${state.slug}: next step`);
 }
 const robots = await readFile('dist/robots.txt', 'utf8');
 for (const bot of ['*', 'GPTBot', 'OAI-SearchBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Bingbot', 'ChatGPT-User', 'Claude-SearchBot', 'Claude-User', 'Perplexity-User', 'Applebot-Extended']) {
