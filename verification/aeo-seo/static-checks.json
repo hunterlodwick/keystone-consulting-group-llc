@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-16T16:06:47.385Z",
-  "base": "http://localhost:4317",
+  "checkedAt": "2026-11-16T16:49:35.061Z",
+  "base": "http://127.0.0.1:4180",
   "routes": [
     {
       "path": "/",
@@ -707,7 +707,7 @@
   ],
   "sitemapRoutes": 77,
   "existingRoutes": 30,
-  "internalLinks": 358,
+  "internalLinks": 359,
   "internalLinksChecked": [
     "/",
     "/#about",
@@ -787,6 +787,7 @@
     "/guides/choose-dual-pricing-provider#section-2",
     "/guides/choose-dual-pricing-provider#section-3",
     "/guides/choose-dual-pricing-provider#section-4",
+    "/guides/choose-dual-pricing-provider#section-5",
     "/guides/choose-merchant-services-consultant",
     "/guides/choose-merchant-services-consultant#faq",
     "/guides/choose-merchant-services-consultant#guide-contact",

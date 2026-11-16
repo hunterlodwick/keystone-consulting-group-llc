@@ -52,6 +52,7 @@ import {
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
 import PaymentServicePage from './pages/PaymentServicePage';
+import NotFoundPage from './pages/NotFoundPage';
 import ServicesPage, { SingleServicePage } from './pages/ServicesPage';
 import WorkPage from './pages/WorkPage';
 import { BookingWidget, isBookingModalTitle } from './components/BookingWidget';
@@ -2463,8 +2464,10 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
             }} 
             onOpenModal={handleOpenModal} 
           />
-        ) : (
+        ) : currentPath === '/' || currentPath === '/index.html' ? (
           <MainLandingPage onOpenModal={handleOpenModal} onOpenSplash={handleOpenSplash} theme={theme} />
+        ) : (
+          <NotFoundPage />
         )}
       </main>
 

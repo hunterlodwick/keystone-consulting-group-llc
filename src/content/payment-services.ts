@@ -1,31 +1,35 @@
 export const providerChecklist = [
-  'Will my POS and terminals support the proposed setup across every sales channel?',
-  'How will the card price and cash price appear before payment?',
-  'How are debit and prepaid cards handled without a prohibited surcharge?',
-  'Which monthly, gateway, equipment, and software fees remain?',
-  'What are the contract, cancellation, and equipment-return terms?',
-  'Who reviews signage, menus, checkout screens, and receipts for compliance?',
+  'Will my POS, terminals, invoices, and online checkout all show the card price and the cash price before payment?',
+  'Is the card total built from displayed prices, or is a fee added at checkout?',
+  'How are debit and prepaid cards handled, given Visa’s ban on surcharging them?',
+  'Which fixed fees remain each month and each year, and what equipment costs are separate?',
+  'What are the contract length, cancellation terms, and equipment-return terms?',
+  'Who checks signs, menus, receipts, and checkout wording against the law in each state where I sell?',
 ];
+/** Payments Hub fixed fees that still apply on the Edge Program. */
+export const edgeFixedFees = ['$79 annual service fee', '$20/month PCI compliance', '$10/month basic service'];
 export const paymentServices = {
   'edge-program': {
-    title: 'The Edge Program: zero-fee processing with dual pricing',
-    answer: 'KCG’s Edge Program is a cash discount or dual-pricing option with $0 processing volume fees for the merchant and no contracts. Customers see a card price and a lower cash price. KCG serves merchants nationwide and offers a free statement audit to review the costs and payment setup for your business.',
+    title: 'The Edge Program: 5% dual pricing with $0 processing fees',
+    description: 'KCG’s Edge Program: 5% dual pricing on Payments Hub. $0 processing volume fees; $79/yr, $20/mo PCI and $10/mo service fees remain. No contract.',
+    answer: 'The Edge Program is KCG’s dual pricing on Payments Hub. Every price shows a card price and a cash price, with the card price 5% above the cash price, and you pay $0 in processing volume fees. Payments Hub’s fixed fees still apply: $79 per year, $20/month PCI compliance, and $10/month basic service. No contract.',
     faq: [
-      { question: 'What does zero-fee processing cover?', answer: 'The Edge Program eliminates processing volume fees for the merchant. Ask for a written proposal identifying any remaining gateway, equipment, software, or other charges. Zero-fee does not mean every payment-related expense disappears.' },
-      { question: 'Is the Edge Program a cash discount or a surcharge?', answer: 'A genuine cash discount reduces the displayed card price; dual pricing shows cash and card prices before payment. Adding a fee to a posted price may be a surcharge. Review the actual checkout rather than relying on a program name.' },
-      { question: 'Can debit cards be surcharged?', answer: 'Visa prohibits surcharging debit and prepaid cards, even when debit is run as credit. Have the acquirer review debit handling separately from the cash discount and credit-card setup.' },
-      { question: 'Does KCG require a processing contract?', answer: 'KCG offers the Edge Program with no contracts. Confirm the complete written proposal and any separate equipment or optional-service terms before switching.' },
-      { question: 'Can businesses outside Utah request an audit?', answer: 'Yes. KCG serves merchants nationwide and offers a free statement audit. Bring your locations, payment channels, and current statement so the proposed setup can be reviewed.' },
+      { question: 'What do I still pay on the Edge Program?', answer: 'No processing volume fees. The fixed Payments Hub fees remain: a $79 annual service fee, $20 per month for PCI compliance, and $10 per month for basic service. Equipment terms are quoted separately.' },
+      { question: 'How do customers see the prices?', answer: 'Each item shows a card price and a lower cash price before payment; the card price is 5% above the cash price. Visa’s rules for a cash discount require the card price alone or both prices side by side, with the card total built from those displayed prices rather than a fee added at checkout.' },
+      { question: 'Is dual pricing the same as a surcharge?', answer: 'No. A surcharge is a fee added for paying by card. With dual pricing, both prices are shown up front and the cash price is the discount. Connecticut, Massachusetts, and Maine prohibit card surcharges but allow cash discounts; the state guides cite each statute.' },
+      { question: 'Is there a contract?', answer: 'No. The Edge Program has no processing contract.' },
+      { question: 'Can businesses outside Utah sign up?', answer: 'Yes. KCG works with merchants nationwide. Start with a free statement audit of your current processing costs.' },
     ],
   },
   'payment-processing': {
     title: 'Low-rate payment processing',
-    answer: 'KCG offers low-rate payment processing through interchange-plus at wholesale or the zero-fee Edge Program, with no contracts and nationwide service. Start with a free statement audit to compare your costs. Discuss the $30/month Fluid Pay plan, next-day funding availability, and Flexxbuy consumer financing alongside your checkout and billing needs.',
+    description: 'KCG offers interchange-plus at wholesale or the Edge Program (5% dual pricing, $0 processing volume fees), no contracts. Start with a free statement audit.',
+    answer: 'KCG offers two ways to lower card processing costs: interchange-plus at wholesale, where you keep one price and pay interchange plus a disclosed markup, or the Edge Program, 5% dual pricing on Payments Hub with $0 processing volume fees. Neither requires a contract. A free statement audit compares your current costs with each option.',
     faq: [
-      { question: 'Which processing options does KCG offer?', answer: 'KCG offers interchange-plus at wholesale and the Edge Program with $0 processing volume fees for the merchant. A free statement audit helps compare the proposal with your current payment costs.' },
-      { question: 'Can I sign up for Fluid Pay directly?', answer: 'Fluid Pay is partner-only. Merchants get the Fluid Pay plan by applying through KCG. The plan is $30/month with no contract; request full processing and optional-service terms separately.' },
-      { question: 'Is next-day funding available?', answer: 'Next-day funding is available through KCG. Confirm account eligibility, cutoff times, bank timing, and any conditions before planning around a deposit date.' },
-      { question: 'Can I offer customer financing?', answer: 'Flexxbuy is an option for buy-now-pay-later and customer financing. Discuss your industry, checkout flow, merchant costs, and funding conditions. Customer approval is not guaranteed.' },
+      { question: 'Should I choose interchange-plus or the Edge Program?', answer: 'Interchange-plus keeps a single price for every customer, and you pay the processing cost. The Edge Program shows a card price 5% above the cash price; you pay $0 in processing volume fees plus Payments Hub’s fixed fees ($79 per year, $20 per month PCI compliance, $10 per month basic service). The statement audit compares both against your current costs.' },
+      { question: 'Can I sign up for Fluid Pay directly?', answer: 'No. Fluid Pay is partner-only, so merchants apply through a partner such as KCG. KCG’s Fluid Pay plan is $30/month with no contract; processing terms are quoted separately.' },
+      { question: 'Is next-day funding available?', answer: 'Yes, through KCG. Eligibility, cutoff times, and bank timing are confirmed when the account is set up.' },
+      { question: 'Can I offer customer financing?', answer: 'Yes. Flexxbuy lets customers pay over time. Funding timing, merchant fees, and customer approval follow the financing provider’s terms.' },
     ],
   },
 };

@@ -65,7 +65,7 @@ HTTP_STATUS=200
 /guides/california-dual-pricing
 <h1>California: dual pricing and credit-card surcharge rules</h1>
 <title>California: dual pricing and credit-card surcharge rules | KCG</title>
-<meta name="description" content="SB 478 distinguishes unavoidable fees from optional card fees; credit-only payment makes the fee mandatory." />
+<meta name="description" content="Civil Code §1748.1 allows cash discounts offered to all buyers; its surcharge ban is limited by a 2018 ruling, and SB 478 governs advertised prices." />
 <link rel="canonical" href="https://www.keystoneconsultingg.com/guides/california-dual-pricing" />
 JSON-LD parses: true
 HTTP_STATUS=200

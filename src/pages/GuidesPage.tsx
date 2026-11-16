@@ -3,7 +3,9 @@ import { ArrowRight, BookOpen, CheckCircle } from 'lucide-react';
 import { ContactForm } from '../App';
 import { guideBySlug, guidePath, guideReviewed, guides, topics, type Guide } from '../content/guides';
 import { sources, type SourceId } from '../content/guide-sources';
-import { stateDetails, stateNames } from '../content/guide-states';
+import { STATE_REVIEWED, stateDetails, stateNames } from '../content/guide-states';
+const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
+const formatReviewed = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 import { hubDescription, hubTitle } from '../content/guide-seo';
 
 import { siteMetadataMarkup } from '../content/site-seo';
@@ -17,7 +19,7 @@ export function GuideHead({ path }: { path: string }) {
     const template = document.createElement('template');
     const canonicalPath = path === '/privacy-policy' ? '/privacy' : path === '/terms-of-service' ? '/terms' : path;
     try { template.innerHTML = siteMetadataMarkup(canonicalPath); }
-    catch { template.innerHTML = siteMetadataMarkup('/'); }
+    catch { template.innerHTML = siteMetadataMarkup('/404'); }
     const nodes = [...template.content.children];
     nodes.forEach(node => document.head.append(node));
     return () => { nodes.forEach(node => node.remove()); previous.forEach(node => document.head.append(node)); };
@@ -46,7 +48,7 @@ function Card({ page }: { page: Guide }) {
   return <a className="guide-card" href={guidePath(page.slug)}><span className="guide-eyebrow">{page.kind === 'question' ? 'Question answered' : page.kind === 'state' ? 'State rules' : page.kind === 'comparison' ? 'Compare options' : 'Start here'}</span><h3>{page.title}</h3><p>{page.description}</p><span className="guide-read">Read the guide <ArrowRight size={16} aria-hidden="true" /></span></a>;
 }
 function StateVerdicts() {
-  return <section className="guide-section"><h2>At a glance: seven state pricing verdicts</h2><p>These distinctions summarize the existing state guides, not a new legal review. Where the cited text addresses only surcharges, cash-discount permission is not established here.</p><div className="guide-table-scroll" tabIndex={0} role="region" aria-label="State pricing verdicts"><table><thead><tr><th scope="col">State</th><th scope="col">Verdict</th></tr></thead><tbody>{stateDetails.map(state => <tr key={state.slug}><th scope="row" data-label="State"><a href={guidePath(`${state.slug}-dual-pricing`)}>{state.name}</a></th><td data-label="Verdict">{state.verdict}<Citations ids={state.sources} /></td></tr>)}</tbody></table></div></section>;
+  return <section className="guide-section"><h2>At a glance: seven states</h2><p>Each row summarizes the state guide linked in the first column and the primary law it cites, checked against those sources on {formatReviewed(STATE_REVIEWED)}. Card-network rules apply in every state, including Visa’s ban on surcharging debit and prepaid cards.</p><div className="guide-table-scroll" tabIndex={0} role="region" aria-label="State pricing rules at a glance"><table><thead><tr><th scope="col">State</th><th scope="col">Cash discount / dual pricing</th><th scope="col">Credit-card surcharge</th><th scope="col">Primary law</th></tr></thead><tbody>{stateDetails.map(state => <tr key={state.slug}><th scope="row" data-label="State"><a href={guidePath(`${state.slug}-dual-pricing`)}>{state.name}</a></th><td data-label="Cash discount / dual pricing">{capitalize(state.cashDiscount)}</td><td data-label="Credit-card surcharge">{capitalize(state.surcharge)}</td><td data-label="Primary law">{state.law}<Citations ids={state.sources.filter(id => id !== 'visa')} /></td></tr>)}</tbody></table></div></section>;
 }
 function StateTable() {
   return <section className="guide-section"><h2>State-by-state research map</h2><p>This is a research map, not a fifty-state legal clearance. The linked states have verified distinctions. Other entries are not separately reviewed and must not be read as permission to surcharge.</p><div className="guide-table-scroll" tabIndex={0} role="region" aria-label="State research table"><table><thead><tr><th scope="col">State or district</th><th scope="col">Verified distinction or review status</th></tr></thead><tbody>{stateNames.map(name => {
@@ -73,7 +75,7 @@ export default function GuidesPage({ path }: { path: string }) {
         {Object.entries(topics).map(([id, topic]) => <section key={id} id={id} className="guide-topic"><div className="guide-topic-heading"><div><h2>{topic.title}</h2><p>{topic.description}</p></div><a href={topic.service}>Explore the service <ArrowRight size={16} aria-hidden="true" /></a></div><div className="guide-grid">{guides.filter(g => g.topic === id && g.kind !== 'pillar').map(g => <div key={g.slug} className="contents"><Card page={g} /></div>)}</div></section>)}
       </> : <div className="guide-body-grid">
         <article className="guide-article">
-          {page.legal && <aside className="guide-note"><strong>Not legal advice.</strong> This is general information from the linked sources, reviewed October 28, 2026. Laws and network rules can change. Have your legal adviser and acquirer review your actual pricing, locations, and checkout before implementation.</aside>}
+          {page.legal && <aside className="guide-note"><strong>Not legal advice.</strong> This is general information from the linked sources, reviewed {formatReviewed(guideReviewed(page))}. Laws and network rules can change. Have your legal adviser and acquirer review your actual pricing, locations, and checkout before implementation.</aside>}
           {page.kind === 'comparison' && <aside className="guide-note"><strong>As of Oct 2026, check current.</strong> Competitor details come from each provider’s public pricing page linked above. Features, eligibility, agreements, and fees vary. No comparative savings or performance guarantee is made.</aside>}
           {page.stateTable && <StateVerdicts />}
           {page.table && <div className="guide-table-scroll" tabIndex={0} role="region" aria-label="Provider comparison"><table><thead><tr>{page.table.headings.map(h => <th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{page.table.rows.map(row => <tr key={row[0]}>{row.map((cell, i) => i === 0 ? <th key={i} scope="row" data-label={page.table!.headings[i]}>{cell}</th> : <td key={i} data-label={page.table!.headings[i]}>{cell}</td>)}</tr>)}</tbody></table></div>}

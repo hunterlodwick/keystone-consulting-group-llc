@@ -1,5 +1,5 @@
 import { paymentServices } from '../src/content/payment-services';
-import { stateDetails } from '../src/content/guide-states';
+import { stateDetails, stateVerdict } from '../src/content/guide-states';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { guides, guidePath, guideReviewed, SITE, topics } from '../src/content/guides';
@@ -34,7 +34,7 @@ for (const path of [...publicRoutes, '/dashboard']) {
   assert.equal(schemas.length, 1, path);
   assert.deepEqual(JSON.parse(schemas[0][1]), expected.jsonLd, path);
   assert.equal(html.includes('<meta name="robots" content="noindex"'), path === '/dashboard', path);
-  const rewrite = config.rewrites.find((r: { source: string }) => r.source === path || r.source === '/(.*)');
+  const rewrite = config.rewrites.find((r: { source: string }) => r.source === path);
   assert.equal(rewrite?.destination, staticFile(path), `${path}: exact rewrite before fallback`);
   assert.match(html, /<script[^>]+type="module"[^>]+src="\/assets\//, `${path}: client entry retained`);
   const page = guides.find(g => guidePath(g.slug) === path);
@@ -92,8 +92,8 @@ for (const [slug, service] of Object.entries(paymentServices)) {
 const laws = await readFile('dist/guides/dual-pricing-laws.html', 'utf8');
 for (const state of stateDetails) {
   const html = await readFile(`dist/guides/${state.slug}-dual-pricing.html`, 'utf8');
-  assert.ok(html.includes(escapeHtml(`Short answer: ${state.verdict}`)), `${state.slug}: first verdict`);
-  assert.ok(laws.includes(escapeHtml(state.verdict)), `${state.slug}: matching table verdict`);
+  assert.ok(html.includes(escapeHtml(`Short answer: ${stateVerdict(state)}`)), `${state.slug}: first verdict`);
+  for (const cell of [state.law, state.cashDiscount.charAt(0).toUpperCase() + state.cashDiscount.slice(1), state.surcharge.charAt(0).toUpperCase() + state.surcharge.slice(1)]) assert.ok(laws.includes(escapeHtml(cell)), `${state.slug}: table cell ${cell}`);
   assert.ok(html.includes('href="/services/edge-program"'), `${state.slug}: next step`);
 }
 const robots = await readFile('dist/robots.txt', 'utf8');

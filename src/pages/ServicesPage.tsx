@@ -1844,8 +1844,8 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
       <section className="max-w-5xl mx-auto px-6 md:px-12 pb-16">
         <h2 className="font-serif text-3xl text-white mb-6">Payment processing</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <a className="border border-teal/30 rounded-xl p-6 text-offwhite" href="/services/payment-processing"><h3 className="text-xl text-teal mb-3">Low-rate payment processing</h3><p>Compare interchange-plus at wholesale, the Edge Program, and the Fluid Pay plan with a free statement audit.</p></a>
-          <a className="border border-teal/30 rounded-xl p-6 text-offwhite" href="/services/edge-program"><h3 className="text-xl text-teal mb-3">The Edge Program</h3><p>Explore zero-fee processing with cash discounts and dual pricing, no contracts, and nationwide service.</p></a>
+          <a className="border border-teal/30 rounded-xl p-6 text-offwhite" href="/services/payment-processing"><h3 className="text-xl text-teal mb-3">Low-rate payment processing</h3><p>Interchange-plus at wholesale or the Edge Program, with no contract. Start with a free statement audit.</p></a>
+          <a className="border border-teal/30 rounded-xl p-6 text-offwhite" href="/services/edge-program"><h3 className="text-xl text-teal mb-3">The Edge Program</h3><p>5% dual pricing on Payments Hub: a card price and a cash price, $0 processing volume fees, no contract.</p></a>
         </div>
       </section>
       {/* Quick Nav */}

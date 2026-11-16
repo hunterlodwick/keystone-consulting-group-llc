@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/privacy-policy",
@@ -323,10 +324,6 @@
     {
       "source": "/guides/zero-fee-processing",
       "destination": "/guides/zero-fee-processing.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ],
   "headers": [
