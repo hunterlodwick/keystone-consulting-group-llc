@@ -19,6 +19,8 @@ const FOLLOWUPS = {
 /** History supplies bounded intent hints only, never business evidence or response copy. */
 export function planGroundedTurn(question: string, history: HistoryTurn[]): GroundedTurn {
   const q = question.toLowerCase();
+  const partnerFollowup = /\b(?:switch|keep|replace|compatible|compatibility|integrate)\b/.test(q) &&
+    [...history].reverse().find(h => h.role === 'user' && /\b(?:square|clover|partners?|payments?|website|ai)\b/i.test(h.content))?.content.match(/\b(?:square|clover|partners?)\b/i);
   const approved = availablePassages();
   if (isExcludedRouteQuestion(question)) return {topic:"none",focus:"general",evidence:[],followUp:null};
   const broad = retrievePublic(question, approved);
@@ -32,7 +34,7 @@ export function planGroundedTurn(question: string, history: HistoryTurn[]): Grou
   if (isServicesOverviewQuestion(question)) topic = "overview";
   else if (/\bprivacy|what (?:do you|data do you) collect\b/.test(q)) topic = "privacy";
   else if (isFinancingQuestion(question)) topic = "financing";
-  else if (/\b(?:square|clover|partners?|integrat(?:e|ion))\b/.test(q)) topic = "partners";
+  else if (partnerFollowup || /\b(?:square|clover|partners?|integrat(?:e|ion))\b/.test(q)) topic = "partners";
   else if (/\b(?:pos|payments?|fees?|checkout|statement|split checks?|table service)\b/.test(q)) topic = "payments";
   else if (/\b(?:website|websites|web design|found online|google|seo|enquir(?:y|ies)|more leads|visitors into bookings)\b/.test(q)) topic = "websites";
   else if (/\b(?:ai|virtual assistants?|admin|automation|missed calls?|follow-ups|scheduling)\b/.test(q)) topic = "ai";

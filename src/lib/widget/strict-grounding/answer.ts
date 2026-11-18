@@ -6,6 +6,7 @@ import type { ResponsesTransport } from "../responses";
 import type { ChatResult, HistoryTurn } from "../types";
 import { CATALOG_VERSION, passageCitation, availablePassages } from "./catalog";
 import { planGroundedTurn, type GroundedTurn } from "./turn";
+import { parseSelection } from './selection';
 
 const ABSTAIN = "I do not have approved public information for that question. I can help with published services, payments, websites, AI assistants, guides, and privacy information. Try naming a service, assistant, or specific public guide.";
 const LIMITATION = "That published information does not confirm a particular feature, compatibility, or a need to switch your setup.";
@@ -35,6 +36,7 @@ function render(turn: GroundedTurn, ids: string[], mode: ChatResult["mode"], rea
 
 export async function strictAnswerQuestion(question: string, history: HistoryTurn[], opts: {
   signal?: AbortSignal; processorConsent?: boolean; responsesTransport?: ResponsesTransport;
+  select?: (turn: GroundedTurn, question: string, history: HistoryTurn[]) => Promise<string>;
   /** Legacy test seam retained for source compatibility; it is never invoked. */
   call?: (m: ChatMessage[], o: { signal: AbortSignal }) => Promise<string>;
 } = {}): Promise<ChatResult> {
@@ -55,6 +57,17 @@ export async function strictAnswerQuestion(question: string, history: HistoryTur
     return local;
   }
   const local = () => render(turn, turn.evidence.map((e) => e.id), "extractive", "approved_local");
-  // Release has no hosted processor configured. Consent cannot enable a provider.
+  if (opts.processorConsent === true && opts.select) {
+    try {
+      const ids = parseSelection(await opts.select(turn, q, turns), turn.evidence);
+      if (ids === null || !ids.length) throw new Error('Invalid selection');
+      return render(turn, ids, 'openai-responses', 'approved_selection');
+    } catch {
+      const fallback = local();
+      fallback.reason = 'hosted_unavailable';
+      fallback.notices = ['Hosted selection is unavailable. This answer uses approved public passages from this site.'];
+      return fallback;
+    }
+  }
   return local();
 }

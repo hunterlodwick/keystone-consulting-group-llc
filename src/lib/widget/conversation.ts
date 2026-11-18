@@ -128,10 +128,15 @@ export function detectNeed(text: string): NeedKind | null {
 }
 
 export function detectBusiness(text: string): BusinessKind | null {
-  for (const [re, kind] of BUSINESS_PATTERNS) {
-    if (re.test(text)) return kind;
+  // The last explicit, non-negated correction wins, including a trailing "instead".
+  const clauses = text.split(/\b(?:actually|instead|rather|but)\b/i).reverse();
+  for (const clause of clauses) {
+    const positive = clause.replace(/\b(?:not|no longer)\s+(?:a[n]?\s+)?(?:restaurant|cafe|retail(?: store| shop)?|store|shop|trade|contractor|salon|clinic)\b/gi, '');
+    for (const [re, kind] of BUSINESS_PATTERNS) {
+      if (re.test(positive)) return kind;
+    }
+    if (/\bbusiness\b/i.test(positive) && BUSINESS_ONLY_RE.test(positive)) return "other";
   }
-  if (/\bbusiness\b/i.test(text) && BUSINESS_ONLY_RE.test(text)) return "other";
   return null;
 }
 

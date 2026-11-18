@@ -13,11 +13,11 @@ export const DISCLOSURE = {
   localNoThirdParty: "Messages are processed by this site. No AI provider is used; chat is not saved by this widget.",
   localLlama: (model: string) => `Local ${model} on this computer`,
   extractive: "Extractive answers from this site. No live model in use.",
-  hostedAnswer: "Hosted answer from OpenAI Responses. Contact fields were not sent.",
+  hostedAnswer: "Approved passages selected with OpenAI. Contact form fields were not sent.",
   /** Compact checkbox label. Longer scope lives under Details. */
   processorConsent: "Allow OpenAI to answer using this message and recent chat.",
   processorDetailsSummary: "Details",
-  processorBody: `OpenAI is a separate processor. If you opt in, ${HOSTED_MESSAGE_SCOPE}, plus public page excerpts, leave this computer so OpenAI can draft an answer. We do not send your name, email, phone, or company. You can keep using on-computer answers without this.`,
+  processorBody: `OpenAI is a separate processor. If you opt in, ${HOSTED_MESSAGE_SCOPE}, plus public page excerpts, leave this computer so OpenAI can select approved passages. Eligible user messages are bounded and redacted; keep private details out of chat. You can keep using site answers without this.`,
   aiOn: "OpenAI on",
   turnOff: "Turn off",
   checklistStored:

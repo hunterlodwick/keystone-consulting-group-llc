@@ -1,5 +1,10 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { createHash } from 'node:crypto';
+import { isIP } from 'node:net';
+import { productionConfig } from './production/config';
+import { SharedStore, restTransport, type RedisTransport } from './production/store';
+import { selectHosted } from './production/hosted';
+import { parseLead, submitLead } from './production/lead';
 import { strictAnswerQuestion } from '../../src/lib/widget/strict-grounding/answer';
 import { availablePassages } from '../../src/lib/widget/strict-grounding/catalog';
 import { validChatBody } from '../../src/lib/widget/strict-grounding/request';
@@ -46,42 +51,65 @@ async function body(req: Request): Promise<unknown> {
   return JSON.parse(Buffer.concat(chunks).toString('utf8'));
 }
 
-/** Widget API dispatch. No providers, lead adapters, source readers or logs. */
-export default async function handler(req: Request, res: ServerResponse) {
-  const url = new URL(req.url ?? '/', 'https://internal.invalid');
-  // The explicit rewrite supplies dispatch when Vercel exposes the destination URL.
-  const path = url.pathname === '/api/widget'
-    ? '/api/' + (url.searchParams.get('__widget_path') ?? '')
-    : url.pathname;
-  const known = ['/api/widget/status','/api/widget/chat','/api/widget/checklist','/api/widget/lead','/api/widget/brief','/api/contact'];
-  if (!known.includes(path)) return fail(res,404,'not_found','This endpoint does not exist.');
-  const method = path === '/api/widget/status' ? 'GET' : 'POST';
-  if (req.method !== method) { res.setHeader('Allow',method); return fail(res,405,'method_not_allowed','Method not allowed.'); }
-  if (method === 'GET') return send(res,200,{mode:'extractive',available:availablePassages().length === 254,
-    hosted:{enabled:false,available:false},leadBrief:false,leadDelivery:false,contactHref:CONTACT});
-  if (!sameOrigin(req)) return fail(res,403,'forbidden_origin','Requests must come from this site.');
-  if (['/api/contact','/api/widget/lead','/api/widget/brief'].includes(path))
-    return fail(res,503,'delivery_unavailable','Nothing was saved or sent. Use the email or phone links on our contact section to reach KCG.');
-  if (typeof req.headers['content-type'] !== 'string' || !/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(req.headers['content-type']))
-    return fail(res,415,'unsupported_media_type','Send JSON.');
-  if (req.headers['content-encoding'] && req.headers['content-encoding'] !== 'identity') return fail(res,415,'unsupported_encoding','Send uncompressed JSON.');
-  // Vercel overwrites this header. Store only a digest, with bounded process-local lifetime.
-  const ip = req.headers['x-vercel-forwarded-for'] ?? req.socket?.remoteAddress ?? 'unknown';
-  const admission = admit(createHash('sha256').update(String(ip).slice(0,128)).digest('hex'));
-  if (admission.ok === false) { res.setHeader('Retry-After',admission.retryAfterSec); return fail(res,429,admission.reason,'Please try again later.'); }
-  try {
-    let raw: unknown;
-    try { raw = await body(req); }
-    catch (error) { return fail(res,error instanceof RangeError ? 413 : 400,'invalid_request','Send a bounded JSON request.'); }
-    if (path === '/api/widget/chat') {
-      if (!validChatBody(raw)) return fail(res,400,'invalid_request','Send a question and bounded chat history only.');
-      const input = raw as { question: string; history?: unknown };
-      return send(res,200,await strictAnswerQuestion(input.question,sanitizeHistory(input.history)));
+/** Dependency injection is code-only: no request or environment can choose a transport. */
+export function createWidgetHandler(options: { env?: NodeJS.ProcessEnv; redis?: RedisTransport; fetch?: typeof fetch } = {}) {
+  return async function handler(req: Request, res: ServerResponse) {
+    const config = productionConfig(options.env ?? process.env);
+    const run = options.fetch ?? fetch;
+    const store = new SharedStore(config, options.redis ?? restTransport(config, run));
+    const url = new URL(req.url ?? '/', 'https://internal.invalid');
+    // The explicit rewrite supplies dispatch when Vercel exposes the destination URL.
+    const path = url.pathname === '/api/widget'
+      ? '/api/' + (url.searchParams.get('__widget_path') ?? '')
+      : url.pathname;
+    const known = ['/api/widget/status','/api/widget/chat','/api/widget/checklist','/api/widget/lead','/api/widget/brief','/api/contact'];
+    if (!known.includes(path)) return fail(res,404,'not_found','This endpoint does not exist.');
+    const method = path === '/api/widget/status' ? 'GET' : 'POST';
+    if (req.method !== method) { res.setHeader('Allow',method); return fail(res,405,'method_not_allowed','Method not allowed.'); }
+    if (method === 'GET') {
+      let ready = false;
+      if (config.hosted || config.lead) try { ready = await store.ready(); } catch { /* fail closed */ }
+      return send(res,200,{mode:'extractive',available:availablePassages().length === 254,
+        hosted:{enabled:config.hosted,available:config.hosted && ready},leadBrief:false,leadDelivery:config.lead && ready,contactHref:CONTACT});
     }
-    if (!validChecklist(raw)) return fail(res,400,'invalid_request','Choose the checklist options.');
-    const checklist = approvedChecklist(raw.answers);
-    if (!checklist) return fail(res,503,'evidence_unavailable','Approved information is unavailable. Please use our public pages.');
-    return send(res,200,checklist);
-  } catch { return fail(res,503,'unavailable','The assistant is unavailable. Please use our public pages.'); }
-  finally { admission.release(); }
+    if (!sameOrigin(req)) return fail(res,403,'forbidden_origin','Requests must come from this site.');
+    if (['/api/contact','/api/widget/brief'].includes(path) || (path === '/api/widget/lead' && !config.lead))
+      return fail(res,503,'delivery_unavailable','Nothing was saved or sent. Use the email or phone links on our contact section to reach KCG.');
+    if (typeof req.headers['content-type'] !== 'string' || !/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(req.headers['content-type']))
+      return fail(res,415,'unsupported_media_type','Send JSON.');
+    if (req.headers['content-encoding'] && req.headers['content-encoding'] !== 'identity') return fail(res,415,'unsupported_encoding','Send uncompressed JSON.');
+    // Vercel overwrites this header. Store only a digest, with bounded process-local lifetime.
+    const forwarded = config.production ? req.headers['x-vercel-forwarded-for'] : undefined;
+    const address = typeof forwarded === 'string' ? forwarded.trim() : req.socket?.remoteAddress;
+    const ip = typeof address === 'string' && isIP(address) ? address : 'unknown';
+    const admission = admit(createHash('sha256').update(String(ip).slice(0,128)).digest('hex'));
+    if (admission.ok === false) { res.setHeader('Retry-After',admission.retryAfterSec); return fail(res,429,admission.reason,'Please try again later.'); }
+    try {
+      let raw: unknown;
+      try { raw = await body(req); }
+      catch (error) { return fail(res,error instanceof RangeError ? 413 : 400,'invalid_request','Send a bounded JSON request.'); }
+      if (path === '/api/widget/lead') {
+        const input = parseLead(raw);
+        if (!input) return fail(res,400,'invalid_request','Review the named contact fields and give separate follow-up consent.');
+        const result = await submitLead(config,store,run,ip,input);
+        if (result.http === 429) res.setHeader('Retry-After','600');
+        const {http, ...receipt} = result;
+        return send(res,http,{...receipt,contactHref:CONTACT});
+      }
+      if (path === '/api/widget/chat') {
+        if (!validChatBody(raw)) return fail(res,400,'invalid_request','Send a question and bounded chat history only.');
+        const input = raw as { question: string; history?: unknown; processorConsent?: boolean };
+        return send(res,200,await strictAnswerQuestion(input.question,sanitizeHistory(input.history), {
+          processorConsent:input.processorConsent,
+          select:config.hosted ? (turn,q,history) => selectHosted(config,store,run,ip,turn,q,history) : undefined,
+        }));
+      }
+      if (!validChecklist(raw)) return fail(res,400,'invalid_request','Choose the checklist options.');
+      const checklist = approvedChecklist(raw.answers);
+      if (!checklist) return fail(res,503,'evidence_unavailable','Approved information is unavailable. Please use our public pages.');
+      return send(res,200,checklist);
+    } catch { return fail(res,503,'unavailable','The assistant is unavailable. Please use our public pages.'); }
+    finally { admission.release(); }
+  };
 }
+export default createWidgetHandler();

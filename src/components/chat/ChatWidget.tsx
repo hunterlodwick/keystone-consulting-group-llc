@@ -111,6 +111,9 @@ function ChatPanel() {
   const [answers, setAnswers] = useState<Answers>({ shop: "", leak: "", volume: "", google: "", intake: "" });
   const [checklist, setChecklist] = useState<ChecklistResult | null>(null);
   const [statusKnown, setStatusKnown] = useState(false);
+  const [hostedAvailable, setHostedAvailable] = useState(false);
+  const [leadAvailable, setLeadAvailable] = useState(false);
+  const [processorConsent, setProcessorConsent] = useState(false);
   const [startersVisible, setStartersVisible] = useState(true);
   const launcherRef = useRef<HTMLButtonElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -136,6 +139,8 @@ function ChatPanel() {
       .then((r) => r.json())
       .then((d) => {
         setStatusKnown(true);
+        setHostedAvailable(d.hosted?.available === true);
+        setLeadAvailable(d.leadDelivery === true);
         setModeLabel(modeLabelForStatus(d));
       })
       .catch(() => {
@@ -373,7 +378,7 @@ function ChatPanel() {
       const res = await fetch("/api/widget/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ question, history }),
+        body: JSON.stringify({ question, history, processorConsent: hostedAvailable && processorConsent }),
         signal: controller.signal,
       });
       const data = await res.json().catch(() => null);
@@ -446,8 +451,8 @@ function ChatPanel() {
   }
 
   const disclosureSurface: WidgetDisclosureSurface =
-    statusKnown ? "local" : "unknown";
-  const footNotice = transcriptNotice(disclosureSurface, false);
+    statusKnown ? hostedAvailable ? "hosted" : "local" : "unknown";
+  const footNotice = transcriptNotice(disclosureSurface, processorConsent);
 
   if (hiddenRoute) return null;
 
@@ -586,7 +591,7 @@ function ChatPanel() {
                   ))}
                 </ol>
                 <a className="kcg-chat-chip" href="/#contact">Contact KCG</a>
-                <p>Follow-up submission is unavailable here. Use the email or phone links to contact KCG.</p>
+                {!leadAvailable ? <p>Follow-up submission is unavailable here. Use the contact links to reach KCG.</p> : null}
               </div>
             ) : null}
 
@@ -673,6 +678,8 @@ function ChatPanel() {
               </div>
             ) : null}
 
+            <LeadFollowUp available={leadAvailable} />
+
             {pending ? (
               <div className="kcg-chat-msg kcg-chat-msg--bot">
                 <p>One moment...</p>
@@ -683,6 +690,12 @@ function ChatPanel() {
             ) : null}
           </div>
 
+          {hostedAvailable ? <div className="kcg-chat-processor" data-testid="hosted-controls">
+            <label className="kcg-chat-consent kcg-chat-consent--compact"><input type="checkbox" data-testid="hosted-consent" checked={processorConsent}
+              onChange={e => { setProcessorConsent(e.target.checked); if (!e.target.checked) abortRef.current?.abort(); }} />
+              Allow OpenAI to select approved passages using this message and recent eligible chat messages.</label>
+            <details className="kcg-chat-processor-details"><summary>Processing details</summary><p>OpenAI is a separate processor. Only bounded, redacted user messages and approved public excerpts are sent, with storage disabled. Keep private details out of chat. Uncheck to stop future hosted requests; messages already sent cannot be recalled. Site answers remain available.</p></details>
+          </div> : null}
           <form
             className="kcg-chat-form"
             onSubmit={(e) => {
@@ -740,6 +753,8 @@ function ChatPanel() {
                   type="button"
                   className="kcg-chat-foot-link"
                   onClick={() => {
+                    abortRef.current?.abort();
+                    setProcessorConsent(false);
                     setMessages([]);
                     setChecklist(null);
                     setStartersVisible(true);
@@ -773,4 +788,65 @@ function statusLabel(s: string): string {
     default:
       return "";
   }
+}
+
+
+type ContactFields = { name: string; email: string; phone: string; company: string; message: string };
+const EMPTY_CONTACT: ContactFields = { name: '', email: '', phone: '', company: '', message: '' };
+/** Separate form state; no conversation content is copied into the lead payload. */
+function LeadFollowUp({available}: {available: boolean}) {
+  const [expanded, setExpanded] = useState(false);
+  const [fields, setFields] = useState<ContactFields>({...EMPTY_CONTACT});
+  const [reviewed, setReviewed] = useState(false);
+  const [consent, setConsent] = useState(false);
+  const [submissionId, setSubmissionId] = useState('');
+  const [attempted, setAttempted] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState('');
+  const locked = useRef(false);
+  const abort = useRef<AbortController | null>(null);
+  useEffect(() => () => abort.current?.abort(), []);
+  if (!available) return null;
+  async function submit() {
+    if (!reviewed || !consent || locked.current) return;
+    locked.current = true;
+    setAttempted(true); setBusy(true);
+    const controller = new AbortController(); abort.current = controller;
+    const timer = window.setTimeout(() => controller.abort(), 15000);
+    try {
+      const res = await fetch('/api/widget/lead', {method:'POST',headers:{'content-type':'application/json'},signal:controller.signal,
+        body:JSON.stringify({submissionId,fields,reviewed:true,consent:true})});
+      const data = await res.json();
+      setNotice(data.status === 'accepted' ? 'Web3Forms accepted your request for KCG. Inbox delivery is not confirmed.' :
+        data.status === 'pending' || data.status === 'unknown' ? 'Acceptance is unconfirmed. Do not resubmit; use the contact links to check with KCG.' :
+        'The request was not accepted. Use the contact links to reach KCG.');
+    } catch { setNotice('Acceptance is unconfirmed. Do not resubmit; use the contact links to check with KCG.'); }
+    finally { window.clearTimeout(timer); setBusy(false); abort.current = null; setFields({...EMPTY_CONTACT}); }
+  }
+  return <div className="kcg-chat-review" data-testid="lead-controls">
+    <button type="button" className="kcg-chat-chip" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>Contact KCG with reviewed details</button>
+    {expanded ? <form onSubmit={e => { e.preventDefault(); if (reviewed) void submit(); else {
+      setReviewed(true); setConsent(false); setSubmissionId(`${Date.now()}.${crypto.randomUUID()}`);
+    } }}>
+      <p>Send only the fields below to KCG through Web3Forms. No chat transcript or checklist is attached. OpenAI consent is separate.</p>
+      {!attempted ? <>
+        {(['name','email','phone','company','message'] as const).map(key => <label key={key}>
+          {key.charAt(0).toUpperCase() + key.slice(1)}{key === 'phone' || key === 'company' ? ' (optional)' : ''}
+          <input data-testid={`lead-${key}`} name={key} type={key === 'email' ? 'email' : key === 'phone' ? 'tel' : 'text'}
+            required={key === 'name' || key === 'email' || key === 'message'} readOnly={reviewed} value={fields[key]}
+            maxLength={{name:100,email:254,phone:32,company:120,message:1500}[key]}
+            onChange={e => {setFields({...fields,[key]:e.target.value});setReviewed(false);setConsent(false);}} />
+        </label>)}
+        {reviewed ? <>
+          <p data-testid="lead-review">Review these exact named fields before sending.</p>
+          <label className="kcg-chat-consent"><input type="checkbox" data-testid="lead-consent" checked={consent} onChange={e => setConsent(e.target.checked)} />
+            I reviewed these fields and consent to sending them to KCG through Web3Forms for follow-up.</label>
+          <p>Uncheck to revoke before sending. After sending, use the contact links to request withdrawal; delivery cannot be recalled.</p>
+          <button type="button" className="kcg-chat-chip" onClick={() => {setReviewed(false);setConsent(false);}}>Edit details</button>
+          <button type="submit" className="kcg-chat-chip" data-testid="lead-submit" disabled={!consent || busy}>Send reviewed details</button>
+        </> : <button type="submit" className="kcg-chat-chip" data-testid="lead-review-button">Review details</button>}
+      </> : <p role="status" data-testid="lead-status">{busy ? 'Submitting reviewed fields…' : notice}</p>}
+      <a href="/#contact">Contact KCG</a>
+    </form> : null}
+  </div>;
 }

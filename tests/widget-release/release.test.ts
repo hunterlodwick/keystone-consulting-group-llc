@@ -72,7 +72,7 @@ test('Square, web and AI starters work without hosted config', async () => {
   const {data} = await invoke('/api/widget/chat',{question:'Do I need to switch from Square?'});
   assert.match(data.answer,/Square/);assert.match(data.answer,/does not confirm.*need to switch/);
 });
-test('status, consent and hostile environment cannot enable hosted or lead delivery', async () => {
+test('legacy enable flag alone cannot enable hosted or lead delivery', async () => {
   const previous = process.env.KCG_WIDGET_RESPONSES_ENABLE;process.env.KCG_WIDGET_RESPONSES_ENABLE='1';
   const oldFetch = globalThis.fetch; globalThis.fetch=async()=>{throw Error('Network forbidden');};
   try {
@@ -120,15 +120,15 @@ test('rate limiting responds with 429 and retry guidance; concurrent slots relea
   assert.equal(admit('next').ok,false);for(const a of admissions)if(a.ok)a.release();assert.equal(admit('next').ok,true);
 });
 
-test('the deployable handler runs from a standalone bundle with no source tree, provider, or writable sink', async()=> {
+test('the deployable handler runs from a standalone bundle with no private source tree or writable sink', async()=> {
   const {build} = await import('esbuild');
   const built = await build({entryPoints:['server/widget/handler.ts'],bundle:true,write:false,metafile:true,platform:'node',format:'esm'});
   const inputs = Object.keys(built.metafile!.inputs);
   assert.ok(inputs.includes('server/generated/approved-evidence.json'));
-  assert.ok(inputs.every(p=>!/(?:public-(?:review|evidence)|widget-index|knowledge|responses|provider|lead|keychain|preview|scripts\/)/.test(p)),inputs.join('\n'));
+  assert.ok(inputs.every(p=>!/(?:public-(?:review|evidence)|widget-index|knowledge|keychain|preview|scripts\/)/.test(p)),inputs.join('\n'));
   const code=built.outputFiles[0].text;
   assert.ok(!/from ["'](?:node:)?(?:fs|child_process|https|http)["']/.test(code));
-  assert.ok(!/writeFile|appendFile|console\.|fetch\(/.test(code));
+  assert.ok(!/writeFile|appendFile|console\./.test(code));
   const {default: packagedHandler} = await import(`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`);
   for (const question of ['Square','website builds','AI assistants']) {
     let reply: any;
@@ -140,7 +140,7 @@ test('the deployable handler runs from a standalone bundle with no source tree, 
 
 test('client and routing keep contact truthful, chat transient, and booking routes intact',()=> {
   const ui=readFileSync('src/components/chat/ChatWidget.tsx','utf8');
-  assert.ok(!/sessionStorage|\/api\/widget\/(?:lead|brief)|Store local follow-up|Saving local receipt/.test(ui));
+  assert.ok(!/sessionStorage|\/api\/widget\/brief|Store local follow-up|Saving local receipt/.test(ui));
   assert.match(ui,/href="\/#contact"/);
   const config=JSON.parse(readFileSync('vercel.json','utf8'));
   assert.deepEqual(config.rewrites[0],{source:'/api/widget/:path*',destination:'/api/widget?__widget_path=widget/:path*'});
