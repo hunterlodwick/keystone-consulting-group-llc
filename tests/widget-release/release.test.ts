@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { test, beforeEach } from 'node:test';
 import { readFileSync } from 'node:fs';
 import { Readable } from 'node:stream';
-import handler from '../../api/[...path]';
+import handler from '../../server/widget/handler';
 import { availablePassages } from '../../src/lib/widget/strict-grounding/catalog';
 import { resetRateLimits, admit } from '../../src/lib/widget/rate-limit';
 import { SOURCE_PATHS, verifySources } from '../../scripts/package-widget';
@@ -122,7 +122,7 @@ test('rate limiting responds with 429 and retry guidance; concurrent slots relea
 
 test('the deployable handler runs from a standalone bundle with no source tree, provider, or writable sink', async()=> {
   const {build} = await import('esbuild');
-  const built = await build({entryPoints:['api/[...path].ts'],bundle:true,write:false,metafile:true,platform:'node',format:'esm'});
+  const built = await build({entryPoints:['server/widget/handler.ts'],bundle:true,write:false,metafile:true,platform:'node',format:'esm'});
   const inputs = Object.keys(built.metafile!.inputs);
   assert.ok(inputs.includes('server/generated/approved-evidence.json'));
   assert.ok(inputs.every(p=>!/(?:public-(?:review|evidence)|widget-index|knowledge|responses|provider|lead|keychain|preview|scripts\/)/.test(p)),inputs.join('\n'));
@@ -143,8 +143,11 @@ test('client and routing keep contact truthful, chat transient, and booking rout
   assert.ok(!/sessionStorage|\/api\/widget\/(?:lead|brief)|Store local follow-up|Saving local receipt/.test(ui));
   assert.match(ui,/href="\/#contact"/);
   const config=JSON.parse(readFileSync('vercel.json','utf8'));
-  assert.deepEqual(config.rewrites[0],{source:'/api/:path*',destination:'/api/:path*'});
-  for(const name of ['book','slots'])assert.match(readFileSync(`api/booking/${name}.ts`,'utf8'),/export default function handler/);
+  assert.deepEqual(config.rewrites[0],{source:'/api/widget/:path*',destination:'/api/widget?__widget_path=widget/:path*'});
+  const fallback = new RegExp('^' + config.rewrites.at(-1).source + '$');
+  for (const path of ['/api','/api/','/api/widget/status','/api/unknown','/api/booking/book','/api/booking/slots']) assert.equal(fallback.test(path),false);
+  assert.equal(fallback.test('/some-page'),true);
+  for(const name of ['book','slots'])assert.match(readFileSync(`api/booking/${name}.ts`,'utf8'),/export \{ default \} from/);
   const pkg=JSON.parse(readFileSync('package.json','utf8'));
   assert.match(pkg.scripts.build,/^npm run widget:package &&/);
   assert.ok(!Object.values(pkg.scripts).some(s=>/widget-preview|widget-responses-preview|keychain-launch/.test(String(s))));

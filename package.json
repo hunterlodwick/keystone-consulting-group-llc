@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
-    "build": "npm run widget:package && vite build --configLoader runner && node --import tsx scripts/prerender.tsx",
+    "build": "npm run widget:package && npm run build:functions && vite build --configLoader runner && node --import tsx scripts/prerender.tsx",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
@@ -16,7 +16,8 @@
     "widget:index": "NODE_OPTIONS=--max-old-space-size=4096 tsx scripts/build-widget-index.ts",
     "test:widget": "npm run widget:package && node --import tsx --test tests/widget-release/*.test.ts",
     "widget:package": "node --import tsx scripts/package-widget.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:functions": "node scripts/build-functions.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

@@ -1,12 +1,12 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { createHash } from 'node:crypto';
-import { strictAnswerQuestion } from '../src/lib/widget/strict-grounding/answer';
-import { availablePassages } from '../src/lib/widget/strict-grounding/catalog';
-import { validChatBody } from '../src/lib/widget/strict-grounding/request';
-import { sanitizeHistory } from '../src/lib/widget/history';
-import { LIMITS } from '../src/lib/widget/limits';
-import { admit } from '../src/lib/widget/rate-limit';
-import { approvedChecklist, validChecklist } from '../server/widget/checklist';
+import { strictAnswerQuestion } from '../../src/lib/widget/strict-grounding/answer';
+import { availablePassages } from '../../src/lib/widget/strict-grounding/catalog';
+import { validChatBody } from '../../src/lib/widget/strict-grounding/request';
+import { sanitizeHistory } from '../../src/lib/widget/history';
+import { LIMITS } from '../../src/lib/widget/limits';
+import { admit } from '../../src/lib/widget/rate-limit';
+import { approvedChecklist, validChecklist } from './checklist';
 
 type Request = IncomingMessage & { body?: unknown };
 const CONTACT = '/#contact';
@@ -46,9 +46,13 @@ async function body(req: Request): Promise<unknown> {
   return JSON.parse(Buffer.concat(chunks).toString('utf8'));
 }
 
-/** Production's only API entry. No providers, lead adapters, source readers or logs. */
+/** Widget API dispatch. No providers, lead adapters, source readers or logs. */
 export default async function handler(req: Request, res: ServerResponse) {
-  const path = (req.url ?? '').split('?')[0];
+  const url = new URL(req.url ?? '/', 'https://internal.invalid');
+  // The explicit rewrite supplies dispatch when Vercel exposes the destination URL.
+  const path = url.pathname === '/api/widget'
+    ? '/api/' + (url.searchParams.get('__widget_path') ?? '')
+    : url.pathname;
   const known = ['/api/widget/status','/api/widget/chat','/api/widget/checklist','/api/widget/lead','/api/widget/brief','/api/contact'];
   if (!known.includes(path)) return fail(res,404,'not_found','This endpoint does not exist.');
   const method = path === '/api/widget/status' ? 'GET' : 'POST';

@@ -2,8 +2,8 @@ import { createReadStream, existsSync } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import { createServer, type Server, type ServerResponse } from 'node:http';
 import path from 'node:path';
-import { handleBookRequest } from '../../api/booking/book';
-import { handleSlotsRequest } from '../../api/booking/slots';
+import { handleBookRequest } from '../../server/booking/book';
+import { handleSlotsRequest } from '../../server/booking/slots';
 import {
   type BookingInviteIntent,
   type GoogleFetch,

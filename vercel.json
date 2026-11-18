@@ -1,4 +1,5 @@
 {
+  "buildCommand": "npm run build",
   "redirects": [
     {
       "source": "/privacy-policy",
@@ -13,8 +14,12 @@
   ],
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
+      "source": "/api/widget/:path*",
+      "destination": "/api/widget?__widget_path=widget/:path*"
+    },
+    {
+      "source": "/api/contact",
+      "destination": "/api/widget?__widget_path=contact"
     },
     {
       "source": "/",
@@ -337,7 +342,7 @@
       "destination": "/guides/zero-fee-processing.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api(?:/|$)).*)",
       "destination": "/index.html"
     }
   ],
@@ -353,9 +358,8 @@
     }
   ],
   "functions": {
-    "api/[...path].ts": {
-      "maxDuration": 10,
-      "excludeFiles": "{verification/**,tests/**,scripts/**,src/generated/**,src/lib/widget/strict-grounding/public-*.json,server.ts}"
+    "api/widget.ts": {
+      "maxDuration": 10
     }
   }
 }
