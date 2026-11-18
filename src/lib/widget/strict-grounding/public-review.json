@@ -1,0 +1,1627 @@
+{
+  "schema": 1,
+  "reviewer": "Astra (single-agent source review, not independent human or vendor verification)",
+  "basis": "Visible public prose and concrete workflow depth; each approved record and complete renderer input graph pinned. No external truth or production verification.",
+  "sourceHashes": {
+    "scripts/seo-routes.ts": "0ba142a4aab970774ba011b4885ae342d33e45b0a9233069a5c868892dfb45f4",
+    "scripts/strict-grounding-breadth/extract.py": "e26299411eed5a9b68f05e3425e89591c0909e05734aeac7baf38003731cbbf4",
+    "scripts/strict-grounding-breadth/generate.ts": "0039d2de2fa98ea18a200d07eee41737bcd9b54537e6210a22484f485afc09b1",
+    "scripts/strict-grounding-breadth/render.tsx": "96edb6811504c63d6d46821bba80f00fcac3ce2495978560192610d3e84b1663",
+    "src/App.tsx": "31115dfd85027f62bd889fc1dac86e4eaabf0b1d498e1b1e25ab366bba33b195",
+    "src/content/ai-agents.ts": "9b494562c97b8ee15cf181fbdc7c9a9fc0a6fd7911d4b2985565bfce7b4173fe",
+    "src/content/guide-comparisons.ts": "602d5c7f74f9124c29efb4ca301fad32a365e39a0883b09b0a23165e0f108602",
+    "src/content/guide-questions.ts": "b9dd2b202ab4586d97f40ea6018cb4040ac756e8e1d53454cae9830de7b290ed",
+    "src/content/guide-seo.ts": "82660fbd359687d989a412fa9e08c83e4150064614a408d16e99fcc9e903b086",
+    "src/content/guide-sources.ts": "2df6d1f82fff875ab4f32008fdcfd84f923c4b273966be53cf2150f0750a1595",
+    "src/content/guide-states.ts": "d56801147c71047c8c4c133458adde4e9408682b0dcdf1303600e6b9523e1e8d",
+    "src/content/guides.ts": "20ddc048dc30fc8417f940ae45988c4a11f8528f4ecbd8ac9fc9cc3bb1767833",
+    "src/content/site-seo.ts": "e7515b6d6618ba3892a4cc0abc9909f40e2468193415fba5c58b1f028465755b",
+    "src/index.css": "80c0d649319074eeb53a53057be51594bb0326f33a903376b867af04bbd99f42",
+    "src/pages/AiAgentsPage.tsx": "859282eb2e05ebaefeddac41073e91e27cbf328fccf370f6ac37fbd82c941448",
+    "src/pages/GuidesPage.tsx": "5987d334ca42518a89be7c373429448073f0b54b59f2d327e6c5491009e81ff0",
+    "src/pages/IndustryPageTemplate.tsx": "28d3f892d9096aa890f252df819682973a028aa55ef983c5dbe5b657de64e724",
+    "src/pages/LegalPage.tsx": "20490788e065801ced1d02a40218f666fe800d62c8c475e14c2515a7e0b779df",
+    "src/pages/ServicesPage.tsx": "f38e743234f21a5f0aa2c537c6d0891ba32fbbe863d5bbebabd811ed87a21fcc",
+    "src/pages/WorkPage.tsx": "7ff1795cc6cbdb7324d2ad24473610995843afb34a1fb811d72b01fe5ee88aa8"
+  },
+  "routes": [
+    "/",
+    "/auto-repair",
+    "/b2b",
+    "/ecommerce",
+    "/gas-stations",
+    "/grocery",
+    "/guides",
+    "/guides/ai-automation",
+    "/guides/ai-crm-integration",
+    "/guides/ai-human-handoff",
+    "/guides/ai-search-seo",
+    "/guides/ai-voice-agents",
+    "/guides/ai-websites-for-local-businesses",
+    "/guides/business-websites",
+    "/guides/california-dual-pricing",
+    "/guides/cash-discount-for-restaurants",
+    "/guides/chatgpt-recommendations",
+    "/guides/choose-merchant-services-consultant",
+    "/guides/colorado-dual-pricing",
+    "/guides/connecticut-dual-pricing",
+    "/guides/dual-pricing-laws",
+    "/guides/embedded-checkout",
+    "/guides/faq-schema",
+    "/guides/first-automation",
+    "/guides/fluid-pay-vs-clover",
+    "/guides/fluid-pay-vs-square",
+    "/guides/fluid-pay-vs-stripe",
+    "/guides/google-map-pack",
+    "/guides/google-reviews",
+    "/guides/local-seo",
+    "/guides/maine-dual-pricing",
+    "/guides/massachusetts-dual-pricing",
+    "/guides/measure-ai-pilot",
+    "/guides/new-jersey-dual-pricing",
+    "/guides/new-york-dual-pricing",
+    "/guides/next-day-funding",
+    "/guides/no-contract-processing",
+    "/guides/payment-processing",
+    "/guides/recurring-billing-checklist",
+    "/guides/service-area-profile",
+    "/guides/small-business-bnpl",
+    "/guides/stripe-recurring-alternatives",
+    "/guides/surcharge-cap",
+    "/guides/surcharge-debit-cards",
+    "/guides/surcharge-notice",
+    "/guides/surcharge-vs-cash-discount",
+    "/guides/switch-from-stripe",
+    "/guides/website-cost",
+    "/guides/website-leads",
+    "/guides/website-ownership",
+    "/guides/website-scope",
+    "/guides/zero-fee-processing",
+    "/healthcare",
+    "/high-risk",
+    "/nonprofits",
+    "/privacy",
+    "/real-estate",
+    "/restaurants",
+    "/retail",
+    "/salons",
+    "/services",
+    "/services/ai-agents",
+    "/services/automations",
+    "/services/bpo",
+    "/services/business-loans",
+    "/services/claude-duet",
+    "/services/consulting",
+    "/services/consumer-financing",
+    "/services/crm",
+    "/services/google-business",
+    "/services/grok-bot",
+    "/services/meta-muse",
+    "/services/openai-dot",
+    "/services/pos-placement",
+    "/services/prep-to-sell",
+    "/services/seo",
+    "/services/web-design",
+    "/terms",
+    "/work"
+  ],
+  "routeExclusions": {
+    "/guides": "Directory of links/card summaries; no standalone substantive answer approved. Individual guide routes are covered."
+  },
+  "approvals": [
+    {
+      "id": "public.home.118.0",
+      "hash": "e2c943462b99722b2c919a4bd733352c4b44b9d3013c704fd53a65766441cc36",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.home.200.0",
+      "hash": "acace799df4ab93dc65540c28a917a0bc22dbdced4fa1aaea7204e71757e2564",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.home.281.0",
+      "hash": "bb72664ed01adc98ee1f0a2607832e48037d6dc12199a724c6e8635e6ebf1c07",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.home.725.0",
+      "hash": "d1ba480b26f9291357f0ad1825732268dc52def227dba97102f090d10459841b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.auto-repair.53.0",
+      "hash": "2f417b9902f39be23fac7a4c182e34a928994e68d48ebcd131b11cbdcff428e4",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.auto-repair.62.0",
+      "hash": "1f8216f8f7f3a29139f2a30103bdbd999077d32d6a0989dbff1d129545c2204a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.b2b.44.0",
+      "hash": "79d22456d9d26d443cbabec4774e5bb09f14a3cc0fdd16badcd88392ae8017c6",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.b2b.55.0",
+      "hash": "8265a7717e6f050c61d0404828b12f9e8711ab3fa78987c05f04588dd794ad83",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.ecommerce.43.0",
+      "hash": "ff363a0cd9b5b60477b108af15347da49d1a6d14ca80e633fee961ab18124d48",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.ecommerce.64.0",
+      "hash": "a2bbe71e05bf07b43cfeb4e27791661e61bb8e47900fe0f31b11b8763b87a0e8",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.gas-stations.43.0",
+      "hash": "98d41793bf9d482700d701f474efdd5560b8e7b13298c6a901685bfcbabae54b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.gas-stations.54.0",
+      "hash": "8ebad8da8e6172c2e2e66e3ac41938e8266f52cb96228bf60b99270a0b8ea1d9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.grocery.53.0",
+      "hash": "39313c645ff9d42aece07559a476ed6aace037ea68018953102213de59ad5023",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.grocery.106.0",
+      "hash": "0d9663dd0a8b96cd3e40f8432a1481c74d4957f6560bb22d4363f58b9417cbee",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-automation.14.0",
+      "hash": "0a5612b4144d560ab0615e6331ab7272144cba9d98f8d9b8a94e688288742dbd",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-automation.31.0",
+      "hash": "52d39f1a0653049ee8186a37cbfd92ac47efa61af0d4ee64aaa83dfa55ef9b85",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-crm-integration.16.0",
+      "hash": "0e6feb4fb3bc4256cc63734082562a8c2bcf334effc89cfda2ee7147322809f2",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-crm-integration.33.0",
+      "hash": "c6953b33551669b64b839e4ce6b135dac50743af9fa3e3911d17fca4f295b1fa",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-human-handoff.16.0",
+      "hash": "a56510c3bc4570f1325f8c3fcf00f8bce4b0f78069db392d83f7c639f9410a58",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-human-handoff.33.0",
+      "hash": "b68bc359dc69a236dc164c365d6b04f303f3298f82f70cc8dce528b779d2386a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-search-seo.16.0",
+      "hash": "b6af85239c974d7c270c2af3b2c77689b3900df82641c808cc1ba964575e9f2a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-search-seo.33.0",
+      "hash": "788dc527d456271cd750bc0bee0fe475130b69a821e0de7f623c347a8f6857da",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-voice-agents.16.0",
+      "hash": "28808288654e82c1f783a2b7e7ec7eb7357a1b2cdbb8ee0ef8d4e8de30ceedf5",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-voice-agents.33.0",
+      "hash": "6fca7203e15d62920a55d0a99e0e939d87275a492e3add03193c7560678f6859",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-websites-for-local-businesses.16.0",
+      "hash": "de9bfc6a5ef916d1ab259e66317995ee458af6d8fb6b85b7eec0dcb9ac1a461b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.ai-websites-for-local-businesses.33.0",
+      "hash": "a3194ee0a11e7ffe0d1df33236c2311f72600383f261481e754ac71519052557",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.business-websites.14.0",
+      "hash": "c466ed90207769bc9c9324c5b41baf719e6d1a48bd5538df693658091c3231df",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.business-websites.32.0",
+      "hash": "1f42d44d4c763004715918a4f13461c7eac06cc667db3b3167440f354d8c7be7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.california-dual-pricing.16.0",
+      "hash": "568d64ab27c2e78fe7888a3ece0540daad010945ff8cd355b4030b6863723b97",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.california-dual-pricing.36.0",
+      "hash": "bd00bbabfb185a72dab30cc58501abe8727c8aa5538abde579a30e4d10c06fdb",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.cash-discount-for-restaurants.16.0",
+      "hash": "d614f9e150b467e15a0c7f2cb2414b55fb8b8ff3d185d90960f4cc308a2fce13",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.cash-discount-for-restaurants.35.0",
+      "hash": "e95fe1d8dca42efa2c1f1d4a0e427f66e1db1ded65d94ce6452a9fa8a000d584",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.chatgpt-recommendations.16.0",
+      "hash": "edbe6d861ab52d9a44d54c69f3c32bb0a49ca3effb1e1dcb10dd79c8aafe176a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.chatgpt-recommendations.34.0",
+      "hash": "5800d97f82c9584a13250d8030d5b89b34c29b52dd3d6d7d9995e41f9f9e893c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.choose-merchant-services-consultant.16.0",
+      "hash": "5a144bcc85d394c9126a15f81fdddf74d3ddf75cca2acfa6768234dd15472f81",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.choose-merchant-services-consultant.31.0",
+      "hash": "1a3982c20081610ce6cf58dec0482c8e2ddfa34ae8fafd83e3a91bb6cef5ea93",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.colorado-dual-pricing.16.0",
+      "hash": "578a0399dbc5e60c557e294b988451223877da708dbe8ab3312eb439ed6ffd60",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.colorado-dual-pricing.36.0",
+      "hash": "999ed680d5b806d6ae89d5f535cac3488d35f348cddcec05293d65ac2d1619cb",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.connecticut-dual-pricing.16.0",
+      "hash": "9e798d8bc210c7a1ba3ef14bb66358d65931bb76ff4693c14f17379cb271a9d9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.connecticut-dual-pricing.37.0",
+      "hash": "f36054fbef1a606cc5a2ff31f83515b318f4f9ccafb2d620f8c21d3ad08c2e18",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.dual-pricing-laws.16.0",
+      "hash": "b9954e5a894570f015a7e5f8edc40a7dd8ae70656cca02bceb0c4462462e2c44",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.dual-pricing-laws.38.0",
+      "hash": "4fecc6c3913f0357afaabd11fe8082ab12c795c9d1f0c2e341897a59213fe7b9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.embedded-checkout.16.0",
+      "hash": "19ba06db5a9d37d0b7120b28dbdd548aa398600a4633c6781c678d3e9cb6bc02",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.embedded-checkout.33.0",
+      "hash": "1ed64d12516503a48af69bb0bbf2f96b5def8490e404a96d736ebbc75e656d58",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.faq-schema.16.0",
+      "hash": "21e5060b08f065dacbe49e352d462e86d98c3a75043ecaa4c1a2724534906e19",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.faq-schema.34.0",
+      "hash": "3dd7193195ceda6c6538a2895d68143a7477f70ed5789ef01f369e3122f708f0",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.first-automation.16.0",
+      "hash": "24448c4d6e7ebdaf8fc7197d2a85e3c9e6093197d9e40b4922eb4763a424dc31",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.first-automation.33.0",
+      "hash": "aac376a9200736666afb0d773b67608adac57eabad03026d71f7097a2ab0209b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.fluid-pay-vs-clover.16.0",
+      "hash": "8154e631b32e5b0de1ed65cd1dd46be04472a988723d79c18f14debc6e1cc612",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.fluid-pay-vs-clover.55.0",
+      "hash": "ce6b2cfc2bdfe2d9ee8cf7da3a5f77333777dc994e43c7652789c66540effbc8",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.fluid-pay-vs-square.16.0",
+      "hash": "7fb2c7019f782e6d2871d0760b874b4f399a66346cbff013b52d305afaafa613",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.fluid-pay-vs-square.55.0",
+      "hash": "1ae2428cd4ad361c31142ced3c3a01eea5ed2f0f287ebd31be35275b06af744d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.fluid-pay-vs-stripe.16.0",
+      "hash": "1d4e4700a8f15dad86f481ca923be7482806fb73f79d22955b998dbf39806af1",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.fluid-pay-vs-stripe.56.0",
+      "hash": "471e514219d2c59c8596f97ed79ae9f18b07761382c33c2a06b83c6ed96ead69",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.google-map-pack.16.0",
+      "hash": "b2b991da2f36ad20d19c0b6859996792c56dbf89ead25699b71b71be669735f2",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.google-map-pack.35.0",
+      "hash": "1e6d071018ad1fe49d7848621c7ade4b3387b1e848c8895ae181d18aa1d85f3c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.google-reviews.16.0",
+      "hash": "419cf4ffed5fed5a9a24abc456fa4bd6a0760edccbe26c799663372298ec837d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.google-reviews.33.0",
+      "hash": "ee80d3340eb3155a2afd21a238153f4bf7e723596bd606e0a29ebcd3b98c92a7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.local-seo.14.0",
+      "hash": "7b5344ec6106a91afa5057b9ba3eb2ede354c62b5232345c908ee990cf1b1ca2",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.local-seo.35.0",
+      "hash": "4db1caa2a0efe265cc167acb1efa882c717700d00fe2d6cb31e7478ef1dee692",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.maine-dual-pricing.16.0",
+      "hash": "d5c97b4755539f7ebc1df362b96d5697ebeb78ccde18f7f90ee8229d77b401ff",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.maine-dual-pricing.36.0",
+      "hash": "86ff1ba6e1a505780b296fcbfe0ab9cb0a45d1b1a10723ccc756ec50e491c32f",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.massachusetts-dual-pricing.16.0",
+      "hash": "b58747b4db92e683395548d59c9b4640d2130763f5c8546e1583ba3dc031f5cc",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.massachusetts-dual-pricing.36.0",
+      "hash": "9db73d90d8e00cc7802d0e09473d291a72e6288e23832125881c7482b46f02a4",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.measure-ai-pilot.16.0",
+      "hash": "fc290808b986392754e21131657b1987c1185243bcc71c3bbadde36cacd42599",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.measure-ai-pilot.33.0",
+      "hash": "ad9d49ab83b1d0c7e3fc39b642e9ed5bddf80a60d2a74b597fd62415d8c18d79",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.new-jersey-dual-pricing.16.0",
+      "hash": "0ef43073b841d05e015b4eedd0a997de9d08ea2df8c7d63f7ad192cdfbd6f08f",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.new-jersey-dual-pricing.36.0",
+      "hash": "3d7066671468eb5adcc7d960492935718e7bf20db2ada1ce2312883b2389fe0d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.new-york-dual-pricing.16.0",
+      "hash": "680bddabc8c05d72a550e3093e71aa9f70c7bfe50a179e2d87a9160fec73e799",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.new-york-dual-pricing.37.0",
+      "hash": "e864e57b348c1d5491e59832de3c324a24e0d9feca7032752d3b85d85639d643",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.next-day-funding.16.0",
+      "hash": "2457fdb639fcb0ee5705cb3fa957189f60ce14ff19c87ef818755476e505d13a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.next-day-funding.33.0",
+      "hash": "3ee6d19faaeb9eb77adfa439a7d540b527af2297fb0f8ec747e93f025e4bec58",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.no-contract-processing.16.0",
+      "hash": "613cac9a2af5e2c45f39aa437f2f7903f656a8b3229a9c7f8696829de5138d22",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.no-contract-processing.33.0",
+      "hash": "210c71b45ecfbd70b8e96644775c8e4acc1e806716a3ddd13ec9f3d27bf2d26d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.payment-processing.14.0",
+      "hash": "e41ddb7223245e016f3c4a03691b5e331581610104d2e7948c73f1785fe4876f",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.payment-processing.37.0",
+      "hash": "3324bb7c0f771f611b3af846acb070f7c1a8f4c1f0cd5cb73322b1f66197d783",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.recurring-billing-checklist.16.0",
+      "hash": "f8e9be842a32543779b2c9eccb94ad5f263b2e94c812a83c2223d6f646d4db5f",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.recurring-billing-checklist.34.0",
+      "hash": "869480d94048698cd2ed0b8b63f8d47c63c8e34e371e868630277ed6874e88a4",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.service-area-profile.16.0",
+      "hash": "7e8826a5ade815e12af520f546dc315ba07d6d88cd432e658d043f60683abac8",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.service-area-profile.33.0",
+      "hash": "6bb964e9c78ccde83617fed6342d9f72a00f70c0d963fbaa5ccfbb7292b398dc",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.small-business-bnpl.16.0",
+      "hash": "6d9592fd8c37886403d60bcdd00e2a2c635372d8dfe22e22c5707291f8236de0",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.small-business-bnpl.33.0",
+      "hash": "82a47e0cda2ad5935874bcbd4a21924717496fc2c7752bd7d6968a657d18a6aa",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.stripe-recurring-alternatives.16.0",
+      "hash": "98f0d93a988bd6f339360cc74183e5bc02ec20d5d0703b6554f6df8db585e73d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.stripe-recurring-alternatives.62.0",
+      "hash": "2485916a7caaeac1eef2b0373662cc8d6343f1b88da7884fea81fc7ae23191f9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.surcharge-cap.16.0",
+      "hash": "a8da0e109f129e1e776eb85dc0e3156e59d13ed85ed0ccea2c89276ec5c8a85c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.surcharge-cap.38.0",
+      "hash": "d62a7b67e2557aaaa8fd91c0da78da9e68c9ef55138f24ef68b1c1a1de4fa6dc",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.surcharge-debit-cards.16.0",
+      "hash": "95b18af6ee0487fce68252e3f8f017f2bc761c75e59d31401f1c3d3a286376ca",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.surcharge-debit-cards.36.0",
+      "hash": "50a3691064afae4b80af069443f591e2f5793fa367a124c1fef6f8b9c466b5cb",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.surcharge-notice.16.0",
+      "hash": "4c65995d48883cda4045e3e795a21681c1aba7dee6c92512acba32987589ced9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.surcharge-notice.37.0",
+      "hash": "21e3009c7284f7cef2cd9115facf47e940decce3a0ea517d0a26b89fda9decd0",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.surcharge-vs-cash-discount.16.0",
+      "hash": "2066c65a046fe7c7ddadf5922581b2b26e5ac030c1b796d25dd06e8c898b84d9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.surcharge-vs-cash-discount.36.0",
+      "hash": "a3dabfac5c21acf165631e2d7b69bca61f20216a305fecc325023ff648722132",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.switch-from-stripe.16.0",
+      "hash": "69628a8e93b5b7ad548985729b49f0fd26548816a0c6be085affa9c285ac83cf",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.switch-from-stripe.33.0",
+      "hash": "0cc57c2e9a129f3dcd2fb4693d1802aa41dbf7caafec788d65a52df33ef14ffb",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.website-cost.16.0",
+      "hash": "5869d7d31fa45c53fc061af1d3c7d7c910fbdf6d5effda5b1696b6b65e90b35b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.website-cost.31.0",
+      "hash": "33ebbb5908457a6f8ea2640c77fdb2207ad05b09fa358aee372cb62dc1313bac",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.website-leads.16.0",
+      "hash": "bf1cc4350c0c5c7f4ed91d0ad6d4ff100fd2323bdd582b9080ad12499fc7df2e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.website-leads.31.0",
+      "hash": "ff42adecb8e19ade76d617cf945609e0c6594955ca8a3a99d0abd5c51b5c3455",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.website-ownership.16.0",
+      "hash": "72ba246e19cc8c57937972310f6a6e7774850b7596f8097b745262f154aaa9fc",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.website-ownership.31.0",
+      "hash": "370e310df2563f2affc9e90aecd41817603c3099d85308373e6d703c6dcc7a09",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.website-scope.16.0",
+      "hash": "921d5bd68192baf1495054f71713ebd93b46e1eb92367b8f50c841d3a951f658",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.website-scope.33.0",
+      "hash": "cdb3bebb0a161312b48d610310daa041f9cf19a00896a50d7e8ae299362625c7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.zero-fee-processing.16.0",
+      "hash": "7f83ad043ac3f645fe7141e67c807f224dc9d0968c8ac641294da285a4e060c3",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.guides.zero-fee-processing.35.0",
+      "hash": "fc34388f5ba7350817e11293fe7cab9001c51797006545c95bb2df8eb7146ba3",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.healthcare.55.0",
+      "hash": "bb1f6f2b4faaad5457bd4d4118f05104b912f127b1c317896cfa83b535b3155a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.healthcare.88.0",
+      "hash": "d0740f9a2c7b08f62786107c8db05bf20838de24f4d4d8c3d486f8debb477032",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.high-risk.42.0",
+      "hash": "6f356e58540a8ff05325369a89160bec8e32ca77e575d97b2f942a24104665b7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.high-risk.52.0",
+      "hash": "aac83dc9548f6560a546663b7af3307ea83e21168f4a24fc795369ad921b2b83",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.nonprofits.45.0",
+      "hash": "76bbbc17f05db97011098454fca57c962bc2dd067bfd8109b03ba056f8f35e7e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.nonprofits.55.0",
+      "hash": "d5e853f3c88153b17860b5f73047b60ac76d3a9179f5a570e376eb831836ed8d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.privacy.7.0",
+      "hash": "c09f826a9c20d10238a3ab13349e094d4a878f7844db7decaa0b8bd0a3296e0a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.privacy.10.0",
+      "hash": "25432a31eaf042c4b75d0bd76cbb896ad6757e99af5e77360c60c9f25ae62e5c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.real-estate.43.0",
+      "hash": "5256d5e81bc099b14d118f45bf8764014843129d31567c829e50424a0f58241e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.real-estate.55.0",
+      "hash": "e6ec1c789ac5d50ae16d6ee3c3382040eadb14e92f77eab75dcab96ddc79aaab",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.restaurants.44.0",
+      "hash": "9a771a07997677ac8056d231f75e9fc561d25c322419df59ae06831ccc6928f6",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.restaurants.107.0",
+      "hash": "641e8bb3c1fc0aa7a3558e3a6c522d9d05f09a2ded536e6237163e908d05cb3d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.retail.52.0",
+      "hash": "29ee1c88e9703ab6230d7814a7bcf702a031ec4c71604a79c8eeb602878ab48d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.retail.63.0",
+      "hash": "13745d1c7338add2933eb14545611998162ddc97e761b035993b92750b7fb6e5",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.salons.42.0",
+      "hash": "59ba792862f8d33b42b69026bf5a059c19f6c6636a37fb7e2eb1e0eba2d38d6a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.salons.51.0",
+      "hash": "8473a2ba4b5a73a4c3b508f79c892d9db9402232597da92b5e980eb7d21e6c3d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.95.0",
+      "hash": "2e089f312d619eed0460c88aad35efa871e982065bf32c1cd0d003e2e0c62581",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.182.0",
+      "hash": "887242da10a6c06444e20e4e1c5da6ca7159aa3492715ad64f772c537abc8682",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.302.0",
+      "hash": "f01dce57c6335356387f4e3f2fd60e905a40bb9ec7b1c948dcac63fd9c449855",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.353.0",
+      "hash": "17e98ff7a2a79204aef3963b26d97ec95765335ff5892039282cea4df6c36459",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.443.0",
+      "hash": "061f51b23d0f2c9fbfb55f339c01022ed90ed326a34e624192560c9cf5d34783",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.546.0",
+      "hash": "f6c18988a11e2c2a81fc91d0732bd7f5d4f8241f8699c3b0eaa873067ad49c17",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.647.0",
+      "hash": "8de05a3fe5b1ad7ade673f3334761cbb9108ce1584fc7fefd2f3c3f8bcc6aae0",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.743.0",
+      "hash": "f37ee98bb4a5876d0ba40b5a5fc27410f92b6335cf35adf7a199d065ea2bc57b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.844.0",
+      "hash": "2cf9da98a9870bc5c623d352411633a68bacc82346cdf5b03256fb82aa5d11bd",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.934.0",
+      "hash": "83ad525a0661b4a7353b65482b0ac80fceae9107619e700c90c83a3353c324a0",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.1037.0",
+      "hash": "0a0a35d02f708d3f0613004abf637ccf4ffd3de401c5debe6a408ed1e266267e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.ai-agents.5.0",
+      "hash": "ca1b80442b0ec225324883211eaf23453c7a238c46f8c518e2a96c7e81309999",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.ai-agents.15.0",
+      "hash": "f8f504e84eed6a54de9728c0bb519a281490dfb4f88bc7812bdc0919e259f565",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.ai-agents.81.0",
+      "hash": "eaeb9daa1798e3c4f2dda8595e39279f05aad78fcd4507e370d0c825f01ae6c0",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.automations.27.0",
+      "hash": "35e65530ae01cc9e569e402a915fdae0bd2d26d33b14c5f081b9358e6243e392",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.automations.43.0",
+      "hash": "866ff392301d6ba9bb067f71ac9877a083c71658f295bab0c626cc5f2669f067",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.automations.59.0",
+      "hash": "d25802c4c86788d8eae61889b465f85a1d211780daab5e2f2ae0cf92e0475a4a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.automations.75.0",
+      "hash": "ce1b9f627bc67a69d1ed135d2056f3cd5916d2e49ab9bd1223c3f7e90fec5608",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.bpo.25.0",
+      "hash": "31e2cafdcf9a81bae86bba1c91e666d431d655765ff2b76e07a3f27e5f08d643",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.bpo.32.0",
+      "hash": "0fe2e32f3eb62cc699626d9ada77b66c3e9bc60fff8442ef503c5ab6230e6455",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.bpo.39.0",
+      "hash": "e198ff30b01efb416df309f68a64ea78da7594eac484c92903f4058d65915cb1",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.bpo.46.0",
+      "hash": "017d2defa2980ca3712adff8d49842033b301ccb5812ebafe4e66edd73243873",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.business-loans.25.0",
+      "hash": "3a5dcfd3704e56329a94072d8816159f51562cf542f2184f9a7dd5a3ddc8667a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.business-loans.32.0",
+      "hash": "a6ab2fe09d0edce65207041a26b69b8de8c3fb4e962158bc7a5f71a6357ff55e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.business-loans.39.0",
+      "hash": "9a6273bd34168c9acf1bc4de0327f18bce8b7884310381a609e462f065a00b71",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.business-loans.46.0",
+      "hash": "2104edf0f7d902df034e9a8479aafbf54bd44c61683e45a76708d66b5a007367",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.54.0",
+      "hash": "58b01ddef2b934050ae5aeda95e5764dc0e778b94a498263ffdaad22feb1cb85",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.157.0",
+      "hash": "880dee6f4d1154bd0c3e29475340f9ccc597dcd2ecbfd667bcc72f88240c2943",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.162.0",
+      "hash": "72176eee4a55957fc275b8a94a888b11135c16dbd3eded4990707f77b71258b4",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.176.0",
+      "hash": "bd1753542e7e7610d1732be3445e07fb71717c7898e3c610381fe4e6fc4671e7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.190.0",
+      "hash": "458f35a8ee5a9e86fa0490db969c9a2f0ac078368fbd79b0c05b1a61efdab3d7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.204.0",
+      "hash": "e0f304f883c88b7cf9bfde3ca0cff1a8d78fe28ab9ca0a9b93ad6640f2f1dee1",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.218.0",
+      "hash": "36db5cb059b280140df63c48c73b7602008b44870f992462e2ca53ad0f3ca1f2",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.236.0",
+      "hash": "56472b37e84b7d0d77b17114d3b0cafa8b6abf12d433590abb9851ee742ab94d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.256.0",
+      "hash": "4d72cf43194c02c99589e52aeac4ece27e86975f7c38f8a609347002d181bdd8",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.276.0",
+      "hash": "c6ddc7b315eac2eee3af1c88c331463ce521bd97c74371ad8f9755b75a6af18b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.296.0",
+      "hash": "93adbb6f438566c9db0fb5ea3ba9bc149b14aa8d493c71b808b75a7207b2e996",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.379.0",
+      "hash": "4dce2e76a7207ca00de67dca0cbeea05555495e8aba01a265af66ef2c87eff14",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.claude-duet.390.0",
+      "hash": "060ac3be50dadc487cc7f8164e72e5eb3063f710f9adc00b9b0adca137ebc2c7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.consulting.25.0",
+      "hash": "313cf024243c7026fa885b4d0a111e21fc795d522c65caed8b3d8704d443b7b9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.consulting.32.0",
+      "hash": "549f65839f023c981a173ab3fc356112027772669aee83b0ff0e433bf739fcd0",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.consulting.39.0",
+      "hash": "120b460479824e5610d3efc58bf0416152044dce4c1c1b3e3b40a9b76109384e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.consulting.46.0",
+      "hash": "0ed9619850faf654fa077f43bc7a8fb85d59b3023c194a26153dec5c54436dfd",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.consumer-financing.25.0",
+      "hash": "1deb653b392e146093d9465acc7ac9398531edf577292eff57852c2a500a4c27",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.consumer-financing.32.0",
+      "hash": "a07321c764d40c6ce427abc9df7f2b3c796d93da458a165c448d04ee01d4b71b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.consumer-financing.39.0",
+      "hash": "b386fe974500cfc9dbdcf29efa9a14e1ba822c0d1d84ebb00cd081b39bf4f70a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.consumer-financing.46.0",
+      "hash": "3d7d73ac8e544d3e78f33a62d8f303cc8c9b034b97f21a47490ecb1bf8a3c00b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.crm.25.0",
+      "hash": "cd0ffb1e86d19f198ee7b0c99abd2a6344ff6db43fed909c4450dbb964f4d130",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.crm.32.0",
+      "hash": "d0dacaab93be2da1a9b0e4882761a08a9696a67dacb613ade92f153f13b196d5",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.crm.39.0",
+      "hash": "69a4945b60953c897e4a85875c2e0167ea1420ab0ea3b49ca7618431c491fed4",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.crm.46.0",
+      "hash": "8bb8358e4002ecaa26951736fd5e04e38239b57a1cb40c2402ac193e51ecc3b7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.google-business.25.0",
+      "hash": "2968f0cf0f17f006cb1148e2cb63bfb7460ab37cd463141608c51afc3724b9f7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.google-business.32.0",
+      "hash": "b5d8fcd1375f253935b7a6c4dc76603f1ab9f91de0b2fe80caa8af69641fe92c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.google-business.39.0",
+      "hash": "01a7e5db151c860fc9e8e8f5ba943b01c5e69e08c0361e2962469d3680e5e22f",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.google-business.46.0",
+      "hash": "bb2cf3f993b97cd763c7e575b37c91455c73ba43f240fe6b21e927a83266ef6e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.54.0",
+      "hash": "f7463b59b1697e494b5d631a76638990a923057068feb2de0c8abfa89cc12011",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.157.0",
+      "hash": "c3e1d6dba97464dd75fc0df604d69fdbcce334cc7b419fd89b11bf88794bbc7a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.162.0",
+      "hash": "5bd9610a4f77998f4005a1648e2f8d69d940c4cf763c910a2f877a73c7678565",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.176.0",
+      "hash": "77a178f05e4a3cdd382b299c536ac1ae100e566cabee9803512f0a49f7d89860",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.190.0",
+      "hash": "829e7d44c185de85e64c4fcf40e2c8465661b08c84dddab966735450fab53a61",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.204.0",
+      "hash": "ad17b0175a1d2c650b9fd677c482a9c0569f43fbd79bfb2ab315c45cd1454f44",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.218.0",
+      "hash": "079062a5f553ab7d2d4a08122d758824b2d8ece9e2a06453b65fb12ae432bf9e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.236.0",
+      "hash": "1ae210abebb86077bddf2226e545249fb2198f70fd772b0a312dc18b2a8eb3bf",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.256.0",
+      "hash": "def446ca161155eaa2a9958287f7e74429c6b4543c76ef53e3737dd92fa36eff",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.276.0",
+      "hash": "6e53e6bf12680ccfcc3f4e3e6ee7ad7bf4c2a68dded11d8e332b49420d1bf752",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.296.0",
+      "hash": "aacf3bbb42d988191d2ffce2518131ef8849bd9fd5e10f8bb65c116c944d58a2",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.379.0",
+      "hash": "91967b4b580076983cfda216bc33d050930449c2aca2bf961cf7d37a06231ede",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.grok-bot.390.0",
+      "hash": "aff77a994494c4aa01dad04df59a83c0193f2e5e8d07c310c933e7aad7355234",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.54.0",
+      "hash": "82acabd4042c2305af00e914c75ca6ff13baf0a0db8879e93a9ce1ab8925b40a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.157.0",
+      "hash": "0e9fe28c62258d8b44721dda94cbd5fceb6973f61e9b00bc30b223d8ba115406",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.162.0",
+      "hash": "cd4e08445970ff5d0fef6a9b63ac1f204e5473b3f2cb213806efcbc0bcc5f8dd",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.176.0",
+      "hash": "d609cec8d5aca775e953fcdb6be9ae65a6a6c1b3ff631d6eefb44916e40e55ec",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.190.0",
+      "hash": "c36bede07eb76875b23c1baff5eb70211ffc6a77922027cc1cd693d8925f277d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.204.0",
+      "hash": "c6054f8be6a36a1b0333e58cbd056a9f07cb553b6f67c1cdcd105a333cfe3ac4",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.218.0",
+      "hash": "467000053368a1f1e4c3b904d98bd3bcb5b3d3fd6ff9dd16e7fe0951fa46d893",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.236.0",
+      "hash": "debde81de047fc27d195ee55a81137264aa111b2ceb99b23d1c042e1ff84cd7c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.256.0",
+      "hash": "8fc48b8ad0356cf366087f211e6ae7d55e1713895f93851f37cc8c4a0982da39",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.276.0",
+      "hash": "e97becacecb3d32eba06b91fbcd951b3e24a9006f59de64117b6707ba427b7dc",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.296.0",
+      "hash": "23184c896d211b76163f0626014a281e3ae3fcdf8cb3943ed056fa264a874101",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.379.0",
+      "hash": "1c5a094f836e76a9b7e51adf7a1157394699cbddc3c228200ecba2086d7ae956",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.meta-muse.390.0",
+      "hash": "6c66a9705dd5a1a5c07b4a214b274650a7089248c544125b73e490e06075148c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.54.0",
+      "hash": "87eb36ae5fc705bdb6b0239600c8e1a10218c724031f03ac6388c9aee413fe09",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.157.0",
+      "hash": "c967105c4f0620b38f1e198f674710f90af32319894b216737e35e2bf90de64c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.162.0",
+      "hash": "a5e5b692362f7244e23026b9d846e3c3c56fb11e8e5d757a3a64795aef364040",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.176.0",
+      "hash": "5b2e652effe869d043afb3cdad7a3c5e176e6e4c1c522593d65b571178fd7eb9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.190.0",
+      "hash": "fbd9fb14d9d7ebaa2afbaefa82ae853b03a4157ae2c9e918c88c56e3d4e1e685",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.204.0",
+      "hash": "c5ef7ffd013c60d9bad17fabb0b389156f95b0c98e9b23f266e1a89a1fc3dfd4",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.222.0",
+      "hash": "957f7785fa01a2ad89f9bdaedcfa3f7a0896e5d0613bf9e70a09f65256e8c575",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.242.0",
+      "hash": "99fba56e4eb43c9b2bd62b12c8af03d1ebab9212288bdfc3d93a327cae26f39d",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.262.0",
+      "hash": "e68b50daa27a775c5255dfe04672239618a0431a5b636b906b165e5d01f73a96",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.282.0",
+      "hash": "d6347848b878858f65652e76eeaa30a0b4f57f1b8c798fae7f7b88c37694862b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.365.0",
+      "hash": "887ad988502a2809d33c5325b8b532540e4e2024561ccca74bf250be5c37b69f",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.openai-dot.376.0",
+      "hash": "59f0ac202d802d8c9205016a5cf24ed3377f5300213799f9b6187f353d98add8",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.pos-placement.25.0",
+      "hash": "7e93c3825bd8dd0b5c4ed74528bb32976d20e4c11ee4eec4d78ef772a830e216",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.pos-placement.32.0",
+      "hash": "b105dab09096ad66c0151d4c596d2b89ddd7f63f0b3076a96157a9ceb0a35c96",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.pos-placement.39.0",
+      "hash": "26f34c7608586d5a0763af454e34291841f9a2c3854d448e474e51ed1fef7970",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.pos-placement.46.0",
+      "hash": "62cef426cddbc8ce3b0b57f16c4b943286c62a26be16f060fcbdf88f0377e9ed",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.pos-placement.105.0",
+      "hash": "44403c3e2ecb70582c9568d7de4bf87bbbf9c5a7ab4596e591862b9aa09d785a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.pos-placement.108.0",
+      "hash": "2763e8b98295948ec7ced826b3b88af151f6b74a40d603cc10a513c86c4fede2",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.pos-placement.120.0",
+      "hash": "1ecc6dceff081ee0611127e2458dff983a29f76911da334554339216260889a7",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.prep-to-sell.25.0",
+      "hash": "55b2b5203b848e55b0c2de7917456b11380538ec654c8aed854fe212496a3222",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.prep-to-sell.32.0",
+      "hash": "91903c8a7bbe92e740752c6329380d7a9d448ca05465777289a776d23cd2c520",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.prep-to-sell.39.0",
+      "hash": "685196c4b8bdc33d68bda872b349c78e01532bce4db951b80d66afe26989d86c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.prep-to-sell.46.0",
+      "hash": "3ec455984d99921daa525cc02b0761a581dc347bcc4375ed60ec70aafb49c95b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.seo.25.0",
+      "hash": "c30b97372951f22157af5132737624b76262bb57ebebbecdb20cb5cf0bc08cab",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.seo.32.0",
+      "hash": "aff549c4bc717db9d81c83be902fa08ac254ff5c0d5e41d044c8a958936c6a9a",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.seo.39.0",
+      "hash": "985723e8e34701bd0d8b357a6e003aeb0ecfb9eaa4b4c6470ef1b0f849e00d08",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.seo.46.0",
+      "hash": "118148ad16fe1f0f55dc493e22073075538e9bceac41b0da7a8e049369c2aee4",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.web-design.31.0",
+      "hash": "a798b6de9c430edb6c27b2517966b2e625687d009e3ebeda00f3922f7b6923b5",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.web-design.63.0",
+      "hash": "cc4ace081e4f5b7557620f4c7f118da7296f016866e0f067e12bb318c28876ed",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.web-design.79.0",
+      "hash": "c9f84d1fc4c38a9f8e0e6376b95f68ecea7db40aeb0eaac732a3553df910de84",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.web-design.95.0",
+      "hash": "98bd7bc77092be7c0f7b2a8e41dc33945f4c6f6835ba2371539d4f1b902faefd",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.web-design.111.0",
+      "hash": "1b56cc5e9010872318f0956245957a641da99c32f442286223850f6aead2015e",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.web-design.153.0",
+      "hash": "adcb2a576e93e069bb75d29125aad328b24505890a7a420041e876a9ffb0580c",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.web-design.159.0",
+      "hash": "32183ae70c7ce52048aa57219bbb8401c33e375257cbc6f55c223e172e86557b",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.services.web-design.245.0",
+      "hash": "adb13026d28b4bfdfaaae5d9f036afaaf14fb1d1eab171b5f2d8a2eb79fe6880",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.terms.6.0",
+      "hash": "eff9072ee7c05698d53761628e3810e0d14b0d38fddb0021e294f7c3648d75de",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.terms.9.0",
+      "hash": "0589d6f9dc3039af539466a5e8057b8dbad43b460855d92f4a74b5791e5ce0a9",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.terms.12.0",
+      "hash": "be186b106636236814bd88854d2a768f0e65c1cbf730bcb4946ea8e9aa555825",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.work.203.0",
+      "hash": "67d7b62ff7c6b801fa5c46b9697f1347564e33b4547a41ae85aec7dc2db327fa",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.work.305.0",
+      "hash": "e843ee778eff90b6e5b7be60b4411003a7815e9199fbe439f3ced48891500141",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    },
+    {
+      "id": "public.work.326.0",
+      "hash": "fb8f48501b02f5b5507e5929cb5f8aeaa17d6086571fbf1234056dc55c67ffea",
+      "decision": "approved",
+      "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
+    }
+  ],
+  "rejections": [
+    {
+      "id": "public.guides.12.0",
+      "reason": "Directory introduction, not substantive answer evidence"
+    },
+    {
+      "id": "public.guides.29.0",
+      "reason": "Navigation card summary; use the actual guide"
+    },
+    {
+      "id": "public.privacy.3.0",
+      "reason": "Policy heading/date, not substantive evidence"
+    },
+    {
+      "id": "public.work.9.0",
+      "reason": "Promotional introduction without a concrete workflow"
+    },
+    {
+      "id": "public.work.36.0",
+      "reason": "Unqualified rental performance claim"
+    },
+    {
+      "id": "public.auto-repair.43.0",
+      "reason": "Unqualified immediate funding/monthly financing example"
+    },
+    {
+      "id": "public.healthcare.43.0",
+      "reason": "Unqualified financing term and funding claim"
+    },
+    {
+      "id": "public.restaurants.55.0",
+      "reason": "Third-party fee/performance assertion without review context"
+    },
+    {
+      "id": "public.grocery.42.0",
+      "reason": "Unqualified under-two-second performance claim"
+    },
+    {
+      "id": "public.retail.41.0",
+      "reason": "Unqualified under-two-second performance claim"
+    },
+    {
+      "id": "public.ecommerce.52.0",
+      "reason": "Unqualified fraud-prevention effectiveness claim"
+    },
+    {
+      "id": "public.services.web-design.134.0",
+      "reason": "Overlong mixed chunk; replaced with coherent build facets"
+    },
+    {
+      "id": "public.services.web-design.134.1",
+      "reason": "Split scope context; replaced with coherent build facets"
+    },
+    {
+      "id": "public.services.75.0",
+      "reason": "Promotional summary; use concrete service deliverable instead"
+    },
+    {
+      "id": "public.services.269.0",
+      "reason": "Promotional summary; use concrete service deliverable instead"
+    }
+  ]
+}

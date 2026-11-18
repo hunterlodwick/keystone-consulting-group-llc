@@ -1,8 +1,11 @@
 import { SITE } from './guides';
 import { guideMetadata, renderMetadata } from './guide-seo';
+import { AI_AGENTS, AI_HUB } from './ai-agents';
 
 // Titles and descriptions reuse the corresponding pages' existing hero copy.
 const pageCopy: Record<string, [string, string]> = {
+  [AI_HUB.path]: [AI_HUB.title, AI_HUB.description],
+  ...Object.fromEntries(AI_AGENTS.map((agent) => [agent.path, [agent.title, agent.description]] as const)),
   "/": [
     "Stop Losing Money to Hidden Fees",
     "We audit your processing statements, show you exactly where the money is leaking, and fix it. Then we reinvest those savings into websites and systems that make the phone ring."

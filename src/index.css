@@ -59,7 +59,8 @@ body::after {
   justify-content: space-around;
   min-width: 100%;
   gap: 4rem;
-  animation: scroll 30s linear infinite;
+  /* Duration set from one-copy width for ~20–25 px/sec */
+  animation: scroll var(--marquee-duration, 120s) linear infinite;
   will-change: transform;
 }
 
@@ -68,8 +69,41 @@ body::after {
     transform: translateX(0);
   }
   to {
+    /* Exactly one copy (+ container gap) for seamless loop */
     transform: translateX(calc(-100% - 4rem));
   }
+}
+
+/* Square: monochrome mark readable on dark and light themes */
+.partner-square {
+  color: #F2F2F2;
+}
+[data-theme="light"] .partner-square {
+  color: #1A1A1A !important;
+}
+
+/* Accessible partner names: in the accessibility tree, not the marquee */
+.partners-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Static wrapped list for prefers-reduced-motion */
+.partners-static {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 0.5rem;
+  padding: 0 1.5rem;
+  max-width: 72rem;
+  margin: 0 auto;
 }
 
 @keyframes shimmer {
@@ -128,6 +162,19 @@ body::after {
   }
 }
 
+/* Hero three-pillar selector: keep the full set readable in the first phone viewport */
+.hero-pillar-selector {
+  max-width: 40rem;
+}
+@media (max-width: 639px) {
+  .hero-pillar-selector {
+    max-width: none;
+  }
+  .hero-pillar-link {
+    min-height: 44px;
+  }
+}
+
 /* Hero POS Float */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -157,6 +204,18 @@ body::after {
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .marquee-container {
+    display: none;
+  }
+  .partners-static {
+    display: flex;
+  }
+  .marquee-content {
+    animation: none;
+  }
+}
+
 /* CTA Button Pulse */
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 0 0 rgba(0, 128, 128, 0); }
@@ -169,52 +228,6 @@ body::after {
   .cta-button-pulse {
     animation: none;
   }
-}
-
-/* ---- ProcessingVolume component CSS (moved from dangerouslySetInnerHTML) ---- */
-.data-particles-bg {
-  background-image: radial-gradient(rgba(0, 128, 128, 1) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: particle-drift 20s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .data-particles-bg {
-    animation: none;
-  }
-  .pulse-glow {
-    animation: none !important;
-    text-shadow: 0 0 20px rgba(0, 128, 128, 0.5);
-  }
-  .stat-fade {
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-@keyframes particle-drift {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 -400px; }
-}
-@keyframes pulse-glow-anim {
-  0%, 100% { text-shadow: 0 0 10px rgba(0, 128, 128, 0.2); }
-  50% { text-shadow: 0 0 35px rgba(0, 128, 128, 0.8); }
-}
-.pulse-glow {
-  animation: pulse-glow-anim 4s ease-in-out infinite;
-}
-.counter-font {
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum";
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-.stat-fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.stat-fade.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ---- Light Mode Theme ---- */
@@ -366,16 +379,6 @@ body::after {
 [data-theme="light"] button.bg-white {
   background-color: #1A1A1A !important;
   color: #FFFFFF !important;
-}
-
-/* Fix data particles bg */
-[data-theme="light"] .data-particles-bg {
-  opacity: 0.05 !important;
-}
-
-/* Counter font in light */
-[data-theme="light"] .counter-font {
-  color: #1A1A1A;
 }
 
 /* Fix the testimonial stars */

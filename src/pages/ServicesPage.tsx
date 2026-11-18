@@ -240,12 +240,16 @@ const SERVICES_DETAIL: ServiceDetail[] = [
             "description": "We agree responsibility for hosting, domain setup and SSL. Analytics, SEO structure and the sitemap are scoped alongside Google Business Profile setup or updates where relevant. Account fees are identified separately."
         },
         {
+            "title": "AEO: answer the questions customers already ask",
+            "description": "Answer Engine Optimization means publishing clear answers to real customer questions as indexable service copy, for example \"Do you serve Murray on Saturdays?\" or \"What is included in a furnace tune-up?\" We structure hours, service area, pricing rules and contact facts so people and machines can read them. This is content and markup work. It is not a promise of AI citations or rankings."
+        },
+        {
             "title": "Integrations: get the enquiry where it belongs",
-            "description": "We scope booking, payments, CRM and email connections around the tools you use. Forms route to the agreed people, with test submissions before launch."
+            "description": "We scope booking, payments, CRM and email connections around the tools you use. Forms route to the agreed people, with test submissions before launch. Measurement is part of the same path: you can see whether enquiries arrived."
         },
         {
             "title": "Handover: own it and know how to use it",
-            "description": "You own the site and the accounts. We hand over access and train you to make simple edits using the agreed editing setup. Third-party services keep their own terms."
+            "description": "You own the site and the accounts. We hand over access and train you to make simple edits using the agreed editing setup. Hosting and third-party services keep their own terms, which we identify in the scope."
         },
         {
             "title": "After launch: know who is watching and who to call",
@@ -309,7 +313,7 @@ const SERVICES_DETAIL: ServiceDetail[] = [
           },
           {
               "title": "Handover: know what you own",
-              "description": "You own the site, with no platform lock-in. We walk through the agreed editing setup and hand over access. Hosting and any third-party assistant fees are identified separately so you know what continues after the build."
+              "description": "You own the site. We walk through the agreed editing setup and hand over access. Hosting and any third-party assistant fees are identified separately so you know what continues after the build."
           }
       ],
       "fit": {
@@ -339,7 +343,11 @@ const SERVICES_DETAIL: ServiceDetail[] = [
           },
           {
               "question": "Do I own it, and can I move it later?",
-              "answer": "Yes. You own your site and are not locked to a KCG platform. We explain the handover and hosting arrangements in the scope. Third-party subscriptions have their own terms, which we identify before you commit."
+              "answer": "Yes. You own your site. We explain the handover and hosting arrangements in the scope, including what you need if another provider takes over later. Third-party subscriptions have their own terms, which we identify before you commit."
+          },
+          {
+              "question": "What is AEO on a KCG website build?",
+              "answer": "AEO means Answer Engine Optimization: writing indexable answers to questions customers already ask, then structuring service facts so search systems can read them. Example questions include hours, coverage area, what a service includes, and how to book. We do not guarantee AI citations or rankings."
           },
           {
               "question": "Can the site work with our current CRM?",
@@ -362,8 +370,8 @@ const SERVICES_DETAIL: ServiceDetail[] = [
       "icon": Code,
       "features": [
           "Built around your actual workflow",
-          "Direct access to Seth and Hunter",
-          "Processing savings considered before the build",
+          "AEO answers to real customer questions, without guaranteed AI citations",
+          "Booking path tested with measurement in place",
           "Clear ownership and handover"
       ]
   },
@@ -619,7 +627,7 @@ const SERVICES_DETAIL: ServiceDetail[] = [
           },
           {
               "question": "Do we own the implementation?",
-              "answer": "Ownership and access are written into the scope for the work we build. Third-party models and tools retain their own licenses and fees. If a website is part of the project, you own that site with no platform lock-in. We explain dependencies before you commit."
+              "answer": "Ownership and access are written into the scope for the work we build. Third-party models and tools retain their own licenses and fees. If a website is part of the project, you own that site. We explain dependencies before you commit."
           },
           {
               "question": "How much time will we actually get back?",

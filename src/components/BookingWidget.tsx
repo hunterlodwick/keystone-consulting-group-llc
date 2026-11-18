@@ -131,6 +131,7 @@ export function BookingWidget({
   const selectedSlotRef = useRef<Slot | null>(null);
   const daysRef = useRef<DayPayload[]>([]);
   const phaseRef = useRef<'loading' | 'ready' | 'form' | 'submitting' | 'confirm' | 'unavailable' | 'error'>('loading');
+  const userInteractedRef = useRef(false);
 
   const [phase, setPhase] = useState<'loading' | 'ready' | 'form' | 'submitting' | 'confirm' | 'unavailable' | 'error'>(
     'loading',
@@ -360,14 +361,26 @@ export function BookingWidget({
     const onFocusIn = (event: FocusEvent) => {
       if (event.target instanceof HTMLElement) revealFromSticky(event.target);
     };
+    const markInteracted = () => {
+      userInteractedRef.current = true;
+    };
     root.addEventListener('focusin', onFocusIn);
-    return () => root.removeEventListener('focusin', onFocusIn);
+    root.addEventListener('pointerdown', markInteracted);
+    root.addEventListener('keydown', markInteracted);
+    return () => {
+      root.removeEventListener('focusin', onFocusIn);
+      root.removeEventListener('pointerdown', markInteracted);
+      root.removeEventListener('keydown', markInteracted);
+    };
   }, [revealFromSticky]);
 
   useEffect(() => {
-    if (alertText) {
-      alertRef.current?.scrollIntoView({ block: 'nearest' });
-    }
+    if (!alertText) return;
+    const dialogOpen = Boolean(rootRef.current?.closest('[role="dialog"]'));
+    // Passive availability load on a blank homepage must not yank the viewport.
+    // Only scroll alerts after widget interaction or when the booking dialog is open.
+    if (!userInteractedRef.current && !dialogOpen) return;
+    alertRef.current?.scrollIntoView({ block: 'nearest' });
   }, [alertText]);
 
   const canGoBack = Boolean(earliestFrom && rangeFrom > earliestFrom);

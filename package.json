@@ -5,14 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
-    "build": "vite build --configLoader runner && node --import tsx scripts/prerender.tsx",
+    "build": "npm run widget:package && vite build --configLoader runner && node --import tsx scripts/prerender.tsx",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "test:booking": "node --import tsx --test tests/booking/booking.test.ts",
     "test:booking-browser": "playwright test --config tests/booking/playwright.config.ts",
     "verify:seo": "node --import tsx scripts/verify-seo.ts",
-    "verify:seo-browser": "tsx scripts/verify-seo-browser.ts"
+    "verify:seo-browser": "tsx scripts/verify-seo-browser.ts",
+    "widget:index": "NODE_OPTIONS=--max-old-space-size=4096 tsx scripts/build-widget-index.ts",
+    "test:widget": "npm run widget:package && node --import tsx --test tests/widget-release/*.test.ts",
+    "widget:package": "node --import tsx scripts/package-widget.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
@@ -36,6 +40,7 @@
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "esbuild": "^0.27.3"
   }
 }

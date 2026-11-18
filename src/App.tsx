@@ -53,6 +53,8 @@ import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
 import ServicesPage, { SingleServicePage } from './pages/ServicesPage';
 import WorkPage from './pages/WorkPage';
+import AiAgentsPage from './pages/AiAgentsPage';
+import { isAiAgentPath } from './content/ai-agents';
 import { BookingWidget, isBookingModalTitle } from './components/BookingWidget';
 import { BookingSection } from './components/BookingSection';
 
@@ -431,7 +433,7 @@ const FINANCE_DATA = [
     title: "Pricing",
     icon: DollarSign,
     longDesc: "We offer transparent, competitive pricing tailored to your business volume and needs. No hidden fees, no surprises.",
-    features: ["Transparent fee structure", "No long-term contracts", "Free cost comparison", "Dedicated account manager"],
+    features: ["Transparent fee structure", "Written proposal before you switch", "Free cost comparison", "Dedicated account manager"],
     buttonText: "Request Pricing"
   },
   {
@@ -788,6 +790,7 @@ const NAV_DROPDOWNS = {
     items: [
       { name: 'Custom CRM', icon: LayoutDashboard, desc: 'CRMs built around your unique workflow', href: '/services/crm' },
       { name: 'AI Automations', icon: Bot, desc: 'AI agents, chatbots & workflow automation', href: '/services/automations' },
+      { name: 'Virtual Assistants', icon: Bot, desc: 'Ongoing jobs in apps you already use, under owner review', href: '/services/ai-agents' },
       { name: 'Consulting Services', icon: Compass, desc: 'Strategic advisory to eliminate waste & grow', href: '/services/consulting' },
     ]
   }
@@ -1059,6 +1062,30 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
   );
 };
 
+const HERO_PILLARS = [
+  {
+    id: 'payments',
+    label: 'Payments',
+    detail: 'Find the fee leak',
+    href: '/guides/payment-processing',
+    icon: CreditCard,
+  },
+  {
+    id: 'websites',
+    label: 'Websites',
+    detail: 'Sites that book work',
+    href: '/services/web-design',
+    icon: Code,
+  },
+  {
+    id: 'ai',
+    label: 'AI',
+    detail: 'Virtual assistants for real jobs',
+    href: '/services/ai-agents',
+    icon: Bot,
+  },
+] as const;
+
 // Hero
 const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -1077,29 +1104,48 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
 
   return (
     <section 
-      className="relative flex items-center pt-24 pb-16 lg:min-h-screen lg:pt-20 lg:pb-0 overflow-hidden"
+      className="relative flex items-center pt-20 pb-12 lg:min-h-screen lg:pt-20 lg:pb-0 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 lg:gap-12 items-center">
         
         {/* Left Side */}
         <div className="z-10 animate-on-scroll">
+          <nav aria-label="Choose a starting path" className="hero-pillar-selector mb-5 md:mb-7">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-offwhite/55 mb-2.5">Start here</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              {HERO_PILLARS.map((pillar) => (
+                <a
+                  key={pillar.id}
+                  href={pillar.href}
+                  className="hero-pillar-link group flex items-center gap-3 min-h-11 px-3.5 py-3 border border-white/15 bg-white/[0.03] rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal hover:border-teal/45 hover:bg-teal/[0.07] transition-colors"
+                >
+                  <pillar.icon className="w-5 h-5 text-teal shrink-0" strokeWidth={1.5} aria-hidden="true" />
+                  <span className="min-w-0 text-left">
+                    <span className="block text-white text-sm font-medium leading-tight">{pillar.label}</span>
+                    <span className="block text-offwhite/55 text-xs font-light mt-0.5 leading-tight">{pillar.detail}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </nav>
+
           {/* Subtle badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-offwhite/80 text-xs font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-offwhite/80 text-xs font-medium mb-4 md:mb-6">
             <Shield className="w-3.5 h-3.5 text-teal" />
             Most businesses are overpaying in processing fees and don't know it.
           </div>
           
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white mb-4 md:mb-6">
             Stop Losing Money<br/>
             <span className="block mt-2">to Hidden Fees.</span>
           </h1>
-          <p className="text-offwhite/80 text-lg md:text-xl font-light max-w-xl mb-10 leading-relaxed">
+          <p className="text-offwhite/80 text-base md:text-xl font-light max-w-xl mb-6 md:mb-10 leading-relaxed">
             We audit your processing statements, show you exactly where the money is leaking, and fix it. Then we reinvest those savings into websites and systems that make the phone ring.
           </p>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 mb-10 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mb-6 md:mb-10 w-full sm:w-auto">
             <button 
               onClick={() => onOpenModal("Get a Free Profit Leak Analysis", <StatementAnalysisForm />)}
               className="w-full sm:w-auto cta-button-pulse group relative inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:tracking-[0.5px]">
@@ -1115,10 +1161,10 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
           {/* Trust bar */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-offwhite/70 font-light">
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> Free audit, no obligation
+              <CheckCircle className="w-4 h-4 text-teal" /> Free audit, no pressure to switch
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> No contracts, ever
+              <CheckCircle className="w-4 h-4 text-teal" /> Written proposal before you switch
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-teal" /> Savings in 30 days or we tell you
@@ -1226,7 +1272,7 @@ const HOMEPAGE_PRODUCTS: {
     id: "processing",
     title: "Credit Card Processing",
     icon: CreditCard,
-    desc: "We find the fees you shouldn't be paying and cut them. The Edge Program at $0, or interchange-plus at wholesale. No contracts.",
+    desc: "We find the fees you shouldn't be paying and cut them. The Edge Program at $0, or interchange-plus at wholesale. Clear terms in writing.",
     linkTo: "/#calculator",
     image: "/images/card-processing.jpg",
     imageAlt: "Shop owner serving a customer at a retail checkout counter",
@@ -1254,14 +1300,50 @@ const HOMEPAGE_PRODUCTS: {
   },
 ];
 
-// Detailed breakdown of the two build services Hunter wants fleshed out on the homepage
+// Detailed breakdown of the three homepage offerings
 const BUILD_DETAILS = [
+  {
+    id: "payments",
+    eyebrow: "Payments",
+    icon: CreditCard,
+    headline: "Statement Review, Then Payments That Match How You Sell.",
+    intro: "We start with your processing statement, then choose and configure POS around how you actually sell: dining rooms, service jobs, or retail counters. Fees stay readable. Equipment matches the floor.",
+    columns: [
+      {
+        title: "What We Do",
+        items: [
+          "Line-by-line statement review of your current processor",
+          "Restaurant POS: tables, split checks, tips, and kitchen tickets",
+          "Service POS: deposits, invoices, and mobile take-payment on site",
+          "Retail POS: inventory counts, returns, and counter checkout",
+          "Clear written proposal covering fees, funding, and equipment",
+          "A named contact when something breaks, not a phone tree",
+        ],
+      },
+      {
+        title: "What You Walk Away With",
+        items: [
+          "A concrete read of where fees are leaking today",
+          "Restaurant: table flow, split checks, and kitchen display that match the ticket",
+          "Service: deposits and invoices that travel with the tech on mobile",
+          "Retail: inventory and returns wired into the same counter system",
+          "Terms you can explain to your bookkeeper",
+          "Direct access to the full payment processing guide",
+        ],
+      },
+    ],
+    outcome: "The result: you know what processing costs, the POS matches the floor, and the leak stops funding someone else's margin.",
+    linkTo: "/guides/payment-processing",
+    linkLabel: "Open the payment processing guide",
+    image: "/images/card-processing.jpg",
+    imageAlt: "Shop owner serving a customer at a retail checkout counter",
+  },
   {
     id: "websites",
     eyebrow: "Website Builds",
     icon: Code,
     headline: "A Website That Works While You Work.",
-    intro: "We don't hand you a template. Every site is designed around what your customers actually need to decide, and built so the phone rings. Business sites, online stores, booking and enquiry flows, AI chat that answers at 2 AM.",
+    intro: "We don't hand you a template. Every site is designed around what your customers actually need to decide, then built so search engines and people can find clear answers. Business sites, stores, booking flows, and AI chat when it earns its keep.",
     columns: [
       {
         title: "What We Build",
@@ -1270,23 +1352,23 @@ const BUILD_DETAILS = [
           "Online stores and e-commerce with real checkout",
           "Booking, quote and enquiry flows that land in your inbox",
           "High-conversion landing pages for ads and campaigns",
-          "AI chat that answers questions and books appointments",
+          "AI chat that answers approved questions and books appointments",
           "Interactive 3D where it actually earns its keep",
         ],
       },
       {
         title: "What Comes Standard",
         items: [
-          "Mobile-first and tested on real phones",
-          "Loads in under two seconds",
-          "SEO foundations and Google Business Profile set up",
-          "Copy written to convert, not to fill space",
-          "You own the site and the accounts, no lock-in",
-          "Every page built around one clear action",
+          "Mobile-first pages: customers can read and enquire without pinching",
+          "Fast loads: fewer abandoned visits while the page catches up",
+          "AEO: example customer questions answered in plain, indexable service copy (no guaranteed AI citations)",
+          "Structured facts: hours, service area, pricing rules, and contact details machines can parse",
+          "Booking and measurement: a tested enquiry path plus analytics you can read",
+          "You own the site and the accounts; handover and hosting are written into scope",
         ],
       },
     ],
-    outcome: "The result: a site that turns search traffic and referrals into booked jobs, instead of a brochure nobody calls.",
+    outcome: "The result: a site that answers real buying questions, accepts the booking, and measures what happened, instead of a brochure nobody calls.",
     linkTo: "/services/web-design",
     image: "/images/services/web-design.jpg",
     imageAlt: "Designer working at a studio desk",
@@ -1295,13 +1377,13 @@ const BUILD_DETAILS = [
     id: "ai",
     eyebrow: "AI Systems",
     icon: Zap,
-    headline: "AI That Handles the Work You Keep Doing Twice.",
-    intro: "We build AI systems around your actual workflow: the calls you miss, the leads you chase, the paperwork you re-type. Not a chatbot bolted onto a website.",
+    headline: "Virtual Assistants for Jobs You Already Repeat.",
+    intro: "We configure virtual assistants that keep doing a real ongoing job in the apps you already use: sales follow-up, customer service, scheduling, and ops. OpenAI dots, Claude Duet, Grok Bot, and Meta Muse stay behind a named reviewer. Not a Slack product, and not a chatbot bolted onto a website.",
     columns: [
       {
         title: "What We Build",
         items: [
-          "AI agents that answer calls and texts, day or night",
+          "Named virtual assistants for ongoing follow-through, briefs, roles, and messaging",
           "Lead qualification that routes real buyers to you",
           "Follow-up sequences that run without you remembering",
           "Appointment booking straight onto your calendar",
@@ -1313,16 +1395,17 @@ const BUILD_DETAILS = [
         title: "What It Changes",
         items: [
           "Missed calls stop being lost revenue",
-          "Leads get answered in seconds, not days",
+          "Exception packets arrive ready for a named reviewer",
           "Your team stops re-typing the same information",
           "You see every job and every dollar in one place",
           "The system runs when you're closed, sick, or on a job",
-          "It gets better as it learns your business",
+          "Pilot work is measured against your own baseline",
         ],
       },
     ],
-    outcome: "The result: an operation that keeps moving whether or not you're standing at the counter.",
+    outcome: "The result: an operation that keeps moving whether or not you're standing at the counter, with irreversible actions still behind a human.",
     linkTo: "/services/automations",
+    secondaryLink: { href: "/services/ai-agents", label: "Browse virtual assistants" },
     image: "/images/services/automations.jpg",
     imageAlt: "Business owner reviewing an automated workflow",
   },
@@ -1335,7 +1418,7 @@ const BuildDetails = () => {
         <div className="text-center mb-20">
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-5">What We Actually Build.</h2>
           <p className="text-offwhite/70 text-lg font-light max-w-3xl mx-auto leading-relaxed">
-            Payments gets your money back. These are the two things we build with it. Here's exactly what that looks like.
+            Payments first. Then websites and AI you can actually run. Here's exactly what each one looks like.
           </p>
         </div>
 
@@ -1380,14 +1463,23 @@ const BuildDetails = () => {
                     </ul>
                   </div>
                 ))}
-                <div className="sm:col-span-2 pt-1">
+                <div className="sm:col-span-2 pt-1 flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-1">
                   <a
                     href={b.linkTo}
                     className="inline-flex items-center gap-2 text-teal text-sm font-medium hover:text-teal-soft transition-colors group min-h-[44px]"
                   >
-                    See the full {b.eyebrow.toLowerCase()} breakdown
+                    {b.linkLabel || `See the full ${b.eyebrow.toLowerCase()} breakdown`}
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </a>
+                  {b.secondaryLink && (
+                    <a
+                      href={b.secondaryLink.href}
+                      className="inline-flex items-center gap-2 text-teal text-sm font-medium hover:text-teal-soft transition-colors group min-h-[44px]"
+                    >
+                      {b.secondaryLink.label}
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -1520,7 +1612,7 @@ const HowItWorks = ({ onOpenModal }: { onOpenModal: (title: string, content: Rea
             Start Your Free Profit Leak Analysis →
           </button>
           <p className="text-xs text-offwhite/40 font-light">
-            No contracts. No obligations. If we can't save you money, we'll tell you.
+            Free audit. If we can't save you money, we'll tell you.
           </p>
         </div>
       </div>
@@ -1533,7 +1625,7 @@ const WhyChooseUs = () => {
   const reasons = [
     { num: "01", title: "We Find the Money First", desc: "Most processors raise your rates every six months and hope you don't notice. We audit your statement for free and show you exactly what they're doing." },
     { num: "02", title: "One Process, Not a Buffet", desc: "Auditing, fee elimination, websites, CRMs, AI tools. It's all one process. We find the money, fix the leak, then reinvest the savings into growth." },
-    { num: "03", title: "Zero Contracts, Zero Risk", desc: "If we don't earn your business every month, we don't keep you. No hidden fees, no lock-ins, no fine print." },
+    { num: "03", title: "Earn It Every Month", desc: "If we don't earn your business every month, we don't keep you. Transparent fees, named support, and terms you can show your bookkeeper." },
     { num: "04", title: "Savings That Compound", desc: "Save $2,000 a month in fees and that's $24,000 a year back in your pocket. Money you were losing quietly, now working for you." },
   ];
 
@@ -1763,131 +1855,6 @@ const Industries = ({ onOpenSplash }: { onOpenSplash: (industryId: string) => vo
   );
 };
 
-// Free Placement
-
-// Processing Volume Social Proof
-const ProcessingVolume = ({ theme }: { theme?: string }) => {
-  const [count, setCount] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-  
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-          
-          if (prefersReducedMotion) {
-            setCount(1000000);
-            setIsFinished(true);
-            observer.disconnect();
-            return;
-          }
-
-          let startTimestamp: number | null = null;
-          const duration = 3000;
-          const end = 1000000;
-
-          const step = (timestamp: number) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
-            setCount(easeProgress * end);
-            
-            if (progress < 1) {
-              window.requestAnimationFrame(step);
-            } else {
-              setCount(end);
-              setIsFinished(true);
-            }
-          };
-          window.requestAnimationFrame(step);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    return () => observer.disconnect();
-  }, []);
-
-  const isLight = theme === 'light';
-  const sectionBg = isLight
-    ? 'radial-gradient(circle at center, rgba(0, 122, 122, 0.06) 0%, rgba(238, 238, 235, 1) 100%)'
-    : 'radial-gradient(circle at center, rgba(0, 128, 128, 0.08) 0%, rgba(20, 24, 28, 1) 100%)';
-  const sectionBgColor = isLight ? '#EEEEEB' : '#14181cc0';
-
-  return (
-    <section 
-      ref={sectionRef}
-      className="relative py-12 md:py-16 overflow-hidden flex flex-col items-center justify-center border-b border-white/5"
-      style={{
-        background: sectionBg,
-        backgroundColor: sectionBgColor
-      }}
-    >
-      {/* CSS Particles Grid */}
-      <div className="absolute inset-0 z-0 hidden sm:block opacity-[0.15] pointer-events-none data-particles-bg"></div>
-
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center">
-        {/* Center Animated Counter */}
-        <div className="mb-20">
-          <div className="flex justify-center items-baseline">
-            <h2 className={`text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight counter-font transition-all duration-1000 ${isFinished ? 'pulse-glow' : ''}`}>
-              $<span className="inline-block">{Math.floor(count).toLocaleString()}</span>+
-            </h2>
-          </div>
-          <p className="mt-6 text-offwhite/50 text-sm md:text-base tracking-widest uppercase font-medium">
-            processed monthly by our clients
-          </p>
-        </div>
-
-        {/* Stat Cards */}
-        <div className="flex flex-col sm:flex-row gap-6 md:gap-8 w-full max-w-4xl mx-auto">
-          {/* Savings Guaranteed */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '200ms' }}>
-            <span className="text-3xl md:text-4xl text-teal font-medium mb-3 counter-font">30-100%</span>
-            <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Savings Guaranteed</span>
-          </div>
-
-          {/* Fees Eliminated (3.2% of $1M) */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-teal/[0.06] rounded-2xl border border-teal/20 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '350ms' }}>
-            <span className="text-3xl md:text-4xl text-teal font-medium mb-3 counter-font">
-              {isVisible ? <CountUp end={32000} duration={2000} prefix="$" /> : '$0'}
-            </span>
-            <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Avg Fees Eliminated/mo*</span>
-          </div>
-
-          {/* Uptime */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '500ms' }}>
-            <span className="text-3xl md:text-4xl text-white font-medium mb-3 counter-font">
-              {isVisible ? <CountUp end={99.9} duration={2000} decimals={1} suffix="%" /> : '0%'}
-            </span>
-            <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Uptime Reliability</span>
-          </div>
-
-          {/* $0 Fees */}
-          <div className={`flex-1 flex flex-col items-center justify-center py-8 px-4 bg-white/[0.03] rounded-2xl border border-white/5 stat-fade ${isVisible ? 'show' : ''}`} style={{ transitionDelay: '650ms' }}>
-            <span className="text-3xl md:text-4xl text-white font-medium mb-3 counter-font">$0</span>
-            <span className="text-xs md:text-sm text-offwhite/60 tracking-wider uppercase font-medium break-words text-center">Processing Fees with Edge</span>
-          </div>
-        </div>
-
-        <p className="mt-6 text-offwhite/30 text-xs text-center">*Based on $1M monthly volume at industry avg 3.2% rate before switching to Edge</p>
-      </div>
-
-      {/* Bottom Accent Line */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal to-transparent opacity-60"></div>
-    </section>
-  );
-};
-
 // Testimonials
 const Testimonials = () => {
   const testimonials = [
@@ -1985,8 +1952,9 @@ const Testimonials = () => {
 
 // Integration Ecosystem
 const IntegrationEcosystem = () => {
-  // name + brand color for each partner
+  // name + brand color for each partner (Square uses theme-aware class for dual-theme contrast)
   const integrations = [
+    { name: "Square",     color: "" },
     { name: "Visa",       color: "#1A1F71" },
     { name: "Mastercard", color: "#EB001B" },
     { name: "Clover",     color: "#2BA84A" },
@@ -2005,29 +1973,74 @@ const IntegrationEcosystem = () => {
     { name: "Paradise POS", color: "#F4A261" },
   ];
 
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [durationSec, setDurationSec] = useState(120);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const SPEED_PX_PER_SEC = 22.5; // gentle loop ~20–25 px/sec
+
+    const update = () => {
+      const width = track.offsetWidth;
+      if (width > 0) setDurationSec(width / SPEED_PX_PER_SEC);
+    };
+
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(track);
+    return () => ro.disconnect();
+  }, []);
+
+  const renderLogos = (keyPrefix: string) =>
+    integrations.map((p, idx) => (
+      <div
+        key={`${keyPrefix}-${p.name}-${idx}`}
+        className="partner-logo whitespace-nowrap px-8 flex items-center"
+      >
+        <span
+          className={`font-serif text-2xl tracking-wider uppercase font-semibold${p.name === "Square" ? " partner-square" : ""}`}
+          style={p.color ? { color: p.color } : undefined}
+        >
+          {p.name}
+        </span>
+      </div>
+    ));
+
+  const partnerNames = integrations.map((p) => p.name);
+  const lastPartner = partnerNames[partnerNames.length - 1] ?? "";
+  const partnerLead =
+    partnerNames.length > 1
+      ? `${partnerNames.slice(0, -1).join(", ")}, and ${lastPartner}`
+      : lastPartner;
+
   return (
-    <section className="py-24 border-y border-teal/10 bg-charcoal-dark/30 overflow-hidden relative">
+    <section
+      id="partners"
+      aria-labelledby="partners-heading"
+      className="py-24 border-y border-teal/10 bg-charcoal-dark/30 overflow-hidden relative"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-charcoal-dark/10 to-transparent pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center relative z-10">
-        <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">Partners That We Work With</h3>
+        <h3 id="partners-heading" className="font-serif text-2xl md:text-3xl text-white mb-2">Partners That We Work With</h3>
         <p className="text-offwhite/60 text-sm font-light">Your POS, your gateway, your hardware. We integrate with the tools you're already using.</p>
       </div>
-      <div className="marquee-container">
-        <div className="marquee-content">
-          {[...integrations, ...integrations].map((p, idx) => (
-            <div
-              key={idx}
-              className="partner-logo whitespace-nowrap px-8 flex items-center"
-            >
-              <span
-                className="font-serif text-2xl tracking-wider uppercase font-semibold"
-                style={{ color: p.color }}
-              >
-                {p.name}
-              </span>
-            </div>
-          ))}
+      <p className="partners-accessible">We work with {partnerLead}.</p>
+      <div
+        className="marquee-container"
+        aria-hidden="true"
+        style={{ ["--marquee-duration" as string]: `${durationSec}s` }}
+      >
+        <div className="marquee-content" ref={trackRef}>
+          {renderLogos("a")}
         </div>
+        <div className="marquee-content">
+          {renderLogos("b")}
+        </div>
+      </div>
+      <div className="partners-static" aria-hidden="true">
+        {renderLogos("static")}
       </div>
     </section>
   );
@@ -2250,19 +2263,18 @@ const Footer = ({ onOpenSplash, onOpenModal }: { onOpenSplash: (industryId: stri
   );
 };
 
-function MainLandingPage({ onOpenModal, onOpenSplash, theme }: { onOpenModal: (title: string, content: React.ReactNode) => void, onOpenSplash: (industryId: string) => void, theme: string }) {
+function MainLandingPage({ onOpenModal, onOpenSplash }: { onOpenModal: (title: string, content: React.ReactNode) => void, onOpenSplash: (industryId: string) => void }) {
   useScrollAnimation();
 
   return (
     <>
 
       <Hero onOpenModal={onOpenModal} />
+      <BuildDetails />
       <section className="py-8 border-y border-teal/20 text-center px-6"><a href="/guides" className="text-teal font-medium">Payment processing, websites, AI, or local SEO? Explore our business guides →</a></section>
-      <ProcessingVolume theme={theme} />
       <HowItWorks onOpenModal={onOpenModal} />
       <ROICalculator />
       <ProductGrid onOpenModal={onOpenModal} />
-      <BuildDetails />
       <Industries onOpenSplash={onOpenSplash} />
       <WhyChooseUs />
       <IntegrationEcosystem />
@@ -2279,13 +2291,23 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
 
   // Theme state - persisted to localStorage
   const [theme, setTheme] = useState(() => {
-    const saved = typeof localStorage === 'undefined' ? null : localStorage.getItem('kcg-theme');
-    return saved || 'light';
+    try {
+      if (typeof localStorage === 'undefined' || typeof localStorage.getItem !== 'function') return 'light';
+      return localStorage.getItem('kcg-theme') || 'light';
+    } catch {
+      return 'light';
+    }
   });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('kcg-theme', theme);
+    try {
+      if (typeof localStorage !== 'undefined' && typeof localStorage.setItem === 'function') {
+        localStorage.setItem('kcg-theme', theme);
+      }
+    } catch {
+      // ignore non-browser storage stubs during prerender
+    }
   }, [theme]);
 
   const toggleTheme = () => {
@@ -2422,6 +2444,8 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
             setCurrentPath(path);
             window.scrollTo(0, 0);
           }} />
+        ) : isAiAgentPath(currentPath) ? (
+          <AiAgentsPage path={currentPath} onOpenModal={handleOpenModal} />
         ) : currentPath.startsWith('/services/') ? (
           <SingleServicePage 
             serviceId={currentPath.replace('/services/', '')}
@@ -2461,7 +2485,7 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
             onOpenModal={handleOpenModal} 
           />
         ) : (
-          <MainLandingPage onOpenModal={handleOpenModal} onOpenSplash={handleOpenSplash} theme={theme} />
+          <MainLandingPage onOpenModal={handleOpenModal} onOpenSplash={handleOpenSplash} />
         )}
       </main>
 

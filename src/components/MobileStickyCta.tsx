@@ -16,6 +16,11 @@ export const SERVICE_CLOSE_LABELS: Record<string, string> = {
   'consumer-financing': 'Talk through customer financing',
   'business-loans': 'Talk through your funding options',
   'pos-placement': 'Talk through hardware for your counter',
+  'ai-agents': 'Map a virtual assistant job',
+  'openai-dot': 'Talk through a dots follow-through job',
+  'claude-duet': 'Talk through a Duet brief',
+  'grok-bot': 'Talk through a role-based Bot',
+  'meta-muse': 'Talk through a Muse messaging workflow',
 };
 
 export function stickyCtaLabel(path: string): string | null {

@@ -13,6 +13,10 @@
   ],
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
       "source": "/",
       "destination": "/index.html"
     },
@@ -71,6 +75,26 @@
     {
       "source": "/services/pos-placement",
       "destination": "/services/pos-placement.html"
+    },
+    {
+      "source": "/services/ai-agents",
+      "destination": "/services/ai-agents.html"
+    },
+    {
+      "source": "/services/openai-dot",
+      "destination": "/services/openai-dot.html"
+    },
+    {
+      "source": "/services/claude-duet",
+      "destination": "/services/claude-duet.html"
+    },
+    {
+      "source": "/services/grok-bot",
+      "destination": "/services/grok-bot.html"
+    },
+    {
+      "source": "/services/meta-muse",
+      "destination": "/services/meta-muse.html"
     },
     {
       "source": "/restaurants",
@@ -327,5 +351,11 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/[...path].ts": {
+      "maxDuration": 10,
+      "excludeFiles": "{verification/**,tests/**,scripts/**,src/generated/**,src/lib/widget/strict-grounding/public-*.json,server.ts}"
+    }
+  }
 }

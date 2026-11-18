@@ -3,10 +3,10 @@ export const comparisons: Guide[] = [
   {
     slug: 'fluid-pay-vs-stripe', kind: 'comparison', reviewed: '2026-11-09', topic: 'payments', title: 'KCG / Fluid Pay vs Stripe: what to compare',
     description: 'Compare the KCG Fluid Pay plan with Stripe’s public pricing, integration scope and recurring-billing migration requirements.',
-    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare KCG’s Fluid Pay proposal and Stripe using your actual payment channels and billing requirements. KCG’s Fluid Pay plan is $30/month with no contract. Stripe publishes standard US online domestic-card pricing of 2.9% plus 30¢. These are different pricing components, so neither figure alone establishes your complete cost or the better fit.',
+    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare KCG’s Fluid Pay proposal and Stripe using your actual payment channels and billing requirements. KCG’s Fluid Pay plan is $30/month; request cancellation and processing terms in writing. Stripe publishes standard US online domestic-card pricing of 2.9% plus 30¢. These are different pricing components, so neither figure alone establishes your complete cost or the better fit.',
     sources: ['stripe', 'migration'],
     table: { headings: ['Decision', 'KCG / Fluid Pay', 'Stripe'], rows: [
-      ['Public starting point', '$30/month Fluid Pay plan, no contract. Request full processing terms.', 'Standard online domestic cards: 2.9% + 30¢ per successful transaction. See current pricing.'],
+      ['Public starting point', '$30/month Fluid Pay plan. Request full processing and cancellation terms.', 'Standard online domestic cards: 2.9% + 30¢ per successful transaction. See current pricing.'],
       ['Recurring billing', 'Ask for a demo and written support for your schedules and migration.', 'Review separate Billing pricing and your existing subscription configuration.'],
       ['Leaving the current system', 'Receiving-provider transfer eligibility must be confirmed.', 'Secure card export is documented; Link credentials and subscription objects are excluded.'],
     ] },
@@ -20,10 +20,10 @@ export const comparisons: Guide[] = [
   {
     slug: 'fluid-pay-vs-square', kind: 'comparison', reviewed: '2026-11-09', topic: 'payments', title: 'KCG / Fluid Pay vs Square: compare the workflow',
     description: 'Compare Square’s published plans with a KCG Fluid Pay proposal across software, hardware, payments and recurring costs.',
-    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare Square and a KCG Fluid Pay proposal by listing the checkout, software, hardware, and billing workflow you need. Square’s public pricing includes Free, Plus, and Premium plans, with processing charges varying by plan and channel. KCG’s Fluid Pay plan is $30/month with no contract; ask for its complete processing and integration proposal.',
+    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare Square and a KCG Fluid Pay proposal by listing the checkout, software, hardware, and billing workflow you need. Square’s public pricing includes Free, Plus, and Premium plans, with processing charges varying by plan and channel. KCG’s Fluid Pay plan is $30/month; ask for its complete processing, cancellation, and integration proposal.',
     sources: ['square'],
     table: { headings: ['Decision', 'KCG / Fluid Pay', 'Square'], rows: [
-      ['Monthly plan', 'Owner-confirmed Fluid Pay plan: $30/month with no contract.', 'Square Free has no monthly subscription cost; paid plans also available.'],
+      ['Monthly plan', 'Owner-confirmed Fluid Pay plan: $30/month. Request full terms.', 'Square Free has no monthly subscription cost; paid plans also available.'],
       ['Processing', 'Request the full applicable charges in writing.', 'Published charges vary by plan and payment channel.'],
       ['Operational fit', 'Verify proposed hardware, integrations, and recurring workflow.', 'Check the features and per-location terms of the selected plan.'],
     ] },
@@ -37,10 +37,10 @@ export const comparisons: Guide[] = [
   {
     slug: 'fluid-pay-vs-clover', kind: 'comparison', reviewed: '2026-11-09', topic: 'payments', title: 'KCG / Fluid Pay vs Clover: separate hardware from processing',
     description: 'Review Clover’s public pricing and hardware subscription terms alongside a complete KCG Fluid Pay proposal.',
-    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare Clover and a KCG Fluid Pay proposal by separating hardware, software, and payment processing. Clover’s public pricing organizes packages by business type and distinguishes equipment subscriptions from processing charges. KCG’s Fluid Pay plan is $30/month with no contract. That statement does not establish terms for separate hardware or other agreements.',
+    answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Compare Clover and a KCG Fluid Pay proposal by separating hardware, software, and payment processing. Clover’s public pricing organizes packages by business type and distinguishes equipment subscriptions from processing charges. KCG’s Fluid Pay plan is $30/month. That statement does not establish terms for separate hardware or other agreements.',
     sources: ['clover'],
     table: { headings: ['Decision', 'KCG / Fluid Pay', 'Clover'], rows: [
-      ['Published plan scope', '$30/month no-contract Fluid Pay plan; request complete terms.', 'Business-type packages with software and processing components.'],
+      ['Published plan scope', '$30/month Fluid Pay plan; request complete terms.', 'Business-type packages with software and processing components.'],
       ['Equipment', 'Confirm proposed hardware and any separate terms.', 'Review purchase versus subscription and the applicable agreement.'],
       ['Provider change', 'Confirm supported devices before planning reuse.', 'Clover’s pricing FAQ says its POS devices cannot be used with other payment processors.'],
     ] },
@@ -48,7 +48,7 @@ export const comparisons: Guide[] = [
       { heading: 'Read the equipment terms separately', body: 'Clover’s pricing FAQ says equipment subscriptions are non-cancelable and describes buyout, upgrade, and end-of-term options. This applies to the subscription described there, not a claim that every Clover purchase has the same terms. Review the exact agreement and seller before deciding.', sources: ['clover'] },
       { heading: 'Verify compatibility before switching', body: 'The same FAQ states that Clover POS devices cannot be used with other payment processors. Ask KCG to identify the hardware proposed for your setup instead of assuming an existing device can be moved. Include any equipment replacement and staff training in the decision.', sources: ['clover'] },
     ],
-    faq: [{ question: 'How do merchants access the Fluid Pay plan?', answer: 'Merchants access the Fluid Pay plan through Keystone Consulting Group (KCG), the provider they apply with. Ask KCG for the complete proposal and processing terms.' }, { question: 'Does every Clover arrangement use the same contract?', answer: 'Do not assume that. Review the purchase or subscription terms and the actual provider agreement for your selected package.' }, { question: 'Does the Fluid Pay no-contract plan cover new equipment?', answer: 'This guide does not make that claim. Ask for the separate equipment terms, if any, in the complete proposal.' }],
+    faq: [{ question: 'How do merchants access the Fluid Pay plan?', answer: 'Merchants access the Fluid Pay plan through Keystone Consulting Group (KCG), the provider they apply with. Ask KCG for the complete proposal and processing terms.' }, { question: 'Does every Clover arrangement use the same contract?', answer: 'Do not assume that. Review the purchase or subscription terms and the actual provider agreement for your selected package.' }, { question: 'Does the Fluid Pay plan cover new equipment?', answer: 'This guide does not make that claim. Ask for the separate equipment terms, if any, in the complete proposal.' }],
     related: ['no-contract-processing', 'payment-processing', 'fluid-pay-vs-square'],
   },
   {
@@ -57,7 +57,7 @@ export const comparisons: Guide[] = [
     answer: 'Fluid Pay is partner-only: merchants cannot sign up directly. Merchants get the Fluid Pay plan by applying through Keystone Consulting Group (KCG). Evaluate a Stripe recurring-billing alternative by testing subscriptions, failed payments, changes, cancellation, reporting, and portability before comparing cost. Ask KCG to demonstrate the proposed Fluid Pay workflow. Square and Clover publish their own plans, but a pricing page alone does not prove feature parity or a seamless migration from your current setup.',
     sources: ['stripe', 'square', 'clover', 'migration'],
     table: { headings: ['Option', 'Public pricing reference', 'What to verify'], rows: [
-      ['KCG / Fluid Pay', '$30/month Fluid Pay plan with no contract; full proposal required.', 'Receiving-provider eligibility, scheduling, retries, reporting, and total costs.'],
+      ['KCG / Fluid Pay', '$30/month Fluid Pay plan; full proposal required.', 'Receiving-provider eligibility, scheduling, retries, reporting, and total costs.'],
       ['Keep Stripe', 'Stripe Payments and separate Billing pricing.', 'Current feature fit, product charges, and improvement options.'],
       ['Evaluate Square', 'Square Free, Plus, and Premium pricing.', 'Required recurring workflow and import support for this account.'],
       ['Evaluate Clover', 'Clover business-type packages.', 'The specific app, billing workflow, hardware, and agreement.'],
