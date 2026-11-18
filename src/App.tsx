@@ -854,9 +854,9 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
       }}
     >
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between">
-        <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
-          <KeystoneLogo className="w-7 h-7" />
-          <span className="font-serif text-[11px] sm:text-[13px] md:text-base font-medium tracking-wide text-white">Keystone Consulting Group</span>
+        <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-2 hover:opacity-80 transition-opacity min-w-0 xl:flex-shrink-0">
+          <KeystoneLogo className="w-9 h-9 shrink-0 xl:w-7 xl:h-7" />
+          <span className="font-serif text-[15px] sm:text-[17px] xl:text-base leading-tight font-medium tracking-wide text-white">Keystone Consulting Group</span>
         </a>
         
         <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation" onMouseLeave={() => setOpenDropdown(null)}>
@@ -951,7 +951,7 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
           </button>
         </div>
 
-        <div className="flex xl:hidden items-center gap-3">
+        <div className="flex xl:hidden shrink-0 items-center gap-3 ml-2">
           {/* Mobile Theme Toggle */}
           <button 
             onClick={onToggleTheme}
@@ -1130,12 +1130,6 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
             </div>
           </nav>
 
-          {/* Subtle badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-offwhite/80 text-xs font-medium mb-4 md:mb-6">
-            <Shield className="w-3.5 h-3.5 text-teal" />
-            Most businesses are overpaying in processing fees and don't know it.
-          </div>
-          
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white mb-4 md:mb-6">
             Stop Losing Money<br/>
             <span className="block mt-2">to Hidden Fees.</span>
