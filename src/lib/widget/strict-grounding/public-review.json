@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "reviewer": "Astra (single-agent source review, not independent human or vendor verification)",
-  "basis": "Visible public prose and concrete workflow depth; each approved record and complete renderer input graph pinned. No external truth or production verification.",
+  "reviewer": "Astra (original single-agent source review); independent Codex source-review agent (narrow November 19, 2026 refresh; not human, vendor, or release approval)",
+  "basis": "Visible public prose and concrete workflow depth; each approved record and complete renderer input graph pinned. Independent review of candidate 36fffd2c2a2e refreshed only the changed App pin and four homepage ID/digest mappings, confirming existing passages, links, visible context, and scope. Existing claims were not recertified; no external truth or production verification.",
   "sourceHashes": {
     "scripts/seo-routes.ts": "0ba142a4aab970774ba011b4885ae342d33e45b0a9233069a5c868892dfb45f4",
     "scripts/strict-grounding-breadth/extract.py": "e26299411eed5a9b68f05e3425e89591c0909e05734aeac7baf38003731cbbf4",
     "scripts/strict-grounding-breadth/generate.ts": "0039d2de2fa98ea18a200d07eee41737bcd9b54537e6210a22484f485afc09b1",
     "scripts/strict-grounding-breadth/render.tsx": "96edb6811504c63d6d46821bba80f00fcac3ce2495978560192610d3e84b1663",
-    "src/App.tsx": "31115dfd85027f62bd889fc1dac86e4eaabf0b1d498e1b1e25ab366bba33b195",
+    "src/App.tsx": "1f92bec8e1f8c6b58e1ab37adff9a64ec884ba87cd479b634eb2fd761c1a3e30",
     "src/content/ai-agents.ts": "9b494562c97b8ee15cf181fbdc7c9a9fc0a6fd7911d4b2985565bfce7b4173fe",
     "src/content/guide-comparisons.ts": "602d5c7f74f9124c29efb4ca301fad32a365e39a0883b09b0a23165e0f108602",
     "src/content/guide-questions.ts": "b9dd2b202ab4586d97f40ea6018cb4040ac756e8e1d53454cae9830de7b290ed",
@@ -110,26 +110,26 @@
   },
   "approvals": [
     {
-      "id": "public.home.118.0",
-      "hash": "e2c943462b99722b2c919a4bd733352c4b44b9d3013c704fd53a65766441cc36",
+      "id": "public.home.82.0",
+      "hash": "17e9859ff6d74da930dc6a7f3a085074a49f695b94a05e86b7084662322e4da7",
       "decision": "approved",
       "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
     },
     {
-      "id": "public.home.200.0",
-      "hash": "acace799df4ab93dc65540c28a917a0bc22dbdced4fa1aaea7204e71757e2564",
+      "id": "public.home.164.0",
+      "hash": "d20b05f32edb82e4106405eaf9cb685b4dfda0464e369eb2568aa5f710adf483",
       "decision": "approved",
       "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
     },
     {
-      "id": "public.home.281.0",
-      "hash": "bb72664ed01adc98ee1f0a2607832e48037d6dc12199a724c6e8635e6ebf1c07",
+      "id": "public.home.245.0",
+      "hash": "3948c015e6f8c501451b2def998ff61233b8aacb6785e0960ed246828e2ef114",
       "decision": "approved",
       "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
     },
     {
-      "id": "public.home.725.0",
-      "hash": "d1ba480b26f9291357f0ad1825732268dc52def227dba97102f090d10459841b",
+      "id": "public.home.689.0",
+      "hash": "cffcc09a6f7ddf678af014bb53f065cab014f64affc689044b89acb44341700b",
       "decision": "approved",
       "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
     },

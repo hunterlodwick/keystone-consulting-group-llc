@@ -5,11 +5,11 @@ import { MobileStickyCta, stickyCtaLabel } from './components/MobileStickyCta';
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { 
   CreditCard, 
+  ArrowRight,
   MonitorSmartphone, 
   Smartphone, 
   Globe, 
   BarChart3, 
-  Percent,
   ArrowUp,
   Menu,
   X,
@@ -79,43 +79,6 @@ function useScrollAnimation() {
 
     return () => observer.disconnect();
   }, []);
-}
-
-function CountUp({ end, duration = 2000, prefix = "", suffix = "", decimals = 0 }: { end: number, duration?: number, prefix?: string, suffix?: string, decimals?: number }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          let startTimestamp: number | null = null;
-          const step = (timestamp: number) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            const easeProgress = 1 - Math.pow(1 - progress, 4);
-            setCount(easeProgress * end);
-            if (progress < 1) {
-              window.requestAnimationFrame(step);
-            } else {
-              setCount(end);
-            }
-          };
-          window.requestAnimationFrame(step);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [end, duration]);
-
-  return <span ref={ref}>{prefix}{count.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}{suffix}</span>;
 }
 
 function useScrollPosition() {
@@ -854,9 +817,9 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
       }}
     >
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between">
-        <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
-          <KeystoneLogo className="w-7 h-7" />
-          <span className="font-serif text-[11px] sm:text-[13px] md:text-base font-medium tracking-wide text-white">Keystone Consulting Group</span>
+        <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-2 hover:opacity-80 transition-opacity min-w-0 xl:flex-shrink-0">
+          <KeystoneLogo className="w-9 h-9 shrink-0 xl:w-7 xl:h-7" />
+          <span className="font-serif text-[15px] sm:text-[17px] xl:text-base leading-tight font-medium tracking-wide text-white">Keystone Consulting Group</span>
         </a>
         
         <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation" onMouseLeave={() => setOpenDropdown(null)}>
@@ -951,7 +914,7 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
           </button>
         </div>
 
-        <div className="flex xl:hidden items-center gap-3">
+        <div className="flex xl:hidden shrink-0 items-center gap-3 ml-2">
           {/* Mobile Theme Toggle */}
           <button 
             onClick={onToggleTheme}
@@ -1064,206 +1027,102 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
 
 const HERO_PILLARS = [
   {
-    id: 'payments',
-    label: 'Payments',
-    detail: 'Find the fee leak',
-    href: '/guides/payment-processing',
-    icon: CreditCard,
-  },
-  {
     id: 'websites',
     label: 'Websites',
-    detail: 'Sites that book work',
+    pain: 'Visits, but no leads?',
+    solution: 'We build sites for quotes and bookings.',
     href: '/services/web-design',
     icon: Code,
   },
   {
+    id: 'payments',
+    label: 'Payments',
+    pain: 'Confusing card fees?',
+    solution: 'We review your statement and explain the charges.',
+    href: '/guides/payment-processing',
+    icon: CreditCard,
+  },
+  {
     id: 'ai',
     label: 'AI',
-    detail: 'Virtual assistants for real jobs',
+    pain: 'Too much follow-up?',
+    solution: 'We set up AI assistants for routine replies.',
     href: '/services/ai-agents',
     icon: Bot,
   },
 ] as const;
 
 // Hero
-const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [miniVolume, setMiniVolume] = useState(50000);
-  const scrollY = useScrollPosition();
-  
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e;
-    const x = (clientX / window.innerWidth - 0.5) * 20;
-    const y = (clientY / window.innerHeight - 0.5) * 20;
-    setMousePos({ x, y });
-  };
-
-  const lineWidth = Math.min((scrollY / 300) * 100, 100) + '%';
-  const miniSavings = miniVolume * 0.029; // Simple calculation for preview
-
-  return (
-    <section 
-      className="relative flex items-center pt-20 pb-12 lg:min-h-screen lg:pt-20 lg:pb-0 overflow-hidden"
-      onMouseMove={handleMouseMove}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 lg:gap-12 items-center">
-        
-        {/* Left Side */}
-        <div className="z-10 animate-on-scroll">
-          <nav aria-label="Choose a starting path" className="hero-pillar-selector mb-5 md:mb-7">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-offwhite/55 mb-2.5">Start here</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-              {HERO_PILLARS.map((pillar) => (
-                <a
-                  key={pillar.id}
-                  href={pillar.href}
-                  className="hero-pillar-link group flex items-center gap-3 min-h-11 px-3.5 py-3 border border-white/15 bg-white/[0.03] rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal hover:border-teal/45 hover:bg-teal/[0.07] transition-colors"
-                >
-                  <pillar.icon className="w-5 h-5 text-teal shrink-0" strokeWidth={1.5} aria-hidden="true" />
-                  <span className="min-w-0 text-left">
-                    <span className="block text-white text-sm font-medium leading-tight">{pillar.label}</span>
-                    <span className="block text-offwhite/55 text-xs font-light mt-0.5 leading-tight">{pillar.detail}</span>
-                  </span>
-                </a>
-              ))}
-            </div>
-          </nav>
-
-          {/* Subtle badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-offwhite/80 text-xs font-medium mb-4 md:mb-6">
-            <Shield className="w-3.5 h-3.5 text-teal" />
-            Most businesses are overpaying in processing fees and don't know it.
-          </div>
-          
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white mb-4 md:mb-6">
-            Stop Losing Money<br/>
-            <span className="block mt-2">to Hidden Fees.</span>
-          </h1>
-          <p className="text-offwhite/80 text-base md:text-xl font-light max-w-xl mb-6 md:mb-10 leading-relaxed">
-            We audit your processing statements, show you exactly where the money is leaking, and fix it. Then we reinvest those savings into websites and systems that make the phone ring.
-          </p>
-          
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 mb-6 md:mb-10 w-full sm:w-auto">
-            <button 
-              onClick={() => onOpenModal("Get a Free Profit Leak Analysis", <StatementAnalysisForm />)}
-              className="w-full sm:w-auto cta-button-pulse group relative inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:tracking-[0.5px]">
-              Get a Free Profit Leak Analysis
-            </button>
-            <button 
-              onClick={() => onOpenModal("Book a Call", <ContactForm />)}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-sm transition-all duration-300 ease-custom hover:bg-white/5 hover:border-white/40 hover:scale-[1.02]">
-              Book a Call
-            </button>
-          </div>
-          
-          {/* Trust bar */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-offwhite/70 font-light">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> Free audit, no pressure to switch
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> Written proposal before you switch
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> Savings in 30 days or we tell you
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-teal" /> Real people, no phone trees
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side */}
-        <div className="relative h-[500px] lg:h-[600px] w-full hidden lg:block animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
-          <div className="absolute inset-0 flex items-center justify-center">
-            {/* Soft teal gradient orb */}
-            <div className="absolute w-[400px] h-[400px] bg-teal/20 rounded-full blur-[80px] mix-blend-screen"></div>
-            
-            {/* POS Terminal Mockup */}
-            <div 
-              className="hero-pos-float absolute z-20 w-72 h-56 bg-slate-dark/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col p-4 overflow-hidden transition-transform duration-300 ease-out"
-              style={{ 
-                transform: `rotate(-5deg) translate(${mousePos.x * 1.5}px, ${mousePos.y * 1.5}px)`,
-                top: '5%',
-                right: '10%'
-              }}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <MonitorSmartphone className="w-5 h-5 text-teal" />
-                  <span className="text-xs font-medium text-white/80">Smart POS</span>
-                </div>
-                <div className="w-8 h-4 bg-teal/20 rounded-full flex items-center px-1">
-                  <div className="w-2 h-2 rounded-full bg-teal"></div>
-                </div>
-              </div>
-              
-              <div className="flex-1 bg-charcoal-dark rounded-lg border border-white/5 p-3 flex flex-col">
-                <div className="text-center mb-2">
-                  <div className="text-[10px] text-white/50 uppercase">Total Due</div>
-                  <div className="text-2xl font-mono text-white"><CountUp end={42.50} prefix="$" decimals={2} /></div>
-                </div>
-                <div className="mt-auto space-y-2">
-                  <div className="h-8 bg-teal text-white text-xs font-medium rounded flex items-center justify-center gap-2">
-                    <CreditCard className="w-4 h-4" /> Tap, Insert, or Swipe
-                  </div>
-                  <div className="flex gap-2">
-                    <div className="h-8 flex-1 bg-white/5 rounded flex items-center justify-center text-[10px] text-white/60">Cash</div>
-                    <div className="h-8 flex-1 bg-white/5 rounded flex items-center justify-center text-[10px] text-white/60">Other</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mini Savings Calculator */}
-            <div 
-              className="absolute z-30 w-80 bg-charcoal-dark/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] left-0 bottom-24 p-5 flex flex-col transition-transform duration-300 ease-out"
-              style={{ 
-                transform: `rotate(2deg) translate(${mousePos.x * -1}px, ${mousePos.y * -1}px)`
-              }}
-            >
-              <div className="flex justify-between items-center mb-4 border-b border-white/5 pb-3">
-                <div className="flex items-center gap-2">
-                  <Percent className="w-4 h-4 text-teal" />
-                  <span className="text-xs text-white/80 font-medium">Potential Savings</span>
-                </div>
-              </div>
-              
-              <div className="mb-4">
-                <div className="flex justify-between items-end mb-2">
-                  <span className="text-[10px] text-white/50 uppercase">Monthly Volume</span>
-                  <span className="text-sm font-mono text-white">${miniVolume.toLocaleString()}</span>
-                </div>
-                <input 
-                  type="range" 
-                  min="10000" 
-                  max="200000" 
-                  step="5000" 
-                  value={miniVolume} 
-                  onChange={(e) => setMiniVolume(Number(e.target.value))}
-                  className="w-full h-1.5 bg-charcoal rounded-lg appearance-none cursor-pointer accent-teal"
-                />
-              </div>
-              
-              <div className="bg-teal/10 rounded-lg p-3 border border-teal/20 flex flex-col items-center justify-center">
-                <span className="text-xs text-teal mb-1">Estimated Monthly Savings</span>
-                <span className="text-2xl font-mono text-white font-medium savings-number">+${miniSavings.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => (
+  <section className="relative border-b border-teal/20 pt-24 pb-10 sm:pt-28 sm:pb-14 lg:pt-32 lg:pb-16">
+    <div className="mx-auto w-full max-w-6xl px-3.5 sm:px-8 lg:px-10">
+      <div className="max-w-3xl px-1 sm:px-0">
+        <h1 className="font-serif text-[clamp(2.15rem,5.4vw,4.65rem)] leading-[1.04] tracking-tight text-balance text-white">
+          What’s costing you time or money?
+        </h1>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-offwhite/80 sm:mt-4 sm:text-lg">
+          We help small businesses fix gaps in their websites, payments, and day-to-day workflow.
+        </p>
       </div>
 
-      {/* Separator Line */}
-      <div 
-        className="absolute bottom-0 left-0 h-[1px] bg-teal/30"
-        style={{ width: lineWidth }}
-      />
-    </section>
-  );
-};// ProductGrid
+      <nav aria-label="Choose a starting path" className="mt-6 grid grid-cols-3 gap-1.5 sm:mt-8 sm:gap-4">
+        {HERO_PILLARS.map((pillar) => (
+          <a
+            key={pillar.id}
+            href={pillar.href}
+            aria-label={`${pillar.label}: ${pillar.pain} ${pillar.solution} Explore ${pillar.label}.`}
+            className="group flex h-full min-w-0 flex-col rounded-md border border-white/20 bg-white/[0.03] px-2 py-3 transition-colors hover:border-teal/60 hover:bg-teal/[0.075] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:px-5 sm:py-5 lg:px-6"
+          >
+            <div className="mb-2.5 flex min-w-0 flex-col items-start gap-1.5 text-teal-soft [[data-theme=light]_&]:text-teal sm:mb-4 sm:flex-row sm:items-center sm:gap-2">
+              <pillar.icon className="h-3.5 w-3.5 shrink-0 sm:h-5 sm:w-5" strokeWidth={1.8} aria-hidden="true" />
+              <h2 className="text-[0.67rem] font-semibold uppercase tracking-[0.07em] sm:text-xs sm:tracking-[0.14em]">{pillar.label}</h2>
+            </div>
+            <p className="font-serif text-[0.95rem] leading-[1.12] text-white [overflow-wrap:anywhere] sm:text-xl lg:text-[1.55rem]">
+              {pillar.pain}
+            </p>
+            <p className="mb-2.5 mt-2 text-[0.75rem] leading-snug text-offwhite/80 [overflow-wrap:anywhere] sm:mb-4 sm:text-sm sm:leading-relaxed">
+              {pillar.solution}
+            </p>
+            <span className="mt-auto flex items-center gap-0.5 pt-1 text-[0.72rem] font-semibold text-teal-soft [[data-theme=light]_&]:text-teal underline decoration-current/55 underline-offset-4 group-hover:decoration-teal sm:gap-1.5 sm:text-sm">
+              Explore
+              <ArrowRight className="h-3 w-3 shrink-0 sm:h-4 sm:w-4" aria-hidden="true" />
+            </span>
+          </a>
+        ))}
+      </nav>
+
+      <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-7 sm:gap-3">
+        <button
+          onClick={() => onOpenModal("Get a Free Profit Leak Analysis", <StatementAnalysisForm />)}
+          className="inline-flex min-h-11 items-center justify-center rounded-sm bg-teal px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-teal/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:px-6 sm:text-sm">
+          Get a Free Profit Leak Analysis
+        </button>
+        <button
+          onClick={() => onOpenModal("Book a Call", <ContactForm />)}
+          className="inline-flex min-h-11 items-center justify-center rounded-sm border border-white/25 bg-transparent px-4 py-2 text-xs font-medium text-white transition-colors hover:border-white/45 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:px-6 sm:text-sm">
+          Book a Call
+        </button>
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.7rem] text-offwhite/70 sm:mt-5 sm:text-sm">
+        <div className="flex items-center gap-1.5">
+          <CheckCircle className="h-3.5 w-3.5 text-teal" aria-hidden="true" /> Free audit, no pressure to switch
+        </div>
+        <div className="flex items-center gap-1.5">
+          <CheckCircle className="h-3.5 w-3.5 text-teal" aria-hidden="true" /> Written proposal before you switch
+        </div>
+        <div className="flex items-center gap-1.5">
+          <CheckCircle className="h-3.5 w-3.5 text-teal" aria-hidden="true" /> Savings in 30 days or we tell you
+        </div>
+        <div className="flex items-center gap-1.5">
+          <CheckCircle className="h-3.5 w-3.5 text-teal" aria-hidden="true" /> Real people, no phone trees
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ProductGrid
 const HOMEPAGE_PRODUCTS: {
   id: string; title: string; icon: any; desc: string; linkTo: string;
   detailAnchor?: string; image?: string; imageAlt?: string; imagePosition?: string;
