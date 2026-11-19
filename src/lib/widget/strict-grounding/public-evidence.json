@@ -5159,8 +5159,8 @@
       "hash": "be186b106636236814bd88854d2a768f0e65c1cbf730bcb4946ea8e9aa555825"
     },
     {
-      "id": "public.work.203.0",
-      "sourceId": "public.work.203.0",
+      "id": "public.work.233.0",
+      "sourceId": "public.work.233.0",
       "route": "/work",
       "title": "Selected Work",
       "label": "Selected Work — Mexpresso Utah",
@@ -5170,17 +5170,17 @@
       "passage": "The owner updates today's location from their phone. No developer, no email, no \"where are you parked?\" texts. Customers check the site and show up.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 203,
+        "ordinal": 233,
         "blocks": [
           "The owner updates today's location from their phone. No developer, no email, no \"where are you parked?\" texts. Customers check the site and show up."
         ],
         "visualException": null
       },
-      "hash": "67d7b62ff7c6b801fa5c46b9697f1347564e33b4547a41ae85aec7dc2db327fa"
+      "hash": "483e229126a492c216b9110ef573e47b53e1f7b5418eb815eda37fbd7d9b7699"
     },
     {
-      "id": "public.work.305.0",
-      "sourceId": "public.work.305.0",
+      "id": "public.work.335.0",
+      "sourceId": "public.work.335.0",
       "route": "/work",
       "title": "Selected Work",
       "label": "Selected Work — Custom Software Builds",
@@ -5190,17 +5190,17 @@
       "passage": "The website is the front door. The software behind it is the engine. We build AI assistants that answer customers at 2 AM, dashboards that replace the spreadsheet stack, CRMs shaped around how your team actually sells, and automations that move data so nobody has to copy and paste it.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 305,
+        "ordinal": 335,
         "blocks": [
           "The website is the front door. The software behind it is the engine. We build AI assistants that answer customers at 2 AM, dashboards that replace the spreadsheet stack, CRMs shaped around how your team actually sells, and automations that move data so nobody has to copy and paste it."
         ],
         "visualException": null
       },
-      "hash": "e843ee778eff90b6e5b7be60b4411003a7815e9199fbe439f3ced48891500141"
+      "hash": "e2d987ead7f9d4da634b958862d6ca1a0930fde0d23644656ef3a1919042bd5c"
     },
     {
-      "id": "public.work.326.0",
-      "sourceId": "public.work.326.0",
+      "id": "public.work.356.0",
+      "sourceId": "public.work.356.0",
       "route": "/work",
       "title": "Selected Work",
       "label": "Selected Work — Operations Dashboards",
@@ -5210,13 +5210,13 @@
       "passage": "Replace the spreadsheet stack with a tool your team actually opens. Job tracking, pipelines, and live reporting in one place.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 326,
+        "ordinal": 356,
         "blocks": [
           "Replace the spreadsheet stack with a tool your team actually opens. Job tracking, pipelines, and live reporting in one place."
         ],
         "visualException": null
       },
-      "hash": "fb8f48501b02f5b5507e5929cb5f8aeaa17d6086571fbf1234056dc55c67ffea"
+      "hash": "553a0b7dad5f61fe23c576073715f31ffee9aaa4813596d918f0f7d60bf4edae"
     }
   ]
 }
