@@ -2,87 +2,87 @@
   "schema": 1,
   "records": [
     {
-      "id": "public.home.132.0",
-      "sourceId": "public.home.132.0",
+      "id": "public.home.122.0",
+      "sourceId": "public.home.122.0",
       "route": "/",
-      "title": "Keep more revenue. Win more work. Get time back.",
-      "label": "Keep more revenue. Win more work. Get time back. — Statement Review, Then Payments That Match How You Sell.",
+      "title": "More profit. More customers. Less busywork.",
+      "label": "More profit. More customers. Less busywork. — Statement Review, Then Payments That Match How You Sell.",
       "heading": "Statement Review, Then Payments That Match How You Sell.",
       "parentHeading": "What We Actually Build.",
       "href": "/#payments",
       "passage": "We start with your processing statement, then choose and configure POS around how you actually sell: dining rooms, service jobs, or retail counters. Fees stay readable. Equipment matches the floor. The result: you know what processing costs, the POS matches the floor, and the leak stops funding someone else's margin.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 132,
+        "ordinal": 122,
         "blocks": [
           "We start with your processing statement, then choose and configure POS around how you actually sell: dining rooms, service jobs, or retail counters. Fees stay readable. Equipment matches the floor.",
           "The result: you know what processing costs, the POS matches the floor, and the leak stops funding someone else's margin."
         ],
         "visualException": null
       },
-      "hash": "346bb4492d89df3b57e2f493de25140ab9d3cbe2b702f9118379691ca8f1edf7"
+      "hash": "b36a712f5ce9577d9cdd0c1cb8f9c71bb9dfda16baa75798b10791c19947f658"
     },
     {
-      "id": "public.home.214.0",
-      "sourceId": "public.home.214.0",
+      "id": "public.home.204.0",
+      "sourceId": "public.home.204.0",
       "route": "/",
-      "title": "Keep more revenue. Win more work. Get time back.",
-      "label": "Keep more revenue. Win more work. Get time back. — A Website That Works While You Work.",
+      "title": "More profit. More customers. Less busywork.",
+      "label": "More profit. More customers. Less busywork. — A Website That Works While You Work.",
       "heading": "A Website That Works While You Work.",
       "parentHeading": "What We Actually Build.",
       "href": "/#websites",
       "passage": "We don't hand you a template. Every site is designed around what your customers actually need to decide, then built so search engines and people can find clear answers. Business sites, stores, booking flows, and AI chat when it earns its keep. The result: a site that answers real buying questions, accepts the booking, and measures what happened, instead of a brochure nobody calls.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 214,
+        "ordinal": 204,
         "blocks": [
           "We don't hand you a template. Every site is designed around what your customers actually need to decide, then built so search engines and people can find clear answers. Business sites, stores, booking flows, and AI chat when it earns its keep.",
           "The result: a site that answers real buying questions, accepts the booking, and measures what happened, instead of a brochure nobody calls."
         ],
         "visualException": null
       },
-      "hash": "b465c379fa072c06574496f8baea9980b722f0508a86d890d494e63ca6f11e4f"
+      "hash": "b17adf5309189f2d991f8ea369b838fa4b7562d20f67d923110e5de22a1fcb3e"
     },
     {
-      "id": "public.home.295.0",
-      "sourceId": "public.home.295.0",
+      "id": "public.home.285.0",
+      "sourceId": "public.home.285.0",
       "route": "/",
-      "title": "Keep more revenue. Win more work. Get time back.",
-      "label": "Keep more revenue. Win more work. Get time back. — Virtual Assistants for Jobs You Already Repeat.",
+      "title": "More profit. More customers. Less busywork.",
+      "label": "More profit. More customers. Less busywork. — Virtual Assistants for Jobs You Already Repeat.",
       "heading": "Virtual Assistants for Jobs You Already Repeat.",
       "parentHeading": "What We Actually Build.",
       "href": "/#ai",
       "passage": "We configure virtual assistants that keep doing a real ongoing job in the apps you already use: sales follow-up, customer service, scheduling, and ops. OpenAI dots, Claude Duet, Grok Bot, and Meta Muse stay behind a named reviewer. Not a Slack product, and not a chatbot bolted onto a website. The result: an operation that keeps moving whether or not you're standing at the counter, with irreversible actions still behind a human.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 295,
+        "ordinal": 285,
         "blocks": [
           "We configure virtual assistants that keep doing a real ongoing job in the apps you already use: sales follow-up, customer service, scheduling, and ops. OpenAI dots, Claude Duet, Grok Bot, and Meta Muse stay behind a named reviewer. Not a Slack product, and not a chatbot bolted onto a website.",
           "The result: an operation that keeps moving whether or not you're standing at the counter, with irreversible actions still behind a human."
         ],
         "visualException": null
       },
-      "hash": "635e8242a82a5a73f2ede48be3205fe39e5517325ff0ebf19c58991a70177826"
+      "hash": "e2c145a4bc91d10f3cb6991e3baa8fbcb5af3006d9f412d0958147b9a995b938"
     },
     {
-      "id": "public.home.739.0",
-      "sourceId": "public.home.739.0",
+      "id": "public.home.729.0",
+      "sourceId": "public.home.729.0",
       "route": "/",
-      "title": "Keep more revenue. Win more work. Get time back.",
-      "label": "Keep more revenue. Win more work. Get time back. — Published partners",
+      "title": "More profit. More customers. Less busywork.",
+      "label": "More profit. More customers. Less busywork. — Published partners",
       "heading": "Published partners",
       "parentHeading": "",
       "href": "/#partners",
       "passage": "Square, Visa, Mastercard, Clover, Ingenico, Heartland, Pax, Dejavoo, NMI, PayTrace, PayAnywhere, KwickPOS, Korona POS, HotSauce, GiveHub, mynt, Paradise POS",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 739,
+        "ordinal": 729,
         "blocks": [
           "Square, Visa, Mastercard, Clover, Ingenico, Heartland, Pax, Dejavoo, NMI, PayTrace, PayAnywhere, KwickPOS, Korona POS, HotSauce, GiveHub, mynt, Paradise POS"
         ],
         "visualException": "First visually displayed logo marquee, excludes duplicate and clipped accessible text"
       },
-      "hash": "5d16768fe67a4c6c81a46f1702c4ee90ada6a85adeab24c93e4229eb780078a5"
+      "hash": "c15f250e04eebb23957c3f02fcdf8f72d55715c82947a1259d6f689908a6177c"
     },
     {
       "id": "public.auto-repair.53.0",
