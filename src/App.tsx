@@ -1053,16 +1053,40 @@ const HERO_PILLARS = [
 ] as const;
 
 const HERO_CLIENT_RESULTS = [
-  { name: 'Ensign Properties', detail: 'Rental search and applications', href: 'https://www.ensignpropertiesmanagement.com', screenshot: 'ensign-properties' },
-  { name: 'Ironwood Motorsports', detail: 'Vehicle search and service pages', href: 'https://ironwoodmotorsports.com/', screenshot: 'ironwood-motorsports' },
-  { name: 'Prism Silks', detail: 'Online fabric storefront', href: 'https://www.prismsilks.com', screenshot: 'prism-silks' },
+  { name: 'Ensign Properties', detail: 'Rental search and applications', screenshot: 'ensign-properties' },
+  { name: 'Ironwood Motorsports', detail: 'Vehicle search and service pages', screenshot: 'ironwood-motorsports' },
+  { name: 'Prism Silks', detail: 'Online fabric storefront', screenshot: 'prism-silks' },
 ] as const;
+
+const HeroPillarsMark = () => (
+  <svg viewBox="0 0 348 372" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-auto w-full max-w-[18rem] lg:max-w-[22rem]" focusable="false">
+    <defs>
+      <linearGradient id="hero-pillar-teal-left" x1="95" y1="9" x2="11" y2="358" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#469FA0" />
+        <stop offset="1" stopColor="#117D80" />
+      </linearGradient>
+      <linearGradient id="hero-pillar-teal-right" x1="252" y1="9" x2="337" y2="358" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#419A9D" />
+        <stop offset="1" stopColor="#137B7D" />
+      </linearGradient>
+      <linearGradient id="hero-pillar-silver" x1="146" y1="8" x2="229" y2="372" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#FBFCFD" />
+        <stop offset="1" stopColor="#BFC9CB" />
+      </linearGradient>
+    </defs>
+    <path d="M59 2H120L118 257L1 369L59 2Z" fill="url(#hero-pillar-teal-left)" />
+    <path d="M120 2L118 257L81 292L120 2Z" fill="#063C3F" fillOpacity=".46" />
+    <path d="M142 2H205L225 369H122L142 2Z" fill="url(#hero-pillar-silver)" stroke="#A7B4B6" strokeOpacity=".68" strokeWidth=".8" />
+    <path d="M227 2H288L347 369L230 257L227 2Z" fill="url(#hero-pillar-teal-right)" />
+    <path d="M227 2L230 257L267 292L227 2Z" fill="#063C3F" fillOpacity=".46" />
+  </svg>
+);
 
 // Hero
 const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => (
   <section className="relative border-b border-teal/20 pt-24 pb-10 sm:pt-28 sm:pb-14 lg:pt-[7.5rem] lg:pb-16">
     <div className="mx-auto w-full max-w-7xl px-3.5 sm:px-8 lg:px-12">
-      <div className="grid items-center px-1 sm:px-0 md:grid-cols-[1.4fr_1fr] md:gap-8 lg:gap-14">
+      <div className="relative grid items-center px-1 sm:px-0 md:grid-cols-[1.4fr_1fr] md:gap-8 lg:gap-14">
         <div>
           <h1 className="font-serif text-[clamp(2rem,4.8vw,4.65rem)] leading-[1.03] tracking-tight text-white">
             <span className="block">Keep more revenue.</span>{' '}
@@ -1079,8 +1103,8 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
             Find your starting point <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
-        <div aria-hidden="true" className="hidden items-center justify-center md:flex">
-          <KeystoneLogo className="h-auto w-full max-w-[17rem] lg:max-w-[21rem]" />
+        <div aria-hidden="true" className="pointer-events-none absolute bottom-0 right-2 flex w-11 items-center justify-center min-[360px]:w-[3.25rem] sm:right-8 sm:w-16 md:static md:w-full">
+          <HeroPillarsMark />
         </div>
       </div>
 
@@ -1124,7 +1148,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
         <ul className="mx-auto grid max-w-5xl grid-cols-3 gap-1.5 sm:gap-3">
           {HERO_CLIENT_RESULTS.map((client) => (
             <li key={client.screenshot} className="min-w-0">
-              <a href={client.href} target="_blank" rel="noopener noreferrer" className="group flex h-full min-w-0 flex-col overflow-hidden rounded-md border border-white/20 bg-white/[0.03] transition-colors hover:border-teal/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:flex-row sm:items-center">
+              <a href={`/work#${client.screenshot}`} className="group flex h-full min-w-0 flex-col overflow-hidden rounded-md border border-white/20 bg-white/[0.03] transition-colors hover:border-teal/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:flex-row sm:items-center">
                 <img src={`/screenshots/previews/${client.screenshot}.jpg`} alt="" width="800" height="515" loading="lazy" decoding="async" className="aspect-[800/515] w-full object-cover object-top sm:w-[36%]" />
                 <div className="min-w-0 flex-1 px-1.5 py-2 sm:px-2.5 lg:px-3">
                   <p className="font-serif text-[0.85rem] leading-tight text-white [overflow-wrap:anywhere] sm:text-base lg:text-lg">{client.name}</p>
@@ -2291,6 +2315,8 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
         if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || anchor.target === '_blank' || anchor.hasAttribute('download')) return;
         // Find if this should just scroll current page
         const url = new URL(anchor.href);
+        // Use native fragment navigation and history for individual Work cards.
+        if (url.pathname === '/work' && url.hash) return;
         if (url.pathname !== window.location.pathname && (url.pathname.startsWith('/guides') || window.location.pathname.startsWith('/guides'))) return;
         const isHashOnlyOnCurrentPage = url.pathname === window.location.pathname && url.hash;
         

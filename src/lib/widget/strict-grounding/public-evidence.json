@@ -2,8 +2,8 @@
   "schema": 1,
   "records": [
     {
-      "id": "public.home.123.0",
-      "sourceId": "public.home.123.0",
+      "id": "public.home.132.0",
+      "sourceId": "public.home.132.0",
       "route": "/",
       "title": "Keep more revenue. Win more work. Get time back.",
       "label": "Keep more revenue. Win more work. Get time back. — Statement Review, Then Payments That Match How You Sell.",
@@ -13,18 +13,18 @@
       "passage": "We start with your processing statement, then choose and configure POS around how you actually sell: dining rooms, service jobs, or retail counters. Fees stay readable. Equipment matches the floor. The result: you know what processing costs, the POS matches the floor, and the leak stops funding someone else's margin.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 123,
+        "ordinal": 132,
         "blocks": [
           "We start with your processing statement, then choose and configure POS around how you actually sell: dining rooms, service jobs, or retail counters. Fees stay readable. Equipment matches the floor.",
           "The result: you know what processing costs, the POS matches the floor, and the leak stops funding someone else's margin."
         ],
         "visualException": null
       },
-      "hash": "0c705354863c07751ffb88d6f1f20558209cf0b085bb808c3c16378814721dac"
+      "hash": "346bb4492d89df3b57e2f493de25140ab9d3cbe2b702f9118379691ca8f1edf7"
     },
     {
-      "id": "public.home.205.0",
-      "sourceId": "public.home.205.0",
+      "id": "public.home.214.0",
+      "sourceId": "public.home.214.0",
       "route": "/",
       "title": "Keep more revenue. Win more work. Get time back.",
       "label": "Keep more revenue. Win more work. Get time back. — A Website That Works While You Work.",
@@ -34,18 +34,18 @@
       "passage": "We don't hand you a template. Every site is designed around what your customers actually need to decide, then built so search engines and people can find clear answers. Business sites, stores, booking flows, and AI chat when it earns its keep. The result: a site that answers real buying questions, accepts the booking, and measures what happened, instead of a brochure nobody calls.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 205,
+        "ordinal": 214,
         "blocks": [
           "We don't hand you a template. Every site is designed around what your customers actually need to decide, then built so search engines and people can find clear answers. Business sites, stores, booking flows, and AI chat when it earns its keep.",
           "The result: a site that answers real buying questions, accepts the booking, and measures what happened, instead of a brochure nobody calls."
         ],
         "visualException": null
       },
-      "hash": "14a253fdd0cd92efc98d51b85230b00455796131f62771dcf5c2c90350c79f70"
+      "hash": "b465c379fa072c06574496f8baea9980b722f0508a86d890d494e63ca6f11e4f"
     },
     {
-      "id": "public.home.286.0",
-      "sourceId": "public.home.286.0",
+      "id": "public.home.295.0",
+      "sourceId": "public.home.295.0",
       "route": "/",
       "title": "Keep more revenue. Win more work. Get time back.",
       "label": "Keep more revenue. Win more work. Get time back. — Virtual Assistants for Jobs You Already Repeat.",
@@ -55,18 +55,18 @@
       "passage": "We configure virtual assistants that keep doing a real ongoing job in the apps you already use: sales follow-up, customer service, scheduling, and ops. OpenAI dots, Claude Duet, Grok Bot, and Meta Muse stay behind a named reviewer. Not a Slack product, and not a chatbot bolted onto a website. The result: an operation that keeps moving whether or not you're standing at the counter, with irreversible actions still behind a human.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 286,
+        "ordinal": 295,
         "blocks": [
           "We configure virtual assistants that keep doing a real ongoing job in the apps you already use: sales follow-up, customer service, scheduling, and ops. OpenAI dots, Claude Duet, Grok Bot, and Meta Muse stay behind a named reviewer. Not a Slack product, and not a chatbot bolted onto a website.",
           "The result: an operation that keeps moving whether or not you're standing at the counter, with irreversible actions still behind a human."
         ],
         "visualException": null
       },
-      "hash": "dcbb228a12a9d74dab7d4f830aef769d300f2cb5df8c2f46c269d1b04ad9f29b"
+      "hash": "635e8242a82a5a73f2ede48be3205fe39e5517325ff0ebf19c58991a70177826"
     },
     {
-      "id": "public.home.730.0",
-      "sourceId": "public.home.730.0",
+      "id": "public.home.739.0",
+      "sourceId": "public.home.739.0",
       "route": "/",
       "title": "Keep more revenue. Win more work. Get time back.",
       "label": "Keep more revenue. Win more work. Get time back. — Published partners",
@@ -76,13 +76,13 @@
       "passage": "Square, Visa, Mastercard, Clover, Ingenico, Heartland, Pax, Dejavoo, NMI, PayTrace, PayAnywhere, KwickPOS, Korona POS, HotSauce, GiveHub, mynt, Paradise POS",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 730,
+        "ordinal": 739,
         "blocks": [
           "Square, Visa, Mastercard, Clover, Ingenico, Heartland, Pax, Dejavoo, NMI, PayTrace, PayAnywhere, KwickPOS, Korona POS, HotSauce, GiveHub, mynt, Paradise POS"
         ],
         "visualException": "First visually displayed logo marquee, excludes duplicate and clipped accessible text"
       },
-      "hash": "b426a15ad9ed78d33774a35e7994cb44a64456d14cf62cc94aeda0d033bea6ba"
+      "hash": "5d16768fe67a4c6c81a46f1702c4ee90ada6a85adeab24c93e4229eb780078a5"
     },
     {
       "id": "public.auto-repair.53.0",

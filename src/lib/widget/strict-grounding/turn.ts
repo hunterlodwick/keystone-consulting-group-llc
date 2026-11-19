@@ -55,7 +55,7 @@ export function planGroundedTurn(question: string, history: HistoryTurn[]): Grou
     ids = focus === "search" ? ["websites.search"] : focus === "enquiry" ? ["websites.enquiry", "websites.overview"] : ["websites.overview"];
   }
   if (topic === "ai") ids = ["ai.overview"];
-  if (topic === "partners") ids = ["public.home.730.0"];
+  if (topic === "partners") ids = ["public.home.739.0"];
   if (topic === "financing") ids = ["financing.scope"];
   if (topic === "privacy") ids = ["privacy.collection"];
 
