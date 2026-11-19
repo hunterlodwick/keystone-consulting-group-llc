@@ -2,87 +2,87 @@
   "schema": 1,
   "records": [
     {
-      "id": "public.home.118.0",
-      "sourceId": "public.home.118.0",
+      "id": "public.home.82.0",
+      "sourceId": "public.home.82.0",
       "route": "/",
-      "title": "Stop Losing Money to Hidden Fees.",
-      "label": "Stop Losing Money to Hidden Fees. — Statement Review, Then Payments That Match How You Sell.",
+      "title": "What’s costing you time or money?",
+      "label": "What’s costing you time or money? — Statement Review, Then Payments That Match How You Sell.",
       "heading": "Statement Review, Then Payments That Match How You Sell.",
       "parentHeading": "What We Actually Build.",
       "href": "/#payments",
       "passage": "We start with your processing statement, then choose and configure POS around how you actually sell: dining rooms, service jobs, or retail counters. Fees stay readable. Equipment matches the floor. The result: you know what processing costs, the POS matches the floor, and the leak stops funding someone else's margin.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 118,
+        "ordinal": 82,
         "blocks": [
           "We start with your processing statement, then choose and configure POS around how you actually sell: dining rooms, service jobs, or retail counters. Fees stay readable. Equipment matches the floor.",
           "The result: you know what processing costs, the POS matches the floor, and the leak stops funding someone else's margin."
         ],
         "visualException": null
       },
-      "hash": "e2c943462b99722b2c919a4bd733352c4b44b9d3013c704fd53a65766441cc36"
+      "hash": "17e9859ff6d74da930dc6a7f3a085074a49f695b94a05e86b7084662322e4da7"
     },
     {
-      "id": "public.home.200.0",
-      "sourceId": "public.home.200.0",
+      "id": "public.home.164.0",
+      "sourceId": "public.home.164.0",
       "route": "/",
-      "title": "Stop Losing Money to Hidden Fees.",
-      "label": "Stop Losing Money to Hidden Fees. — A Website That Works While You Work.",
+      "title": "What’s costing you time or money?",
+      "label": "What’s costing you time or money? — A Website That Works While You Work.",
       "heading": "A Website That Works While You Work.",
       "parentHeading": "What We Actually Build.",
       "href": "/#websites",
       "passage": "We don't hand you a template. Every site is designed around what your customers actually need to decide, then built so search engines and people can find clear answers. Business sites, stores, booking flows, and AI chat when it earns its keep. The result: a site that answers real buying questions, accepts the booking, and measures what happened, instead of a brochure nobody calls.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 200,
+        "ordinal": 164,
         "blocks": [
           "We don't hand you a template. Every site is designed around what your customers actually need to decide, then built so search engines and people can find clear answers. Business sites, stores, booking flows, and AI chat when it earns its keep.",
           "The result: a site that answers real buying questions, accepts the booking, and measures what happened, instead of a brochure nobody calls."
         ],
         "visualException": null
       },
-      "hash": "acace799df4ab93dc65540c28a917a0bc22dbdced4fa1aaea7204e71757e2564"
+      "hash": "d20b05f32edb82e4106405eaf9cb685b4dfda0464e369eb2568aa5f710adf483"
     },
     {
-      "id": "public.home.281.0",
-      "sourceId": "public.home.281.0",
+      "id": "public.home.245.0",
+      "sourceId": "public.home.245.0",
       "route": "/",
-      "title": "Stop Losing Money to Hidden Fees.",
-      "label": "Stop Losing Money to Hidden Fees. — Virtual Assistants for Jobs You Already Repeat.",
+      "title": "What’s costing you time or money?",
+      "label": "What’s costing you time or money? — Virtual Assistants for Jobs You Already Repeat.",
       "heading": "Virtual Assistants for Jobs You Already Repeat.",
       "parentHeading": "What We Actually Build.",
       "href": "/#ai",
       "passage": "We configure virtual assistants that keep doing a real ongoing job in the apps you already use: sales follow-up, customer service, scheduling, and ops. OpenAI dots, Claude Duet, Grok Bot, and Meta Muse stay behind a named reviewer. Not a Slack product, and not a chatbot bolted onto a website. The result: an operation that keeps moving whether or not you're standing at the counter, with irreversible actions still behind a human.",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 281,
+        "ordinal": 245,
         "blocks": [
           "We configure virtual assistants that keep doing a real ongoing job in the apps you already use: sales follow-up, customer service, scheduling, and ops. OpenAI dots, Claude Duet, Grok Bot, and Meta Muse stay behind a named reviewer. Not a Slack product, and not a chatbot bolted onto a website.",
           "The result: an operation that keeps moving whether or not you're standing at the counter, with irreversible actions still behind a human."
         ],
         "visualException": null
       },
-      "hash": "bb72664ed01adc98ee1f0a2607832e48037d6dc12199a724c6e8635e6ebf1c07"
+      "hash": "3948c015e6f8c501451b2def998ff61233b8aacb6785e0960ed246828e2ef114"
     },
     {
-      "id": "public.home.725.0",
-      "sourceId": "public.home.725.0",
+      "id": "public.home.689.0",
+      "sourceId": "public.home.689.0",
       "route": "/",
-      "title": "Stop Losing Money to Hidden Fees.",
-      "label": "Stop Losing Money to Hidden Fees. — Published partners",
+      "title": "What’s costing you time or money?",
+      "label": "What’s costing you time or money? — Published partners",
       "heading": "Published partners",
       "parentHeading": "",
       "href": "/#partners",
       "passage": "Square, Visa, Mastercard, Clover, Ingenico, Heartland, Pax, Dejavoo, NMI, PayTrace, PayAnywhere, KwickPOS, Korona POS, HotSauce, GiveHub, mynt, Paradise POS",
       "provenance": {
         "kind": "rendered-public-main",
-        "ordinal": 725,
+        "ordinal": 689,
         "blocks": [
           "Square, Visa, Mastercard, Clover, Ingenico, Heartland, Pax, Dejavoo, NMI, PayTrace, PayAnywhere, KwickPOS, Korona POS, HotSauce, GiveHub, mynt, Paradise POS"
         ],
         "visualException": "First visually displayed logo marquee, excludes duplicate and clipped accessible text"
       },
-      "hash": "d1ba480b26f9291357f0ad1825732268dc52def227dba97102f090d10459841b"
+      "hash": "cffcc09a6f7ddf678af014bb53f065cab014f64affc689044b89acb44341700b"
     },
     {
       "id": "public.auto-repair.53.0",
