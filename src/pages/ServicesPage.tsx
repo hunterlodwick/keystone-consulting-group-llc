@@ -2246,3 +2246,89 @@ export function SingleServicePage({ serviceId, onOpenModal, onNavigate }: { serv
     </div>
   );
 }
+
+const paymentEquipment = [
+  { title: 'Retail counter', detail: 'A countertop terminal or integrated register that fits your checkout line.' },
+  { title: 'Restaurant', detail: 'Handheld terminals for pay-at-table or a POS that handles split checks.' },
+  { title: 'Mobile or field service', detail: 'A wireless reader on the job or payment links for invoices.' },
+  { title: 'Online business', detail: 'A hosted checkout or a payment integration that fits your site and order flow.' },
+] as const;
+
+export function PaymentProcessingPage({ onAudit }: { onAudit: () => void }) {
+  const heading = 'font-serif text-3xl leading-tight text-white sm:text-4xl';
+  const prose = 'text-sm leading-relaxed text-offwhite/80 sm:text-base';
+  const label = 'text-xs font-semibold uppercase tracking-[0.14em] text-teal-soft [[data-theme=light]_&]:text-teal';
+  const auditClass = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-teal px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-teal/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal';
+  return (
+    <article className="mx-auto max-w-6xl px-5 pb-16 pt-24 sm:px-8 sm:pb-20 sm:pt-28 lg:px-10 lg:pt-32">
+      <header className="border-b border-teal/20 pb-9 sm:pb-12">
+        <p className={label}>Keystone Consulting Group</p>
+        <h1 className="mt-3 max-w-4xl text-balance font-serif text-4xl leading-[1.06] text-white sm:text-5xl lg:text-6xl">
+          Payment processing for small businesses
+        </h1>
+        <p className={`${prose} mt-4 max-w-2xl sm:text-lg`}>
+          Understand what cards cost you, compare pricing, and get a checkout that fits how you sell. We start with your merchant statement, not a pitch to switch processors.
+        </p>
+        <button type="button" onClick={onAudit} className={`${auditClass} mt-6`}>
+          Get a Free Profit Leak Analysis <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </button>
+      </header>
+
+      <section id="statement-review" className="scroll-mt-24 py-9 sm:py-12">
+        <h2 className={heading}>Start with the statement</h2>
+        <p className={`${prose} mt-3 max-w-3xl`}>
+          We review your recent statements to separate underlying card costs from processor markup, monthly fees, and other charges. We look at your mix of debit, credit and rewards cards, how you accept them, and where transactions may be qualifying for a higher-cost interchange category.
+        </p>
+        <p className={`${prose} mt-3 max-w-3xl`}>
+          You see what you pay today, which costs may be avoidable, and what we’d compare before you change anything.
+        </p>
+      </section>
+
+      <section id="pricing-options" className="scroll-mt-24 border-y border-white/20 py-9 sm:py-12">
+        <h2 className={heading}>Compare your pricing options</h2>
+        <div className="mt-5 grid gap-3 md:grid-cols-2 md:gap-4">
+          <section id="interchange-plus" className="scroll-mt-24 rounded-md border border-white/20 bg-white/[0.03] p-5 sm:p-6">
+            <h3 className="font-serif text-2xl leading-tight text-white">Interchange-plus</h3>
+            <p className={`${prose} mt-3`}>
+              The card networks set interchange. Interchange-plus separates that cost from the processor’s markup. Network fees can also affect your total. We shop the processor markup and compare the likely total cost using your actual card mix, volume, and transaction setup. We do not set interchange or promise a rate.
+            </p>
+          </section>
+          <section id="dual-pricing" className="scroll-mt-24 rounded-md border border-white/20 bg-white/[0.03] p-5 sm:p-6">
+            <h3 className="font-serif text-2xl leading-tight text-white">Dual pricing</h3>
+            <p className={`${prose} mt-3`}>
+              Where eligible, you can show a clear cash price and a clear card price before customers choose how to pay. We check fit, disclosures, and checkout setup with the processor. Eligibility depends on applicable law, card-network rules, and processor requirements; it isn’t a fit for every business.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section id="equipment" className="scroll-mt-24 py-9 sm:py-12">
+        <h2 className={heading}>Match equipment to the way you sell</h2>
+        <p className={`${prose} mt-3 max-w-3xl`}>
+          We work backward from the places you actually get paid. The right setup depends on your staff, customers, and the software you need to keep.
+        </p>
+        <dl className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          {paymentEquipment.map(({ title, detail }) => (
+            <div key={title} className="rounded-md border border-white/20 p-4">
+              <dt className="font-semibold text-white">{title}</dt>
+              <dd className={`${prose} mt-1`}>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className={`${prose} mt-5 max-w-3xl`}>
+          Depending on your processing volume and the processor’s program, a credit may cover some or all equipment costs. Credits are not guaranteed. We’ll put the cost, credit, eligibility, and any processing commitment or return conditions in writing before you decide.
+        </p>
+      </section>
+
+      <section className="rounded-md border border-teal/30 bg-teal/[0.06] p-5 sm:p-7">
+        <h2 className={heading}>Know your costs before you switch</h2>
+        <p className={`${prose} mt-3 max-w-3xl`}>
+          Bring a recent merchant statement. We’ll walk you through the charges and next steps, including when keeping your current setup makes sense.
+        </p>
+        <button type="button" onClick={onAudit} className={`${auditClass} mt-5`}>
+          Get a Free Profit Leak Analysis <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </button>
+      </section>
+    </article>
+  );
+}

@@ -38,6 +38,10 @@
       "destination": "/dashboard.html"
     },
     {
+      "source": "/services/payment-processing",
+      "destination": "/services/payment-processing.html"
+    },
+    {
       "source": "/services/web-design",
       "destination": "/services/web-design.html"
     },
