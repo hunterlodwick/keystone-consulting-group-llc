@@ -47,7 +47,9 @@ import {
   Settings,
   Bot,
   Headphones,
-  TrendingUp
+  TrendingUp,
+  Layers,
+  ChevronRight
 } from 'lucide-react';
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
@@ -782,7 +784,7 @@ const STATIC_NAV_ITEMS = [
 ];
 
 // Header
-const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: string, content: React.ReactNode) => void, theme: string, onToggleTheme: () => void }) => {
+const Header = ({ onOpenModal, theme, onToggleTheme, isHome }: { onOpenModal: (title: string, content: React.ReactNode) => void, theme: string, onToggleTheme: () => void, isHome: boolean }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
@@ -805,7 +807,7 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300"
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${isHome ? 'kcg-home-masthead' : ''}`}
       style={{ 
         backgroundColor, 
         backdropFilter,
@@ -817,12 +819,23 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
       }}
     >
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between">
-        <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-2 hover:opacity-80 transition-opacity min-w-0 xl:flex-shrink-0">
+        {isHome ? (
+          <a href="/" aria-label="Keystone Consulting Group - Home" className="kcg-home-brand">
+            <span aria-hidden="true"><HeroPillarsMark prefix="masthead" /></span>
+            <span><strong>Keystone</strong> Consulting Group</span>
+          </a>
+        ) : <a href="/" aria-label="Keystone Consulting Group - Home" className="flex items-center gap-2 hover:opacity-80 transition-opacity min-w-0 xl:flex-shrink-0">
           <KeystoneLogo className="w-9 h-9 shrink-0 xl:w-7 xl:h-7" />
           <span className="font-serif text-[15px] sm:text-[17px] xl:text-base leading-tight font-medium tracking-wide text-white">Keystone Consulting Group</span>
-        </a>
-        
-        <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation" onMouseLeave={() => setOpenDropdown(null)}>
+        </a>}
+        {isHome && (
+          <nav className="kcg-home-masthead-links" aria-label="Main services">
+            <a href="/services/payment-processing">Payments</a>
+            <a href="/services/web-design">Websites</a>
+            <a href="/services/ai-agents">AI Solutions</a>
+          </nav>
+        )}
+        {!isHome && <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation" onMouseLeave={() => setOpenDropdown(null)}>
           {/* Service Category Dropdowns */}
           {Object.entries(NAV_DROPDOWNS).map(([key, dropdown]) => (
             <div key={key} className="relative group">
@@ -889,9 +902,9 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
               <span className="absolute -bottom-1 left-3 right-3 h-[2px] bg-teal scale-x-0 transition-transform duration-300 ease-custom group-hover:scale-x-100 origin-left"></span>
             </a>
           ))}
-        </nav>
+        </nav>}
 
-        <div className="hidden xl:flex items-center gap-3">
+        {!isHome && <div className="hidden xl:flex items-center gap-3">
           {/* Theme Toggle */}
           <button 
             onClick={onToggleTheme}
@@ -912,9 +925,9 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
             className="whitespace-nowrap inline-flex items-center justify-center px-5 py-2 bg-teal text-white text-[13px] font-medium rounded-sm transition-all duration-300 ease-custom hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,128,128,0.4)]">
             Book a Call
           </button>
-        </div>
+        </div>}
 
-        <div className="flex xl:hidden shrink-0 items-center gap-3 ml-2">
+        <div className={`flex shrink-0 items-center gap-3 ml-2 ${isHome ? 'kcg-home-menu-controls' : 'xl:hidden'}`}>
           {/* Mobile Theme Toggle */}
           <button 
             onClick={onToggleTheme}
@@ -927,7 +940,8 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
           </button>
           <button 
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            className="text-white relative z-50 p-2"
+            className={`relative z-50 p-2 ${isHome ? 'kcg-home-menu-button' : 'text-white'}`}
+            aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
@@ -939,8 +953,11 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
       <>
         {mobileMenuOpen && (
           <div
-            className="absolute top-full left-0 right-0 bg-charcoal-dark/95 backdrop-blur-xl border-b border-white/10 shadow-2xl xl:hidden flex flex-col p-6 gap-1 max-h-[80vh] overflow-y-auto"
+            className={`absolute top-full left-0 right-0 bg-charcoal-dark/95 backdrop-blur-xl border-b border-white/10 shadow-2xl flex flex-col p-6 gap-1 max-h-[80vh] overflow-y-auto ${isHome ? 'kcg-home-full-nav' : 'xl:hidden'}`}
           >
+            {isHome && <button type="button" onClick={onToggleTheme} className="kcg-home-menu-theme">
+              {isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+            </button>}
             {/* Service Category Accordions */}
             {Object.entries(NAV_DROPDOWNS).map(([key, dropdown]) => (
               <div key={key}>
@@ -1028,26 +1045,26 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
 const HERO_PILLARS = [
   {
     id: 'payments',
-    label: 'Payments',
-    pain: 'Confusing card fees?',
-    solution: 'We review your statement and explain the charges.',
-    action: 'Explore Payments',
+    label: 'Payment Processing',
+    pain: 'Paying too much in card fees?',
+    solution: 'We review your statement and show you where you could save.',
+    action: 'Get a Free Fee Review',
     href: '/services/payment-processing',
   },
   {
     id: 'websites',
-    label: 'Websites',
-    pain: 'Visits, but no leads?',
-    solution: 'We build sites for quotes and bookings.',
-    action: 'Explore Websites',
+    label: 'Website Design',
+    pain: 'Getting visits but few inquiries?',
+    solution: 'We build websites that make it easy to request a quote or book.',
+    action: 'Explore Website Design',
     href: '/services/web-design',
   },
   {
     id: 'ai',
-    label: 'AI solutions',
-    pain: 'Too much follow-up?',
-    solution: 'We set up AI assistants for routine replies.',
-    action: 'Explore AI',
+    label: 'AI Solutions',
+    pain: 'Too much time spent following up?',
+    solution: 'AI assistants answer common questions and capture leads while you work.',
+    action: 'Explore AI Assistants',
     href: '/services/ai-agents',
   },
 ] as const;
@@ -1058,137 +1075,111 @@ const HERO_CLIENT_RESULTS = [
   { name: 'Prism Silks', detail: 'Online fabric storefront', screenshot: 'prism-silks' },
 ] as const;
 
-const HeroPillarsMark = () => (
-  <svg viewBox="0 0 348 372" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-auto w-full max-w-[18rem] lg:max-w-[22rem]" focusable="false">
+const HeroPillarsMark = ({ prefix }: { prefix: string }) => (
+  <svg viewBox="0 0 348 372" fill="none" xmlns="http://www.w3.org/2000/svg" className="kcg-pillar-art" focusable="false">
     <defs>
-      <linearGradient id="hero-pillar-teal-left" x1="95" y1="9" x2="11" y2="358" gradientUnits="userSpaceOnUse">
+      <linearGradient id={`${prefix}-pillar-teal-left`} x1="95" y1="9" x2="11" y2="358" gradientUnits="userSpaceOnUse">
         <stop stopColor="#469FA0" />
         <stop offset="1" stopColor="#117D80" />
       </linearGradient>
-      <linearGradient id="hero-pillar-teal-right" x1="252" y1="9" x2="337" y2="358" gradientUnits="userSpaceOnUse">
+      <linearGradient id={`${prefix}-pillar-teal-right`} x1="252" y1="9" x2="337" y2="358" gradientUnits="userSpaceOnUse">
         <stop stopColor="#419A9D" />
         <stop offset="1" stopColor="#137B7D" />
       </linearGradient>
-      <linearGradient id="hero-pillar-silver" x1="146" y1="8" x2="229" y2="372" gradientUnits="userSpaceOnUse">
+      <linearGradient id={`${prefix}-pillar-silver`} x1="146" y1="8" x2="229" y2="372" gradientUnits="userSpaceOnUse">
         <stop stopColor="#FBFCFD" />
         <stop offset="1" stopColor="#BFC9CB" />
       </linearGradient>
     </defs>
-    <path d="M59 2H120L118 257L1 369L59 2Z" fill="url(#hero-pillar-teal-left)" />
+    <path d="M59 2H120L118 257L1 369L59 2Z" fill={`url(#${prefix}-pillar-teal-left)`} />
     <path d="M120 2L118 257L81 292L120 2Z" fill="#063C3F" fillOpacity=".46" />
-    <path d="M142 2H205L225 369H122L142 2Z" fill="url(#hero-pillar-silver)" stroke="#A7B4B6" strokeOpacity=".68" strokeWidth=".8" />
-    <path d="M227 2H288L347 369L230 257L227 2Z" fill="url(#hero-pillar-teal-right)" />
+    <path d="M142 2H205L225 369H122L142 2Z" fill={`url(#${prefix}-pillar-silver)`} stroke="#A7B4B6" strokeOpacity=".68" strokeWidth=".8" />
+    <path d="M227 2H288L347 369L230 257L227 2Z" fill={`url(#${prefix}-pillar-teal-right)`} />
     <path d="M227 2L230 257L267 292L227 2Z" fill="#063C3F" fillOpacity=".46" />
   </svg>
 );
 
-// Hero
+const HOME_PROCESS = [
+  { icon: Search, label: 'Identify the problem' },
+  { icon: Layers, label: 'Build the solution' },
+  { icon: BarChart3, label: 'Measure the results' },
+] as const;
+
+const HomeSectionTitle = ({ id, children }: { id: string, children: React.ReactNode }) => (
+  <h2 id={id} className="kcg-home-section-title">{children}</h2>
+);
+
+// Homepage opening
 const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => (
-  <section className="relative border-b border-teal/20 pt-24 pb-10 sm:pt-28 sm:pb-14 lg:pt-[7.5rem] lg:pb-16">
-    <div className="mx-auto w-full max-w-7xl px-3.5 sm:px-8 lg:px-12">
-      <div className="relative grid items-center px-1 sm:px-0 md:grid-cols-[1.4fr_1fr] md:gap-8 lg:gap-14">
+  <section className="kcg-home-opening" aria-labelledby="kcg-home-title">
+    <div className="kcg-home-frame">
+      <div className="kcg-home-hero">
         <div>
-          <h1 className="font-serif text-[clamp(2rem,4.8vw,4.65rem)] leading-[1.03] tracking-tight text-white">
-            <span className="block">Keep more revenue.</span>{' '}
-            <span className="block">Win more work.</span>{' '}
-            <span className="block">Get time back.</span>
+          <h1 id="kcg-home-title">
+            <span>More profit.</span>{' '}
+            <span>More customers.</span>{' '}
+            <span>Less busywork.</span>
           </h1>
-          <p className="mt-3 max-w-lg text-sm leading-relaxed text-offwhite/80 sm:mt-4 sm:text-base lg:text-lg">
-            We untangle card fees, build sites that make it easy to book or get a quote, and set up AI for the work you keep repeating.
-          </p>
-          <a
-            href="#find-your-starting-point"
-            className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:mt-6 sm:px-6"
-          >
-            Find your starting point <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </a>
+          <p>We help you find avoidable card fees, turn website visits into inquiries, and automate the tasks eating up your day.</p>
+          <a className="kcg-home-cta" href="#find-your-starting-point">See How We Can Help</a>
         </div>
-        <div aria-hidden="true" className="pointer-events-none absolute bottom-0 right-2 flex w-11 items-center justify-center min-[360px]:w-[3.25rem] sm:right-8 sm:w-16 md:static md:w-full">
-          <HeroPillarsMark />
+        <div aria-hidden="true" className="kcg-home-hero-mark">
+          <HeroPillarsMark prefix="hero" />
         </div>
       </div>
 
-      <section id="find-your-starting-point" aria-labelledby="starting-point-title" tabIndex={-1} className="mt-6 scroll-mt-24 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal sm:mt-9 lg:mt-11">
-        <div className="mb-3 flex items-center gap-2.5 sm:mb-5 sm:gap-5">
-          <span aria-hidden="true" className="h-px min-w-3 flex-1 bg-teal/60" />
-          <h2 id="starting-point-title" className="text-center font-serif text-xl leading-tight text-white min-[360px]:text-2xl sm:text-3xl lg:text-[2.45rem]">What needs your attention?</h2>
-          <span aria-hidden="true" className="h-px min-w-3 flex-1 bg-teal/60" />
-        </div>
-        <nav aria-labelledby="starting-point-title" className="grid grid-cols-3 gap-1.5 sm:gap-4">
+      <section id="find-your-starting-point" aria-labelledby="starting-point-title" tabIndex={-1} className="kcg-home-service-section">
+        <HomeSectionTitle id="starting-point-title">What’s holding your business back?</HomeSectionTitle>
+        <nav aria-labelledby="starting-point-title" className="kcg-home-service-grid">
           {HERO_PILLARS.map((pillar) => (
-            <a
-              key={pillar.id}
-              href={pillar.href}
-              aria-label={`${pillar.action}: ${pillar.pain} ${pillar.solution}`}
-              className="group flex h-full min-w-0 flex-col rounded-md border border-white/20 bg-white/[0.03] px-2 py-3 transition-colors hover:border-teal/60 hover:bg-teal/[0.075] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:px-5 sm:py-5 lg:px-6"
-            >
-              <p className="text-[0.63rem] font-semibold uppercase tracking-[0.04em] text-teal-soft [[data-theme=light]_&]:text-teal sm:text-xs sm:tracking-[0.14em]">{pillar.label}</p>
-              <span aria-hidden="true" className="my-2 h-0.5 w-5 bg-teal/70 sm:my-3 sm:w-10" />
-              <h3 className="font-serif text-[0.95rem] leading-[1.12] text-white [overflow-wrap:anywhere] sm:text-xl lg:text-[1.55rem]">
-                {pillar.pain}
-              </h3>
-              <p className="mb-2.5 mt-2 text-[0.75rem] leading-snug text-offwhite/80 [overflow-wrap:anywhere] sm:mb-4 sm:text-sm sm:leading-relaxed">
-                {pillar.solution}
-              </p>
-              <span className="mt-auto flex min-h-11 items-center justify-center rounded-sm bg-teal px-1 py-1.5 text-center text-[0.67rem] font-semibold leading-tight text-white transition-colors group-hover:bg-teal/85 sm:gap-2 sm:px-3 sm:text-sm">
-                {pillar.action}
-                <ArrowRight className="hidden h-4 w-4 shrink-0 sm:block" aria-hidden="true" />
-              </span>
-            </a>
+            <article key={pillar.id} className="kcg-home-service">
+              <p className="kcg-home-service-label">{pillar.label}</p>
+              <h3>{pillar.pain}</h3>
+              <p className="kcg-home-service-copy">{pillar.solution}</p>
+              <a className="kcg-home-cta" href={pillar.href}>{pillar.action}</a>
+            </article>
           ))}
         </nav>
       </section>
 
-      <section aria-labelledby="hero-client-results-title" className="mt-6 sm:mt-9">
-        <div className="mb-3 flex items-center gap-2.5 sm:mb-4 sm:gap-5">
-          <span aria-hidden="true" className="h-px flex-1 bg-teal/60" />
-          <h2 id="hero-client-results-title" className="font-serif text-xl leading-tight text-white min-[360px]:text-2xl sm:text-3xl lg:text-4xl">Client Results</h2>
-          <span aria-hidden="true" className="h-px flex-1 bg-teal/60" />
-        </div>
-        <ul className="mx-auto grid max-w-5xl grid-cols-3 gap-1.5 sm:gap-3">
+      <section aria-labelledby="kcg-home-process-title" className="kcg-home-process">
+        <HomeSectionTitle id="kcg-home-process-title">How Keystone helps</HomeSectionTitle>
+        <ol>
+          {HOME_PROCESS.map(({ icon: Icon, label }, i) => (
+            <li key={label}>
+              <Icon className="kcg-home-process-icon" aria-hidden="true" />
+              <span>{label}</span>
+              {i < HOME_PROCESS.length - 1 && <ChevronRight className="kcg-home-process-arrow" aria-hidden="true" />}
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="hero-client-results-title" className="kcg-home-results">
+        <HomeSectionTitle id="hero-client-results-title"><a href="/work">Client results</a></HomeSectionTitle>
+        <ul>
           {HERO_CLIENT_RESULTS.map((client) => (
-            <li key={client.screenshot} className="min-w-0">
-              <a href={`/work#${client.screenshot}`} className="group flex h-full min-w-0 flex-col overflow-hidden rounded-md border border-white/20 bg-white/[0.03] transition-colors hover:border-teal/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:flex-row sm:items-center">
-                <img src={`/screenshots/previews/${client.screenshot}.jpg`} alt="" width="800" height="515" loading="lazy" decoding="async" className="aspect-[800/515] w-full object-cover object-top sm:w-[36%]" />
-                <div className="min-w-0 flex-1 px-1.5 py-2 sm:px-2.5 lg:px-3">
-                  <p className="font-serif text-[0.85rem] leading-tight text-white [overflow-wrap:anywhere] sm:text-base lg:text-lg">{client.name}</p>
-                  <p className="mt-1 text-[0.69rem] leading-snug text-offwhite/80 [overflow-wrap:anywhere] sm:text-xs">{client.detail}</p>
-                </div>
-                <ArrowRight aria-hidden="true" className="mr-2 hidden h-4 w-4 shrink-0 text-teal-soft [[data-theme=light]_&]:text-teal lg:block" />
+            <li key={client.screenshot}>
+              <a href={`/work#${client.screenshot}`} className="kcg-home-case">
+                <img src={`/screenshots/previews/${client.screenshot}.jpg`} alt="" width="800" height="515" loading="lazy" decoding="async" />
+                <span><strong>{client.name}</strong><small>{client.detail}</small></span>
+                <ArrowRight aria-hidden="true" />
               </a>
             </li>
           ))}
         </ul>
       </section>
+    </div>
 
-      <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-7 sm:gap-3">
-        <button
-          onClick={() => onOpenModal("Get a Free Profit Leak Analysis", <StatementAnalysisForm />)}
-          className="inline-flex min-h-11 items-center justify-center rounded-sm bg-teal px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-teal/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:px-6 sm:text-sm">
-          Get a Free Profit Leak Analysis
+    <div className="kcg-home-consult">
+      <div className="kcg-home-frame">
+        <h2>Unsure where to start?</h2>
+        <button type="button" className="kcg-home-cta" onClick={() => onOpenModal("Book a Call", <ContactForm />)}>
+          Book a Free Consultation
         </button>
-        <button
-          onClick={() => onOpenModal("Book a Call", <ContactForm />)}
-          className="inline-flex min-h-11 items-center justify-center rounded-sm border border-white/25 bg-transparent px-4 py-2 text-xs font-medium text-white transition-colors hover:border-white/45 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:px-6 sm:text-sm">
-          Book a Call
-        </button>
-      </div>
-
-      <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.7rem] text-offwhite/70 sm:mt-5 sm:text-sm">
-        <div className="flex items-center gap-1.5">
-          <CheckCircle className="h-3.5 w-3.5 text-teal" aria-hidden="true" /> Free audit, no pressure to switch
-        </div>
-        <div className="flex items-center gap-1.5">
-          <CheckCircle className="h-3.5 w-3.5 text-teal" aria-hidden="true" /> Written proposal before you switch
-        </div>
-        <div className="flex items-center gap-1.5">
-          <CheckCircle className="h-3.5 w-3.5 text-teal" aria-hidden="true" /> Savings in 30 days or we tell you
-        </div>
-        <div className="flex items-center gap-1.5">
-          <CheckCircle className="h-3.5 w-3.5 text-teal" aria-hidden="true" /> Real people, no phone trees
-        </div>
       </div>
     </div>
+    <p className="kcg-home-motto kcg-home-frame">Unlock. Reinvest. Grow.</p>
   </section>
 );
 
@@ -2364,7 +2355,7 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
   return (
     <div className="min-h-screen bg-charcoal bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-charcoal-dark via-charcoal to-charcoal-dark text-offwhite font-sans selection:bg-teal selection:text-white">
       <GuideHead path={currentPath} />
-      <Header onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} />
+      <Header onOpenModal={handleOpenModal} theme={theme} onToggleTheme={toggleTheme} isHome={currentPath === '/'} />
       
       <main data-mobile-cta-page={Boolean(stickyCtaLabel(currentPath))}>
         {(currentPath === '/guides' || (currentPath.startsWith('/guides/') && guideBySlug(currentPath.slice(8)))) ? (

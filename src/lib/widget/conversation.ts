@@ -1,6 +1,6 @@
 import { availablePassages } from './strict-grounding/catalog';
 function questionNamesPublishedPartner(question: string, context = ''): string[] {
-  const passage = availablePassages().find(e => e.id === 'public.home.739.0')?.passage ?? '';
+  const passage = availablePassages().find(e => e.id === 'public.home.729.0')?.passage ?? '';
   const hay = `${question} ${context}`.toLowerCase();
   return passage.replace(/^.*?: /, '').split(/, | and /).map(s => s.replace(/[.]$/, '').trim()).filter(name => name && hay.includes(name.toLowerCase()));
 }
