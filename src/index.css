@@ -513,19 +513,36 @@ body::after {
 .kcg-home-menu-button { color: #f5f4f0; }
 .kcg-home-menu-theme {
   align-self: flex-start;
-  color: #f5f4f0;
   padding: .4rem .65rem;
-  border: 1px solid #737978;
+  border: 1px solid var(--home-menu-border);
   border-radius: .25rem;
 }
 .kcg-home-full-nav {
-  background: #202222 !important;
-  color: #f5f4f0;
+  --home-menu-surface: #202222;
+  --home-menu-ink: #f5f4f0;
+  --home-menu-accent: #79cacc;
+  --home-menu-border: #858c8b;
+  background: var(--home-menu-surface) !important;
+  color: var(--home-menu-ink);
   max-width: 35rem;
   left: auto;
   width: 100%;
 }
-.kcg-home-full-nav a:not(.bg-teal), .kcg-home-full-nav button:not(.bg-teal) { color: #f5f4f0 !important; }
+/* Match label and icon colors to the actual panel, even after a live theme switch. */
+[data-theme="light"] .kcg-home-full-nav {
+  --home-menu-surface: #f7f7f5;
+  --home-menu-ink: #202323;
+  --home-menu-accent: #066669;
+  --home-menu-border: #676e6d;
+  background: var(--home-menu-surface) !important;
+  border-color: #c9ceca !important;
+}
+.kcg-home-full-nav :is(a, button):not(.bg-teal) { color: var(--home-menu-ink) !important; }
+.kcg-home-full-nav :is(a, button):not(.bg-teal):is(:hover, :active),
+.kcg-home-full-nav :is(svg, a).text-teal { color: var(--home-menu-accent) !important; }
+.kcg-home-full-nav :is(.bg-teal\/40) { background: var(--home-menu-accent); }
+[data-theme="light"] .kcg-home-full-nav .bg-white\/10 { background: #d1d5d3; }
+header .kcg-home-full-nav :is(a, button):focus-visible { outline-color: var(--home-menu-accent); }
 .kcg-home-opening {
   --kcg-ink: #f5f3ef;
   --kcg-soft: #e2e1dd;
