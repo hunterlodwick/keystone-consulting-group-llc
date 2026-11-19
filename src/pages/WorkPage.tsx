@@ -6,6 +6,7 @@ import {
   Mountain,
   LayoutDashboard,
   ShoppingCart,
+  Car,
   Wifi,
   Bug,
   Truck,
@@ -63,14 +64,25 @@ const PROJECTS = [
     isConfidential: false
   },
   {
-    name: "Benitz Appliance",
-    label: "Benitz Appliance",
-    url: "https://www.benitzapplianceshop.com",
-    domain: "benitzapplianceshop.com",
-    screenshot: "benitz-appliance",
-    desc: "631 products searchable in seconds. An AI assistant that answers stock and pricing questions at 2 AM so the owner sells appliances instead of answering the phone all day.",
-    tags: ["E-commerce", "AI Assistant", "631 Products", "Payments"],
+    name: "The Arcade Co",
+    label: "The Arcade Co",
+    url: "https://www.thearcadeco.com/",
+    domain: "thearcadeco.com",
+    screenshot: "the-arcade-co",
+    desc: "An online showroom for arcade machines and pinball. Shoppers can compare cabinet dimensions, power needs, and delivery details before choosing a machine.",
+    tags: ["E-commerce", "Product Catalog", "Product Details"],
     icon: ShoppingCart,
+    isConfidential: false
+  },
+  {
+    name: "Ironwood Motorsports",
+    label: "Ironwood Motorsports",
+    url: "https://ironwoodmotorsports.com/",
+    domain: "ironwoodmotorsports.com",
+    screenshot: "ironwood-motorsports",
+    desc: "A Sedalia dealership and window tinting site. Shoppers can search vehicles by make or model, while tint and ceramic coating customers have dedicated service pages.",
+    tags: ["Automotive", "Inventory Search", "Service Pages"],
+    icon: Car,
     isConfidential: false
   },
   {
