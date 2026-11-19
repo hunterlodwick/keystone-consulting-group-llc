@@ -1,2 +1,2 @@
 // Generated only after source and approval validation.
-export const APPROVED_ARTIFACT_HASH = '41d005d42c73dbfb5e9956f34a147c9910c2bfba9a758e739bbd50d120150585';
+export const APPROVED_ARTIFACT_HASH = 'b9b916dc4d8103b01eeb20f26bc8b19e74c47b98bbb7142ebda28bae439fa49f';

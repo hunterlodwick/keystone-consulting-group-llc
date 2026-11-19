@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "reviewer": "Astra (original source review); independent Codex source-review agents (homepage, Payments, and Work refreshes; not human, legal, vendor, or release approval)",
-  "basis": "Visible public prose and concrete workflow depth; approvals and renderer inputs pinned. Independent homepage review 36fffd2c2a2e refreshed the App pin and four homepage ID/digest mappings. Independent Payments review 193ab9880637 refreshed four source pins and added the one public Payments route without new evidence approval. Independent Work review 7589ec5ef715 refreshed only the WorkPage source pin and three positional IDs/digests for existing, unchanged passages; no new portfolio evidence was approved. Existing claims were not recertified.",
+  "reviewer": "Astra (original source review); independent Codex source-review agents (homepage, Payments, Work, and homepage Client Results refreshes; not human, legal, vendor, or release approval)",
+  "basis": "Visible public prose and concrete workflow depth; approvals and renderer inputs pinned. Independent homepage review 36fffd2c2a2e refreshed the App pin and four homepage ID/digest mappings. Independent Payments review 193ab9880637 refreshed four source pins and added the one public Payments route without new evidence approval. Independent Work review 7589ec5ef715 refreshed only the WorkPage source pin and three positional IDs/digests for existing, unchanged passages; no new portfolio evidence was approved. Existing claims were not recertified. Independent homepage Client Results review b2cc9dd0c4ff refreshed only the App source pin and four existing homepage IDs/digests after checking unchanged visible passages and links; no new evidence was approved.",
   "sourceHashes": {
     "scripts/seo-routes.ts": "f969f5623f1451fbf8c89fc9414091b8671b2d9170c162008de0ca4339afd9df",
     "scripts/strict-grounding-breadth/extract.py": "e26299411eed5a9b68f05e3425e89591c0909e05734aeac7baf38003731cbbf4",
     "scripts/strict-grounding-breadth/generate.ts": "0039d2de2fa98ea18a200d07eee41737bcd9b54537e6210a22484f485afc09b1",
     "scripts/strict-grounding-breadth/render.tsx": "96edb6811504c63d6d46821bba80f00fcac3ce2495978560192610d3e84b1663",
-    "src/App.tsx": "d75efaf33a0b4355bd36c60ac61df18d2cd5fd22e97aeca6dea806e1afbe592f",
+    "src/App.tsx": "6eb43d2694b5a8ea3a2033c2f95f06431fe06ecaaeb1ccd854a36f2caca9891f",
     "src/content/ai-agents.ts": "9b494562c97b8ee15cf181fbdc7c9a9fc0a6fd7911d4b2985565bfce7b4173fe",
     "src/content/guide-comparisons.ts": "602d5c7f74f9124c29efb4ca301fad32a365e39a0883b09b0a23165e0f108602",
     "src/content/guide-questions.ts": "b9dd2b202ab4586d97f40ea6018cb4040ac756e8e1d53454cae9830de7b290ed",
@@ -111,26 +111,26 @@
   },
   "approvals": [
     {
-      "id": "public.home.82.0",
-      "hash": "17e9859ff6d74da930dc6a7f3a085074a49f695b94a05e86b7084662322e4da7",
+      "id": "public.home.123.0",
+      "hash": "0c705354863c07751ffb88d6f1f20558209cf0b085bb808c3c16378814721dac",
       "decision": "approved",
       "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
     },
     {
-      "id": "public.home.164.0",
-      "hash": "d20b05f32edb82e4106405eaf9cb685b4dfda0464e369eb2568aa5f710adf483",
+      "id": "public.home.205.0",
+      "hash": "14a253fdd0cd92efc98d51b85230b00455796131f62771dcf5c2c90350c79f70",
       "decision": "approved",
       "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
     },
     {
-      "id": "public.home.245.0",
-      "hash": "3948c015e6f8c501451b2def998ff61233b8aacb6785e0960ed246828e2ef114",
+      "id": "public.home.286.0",
+      "hash": "dcbb228a12a9d74dab7d4f830aef769d300f2cb5df8c2f46c269d1b04ad9f29b",
       "decision": "approved",
       "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
     },
     {
-      "id": "public.home.689.0",
-      "hash": "cffcc09a6f7ddf678af014bb53f065cab014f64affc689044b89acb44341700b",
+      "id": "public.home.730.0",
+      "hash": "b426a15ad9ed78d33774a35e7994cb44a64456d14cf62cc94aeda0d033bea6ba",
       "decision": "approved",
       "reason": "Concrete visible workflow, constraints or worked example; retained whole semantic blocks and verified canonical/real-anchor citation."
     },
