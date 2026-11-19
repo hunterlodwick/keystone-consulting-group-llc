@@ -1351,7 +1351,7 @@ const BuildDetails = () => {
                   <img
                     src={b.image}
                     alt={b.imageAlt || b.eyebrow}
-                    className="w-full h-64 lg:h-80 object-cover"
+                    className={b.id === "payments" ? "w-full h-64 lg:h-80 object-cover" : "block w-full h-auto"}
                     loading="lazy"
                     width={1200}
                     height={675}
@@ -2005,11 +2005,11 @@ const Team = ({ onOpenModal }: { onOpenModal: (title: string, content: React.Rea
               key={member.name}
               className="animate-on-scroll group flex flex-col bg-slate-dark/40 border border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
             >
-              <div className="relative aspect-[3/4] overflow-hidden bg-charcoal-dark">
+              <div className="relative aspect-[2/3] overflow-hidden bg-charcoal-dark">
                 <img
                   src={member.photo}
                   alt={member.alt}
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="absolute inset-0 w-full h-full object-contain"
                   loading="lazy"
                   width={800}
                   height={1200}
