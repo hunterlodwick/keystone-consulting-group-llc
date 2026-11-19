@@ -176,6 +176,8 @@ const CUSTOM_BUILDS = [
   }
 ];
 
+const LINKED_WORK_CARDS = new Set(["ensign-properties", "ironwood-motorsports", "prism-silks"]);
+
 interface WorkPageProps {
   onOpenModal: (title: string, content: React.ReactNode) => void;
   onNavigate: (path: string) => void;
@@ -185,7 +187,16 @@ export default function WorkPage({ onOpenModal, onNavigate }: WorkPageProps) {
   useScrollAnimation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const slug = window.location.hash.slice(1);
+    const target = LINKED_WORK_CARDS.has(slug)
+      ? document.getElementById(slug)
+      : null;
+    if (target) {
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    } else if (!slug) {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
@@ -218,7 +229,7 @@ export default function WorkPage({ onOpenModal, onNavigate }: WorkPageProps) {
                 className="animate-on-scroll"
                 style={{ transitionDelay: `${Math.min(i, 5) * 60}ms` }}
               >
-                <article className="group flex h-full flex-col bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-teal/30">
+                <article id={LINKED_WORK_CARDS.has(project.screenshot) ? project.screenshot : undefined} aria-labelledby={LINKED_WORK_CARDS.has(project.screenshot) ? `work-title-${project.screenshot}` : undefined} tabIndex={LINKED_WORK_CARDS.has(project.screenshot) ? -1 : undefined} className="group flex h-full scroll-mt-24 flex-col bg-slate-dark/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal border border-white/5 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-teal/30">
                   {/* Preview */}
                   <div className="bg-charcoal-dark border-b border-white/5">
                     <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5 transition-colors duration-300 group-hover:border-teal/40">
@@ -258,7 +269,7 @@ export default function WorkPage({ onOpenModal, onNavigate }: WorkPageProps) {
 
                     <div className="my-4 h-px bg-white/5"></div>
 
-                    <h3 className="text-lg text-white font-medium mb-3 leading-snug">{project.name}</h3>
+                    <h3 id={LINKED_WORK_CARDS.has(project.screenshot) ? `work-title-${project.screenshot}` : undefined} className="text-lg text-white font-medium mb-3 leading-snug">{project.name}</h3>
                     <p className="text-offwhite/60 text-sm font-light leading-relaxed mb-6">{project.desc}</p>
 
                     <div className="flex flex-wrap gap-2 mb-6">
