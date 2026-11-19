@@ -1027,69 +1027,115 @@ const Header = ({ onOpenModal, theme, onToggleTheme }: { onOpenModal: (title: st
 
 const HERO_PILLARS = [
   {
-    id: 'websites',
-    label: 'Websites',
-    pain: 'Visits, but no leads?',
-    solution: 'We build sites for quotes and bookings.',
-    href: '/services/web-design',
-    icon: Code,
-  },
-  {
     id: 'payments',
     label: 'Payments',
     pain: 'Confusing card fees?',
     solution: 'We review your statement and explain the charges.',
+    action: 'Explore Payments',
     href: '/services/payment-processing',
-    icon: CreditCard,
+  },
+  {
+    id: 'websites',
+    label: 'Websites',
+    pain: 'Visits, but no leads?',
+    solution: 'We build sites for quotes and bookings.',
+    action: 'Explore Websites',
+    href: '/services/web-design',
   },
   {
     id: 'ai',
-    label: 'AI',
+    label: 'AI solutions',
     pain: 'Too much follow-up?',
     solution: 'We set up AI assistants for routine replies.',
+    action: 'Explore AI',
     href: '/services/ai-agents',
-    icon: Bot,
   },
+] as const;
+
+const HERO_CLIENT_RESULTS = [
+  { name: 'Ensign Properties', detail: 'Rental search and applications', href: 'https://www.ensignpropertiesmanagement.com', screenshot: 'ensign-properties' },
+  { name: 'Ironwood Motorsports', detail: 'Vehicle search and service pages', href: 'https://ironwoodmotorsports.com/', screenshot: 'ironwood-motorsports' },
+  { name: 'Prism Silks', detail: 'Online fabric storefront', href: 'https://www.prismsilks.com', screenshot: 'prism-silks' },
 ] as const;
 
 // Hero
 const Hero = ({ onOpenModal }: { onOpenModal: (title: string, content: React.ReactNode) => void }) => (
-  <section className="relative border-b border-teal/20 pt-24 pb-10 sm:pt-28 sm:pb-14 lg:pt-32 lg:pb-16">
-    <div className="mx-auto w-full max-w-6xl px-3.5 sm:px-8 lg:px-10">
-      <div className="max-w-3xl px-1 sm:px-0">
-        <h1 className="font-serif text-[clamp(2.15rem,5.4vw,4.65rem)] leading-[1.04] tracking-tight text-balance text-white">
-          What’s costing you time or money?
-        </h1>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-offwhite/80 sm:mt-4 sm:text-lg">
-          We help small businesses fix gaps in their websites, payments, and day-to-day workflow.
-        </p>
+  <section className="relative border-b border-teal/20 pt-24 pb-10 sm:pt-28 sm:pb-14 lg:pt-[7.5rem] lg:pb-16">
+    <div className="mx-auto w-full max-w-7xl px-3.5 sm:px-8 lg:px-12">
+      <div className="grid items-center px-1 sm:px-0 md:grid-cols-[1.4fr_1fr] md:gap-8 lg:gap-14">
+        <div>
+          <h1 className="font-serif text-[clamp(2rem,4.8vw,4.65rem)] leading-[1.03] tracking-tight text-white">
+            <span className="block">Keep more revenue.</span>{' '}
+            <span className="block">Win more work.</span>{' '}
+            <span className="block">Get time back.</span>
+          </h1>
+          <p className="mt-3 max-w-lg text-sm leading-relaxed text-offwhite/80 sm:mt-4 sm:text-base lg:text-lg">
+            We untangle card fees, build sites that make it easy to book or get a quote, and set up AI for the work you keep repeating.
+          </p>
+          <a
+            href="#find-your-starting-point"
+            className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:mt-6 sm:px-6"
+          >
+            Find your starting point <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </div>
+        <div aria-hidden="true" className="hidden items-center justify-center md:flex">
+          <KeystoneLogo className="h-auto w-full max-w-[17rem] lg:max-w-[21rem]" />
+        </div>
       </div>
 
-      <nav aria-label="Choose a starting path" className="mt-6 grid grid-cols-3 gap-1.5 sm:mt-8 sm:gap-4">
-        {HERO_PILLARS.map((pillar) => (
-          <a
-            key={pillar.id}
-            href={pillar.href}
-            aria-label={`${pillar.label}: ${pillar.pain} ${pillar.solution} Explore ${pillar.label}.`}
-            className="group flex h-full min-w-0 flex-col rounded-md border border-white/20 bg-white/[0.03] px-2 py-3 transition-colors hover:border-teal/60 hover:bg-teal/[0.075] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:px-5 sm:py-5 lg:px-6"
-          >
-            <div className="mb-2.5 flex min-w-0 flex-col items-start gap-1.5 text-teal-soft [[data-theme=light]_&]:text-teal sm:mb-4 sm:flex-row sm:items-center sm:gap-2">
-              <pillar.icon className="h-3.5 w-3.5 shrink-0 sm:h-5 sm:w-5" strokeWidth={1.8} aria-hidden="true" />
-              <h2 className="text-[0.67rem] font-semibold uppercase tracking-[0.07em] sm:text-xs sm:tracking-[0.14em]">{pillar.label}</h2>
-            </div>
-            <p className="font-serif text-[0.95rem] leading-[1.12] text-white [overflow-wrap:anywhere] sm:text-xl lg:text-[1.55rem]">
-              {pillar.pain}
-            </p>
-            <p className="mb-2.5 mt-2 text-[0.75rem] leading-snug text-offwhite/80 [overflow-wrap:anywhere] sm:mb-4 sm:text-sm sm:leading-relaxed">
-              {pillar.solution}
-            </p>
-            <span className="mt-auto flex items-center gap-0.5 pt-1 text-[0.72rem] font-semibold text-teal-soft [[data-theme=light]_&]:text-teal underline decoration-current/55 underline-offset-4 group-hover:decoration-teal sm:gap-1.5 sm:text-sm">
-              Explore
-              <ArrowRight className="h-3 w-3 shrink-0 sm:h-4 sm:w-4" aria-hidden="true" />
-            </span>
-          </a>
-        ))}
-      </nav>
+      <section id="find-your-starting-point" aria-labelledby="starting-point-title" tabIndex={-1} className="mt-6 scroll-mt-24 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal sm:mt-9 lg:mt-11">
+        <div className="mb-3 flex items-center gap-2.5 sm:mb-5 sm:gap-5">
+          <span aria-hidden="true" className="h-px min-w-3 flex-1 bg-teal/60" />
+          <h2 id="starting-point-title" className="text-center font-serif text-xl leading-tight text-white min-[360px]:text-2xl sm:text-3xl lg:text-[2.45rem]">What needs your attention?</h2>
+          <span aria-hidden="true" className="h-px min-w-3 flex-1 bg-teal/60" />
+        </div>
+        <nav aria-labelledby="starting-point-title" className="grid grid-cols-3 gap-1.5 sm:gap-4">
+          {HERO_PILLARS.map((pillar) => (
+            <a
+              key={pillar.id}
+              href={pillar.href}
+              aria-label={`${pillar.action}: ${pillar.pain} ${pillar.solution}`}
+              className="group flex h-full min-w-0 flex-col rounded-md border border-white/20 bg-white/[0.03] px-2 py-3 transition-colors hover:border-teal/60 hover:bg-teal/[0.075] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:px-5 sm:py-5 lg:px-6"
+            >
+              <p className="text-[0.63rem] font-semibold uppercase tracking-[0.04em] text-teal-soft [[data-theme=light]_&]:text-teal sm:text-xs sm:tracking-[0.14em]">{pillar.label}</p>
+              <span aria-hidden="true" className="my-2 h-0.5 w-5 bg-teal/70 sm:my-3 sm:w-10" />
+              <h3 className="font-serif text-[0.95rem] leading-[1.12] text-white [overflow-wrap:anywhere] sm:text-xl lg:text-[1.55rem]">
+                {pillar.pain}
+              </h3>
+              <p className="mb-2.5 mt-2 text-[0.75rem] leading-snug text-offwhite/80 [overflow-wrap:anywhere] sm:mb-4 sm:text-sm sm:leading-relaxed">
+                {pillar.solution}
+              </p>
+              <span className="mt-auto flex min-h-11 items-center justify-center rounded-sm bg-teal px-1 py-1.5 text-center text-[0.67rem] font-semibold leading-tight text-white transition-colors group-hover:bg-teal/85 sm:gap-2 sm:px-3 sm:text-sm">
+                {pillar.action}
+                <ArrowRight className="hidden h-4 w-4 shrink-0 sm:block" aria-hidden="true" />
+              </span>
+            </a>
+          ))}
+        </nav>
+      </section>
+
+      <section aria-labelledby="hero-client-results-title" className="mt-6 sm:mt-9">
+        <div className="mb-3 flex items-center gap-2.5 sm:mb-4 sm:gap-5">
+          <span aria-hidden="true" className="h-px flex-1 bg-teal/60" />
+          <h2 id="hero-client-results-title" className="font-serif text-xl leading-tight text-white min-[360px]:text-2xl sm:text-3xl lg:text-4xl">Client Results</h2>
+          <span aria-hidden="true" className="h-px flex-1 bg-teal/60" />
+        </div>
+        <ul className="mx-auto grid max-w-5xl grid-cols-3 gap-1.5 sm:gap-3">
+          {HERO_CLIENT_RESULTS.map((client) => (
+            <li key={client.screenshot} className="min-w-0">
+              <a href={client.href} target="_blank" rel="noopener noreferrer" className="group flex h-full min-w-0 flex-col overflow-hidden rounded-md border border-white/20 bg-white/[0.03] transition-colors hover:border-teal/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal sm:flex-row sm:items-center">
+                <img src={`/screenshots/previews/${client.screenshot}.jpg`} alt="" width="800" height="515" loading="lazy" decoding="async" className="aspect-[800/515] w-full object-cover object-top sm:w-[36%]" />
+                <div className="min-w-0 flex-1 px-1.5 py-2 sm:px-2.5 lg:px-3">
+                  <p className="font-serif text-[0.85rem] leading-tight text-white [overflow-wrap:anywhere] sm:text-base lg:text-lg">{client.name}</p>
+                  <p className="mt-1 text-[0.69rem] leading-snug text-offwhite/80 [overflow-wrap:anywhere] sm:text-xs">{client.detail}</p>
+                </div>
+                <ArrowRight aria-hidden="true" className="mr-2 hidden h-4 w-4 shrink-0 text-teal-soft [[data-theme=light]_&]:text-teal lg:block" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-7 sm:gap-3">
         <button
