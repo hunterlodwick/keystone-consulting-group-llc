@@ -1921,14 +1921,14 @@ export default function ServicesPage({ onOpenModal, onNavigate }: ServicesPagePr
 
               {/* Visual */}
               <div className={`animate-on-scroll ${idx % 2 !== 0 ? 'lg:col-start-1' : ''}`} style={{ transitionDelay: '0.2s' }}>
-                <div className="relative h-[350px] md:h-[400px] rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 group shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,128,128,0.15)] transition-all duration-500">
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 group shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:shadow-[0_0_50px_rgba(0,128,128,0.15)] transition-all duration-500">
                   <img
                     src={service.image}
                     alt={service.imageAlt}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    className="block w-full h-auto"
                     loading="lazy"
-                    width={800}
-                    height={600}
+                    width={1200}
+                    height={675}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent pointer-events-none"></div>
                 </div>
@@ -2027,7 +2027,7 @@ function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; 
           <a href="#the-process" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">The build process</a>
           <a href="#questions" className="text-teal min-h-11 inline-flex items-center underline underline-offset-4">Common questions</a>
         </nav>
-        <img src={service.image} alt={service.imageAlt} width={1200} height={480} className="w-full h-52 md:h-80 object-cover rounded-2xl" />
+        <img src={service.image} alt={service.imageAlt} width={1200} height={675} className="block w-full h-auto rounded-2xl" />
       </header>
 
       {service.problem && <section className="max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-24 grid md:grid-cols-[1fr_1.5fr] gap-8 md:gap-16">
@@ -2042,7 +2042,7 @@ function DeepServiceContent({ service, onOpenModal }: { service: ServiceDetail; 
             {service.sections.map(sub => <section key={sub.title} className="grid md:grid-cols-[0.8fr_1.5fr] gap-6 md:gap-12 border-t border-white/10 pt-8">
               <div>
                 <h3 className="font-serif text-2xl md:text-3xl text-white mb-5">{sub.title}</h3>
-                <img src={sub.image ?? `/images/services/sub/${slugify(sub.title)}.jpg`} alt="" loading="lazy" width={480} height={320} className="w-full h-40 md:h-60 object-cover rounded-xl" />
+                <img src={sub.image ?? `/images/services/sub/${slugify(sub.title)}.jpg`} alt="" loading="lazy" width={480} height={sub.image?.startsWith("/screenshots/") ? 320 : 480} className={sub.image?.startsWith("/screenshots/") ? "w-full h-40 md:h-60 object-cover rounded-xl" : "block w-full h-auto rounded-xl"} />
               </div>
               <div className="space-y-5">
                 <p className={prose}>{sub.desc}</p>

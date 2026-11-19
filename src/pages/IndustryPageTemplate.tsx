@@ -14,6 +14,36 @@ import { ContactForm } from '../App';
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
+// Feature art ships in two native shapes. Keep the exact aspect ratio reserved
+// ahead of lazy loading so the full photograph stays visible without shifting copy.
+const landscapeFeatureSlugs = new Set([
+  'ai-powered-customer-insights',
+  'automated-rent-collection',
+  'automatic-tax-receipts-year-end-statements',
+  'c-store-inventory-margin-tracking',
+  'chargeback-prevention-recovery',
+  'chargeback-ratio-management',
+  'checkout-in-under-2-seconds',
+  'commission-split-tracking',
+  'event-campaign-fundraising',
+  'fraud-protection-at-the-pump',
+  'integrated-billing-reconciliation',
+  'inventory-sync-across-every-register',
+  'maximize-the-impact-of-every-dollar',
+  'multi-channel-inventory-sync',
+  'multi-processor-redundancy',
+  'process-100k-month-at-wholesale-rates',
+  'real-time-shop-performance-tracking',
+  'retail-product-sales',
+  'save-big-with-level-2-3-data-capture',
+  'smart-inventory-management',
+  'tableside-payments-in-under-2-seconds',
+  'tip-friendly-payment-experience',
+  'unified-in-store-online-sales',
+  'we-specialize-in-hard-to-place-merchants',
+  'zero-touch-patient-payments',
+]);
+
 // Scroll animation hook
 function useScrollAnimation() {
   useEffect(() => {
@@ -427,8 +457,8 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
                 key={i}
                 className="animate-on-scroll bg-slate-dark/30 border border-white/5 rounded-2xl overflow-hidden hover:bg-slate-dark/50 hover:border-teal/20 transition-all duration-300 group"
               >
-                <div className="aspect-square overflow-hidden border-b border-white/5">
-                  <img src={`/images/industries/sub/${slugify(card.title)}.jpg`} alt={card.title} className="w-full h-full object-cover" loading="lazy" />
+                <div className="aspect-square overflow-hidden border-b border-white/5 bg-charcoal-dark/40">
+                  <img src={`/images/industries/sub/${slugify(card.title)}.jpg`} alt={card.title} className="block w-full h-full object-contain" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
@@ -462,8 +492,8 @@ export default function IndustryPageTemplate({ industryPath, onNavigate, onOpenM
               </div>
               {/* Visual */}
               <div className={i % 2 !== 0 ? 'lg:col-start-1' : ''}>
-                <div className="relative h-[280px] md:h-[340px] rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 group shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500">
-                  <img src={`/images/industries/sub/${slugify(feature.title)}.jpg`} alt={feature.title} className="w-full h-full object-cover" loading="lazy" />
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-dark/30 group shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500">
+                  <img src={`/images/industries/sub/${slugify(feature.title)}.jpg`} alt={feature.title} className="block w-full h-auto" width={1200} height={landscapeFeatureSlugs.has(slugify(feature.title)) ? 900 : 1200} loading="lazy" />
                 </div>
               </div>
             </div>
