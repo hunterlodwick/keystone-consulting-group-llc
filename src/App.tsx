@@ -51,7 +51,7 @@ import {
 } from 'lucide-react';
 import IndustryPageTemplate from './pages/IndustryPageTemplate';
 import DashboardPage from './pages/DashboardPage';
-import ServicesPage, { SingleServicePage } from './pages/ServicesPage';
+import ServicesPage, { PaymentProcessingPage, SingleServicePage } from './pages/ServicesPage';
 import WorkPage from './pages/WorkPage';
 import AiAgentsPage from './pages/AiAgentsPage';
 import { isAiAgentPath } from './content/ai-agents';
@@ -1039,7 +1039,7 @@ const HERO_PILLARS = [
     label: 'Payments',
     pain: 'Confusing card fees?',
     solution: 'We review your statement and explain the charges.',
-    href: '/guides/payment-processing',
+    href: '/services/payment-processing',
     icon: CreditCard,
   },
   {
@@ -2305,6 +2305,8 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
           }} />
         ) : isAiAgentPath(currentPath) ? (
           <AiAgentsPage path={currentPath} onOpenModal={handleOpenModal} />
+        ) : currentPath === '/services/payment-processing' ? (
+          <PaymentProcessingPage onAudit={() => handleOpenModal("Get a Free Profit Leak Analysis", <StatementAnalysisForm />)} />
         ) : currentPath.startsWith('/services/') ? (
           <SingleServicePage 
             serviceId={currentPath.replace('/services/', '')}

@@ -1,7 +1,7 @@
 import { guides, guidePath } from '../src/content/guides';
 import { AI_AGENT_ROUTES } from '../src/content/ai-agents';
 const industries = ['restaurants', 'grocery', 'healthcare', 'ecommerce', 'salons', 'auto-repair', 'gas-stations', 'high-risk', 'nonprofits', 'b2b', 'real-estate', 'retail'];
-const services = ['web-design', 'crm', 'automations', 'consulting', 'prep-to-sell', 'seo', 'google-business', 'bpo', 'consumer-financing', 'business-loans', 'pos-placement'];
+const services = ['payment-processing', 'web-design', 'crm', 'automations', 'consulting', 'prep-to-sell', 'seo', 'google-business', 'bpo', 'consumer-financing', 'business-loans', 'pos-placement'];
 export const existingRoutes = [
   { path: '/', file: 'src/App.tsx' },
   { path: '/services', file: 'src/pages/ServicesPage.tsx' },

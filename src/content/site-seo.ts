@@ -30,6 +30,10 @@ const pageCopy: Record<string, [string, string]> = {
     "Dashboard",
     "KCG dashboard."
   ],
+  "/services/payment-processing": [
+    "Payment Processing for Small Businesses",
+    "Review your card fees with Keystone Consulting Group. Compare interchange-plus and eligible dual pricing, and choose equipment that fits how you take payments."
+  ],
   "/services/web-design": [
     "Website Builds",
     "Most sites sit there looking nice while the phone stays quiet. We build the other kind. The kind that stops the scroll, answers questions at 2 AM, and books the appointment before you ever pick up the phone."
