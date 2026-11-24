@@ -7,7 +7,7 @@
     "scripts/strict-grounding-breadth/extract.py": "e26299411eed5a9b68f05e3425e89591c0909e05734aeac7baf38003731cbbf4",
     "scripts/strict-grounding-breadth/generate.ts": "0039d2de2fa98ea18a200d07eee41737bcd9b54537e6210a22484f485afc09b1",
     "scripts/strict-grounding-breadth/render.tsx": "96edb6811504c63d6d46821bba80f00fcac3ce2495978560192610d3e84b1663",
-    "src/App.tsx": "29f52f26a359c853e8bf2752be1d7592a38a967d0ade27c6f047b1b50af7aa77",
+    "src/App.tsx": "7da67c9270189d63dc7058a9e98894b746f3463a5877728ba2b2ea4c17f31d88",
     "src/content/ai-agents.ts": "9b494562c97b8ee15cf181fbdc7c9a9fc0a6fd7911d4b2985565bfce7b4173fe",
     "src/content/guide-comparisons.ts": "602d5c7f74f9124c29efb4ca301fad32a365e39a0883b09b0a23165e0f108602",
     "src/content/guide-questions.ts": "b9dd2b202ab4586d97f40ea6018cb4040ac756e8e1d53454cae9830de7b290ed",
