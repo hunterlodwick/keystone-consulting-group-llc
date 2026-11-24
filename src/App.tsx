@@ -1256,7 +1256,9 @@ const BUILD_DETAILS = [
     linkTo: "/guides/payment-processing",
     linkLabel: "Open the payment processing guide",
     image: "/images/card-processing.jpg",
-    imageAlt: "Shop owner serving a customer at a retail checkout counter",
+    imageAlt: "Card payment terminal on a café counter",
+    imageWidth: 933,
+    imageHeight: 1400,
   },
   {
     id: "websites",
@@ -1351,10 +1353,10 @@ const BuildDetails = () => {
                   <img
                     src={b.image}
                     alt={b.imageAlt || b.eyebrow}
-                    className={b.id === "payments" ? "w-full h-64 lg:h-80 object-cover" : "block w-full h-auto"}
+                    className="block w-full h-auto"
                     loading="lazy"
-                    width={1200}
-                    height={675}
+                    width={b.imageWidth ?? 1200}
+                    height={b.imageHeight ?? 675}
                   />
                 )}
                 <div className="p-7">
