@@ -30,7 +30,11 @@ export function serializeJson(value: unknown) { return JSON.stringify(value).rep
 export function metadataMarkup(path: string) {
   return renderMetadata(guideMetadata(path));
 }
+const shareImage = SITE + '/images/keystone-share-v1.jpg';
+const shareImageAlt = 'Keystone Consulting Group: Payments, Websites, AI';
+
 export function renderMetadata(m: ReturnType<typeof guideMetadata>) {
+  const publicPage = m.canonical !== SITE + '/dashboard';
   return `<title>${escapeHtml(m.title)}</title>
 <meta name="description" content="${escapeHtml(m.description)}" />
 <link rel="canonical" href="${m.canonical}" />
@@ -39,7 +43,14 @@ export function renderMetadata(m: ReturnType<typeof guideMetadata>) {
 <meta property="og:description" content="${escapeHtml(m.description)}" />
 <meta property="og:url" content="${m.canonical}" />
 <meta property="og:site_name" content="Keystone Consulting Group" />
-<meta name="twitter:card" content="summary" />
+${publicPage ? `<meta property="og:image" content="${shareImage}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="${shareImageAlt}" />
+<meta name="twitter:image" content="${shareImage}" />
+<meta name="twitter:image:alt" content="${shareImageAlt}" />
+` : ''}<meta name="twitter:card" content="${publicPage ? 'summary_large_image' : 'summary'}" />
 <meta name="twitter:title" content="${escapeHtml(m.title)}" />
 <meta name="twitter:description" content="${escapeHtml(m.description)}" />
 <script type="application/ld+json" id="guide-schema">${serializeJson(m.jsonLd)}</script>`;

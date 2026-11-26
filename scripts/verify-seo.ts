@@ -28,6 +28,13 @@ for (const path of [...publicRoutes, '/dashboard']) {
     ['property', 'og:description', expected.description],
     ['property', 'og:url', expected.canonical],
   ]) assert.ok(html.includes(`<meta ${attribute}="${name}" content="${escapeHtml(value)}"`), `${path}: ${name}`);
+  const shareImage = SITE + '/images/keystone-share-v1.jpg';
+  const previews = [...html.matchAll(/<meta property="og:image" content="([^"]+)"\s*\/>/g)].map(match => match[1]);
+  assert.deepEqual(previews, path === '/dashboard' ? [] : [shareImage], `${path}: branded preview image`);
+  if (path !== '/dashboard') {
+    assert.ok(html.includes(`<meta name="twitter:image" content="${shareImage}"`), `${path}: matching Twitter image`);
+    assert.ok(html.includes('<meta name="twitter:card" content="summary_large_image"'), `${path}: large preview card`);
+  }
   const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)];
   assert.equal(schemas.length, 1, path);
   assert.deepEqual(JSON.parse(schemas[0][1]), expected.jsonLd, path);
@@ -58,6 +65,8 @@ for (const path of [...publicRoutes, '/dashboard']) {
     assert.deepEqual((list.itemListElement as { url: string }[]).map(item => item.url), guides.map(g => SITE + guidePath(g.slug)));
   }
 }
+const shareJpeg = await readFile('dist/images/keystone-share-v1.jpg');
+assert.equal(shareJpeg.subarray(0, 3).toString('hex'), 'ffd8ff', 'branded share image is a built JPEG');
 const sitemap = await readFile('dist/sitemap.xml', 'utf8');
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 assert.deepEqual(locations.sort(), publicRoutes.map(path => SITE + path).sort());
